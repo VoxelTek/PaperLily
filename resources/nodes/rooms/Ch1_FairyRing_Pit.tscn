@@ -1,0 +1,473 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_fairyring.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_11.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_13.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_05.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_08.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mouth.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_6.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/bg_pit_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=14]
+[ext_resource path="res://resources/material/sfx_floor_deform.tres" type="Material" id=15]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/wall_pipe.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_crouch.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/common/tiles_black.png" type="Texture" id=18]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=19]
+[ext_resource path="res://script/Core/Nodes/CharacterSprite.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/ActionActionCall.cs" type="Script" id=22]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=23]
+[ext_resource path="res://resources/lighting/ch1_fairyring.tres" type="Resource" id=24]
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=25]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=26]
+[ext_resource path="res://resources/material/unshaded.tres" type="Material" id=27]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/light_mask.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom7.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom5.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom4.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom10.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom6.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom8.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom9.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_mushroom3.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/wall_pit.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fish_1.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fish_2.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/floor_pit_mask.png" type="Texture" id=40]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=41]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 25 )
+Modulate = Color( 0.482353, 0.52549, 0.607843, 1 )
+UseNormals = true
+PlayerLightState = false
+PlayerLightEnergy = 1.0
+PlayerLightMode = 0
+EnvironmentLightMode = 0
+GlowLevel = 4
+BackgroundColor = Color( 0, 0, 0, 1 )
+
+[node name="Ch1_FairyRing_Pit" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFloor" type="TileMap" parent="."]
+material = ExtResource( 15 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 1
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 1966084, 0, 0, 1966088, 0, 0, 1966106, 0, 0, 2097156, 0, 0, 2097160, 0, 0, 2097164, 0, 0, 2097168, 0, 0, 2097172, 0, 0, 2097176, 0, 0, 2097180, 0, 0, 2228228, 0, 0, 2228232, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesWall" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 1703962, 1, 0, 1835020, 1, 0, 1835024, 2, 0, 1835027, 1, 0, 1835031, 11, 0, 1835033, 12, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesBlack" type="Sprite" parent="Background"]
+position = Vector2( 148.5, 1067.5 )
+scale = Vector2( 1.28125, 5.28125 )
+texture = ExtResource( 18 )
+
+[node name="TilesBlack2" type="Sprite" parent="Background"]
+position = Vector2( 276.75, 1142.25 )
+scale = Vector2( 6.73437, 0.609377 )
+texture = ExtResource( 18 )
+
+[node name="TilesBlack3" type="Sprite" parent="Background"]
+position = Vector2( 160.875, 971.5 )
+scale = Vector2( 2.05469, 0.718749 )
+texture = ExtResource( 18 )
+
+[node name="FloorPitMask" type="Sprite" parent="Background"]
+position = Vector2( 276, 1058 )
+texture = ExtResource( 40 )
+offset = Vector2( 0.5, 0 )
+
+[node name="WallPit" type="Sprite" parent="Background"]
+position = Vector2( 281, 640 )
+texture = ExtResource( 37 )
+offset = Vector2( 0, 0.5 )
+
+[node name="LightMask" type="Sprite" parent="Background"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+material = ExtResource( 27 )
+position = Vector2( 281, -318 )
+texture = ExtResource( 28 )
+offset = Vector2( 0.5, 0 )
+
+[node name="BgPit2" type="Sprite" parent="Background"]
+position = Vector2( 281, -152 )
+texture = ExtResource( 13 )
+offset = Vector2( 0.5, 0.5 )
+
+[node name="FloorMouth" type="Sprite" parent="Background"]
+position = Vector2( 275, 1059 )
+texture = ExtResource( 11 )
+offset = Vector2( 0.5, 0.5 )
+
+[node name="MiscPlants6" type="Sprite" parent="Background"]
+position = Vector2( 924, 967 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="WallPipe" type="Sprite" parent="Background"]
+position = Vector2( 864, 899 )
+texture = ExtResource( 16 )
+
+[node name="LacieCrouch" type="Sprite" parent="Background"]
+visible = false
+light_mask = 2
+position = Vector2( 281, -301 )
+texture = ExtResource( 17 )
+
+[node name="LacieStand" type="Sprite" parent="Background"]
+position = Vector2( 281, -281 )
+script = ExtResource( 20 )
+CharacterId = "lacie"
+State = "stand"
+Direction = 8
+
+[node name="Mushrooms" type="Node2D" parent="Background"]
+
+[node name="FloorMushroom4" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 262, 1016 )
+texture = ExtResource( 31 )
+
+[node name="FloorMushroom3" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 313, 1026 )
+texture = ExtResource( 36 )
+
+[node name="FloorMushroom6" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 270, 1017 )
+texture = ExtResource( 33 )
+
+[node name="FloorMushroom7" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 231, 1038 )
+texture = ExtResource( 29 )
+
+[node name="FloorMushroom8" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 243, 1026 )
+texture = ExtResource( 34 )
+
+[node name="FloorMushroom5" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 239, 1090 )
+texture = ExtResource( 36 )
+
+[node name="FloorMushroom9" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 298, 1019 )
+texture = ExtResource( 30 )
+
+[node name="FloorMushroom10" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 321, 1036 )
+texture = ExtResource( 31 )
+
+[node name="FloorMushroom11" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 227, 1057 )
+texture = ExtResource( 32 )
+
+[node name="FloorMushroom12" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 230, 1073 )
+texture = ExtResource( 35 )
+
+[node name="FloorMushroom13" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 322, 1075 )
+texture = ExtResource( 29 )
+
+[node name="FloorMushroom14" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 325, 1063 )
+texture = ExtResource( 33 )
+
+[node name="FloorMushroom15" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 324, 1049 )
+texture = ExtResource( 30 )
+
+[node name="FloorMushroom16" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 318, 1089 )
+texture = ExtResource( 31 )
+
+[node name="FloorMushroom17" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 281, 1014 )
+texture = ExtResource( 36 )
+
+[node name="FloorMushroom18" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 253, 1096 )
+texture = ExtResource( 34 )
+
+[node name="FloorMushroom19" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 262, 1100 )
+texture = ExtResource( 30 )
+
+[node name="FloorMushroom20" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 278, 1101 )
+texture = ExtResource( 33 )
+
+[node name="FloorMushroom21" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 294, 1099 )
+texture = ExtResource( 31 )
+
+[node name="FloorMushroom22" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 300, 1100 )
+texture = ExtResource( 33 )
+
+[node name="FloorMushroom23" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 309, 1094 )
+texture = ExtResource( 32 )
+
+[node name="FloorMushroom24" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 256, 1019 )
+texture = ExtResource( 33 )
+
+[node name="FloorMushroom25" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 193, 1001 )
+texture = ExtResource( 29 )
+
+[node name="FloorMushroom28" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 355, 1001 )
+texture = ExtResource( 36 )
+
+[node name="FloorMushroom29" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 378, 1019 )
+texture = ExtResource( 29 )
+
+[node name="FloorMushroom30" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 180, 1021 )
+texture = ExtResource( 33 )
+
+[node name="FloorMushroom32" type="Sprite" parent="Background/Mushrooms"]
+position = Vector2( 327, 990 )
+texture = ExtResource( 35 )
+
+[node name="SingleFish" type="Sprite" parent="Background"]
+position = Vector2( 205, 1043 )
+texture = ExtResource( 38 )
+
+[node name="Fish" type="Node2D" parent="Background"]
+
+[node name="MiscFish1" type="Sprite" parent="Background/Fish"]
+position = Vector2( 226, 1020 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish2" type="Sprite" parent="Background/Fish"]
+position = Vector2( 192, 1074 )
+texture = ExtResource( 39 )
+
+[node name="MiscFish3" type="Sprite" parent="Background/Fish"]
+position = Vector2( 236, 1109 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish4" type="Sprite" parent="Background/Fish"]
+position = Vector2( 205, 1043 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish5" type="Sprite" parent="Background/Fish"]
+position = Vector2( 211, 1006 )
+texture = ExtResource( 39 )
+
+[node name="MiscFish6" type="Sprite" parent="Background/Fish"]
+position = Vector2( 195, 1023 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish7" type="Sprite" parent="Background/Fish"]
+position = Vector2( 213, 1094 )
+texture = ExtResource( 39 )
+
+[node name="MiscFish8" type="Sprite" parent="Background/Fish"]
+position = Vector2( 210, 1060 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish9" type="Sprite" parent="Background/Fish"]
+position = Vector2( 183, 1050 )
+texture = ExtResource( 39 )
+
+[node name="MiscFish10" type="Sprite" parent="Background/Fish"]
+position = Vector2( 196, 1091 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish11" type="Sprite" parent="Background/Fish"]
+position = Vector2( 250, 997 )
+texture = ExtResource( 39 )
+
+[node name="MiscFish12" type="Sprite" parent="Background/Fish"]
+position = Vector2( 214, 1074 )
+texture = ExtResource( 38 )
+
+[node name="MiscFish13" type="Sprite" parent="Background/Fish"]
+position = Vector2( 218, 1033 )
+texture = ExtResource( 39 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 2097182, 8, 0, 2162718, 8, 0, 2162719, 8, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscVine13" type="Sprite" parent="Foreground"]
+position = Vector2( 965, 1105 )
+texture = ExtResource( 8 )
+
+[node name="MiscVine14" type="Sprite" parent="Foreground"]
+position = Vector2( 998, 1039 )
+texture = ExtResource( 8 )
+
+[node name="MiscVine11" type="Sprite" parent="Foreground"]
+position = Vector2( 857, 984 )
+texture = ExtResource( 7 )
+
+[node name="MiscVine08" type="Sprite" parent="Foreground"]
+position = Vector2( 696, 1075 )
+texture = ExtResource( 10 )
+
+[node name="MiscVine05" type="Sprite" parent="Foreground"]
+position = Vector2( 479, 1107 )
+texture = ExtResource( 9 )
+
+[node name="MiscVine15" type="Sprite" parent="Foreground"]
+position = Vector2( 549, 1120 )
+texture = ExtResource( 8 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light8" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 285, -305 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 26 )
+texture_scale = 1.5
+color = Color( 0.701961, 0.8, 0.803922, 1 )
+energy = 0.7
+script = ExtResource( 5 )
+BlendMode = 1
+Layers = 1
+
+[node name="LightFadeout" type="Sprite" parent="Lighting"]
+position = Vector2( 282, 387 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout2" type="Sprite" parent="Lighting"]
+position = Vector2( 282, 44 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="TilesBlack" type="Sprite" parent="Lighting"]
+position = Vector2( 282, 215.5 )
+scale = Vector2( 8, 2.71875 )
+texture = ExtResource( 18 )
+
+[node name="tree_hole" type="Node" parent="Lighting"]
+script = ExtResource( 23 )
+Default = true
+Lighting = SubResource( 1 )
+
+[node name="fairyring_lighting" type="Node" parent="Lighting"]
+script = ExtResource( 23 )
+Lighting = ExtResource( 24 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cutscene_camera_top" type="Node2D" parent="Other/Points"]
+position = Vector2( 281, -295 )
+script = ExtResource( 6 )
+
+[node name="cutscene_camera_bottom" type="Node2D" parent="Other/Points"]
+position = Vector2( 281, 1060 )
+script = ExtResource( 6 )
+
+[node name="aoi" type="Node2D" parent="Other/Points"]
+position = Vector2( 647, 1060 )
+script = ExtResource( 6 )
+Direction = 1
+
+[node name="aoi_2" type="Node2D" parent="Other/Points"]
+position = Vector2( 279, 1012 )
+script = ExtResource( 6 )
+
+[node name="aoi_3" type="Node2D" parent="Other/Points"]
+position = Vector2( 228, 1060 )
+script = ExtResource( 6 )
+Direction = 4
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="lacie_crouch" type="Node" parent="Other/Actions"]
+script = ExtResource( 19 )
+
+[node name="hide_lacie_stand" type="Node" parent="Other/Actions/lacie_crouch"]
+script = ExtResource( 21 )
+Node = NodePath("../../../../Background/LacieStand")
+Visible = false
+
+[node name="show_lacie_crouch" type="Node" parent="Other/Actions/lacie_crouch"]
+script = ExtResource( 21 )
+Node = NodePath("../../../../Background/LacieCrouch")
+
+[node name="fairyring_lighting" type="Node" parent="Other/Actions"]
+script = ExtResource( 22 )
+Node = NodePath("../../../Lighting/fairyring_lighting")
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="show_many_fish" type="Node" parent="Other/Updates"]
+script = ExtResource( 41 )
+Variable = "ch1.forest_fairyring_show_many_fish"
+Node = NodePath("../../../Background/Fish")
+
+[node name="show_single_fish" type="Node" parent="Other/Updates"]
+script = ExtResource( 41 )
+Variable = "ch1.forest_fairyring_show_single_fish"
+Node = NodePath("../../../Background/SingleFish")

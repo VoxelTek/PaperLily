@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/exterior/misc_plant.png" type="Texture" id=1]
+
+[node name="misc_plant" type="Node2D"]
+
+[node name="misc_plant" type="Sprite" parent="."]
+position = Vector2( 0, -27 )
+texture = ExtResource( 1 )

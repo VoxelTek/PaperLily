@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/alarm_click.ogg-ff1f0e24a4abae11690de02331b74f60.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/alarm_click.ogg"
+dest_files=[ "res://.import/alarm_click.ogg-ff1f0e24a4abae11690de02331b74f60.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

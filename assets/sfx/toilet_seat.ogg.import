@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/toilet_seat.ogg-52f1e86934894a6b4caa1bea952be3f0.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/toilet_seat.ogg"
+dest_files=[ "res://.import/toilet_seat.ogg-52f1e86934894a6b4caa1bea952be3f0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

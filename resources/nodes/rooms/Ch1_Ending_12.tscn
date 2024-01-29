@@ -1,0 +1,572 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/shader/sfx_autoscroll.gdshader" type="Shader" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/chr_guesswho.png" type="Texture" id=7]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=8]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=9]
+[ext_resource path="res://assets/sprite/ch1/cutscene/mk_attack.png" type="Texture" id=10]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=11]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_knives.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/cutscene/mk_crazy.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_4.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/bg.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_3.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_carpet_middle.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/bg.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/light_blessings.png" type="Texture" id=21]
+[ext_resource path="res://script/Core/Nodes/ActionPlayerStateOverride.cs" type="Script" id=22]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_carpet_edge.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_wood.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/mk/breaking/misc_cracks_2_teaset.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/mk/breaking/misc_cracks_3_lamp.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_carpets.png" type="Texture" id=27]
+[ext_resource path="res://script/Core/Nodes/ActionPlayerSpeed.cs" type="Script" id=28]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=29]
+[ext_resource path="res://assets/sprite/ch1/cutscene/sai_hurt.png" type="Texture" id=30]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=31]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=32]
+[ext_resource path="res://script/Core/Nodes/VariableEnabler.cs" type="Script" id=33]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=34]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/mk_atk_knife.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprite/ch1/mk/breaking/misc_cracks_2_plate.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprite/ch1/mk/breaking/misc_cracks_2_sign.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprite/ch1/mk/breaking/misc_cracks_3_pot.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_12/floor_piece_5.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_12/floor_piece_6.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_12/floor_piece_3.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_12/floor_piece_4.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_12/floor_piece_1.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_12/floor_piece_2.png" type="Texture" id=44]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/speed_x = 0.01
+shader_param/speed_y = 0.005
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Main/MkAtkKnife:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -64, 428 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "knife"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Main/MkAtkKnife:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -64, 428 ), Vector2( 364, 428 ) ]
+}
+
+[node name="Ch1_Ending_12" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = 0
+CameraLimitTop = 0
+CameraLimitRight = 768
+CameraLimitBottom = 1696
+
+[node name="Bg" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.3 )
+material = SubResource( 1 )
+texture = ExtResource( 20 )
+centered = false
+offset = Vector2( 0.5, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 768, 1696 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightBlessings7" type="Sprite" parent="Background"]
+modulate = Color( 0, 0, 0, 0.901961 )
+position = Vector2( 414, 334 )
+scale = Vector2( 2.52878, 3.22111 )
+texture = ExtResource( 21 )
+offset = Vector2( 0.5, 0.5 )
+
+[node name="FloorCarpetMiddle" type="Sprite" parent="Background"]
+position = Vector2( 384, 1200 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle2" type="Sprite" parent="Background"]
+position = Vector2( 384, 1168 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle3" type="Sprite" parent="Background"]
+position = Vector2( 384, 1136 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle4" type="Sprite" parent="Background"]
+position = Vector2( 384, 1104 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle5" type="Sprite" parent="Background"]
+position = Vector2( 384, 1072 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle6" type="Sprite" parent="Background"]
+position = Vector2( 384, 1040 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle7" type="Sprite" parent="Background"]
+position = Vector2( 384, 1008 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle8" type="Sprite" parent="Background"]
+position = Vector2( 384, 976 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle9" type="Sprite" parent="Background"]
+position = Vector2( 384, 944 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle10" type="Sprite" parent="Background"]
+position = Vector2( 384, 912 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle11" type="Sprite" parent="Background"]
+position = Vector2( 384, 880 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle21" type="Sprite" parent="Background"]
+position = Vector2( 384, 802 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle29" type="Sprite" parent="Background"]
+position = Vector2( 384, 834 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle30" type="Sprite" parent="Background"]
+position = Vector2( 384, 866 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle22" type="Sprite" parent="Background"]
+position = Vector2( 384, 770 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle23" type="Sprite" parent="Background"]
+position = Vector2( 384, 738 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle24" type="Sprite" parent="Background"]
+position = Vector2( 384, 706 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle25" type="Sprite" parent="Background"]
+position = Vector2( 384, 674 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle26" type="Sprite" parent="Background"]
+position = Vector2( 384, 642 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle27" type="Sprite" parent="Background"]
+position = Vector2( 384, 610 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetMiddle28" type="Sprite" parent="Background"]
+position = Vector2( 384, 578 )
+rotation = 1.5708
+texture = ExtResource( 19 )
+
+[node name="FloorCarpetEdge" type="Sprite" parent="Background"]
+position = Vector2( 384, 552 )
+rotation = 4.71239
+texture = ExtResource( 23 )
+
+[node name="FloorCarpetEdge2" type="Sprite" parent="Background"]
+position = Vector2( 384, 1226 )
+rotation = 1.5708
+texture = ExtResource( 23 )
+
+[node name="FloorCarpets" type="Sprite" parent="Background"]
+position = Vector2( 389, 1392 )
+texture = ExtResource( 27 )
+
+[node name="FloorPiece1" type="Sprite" parent="Background"]
+position = Vector2( 269, 1322 )
+texture = ExtResource( 43 )
+
+[node name="FloorPiece2" type="Sprite" parent="Background"]
+position = Vector2( 228, 1222 )
+texture = ExtResource( 44 )
+
+[node name="FloorPiece10" type="Sprite" parent="Background"]
+position = Vector2( 529, 1531 )
+texture = ExtResource( 44 )
+flip_h = true
+
+[node name="FloorPiece3" type="Sprite" parent="Background"]
+position = Vector2( 541, 1362 )
+texture = ExtResource( 41 )
+
+[node name="FloorPiece12" type="Sprite" parent="Background"]
+position = Vector2( 193, 1523 )
+texture = ExtResource( 41 )
+flip_h = true
+
+[node name="FloorPiece8" type="Sprite" parent="Background"]
+position = Vector2( 286, 1191 )
+texture = ExtResource( 41 )
+
+[node name="FloorPiece4" type="Sprite" parent="Background"]
+position = Vector2( 525, 1289 )
+texture = ExtResource( 42 )
+
+[node name="FloorPiece9" type="Sprite" parent="Background"]
+position = Vector2( 592, 1463 )
+texture = ExtResource( 42 )
+flip_h = true
+
+[node name="FloorPiece5" type="Sprite" parent="Background"]
+position = Vector2( 324, 1305 )
+texture = ExtResource( 39 )
+
+[node name="FloorPiece7" type="Sprite" parent="Background"]
+position = Vector2( 233, 1451 )
+texture = ExtResource( 39 )
+
+[node name="FloorPiece11" type="Sprite" parent="Background"]
+position = Vector2( 469, 1073 )
+texture = ExtResource( 39 )
+
+[node name="MiscCracks2Plate" type="Sprite" parent="Background"]
+position = Vector2( 292, 1376 )
+texture = ExtResource( 36 )
+
+[node name="MiscCracks2Teaset" type="Sprite" parent="Background"]
+position = Vector2( 497, 1437 )
+texture = ExtResource( 25 )
+
+[node name="MiscCracks2Teaset2" type="Sprite" parent="Background"]
+position = Vector2( 192, 1381 )
+texture = ExtResource( 25 )
+
+[node name="MiscCracks2Teaset3" type="Sprite" parent="Background"]
+position = Vector2( 491, 1248 )
+texture = ExtResource( 25 )
+
+[node name="Floor1" type="Sprite" parent="Background"]
+position = Vector2( 218, 376 )
+texture = ExtResource( 18 )
+
+[node name="Floor2" type="Sprite" parent="Background"]
+position = Vector2( 525, 317 )
+texture = ExtResource( 14 )
+
+[node name="Floor5" type="Sprite" parent="Background"]
+position = Vector2( 279, 426 )
+texture = ExtResource( 14 )
+
+[node name="Floor3" type="Sprite" parent="Background"]
+position = Vector2( 511, 419 )
+texture = ExtResource( 17 )
+
+[node name="Floor6" type="Sprite" parent="Background"]
+position = Vector2( 228, 323 )
+texture = ExtResource( 17 )
+flip_h = true
+
+[node name="Floor4" type="Sprite" parent="Background"]
+position = Vector2( 433, 454 )
+texture = ExtResource( 15 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SaiHurt" type="Sprite" parent="Main"]
+position = Vector2( 487, 1384 )
+texture = ExtResource( 30 )
+offset = Vector2( 0, -14 )
+hframes = 3
+
+[node name="MkAtkKnife" type="Sprite" parent="Main"]
+position = Vector2( -64, 428 )
+texture = ExtResource( 35 )
+
+[node name="Blessing5" type="Sprite" parent="Main"]
+position = Vector2( 377, 252 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, 36 )
+
+[node name="ChrGuesswho" type="Sprite" parent="Main"]
+position = Vector2( 382, 331 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -50 )
+hframes = 5
+frame = 1
+
+[node name="MiscKnives" type="Sprite" parent="Main/ChrGuesswho"]
+position = Vector2( 2, -50 )
+texture = ExtResource( 12 )
+
+[node name="MiscWood" type="Sprite" parent="Main"]
+position = Vector2( 383, 335 )
+texture = ExtResource( 24 )
+
+[node name="MkCrazy" type="Sprite" parent="Main"]
+position = Vector2( 384, 370 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, -35 )
+hframes = 5
+script = ExtResource( 8 )
+AnimationFrames = "0,1,2,1,0,3,4,3"
+FrameDurations = "100,100,300,100,100,100,300,100"
+
+[node name="MkAttack" type="Sprite" parent="Main"]
+visible = false
+position = Vector2( 386, 370 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -35 )
+hframes = 5
+script = ExtResource( 8 )
+Loop = false
+Autostart = false
+FrameDurations = "100,100,300,200,600"
+
+[node name="MiscCracks3Lamp" type="Sprite" parent="Main"]
+position = Vector2( 231, 1315 )
+texture = ExtResource( 26 )
+offset = Vector2( 0, 0.5 )
+
+[node name="FloorPiece6" type="Sprite" parent="Main"]
+position = Vector2( 483, 1379 )
+texture = ExtResource( 40 )
+offset = Vector2( 0.5, -5.5 )
+
+[node name="MiscCracks2Sign" type="Sprite" parent="Main"]
+position = Vector2( 400, 1450 )
+texture = ExtResource( 37 )
+offset = Vector2( 0, 6 )
+
+[node name="FloorPiece13" type="Sprite" parent="Main"]
+position = Vector2( 305, 1489 )
+texture = ExtResource( 40 )
+offset = Vector2( 0.5, -5.5 )
+flip_h = true
+
+[node name="MiscCracks3Pot" type="Sprite" parent="Main"]
+position = Vector2( 442, 1320 )
+texture = ExtResource( 38 )
+offset = Vector2( 0.5, 4.5 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 786436, 0, 0, 786451, 0, 0, 851972, 0, 0, 851987, 0, 0, 917508, 0, 0, 917523, 0, 0, 983044, 0, 0, 983059, 0, 0, 1048580, 0, 0, 1048595, 0, 0, 1114116, 0, 0, 1114131, 0, 0, 1179652, 0, 0, 1179667, 0, 0, 1245188, 0, 0, 1245203, 0, 0, 1310724, 0, 0, 1310739, 0, 0, 1376260, 0, 0, 1376275, 0, 0, 1441796, 0, 0, 1441811, 0, 0, 1507332, 0, 0, 1507347, 0, 0, 1572868, 0, 0, 1572883, 0, 0, 1638404, 0, 0, 1638419, 0, 0, 1703940, 0, 0, 1703955, 0, 0, 1769476, 0, 0, 1769491, 0, 0, 1835012, 0, 0, 1835027, 0, 0, 1900548, 0, 0, 1900563, 0, 0, 1966084, 0, 0, 1966099, 0, 0, 2031620, 0, 0, 2031635, 0, 0, 2097156, 0, 0, 2097171, 0, 0, 2162692, 0, 0, 2162707, 0, 0, 2228228, 0, 0, 2228243, 0, 0, 2293764, 0, 0, 2293779, 0, 0, 2359300, 0, 0, 2359315, 0, 0, 2424836, 0, 0, 2424851, 0, 0, 2490372, 0, 0, 2490387, 0, 0, 2555908, 0, 0, 2555923, 0, 0, 2621444, 0, 0, 2621459, 0, 0, 2686980, 0, 0, 2686995, 0, 0, 2752516, 0, 0, 2752531, 0, 0, 2818052, 0, 0, 2818067, 0, 0, 2883588, 0, 0, 2883603, 0, 0, 2949124, 0, 0, 2949139, 0, 0, 3014660, 0, 0, 3014675, 0, 0, 3080196, 0, 0, 3080211, 0, 0, 3145732, 0, 0, 3145747, 0, 0, 3211268, 0, 0, 3211283, 0, 0, 3276804, 0, 0, 3276805, 0, 0, 3276806, 0, 0, 3276807, 0, 0, 3276808, 0, 0, 3276809, 0, 0, 3276810, 0, 0, 3276811, 0, 0, 3276812, 0, 0, 3276813, 0, 0, 3276814, 0, 0, 3276815, 0, 0, 3276816, 0, 0, 3276817, 0, 0, 3276818, 0, 0, 3276819, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_death" type="Node2D" parent="Other/Events"]
+position = Vector2( 384, 438 )
+script = ExtResource( 31 )
+Solid = false
+Trigger = 1
+Area = Vector2( 448, 8 )
+
+[node name="event_sai_death" type="Node2D" parent="Other/Events"]
+position = Vector2( 384, 924 )
+script = ExtResource( 31 )
+Solid = false
+Trigger = 1
+Area = Vector2( 128, 8 )
+
+[node name="chr_sai" type="Node2D" parent="Other/Events"]
+position = Vector2( 487, 1384 )
+script = ExtResource( 31 )
+Enabled = false
+
+[node name="misc_debris_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 231, 1319 )
+script = ExtResource( 31 )
+Event = "ch1_null"
+Area = Vector2( 66, 12 )
+
+[node name="misc_debris_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 400, 1460 )
+script = ExtResource( 31 )
+Event = "ch1_null"
+Area = Vector2( 40, 25 )
+
+[node name="misc_debris_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 484, 1377 )
+script = ExtResource( 31 )
+Event = "ch1_null"
+Area = Vector2( 56, 14 )
+
+[node name="misc_debris_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 448, 1324 )
+script = ExtResource( 31 )
+Event = "ch1_null"
+Area = Vector2( 58, 12 )
+
+[node name="misc_debris_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 305, 1487 )
+script = ExtResource( 31 )
+Event = "ch1_null"
+Area = Vector2( 56, 14 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 384, 1382 )
+script = ExtResource( 6 )
+
+[node name="mk" type="Node2D" parent="Other/Points"]
+position = Vector2( 384, 370 )
+script = ExtResource( 6 )
+Direction = 2
+
+[node name="lacie" type="Node2D" parent="Other/Points"]
+position = Vector2( 384, 438 )
+script = ExtResource( 6 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="sai_spr" type="Node" parent="Other/Updates"]
+script = ExtResource( 32 )
+Variable = "ch1.mk_rescued_sai"
+Node = NodePath("../../../Main/SaiHurt")
+
+[node name="sai_evt" type="Node" parent="Other/Updates"]
+script = ExtResource( 33 )
+Variable = "ch1.mk_rescued_sai"
+Node = NodePath("../../Events/chr_sai")
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="lacie_limp" type="Node" parent="Other/Actions"]
+script = ExtResource( 29 )
+
+[node name="limp_stand" type="Node" parent="Other/Actions/lacie_limp"]
+script = ExtResource( 22 )
+OldState = "walk"
+NewState = "limp_walk"
+
+[node name="limp_walk" type="Node" parent="Other/Actions/lacie_limp"]
+script = ExtResource( 22 )
+OldState = "stand"
+NewState = "shadow_stand"
+
+[node name="walk_slow" type="Node" parent="Other/Actions/lacie_limp"]
+script = ExtResource( 28 )
+Multiplier = 0.4
+
+[node name="mk_stop_crazy" type="Node" parent="Other/Actions"]
+script = ExtResource( 34 )
+Node = NodePath("../../../Main/MkCrazy")
+Start = false
+
+[node name="mk_turn" type="Node" parent="Other/Actions"]
+script = ExtResource( 29 )
+
+[node name="show_attack" type="Node" parent="Other/Actions/mk_turn"]
+script = ExtResource( 9 )
+Node = NodePath("../../../../Main/MkAttack")
+
+[node name="hide_crazy" type="Node" parent="Other/Actions/mk_turn"]
+script = ExtResource( 9 )
+Node = NodePath("../../../../Main/MkCrazy")
+Visible = false
+
+[node name="mk_attack" type="Node" parent="Other/Actions"]
+script = ExtResource( 34 )
+Node = NodePath("../../../Main/MkAttack")
+
+[node name="play_knife" type="Node" parent="Other/Actions"]
+script = ExtResource( 34 )
+Node = NodePath("../../KnifeGo")
+
+[node name="sai_more_hurt" type="Node" parent="Other/Actions"]
+script = ExtResource( 11 )
+Node = NodePath("../../../Main/SaiHurt")
+Frame = 1
+
+[node name="sai_dead" type="Node" parent="Other/Actions"]
+script = ExtResource( 11 )
+Node = NodePath("../../../Main/SaiHurt")
+Frame = 2
+
+[node name="KnifeGo" type="AnimationPlayer" parent="Other"]
+anims/RESET = SubResource( 2 )
+anims/knife = SubResource( 3 )

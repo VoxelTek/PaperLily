@@ -1,0 +1,37 @@
+{
+	"name": "Shadow Girl",
+	"NoDefaultSprites": true,
+	"Sprites": [
+		{
+			"State": "sit",
+			"TextureSuffix": "sit",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,-15",
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		},
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,-19",
+			"DownFrames": "0,1,2,3",
+			"Fps": 3,
+			"Loop": true
+		},
+		{
+			"State": "spin",
+			"TextureSuffix": "sit",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,-15",
+			"DownFrames": "3,3,3,0,1,2,3,3",
+			"Fps": 5.5,
+			"Loop": true
+		}
+	]
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_bed_atk.ogg-bec4328d70ec2c100e57680003002e54.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ch1_bed_atk.ogg"
+dest_files=[ "res://.import/ch1_bed_atk.ogg-bec4328d70ec2c100e57680003002e54.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

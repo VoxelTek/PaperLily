@@ -1,0 +1,311 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/bundle_2.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/snowglobe.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/umbrella.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/curtains_open.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/window_day.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/tamaghost.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/calendar.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/curtains_closed.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/diary.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/shelves.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/notebook.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/window_evening.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/window_night.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/bundle_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/plant.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/hangers.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/bundle_1.png" type="Texture" id=18]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1PncWardrobe.cs" type="Script" id=19]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/snowglobe_anim.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/common/black.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/costume_indoors.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/costume_default.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/costume_default_shine_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/costume_default_shine_2.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/costume_indoors_shine_2.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/costume_indoors_shine_1.png" type="Texture" id=27]
+[ext_resource path="res://resources/material/transition_diamond.tres" type="Material" id=28]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/frame.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/salt.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/rune.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/wardrobe/doorknob.png" type="Texture" id=32]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 2
+fps = 2.0
+frame_0/texture = ExtResource( 24 )
+frame_1/texture = ExtResource( 25 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 2
+fps = 2.0
+frame_0/texture = ExtResource( 27 )
+frame_1/texture = ExtResource( 26 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "animation"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[node name="Ch1_PnC_Wardrobe" type="Control"]
+margin_right = 416.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 416, 224 )
+script = ExtResource( 19 )
+EventTargets = {
+"bundle_1": "pnc_wardrobe_bundle_1",
+"bundle_2": "pnc_wardrobe_bundle_2",
+"bundle_3": "pnc_wardrobe_bundle_3",
+"calendar": "pnc_wardrobe_calendar",
+"diary": "pnc_wardrobe_diary",
+"doorknob": "pnc_wardrobe_items_ch1",
+"notebook": "pnc_wardrobe_items_ch1",
+"plant": "pnc_wardrobe_plant",
+"rune": "pnc_wardrobe_items_ch1",
+"salt": "pnc_wardrobe_items_ch1",
+"shelves": "pnc_wardrobe_bows",
+"tamaghost": "pnc_wardrobe_tamaghost",
+"umbrella": "pnc_wardrobe_umbrella",
+"window_day": "pnc_wardrobe_window",
+"window_evening": "pnc_wardrobe_window",
+"window_night": "pnc_wardrobe_window"
+}
+FunctionTargets = {
+"curtains_closed": "CurtainsOpen",
+"curtains_open": "CurtainsClose",
+"hangers": "ChangeCostumeMenu",
+"snowglobe": "ShakeSnowglobe"
+}
+texCostumeDefault = ExtResource( 23 )
+texCostumeIndoors = ExtResource( 22 )
+texCostumeDefaultShine = SubResource( 1 )
+texCostumeIndoorsShine = SubResource( 2 )
+matDiamondTransition = ExtResource( 28 )
+
+[node name="Bg" type="TextureRect" parent="."]
+margin_right = 416.0
+margin_bottom = 224.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Targets" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="window_day" type="TextureRect" parent="Targets"]
+visible = false
+margin_left = 162.0
+margin_right = 315.0
+margin_bottom = 110.0
+texture = ExtResource( 5 )
+
+[node name="window_evening" type="TextureRect" parent="Targets"]
+visible = false
+margin_left = 162.0
+margin_right = 315.0
+margin_bottom = 110.0
+texture = ExtResource( 13 )
+
+[node name="window_night" type="TextureRect" parent="Targets"]
+visible = false
+margin_left = 162.0
+margin_right = 315.0
+margin_bottom = 110.0
+texture = ExtResource( 14 )
+
+[node name="bundle_1" type="TextureRect" parent="Targets"]
+margin_left = 58.0
+margin_top = 111.0
+margin_right = 117.0
+margin_bottom = 143.0
+texture = ExtResource( 18 )
+
+[node name="bundle_2" type="TextureRect" parent="Targets"]
+margin_left = 64.0
+margin_top = 142.0
+margin_right = 109.0
+margin_bottom = 174.0
+texture = ExtResource( 1 )
+
+[node name="bundle_3" type="TextureRect" parent="Targets"]
+margin_left = 64.0
+margin_top = 175.0
+margin_right = 109.0
+margin_bottom = 207.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="calendar" type="TextureRect" parent="Targets"]
+margin_left = 369.0
+margin_right = 416.0
+margin_bottom = 88.0
+texture = ExtResource( 8 )
+
+[node name="curtains_closed" type="TextureRect" parent="Targets"]
+visible = false
+margin_left = 149.0
+margin_right = 325.0
+margin_bottom = 125.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="curtains_open" type="TextureRect" parent="Targets"]
+margin_left = 149.0
+margin_right = 325.0
+margin_bottom = 125.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="diary" type="TextureRect" parent="Targets"]
+margin_left = 138.0
+margin_top = 179.0
+margin_right = 184.0
+margin_bottom = 211.0
+texture = ExtResource( 10 )
+
+[node name="hangers" type="TextureRect" parent="Targets"]
+margin_left = 54.0
+margin_top = 2.0
+margin_right = 98.0
+margin_bottom = 105.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="doorknob" type="TextureRect" parent="Targets"]
+margin_left = 232.0
+margin_top = 110.0
+margin_right = 264.0
+margin_bottom = 142.0
+texture = ExtResource( 32 )
+
+[node name="rune" type="TextureRect" parent="Targets"]
+margin_left = 248.0
+margin_top = 124.0
+margin_right = 268.0
+margin_bottom = 144.0
+texture = ExtResource( 31 )
+
+[node name="notebook" type="TextureRect" parent="Targets"]
+margin_left = 200.0
+margin_top = 117.0
+margin_right = 253.0
+margin_bottom = 149.0
+texture = ExtResource( 12 )
+
+[node name="salt" type="TextureRect" parent="Targets"]
+margin_left = 204.0
+margin_top = 100.0
+margin_right = 236.0
+margin_bottom = 132.0
+texture = ExtResource( 30 )
+
+[node name="plant" type="TextureRect" parent="Targets"]
+margin_left = 279.0
+margin_top = 75.0
+margin_right = 319.0
+margin_bottom = 136.0
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shelves" type="TextureRect" parent="Targets"]
+margin_left = 99.0
+margin_top = 3.0
+margin_right = 120.0
+margin_bottom = 113.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="snowglobe" type="TextureRect" parent="Targets"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 134.0
+margin_top = 98.0
+margin_right = 166.0
+margin_bottom = 138.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="Sprite" parent="Targets/snowglobe"]
+position = Vector2( 1, 0 )
+texture = ExtResource( 20 )
+centered = false
+hframes = 12
+frame = 11
+
+[node name="Animation" type="AnimationPlayer" parent="Targets/snowglobe/anim"]
+playback_speed = 0.75
+anims/animation = SubResource( 3 )
+
+[node name="tamaghost" type="TextureRect" parent="Targets"]
+margin_left = 307.0
+margin_top = 149.0
+margin_right = 340.0
+margin_bottom = 181.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="umbrella" type="TextureRect" parent="Targets"]
+margin_left = 347.0
+margin_top = 99.0
+margin_right = 365.0
+margin_bottom = 224.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Costume_Overlay" type="TextureRect" parent="."]
+visible = false
+margin_right = 416.0
+margin_bottom = 224.0
+texture = ExtResource( 21 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Frame" type="TextureRect" parent="."]
+margin_left = -7.0
+margin_top = -8.0
+margin_right = 423.0
+margin_bottom = 231.0
+texture = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

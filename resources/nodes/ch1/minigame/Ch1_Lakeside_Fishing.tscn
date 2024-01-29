@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Subgame/TimingBarMinigame/TimingBar.cs" type="Script" id=1]
+[ext_resource path="res://script/Subgame/TimingBarMinigame/TimingBarSegment.cs" type="Script" id=2]
+[ext_resource path="res://assets/sprite/common/minigame/timingbar/icon_fishing.png" type="Texture" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Offset = 0
+RandomOffset = true
+Range = 35
+Speed = 2.5
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Offset = 0
+RandomOffset = true
+Range = 35
+Speed = 2.5
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Offset = 0
+RandomOffset = true
+Range = 35
+Speed = 2.5
+
+[node name="Ch1_Lakeside_Fishing" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+OnSuccessEvent = "event_fishing_success"
+OnFailureEvent = "ch1_null"
+TexIcon = ExtResource( 3 )
+Attempts = 1
+Segments = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

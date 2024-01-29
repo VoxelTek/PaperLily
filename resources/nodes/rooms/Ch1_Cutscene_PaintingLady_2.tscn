@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=2]
+[ext_resource path="res://resources/nodes/rooms/Ch1_MK_B1F_Cages.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_painting_lady_hurt.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV2.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_painting_lady_noeye.png" type="Texture" id=7]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=8]
+
+[node name="Ch1_Cutscene_PaintingLady_2" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 2 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 3 )]
+
+[node name="WallPaintingA1" parent="Room/Background/WallPaintingA" index="0"]
+visible = false
+
+[node name="PaintingLadyHurt" type="Sprite" parent="Room/Background/WallPaintingA" index="1"]
+position = Vector2( 0, 44 )
+texture = ExtResource( 5 )
+hframes = 13
+script = ExtResource( 6 )
+Loop = false
+FrameDurations = "2000,2000,100,100,100,1000,100,100,100,100,100,100,100"
+
+[node name="PaintingLadyNoEye" type="Sprite" parent="Room/Background/WallPaintingA" index="2"]
+position = Vector2( 0, 44 )
+texture = ExtResource( 7 )
+hframes = 13
+script = ExtResource( 6 )
+Loop = false
+FrameDurations = "2000,2000,100,100,100,1000,100,100,100,100,100,100,100"
+
+[node name="painting_gone" parent="Room/Other/Updates" index="1"]
+Enabled = false
+
+[node name="lacie" type="Node2D" parent="."]
+position = Vector2( 224, 144 )
+script = ExtResource( 8 )
+Direction = 2
+
+[node name="cutscene_center" type="Node2D" parent="."]
+position = Vector2( 224, 160 )
+script = ExtResource( 8 )
+
+[node name="painting_noeye" type="Node" parent="."]
+script = ExtResource( 4 )
+Variable = "ch1.mk_took_eye_lady"
+Node = NodePath("../Room/Background/WallPaintingA/PaintingLadyNoEye")
+
+[node name="painting_hurt" type="Node" parent="."]
+script = ExtResource( 4 )
+Variable = "ch1.mk_hurt_lady"
+Node = NodePath("../Room/Background/WallPaintingA/PaintingLadyHurt")
+
+[editable path="Room"]

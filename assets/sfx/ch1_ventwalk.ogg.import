@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_ventwalk.ogg-58375614bde985e217a52ff3158fad9a.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ch1_ventwalk.ogg"
+dest_files=[ "res://.import/ch1_ventwalk.ogg-58375614bde985e217a52ff3158fad9a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

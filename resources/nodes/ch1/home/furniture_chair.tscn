@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/garage/furniture_chair.png" type="Texture" id=1]
+
+[node name="furniture_chair" type="Node2D"]
+
+[node name="furniture_chair" type="Sprite" parent="."]
+position = Vector2( 0, -15 )
+texture = ExtResource( 1 )

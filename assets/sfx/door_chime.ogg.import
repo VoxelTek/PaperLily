@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/door_chime.ogg-3f893d7762d652ba032b8fe8cec1832b.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/door_chime.ogg"
+dest_files=[ "res://.import/door_chime.ogg-3f893d7762d652ba032b8fe8cec1832b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Facility_B2F_Hallway_East.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/sai_dead.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_primal_ending_9.png" type="Texture" id=6]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=7]
+
+[node name="Ch1_Cutscene_Ending_9" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Subroom = NodePath("Ch1_Facility_B2F_Hallway_East")
+
+[node name="Ch1_Facility_B2F_Hallway_East" parent="." instance=ExtResource( 2 )]
+
+[node name="PrimalAttack" type="Sprite" parent="Ch1_Facility_B2F_Hallway_East/Background" index="16"]
+position = Vector2( 444, 267 )
+texture = ExtResource( 6 )
+hframes = 8
+script = ExtResource( 3 )
+FPS = 12.0
+Loop = false
+Autostart = false
+
+[node name="SaiDead" type="Sprite" parent="Ch1_Facility_B2F_Hallway_East/Background" index="17"]
+position = Vector2( 316, 159 )
+texture = ExtResource( 5 )
+
+[node name="shiny" parent="Ch1_Facility_B2F_Hallway_East/Background" index="18" instance=ExtResource( 7 )]
+position = Vector2( 432, 352 )
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="primal_attack" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Facility_B2F_Hallway_East/Background/PrimalAttack")
+
+[editable path="Ch1_Facility_B2F_Hallway_East"]

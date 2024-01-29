@@ -1,0 +1,306 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneFacilityElevator.cs" type="Script" id=1]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=2]
+[ext_resource path="res://resources/lighting/ch1_facility.tres" type="Resource" id=3]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Facility_Elevator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/material/ch1_elevator_water.tres" type="Material" id=5]
+[ext_resource path="res://assets/sprite/common/tiles_white.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/sai_lesschill.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie.png" type="Texture" id=8]
+[ext_resource path="res://resources/lighting/ch1_facility_lightsoff_glow.tres" type="Resource" id=9]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=10]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=11]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/lacie_float.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sfx_pouring_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sai_float.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sfx_ripples_4.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sfx_pouring_1.png" type="Texture" id=16]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sfx_ripples_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sfx_ripples_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_11/sfx_ripples_3.png" type="Texture" id=20]
+
+[node name="Ch1_Cutscene_Facility_Elevator" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 3 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 4 )]
+
+[node name="B2F" parent="Room/Background/WallIndicator" index="1"]
+visible = true
+
+[node name="Flood1" type="Node2D" parent="Room/Background" index="3"]
+visible = false
+
+[node name="Water" type="Sprite" parent="Room/Background/Flood1"]
+material = ExtResource( 5 )
+position = Vector2( 0, 96 )
+scale = Vector2( 3, 2 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SfxPouring1" type="Sprite" parent="Room/Background/Flood1"]
+position = Vector2( 47, 78 )
+texture = ExtResource( 16 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Flood2" type="Node2D" parent="Room/Background" index="4"]
+visible = false
+
+[node name="SfxPouring3" type="Sprite" parent="Room/Background/Flood2"]
+position = Vector2( 47, 78 )
+texture = ExtResource( 16 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Water" type="Sprite" parent="Room/Background/Flood2"]
+material = ExtResource( 5 )
+position = Vector2( 0, 93 )
+scale = Vector2( 3, 2.09375 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SfxRipples8" type="Sprite" parent="Room/Background/Flood2"]
+position = Vector2( 48, 92 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, 0.5 )
+
+[node name="SfxPouring2" type="Sprite" parent="Room/Background/Flood2"]
+position = Vector2( 48, 92 )
+texture = ExtResource( 13 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Lacie" type="Sprite" parent="Room/Background/Flood2"]
+position = Vector2( 58, 77 )
+texture = ExtResource( 8 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 48, 32, 45 )
+
+[node name="Sai" type="Sprite" parent="Room/Background/Flood2"]
+position = Vector2( 8, 61 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 61 )
+
+[node name="SfxRipples1" type="Sprite" parent="Room/Background/Flood2"]
+position = Vector2( 51, 123 )
+texture = ExtResource( 19 )
+vframes = 2
+script = ExtResource( 17 )
+FPS = 2.0
+
+[node name="Flood3" type="Node2D" parent="Room/Background" index="5"]
+visible = false
+
+[node name="SfxPouring4" type="Sprite" parent="Room/Background/Flood3"]
+position = Vector2( 47, 78 )
+texture = ExtResource( 16 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Water" type="Sprite" parent="Room/Background/Flood3"]
+material = ExtResource( 5 )
+position = Vector2( 0, 90 )
+scale = Vector2( 3, 2.1875 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SfxRipples7" type="Sprite" parent="Room/Background/Flood3"]
+position = Vector2( 48, 89 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, 0.5 )
+
+[node name="SfxPouring5" type="Sprite" parent="Room/Background/Flood3"]
+position = Vector2( 48, 89 )
+texture = ExtResource( 13 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Lacie" type="Sprite" parent="Room/Background/Flood3"]
+position = Vector2( 58, 77 )
+texture = ExtResource( 8 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 48, 32, 42 )
+
+[node name="Sai" type="Sprite" parent="Room/Background/Flood3"]
+position = Vector2( 8, 61 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 58 )
+
+[node name="SfxRipples2" type="Sprite" parent="Room/Background/Flood3"]
+position = Vector2( 51, 120 )
+texture = ExtResource( 19 )
+vframes = 2
+script = ExtResource( 17 )
+FPS = 2.0
+
+[node name="Flood4" type="Node2D" parent="Room/Background" index="6"]
+visible = false
+
+[node name="SfxPouring6" type="Sprite" parent="Room/Background/Flood4"]
+position = Vector2( 47, 78 )
+texture = ExtResource( 16 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Water" type="Sprite" parent="Room/Background/Flood4"]
+material = ExtResource( 5 )
+position = Vector2( 0, 84 )
+scale = Vector2( 3, 2.375 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SfxRipples6" type="Sprite" parent="Room/Background/Flood4"]
+position = Vector2( 48, 83 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, 0.5 )
+
+[node name="SfxPouring7" type="Sprite" parent="Room/Background/Flood4"]
+position = Vector2( 48, 83 )
+texture = ExtResource( 13 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Lacie" type="Sprite" parent="Room/Background/Flood4"]
+position = Vector2( 58, 77 )
+texture = ExtResource( 8 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 48, 32, 36 )
+
+[node name="Sai" type="Sprite" parent="Room/Background/Flood4"]
+position = Vector2( 8, 61 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 52 )
+
+[node name="SfxRipples3" type="Sprite" parent="Room/Background/Flood4"]
+position = Vector2( 50, 114 )
+texture = ExtResource( 18 )
+vframes = 2
+script = ExtResource( 17 )
+FPS = 2.0
+
+[node name="Flood5" type="Node2D" parent="Room/Background" index="7"]
+visible = false
+
+[node name="SfxPouring8" type="Sprite" parent="Room/Background/Flood5"]
+position = Vector2( 47, 78 )
+texture = ExtResource( 16 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Water" type="Sprite" parent="Room/Background/Flood5"]
+material = ExtResource( 5 )
+position = Vector2( 0, 76 )
+scale = Vector2( 3, 2.625 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SfxRipples5" type="Sprite" parent="Room/Background/Flood5"]
+position = Vector2( 48, 76 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, 0.5 )
+
+[node name="SfxPouring9" type="Sprite" parent="Room/Background/Flood5"]
+position = Vector2( 48, 76 )
+texture = ExtResource( 13 )
+vframes = 2
+script = ExtResource( 17 )
+
+[node name="Lacie" type="Sprite" parent="Room/Background/Flood5"]
+position = Vector2( 58, 77 )
+texture = ExtResource( 8 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 48, 32, 28 )
+
+[node name="Sai" type="Sprite" parent="Room/Background/Flood5"]
+position = Vector2( 8, 61 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 44 )
+
+[node name="SfxRipples4" type="Sprite" parent="Room/Background/Flood5"]
+position = Vector2( 50, 106 )
+texture = ExtResource( 20 )
+vframes = 2
+script = ExtResource( 17 )
+FPS = 2.0
+
+[node name="Flood6" type="Node2D" parent="Room/Background" index="8"]
+visible = false
+
+[node name="Water" type="Sprite" parent="Room/Background/Flood6"]
+material = ExtResource( 5 )
+position = Vector2( 0, 47 )
+scale = Vector2( 3, 3.53125 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SfxRipples4" type="Sprite" parent="Room/Background/Flood6"]
+position = Vector2( 48, 47 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, 0.5 )
+
+[node name="SaiFloat" type="Sprite" parent="Room/Background/Flood6"]
+position = Vector2( 24, 85 )
+texture = ExtResource( 14 )
+hframes = 3
+frame = 2
+script = ExtResource( 17 )
+AnimationFrames = "2,1,0,1"
+
+[node name="LacieFloat" type="Sprite" parent="Room/Background/Flood6"]
+position = Vector2( 72, 85 )
+texture = ExtResource( 12 )
+hframes = 3
+script = ExtResource( 17 )
+AnimationFrames = "0,1,2,1"
+
+[node name="Points" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lacie" type="Node2D" parent="Points"]
+position = Vector2( 72, 125 )
+script = ExtResource( 2 )
+
+[node name="sai" type="Node2D" parent="Points"]
+position = Vector2( 24, 125 )
+script = ExtResource( 2 )
+
+[node name="panel" type="Node2D" parent="Points"]
+position = Vector2( 82, 106 )
+script = ExtResource( 2 )
+Direction = 2
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 10 )
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 11 )
+Lighting = ExtResource( 3 )
+
+[node name="dark" type="Node" parent="Lighting"]
+script = ExtResource( 11 )
+Lighting = ExtResource( 9 )
+
+[editable path="Room"]

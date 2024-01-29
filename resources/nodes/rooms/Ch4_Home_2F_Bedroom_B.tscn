@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter4/Ch4Home2fBedroomB.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_b/misc_box.png" type="Texture" id=2]
+[ext_resource path="res://resources/tileset/ch1_home.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_b/wall_window.png" type="Texture" id=4]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=7]
+[ext_resource path="res://assets/bgm/ch1_home.ogg" type="AudioStream" id=8]
+[ext_resource path="res://resources/lighting/ch1_home_evening_interior_lightoff.tres" type="Resource" id=9]
+[ext_resource path="res://resources/lighting/ch1_home_day_interior_lighton.tres" type="Resource" id=10]
+[ext_resource path="res://resources/lighting/ch1_home_night_interior_lightsoff.tres" type="Resource" id=11]
+
+[node name="Ch4_Home_2F_Bedroom_B" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Bgm = ExtResource( 8 )
+lightDay = ExtResource( 10 )
+lightEvening = ExtResource( 9 )
+lightNight = ExtResource( 11 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65537, 35, 1, 65538, 35, 1, 65539, 35, 1, 65540, 35, 1, 65541, 35, 1, 65542, 35, 1, 65543, 35, 1, 65544, 35, 1, 131073, 35, 65537, 131074, 35, 65537, 131075, 35, 65537, 131076, 35, 65537, 131077, 35, 65537, 131078, 35, 65537, 131079, 35, 65537, 131080, 35, 65537, 196609, 35, 131073, 196610, 35, 131073, 196611, 35, 131073, 196612, 35, 131073, 196613, 35, 131073, 196614, 35, 131073, 196615, 35, 131073, 196616, 35, 131073, 262145, 33, 0, 262146, 33, 0, 262147, 33, 0, 262148, 33, 0, 262149, 33, 0, 262150, 33, 0, 262151, 33, 0, 262152, 33, 0, 327681, 33, 0, 327682, 33, 0, 327683, 33, 0, 327684, 33, 0, 327685, 33, 0, 327686, 33, 0, 327687, 33, 0, 327688, 33, 0, 393217, 33, 0, 393218, 33, 0, 393219, 33, 0, 393220, 33, 0, 393221, 33, 0, 393222, 33, 0, 393223, 33, 0, 393224, 33, 0, 458753, 33, 0, 458754, 33, 0, 458755, 33, 0, 458756, 33, 0, 458757, 33, 0, 458758, 33, 0, 458759, 33, 0, 458760, 33, 0, 524289, 33, 0, 524290, 33, 0, 524291, 33, 0, 524292, 33, 0, 524293, 33, 0, 524294, 33, 0, 524295, 33, 0, 524296, 33, 0, 589825, 33, 0, 589826, 33, 0, 589827, 33, 0, 589828, 33, 0, 589829, 33, 0, 589830, 33, 0, 589831, 33, 0, 589832, 33, 0, 655361, 33, 0, 655362, 33, 0, 655363, 33, 0, 655364, 33, 0, 655365, 33, 0, 655366, 33, 0, 655367, 33, 0, 655368, 33, 0, 720897, 33, 0, 720898, 33, 0, 720899, 33, 0, 720900, 33, 0, 720901, 33, 0, 720902, 33, 0, 720903, 33, 0, 720904, 33, 0, 786436, 33, 0, 786437, 33, 0, 851971, 34, 196610, 851972, 34, 196610, 851973, 34, 196610, 851974, 34, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_box" type="Sprite" parent="Background"]
+position = Vector2( 162, 222 )
+texture = ExtResource( 2 )
+
+[node name="wall_window" type="Sprite" parent="Background"]
+position = Vector2( 95, 85 )
+texture = ExtResource( 4 )
+
+[node name="wall_window2" type="Sprite" parent="Background"]
+position = Vector2( 226, 85 )
+texture = ExtResource( 4 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1, 34, 196610, -65536, 34, 196610, -65535, 34, 196610, -65534, 34, 196610, -65533, 34, 196610, -65532, 34, 196610, -65531, 34, 196610, -65530, 34, 196610, -65529, 34, 196610, -65528, 34, 196610, -65527, 34, 196610, -65526, 34, 196610, 65535, 34, 196610, 0, 34, 65539, 1, 34, 262146, 2, 34, 262146, 3, 34, 262146, 4, 34, 262146, 5, 34, 262146, 6, 34, 262146, 7, 34, 262146, 8, 34, 262146, 9, 34, 65538, 10, 34, 196610, 131071, 34, 196610, 65536, 34, 196611, 65545, 34, 196609, 65546, 34, 196610, 196607, 34, 196610, 131072, 34, 196611, 131081, 34, 196609, 131082, 34, 196610, 262143, 34, 196610, 196608, 34, 196611, 196617, 34, 196609, 196618, 34, 196610, 327679, 34, 196610, 262144, 34, 196611, 262153, 34, 196609, 262154, 34, 196610, 393215, 34, 196610, 327680, 34, 196611, 327689, 34, 196609, 327690, 34, 196610, 458751, 34, 196610, 393216, 34, 196611, 393225, 34, 196609, 393226, 34, 196610, 524287, 34, 196610, 458752, 34, 196611, 458761, 34, 196609, 458762, 34, 196610, 589823, 34, 196610, 524288, 34, 196611, 524297, 34, 196609, 524298, 34, 196610, 655359, 34, 196610, 589824, 34, 196611, 589833, 34, 196609, 589834, 34, 196610, 720895, 34, 196610, 655360, 34, 196611, 655369, 34, 196609, 655370, 34, 196610, 786431, 34, 196610, 720896, 34, 196611, 720905, 34, 196609, 720906, 34, 196610, 851967, 34, 196610, 786432, 34, 3, 786433, 34, 131074, 786434, 34, 131074, 786435, 34, 131075, 786438, 34, 131073, 786439, 34, 131074, 786440, 34, 131074, 786441, 34, 2, 786442, 34, 196610, 917503, 34, 196610, 851968, 34, 196610, 851969, 34, 196610, 851970, 34, 196610, 851975, 34, 196610, 851976, 34, 196610, 851977, 34, 196610, 851978, 34, 196610, 983039, 34, 196610, 917504, 34, 196610, 917505, 34, 196610, 917506, 34, 196610, 917507, 34, 196610, 917508, 34, 196610, 917509, 34, 196610, 917510, 34, 196610, 917511, 34, 196610, 917512, 34, 196610, 917513, 34, 196610, 917514, 34, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="move_exit" type="Node2D" parent="Events"]
+position = Vector2( 160, 432 )
+script = ExtResource( 5 )
+Area = Vector2( 64, 32 )
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fadeout4" type="Sprite" parent="Lighting"]
+position = Vector2( 122, 416 )
+scale = Vector2( 0.59375, -0.25 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Points" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hallway_door" type="Node2D" parent="Points"]
+position = Vector2( 160, 400 )
+script = ExtResource( 6 )
+Direction = 2

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/unlock.ogg-be6802df5efa44784e1d1270dfa11d4d.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/unlock.ogg"
+dest_files=[ "res://.import/unlock.ogg-be6802df5efa44784e1d1270dfa11d4d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

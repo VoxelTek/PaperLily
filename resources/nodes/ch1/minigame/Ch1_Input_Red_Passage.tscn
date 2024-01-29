@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/Subgame/InputCombinationMinigame/AlphanumericInput.cs" type="Script" id=1]
+
+[node name="Ch1_Input_Red_Passage" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+OnSuccessEvent = "event_code_success"
+OnFailureEvent = "event_code_failure"
+CorrectAnswer = "persistent.ch1_red_passage_code"
+VariableAnswer = true

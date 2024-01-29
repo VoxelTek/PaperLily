@@ -1,0 +1,362 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/ch1/home/misc_boxes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/tileset/ch1_home.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/ch1/home/garage/wall_pipe.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/home/garage/furniture_shelf.png" type="Texture" id=5]
+[ext_resource path="res://resources/nodes/ch1/home/misc_lamp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://resources/nodes/ch1/home/furniture_chair.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_oil_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/home/garage/wall_garagedoor.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_carpet.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_oil.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_oil_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/home/garage/furniture_bookshelf.png" type="Texture" id=13]
+[ext_resource path="res://resources/lighting/ch1_home_day_nowindow.tres" type="Resource" id=14]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=15]
+[ext_resource path="res://assets/sprite/ch1/home/garage/wall_crack.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/home/garage/wall_crack_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/home/garage/misc_shelf_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_tracks_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_paper.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_tracks.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_papers.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/home/garage/misc_box.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/home/garage/misc_fabric.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/home/common/furniture_shoerack.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/home/common/furniture_cupboard.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/home/garage/wall_lightswitch.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/home/garage/misc_shoes.png" type="Texture" id=28]
+[ext_resource path="res://resources/nodes/ch1/home/misc_boxpile.tscn" type="PackedScene" id=29]
+[ext_resource path="res://script/Nodes/Chair.cs" type="Script" id=30]
+[ext_resource path="res://resources/lighting/ch1_home_night_nowindow.tres" type="Resource" id=31]
+[ext_resource path="res://resources/nodes/ch1/home/misc_umbrellabasket.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/sprite/ch1/home/garage/wall_door.png" type="Texture" id=33]
+[ext_resource path="res://resources/lighting/ch1_home_evening_nowindow.tres" type="Resource" id=34]
+[ext_resource path="res://assets/bgm/ch1_home.ogg" type="AudioStream" id=35]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=36]
+[ext_resource path="res://assets/sprite/ch1/home/garage/item_redpaint.png" type="Texture" id=37]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1Home1fGarage.cs" type="Script" id=38]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=39]
+[ext_resource path="res://assets/sfx/phone_ring.ogg" type="AudioStream" id=40]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=41]
+[ext_resource path="res://assets/sprite/ch1/home/garage/floor_salt_long.png" type="Texture" id=42]
+[ext_resource path="res://script/Core/Nodes/ObjectiveVisibility2D.cs" type="Script" id=43]
+
+[node name="Ch1_Home_1F_Garage" type="Node2D"]
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_lock_": true
+}
+Bgm = ExtResource( 35 )
+BgmVolume = 0.25
+lightDay = ExtResource( 14 )
+lightEvening = ExtResource( 34 )
+lightNight = ExtResource( 31 )
+sfxPhoneRing = ExtResource( 40 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65530, 26, 1, -65529, 26, 1, 6, 26, 65537, 7, 26, 65537, 65537, 26, 65537, 65538, 26, 1, 65539, 26, 1, 65540, 26, 1, 65541, 26, 2, 65542, 26, 131073, 65543, 26, 131073, 65544, 26, 0, 131072, 26, 65538, 131073, 26, 65537, 131074, 26, 65537, 131075, 26, 65537, 131076, 26, 65537, 131077, 26, 65538, 131078, 24, 0, 131079, 24, 0, 131080, 26, 0, 196608, 26, 65538, 196609, 26, 131073, 196610, 26, 131073, 196611, 26, 131073, 196612, 26, 131073, 196613, 26, 131074, 196614, 24, 0, 196615, 24, 0, 196616, 26, 0, 262144, 26, 131074, 262145, 24, 0, 262146, 24, 0, 262147, 24, 0, 262148, 24, 0, 262149, 24, 0, 262150, 24, 0, 262151, 24, 0, 262152, 24, 0, 327681, 24, 0, 327682, 24, 0, 327683, 24, 0, 327684, 24, 0, 327685, 24, 0, 327686, 24, 0, 327687, 24, 0, 327688, 24, 0, 393217, 24, 0, 393218, 24, 0, 393219, 24, 0, 393220, 24, 0, 393221, 24, 0, 393222, 24, 0, 393223, 24, 0, 393224, 24, 0, 458753, 24, 0, 458754, 24, 0, 458755, 24, 0, 458756, 24, 0, 458757, 24, 0, 458758, 24, 0, 458759, 24, 0, 458760, 24, 0, 524289, 24, 0, 524290, 24, 0, 524291, 24, 0, 524292, 24, 0, 524293, 24, 0, 524294, 24, 0, 524295, 24, 0, 524296, 24, 0, 589825, 24, 0, 589826, 24, 0, 589827, 24, 0, 589828, 24, 0, 589829, 24, 0, 589830, 24, 0, 589831, 24, 0, 589832, 24, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_crack" type="Sprite" parent="Background"]
+position = Vector2( 147, 65 )
+texture = ExtResource( 16 )
+
+[node name="wall_pipe" type="Sprite" parent="Background"]
+position = Vector2( 112, 41 )
+texture = ExtResource( 4 )
+
+[node name="furniture_shelf" type="Sprite" parent="Background"]
+position = Vector2( 137, 103 )
+texture = ExtResource( 5 )
+
+[node name="floor_carpet2" type="Sprite" parent="Background"]
+position = Vector2( 224, 79 )
+texture = ExtResource( 10 )
+
+[node name="floor_oil" type="Sprite" parent="Background"]
+position = Vector2( 216, 254 )
+texture = ExtResource( 11 )
+
+[node name="floor_oil_2" type="Sprite" parent="Background"]
+position = Vector2( 95, 247 )
+texture = ExtResource( 12 )
+
+[node name="floor_oil_3" type="Sprite" parent="Background"]
+position = Vector2( 155, 195 )
+texture = ExtResource( 8 )
+
+[node name="floor_tracks" type="Sprite" parent="Background"]
+position = Vector2( 169, 265 )
+texture = ExtResource( 21 )
+
+[node name="floor_tracks_2" type="Sprite" parent="Background"]
+position = Vector2( 113, 281 )
+texture = ExtResource( 19 )
+
+[node name="floor_paper" type="Sprite" parent="Background"]
+position = Vector2( 126, 147 )
+texture = ExtResource( 20 )
+
+[node name="floor_papers" type="Sprite" parent="Background"]
+position = Vector2( 112, 143 )
+texture = ExtResource( 22 )
+
+[node name="floor_papers2" type="Sprite" parent="Background"]
+position = Vector2( 221, 203 )
+texture = ExtResource( 22 )
+
+[node name="wall_crack_2" type="Sprite" parent="Background"]
+position = Vector2( 263, 86 )
+texture = ExtResource( 17 )
+
+[node name="misc_shelf_2" type="Sprite" parent="Background"]
+position = Vector2( 48, 71 )
+texture = ExtResource( 18 )
+
+[node name="furniture_cupboard" type="Sprite" parent="Background"]
+position = Vector2( 64, 122 )
+texture = ExtResource( 26 )
+
+[node name="misc_box2" type="Sprite" parent="Background"]
+position = Vector2( 48, 100 )
+texture = ExtResource( 23 )
+
+[node name="misc_box" type="Sprite" parent="Background"]
+position = Vector2( 53, 145 )
+texture = ExtResource( 23 )
+
+[node name="furniture_shoerack" type="Sprite" parent="Background"]
+position = Vector2( 281, 152 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 25 )
+
+[node name="misc_fabric" type="Sprite" parent="Background"]
+position = Vector2( 78, 99 )
+texture = ExtResource( 24 )
+
+[node name="wall_lightswitch" type="Sprite" parent="Background"]
+position = Vector2( 184, 92 )
+texture = ExtResource( 27 )
+
+[node name="misc_shoes" type="Sprite" parent="Background"]
+position = Vector2( 240, 86 )
+texture = ExtResource( 28 )
+
+[node name="wall_door" type="Sprite" parent="Background"]
+position = Vector2( 224, 30 )
+texture = ExtResource( 33 )
+
+[node name="item_redpaint" type="Sprite" parent="Background"]
+position = Vector2( 127, 98 )
+texture = ExtResource( 37 )
+
+[node name="FloorSaltLong" type="Sprite" parent="Background"]
+position = Vector2( 144, 313 )
+texture = ExtResource( 42 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_boxpile" parent="Main" instance=ExtResource( 29 )]
+position = Vector2( 250, 241 )
+
+[node name="bench_anchor" type="Node2D" parent="Main/misc_boxpile"]
+position = Vector2( 26, 44 )
+
+[node name="misc_boxes" parent="Main" instance=ExtResource( 2 )]
+position = Vector2( 68, 316 )
+
+[node name="misc_umbrellabasket" parent="Main" instance=ExtResource( 32 )]
+position = Vector2( 200, 129 )
+
+[node name="misc_lamp" parent="Main" instance=ExtResource( 6 )]
+position = Vector2( 44, 214 )
+
+[node name="furniture_chair" parent="Main" instance=ExtResource( 7 )]
+position = Vector2( 262, 140 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -131068, 25, 196610, -131067, 25, 65539, -131066, 25, 262146, -131065, 25, 262146, -131064, 25, 65538, -131063, 25, 196610, -1, 25, 196610, -65536, 25, 196610, -65535, 25, 196610, -65534, 25, 196610, -65533, 25, 196610, -65532, 25, 196610, -65531, 25, 196611, -65528, 25, 196609, -65527, 25, 196610, -65526, 25, 196610, 65535, 25, 196610, 0, 25, 65539, 1, 25, 262146, 2, 25, 262146, 3, 25, 262146, 4, 25, 262146, 5, 25, 262147, 8, 25, 262145, 9, 25, 65538, 10, 25, 196610, 131071, 25, 196610, 65536, 25, 196611, 65545, 25, 196609, 65546, 25, 196610, 196607, 25, 196610, 131072, 25, 196611, 131081, 25, 196609, 131082, 25, 196610, 262143, 25, 196610, 196608, 25, 196611, 196617, 25, 196609, 196618, 25, 196610, 327679, 25, 196610, 262144, 25, 196611, 262153, 25, 196609, 262154, 25, 196610, 393215, 25, 196610, 327680, 25, 196611, 327689, 25, 196609, 327690, 25, 196610, 458751, 25, 196610, 393216, 25, 196611, 393225, 25, 196609, 393226, 25, 196610, 524287, 25, 196610, 458752, 25, 196611, 458761, 25, 196609, 458762, 25, 196610, 589823, 25, 196610, 524288, 25, 196611, 524297, 25, 196609, 524298, 25, 196610, 655359, 25, 196610, 589824, 25, 196611, 589833, 25, 196609, 589834, 25, 196610, 720895, 25, 196610, 655360, 25, 3, 655361, 25, 131074, 655362, 25, 131074, 655363, 25, 131074, 655364, 25, 131074, 655365, 25, 131074, 655366, 25, 131074, 655367, 25, 131074, 655368, 25, 131074, 655369, 25, 2, 655370, 25, 196610, 786431, 25, 196610, 720896, 25, 196610, 720897, 25, 196610, 720898, 25, 196610, 720899, 25, 196610, 720900, 25, 196610, 720901, 25, 196610, 720902, 25, 196610, 720903, 25, 196610, 720904, 25, 196610, 720905, 25, 196610, 720906, 25, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_garagedoor" type="Sprite" parent="Foreground"]
+position = Vector2( 144, 318 )
+texture = ExtResource( 9 )
+
+[node name="furniture_bookshelf" type="Sprite" parent="Foreground"]
+position = Vector2( 41, 272 )
+texture = ExtResource( 13 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 36 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_salt_on_door" type="Node" parent="Other/Events"]
+script = ExtResource( 41 )
+Items = "ch1.salt"
+Nodes = "misc_garagedoor"
+
+[node name="misc_umbrellabasket" type="Node2D" parent="Other/Events"]
+position = Vector2( 200, 124 )
+script = ExtResource( 1 )
+Area = Vector2( 14, 14 )
+
+[node name="misc_lamp" type="Node2D" parent="Other/Events"]
+position = Vector2( 43, 213 )
+script = ExtResource( 1 )
+Area = Vector2( 14, 14 )
+
+[node name="misc_lightswitch" type="Node2D" parent="Other/Events"]
+position = Vector2( 184, 120 )
+script = ExtResource( 15 )
+Directions = 2
+Area = Vector2( 16, 16 )
+
+[node name="misc_boxes" type="Node2D" parent="Other/Events"]
+position = Vector2( 67, 304 )
+script = ExtResource( 15 )
+Area = Vector2( 40, 24 )
+
+[node name="misc_chair" type="Node2D" parent="Other/Events"]
+position = Vector2( 262, 134 )
+script = ExtResource( 15 )
+Directions = 13
+Area = Vector2( 20, 14 )
+
+[node name="misc_cupboard" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 128 )
+script = ExtResource( 15 )
+
+[node name="misc_boxes_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 50, 136 )
+script = ExtResource( 15 )
+
+[node name="misc_shelf" type="Node2D" parent="Other/Events"]
+position = Vector2( 137, 120 )
+script = ExtResource( 15 )
+Area = Vector2( 80, 32 )
+
+[node name="misc_shelf_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 34, 272 )
+script = ExtResource( 15 )
+Area = Vector2( 32, 64 )
+
+[node name="misc_shoerack" type="Node2D" parent="Other/Events"]
+position = Vector2( 289, 160 )
+script = ExtResource( 15 )
+Area = Vector2( 32, 64 )
+
+[node name="misc_boxpile_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 257, 208 )
+script = ExtResource( 15 )
+Event = "misc_boxpile"
+
+[node name="misc_boxpile_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 240, 200 )
+script = ExtResource( 15 )
+Event = "misc_boxpile"
+Area = Vector2( 16, 16 )
+
+[node name="misc_boxpile_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 226, 224 )
+script = ExtResource( 15 )
+Event = "misc_boxpile"
+Area = Vector2( 16, 16 )
+
+[node name="misc_boxpile_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 249, 219 )
+script = ExtResource( 15 )
+Event = "misc_boxpile"
+
+[node name="misc_trashcan" type="Node2D" parent="Other/Events"]
+position = Vector2( 273, 241 )
+script = ExtResource( 15 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_garagedoor" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 336 )
+script = ExtResource( 15 )
+Area = Vector2( 96, 32 )
+
+[node name="misc_bucket" type="Node2D" parent="Other/Events"]
+position = Vector2( 219, 239 )
+script = ExtResource( 1 )
+Area = Vector2( 16, 8 )
+
+[node name="item_paint_get" type="Node2D" parent="Other/Events"]
+position = Vector2( 137, 128 )
+script = ExtResource( 15 )
+Area = Vector2( 80, 16 )
+
+[node name="move_kitchen" type="Node2D" parent="Other/Events"]
+position = Vector2( 224, 48 )
+script = ExtResource( 15 )
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="kitchen_door" type="Node2D" parent="Other/Points"]
+position = Vector2( 224, 80 )
+script = ExtResource( 39 )
+
+[node name="chair" type="Node2D" parent="Other"]
+position = Vector2( 262, 134 )
+script = ExtResource( 30 )
+Area = Vector2( 20, 14 )
+RelatedNode = NodePath("../../Main/furniture_chair")
+PlayerOffset = Vector2( 0, -8 )
+
+[node name="bench" type="Node2D" parent="Other"]
+position = Vector2( 276, 285 )
+script = ExtResource( 30 )
+Area = Vector2( 16, 72 )
+Wide = true
+RelatedNode = NodePath("../../Main/misc_boxpile/bench_anchor")
+PlayerOffset = Vector2( -8, -2 )
+Direction = 1
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="busfail_salt" type="Node" parent="Other/Updates"]
+script = ExtResource( 43 )
+Objective = "ch1.revert_ritual_execution.salt_garage"
+Node = NodePath("../../../Background/FloorSaltLong")

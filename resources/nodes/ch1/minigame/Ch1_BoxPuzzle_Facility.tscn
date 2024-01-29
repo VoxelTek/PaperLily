@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/Subgame/BoxPuzzleMinigame/BoxPuzzle.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/minigame/boxpuzzle/facility_box.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/ch1/minigame/boxpuzzle/facility_goal.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/minigame/boxpuzzle/facility_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/minigame/boxpuzzle/facility_boxgoal.png" type="Texture" id=5]
+
+[node name="Ch1_BoxPuzzle_Facility" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+OnSuccessEvent = "event_boxpuzzle_success"
+OnFailureEvent = "event_boxpuzzle_fail"
+Rows = 10
+Columns = 9
+Grid = "706600111
+001010010
+616601000
+010061610
+000110000
+116010061
+000166010
+010101010
+006006100
+001466066"
+BgSizeX = 302
+BgSizeY = 336
+BgMarginLeft = 7
+BgMarginTop = 8
+BgMarginRight = 7
+BgMarginBottom = 8
+TexBg = ExtResource( 4 )
+TexBlock = ExtResource( 2 )
+TexGoal = ExtResource( 3 )
+TexBlockGoal = ExtResource( 5 )

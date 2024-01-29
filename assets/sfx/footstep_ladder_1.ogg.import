@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/footstep_ladder_1.ogg-5fa17c8d414d384a1ef71d66ecbd3586.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/footstep_ladder_1.ogg"
+dest_files=[ "res://.import/footstep_ladder_1.ogg-5fa17c8d414d384a1ef71d66ecbd3586.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

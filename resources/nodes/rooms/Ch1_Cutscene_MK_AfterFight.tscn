@@ -1,0 +1,180 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://script/Core/Nodes/ActionFade2D.cs" type="Script" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/mk_fireoff.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/cutscene/bg_afterfight.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/cutscene/mk_cry_stand.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/cutscene/mk_lk_cry.png" type="Texture" id=10]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=11]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=12]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=13]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=14]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=15]
+[ext_resource path="res://script/Nodes/LightFlickering.cs" type="Script" id=16]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=17]
+[ext_resource path="res://resources/nodes/ch1/fireplace_fire.tscn" type="PackedScene" id=18]
+
+[node name="Ch1_Cutscene_MK_AfterFight" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BgAfterfight" type="Sprite" parent="Background"]
+position = Vector2( 22, 106 )
+texture = ExtResource( 8 )
+offset = Vector2( 429, 162 )
+
+[node name="Fire" parent="Background/BgAfterfight" instance=ExtResource( 18 )]
+modulate = Color( 2, 1, 1, 1 )
+position = Vector2( 424, 104 )
+region_enabled = true
+region_rect = Rect2( 0, 10, 240, 44 )
+
+[node name="Light" type="Light2D" parent="Background/BgAfterfight/Fire"]
+position = Vector2( -5, 24 )
+texture = ExtResource( 17 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+
+[node name="ChrMkCry" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 444, 258 )
+texture = ExtResource( 9 )
+hframes = 8
+script = ExtResource( 13 )
+Loop = false
+Autostart = false
+FrameDurations = "100,120,500,200,100,200,100,100"
+
+[node name="MkLkCry" type="Sprite" parent="Background"]
+position = Vector2( 444, 272 )
+texture = ExtResource( 10 )
+hframes = 2
+script = ExtResource( 13 )
+FPS = 3.0
+
+[node name="shiny" parent="Background" instance=ExtResource( 2 )]
+position = Vector2( 444, 352 )
+
+[node name="MkFireoff" type="Sprite" parent="Background"]
+visible = false
+light_mask = 2
+position = Vector2( 444, 236 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -35 )
+hframes = 3
+script = ExtResource( 14 )
+Loop = false
+Autostart = false
+AnimationFrames = "0,1,2,0"
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lacie" type="Node2D" parent="Other/Points"]
+position = Vector2( 445, 418 )
+script = ExtResource( 6 )
+
+[node name="mk" type="Node2D" parent="Other/Points"]
+position = Vector2( 444, 288 )
+script = ExtResource( 6 )
+Direction = 2
+
+[node name="camera" type="Node2D" parent="Other/Points"]
+position = Vector2( 444, 330 )
+script = ExtResource( 6 )
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="hide_bg" type="Node" parent="Other/Actions"]
+script = ExtResource( 12 )
+Node = NodePath("../../../Background")
+Visible = false
+
+[node name="fade_in_bg" type="Node" parent="Other/Actions"]
+script = ExtResource( 5 )
+Node = NodePath("../../../Background")
+Duration = 3.0
+
+[node name="crossfade_chars" type="Node" parent="Other/Actions"]
+script = ExtResource( 11 )
+
+[node name="fade_out_lk" type="Node" parent="Other/Actions/crossfade_chars"]
+script = ExtResource( 5 )
+Node = NodePath("../../../../Background/MkLkCry")
+FadeIn = false
+Duration = 4.0
+
+[node name="fade_in_mk" type="Node" parent="Other/Actions/crossfade_chars"]
+script = ExtResource( 5 )
+Node = NodePath("../../../../Background/ChrMkCry")
+Duration = 4.0
+
+[node name="mk_stand" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+Node = NodePath("../../../Background/ChrMkCry")
+
+[node name="hide_mk" type="Node" parent="Other/Actions"]
+script = ExtResource( 12 )
+Node = NodePath("../../../Background/ChrMkCry")
+Visible = false
+
+[node name="show_mk_fire" type="Node" parent="Other/Actions"]
+script = ExtResource( 12 )
+Node = NodePath("../../../Background/MkFireoff")
+
+[node name="play_mk_fire" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+Node = NodePath("../../../Background/MkFireoff")
+
+[node name="hide_fire" type="Node" parent="Other/Actions"]
+script = ExtResource( 12 )
+Node = NodePath("../../../Background/BgAfterfight/Fire")
+Visible = false
+
+[node name="fade_out_bg" type="Node" parent="Other/Actions"]
+script = ExtResource( 5 )
+Node = NodePath("../../../Background")
+FadeIn = false
+Duration = 3.0

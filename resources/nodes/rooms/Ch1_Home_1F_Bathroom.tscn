@@ -1,0 +1,248 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/wall_mirror_overlay.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/furniture_counter.png" type="Texture" id=2]
+[ext_resource path="res://resources/tileset/ch1_home.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/wall_light.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/wall_towel.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/wall_mirror.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/wall_lightswitch.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/furniture_toilet.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/misc_tp.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/floor_rug.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/wall_shelf.png" type="Texture" id=11]
+[ext_resource path="res://script/Nodes/CommonMirror.cs" type="Script" id=12]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/misc_trashcan2.png" type="Texture" id=13]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1Home1fBathroom.cs" type="Script" id=14]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/misc_toiletries.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/misc_toiletries_2.png" type="Texture" id=16]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/common/white.png" type="Texture" id=19]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=21]
+[ext_resource path="res://assets/bgm/ch1_home.ogg" type="AudioStream" id=22]
+[ext_resource path="res://resources/lighting/ch1_home_day_nowindow.tres" type="Resource" id=23]
+[ext_resource path="res://resources/lighting/ch1_home_night_nowindow.tres" type="Resource" id=24]
+[ext_resource path="res://resources/lighting/ch1_home_evening_nowindow.tres" type="Resource" id=25]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=26]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/chr_spook_eyes.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/home/bathroom/chr_spook.png" type="Texture" id=28]
+[ext_resource path="res://resources/material/unshaded.tres" type="Material" id=29]
+[ext_resource path="res://script/Core/Nodes/ActionFade2D.cs" type="Script" id=30]
+
+[node name="Ch1_Home_1F_Bathroom" type="Node2D"]
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -256
+CameraLimitTop = -244
+CameraLimitRight = 384
+CameraLimitBottom = 116
+Bgm = ExtResource( 22 )
+lightDay = ExtResource( 23 )
+lightEvening = ExtResource( 25 )
+lightNight = ExtResource( 24 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -327680, 23, 1, -327679, 23, 1, -327678, 23, 1, -327677, 23, 1, -327676, 23, 2, -196609, 23, 2, -262144, 23, 65537, -262143, 23, 65537, -262142, 23, 65537, -262141, 23, 65537, -262140, 23, 65538, -131073, 23, 65538, -196608, 23, 131073, -196607, 23, 131073, -196606, 23, 131073, -196605, 23, 131073, -196604, 23, 131074, -65537, 23, 131074, -131072, 21, 0, -131071, 21, 0, -131070, 21, 0, -131069, 21, 0, -131068, 21, 0, -1, 21, 0, -65536, 21, 0, -65535, 21, 0, -65534, 21, 0, -65533, 21, 0, -65532, 21, 0, 65535, 21, 0, 0, 21, 0, 1, 21, 0, 2, 21, 0, 3, 21, 0, 4, 21, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_rug" type="Sprite" parent="Background"]
+position = Vector2( 48, -10 )
+texture = ExtResource( 10 )
+
+[node name="wall_mirror" type="Sprite" parent="Background"]
+position = Vector2( 48, -104 )
+texture = ExtResource( 6 )
+
+[node name="ChrSpook" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 58, -102 )
+texture = ExtResource( 28 )
+
+[node name="ChrSpookEyes" type="Sprite" parent="Background/ChrSpook"]
+material = ExtResource( 29 )
+position = Vector2( -2, -10 )
+texture = ExtResource( 27 )
+
+[node name="MirrorReflection" type="Light2D" parent="Background"]
+position = Vector2( 48, -102.5 )
+scale = Vector2( 58, 45 )
+texture = ExtResource( 19 )
+mode = 2
+script = ExtResource( 12 )
+DistanceToFloor = 32
+ReflectionOffset = Vector2( 0, 4 )
+
+[node name="wall_mirror_overlay" type="Sprite" parent="Background"]
+modulate = Color( 1, 1, 1, 0.5 )
+light_mask = -2147483648
+position = Vector2( 48, -104 )
+texture = ExtResource( 1 )
+
+[node name="furniture_counter4" type="Sprite" parent="Background"]
+position = Vector2( 48, -57 )
+texture = ExtResource( 2 )
+
+[node name="wall_towel" type="Sprite" parent="Background"]
+position = Vector2( 97, -98 )
+texture = ExtResource( 5 )
+
+[node name="misc_tp" type="Sprite" parent="Background"]
+position = Vector2( 156, -70 )
+texture = ExtResource( 9 )
+
+[node name="wall_shelf" type="Sprite" parent="Background"]
+position = Vector2( 136, -124 )
+texture = ExtResource( 11 )
+
+[node name="wall_light" type="Sprite" parent="Background"]
+position = Vector2( 48, -135 )
+texture = ExtResource( 4 )
+
+[node name="wall_lightswitch" type="Sprite" parent="Background"]
+position = Vector2( -17, -63 )
+texture = ExtResource( 7 )
+
+[node name="misc_trashcan2" type="Sprite" parent="Background"]
+position = Vector2( 108, -61 )
+texture = ExtResource( 13 )
+
+[node name="furniture_toilet" type="Sprite" parent="Background"]
+position = Vector2( 136, -62 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="misc_toiletries2" type="Sprite" parent="Background"]
+position = Vector2( 81, -69 )
+texture = ExtResource( 16 )
+
+[node name="misc_toiletries" type="Sprite" parent="Background"]
+position = Vector2( 15, -69 )
+texture = ExtResource( 15 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -393219, 22, 196610, -393218, 22, 196610, -393217, 22, 196610, -458752, 22, 196610, -458751, 22, 196610, -458750, 22, 196610, -458749, 22, 196610, -458748, 22, 196610, -458747, 22, 196610, -458746, 22, 196610, -327683, 22, 196610, -327682, 22, 196610, -327681, 22, 65539, -393216, 22, 262146, -393215, 22, 262146, -393214, 22, 262146, -393213, 22, 262146, -393212, 22, 262146, -393211, 22, 65538, -393210, 22, 196610, -262147, 22, 196610, -262146, 22, 196610, -262145, 22, 262147, -327675, 22, 196609, -327674, 22, 196610, -196611, 22, 196610, -196610, 22, 196610, -262139, 22, 196609, -262138, 22, 196610, -131075, 22, 196610, -131074, 22, 196610, -196603, 22, 196609, -196602, 22, 196610, -65539, 22, 196610, -65538, 22, 196610, -131067, 22, 196609, -131066, 22, 196610, -3, 22, 196610, -2, 22, 196610, -65531, 22, 196609, -65530, 22, 196610, 65533, 22, 196610, 65534, 22, 196610, 5, 22, 196609, 6, 22, 196610, 131069, 22, 196610, 131070, 22, 196610, 131071, 22, 131074, 65536, 22, 131074, 65537, 22, 131074, 65538, 22, 131074, 65539, 22, 131074, 65540, 22, 131074, 65541, 22, 2, 65542, 22, 196610, 196605, 22, 196610, 196606, 22, 196610, 196607, 22, 196610, 131072, 22, 196610, 131073, 22, 196610, 131074, 22, 196610, 131075, 22, 196610, 131076, 22, 196610, 131077, 22, 196610, 131078, 22, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="light_fadeout_2" type="Sprite" parent="Foreground"]
+position = Vector2( -16, -63.5 )
+scale = Vector2( 0.25, 1.60156 )
+texture = ExtResource( 18 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_spook_mirror" type="Node2D" parent="Other/Events"]
+position = Vector2( 48, -24 )
+script = ExtResource( 21 )
+Event = "ch1_event_home_mirrorspook"
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 16 )
+
+[node name="item_lipstick_on_mirror" type="Node" parent="Other/Events"]
+script = ExtResource( 20 )
+Event = "ch1_item_lipstick_on_mirror"
+Items = "ch1.lipstick"
+Nodes = "misc_mirror"
+
+[node name="misc_drawer" type="Node2D" parent="Other/Events"]
+position = Vector2( 16, -48 )
+script = ExtResource( 21 )
+
+[node name="misc_drawer_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, -48 )
+script = ExtResource( 21 )
+
+[node name="misc_mirror" type="Node2D" parent="Other/Events"]
+position = Vector2( 48, -48 )
+script = ExtResource( 21 )
+
+[node name="misc_toilet" type="Node2D" parent="Other/Events"]
+position = Vector2( 135, -48 )
+script = ExtResource( 21 )
+
+[node name="misc_toiletpaper" type="Node2D" parent="Other/Events"]
+position = Vector2( 152, -40 )
+script = ExtResource( 21 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_lightswitch" type="Node2D" parent="Other/Events"]
+position = Vector2( -16, -40 )
+script = ExtResource( 21 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_trashcan" type="Node2D" parent="Other/Events"]
+position = Vector2( 108, -40 )
+script = ExtResource( 21 )
+Area = Vector2( 16, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( -48, 0 )
+script = ExtResource( 21 )
+Area = Vector2( 32, 64 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="livingroom_door" type="Node2D" parent="Other/Points"]
+position = Vector2( -16, 0 )
+script = ExtResource( 17 )
+Direction = 4
+
+[node name="spook_mirror" type="Node2D" parent="Other/Points"]
+position = Vector2( 48, -24 )
+script = ExtResource( 17 )
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="spook_mirror_start" type="Node" parent="Other/Actions"]
+script = ExtResource( 30 )
+Node = NodePath("../../../Background/ChrSpook")
+
+[node name="spook_mirror_end" type="Node" parent="Other/Actions"]
+script = ExtResource( 30 )
+Node = NodePath("../../../Background/ChrSpook")
+FadeIn = false

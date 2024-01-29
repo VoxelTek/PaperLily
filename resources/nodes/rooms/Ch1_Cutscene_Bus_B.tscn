@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneBusB.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_scooch_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_sit.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie.png" type="Texture" id=4]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Bus_B.tscn" type="PackedScene" id=5]
+[ext_resource path="res://resources/lighting/ch1_bus.tres" type="Resource" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animation"
+length = 4.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 4, 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 1, 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 3.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 7, -18 ), Vector2( 7, -8 ), Vector2( 7, 0 ), Vector2( 5, 19 ), Vector2( 5, 2 ), Vector2( 5, 18 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 2, 3, 3, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../chr_juniper:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="Ch1_Cutscene_Bus_B" type="Node2D"]
+script = ExtResource( 1 )
+Cutscene = true
+Lighting = ExtResource( 6 )
+CameraLimitLeft = 64
+CameraLimitTop = 64
+CameraLimitRight = 704
+CameraLimitBottom = 424
+
+[node name="Ch1_Bus_B" parent="." instance=ExtResource( 5 )]
+
+[node name="lacie" type="Sprite" parent="Ch1_Bus_B/Background/seats_b5" index="0"]
+position = Vector2( 7, -18 )
+texture = ExtResource( 2 )
+hframes = 5
+
+[node name="Animation" type="AnimationPlayer" parent="Ch1_Bus_B/Background/seats_b5/lacie"]
+playback_speed = 2.0
+anims/animation = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 64, 64 )
+anchor_mode = 0
+
+[editable path="Ch1_Bus_B"]

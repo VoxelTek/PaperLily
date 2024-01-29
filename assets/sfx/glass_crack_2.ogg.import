@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/glass_crack_2.ogg-d1105a8d0613523a12399fba6cdacbd0.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/glass_crack_2.ogg"
+dest_files=[ "res://.import/glass_crack_2.ogg-d1105a8d0613523a12399fba6cdacbd0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

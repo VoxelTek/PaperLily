@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bus_leave.ogg-e9f30e6833f5192b6029019bb33b8546.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/bus_leave.ogg"
+dest_files=[ "res://.import/bus_leave.ogg-e9f30e6833f5192b6029019bb33b8546.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

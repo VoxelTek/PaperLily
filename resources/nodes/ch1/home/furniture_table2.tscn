@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/livingroom/furniture_table2.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite/ch1/home/livingroom/misc_plant3.png" type="Texture" id=2]
+
+[node name="furniture_table2" type="Node2D"]
+
+[node name="furniture_table2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, 0.5 )
+
+[node name="misc_plant3" type="Sprite" parent="."]
+position = Vector2( -16, -12 )
+texture = ExtResource( 2 )

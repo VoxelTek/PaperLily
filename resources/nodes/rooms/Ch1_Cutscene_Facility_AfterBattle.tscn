@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Facility_B3F_East.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprite/ch1/cutscene/sai_lean_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_lacie_rise.png" type="Texture" id=4]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=5]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=6]
+[ext_resource path="res://resources/lighting/ch1_facility.tres" type="Resource" id=7]
+
+[node name="Ch1_Cutscene_Facility_AfterBattle" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 7 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="SaiLean2" type="Sprite" parent="Room/Background" index="68"]
+position = Vector2( 582, -22 )
+texture = ExtResource( 3 )
+
+[node name="ChrLacieRise" type="Sprite" parent="Room/Background" index="69"]
+position = Vector2( 582, 47 )
+texture = ExtResource( 4 )
+offset = Vector2( -1, -23 )
+hframes = 7
+
+[node name="lacie_open_eyes" type="Node" parent="."]
+script = ExtResource( 5 )
+Node = NodePath("../Room/Background/ChrLacieRise")
+Frame = 1
+
+[node name="lacie_floor_hide" type="Node" parent="."]
+script = ExtResource( 6 )
+Node = NodePath("../Room/Background/ChrLacieRise")
+Visible = false
+
+[editable path="Room"]

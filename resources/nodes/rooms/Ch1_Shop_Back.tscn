@@ -1,0 +1,299 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_shop.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/shop/wall_sign.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/shop/furniture_chair.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/shop/furniture_desk.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/shop/misc_bell.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/shop/misc_daruma.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/shop/wall_door.png" type="Texture" id=9]
+[ext_resource path="res://script/Core/Nodes/NpcStaticIdleTurnable.cs" type="Script" id=10]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=11]
+[ext_resource path="res://assets/sprite/ch1/shop/floor_carpet.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/shop/furniture_shelf.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/shop/furniture_bench.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/shop/misc_book.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/shop/misc_candle.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/shop/wall_paper.png" type="Texture" id=17]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=18]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=19]
+[ext_resource path="res://assets/bgm/ch1_shop.ogg" type="AudioStream" id=20]
+[ext_resource path="res://script/Nodes/Chair.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=22]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=23]
+[ext_resource path="res://assets/sprite/ch1/shop/misc_bunny.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/misc_terrarium.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/shop/misc_rainbowliquid.png" type="Texture" id=26]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=27]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 16 )
+
+[node name="Ch1_Shop_Back" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -240
+CameraLimitTop = -68
+CameraLimitRight = 400
+CameraLimitBottom = 292
+Bgm = ExtResource( 20 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 2, 1, 1, 2, 1, 2, 2, 1, 3, 2, 1, 4, 2, 1, 65536, 2, 65537, 65537, 2, 65537, 65538, 2, 65537, 65539, 2, 65537, 65540, 2, 65537, 131072, 2, 131073, 131073, 2, 131073, 131074, 2, 131073, 131075, 2, 131073, 131076, 2, 131073, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 458755, 0, 0, 458756, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Floor" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorCarpet" type="Sprite" parent="Floor"]
+position = Vector2( 128, 241 )
+texture = ExtResource( 12 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Shelf" type="Sprite" parent="Background"]
+position = Vector2( 40, 69 )
+texture = ExtResource( 13 )
+
+[node name="MiscCandle" type="Sprite" parent="Background/Shelf"]
+position = Vector2( 29, -35 )
+texture = ExtResource( 16 )
+
+[node name="MiscDaruma" type="Sprite" parent="Background/Shelf"]
+position = Vector2( 6, -31 )
+texture = ExtResource( 8 )
+
+[node name="Rainbow1" type="Sprite" parent="Background/Shelf"]
+position = Vector2( -2, -5 )
+texture = ExtResource( 26 )
+
+[node name="Rainbow2" type="Sprite" parent="Background/Shelf"]
+position = Vector2( 10, -5 )
+texture = ExtResource( 26 )
+
+[node name="Rainbow3" type="Sprite" parent="Background/Shelf"]
+position = Vector2( 22, -5 )
+texture = ExtResource( 26 )
+
+[node name="WallDoor" type="Sprite" parent="Background"]
+position = Vector2( 128, 64 )
+texture = ExtResource( 9 )
+
+[node name="WallPaper" type="Sprite" parent="Background"]
+position = Vector2( 99, 51 )
+texture = ExtResource( 17 )
+
+[node name="WallPaper2" type="Sprite" parent="Background"]
+position = Vector2( 91, 71 )
+texture = ExtResource( 17 )
+
+[node name="WallSign" type="Sprite" parent="Background"]
+position = Vector2( 128, 78 )
+texture = ExtResource( 4 )
+
+[node name="MiscTerrarium" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 91, 154 )
+texture = ExtResource( 25 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureChair" type="Sprite" parent="Main"]
+position = Vector2( 39, 114 )
+texture = ExtResource( 5 )
+
+[node name="chr_shadowgirl" type="Node2D" parent="Main/FurnitureChair"]
+position = Vector2( 0, -5 )
+script = ExtResource( 10 )
+CharacterId = "shadowgirl"
+TurnSpriteState = "sit"
+
+[node name="FurnitureDesk" type="Sprite" parent="Main"]
+position = Vector2( 40, 130 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, 14 )
+
+[node name="MiscBell" type="Sprite" parent="Main/FurnitureDesk"]
+position = Vector2( 32, 3 )
+texture = ExtResource( 7 )
+
+[node name="MiscBook" type="Sprite" parent="Main/FurnitureDesk"]
+position = Vector2( -3, 2 )
+texture = ExtResource( 15 )
+
+[node name="MiscBunny" type="Sprite" parent="Main/FurnitureDesk"]
+visible = false
+position = Vector2( -14, 47 )
+texture = ExtResource( 24 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 1, 196610, -65537, 1, 196610, -131072, 1, 196610, -131071, 1, 196610, -131070, 1, 196610, -131069, 1, 196610, -131068, 1, 196610, -131067, 1, 196610, -131066, 1, 196610, -2, 1, 196610, -1, 1, 65539, -65536, 1, 262146, -65535, 1, 262146, -65534, 1, 262146, -65533, 1, 262146, -65532, 1, 262146, -65531, 1, 65538, -65530, 1, 196610, 65534, 1, 196610, 65535, 1, 196611, 5, 1, 196609, 6, 1, 196610, 131070, 1, 196610, 131071, 1, 196611, 65541, 1, 196609, 65542, 1, 196610, 196606, 1, 196610, 196607, 1, 196611, 131077, 1, 196609, 131078, 1, 196610, 262142, 1, 196610, 262143, 1, 196611, 196613, 1, 196609, 196614, 1, 196610, 327678, 1, 196610, 327679, 1, 196611, 262149, 1, 196609, 262150, 1, 196610, 393214, 1, 196610, 393215, 1, 196611, 327685, 1, 196609, 327686, 1, 196610, 458750, 1, 196610, 458751, 1, 196611, 393221, 1, 196609, 393222, 1, 196610, 524286, 1, 196610, 524287, 1, 3, 458752, 1, 131074, 458753, 1, 131074, 458754, 1, 131075, 458757, 1, 196609, 458758, 1, 196610, 589822, 1, 196610, 589823, 1, 196610, 524288, 1, 196610, 524289, 1, 196610, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 524294, 1, 196610, 655358, 1, 196610, 655359, 1, 196610, 589824, 1, 196610, 589825, 1, 196610, 589826, 1, 196610, 589827, 1, 196610, 589828, 1, 196610, 589829, 1, 196610, 589830, 1, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureBench" type="Sprite" parent="Foreground"]
+position = Vector2( 39, 216 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 128, 240 )
+scale = Vector2( 0.59375, 0.25 )
+texture = ExtResource( 19 )
+flip_v = true
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 40, 145 )
+shape = SubResource( 1 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_bunny_on_shadowgirl" type="Node" parent="Other/Events"]
+script = ExtResource( 22 )
+Items = "ch1.forest_bunny"
+Nodes = "chr_shadowgirl
+misc_over_desk"
+
+[node name="item_caterpillar_on_shadowgirl" type="Node" parent="Other/Events"]
+script = ExtResource( 22 )
+Items = "ch1.forest_caterpillar"
+Nodes = "chr_shadowgirl
+misc_over_desk"
+
+[node name="item_fireflies_on_shadowgirl" type="Node" parent="Other/Events"]
+script = ExtResource( 22 )
+Items = "ch1.forest_lamp_full
+ch1.forest_jar_full"
+Nodes = "chr_shadowgirl
+misc_over_desk"
+
+[node name="item_fragment_on_shadowgirl" type="Node" parent="Other/Events"]
+script = ExtResource( 22 )
+Items = "ch1.doorknob_library_fragment"
+Nodes = "chr_shadowgirl
+misc_over_desk"
+
+[node name="chr_shadowgirl" type="Node2D" parent="Other/Events"]
+position = Vector2( 39, 117 )
+script = ExtResource( 11 )
+RelatedNode = NodePath("../../../Main/FurnitureChair/chr_shadowgirl")
+Area = Vector2( 24, 24 )
+
+[node name="misc_bell" type="Node2D" parent="Other/Events"]
+position = Vector2( 72, 145 )
+script = ExtResource( 11 )
+Area = Vector2( 16, 32 )
+
+[node name="misc_over_desk" type="Node2D" parent="Other/Events"]
+position = Vector2( 39, 145 )
+script = ExtResource( 11 )
+Directions = 2
+
+[node name="misc_bookshelf" type="Node2D" parent="Other/Events"]
+position = Vector2( 40, 102 )
+script = ExtResource( 11 )
+Area = Vector2( 80, 16 )
+
+[node name="misc_notes" type="Node2D" parent="Other/Events"]
+position = Vector2( 95, 88 )
+script = ExtResource( 11 )
+Area = Vector2( 16, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 128, 272 )
+script = ExtResource( 11 )
+Area = Vector2( 64, 32 )
+
+[node name="move_enter" type="Node2D" parent="Other/Events"]
+position = Vector2( 128, 80 )
+script = ExtResource( 11 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 128, 240 )
+script = ExtResource( 18 )
+Direction = 2
+
+[node name="from_shop_front" type="Node2D" parent="Other/Points"]
+position = Vector2( 128, 112 )
+script = ExtResource( 18 )
+
+[node name="bubble_shadowgirl" type="Node2D" parent="Other/Points"]
+position = Vector2( 39, 61 )
+script = ExtResource( 18 )
+
+[node name="Bench" type="Node2D" parent="Other"]
+position = Vector2( 39, 216 )
+script = ExtResource( 21 )
+Area = Vector2( 76, 16 )
+Wide = true
+RelatedNode = NodePath("../../Foreground/FurnitureBench")
+PlayerOffset = Vector2( 0, -8 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="rainbow_liquid" type="Node" parent="Other/Updates"]
+script = ExtResource( 27 )
+Variable = "ch1.shop_got_rainbow_liquid"
+Node = NodePath("../../../Background/Shelf/Rainbow3")
+Invert = true
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="show_bunny" type="Node" parent="Other/Actions"]
+script = ExtResource( 23 )
+Node = NodePath("../../../Main/FurnitureDesk/MiscBunny")
+
+[node name="show_caterpillar" type="Node" parent="Other/Actions"]
+script = ExtResource( 23 )
+Node = NodePath("../../../Background/MiscTerrarium")

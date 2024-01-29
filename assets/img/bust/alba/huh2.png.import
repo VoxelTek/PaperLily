@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/huh2.png-bf8118ee5b25ab1174187ea15878e6f8.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/img/bust/alba/huh2.png"
+dest_files=[ "res://.import/huh2.png-bf8118ee5b25ab1174187ea15878e6f8.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

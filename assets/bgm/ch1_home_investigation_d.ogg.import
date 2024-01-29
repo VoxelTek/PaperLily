@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_home_investigation_d.ogg-0b375b15cdf573ea40a9b61f16cc4c21.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_home_investigation_d.ogg"
+dest_files=[ "res://.import/ch1_home_investigation_d.ogg-0b375b15cdf573ea40a9b61f16cc4c21.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0.369

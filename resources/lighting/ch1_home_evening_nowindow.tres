@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Modulate = Color( 0.6, 0.501961, 0.364706, 1 )
+UseNormals = true
+PlayerLightState = false
+PlayerLightEnergy = 1.0
+PlayerLightMode = 0
+EnvironmentLightMode = 0
+GlowLevel = 0
+BackgroundColor = Color( 0, 0, 0, 1 )

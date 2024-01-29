@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_blackpass.ogg-1ecce2d761c6b9275d8963d068a82ce7.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_blackpass.ogg"
+dest_files=[ "res://.import/ch1_blackpass.ogg-1ecce2d761c6b9275d8963d068a82ce7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=17.0

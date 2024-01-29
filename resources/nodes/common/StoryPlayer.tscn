@@ -1,0 +1,107 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/StoryPlayer/StoryPlayer.cs" type="Script" id=1]
+
+[node name="StoryPlayer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="CharLeft" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharLeftMain" type="TextureRect" parent="CharLeft"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -360.0
+margin_right = 250.0
+rect_min_size = Vector2( 250, 360 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharLeftAlt" type="TextureRect" parent="CharLeft"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -360.0
+margin_right = 250.0
+rect_min_size = Vector2( 250, 360 )
+expand = true
+
+[node name="CharRight" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CharRightMain" type="TextureRect" parent="CharRight"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -360.0
+margin_right = 250.0
+rect_min_size = Vector2( 250, 360 )
+rect_scale = Vector2( -1, 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharRightAlt" type="TextureRect" parent="CharRight"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -360.0
+margin_right = 250.0
+rect_min_size = Vector2( 250, 360 )
+rect_scale = Vector2( -1, 1 )
+expand = true
+
+[node name="CG" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CGAlt" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransitionOverlay" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="FlashOverlay" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="Frame" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choices" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ItemPopup" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0

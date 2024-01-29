@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/common/lights/Spotlight_Small.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+Modulate = Color( 0, 0, 0, 1 )
+UseNormals = false
+PlayerLightNode = ExtResource( 2 )
+PlayerLightState = true
+PlayerLightEnergy = 1.0
+PlayerLightMode = 0
+EnvironmentLightMode = 0
+GlowLevel = 3
+BackgroundColor = Color( 0, 0, 0, 1 )

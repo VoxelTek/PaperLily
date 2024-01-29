@@ -1,0 +1,151 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_facility.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/light_bg_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/wall_door.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/wall_clock.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/misc_minute.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/floor_clock.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/light_doorway.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/misc_hour.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/facility/room_c/wall_bg.png" type="Texture" id=10]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=11]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=12]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=13]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=14]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=15]
+[ext_resource path="res://assets/sfx/tick_loop.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/sprite/common/struct_door.png" type="Texture" id=17]
+
+[node name="Ch1_Facility_B1F_PrivateRoom_C" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Bgm = ExtResource( 16 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorClock" type="Sprite" parent="Background"]
+position = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+
+[node name="LightDoorway" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 214, 48 )
+texture = ExtResource( 8 )
+
+[node name="WallDoor" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 258, 18 )
+texture = ExtResource( 4 )
+
+[node name="WallBg" type="Sprite" parent="Background"]
+position = Vector2( 0, -137 )
+texture = ExtResource( 10 )
+
+[node name="WallClock" type="Sprite" parent="Background"]
+position = Vector2( -2, -198 )
+texture = ExtResource( 5 )
+
+[node name="MiscMinute" type="Sprite" parent="Background/WallClock"]
+position = Vector2( 0, -27 )
+texture = ExtResource( 6 )
+
+[node name="MiscHour" type="Sprite" parent="Background/WallClock"]
+position = Vector2( 1, -16 )
+texture = ExtResource( 9 )
+
+[node name="LightBg1" type="Sprite" parent="Background"]
+position = Vector2( -3, -108 )
+texture = ExtResource( 3 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+position = Vector2( 0, 129 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StructDoor" type="Sprite" parent="Foreground"]
+texture = ExtResource( 17 )
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -6, 0, 0, -5, 1, 0, -4, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 0, 0, 65530, 0, 0, 5, 0, 0, 131066, 0, 0, 65541, 0, 0, 196602, 0, 0, 131077, 0, 0, 262138, 0, 0, 196613, 0, 0, 327674, 0, 0, 262149, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( -32, -64, -64, -48, -96, -16, -96, -80, 96, -80, 96, -16, 64, -48, 32, -64 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_clock_floor" type="Node2D" parent="Other/Events"]
+script = ExtResource( 15 )
+Solid = false
+Area = Vector2( 144, 80 )
+
+[node name="misc_clock_wall" type="Node2D" parent="Other/Events"]
+position = Vector2( 0, -72 )
+script = ExtResource( 11 )
+Area = Vector2( 64, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 0, 176 )
+script = ExtResource( 11 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 0, 144 )
+script = ExtResource( 13 )
+Direction = 2

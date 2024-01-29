@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=1]
+[ext_resource path="res://script/Nodes/LightFlickering.cs" type="Script" id=2]
+
+[node name="Light_Candle" type="Light2D"]
+position = Vector2( 0, -17 )
+texture = ExtResource( 1 )
+texture_scale = 4.0
+color = Color( 0.639216, 0.823529, 1, 1 )
+mode = 2
+range_height = 100000.0
+range_item_cull_mask = 3
+shadow_gradient_length = 1.0
+shadow_filter = 5
+shadow_filter_smooth = 3.0
+script = ExtResource( 2 )
+BlendMode = 3
+Height = 3

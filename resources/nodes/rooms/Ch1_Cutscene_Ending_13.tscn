@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=1]
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=2]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Facility_Main_Hall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_13/mistery_person_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_13/misc_remains.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_13/mistery_person_3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_13/mistery_person_2.png" type="Texture" id=8]
+[ext_resource path="res://script/Core/Nodes/ActionPosition2D.cs" type="Script" id=9]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=10]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=11]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=12]
+
+[node name="Ch1_Cutscene_Ending_13" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Subroom = NodePath("Ch1_Facility_Main_Hall")
+
+[node name="Ch1_Facility_Main_Hall" parent="." instance=ExtResource( 3 )]
+
+[node name="MiscRemains" type="Sprite" parent="Ch1_Facility_Main_Hall/Background" index="44"]
+visible = false
+position = Vector2( 544, 604 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0.5 )
+
+[node name="MisteryPerson1" type="Sprite" parent="Ch1_Facility_Main_Hall/Background" index="45"]
+visible = false
+position = Vector2( 572, 586 )
+texture = ExtResource( 5 )
+hframes = 3
+
+[node name="MisteryPerson2" type="Sprite" parent="Ch1_Facility_Main_Hall/Background" index="46"]
+visible = false
+position = Vector2( 572, 588 )
+texture = ExtResource( 8 )
+
+[node name="MisteryPerson3" type="Sprite" parent="Ch1_Facility_Main_Hall/Background" index="47"]
+visible = false
+position = Vector2( 569, 586 )
+texture = ExtResource( 7 )
+hframes = 3
+
+[node name="Points" type="Node" parent="."]
+
+[node name="cutscene_camera" type="Node2D" parent="Points"]
+position = Vector2( 544, 668 )
+script = ExtResource( 1 )
+
+[node name="cutscene_lacie" type="Node2D" parent="Points"]
+position = Vector2( 552, 672 )
+script = ExtResource( 1 )
+Direction = 2
+
+[node name="cutscene_sai" type="Node2D" parent="Points"]
+position = Vector2( 536, 688 )
+script = ExtResource( 1 )
+Direction = 2
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="after_eat" type="Node" parent="Actions"]
+script = ExtResource( 11 )
+
+[node name="show_meat" type="Node" parent="Actions/after_eat"]
+script = ExtResource( 4 )
+Node = NodePath("../../../Ch1_Facility_Main_Hall/Background/MiscRemains")
+
+[node name="move_plush" type="Node" parent="Actions/after_eat"]
+script = ExtResource( 9 )
+Node = NodePath("../../../Ch1_Facility_Main_Hall/Background/MiscPlush")
+Position = Vector2( 549, 570 )
+
+[node name="plush_reset" type="Node" parent="Actions/after_eat"]
+script = ExtResource( 12 )
+Node = NodePath("../../../Ch1_Facility_Main_Hall/Background/MiscPlush")
+
+[node name="show_shadow_1" type="Node" parent="Actions/after_eat"]
+script = ExtResource( 4 )
+Node = NodePath("../../../Ch1_Facility_Main_Hall/Background/MisteryPerson1")
+
+[node name="hide_shadow_1" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Facility_Main_Hall/Background/MisteryPerson1")
+Visible = false
+
+[node name="show_shadow_2" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Facility_Main_Hall/Background/MisteryPerson2")
+
+[node name="hide_shadow_2" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Facility_Main_Hall/Background/MisteryPerson2")
+Visible = false
+
+[node name="show_shadow_3" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Facility_Main_Hall/Background/MisteryPerson3")
+
+[node name="plush_atk" type="Node" parent="Actions"]
+script = ExtResource( 10 )
+Node = NodePath("../../Ch1_Facility_Main_Hall/Background/MiscPlush")
+
+[editable path="Ch1_Facility_Main_Hall"]

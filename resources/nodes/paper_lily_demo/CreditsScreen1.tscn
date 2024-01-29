@@ -1,0 +1,280 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/Subgame/PaperLilyDemo/CreditsScreen1.cs" type="Script" id=1]
+[ext_resource path="res://resources/font/default.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/font/default_large.tres" type="DynamicFont" id=3]
+[ext_resource path="res://resources/nodes/paper_lily_demo/CreditsScreen2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/img/ui/title_logo_paperlily.png" type="Texture" id=5]
+
+[node name="CreditsScreen1" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+WaitTime = 0.0
+NoSkip = true
+KeepState = true
+NextScreen = ExtResource( 4 )
+
+[node name="Bg" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 640, 360 )
+color = Color( 0.941176, 0.921569, 0.858824, 1 )
+
+[node name="Part1" type="VBoxContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -10
+
+[node name="Separator2" type="ColorRect" parent="Part1"]
+margin_right = 640.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="Logo" type="TextureRect" parent="Part1"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 202.0
+margin_top = 140.0
+margin_right = 437.75
+margin_bottom = 185.75
+rect_min_size = Vector2( 235.75, 45.75 )
+size_flags_horizontal = 4
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label2" type="Label" parent="Part1"]
+margin_top = 175.0
+margin_right = 640.0
+margin_bottom = 198.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Chapter 1"
+align = 1
+
+[node name="Part2" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Spacer" type="ColorRect" parent="Part2"]
+margin_right = 640.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Part2"]
+margin_top = 120.0
+margin_right = 640.0
+margin_bottom = 229.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Part2/HBoxContainer"]
+margin_right = 310.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+custom_constants/separation = 28
+alignment = 1
+
+[node name="Label" type="Label" parent="Part2/HBoxContainer/VBoxContainer"]
+margin_top = 5.0
+margin_right = 310.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.story"
+align = 2
+
+[node name="Label2" type="Label" parent="Part2/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 310.0
+margin_bottom = 61.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.artdesign"
+align = 2
+
+[node name="Label3" type="Label" parent="Part2/HBoxContainer/VBoxContainer"]
+margin_top = 89.0
+margin_right = 310.0
+margin_bottom = 103.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.codescripting"
+align = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Part2/HBoxContainer"]
+margin_left = 330.0
+margin_right = 640.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Label2" type="Label" parent="Part2/HBoxContainer/VBoxContainer2"]
+margin_right = 310.0
+margin_bottom = 23.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Kaiyo & Drkie"
+
+[node name="Label3" type="Label" parent="Part2/HBoxContainer/VBoxContainer2"]
+margin_top = 43.0
+margin_right = 310.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Kaiyo"
+
+[node name="Label4" type="Label" parent="Part2/HBoxContainer/VBoxContainer2"]
+margin_top = 86.0
+margin_right = 310.0
+margin_bottom = 109.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Drkie"
+
+[node name="Part3" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Spacer" type="ColorRect" parent="Part3"]
+margin_right = 640.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Part3"]
+margin_top = 120.0
+margin_right = 640.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Part3/HBoxContainer"]
+margin_right = 640.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Part3/HBoxContainer/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.ost"
+align = 1
+
+[node name="Label4" type="Label" parent="Part3/HBoxContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 640.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Crawk"
+align = 1
+
+[node name="Label5" type="Label" parent="Part3/HBoxContainer/VBoxContainer"]
+margin_top = 77.0
+margin_right = 640.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "plasterbrain"
+align = 1
+
+[node name="Part4" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Spacer" type="ColorRect" parent="Part4"]
+margin_right = 640.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Part4"]
+margin_top = 120.0
+margin_right = 640.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Part4/HBoxContainer"]
+margin_right = 640.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label2" type="Label" parent="Part4/HBoxContainer/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.communications.jp"
+align = 1
+
+[node name="Label4" type="Label" parent="Part4/HBoxContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 640.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Sasazaki"
+align = 1
+
+[node name="Label" type="Label" parent="Part4/HBoxContainer/VBoxContainer"]
+margin_top = 77.0
+margin_right = 640.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.shaders"
+align = 1
+
+[node name="Label3" type="Label" parent="Part4/HBoxContainer/VBoxContainer"]
+margin_top = 111.0
+margin_right = 640.0
+margin_bottom = 134.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Mono"
+align = 1
+
+[node name="EndingLabel" type="MarginContainer" parent="."]
+visible = false
+margin_left = 527.0
+margin_top = 336.0
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_constants/margin_right = 20
+custom_constants/margin_bottom = 10
+
+[node name="Label2" type="Label" parent="EndingLabel"]
+margin_right = 93.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "system.endings.1-1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

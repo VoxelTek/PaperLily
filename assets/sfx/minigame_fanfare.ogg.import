@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigame_fanfare.ogg-15381f6c2297c3754c0a35119d8964e4.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/minigame_fanfare.ogg"
+dest_files=[ "res://.import/minigame_fanfare.ogg-15381f6c2297c3754c0a35119d8964e4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

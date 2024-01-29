@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/material/unshaded.tres" type="Material" id=1]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=2]
+[ext_resource path="res://assets/sprite/common/sfx/anim_fire_8x1.png" type="Texture" id=3]
+
+[node name="Fire" type="Sprite"]
+modulate = Color( 1.5, 1, 1, 1 )
+material = ExtResource( 1 )
+texture = ExtResource( 3 )
+hframes = 8
+script = ExtResource( 2 )
+FPS = 10.0

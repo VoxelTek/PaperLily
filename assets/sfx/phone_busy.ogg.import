@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phone_busy.ogg-0783bd5b0e287c05eea39bd3db1da6a0.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/phone_busy.ogg"
+dest_files=[ "res://.import/phone_busy.ogg-0783bd5b0e287c05eea39bd3db1da6a0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

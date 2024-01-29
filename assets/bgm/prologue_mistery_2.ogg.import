@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/prologue_mistery_2.ogg-a44b4ad9dc01b4403137772540ec555a.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/prologue_mistery_2.ogg"
+dest_files=[ "res://.import/prologue_mistery_2.ogg-a44b4ad9dc01b4403137772540ec555a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=2.82

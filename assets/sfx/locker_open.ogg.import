@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/locker_open.ogg-85dfcdc4f8ca9de35a2a4db86c4d958a.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/locker_open.ogg"
+dest_files=[ "res://.import/locker_open.ogg-85dfcdc4f8ca9de35a2a4db86c4d958a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

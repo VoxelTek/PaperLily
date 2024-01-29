@@ -1,0 +1,528 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1FacilityB2fArchives.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_facility.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_hole_10.png" type="Texture" id=4]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/common/wall_windpipes.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/misc_box.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_5.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/facility/common/wall_damage_6.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/facility/common/wall_damage_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_7.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_4.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/facility/archives/furniture_shelf_6.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=19]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=20]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=21]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=22]
+[ext_resource path="res://resources/lighting/ch1_facility.tres" type="Resource" id=23]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=24]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_windpipes.png" type="Texture" id=25]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=26]
+[ext_resource path="res://resources/lighting/ch1_facility_lightsoff.tres" type="Resource" id=27]
+
+[node name="Ch1_Facility_B2F_Archives" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 23 )
+HideFollowers = true
+lightOn = ExtResource( 23 )
+lightOff = ExtResource( 27 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 6, 1, 1, 6, 1, 2, 6, 1, 3, 6, 1, 4, 6, 1, 5, 6, 1, 6, 6, 1, 7, 6, 1, 8, 6, 1, 65536, 6, 131073, 65537, 6, 131073, 65538, 6, 131073, 65539, 6, 131073, 65540, 6, 131073, 65541, 6, 131073, 65542, 6, 131073, 65543, 6, 131073, 65544, 6, 131073, 131072, 6, 196609, 131073, 6, 196609, 131074, 6, 196609, 131075, 6, 196609, 131076, 6, 196609, 131077, 6, 196609, 131078, 6, 196609, 131079, 6, 196609, 131080, 6, 196609, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0, 196614, 7, 0, 196615, 7, 0, 196616, 7, 0, 262144, 7, 0, 262145, 7, 0, 262146, 7, 0, 262147, 7, 0, 262148, 7, 0, 262149, 7, 0, 262150, 7, 0, 262151, 7, 0, 262152, 7, 0, 327680, 7, 0, 327681, 7, 0, 327682, 7, 0, 327683, 7, 0, 327684, 7, 0, 327685, 7, 0, 327686, 7, 0, 327687, 7, 0, 327688, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0, 393224, 7, 0, 458752, 7, 0, 458753, 7, 0, 458754, 7, 0, 458755, 7, 0, 458756, 7, 0, 458757, 7, 0, 458758, 7, 0, 458759, 7, 0, 458760, 7, 0, 524288, 7, 0, 524289, 7, 0, 524290, 7, 0, 524291, 7, 0, 524292, 7, 0, 524293, 7, 0, 524294, 7, 0, 524295, 7, 0, 524296, 7, 0, 589824, 7, 0, 589825, 7, 0, 589826, 7, 0, 589827, 7, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 655360, 7, 0, 655361, 7, 0, 655362, 7, 0, 655363, 7, 0, 655364, 7, 0, 655365, 7, 0, 655366, 7, 0, 655367, 7, 0, 655368, 7, 0, 720896, 7, 0, 720897, 7, 0, 720898, 7, 0, 720899, 7, 0, 720900, 7, 0, 720901, 7, 0, 720902, 7, 0, 720903, 7, 0, 720904, 7, 0, 786432, 7, 0, 786433, 7, 0, 786434, 7, 0, 786435, 7, 0, 786436, 7, 0, 786437, 7, 0, 786438, 7, 0, 786439, 7, 0, 786440, 7, 0, 851971, 7, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Vent" type="Sprite" parent="Background"]
+position = Vector2( 31, 56 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="Cover" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 16, 110 )
+texture = ExtResource( 25 )
+
+[node name="FloorHole10" type="Sprite" parent="Background"]
+position = Vector2( 273, 408 )
+texture = ExtResource( 4 )
+
+[node name="WallDamage6" type="Sprite" parent="Background"]
+position = Vector2( 232, 25 )
+texture = ExtResource( 12 )
+
+[node name="WallDamage2" type="Sprite" parent="Background"]
+position = Vector2( 153, 78 )
+texture = ExtResource( 13 )
+
+[node name="PreArrange" type="Node2D" parent="Background"]
+
+[node name="FurnitureShelf3" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 208, 198 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureShelf4" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 144, 198 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureShelf5" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 80, 262 )
+texture = ExtResource( 16 )
+
+[node name="FurnitureShelf6" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 80, 358 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureShelf9" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 96, 72 )
+texture = ExtResource( 14 )
+
+[node name="MiscBox" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 80, 135 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf7" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 96, 167 )
+texture = ExtResource( 11 )
+
+[node name="MiscBox2" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 144, 135 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox3" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 240, 103 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox24" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 208, 103 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox4" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 272, 103 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox25" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 240, 135 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox5" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 176, 167 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox6" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 240, 199 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox7" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 48, 167 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox8" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 48, 199 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf10" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 16, 166 )
+texture = ExtResource( 10 )
+
+[node name="MiscBox9" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 16, 263 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox10" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 48, 263 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox11" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 112, 231 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox12" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 176, 199 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox13" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 144, 231 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox14" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 144, 263 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox15" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 112, 295 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox16" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 112, 327 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox17" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 48, 327 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf11" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 240, 262 )
+texture = ExtResource( 10 )
+
+[node name="MiscBox20" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 208, 359 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox22" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 240, 295 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox21" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 240, 327 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox23" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 272, 263 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf8" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 160, 295 )
+texture = ExtResource( 17 )
+
+[node name="MiscBox19" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 176, 327 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf2" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 176, 358 )
+texture = ExtResource( 9 )
+
+[node name="FurnitureShelf1" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 160, 390 )
+texture = ExtResource( 15 )
+
+[node name="MiscBox18" type="Sprite" parent="Background/PreArrange"]
+position = Vector2( 80, 391 )
+texture = ExtResource( 8 )
+
+[node name="PostArrange" type="Node2D" parent="Background"]
+visible = false
+
+[node name="FurnitureShelf3" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 208, 198 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureShelf4" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 144, 198 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureShelf5" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 80, 262 )
+texture = ExtResource( 16 )
+
+[node name="FurnitureShelf6" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 80, 358 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureShelf9" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 96, 72 )
+texture = ExtResource( 14 )
+
+[node name="MiscBox" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 16, 135 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf7" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 96, 167 )
+texture = ExtResource( 11 )
+
+[node name="MiscBox2" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 144, 167 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox3" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 103 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox24" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 208, 103 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox25" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 135 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox4" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 272, 103 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox5" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 176, 167 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox6" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 199 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox7" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 48, 167 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox8" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 48, 199 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf10" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 16, 166 )
+texture = ExtResource( 10 )
+
+[node name="MiscBox9" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 16, 199 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox10" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 48, 263 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox11" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 112, 263 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox12" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 176, 199 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox13" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 231 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox14" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 144, 263 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox15" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 112, 295 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox16" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 112, 327 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox17" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 48, 327 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf11" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 262 )
+texture = ExtResource( 10 )
+
+[node name="MiscBox20" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 208, 391 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox22" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 295 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox21" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 240, 327 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox23" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 272, 135 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf8" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 160, 295 )
+texture = ExtResource( 17 )
+
+[node name="MiscBox19" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 176, 327 )
+texture = ExtResource( 8 )
+
+[node name="FurnitureShelf2" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 176, 358 )
+texture = ExtResource( 9 )
+
+[node name="FurnitureShelf1" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 160, 390 )
+texture = ExtResource( 15 )
+
+[node name="MiscBox18" type="Sprite" parent="Background/PostArrange"]
+position = Vector2( 16, 391 )
+texture = ExtResource( 8 )
+
+[node name="shiny" parent="Background" instance=ExtResource( 26 )]
+position = Vector2( 31, 112 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 5, 196610, -65537, 5, 196610, -131072, 5, 196610, -131071, 5, 196610, -131070, 5, 196610, -131069, 5, 196610, -131068, 5, 196610, -131067, 5, 196610, -131066, 5, 196610, -131065, 5, 196610, -131064, 5, 196610, -131063, 5, 196610, -131062, 5, 196610, -2, 5, 196610, -1, 5, 65539, -65536, 5, 262146, -65535, 5, 262146, -65534, 5, 262146, -65533, 5, 262146, -65532, 5, 262146, -65531, 5, 262146, -65530, 5, 262146, -65529, 5, 262146, -65528, 5, 262146, -65527, 5, 65538, -65526, 5, 196610, 65534, 5, 196610, 65535, 5, 196611, 9, 5, 196609, 10, 5, 196610, 131070, 5, 196610, 131071, 5, 196611, 65545, 5, 196609, 65546, 5, 196610, 196606, 5, 196610, 196607, 5, 196611, 131081, 5, 196609, 131082, 5, 196610, 262142, 5, 196610, 262143, 5, 196611, 196617, 5, 196609, 196618, 5, 196610, 327678, 5, 196610, 327679, 5, 196611, 262153, 5, 196609, 262154, 5, 196610, 393214, 5, 196610, 393215, 5, 196611, 327689, 5, 196609, 327690, 5, 196610, 458750, 5, 196610, 458751, 5, 196611, 393225, 5, 196609, 393226, 5, 196610, 524286, 5, 196610, 524287, 5, 196611, 458761, 5, 196609, 458762, 5, 196610, 589822, 5, 196610, 589823, 5, 196611, 524297, 5, 196609, 524298, 5, 196610, 655358, 5, 196610, 655359, 5, 196611, 589833, 5, 196609, 589834, 5, 196610, 720894, 5, 196610, 720895, 5, 196611, 655369, 5, 196609, 655370, 5, 196610, 786430, 5, 196610, 786431, 5, 196611, 720905, 5, 196609, 720906, 5, 196610, 851966, 5, 196610, 851967, 5, 196611, 786441, 5, 196609, 786442, 5, 196610, 917502, 5, 196610, 917503, 5, 3, 851968, 5, 131074, 851969, 5, 131074, 851970, 5, 131075, 851972, 5, 131073, 851973, 5, 131074, 851974, 5, 131074, 851975, 5, 131074, 851976, 5, 131074, 851977, 5, 2, 851978, 5, 196610, 983038, 5, 196610, 983039, 5, 196610, 917504, 5, 196610, 917505, 5, 196610, 917506, 5, 196610, 917507, 5, 196610, 917508, 5, 196610, 917509, 5, 196610, 917510, 5, 196610, 917511, 5, 196610, 917512, 5, 196610, 917513, 5, 196610, 917514, 5, 196610, 1048574, 5, 196610, 1048575, 5, 196610, 983040, 5, 196610, 983041, 5, 196610, 983042, 5, 196610, 983043, 5, 196610, 983044, 5, 196610, 983045, 5, 196610, 983046, 5, 196610, 983047, 5, 196610, 983048, 5, 196610, 983049, 5, 196610, 983050, 5, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 112, 432 )
+scale = Vector2( 0.375, 0.25 )
+texture = ExtResource( 18 )
+flip_v = true
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light3" type="Light2D" parent="Lighting"]
+position = Vector2( 139, 238 )
+texture = ExtResource( 19 )
+texture_scale = 5.0
+color = Color( 0.901961, 0.65098, 0.294118, 1 )
+energy = 0.7
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 22 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="on_enter_puzzle" type="Node" parent="Other/Events"]
+script = ExtResource( 5 )
+
+[node name="item_screwdriver_on_vent" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.screwdriver"
+Nodes = "move_vent"
+
+[node name="misc_bookcase_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 96, 112 )
+script = ExtResource( 3 )
+Event = "misc_bookcase"
+Directions = 2
+Area = Vector2( 64, 32 )
+
+[node name="misc_bookcase_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 96, 176 )
+script = ExtResource( 3 )
+Event = "misc_bookcase"
+Directions = 2
+Area = Vector2( 64, 32 )
+
+[node name="misc_bookcase_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 160, 304 )
+script = ExtResource( 3 )
+Event = "misc_bookcase"
+Directions = 2
+Area = Vector2( 64, 32 )
+
+[node name="misc_bookcase_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 272 )
+script = ExtResource( 3 )
+Event = "misc_bookcase"
+Directions = 2
+
+[node name="misc_bookcase_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 368 )
+script = ExtResource( 3 )
+Event = "misc_bookcase_empty"
+Directions = 2
+
+[node name="misc_bookcase_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 208 )
+script = ExtResource( 3 )
+Directions = 2
+
+[node name="misc_bookcase_7" type="Node2D" parent="Other/Events"]
+position = Vector2( 176, 368 )
+script = ExtResource( 3 )
+
+[node name="misc_bookcase_8" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 208 )
+script = ExtResource( 3 )
+Event = "misc_bookcase_empty"
+Directions = 2
+
+[node name="misc_bookcase_9" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 400 )
+script = ExtResource( 3 )
+Event = "misc_bookcase_empty"
+Directions = 8
+
+[node name="misc_hole" type="Node2D" parent="Other/Events"]
+position = Vector2( 256, 400 )
+script = ExtResource( 3 )
+Area = Vector2( 64, 32 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 112, 464 )
+script = ExtResource( 3 )
+
+[node name="move_vent" type="Node2D" parent="Other/Events"]
+position = Vector2( 31, 80 )
+script = ExtResource( 3 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 112, 432 )
+script = ExtResource( 6 )
+Direction = 2
+
+[node name="from_vent" type="Node2D" parent="Other/Points"]
+position = Vector2( 31, 112 )
+script = ExtResource( 6 )
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 21 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 262144, 0, 0, 262151, 0, 0, 262152, 0, 0, 327680, 0, 0, 327681, 0, 0, 327684, 0, 0, 327685, 0, 0, 393216, 0, 0, 393217, 0, 0, 393220, 0, 0, 393221, 0, 0, 393223, 0, 0, 458759, 0, 0, 524289, 0, 0, 524291, 0, 0, 524292, 0, 0, 524295, 0, 0, 589827, 0, 0, 589831, 0, 0, 655361, 0, 0, 655363, 0, 0, 655365, 0, 0, 655367, 0, 0, 720901, 0, 0, 786432, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}

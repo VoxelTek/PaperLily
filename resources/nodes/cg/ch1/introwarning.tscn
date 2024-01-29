@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://resources/font/default.tres" type="DynamicFont" id=1]
+
+[node name="introwarning" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 360 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+margin_left = 227.0
+margin_top = 162.0
+margin_right = 412.0
+margin_bottom = 197.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer"]
+margin_right = 185.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 1 )
+text = "system.screen.paperlily.introwarning"
+align = 1

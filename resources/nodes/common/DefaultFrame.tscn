@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/UI/Frames/DefaultFrameNode.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/ui/frame_default.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/ui/frame_default_bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/ui/frame_default_bg_mask.png" type="Texture" id=4]
+
+[node name="DefaultFrame" type="MarginContainer"]
+script = ExtResource( 1 )
+ContentMarginLeft = 18
+ContentMarginTop = 12
+ContentMarginRight = 18
+ContentMarginBottom = 12
+TexFrameBorder = ExtResource( 2 )
+TexFrameBg = ExtResource( 3 )
+TexFrameBgMask = ExtResource( 4 )
+PatchMarginLeft = 123
+PatchMarginTop = 142
+PatchMarginRight = 123
+PatchMarginBottom = 120
+PatchScaleFactor = 0.15

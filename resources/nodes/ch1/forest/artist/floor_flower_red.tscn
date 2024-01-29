@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/forest/artist/floor_flower_red.png" type="Texture" id=2]
+
+[node name="misc_flower_red" type="Sprite"]
+texture = ExtResource( 2 )
+offset = Vector2( -22, -3 )
+
+[node name="misc_flower_red" type="Node2D" parent="."]
+position = Vector2( -22, -3 )
+script = ExtResource( 1 )
+Solid = false
+Area = Vector2( 10, 10 )

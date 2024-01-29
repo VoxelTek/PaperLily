@@ -1,0 +1,295 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1FacilityB2fCouncilRoom.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/facility/council/wall_window_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/bgm/ch1_facility.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/council/wall_window_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/facility/council/furniture_chair_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/facility/council/furniture_chair_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/council/bg_floor.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/facility/council/furniture_chair_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/facility/council/furniture_chair_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/facility/council/furniture_table.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/facility/council/wall_window_1.png" type="Texture" id=11]
+[ext_resource path="res://resources/lighting/ch1_facility.tres" type="Resource" id=12]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=13]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCustom.cs" type="Script" id=14]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=15]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=17]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=18]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=19]
+[ext_resource path="res://assets/sprite/ch1/facility/council/misc_cloak.png" type="Texture" id=20]
+[ext_resource path="res://resources/lighting/ch1_facility_lightsoff.tres" type="Resource" id=21]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=22]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=23]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=24]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 19 )
+
+[node name="Ch1_Facility_B2F_CouncilRoom" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 12 )
+CameraLimitLeft = -159
+CameraLimitRight = 481
+CameraLimitBottom = 406
+Bgm = ExtResource( 3 )
+HideFollowers = true
+lightOn = ExtResource( 12 )
+lightOff = ExtResource( 21 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BgFloor" type="Sprite" parent="Background"]
+position = Vector2( 161, 219 )
+texture = ExtResource( 7 )
+
+[node name="WallWindow1" type="Sprite" parent="Background"]
+position = Vector2( 162, -78 )
+texture = ExtResource( 11 )
+
+[node name="WallWindow2" type="Sprite" parent="Background"]
+position = Vector2( 41, -25 )
+texture = ExtResource( 2 )
+
+[node name="WallWindow3" type="Sprite" parent="Background"]
+position = Vector2( 282, -26 )
+texture = ExtResource( 4 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureChair1" type="Sprite" parent="Main"]
+position = Vector2( 161, 91 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, -6 )
+
+[node name="MiscCloak" type="Sprite" parent="Main/FurnitureChair1"]
+position = Vector2( 12, 7 )
+texture = ExtResource( 20 )
+
+[node name="FurnitureChair2" type="Sprite" parent="Main"]
+position = Vector2( 101, 124 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -24 )
+
+[node name="FurnitureChair5" type="Sprite" parent="Main"]
+position = Vector2( 221, 124 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -24 )
+flip_h = true
+
+[node name="FurnitureChair3" type="Sprite" parent="Main"]
+position = Vector2( 102, 203 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, -24 )
+
+[node name="FurnitureChair6" type="Sprite" parent="Main"]
+position = Vector2( 220, 203 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, -24 )
+flip_h = true
+
+[node name="FurnitureChair4" type="Sprite" parent="Main"]
+position = Vector2( 161, 203 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -6 )
+
+[node name="FurnitureTable" type="Sprite" parent="Main"]
+position = Vector2( 161, 145 )
+texture = ExtResource( 10 )
+
+[node name="shiny" parent="Main/FurnitureTable" instance=ExtResource( 23 )]
+position = Vector2( 0, -5 )
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 161, 374 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light3" type="Light2D" parent="Lighting"]
+position = Vector2( 158, 115 )
+texture = ExtResource( 17 )
+texture_scale = 6.0
+color = Color( 0.733333, 0.831373, 1, 1 )
+energy = 0.8
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Light4" type="Light2D" parent="Lighting"]
+position = Vector2( 11, -102 )
+texture = ExtResource( 17 )
+texture_scale = 5.0
+color = Color( 0.65098, 0.976471, 0.67451, 1 )
+energy = 0.8
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Light5" type="Light2D" parent="Lighting"]
+position = Vector2( 309, -85 )
+texture = ExtResource( 17 )
+texture_scale = 5.0
+color = Color( 0.65098, 0.976471, 0.67451, 1 )
+energy = 0.8
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_react" type="Node2D" parent="Other/Events"]
+position = Vector2( 161, 294 )
+script = ExtResource( 15 )
+Solid = false
+Trigger = 1
+Area = Vector2( 48, 8 )
+
+[node name="misc_table" type="Node2D" parent="Other/Events"]
+position = Vector2( 161, 149 )
+script = ExtResource( 13 )
+Area = Vector2( 70, 48 )
+
+[node name="misc_chair_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 161, 101 )
+script = ExtResource( 15 )
+Area = Vector2( 34, 24 )
+
+[node name="misc_chair_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 161, 208 )
+script = ExtResource( 15 )
+Event = "misc_chair"
+Area = Vector2( 34, 24 )
+
+[node name="misc_chair_3" type="Node2D" parent="Other/Events"]
+modulate = Color( 0, 0, 1, 1 )
+script = ExtResource( 14 )
+Event = "misc_chair"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Events/misc_chair_3"]
+polygon = PoolVector2Array( 103, 207, 116, 200, 98, 190, 85, 197 )
+
+[node name="misc_chair_4" type="Node2D" parent="Other/Events"]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 116, 0 )
+script = ExtResource( 14 )
+Event = "misc_chair"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Events/misc_chair_4"]
+position = Vector2( 4, -75 )
+polygon = PoolVector2Array( 103, 207, 116, 200, 98, 190, 85, 197 )
+
+[node name="misc_chair_5" type="Node2D" parent="Other/Events"]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 112, 75 )
+script = ExtResource( 14 )
+Event = "misc_chair"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Events/misc_chair_5"]
+position = Vector2( 4, -75 )
+polygon = PoolVector2Array( 103, 207, 121, 197, 108, 190, 90, 200 )
+
+[node name="misc_chair_6" type="Node2D" parent="Other/Events"]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( -8, 0 )
+script = ExtResource( 14 )
+Event = "misc_chair"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Events/misc_chair_6"]
+position = Vector2( 4, -75 )
+polygon = PoolVector2Array( 103, 207, 121, 197, 108, 190, 90, 200 )
+
+[node name="misc_windows" type="Node2D" parent="Other/Events"]
+modulate = Color( 0, 0, 1, 1 )
+script = ExtResource( 14 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Other/Events/misc_windows"]
+polygon = PoolVector2Array( -1, 148, 3, 131, 9, 115, 18, 99, 29, 86, 39, 75, 56, 62, 74, 51, 88, 45, 111, 38, 139, 33, 182, 33, 210, 38, 228, 43, 249, 52, 263, 60, 275, 69, 291, 84, 303, 99, 311, 113, 315, 122, 322, 148, 322, -194, 0, -194 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 161, 422 )
+script = ExtResource( 15 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 161, 390 )
+script = ExtResource( 22 )
+Direction = 2
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( 138, 406, 138, 290, 107, 284, 88, 278, 74, 272, 46, 254, 24, 232, 8, 205, -1, 175, -1, 406 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( 183, 406, 183, 290, 214, 284, 236, 277, 249, 271, 263, 263, 275, 254, 282, 248, 291, 239, 309, 214, 319, 189, 322, 175, 322, 406 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( -11, 162 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 332, 162 )
+shape = SubResource( 1 )
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="valve_shiny" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.facility_took_valve_pentagon"
+Node = NodePath("../../../Main/FurnitureTable/shiny")
+Invert = true

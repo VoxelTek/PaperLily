@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Forest_Station_Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=3]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=4]
+
+[node name="Ch1_Forest_Station_Platform_On_Tracks" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Subroom = NodePath("Ch1_Forest_Station_Platform")
+
+[node name="Ch1_Forest_Station_Platform" parent="." instance=ExtResource( 2 )]
+
+[node name="StructStairsB" parent="Ch1_Forest_Station_Platform/Foreground" index="1"]
+visible = false
+
+[node name="Collision11" parent="Ch1_Forest_Station_Platform/Other/BoundaryUnpassable" index="0"]
+disabled = true
+
+[node name="Collision13" parent="Ch1_Forest_Station_Platform/Other/BoundaryUnpassable" index="1"]
+disabled = true
+
+[node name="Collision19" parent="Ch1_Forest_Station_Platform/Other/BoundaryUnpassable" index="2"]
+disabled = true
+
+[node name="Collision20" parent="Ch1_Forest_Station_Platform/Other/BoundaryUnpassable" index="3"]
+disabled = true
+
+[node name="item_sign_on_post" parent="Ch1_Forest_Station_Platform/Other/Events" index="0"]
+Event = "ch1_null"
+
+[node name="misc_pinboard_l" parent="Ch1_Forest_Station_Platform/Other/Events" index="1"]
+Event = "ch1_null"
+
+[node name="misc_pinboard_r" parent="Ch1_Forest_Station_Platform/Other/Events" index="2"]
+Event = "ch1_null"
+
+[node name="misc_window_1" parent="Ch1_Forest_Station_Platform/Other/Events" index="3"]
+Event = "ch1_null"
+
+[node name="misc_window_2" parent="Ch1_Forest_Station_Platform/Other/Events" index="4"]
+Event = "ch1_null"
+
+[node name="misc_vendingmachine" parent="Ch1_Forest_Station_Platform/Other/Events" index="5"]
+Event = "ch1_null"
+
+[node name="misc_trashcan" parent="Ch1_Forest_Station_Platform/Other/Events" index="6"]
+Event = "ch1_null"
+
+[node name="misc_trashcan_2" parent="Ch1_Forest_Station_Platform/Other/Events" index="7"]
+Event = "ch1_null"
+
+[node name="misc_lamppost_1" parent="Ch1_Forest_Station_Platform/Other/Events" index="8"]
+Event = "ch1_null"
+
+[node name="misc_lamppost_2" parent="Ch1_Forest_Station_Platform/Other/Events" index="9"]
+Event = "ch1_null"
+
+[node name="misc_lamppost_3" parent="Ch1_Forest_Station_Platform/Other/Events" index="10"]
+Event = "ch1_null"
+
+[node name="misc_lamppost_4" parent="Ch1_Forest_Station_Platform/Other/Events" index="11"]
+Event = "ch1_null"
+
+[node name="misc_lamppost_5" parent="Ch1_Forest_Station_Platform/Other/Events" index="12"]
+Event = "ch1_null"
+
+[node name="misc_sign_1" parent="Ch1_Forest_Station_Platform/Other/Events" index="13"]
+Event = "ch1_null"
+
+[node name="misc_sign_2" parent="Ch1_Forest_Station_Platform/Other/Events" index="14"]
+Event = "ch1_null"
+
+[node name="misc_sign_blue" parent="Ch1_Forest_Station_Platform/Other/Events" index="15"]
+Event = "ch1_null"
+
+[node name="misc_coin" parent="Ch1_Forest_Station_Platform/Other/Events" index="16"]
+Event = "ch1_null"
+
+[node name="move_tracks_descend" parent="Ch1_Forest_Station_Platform/Other/Events" index="17"]
+Event = "ch1_null"
+
+[node name="move_tracks_descend_2" parent="Ch1_Forest_Station_Platform/Other/Events" index="18"]
+Event = "ch1_null"
+
+[node name="move_inside" parent="Ch1_Forest_Station_Platform/Other/Events" index="19"]
+Event = "ch1_null"
+
+[node name="move_tracks_ascend" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Events" index="20"]
+position = Vector2( -263, 380 )
+script = ExtResource( 3 )
+Directions = 2
+Area = Vector2( 80, 8 )
+
+[node name="move_tracks_left" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Events" index="21"]
+position = Vector2( -512, 432 )
+script = ExtResource( 3 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 128 )
+
+[node name="move_tracks_right" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Events" index="22"]
+position = Vector2( 512, 432 )
+script = ExtResource( 3 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 128 )
+
+[node name="move_exit" parent="Ch1_Forest_Station_Platform/Other/Events" index="23"]
+Event = "ch1_null"
+
+[node name="move_tracks_ascend_2" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Events" index="24"]
+position = Vector2( 420, 380 )
+script = ExtResource( 3 )
+Directions = 2
+Area = Vector2( 80, 8 )
+
+[node name="tracks_descend" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Points" index="3"]
+position = Vector2( -263, 400 )
+script = ExtResource( 4 )
+
+[node name="from_tracks_left" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Points" index="4"]
+position = Vector2( -464, 416 )
+script = ExtResource( 4 )
+Direction = 4
+
+[node name="from_tracks_right" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Points" index="5"]
+position = Vector2( 464, 416 )
+script = ExtResource( 4 )
+Direction = 1
+
+[node name="tracks_descend_2" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Points" index="7"]
+position = Vector2( 420, 400 )
+script = ExtResource( 4 )
+
+[node name="stairs_2" parent="Ch1_Forest_Station_Platform/Other/StairsChairs" index="1"]
+Enabled = false
+
+[editable path="Ch1_Forest_Station_Platform"]

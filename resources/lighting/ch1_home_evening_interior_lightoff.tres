@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.160256, 0.660256, 0.737179, 0.916667, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.13385, 0.138381, 0.167969, 1, 0.695313, 0.510026, 0.293335, 1, 0.808594, 0.575106, 0.448517, 1, 1, 0.738037, 0.546875, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[resource]
+script = ExtResource( 1 )
+Modulate = Color( 0.85098, 0.85098, 0.85098, 1 )
+UseNormals = true
+PlayerLightState = false
+PlayerLightEnergy = 1.0
+PlayerLightMode = 0
+EnvironmentLightMode = 0
+GlowLevel = 0
+ColorCorrection = SubResource( 2 )
+BackgroundColor = Color( 0, 0, 0, 1 )

@@ -1,0 +1,107 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "// Static Particles Shader by Mono - version 1.0
+shader_type canvas_item;
+render_mode skip_vertex_transform;
+
+uniform sampler2D animation_sheet;
+
+uniform int h_frames = 1;
+uniform int v_frames = 1;
+
+uniform vec2 cell_size = vec2(32.0);
+uniform int layers = 2;
+
+uniform float lifetime_cycle = 24.0; // The lower, the more.
+uniform float fps = 12.0;
+
+uniform bool manual_time_enabled = false;
+uniform float manual_time = 0.0;
+
+// Textures for technical purposes.
+uniform sampler2D random_noise;
+
+varying vec2 tile_pos;
+
+
+void vertex() {
+	tile_pos = VERTEX / cell_size;
+}
+
+
+vec4 randv4(vec2 quadrant, float seed){
+	vec2 offset_0 = vec2(2.38958, -3.24585) * seed;
+	vec2 offset_1 = vec2(-1.02475, 4.81937) * seed;
+	vec4 noise_0 = texture(random_noise, quadrant * 0.195503 * seed + offset_0);
+	vec4 noise_1 = texture(random_noise, quadrant * 0.766021 + offset_1);
+	
+	return fract(noise_0 + noise_1);
+}
+
+
+vec4 get_particle_frag(
+		vec2 at, vec2 uv, float u_time, float iteration_type
+	) {
+	// Some pre-definitions.
+	ivec2 sheet_size = ivec2(h_frames, v_frames);
+		
+	vec4 rand_vec4 = randv4(at, floor(u_time) + (iteration_type * 11.0));
+	
+	vec2 sprite_size = vec2(textureSize(animation_sheet, 0) / sheet_size);
+	vec2 stretch_factor = cell_size / sprite_size;
+	vec2 potential_offset = (cell_size - sprite_size) / cell_size;
+	
+	vec2 offset = potential_offset * vec2(rand_vec4.r, rand_vec4.g);
+	vec2 stretched_uv = (uv - offset) * stretch_factor;
+	
+	float potential_frame_offset = 1.0 - float(h_frames) / lifetime_cycle;
+	float frame_offset = potential_frame_offset * rand_vec4.b;
+	float frame = floor(
+		(fract(u_time) - frame_offset) * lifetime_cycle
+	);
+	
+	float animation_id = floor(rand_vec4.a * float(v_frames));
+	
+	vec2 sprite_uv_size = 1.0 / vec2(sheet_size);
+	vec2 frame_coords = vec2(frame, animation_id);
+	vec2 sheet_frame_uv = frame_coords * sprite_uv_size;
+	vec2 next_sheet_frame_uv = sheet_frame_uv + sprite_uv_size;
+	vec2 sheet_uv = stretched_uv * sprite_uv_size;
+	vec2 clammed_uv = clamp(
+		sheet_frame_uv + sheet_uv,
+		sheet_frame_uv,
+		next_sheet_frame_uv);
+	
+	return texture(animation_sheet, clammed_uv);
+}
+
+
+void fragment() {
+	float u_time = manual_time_enabled ? manual_time : TIME;
+	u_time *= fps / lifetime_cycle;
+	
+	vec4 color = vec4(0.0);
+	
+	for (int i = 0; i < layers; i++) {
+		float d = float(i) / float(layers);
+		vec2 offsetted_tile_pos = tile_pos + vec2(d);
+		
+		vec4 particle_frag = get_particle_frag(
+				floor(offsetted_tile_pos),
+				fract(offsetted_tile_pos),
+				u_time + d,
+				float(i)
+			);
+		
+		color = max(
+			color,
+			particle_frag + vec4(min(sign(particle_frag.a - color.a), 0.0))
+		);
+	}
+	
+	color.a *= texture(TEXTURE, UV).a;
+	
+	COLOR = color;
+}
+"

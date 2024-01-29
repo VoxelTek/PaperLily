@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://definitions/captions/ch1.en.translation" ]
+
+source_file="res://definitions/captions/ch1.csv"
+dest_files=[ "res://definitions/captions/ch1.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

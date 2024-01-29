@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://script/Managers/Minigames/MinigameResource.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/ch1/minigame/Ch1_Battle_MissKnives_Pt2.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+MinigameScene = ExtResource( 2 )

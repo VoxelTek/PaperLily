@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneReleaseCaterpillar.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_release_caterpillar.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_terrarium_empty.png" type="Texture" id=3]
+[ext_resource path="res://resources/lighting/ch1_forest_lakeside.tres" type="Resource" id=4]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Forest_Lakeside_North.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_caterpillar.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Room/Background/Caterpillar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Room/Background/Caterpillar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 435, -1246 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Room/Background/LacieStand:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Room/Background/LacieRelease:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Room/Background/LacieStand:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Room/Background/Caterpillar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Room/Background/Caterpillar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 435, -1246 ), Vector2( 439, -1246 ), Vector2( 443, -1246 ), Vector2( 451, -1246 ), Vector2( 459, -1246 ), Vector2( 463, -1246 ), Vector2( 467, -1246 ), Vector2( 475, -1246 ), Vector2( 483, -1246 ), Vector2( 487, -1246 ), Vector2( 491, -1246 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Room/Background/LacieRelease:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Room/Background/LacieStand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Room/Background/LacieStand:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 18 ]
+}
+
+[node name="Ch1_Cutscene_Release_Caterpillar" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 4 )
+
+[node name="Room" parent="." instance=ExtResource( 5 )]
+
+[node name="LacieRelease" type="Sprite" parent="Room/Background" index="45"]
+position = Vector2( 418, -1271 )
+texture = ExtResource( 2 )
+
+[node name="LacieStand" type="Sprite" parent="Room/Background" index="46"]
+visible = false
+position = Vector2( 418, -1250 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -24 )
+hframes = 9
+vframes = 4
+
+[node name="Terrarium" type="Sprite" parent="Room/Background" index="47"]
+position = Vector2( 409, -1245 )
+texture = ExtResource( 3 )
+
+[node name="Caterpillar" type="Sprite" parent="Room/Background" index="48"]
+position = Vector2( 435, -1246 )
+texture = ExtResource( 6 )
+hframes = 3
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/animation = SubResource( 2 )
+
+[editable path="Room"]

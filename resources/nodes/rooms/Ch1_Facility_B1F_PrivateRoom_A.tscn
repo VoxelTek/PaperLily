@@ -1,0 +1,172 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/facility/room_a/light_godrays.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/common/particle_garden_lights.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/room_a/floor_grass_patch.png" type="Texture" id=4]
+[ext_resource path="res://resources/particles/garden_lights.tres" type="Material" id=5]
+[ext_resource path="res://resources/lighting/ch1_garden.tres" type="Resource" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/room_a/misc_musicbox.png" type="Texture" id=7]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=8]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=9]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=10]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=11]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=12]
+[ext_resource path="res://assets/sprite/common/struct_door.png" type="Texture" id=13]
+[ext_resource path="res://script/Core/Nodes/ActionEventCall.cs" type="Script" id=14]
+[ext_resource path="res://script/Core/Nodes/ActionTimer.cs" type="Script" id=15]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=16]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=17]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=18]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=19]
+[ext_resource path="res://script/Core/Nodes/ActionCallTimer.cs" type="Script" id=20]
+
+[node name="Ch1_Facility_B1F_PrivateRoom_A" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 6 )
+HideFollowers = true
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_grass_patch" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MusicBox" type="Sprite" parent="Main"]
+position = Vector2( 1, -47 )
+texture = ExtResource( 7 )
+hframes = 3
+frame = 1
+script = ExtResource( 19 )
+FPS = 2.12
+Autostart = false
+AnimationFrames = "1,2"
+
+[node name="Foreground" type="Node2D" parent="."]
+position = Vector2( 0, 129 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StructDoor" type="Sprite" parent="Foreground"]
+texture = ExtResource( 13 )
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="light_godrays" type="Sprite" parent="Lighting"]
+position = Vector2( 39, -171 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="Lighting"]
+amount = 25
+lifetime = 20.0
+preprocess = 10.0
+process_material = ExtResource( 5 )
+texture = ExtResource( 3 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+
+[node name="misc_flowers" type="Node2D" parent="Other/Events"]
+position = Vector2( 0, -42 )
+script = ExtResource( 12 )
+Solid = false
+Area = Vector2( 160, 88 )
+
+[node name="misc_musicbox" type="Node2D" parent="Other/Events"]
+position = Vector2( 0, -46 )
+script = ExtResource( 9 )
+Area = Vector2( 17, 15 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 0, 176 )
+script = ExtResource( 9 )
+
+[node name="Points" type="Node2D" parent="Other"]
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 0, 144 )
+script = ExtResource( 10 )
+Direction = 2
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -262150, 0, 0, -262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -196614, 0, 0, -262139, 0, 0, -131078, 0, 0, -196603, 0, 0, -65542, 0, 0, -131067, 0, 0, -6, 0, 0, -65531, 0, 0, 65530, 0, 0, 5, 0, 0, 131066, 0, 0, 65541, 0, 0, 196602, 0, 0, 131077, 0, 0, 262138, 0, 0, 196613, 0, 0, 327674, 0, 0, 262149, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="start_musicbox" type="Node" parent="Other/Actions"]
+script = ExtResource( 16 )
+
+[node name="start_animation" type="Node" parent="Other/Actions/start_musicbox"]
+script = ExtResource( 17 )
+Node = NodePath("../../../../Main/MusicBox")
+
+[node name="start_achievement_timer" type="Node" parent="Other/Actions/start_musicbox"]
+script = ExtResource( 15 )
+Node = NodePath("../../../timer_stop_animation")
+
+[node name="stop_musicbox" type="Node" parent="Other/Actions"]
+script = ExtResource( 16 )
+
+[node name="stop_animation" type="Node" parent="Other/Actions/stop_musicbox"]
+script = ExtResource( 17 )
+Node = NodePath("../../../../Main/MusicBox")
+Start = false
+
+[node name="musicbox_frame" type="Node" parent="Other/Actions/stop_musicbox"]
+script = ExtResource( 18 )
+Node = NodePath("../../../../Main/MusicBox")
+
+[node name="get_achievement" type="Node" parent="Other/Actions/stop_musicbox"]
+script = ExtResource( 14 )
+Event = "event_achievement"
+
+[node name="interrupt_musicbox" type="Node" parent="Other/Actions"]
+script = ExtResource( 16 )
+
+[node name="stop_timer" type="Node" parent="Other/Actions/interrupt_musicbox"]
+script = ExtResource( 15 )
+Node = NodePath("../../../timer_stop_animation")
+Start = false
+
+[node name="stop_animation" type="Node" parent="Other/Actions/interrupt_musicbox"]
+script = ExtResource( 17 )
+Node = NodePath("../../../../Main/MusicBox")
+Start = false
+
+[node name="musicbox_frame" type="Node" parent="Other/Actions/interrupt_musicbox"]
+script = ExtResource( 18 )
+Node = NodePath("../../../../Main/MusicBox")
+
+[node name="timer_stop_animation" type="Node" parent="Other"]
+script = ExtResource( 20 )
+WaitTime = 50.0
+OneShot = true
+Node = NodePath("../Actions/stop_musicbox")

@@ -1,0 +1,476 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/floor_trash.png" type="Texture" id=1]
+[ext_resource path="res://resources/tileset/ch1_home.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/furniture_chair.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_shelf_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_plant.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_snowglobe.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_tv.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/furniture_bed.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_plush.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_sidetable.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_lightswitch.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_chair.png" type="Texture" id=12]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_console.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_book.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_posters_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/floor_pillows.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/furniture_desk.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_toy.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_blanket.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_cups.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/furniture_bookshelf.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_liedown_2.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/floor_windowseat.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_trashcan.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_posters.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_shelf.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_pinboard.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_shelf_2.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_shelf_4.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_flower.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/wall_paintings.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/floor_carpet.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/floor_carpet_2.png" type="Texture" id=34]
+[ext_resource path="res://resources/nodes/ch1/home/furniture_table_lacie.tscn" type="PackedScene" id=35]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=36]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=37]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=38]
+[ext_resource path="res://resources/lighting/ch1_home_evening_bedroom_a_lightoff.tres" type="Resource" id=39]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1Home2fBedroomA.cs" type="Script" id=40]
+[ext_resource path="res://resources/lighting/ch1_home_day_interior_lighton.tres" type="Resource" id=41]
+[ext_resource path="res://resources/lighting/ch1_home_night_interior_lightsoff.tres" type="Resource" id=42]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=43]
+[ext_resource path="res://assets/bgm/ch1_home.ogg" type="AudioStream" id=44]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_papers.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_oj.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_remote.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprite/ch1/home/common/light04.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_digital_clock.png" type="Texture" id=49]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=50]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=51]
+[ext_resource path="res://resources/lighting/basic.tres" type="Resource" id=52]
+[ext_resource path="res://resources/lighting/ch1_home_day_interior_lightoff.tres" type="Resource" id=53]
+[ext_resource path="res://resources/lighting/ch1_home_evening_bedroom_a_lighton.tres" type="Resource" id=54]
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_pc_screen.png" type="Texture" id=55]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=56]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=57]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=58]
+
+[node name="Ch1_Home_2F_Bedroom_A" type="Node2D"]
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -128
+CameraLimitTop = -52
+CameraLimitRight = 512
+CameraLimitBottom = 308
+Bgm = ExtResource( 44 )
+lightDayLightsOff = ExtResource( 53 )
+lightDayLightsOn = ExtResource( 41 )
+lightEveningLightsOff = ExtResource( 39 )
+lightEveningLightsOn = ExtResource( 54 )
+lightNightLightsOff = ExtResource( 42 )
+lightNightLightsOn = ExtResource( 52 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 2, 38, 0, 3, 38, 0, 4, 38, 0, 5, 38, 0, 6, 38, 0, 7, 38, 0, 8, 38, 0, 9, 38, 0, 131073, 40, 0, 131082, 39, 0, 196610, 36, 0, 196611, 36, 0, 196612, 36, 0, 196613, 36, 0, 196614, 36, 0, 196615, 36, 0, 196616, 36, 0, 196617, 36, 0, 262146, 36, 0, 262147, 36, 0, 262148, 36, 0, 262149, 36, 0, 262150, 36, 0, 262151, 36, 0, 262152, 36, 0, 262153, 36, 0, 327681, 36, 0, 327682, 36, 0, 327683, 36, 0, 327684, 36, 0, 327685, 36, 0, 327686, 36, 0, 327687, 36, 0, 327688, 36, 0, 327689, 36, 0, 327690, 36, 0, 393217, 36, 0, 393218, 36, 0, 393219, 36, 0, 393220, 36, 0, 393221, 36, 0, 393222, 36, 0, 393223, 36, 0, 393224, 36, 0, 393225, 36, 0, 393226, 36, 0, 458754, 36, 0, 458755, 36, 0, 458756, 36, 0, 458757, 36, 0, 458758, 36, 0, 458759, 36, 0, 458760, 36, 0, 458761, 36, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_carpet" type="Sprite" parent="Background"]
+position = Vector2( 110, 138 )
+texture = ExtResource( 33 )
+
+[node name="floor_carpet_2" type="Sprite" parent="Background"]
+position = Vector2( 267, 197 )
+texture = ExtResource( 34 )
+
+[node name="floor_pillows" type="Sprite" parent="Background"]
+position = Vector2( 277, 189 )
+texture = ExtResource( 17 )
+
+[node name="floor_windowseat" type="Sprite" parent="Background"]
+position = Vector2( 336, 179 )
+texture = ExtResource( 24 )
+
+[node name="furniture_bed" type="Sprite" parent="Background"]
+position = Vector2( 98, 106 )
+texture = ExtResource( 8 )
+
+[node name="misc_plush" type="Sprite" parent="Background/furniture_bed"]
+position = Vector2( 1, -18 )
+texture = ExtResource( 9 )
+
+[node name="Lacie" type="Sprite" parent="Background/furniture_bed"]
+visible = false
+position = Vector2( -2, -1 )
+texture = ExtResource( 23 )
+hframes = 2
+frame = 1
+
+[node name="furniture_bookshelf" type="Sprite" parent="Background"]
+position = Vector2( 200, 76 )
+texture = ExtResource( 22 )
+
+[node name="wall_pinboard" type="Sprite" parent="Background"]
+position = Vector2( 240, 59 )
+texture = ExtResource( 28 )
+
+[node name="Desk" type="Sprite" parent="Background"]
+position = Vector2( 264, 89 )
+texture = ExtResource( 18 )
+
+[node name="Screen" type="Sprite" parent="Background/Desk"]
+position = Vector2( -2, -17 )
+texture = ExtResource( 55 )
+
+[node name="misc_cups" type="Sprite" parent="Background"]
+position = Vector2( 291, 84 )
+texture = ExtResource( 21 )
+
+[node name="misc_flower" type="Sprite" parent="Background"]
+position = Vector2( 214, 31 )
+texture = ExtResource( 31 )
+
+[node name="misc_book" type="Sprite" parent="Background"]
+position = Vector2( 242, 205 )
+texture = ExtResource( 15 )
+
+[node name="misc_plant" type="Sprite" parent="Background"]
+position = Vector2( 311, 78 )
+texture = ExtResource( 5 )
+
+[node name="misc_sidetable" type="Sprite" parent="Background"]
+position = Vector2( 78, 143 )
+texture = ExtResource( 10 )
+
+[node name="MiscDigitalClock" type="Sprite" parent="Background"]
+position = Vector2( 76, 133 )
+texture = ExtResource( 49 )
+
+[node name="wall_lightswitch" type="Sprite" parent="Background"]
+position = Vector2( 48, 131 )
+texture = ExtResource( 11 )
+
+[node name="wall_paintings" type="Sprite" parent="Background"]
+position = Vector2( 337, 103 )
+texture = ExtResource( 32 )
+
+[node name="wall_posters" type="Sprite" parent="Background"]
+position = Vector2( 148, 57 )
+texture = ExtResource( 26 )
+
+[node name="wall_posters_2" type="Sprite" parent="Background"]
+position = Vector2( 269, 44 )
+texture = ExtResource( 16 )
+
+[node name="wall_shelf" type="Sprite" parent="Background"]
+position = Vector2( 101, 63 )
+texture = ExtResource( 27 )
+
+[node name="wall_shelf_4" type="Sprite" parent="Background"]
+position = Vector2( 289, 62 )
+texture = ExtResource( 30 )
+
+[node name="floor_trash" type="Sprite" parent="Background"]
+position = Vector2( 198, 250 )
+texture = ExtResource( 1 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="furniture_table_lacie" parent="Main" instance=ExtResource( 35 )]
+position = Vector2( 276, 193 )
+
+[node name="MiscOj" type="Sprite" parent="Main/furniture_table_lacie"]
+position = Vector2( -10, 0 )
+texture = ExtResource( 46 )
+
+[node name="MiscPapers" type="Sprite" parent="Main/furniture_table_lacie"]
+position = Vector2( 16, 8 )
+texture = ExtResource( 45 )
+
+[node name="MiscRemote" type="Sprite" parent="Main/furniture_table_lacie"]
+position = Vector2( -3, -2 )
+texture = ExtResource( 47 )
+
+[node name="FurnitureChair" type="Sprite" parent="Main"]
+position = Vector2( 262, 114 )
+texture = ExtResource( 3 )
+
+[node name="lacie" type="Sprite" parent="Main/FurnitureChair"]
+visible = false
+position = Vector2( 0, -8 )
+texture = ExtResource( 12 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65537, 37, 196610, -131072, 37, 196610, -131071, 37, 196610, -131070, 37, 196610, -131069, 37, 196610, -131068, 37, 196610, -131067, 37, 196610, -131066, 37, 196610, -131065, 37, 196610, -131064, 37, 196610, -131063, 37, 196610, -131062, 37, 196610, -131061, 37, 196610, -131060, 37, 196610, -1, 37, 196610, -65536, 37, 196610, -65535, 37, 65539, -65534, 37, 262146, -65533, 37, 262146, -65532, 37, 262146, -65531, 37, 262146, -65530, 37, 262146, -65529, 37, 262146, -65528, 37, 262146, -65527, 37, 262146, -65526, 37, 65538, -65525, 37, 196610, -65524, 37, 196610, 65535, 37, 196610, 0, 37, 196610, 1, 37, 196611, 10, 37, 196609, 11, 37, 196610, 12, 37, 196610, 131071, 37, 196610, 65536, 37, 196610, 65537, 37, 262147, 65546, 37, 262145, 65547, 37, 65538, 65548, 37, 196610, 196607, 37, 196610, 131072, 37, 196610, 131083, 37, 196609, 131084, 37, 196610, 262143, 37, 196610, 196608, 37, 196610, 196619, 37, 196609, 196620, 37, 196610, 327679, 37, 196610, 262144, 37, 196610, 262155, 37, 196609, 262156, 37, 196610, 393215, 37, 196610, 327680, 37, 196610, 327691, 37, 196609, 327692, 37, 196610, 458751, 37, 196610, 393216, 37, 196610, 393227, 37, 196609, 393228, 37, 196610, 524287, 37, 196610, 458752, 37, 196610, 458753, 37, 131075, 458762, 37, 131073, 458763, 37, 2, 458764, 37, 196610, 589823, 37, 196610, 524288, 37, 196610, 524289, 37, 3, 524290, 37, 131074, 524291, 37, 131074, 524292, 37, 131074, 524293, 37, 131074, 524294, 37, 131074, 524295, 37, 131074, 524296, 37, 131074, 524297, 37, 131074, 524298, 37, 2, 524299, 37, 196610, 524300, 37, 196610, 655359, 37, 196610, 589824, 37, 196610, 589825, 37, 196610, 589826, 37, 196610, 589827, 37, 196610, 589828, 37, 196610, 589829, 37, 196610, 589830, 37, 196610, 589831, 37, 196610, 589832, 37, 196610, 589833, 37, 196610, 589834, 37, 196610, 589835, 37, 196610, 589836, 37, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_shelf_2" type="Sprite" parent="Foreground"]
+position = Vector2( 96, 245 )
+texture = ExtResource( 29 )
+
+[node name="shiny" parent="Foreground/wall_shelf_2" instance=ExtResource( 13 )]
+position = Vector2( -1, -1 )
+
+[node name="wall_shelf_3" type="Sprite" parent="Foreground"]
+position = Vector2( 152, 241 )
+texture = ExtResource( 4 )
+
+[node name="misc_blanket" type="Sprite" parent="Foreground"]
+position = Vector2( 163, 246 )
+texture = ExtResource( 20 )
+
+[node name="misc_snowglobe" type="Sprite" parent="Foreground"]
+position = Vector2( 117, 240 )
+texture = ExtResource( 6 )
+
+[node name="misc_toy" type="Sprite" parent="Foreground"]
+position = Vector2( 74, 243 )
+texture = ExtResource( 19 )
+
+[node name="misc_trashcan" type="Sprite" parent="Foreground"]
+position = Vector2( 186, 245 )
+texture = ExtResource( 25 )
+
+[node name="misc_tv" type="Sprite" parent="Foreground"]
+position = Vector2( 272, 241 )
+texture = ExtResource( 7 )
+
+[node name="MiscConsole" type="Sprite" parent="Foreground/misc_tv"]
+position = Vector2( -36, 5 )
+texture = ExtResource( 14 )
+
+[node name="light_fadeout_2" type="Sprite" parent="Foreground"]
+position = Vector2( 48, 144.5 )
+scale = Vector2( 0.25, 1.33594 )
+texture = ExtResource( 36 )
+
+[node name="WindowLights" type="Node2D" parent="Foreground"]
+
+[node name="Light04" type="Light2D" parent="Foreground/WindowLights"]
+position = Vector2( 95, 219 )
+scale = Vector2( 1, 1.08333 )
+texture = ExtResource( 48 )
+color = Color( 1, 0.988235, 0.890196, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 51 )
+
+[node name="Light05" type="Light2D" parent="Foreground/WindowLights"]
+position = Vector2( 336, 184 )
+rotation = 1.5708
+scale = Vector2( 1.3, 0.7 )
+texture = ExtResource( 48 )
+color = Color( 1, 0.988235, 0.890196, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 51 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light06" type="Light2D" parent="Foreground/WindowLights"]
+position = Vector2( 305, 190 )
+rotation = 1.5708
+scale = Vector2( 1.3, 0.6 )
+texture = ExtResource( 48 )
+color = Color( 1, 0.988235, 0.890196, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 51 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 50 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="move_enter" type="Node" parent="Other/Events"]
+script = ExtResource( 37 )
+
+[node name="misc_alarmclock" type="Node2D" parent="Other/Events"]
+position = Vector2( 77, 144 )
+script = ExtResource( 38 )
+Area = Vector2( 27, 32 )
+
+[node name="misc_bed" type="Node2D" parent="Other/Events"]
+position = Vector2( 108, 116 )
+script = ExtResource( 38 )
+Area = Vector2( 48, 32 )
+
+[node name="misc_bookshelf" type="Node2D" parent="Other/Events"]
+position = Vector2( 200, 96 )
+script = ExtResource( 38 )
+Area = Vector2( 48, 32 )
+
+[node name="misc_posters" type="Node2D" parent="Other/Events"]
+position = Vector2( 155, 80 )
+script = ExtResource( 38 )
+Area = Vector2( 48, 32 )
+
+[node name="misc_desk" type="Node2D" parent="Other/Events"]
+position = Vector2( 240, 96 )
+script = ExtResource( 38 )
+
+[node name="misc_desk_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 288, 96 )
+script = ExtResource( 38 )
+
+[node name="misc_computer" type="Node2D" parent="Other/Events"]
+position = Vector2( 259, 120 )
+script = ExtResource( 38 )
+Area = Vector2( 24, 18 )
+
+[node name="misc_plant" type="Node2D" parent="Other/Events"]
+position = Vector2( 312, 104 )
+script = ExtResource( 38 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_trashcan" type="Node2D" parent="Other/Events"]
+position = Vector2( 187, 248 )
+script = ExtResource( 38 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_tv" type="Node2D" parent="Other/Events"]
+position = Vector2( 272, 262 )
+script = ExtResource( 38 )
+Area = Vector2( 96, 32 )
+
+[node name="misc_window" type="Node2D" parent="Other/Events"]
+position = Vector2( 338, 192 )
+script = ExtResource( 38 )
+Area = Vector2( 32, 64 )
+
+[node name="misc_table" type="Node2D" parent="Other/Events"]
+position = Vector2( 276, 206 )
+script = ExtResource( 38 )
+Area = Vector2( 41, 28 )
+
+[node name="misc_orangejuice" type="Node2D" parent="Other/Events"]
+position = Vector2( 264, 200 )
+script = ExtResource( 38 )
+Directions = 12
+Area = Vector2( 16, 16 )
+
+[node name="misc_lightswitch" type="Node2D" parent="Other/Events"]
+position = Vector2( 47, 152 )
+script = ExtResource( 38 )
+Area = Vector2( 32, 16 )
+
+[node name="misc_wardrobe" type="Node2D" parent="Other/Events"]
+position = Vector2( 120, 257 )
+script = ExtResource( 38 )
+Area = Vector2( 112, 32 )
+
+[node name="misc_book" type="Node2D" parent="Other/Events"]
+position = Vector2( 241, 204 )
+script = ExtResource( 38 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_papers" type="Node2D" parent="Other/Events"]
+position = Vector2( 289, 212 )
+script = ExtResource( 38 )
+Directions = 3
+Area = Vector2( 16, 16 )
+
+[node name="misc_console" type="Node2D" parent="Other/Events"]
+position = Vector2( 236, 254 )
+script = ExtResource( 38 )
+Area = Vector2( 24, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 16, 192 )
+script = ExtResource( 38 )
+Area = Vector2( 32, 64 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hallway_door" type="Node2D" parent="Other/Points"]
+position = Vector2( 48, 192 )
+script = ExtResource( 43 )
+Direction = 4
+
+[node name="wake_up" type="Node2D" parent="Other/Points"]
+position = Vector2( 108, 148 )
+script = ExtResource( 43 )
+
+[node name="alarm" type="Node2D" parent="Other/Points"]
+position = Vector2( 76, 170 )
+script = ExtResource( 43 )
+Direction = 2
+
+[node name="bubble_alarm" type="Node2D" parent="Other/Points"]
+position = Vector2( 77, 112 )
+script = ExtResource( 43 )
+
+[node name="changed_costume" type="Node2D" parent="Other/Points"]
+position = Vector2( 152, 224 )
+script = ExtResource( 43 )
+
+[node name="ch1_after_letter" type="Node2D" parent="Other/Points"]
+position = Vector2( 283, 188 )
+script = ExtResource( 43 )
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="pc_screen" type="Node" parent="Other/Updates"]
+script = ExtResource( 56 )
+Variable = "ch1.home_lacie_pc_on"
+Node = NodePath("../../../Background/Desk/Screen")
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="lacie_bed_show" type="Node" parent="Other/Actions"]
+script = ExtResource( 58 )
+Node = NodePath("../../../Background/furniture_bed/Lacie")
+
+[node name="lacie_bed_closeeyes" type="Node" parent="Other/Actions"]
+script = ExtResource( 57 )
+Node = NodePath("../../../Background/furniture_bed/Lacie")
+
+[node name="lacie_bed_openeyes" type="Node" parent="Other/Actions"]
+script = ExtResource( 57 )
+Node = NodePath("../../../Background/furniture_bed/Lacie")
+Frame = 1

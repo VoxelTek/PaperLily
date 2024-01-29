@@ -1,0 +1,298 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1MkStairway.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/mk/hallway/floor_stairs2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/mk/hallway/floor_stairs.png" type="Texture" id=4]
+[ext_resource path="res://resources/nodes/ch1/mk/wall_column.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/common/wall_column_top.png" type="Texture" id=8]
+[ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/hallway/wall_stairway_paintings.png" type="Texture" id=10]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=11]
+[ext_resource path="res://assets/bgm/ch1_mk_d.ogg" type="AudioStream" id=12]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=13]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=14]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=15]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=16]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/hallway/wall_stairway_painting_mk.png" type="Texture" id=18]
+[ext_resource path="res://resources/lighting/ch1_mk_dark.tres" type="Resource" id=19]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=22]
+[ext_resource path="res://assets/sprite/ch1/mk/common/wall_lamp.png" type="Texture" id=23]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=24]
+[ext_resource path="res://script/Core/Nodes/VariableSpriteFrames.cs" type="Script" id=25]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_lamp_fallen.png" type="Texture" id=26]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 80 )
+
+[node name="Ch1_MK_Stairway" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Bgm = ExtResource( 12 )
+HideFollowers = true
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65538, 14, 0, 65539, 14, 0, 65540, 14, 0, 65541, 14, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_stairs2" type="Sprite" parent="Background"]
+position = Vector2( 224, 82 )
+texture = ExtResource( 3 )
+
+[node name="floor_stairs" type="Sprite" parent="Background"]
+position = Vector2( 32, 82 )
+texture = ExtResource( 4 )
+
+[node name="WallStairwayPaintings" type="Sprite" parent="Background"]
+position = Vector2( 128, 96 )
+texture = ExtResource( 10 )
+
+[node name="Painting" type="Sprite" parent="Background/WallStairwayPaintings"]
+position = Vector2( -1, 3 )
+texture = ExtResource( 18 )
+hframes = 4
+
+[node name="Lamp" type="Sprite" parent="Background/WallStairwayPaintings"]
+position = Vector2( -41, 32 )
+texture = ExtResource( 23 )
+hframes = 2
+
+[node name="FloorLampFallen" type="Sprite" parent="Background"]
+position = Vector2( 87, 165 )
+texture = ExtResource( 26 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_column" parent="Main" instance=ExtResource( 5 )]
+position = Vector2( 68, 160 )
+
+[node name="wall_column2" parent="Main" instance=ExtResource( 5 )]
+position = Vector2( 189, 160 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 2, 196610, -65537, 2, 196610, -131072, 2, 196610, -131071, 2, 196610, -131070, 2, 196610, -131069, 2, 196610, -131068, 2, 196610, -131067, 2, 196610, -131066, 2, 196610, -131065, 2, 196610, -131064, 2, 196610, -131063, 2, 196610, -2, 2, 196610, -1, 2, 196610, -65536, 2, 196610, -65535, 2, 196610, -65534, 2, 196610, -65533, 2, 196610, -65532, 2, 196610, -65531, 2, 196610, -65530, 2, 196610, -65529, 2, 196610, -65528, 2, 196610, -65527, 2, 196610, 65534, 2, 196610, 65535, 2, 196611, 2, 2, 262145, 3, 2, 262146, 4, 2, 262146, 5, 2, 262147, 8, 2, 196609, 9, 2, 196610, 131070, 2, 196610, 131071, 2, 196611, 65544, 2, 196609, 65545, 2, 196610, 196606, 2, 196610, 196607, 2, 196611, 131080, 2, 196609, 131081, 2, 196610, 262142, 2, 196610, 262143, 2, 196611, 196616, 2, 196609, 196617, 2, 196610, 327678, 2, 196610, 327679, 2, 196611, 262152, 2, 196609, 262153, 2, 196610, 393214, 2, 196610, 393215, 2, 196611, 327688, 2, 196609, 327689, 2, 196610, 458750, 2, 196610, 458751, 2, 196611, 393224, 2, 196609, 393225, 2, 196610, 524286, 2, 196610, 524287, 2, 196611, 458760, 2, 196609, 458761, 2, 196610, 589822, 2, 196610, 589823, 2, 3, 524288, 2, 131074, 524289, 2, 131074, 524290, 2, 131074, 524291, 2, 131074, 524292, 2, 131074, 524293, 2, 131074, 524294, 2, 131074, 524295, 2, 131074, 524296, 2, 2, 524297, 2, 196610, 655358, 2, 196610, 655359, 2, 196610, 589824, 2, 196610, 589825, 2, 196610, 589826, 2, 196610, 589827, 2, 196610, 589828, 2, 196610, 589829, 2, 196610, 589830, 2, 196610, 589831, 2, 196610, 589832, 2, 196610, 589833, 2, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallColumnTop" type="Sprite" parent="Foreground"]
+position = Vector2( 67, 31 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="WallColumnTop2" type="Sprite" parent="Foreground"]
+position = Vector2( 189, 31 )
+texture = ExtResource( 8 )
+
+[node name="fadeout" type="Sprite" parent="Foreground"]
+position = Vector2( -6, 32 )
+scale = Vector2( 2.09375, -0.25 )
+texture = ExtResource( 7 )
+centered = false
+flip_v = true
+
+[node name="fadeout2" type="Sprite" parent="Foreground"]
+position = Vector2( 195, 114 )
+scale = Vector2( 0.476562, -0.632813 )
+texture = ExtResource( 7 )
+centered = false
+flip_v = true
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 20 )
+Default = true
+Lighting = ExtResource( 15 )
+
+[node name="Light12" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 89, 130 )
+texture = ExtResource( 16 )
+texture_scale = 2.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Light13" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 169, 61 )
+texture = ExtResource( 16 )
+texture_scale = 2.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 20 )
+Lighting = ExtResource( 19 )
+
+[node name="Light20" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( 128, 124 )
+texture = ExtResource( 16 )
+texture_scale = 3.0
+color = Color( 0.537255, 0.654902, 0.807843, 1 )
+energy = 0.5
+script = ExtResource( 14 )
+BlendMode = 1
+Layers = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 2, 80 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 61, 80 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 194, 80 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 253, 80 )
+shape = SubResource( 1 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_lamp_fall" type="Node2D" parent="Other/Events"]
+position = Vector2( 68, 208 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 96 )
+
+[node name="item_eyeball_on_painting" type="Node" parent="Other/Events"]
+script = ExtResource( 17 )
+Items = "ch1.mk_eyeball"
+Nodes = "move_stressroom"
+
+[node name="move_up" type="Node2D" parent="Other/Events"]
+position = Vector2( 32, 73 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="move_down" type="Node2D" parent="Other/Events"]
+position = Vector2( 224, 73 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="move_stressroom" type="Node2D" parent="Other/Events"]
+position = Vector2( 127, 144 )
+script = ExtResource( 6 )
+Area = Vector2( 48, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="coming_down" type="Node2D" parent="Other/Points"]
+position = Vector2( 32, 176 )
+script = ExtResource( 11 )
+
+[node name="coming_up" type="Node2D" parent="Other/Points"]
+position = Vector2( 224, 176 )
+script = ExtResource( 11 )
+
+[node name="from_stressroom" type="Node2D" parent="Other/Points"]
+position = Vector2( 128, 176 )
+script = ExtResource( 11 )
+
+[node name="stairs" type="Node2D" parent="Other"]
+position = Vector2( 32, 80 )
+script = ExtResource( 9 )
+Type = 1
+Area = Vector2( 64, 160 )
+
+[node name="stairs2" type="Node2D" parent="Other"]
+position = Vector2( 224, 80 )
+script = ExtResource( 9 )
+Type = 1
+Area = Vector2( 64, 160 )
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="creepy_lighting" type="Node" parent="Other/Updates"]
+script = ExtResource( 21 )
+Variable = "general.serious"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")
+
+[node name="lamp_fallen_1" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.mk_stairway_seen_lamp_fall"
+Node = NodePath("../../../Background/FloorLampFallen")
+
+[node name="lamp_fallen_2" type="Node" parent="Other/Updates"]
+script = ExtResource( 25 )
+Variable = "ch1.mk_stairway_seen_lamp_fall"
+Node = NodePath("../../../Background/WallStairwayPaintings/Lamp")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://definitions/captions/prologue.en.translation" ]
+
+source_file="res://definitions/captions/prologue.csv"
+dest_files=[ "res://definitions/captions/prologue.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

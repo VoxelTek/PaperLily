@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://script/Subgame/Tutorials/Tutorial.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/tutorial/sneak.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Sneaking"
+Text = "Running will make you easier to spot. Hold {0} to sneak past enemies"
+Image = ExtResource( 2 )
+Inputs = PoolStringArray( "input_special" )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hatch_open.ogg-a354ccb7b9886b3f34d9f4a7eb0b9e39.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/hatch_open.ogg"
+dest_files=[ "res://.import/hatch_open.ogg-a354ccb7b9886b3f34d9f4a7eb0b9e39.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

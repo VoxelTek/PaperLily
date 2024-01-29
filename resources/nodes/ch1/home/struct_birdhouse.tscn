@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/exterior/misc_birdhouse.png" type="Texture" id=1]
+
+[node name="struct_birdhouse" type="Node2D"]
+
+[node name="misc_birdhouse" type="Sprite" parent="."]
+position = Vector2( 0, -30 )
+texture = ExtResource( 1 )

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneHomeExteriorBack.cs" type="Script" id=1]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=2]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Home_Exterior_Back.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_sit_2.png" type="Texture" id=4]
+[ext_resource path="res://resources/lighting/ch1_home_evening_exterior.tres" type="Resource" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/hiro_sit_3.png" type="Texture" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 261, 216, 0, 0, 0, 0, 357, 216, 0, 0, 0, 0, 357, 209 )
+}
+
+[node name="Ch1_Cutscene_Home_Exterior_Back" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 5 )
+
+[node name="Room" parent="." instance=ExtResource( 3 )]
+
+[node name="LacieSit" type="Sprite" parent="Room/Background/furniture_bench" index="1"]
+visible = false
+position = Vector2( 16, -8 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="HiroSit" type="Sprite" parent="Room/Background/furniture_bench" index="2"]
+visible = false
+position = Vector2( -24, -7 )
+texture = ExtResource( 6 )
+hframes = 3
+
+[node name="Points" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lacie" type="Node2D" parent="Points"]
+position = Vector2( 261, 216 )
+script = ExtResource( 2 )
+
+[node name="lacie_bubble" type="Node2D" parent="Points"]
+position = Vector2( 357, 140 )
+script = ExtResource( 2 )
+
+[node name="walk_to_bench" type="Path2D" parent="Points"]
+curve = SubResource( 1 )
+
+[editable path="Room"]
+[editable path="Room/Main/misc_lamp_2"]

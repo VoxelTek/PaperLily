@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/prologue_nightmare.ogg-875a43287d968d1f2dd11307fa600f2f.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/prologue_nightmare.ogg"
+dest_files=[ "res://.import/prologue_nightmare.ogg-875a43287d968d1f2dd11307fa600f2f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=3.0

@@ -1,0 +1,221 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1GardenExitRitual.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_grass_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_grass_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_grass_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_grass_platform.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_lilies_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_platform.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_grass_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_lilies_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/misc_vase_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/struct_arch.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_lilies_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/struct_door.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/floor_lilies_3.png" type="Texture" id=15]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=16]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=17]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=18]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=19]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/misc_vase_2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/common/tiles_white.png" type="Texture" id=21]
+[ext_resource path="res://resources/lighting/ch1_garden.tres" type="Resource" id=22]
+[ext_resource path="res://assets/sprite/ch1/garden/exit_ritual/misc_paperlily.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/common/struct_door.png" type="Texture" id=24]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItemRoom.cs" type="Script" id=25]
+
+[node name="Ch1_Garden_ExitRitual" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 22 )
+DisableRunning = true
+HideFollowers = true
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorGrass1" type="Sprite" parent="Background"]
+position = Vector2( 199, 157 )
+texture = ExtResource( 9 )
+
+[node name="FloorGrass2" type="Sprite" parent="Background"]
+position = Vector2( 163, 311 )
+texture = ExtResource( 3 )
+
+[node name="FloorGrass3" type="Sprite" parent="Background"]
+position = Vector2( 281, 324 )
+texture = ExtResource( 5 )
+
+[node name="FloorGrass4" type="Sprite" parent="Background"]
+position = Vector2( 222, 370 )
+texture = ExtResource( 4 )
+
+[node name="FloorPlatform" type="Sprite" parent="Background"]
+position = Vector2( 208, 106 )
+texture = ExtResource( 8 )
+
+[node name="FloorGrassPlatform" type="Sprite" parent="Background"]
+position = Vector2( 209, 134 )
+texture = ExtResource( 6 )
+
+[node name="FloorLilies1" type="Sprite" parent="Background"]
+position = Vector2( 218, 161 )
+texture = ExtResource( 10 )
+
+[node name="FloorLilies2" type="Sprite" parent="Background"]
+position = Vector2( 172, 310 )
+texture = ExtResource( 13 )
+
+[node name="FloorLilies3" type="Sprite" parent="Background"]
+position = Vector2( 262, 327 )
+texture = ExtResource( 15 )
+
+[node name="FloorLilies4" type="Sprite" parent="Background"]
+position = Vector2( 226, 365 )
+texture = ExtResource( 7 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VaseNoFlower" type="Sprite" parent="Main"]
+position = Vector2( 241, 73 )
+texture = ExtResource( 20 )
+offset = Vector2( 0, -20 )
+
+[node name="Paperlily" type="Sprite" parent="Main/VaseNoFlower"]
+visible = false
+position = Vector2( 0, -33 )
+texture = ExtResource( 23 )
+
+[node name="VaseFlower" type="Sprite" parent="Main"]
+visible = false
+position = Vector2( 241, 73 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -20 )
+
+[node name="Border" type="Sprite" parent="Main"]
+modulate = Color( 0.286275, 0.258824, 0.196078, 1 )
+position = Vector2( 179, 62 )
+scale = Vector2( 1.8125, 0.0312499 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="DoorGroup" type="Node2D" parent="Main"]
+position = Vector2( 208, 63 )
+
+[node name="White" type="Sprite" parent="Main/DoorGroup"]
+modulate = Color( 2.8, 2.8, 2.8, 1 )
+position = Vector2( 0, -31.5 )
+scale = Vector2( 1, 1.90625 )
+texture = ExtResource( 21 )
+
+[node name="Door" type="Sprite" parent="Main/DoorGroup"]
+position = Vector2( 0, -26 )
+texture = ExtResource( 14 )
+hframes = 3
+
+[node name="StructArch" type="Sprite" parent="Main/DoorGroup"]
+position = Vector2( 2, -35 )
+texture = ExtResource( 12 )
+
+[node name="Foreground" type="Node2D" parent="."]
+position = Vector2( 208, 432 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StructDoor" type="Sprite" parent="Foreground"]
+position = Vector2( 0, -47 )
+texture = ExtResource( 24 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, 65535, 0, 0, 13, 0, 0, 131071, 0, 0, 65549, 0, 0, 196607, 0, 0, 131085, 0, 0, 262143, 0, 0, 196621, 0, 0, 327679, 0, 0, 262157, 0, 0, 393215, 0, 0, 327693, 0, 0, 458751, 0, 0, 393229, 0, 0, 524287, 0, 0, 458765, 0, 0, 589823, 0, 0, 524301, 0, 0, 655359, 0, 0, 589837, 0, 0, 720895, 0, 0, 655373, 0, 0, 786431, 0, 0, 720909, 0, 0, 851967, 0, 0, 786445, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_caterpillar_use" type="Node" parent="Other/Events"]
+script = ExtResource( 25 )
+Items = "ch1.forest_caterpillar"
+
+[node name="misc_vase" type="Node2D" parent="Other/Events"]
+position = Vector2( 240, 68 )
+script = ExtResource( 18 )
+Area = Vector2( 15, 10 )
+
+[node name="misc_door_sides" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 60 )
+script = ExtResource( 17 )
+Directions = 5
+Area = Vector2( 44, 8 )
+
+[node name="misc_door_back" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 60 )
+script = ExtResource( 17 )
+Directions = 8
+Area = Vector2( 44, 8 )
+
+[node name="move_back" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 432 )
+script = ExtResource( 17 )
+
+[node name="move_door" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 60 )
+script = ExtResource( 17 )
+Directions = 2
+Area = Vector2( 44, 8 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 208, 400 )
+script = ExtResource( 16 )
+Direction = 2
+
+[node name="after_cutscene" type="Node2D" parent="Other/Points"]
+position = Vector2( 208, 208 )
+script = ExtResource( 16 )
+Direction = 2
+
+[node name="entrance_sai" type="Node2D" parent="Other/Points"]
+position = Vector2( 176, 400 )
+script = ExtResource( 16 )
+Direction = 2
+
+[node name="exiting_lacie" type="Node2D" parent="Other/Points"]
+position = Vector2( 208, 96 )
+script = ExtResource( 16 )
+Direction = 2
+
+[node name="exiting_sai" type="Node2D" parent="Other/Points"]
+position = Vector2( 176, 96 )
+script = ExtResource( 16 )
+Direction = 2

@@ -1,0 +1,602 @@
+[gd_scene load_steps=56 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1ForestLakesideVista.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/foliage_plant_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_6.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_mountain_1.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_trees.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_flower_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_flower_3.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_5.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_trees.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/floor_bridge_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_7.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_city.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_sky.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_struct_vantage.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_mountain_2.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_flower_4.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_5.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_flower_5.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_2.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_cloud_4.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_floor.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/bg_mountain_3.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_flower_1.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_3.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/floor_bridge_2.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/foliage_branch_2.png" type="Texture" id=32]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=33]
+[ext_resource path="res://assets/sprite/common/white.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_vantage_pillars.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_3_water.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_4_water.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/fg_rocks_5_water.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprite/common/tiles_white.png" type="Texture" id=39]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=40]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=41]
+[ext_resource path="res://resources/lighting/ch1_forest_lakeside_vista.tres" type="Resource" id=42]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=43]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/water_ripples_2.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/floor_bridge_3.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/water_ripples_1.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/water_ripples_3.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/vista/water_ripples_4.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprite/ch1/facility/common/water_ripples_pillar.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/misc_paddle_2.png" type="Texture" id=50]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 water_color : hint_color = vec4(0.16, 0.3, 0.58, 1.0);
+uniform float water_transparency = 0.8;
+uniform sampler2D noise;
+
+uniform vec2 scale = vec2(1000.0, 193.0);
+uniform vec2 distortion_scale = vec2(0.005, 0.005);
+uniform float intensity = 0.02;
+uniform float speed = 0.03;
+
+
+void fragment() {
+    float distortion = texture(noise, UV * scale * distortion_scale + TIME * speed).x;
+    distortion -= 0.5;
+    
+    // Waves/rippling
+    vec2 tiled_uvs = UV * 100.0;
+    vec2 displacement = vec2(
+        cos(TIME * 5.0 + tiled_uvs.x + tiled_uvs.y) * 0.001,
+        cos(TIME * 0.1 + tiled_uvs.x + tiled_uvs.y) * 0.001
+    );
+    vec4 refraction = texture(SCREEN_TEXTURE, SCREEN_UV + displacement);
+    
+    COLOR = mix(refraction, water_color, water_transparency); 
+}
+"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 1 )
+shader_param/water_color = Color( 0.16, 0.3, 0.58, 1 )
+shader_param/water_transparency = 0.8
+shader_param/scale = Vector2( 1000, 193 )
+shader_param/distortion_scale = Vector2( 0.005, 0.005 )
+shader_param/intensity = 0.02
+shader_param/speed = 0.03
+shader_param/noise = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 500, 10 )
+
+[node name="Ch1_Forest_Lakeside_Vista" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 42 )
+CameraLimitLeft = -500
+CameraLimitRight = 500
+CameraLimitBottom = 180
+Type = "sidescroller"
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BgSky" type="Sprite" parent="Background"]
+position = Vector2( 0, -52 )
+texture = ExtResource( 19 )
+
+[node name="Water" type="Sprite" parent="Background"]
+modulate = Color( 0.309804, 0.490196, 0.65098, 1 )
+position = Vector2( -3.05176e-05, 83.5 )
+scale = Vector2( 1000, 193 )
+texture = ExtResource( 34 )
+
+[node name="Bg" type="Node2D" parent="Background"]
+
+[node name="BgCloud3" type="Sprite" parent="Background/Bg"]
+position = Vector2( -420, -81 )
+texture = ExtResource( 16 )
+
+[node name="BgCloud3_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -420, 21 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="BgCloud4" type="Sprite" parent="Background/Bg"]
+position = Vector2( -256, -27 )
+texture = ExtResource( 26 )
+
+[node name="BgCloud4_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -256, -6 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 26 )
+flip_v = true
+
+[node name="BgCloud5" type="Sprite" parent="Background/Bg"]
+position = Vector2( -36, -62 )
+texture = ExtResource( 23 )
+
+[node name="BgCloud5_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -36, 11.5 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 23 )
+flip_v = true
+
+[node name="BgCloud7" type="Sprite" parent="Background/Bg"]
+position = Vector2( 270, -30 )
+texture = ExtResource( 15 )
+
+[node name="BgCloud7_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( 270, -4.5 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="BgCloud6" type="Sprite" parent="Background/Bg"]
+position = Vector2( -148, -24 )
+texture = ExtResource( 4 )
+
+[node name="BgCloud6_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -148, -8 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="BgMountain1_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -380, 7 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 5 )
+flip_v = true
+
+[node name="BgMountain2_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -165, -8 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 21 )
+flip_v = true
+
+[node name="BgMountain3_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( 197, 8 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+flip_v = true
+
+[node name="BgMountain1" type="Sprite" parent="Background/Bg"]
+position = Vector2( -380, -53 )
+texture = ExtResource( 5 )
+
+[node name="BgMountain2" type="Sprite" parent="Background/Bg"]
+position = Vector2( -165, -23 )
+texture = ExtResource( 21 )
+
+[node name="BgMountain3" type="Sprite" parent="Background/Bg"]
+position = Vector2( 197, -55 )
+texture = ExtResource( 28 )
+
+[node name="BgCloud1" type="Sprite" parent="Background/Bg"]
+position = Vector2( -378, -26 )
+texture = ExtResource( 18 )
+
+[node name="BgCloud1_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -378, -7 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 18 )
+flip_v = true
+
+[node name="BgCloud2" type="Sprite" parent="Background/Bg"]
+position = Vector2( -457, -56 )
+texture = ExtResource( 25 )
+
+[node name="BgCloud1_R2" type="Sprite" parent="Background/Bg"]
+position = Vector2( -457, 8 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 25 )
+flip_v = true
+
+[node name="BgCity" type="Sprite" parent="Background/Bg"]
+position = Vector2( -290, -94 )
+texture = ExtResource( 17 )
+
+[node name="BgCity_R" type="Sprite" parent="Background/Bg"]
+position = Vector2( -290, 27.5 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 17 )
+flip_v = true
+
+[node name="Underwater" type="Node2D" parent="Background"]
+
+[node name="FgRocks3Water" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -194, 150 )
+texture = ExtResource( 36 )
+
+[node name="FgRocks3Water2" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -491, 141 )
+texture = ExtResource( 36 )
+flip_h = true
+
+[node name="FgRocks5Water" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -96, 115 )
+texture = ExtResource( 38 )
+
+[node name="FgRocks4Water" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -374, 127 )
+texture = ExtResource( 37 )
+
+[node name="FloorBridge7" type="Sprite" parent="Background/Underwater"]
+position = Vector2( 68, 98 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge8" type="Sprite" parent="Background/Underwater"]
+position = Vector2( 197, 98 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge9" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -191, 97 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge10" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -319, 97 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge3" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -315, 110 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge4" type="Sprite" parent="Background/Underwater"]
+position = Vector2( -186, 110 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge5" type="Sprite" parent="Background/Underwater"]
+position = Vector2( 73, 110 )
+texture = ExtResource( 45 )
+
+[node name="FloorBridge6" type="Sprite" parent="Background/Underwater"]
+position = Vector2( 202, 110 )
+texture = ExtResource( 45 )
+
+[node name="WaterShader" type="Sprite" parent="Background"]
+light_mask = 4
+material = SubResource( 4 )
+position = Vector2( -1.43051e-05, 83.5 )
+scale = Vector2( 31.25, 6.03125 )
+texture = ExtResource( 39 )
+
+[node name="BgFloor" type="Sprite" parent="Background"]
+position = Vector2( 288, 77 )
+texture = ExtResource( 27 )
+
+[node name="BgTrees" type="Sprite" parent="Background"]
+position = Vector2( 380, 1 )
+texture = ExtResource( 7 )
+
+[node name="FoliageBranch2" type="Sprite" parent="Background"]
+position = Vector2( -473, 27 )
+texture = ExtResource( 32 )
+
+[node name="FoliagePlant2" type="Sprite" parent="Background"]
+position = Vector2( -356, 31 )
+texture = ExtResource( 2 )
+
+[node name="Bridge" type="Node2D" parent="Background"]
+position = Vector2( 386, 62 )
+
+[node name="BgStructVantage" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -796, -76 )
+texture = ExtResource( 20 )
+
+[node name="FloorBridge1" type="Sprite" parent="Background/Bridge"]
+texture = ExtResource( 14 )
+
+[node name="FloorBridge2" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -129, 0 )
+texture = ExtResource( 14 )
+
+[node name="FloorBridge3" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -258, 0 )
+texture = ExtResource( 14 )
+
+[node name="FloorBridge4" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -387, 0 )
+texture = ExtResource( 14 )
+
+[node name="FloorBridge5" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -516, 0 )
+texture = ExtResource( 14 )
+
+[node name="FloorBridge6" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -645, 0 )
+texture = ExtResource( 14 )
+
+[node name="FloorBridge7" type="Sprite" parent="Background/Bridge"]
+position = Vector2( -774, 0 )
+texture = ExtResource( 14 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Paddle" type="Sprite" parent="Foreground"]
+position = Vector2( -115, 67 )
+texture = ExtResource( 50 )
+
+[node name="FloorBridge2" type="Sprite" parent="Foreground"]
+position = Vector2( -315, 68 )
+texture = ExtResource( 31 )
+
+[node name="FloorBridge3" type="Sprite" parent="Foreground"]
+position = Vector2( -186, 68 )
+texture = ExtResource( 31 )
+
+[node name="FloorBridge4" type="Sprite" parent="Foreground"]
+position = Vector2( -56, 68 )
+texture = ExtResource( 31 )
+
+[node name="FloorBridge5" type="Sprite" parent="Foreground"]
+position = Vector2( 73, 68 )
+texture = ExtResource( 31 )
+
+[node name="FloorBridge6" type="Sprite" parent="Foreground"]
+position = Vector2( 202, 68 )
+texture = ExtResource( 31 )
+
+[node name="FloorBridge7" type="Sprite" parent="Foreground"]
+position = Vector2( 331, 68 )
+texture = ExtResource( 31 )
+
+[node name="Ripples10" type="Sprite" parent="Foreground"]
+position = Vector2( -316, 87 )
+texture = ExtResource( 49 )
+hframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="FgStructVantage" type="Sprite" parent="Foreground"]
+position = Vector2( -410, 27 )
+texture = ExtResource( 35 )
+
+[node name="FoliageBranch3" type="Sprite" parent="Foreground"]
+position = Vector2( 30, 156 )
+texture = ExtResource( 32 )
+flip_h = true
+
+[node name="FoliageBranch2" type="Sprite" parent="Foreground"]
+position = Vector2( -225, 111 )
+texture = ExtResource( 32 )
+
+[node name="FgRocks1" type="Sprite" parent="Foreground"]
+position = Vector2( -532, 58 )
+texture = ExtResource( 8 )
+
+[node name="FgRocks2" type="Sprite" parent="Foreground"]
+position = Vector2( 108, 173 )
+texture = ExtResource( 3 )
+
+[node name="FgRocks3" type="Sprite" parent="Foreground"]
+position = Vector2( -193, 133 )
+texture = ExtResource( 30 )
+
+[node name="FgRocks7" type="Sprite" parent="Foreground"]
+position = Vector2( -492, 124 )
+texture = ExtResource( 30 )
+flip_h = true
+
+[node name="FgRocks4" type="Sprite" parent="Foreground"]
+position = Vector2( -374, 93 )
+texture = ExtResource( 10 )
+
+[node name="FgRocks5" type="Sprite" parent="Foreground"]
+position = Vector2( -95, 86 )
+texture = ExtResource( 12 )
+
+[node name="FgFlower1" type="Sprite" parent="Foreground"]
+position = Vector2( -483, 99 )
+texture = ExtResource( 29 )
+
+[node name="FgFlower2" type="Sprite" parent="Foreground"]
+position = Vector2( -431, 59 )
+texture = ExtResource( 9 )
+
+[node name="FgFlower3" type="Sprite" parent="Foreground"]
+position = Vector2( -428, 92 )
+texture = ExtResource( 11 )
+
+[node name="FgFlower4" type="Sprite" parent="Foreground"]
+position = Vector2( -407, 84 )
+texture = ExtResource( 22 )
+
+[node name="FgFlower5" type="Sprite" parent="Foreground"]
+position = Vector2( -330, 86 )
+texture = ExtResource( 24 )
+
+[node name="FgTrees" type="Sprite" parent="Foreground"]
+position = Vector2( 442, 94 )
+texture = ExtResource( 13 )
+
+[node name="FgRocks6" type="Sprite" parent="Foreground"]
+position = Vector2( -459, 211 )
+texture = ExtResource( 8 )
+
+[node name="Ripples" type="Sprite" parent="Foreground"]
+position = Vector2( -95, 108 )
+texture = ExtResource( 46 )
+vframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples2" type="Sprite" parent="Foreground"]
+position = Vector2( -403, 127 )
+texture = ExtResource( 44 )
+vframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples3" type="Sprite" parent="Foreground"]
+position = Vector2( -195, 148 )
+texture = ExtResource( 47 )
+vframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples4" type="Sprite" parent="Foreground"]
+position = Vector2( -319, 155 )
+texture = ExtResource( 48 )
+vframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples5" type="Sprite" parent="Foreground"]
+position = Vector2( -58, 146 )
+texture = ExtResource( 48 )
+vframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples6" type="Sprite" parent="Foreground"]
+position = Vector2( 179, 113 )
+texture = ExtResource( 48 )
+vframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples7" type="Sprite" parent="Foreground"]
+position = Vector2( -187, 87 )
+texture = ExtResource( 49 )
+hframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples8" type="Sprite" parent="Foreground"]
+position = Vector2( 72, 87 )
+texture = ExtResource( 49 )
+hframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Ripples9" type="Sprite" parent="Foreground"]
+position = Vector2( 201, 87 )
+texture = ExtResource( 49 )
+hframes = 2
+script = ExtResource( 43 )
+FPS = 2.0
+
+[node name="Light" type="Light2D" parent="Foreground"]
+position = Vector2( -368, 28 )
+texture = ExtResource( 41 )
+texture_scale = 5.0
+color = Color( 0.427451, 0.654902, 0.501961, 1 )
+energy = 0.6
+range_item_cull_mask = 3
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2" type="Light2D" parent="Foreground"]
+position = Vector2( -293, -94 )
+texture = ExtResource( 41 )
+texture_scale = 10.0
+energy = 0.9
+mode = 2
+range_item_cull_mask = 3
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 3
+
+[node name="Events" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_paddles_get" type="Node2D" parent="Events"]
+position = Vector2( -113, 54 )
+script = ExtResource( 6 )
+Solid = false
+Directions = 13
+Area = Vector2( 16, 16 )
+
+[node name="misc_vista" type="Node2D" parent="Events"]
+position = Vector2( -411, 46 )
+script = ExtResource( 6 )
+Solid = false
+Directions = 2
+
+[node name="misc_flowers" type="Node2D" parent="Events"]
+position = Vector2( -390, 54 )
+script = ExtResource( 6 )
+Solid = false
+Directions = 8
+Area = Vector2( 128, 16 )
+
+[node name="misc_end" type="Node2D" parent="Events"]
+position = Vector2( -470, 46 )
+script = ExtResource( 6 )
+Directions = 1
+
+[node name="move_exit" type="Node2D" parent="Events"]
+position = Vector2( 484, 46 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 0, 72 )
+shape = SubResource( 5 )
+
+[node name="Points" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Points"]
+position = Vector2( 412, 62 )
+script = ExtResource( 33 )
+Direction = 1

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/img/tutorial/itemuse_lacie.png" type="Texture" id=1]
+[ext_resource path="res://script/Subgame/Tutorials/Tutorial.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+Name = "Using Items"
+Text = "To use an item, stand close and select the item from the menu"
+Image = ExtResource( 1 )
+Inputs = null

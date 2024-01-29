@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigame_damage.ogg-e3b5ea30a11817ebd804dc051d849148.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/minigame_damage.ogg"
+dest_files=[ "res://.import/minigame_damage.ogg-e3b5ea30a11817ebd804dc051d849148.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

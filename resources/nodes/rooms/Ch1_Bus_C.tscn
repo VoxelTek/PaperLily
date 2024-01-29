@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_scooch.png" type="Texture" id=2]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=4]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Bus_B.tscn" type="PackedScene" id=5]
+[ext_resource path="res://resources/lighting/ch1_bus.tres" type="Resource" id=6]
+
+[node name="Ch1_Bus_C" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 6 )
+CameraLimitLeft = 64
+CameraLimitTop = 64
+CameraLimitRight = 704
+CameraLimitBottom = 424
+Subroom = NodePath("Ch1_Bus_B")
+
+[node name="Ch1_Bus_B" parent="." instance=ExtResource( 5 )]
+
+[node name="chr_juniper_tail" parent="Ch1_Bus_B/Background" index="6"]
+visible = false
+
+[node name="Lacie" type="Sprite" parent="Ch1_Bus_B/Background/seats_b5" index="0"]
+visible = false
+position = Vector2( 7, -19 )
+texture = ExtResource( 2 )
+hframes = 6
+
+[node name="chr_tired" parent="Ch1_Bus_B/Background" index="16"]
+visible = false
+
+[node name="chr_sai" parent="Ch1_Bus_B/Background" index="17"]
+visible = false
+
+[node name="misc_goop" parent="Ch1_Bus_B/Background" index="18"]
+visible = false
+
+[node name="chr_juniper" parent="Ch1_Bus_B/Background" index="19"]
+visible = false
+
+[node name="chr_gobble" parent="Ch1_Bus_B/Foreground" index="6"]
+visible = false
+
+[node name="chr_girl" parent="Ch1_Bus_B/Foreground" index="7"]
+visible = false
+
+[node name="chr_blob" parent="Ch1_Bus_B/Foreground" index="9"]
+visible = false
+
+[node name="Light" parent="Ch1_Bus_B/Lighting" index="1"]
+visible = false
+
+[node name="misc_seat_1" parent="Ch1_Bus_B/Events" index="0"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="chr_sai" parent="Ch1_Bus_B/Events" index="1"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="chr_juniper" parent="Ch1_Bus_B/Events" index="3"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_goop" parent="Ch1_Bus_B/Events" index="4"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_seat_6" parent="Ch1_Bus_B/Events" index="5"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_seat_7" parent="Ch1_Bus_B/Events" index="6"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_seat_8" parent="Ch1_Bus_B/Events" index="7"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="chr_gobble" parent="Ch1_Bus_B/Events" index="8"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_seat_10" parent="Ch1_Bus_B/Events" index="9"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="chr_lampgirl" parent="Ch1_Bus_B/Events" index="10"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_blobs" parent="Ch1_Bus_B/Events" index="11"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_backseat_1" parent="Ch1_Bus_B/Events" index="12"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="chr_sleepy" parent="Ch1_Bus_B/Events" index="13"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_backseat_3" parent="Ch1_Bus_B/Events" index="14"]
+Event = "Ch1_Bus_B.misc_seat"
+
+[node name="misc_sign" parent="Ch1_Bus_B/Events" index="15"]
+Event = "Ch1_Bus_B.misc_sign"
+
+[node name="misc_ticketmachine" parent="Ch1_Bus_B/Events" index="17"]
+Event = "Ch1_Bus_B.misc_ticketmachine"
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="show_sitting_lacie" type="Node" parent="Actions"]
+script = ExtResource( 3 )
+Node = NodePath("../../Ch1_Bus_B/Background/seats_b5/Lacie")
+
+[node name="open_curtains" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Bus_B/Background/curtains_b")
+Frame = 19
+
+[node name="close_curtains" type="Node" parent="Actions"]
+script = ExtResource( 4 )
+Node = NodePath("../../Ch1_Bus_B/Background/curtains_b")
+Frame = 18
+
+[editable path="Ch1_Bus_B"]

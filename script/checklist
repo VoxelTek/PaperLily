@@ -1,0 +1,46 @@
+- API complete (original still has EditorAreaExtension.cs)
+- Core:
+- - Root directory complete
+- - Enum complete
+- - Input complete
+- - Interface complete
+- - Nodes complete
+- Managers:
+- - Achievements complete
+- - Animation complete (volume fade in and out present in original)
+- - Audio complete
+- - Characters complete
+- - Items complete
+- - Minigames complete (many remaining in original folder)
+- - Objectives complete
+- - Rooms complete (many remaining)
+- - Settings missing InputProfileSetting.cs (SettingParent.cs remaining)
+- - Translations complete
+- - Variables complete
+- Nodes...complete? accidentally added more (SteamUpdater and Smoothing2D remaining)
+- StoryPlayer:
+- - Root....???? Should be complete, but original has "mappings" instead of "mapping" (many remaining)
+- - Command complete
+- Subgame:
+- - BattleMinigame complete
+- - BoxPuzzleMinigame complete
+- - Chapter1 complete (with a lot of difficulty)
+- - HpMeter complete
+- - InputCombinationMinigame complete
+- - PaperLily complete
+- - PaperLilyDemo complete
+- - PointAndClickMinigame complete
+- - Steam complete
+- - TimingBarMinigame complete
+- - Tutorials...???? LsfParserTutorial.cs doesn't exist apparently
+- UI:
+- - Root complete
+- - Frames complete
+- - GameMenu:
+- - - MenuEntry complete
+- - - MenuEntryContainer complete
+- - - MenuEntryList complete
+- - Nodes complete
+
+
+All complete!*

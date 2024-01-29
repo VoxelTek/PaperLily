@@ -1,0 +1,760 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1BlackPassClassroom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/furniture_desk_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/furniture_desk_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/misc_knife.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/misc_fork.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/wall_whiteboard.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/misc_deadcrow.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/furniture_desk_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/furniture_desk_1.png" type="Texture" id=11]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=12]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=13]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/wall_text.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/misc_person_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/misc_person_2.png" type="Texture" id=16]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/ch1/blackpass/common/furniture_wardrobe.png" type="Texture" id=18]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=19]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_dark.png" type="Texture" id=21]
+[ext_resource path="res://assets/bgm/ch1_blackpass.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/sprite/ch1/blackpass/classroom/furniture_desk_5.png" type="Texture" id=23]
+[ext_resource path="res://resources/tileset/ch1_blackpass.tres" type="TileSet" id=24]
+
+[node name="Ch1_BlackPass_Classroom" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -176
+CameraLimitRight = 464
+Bgm = ExtResource( 22 )
+texLacieDark = ExtResource( 21 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 24 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65536, 4, 0, -65535, 4, 1, -65534, 4, 1, -65533, 4, 1, -65532, 4, 1, -65531, 4, 1, -65530, 4, 1, -65529, 4, 1, -65528, 4, 2, 0, 4, 65536, 8, 4, 65538, 65536, 4, 131072, 65537, 4, 131073, 65538, 4, 131073, 65539, 4, 131073, 65540, 4, 131073, 65541, 4, 131073, 65542, 4, 131073, 65543, 4, 131073, 65544, 4, 131074, 131072, 4, 65536, 131080, 4, 65538, 196608, 4, 65536, 196616, 4, 65538, 262144, 4, 65536, 262152, 4, 65538, 327680, 4, 65536, 327688, 4, 65538, 393216, 4, 65536, 393224, 4, 65538, 458752, 4, 65536, 458760, 4, 65538, 524288, 4, 65536, 524296, 4, 65538, 589824, 4, 65536, 589832, 4, 65538, 655360, 4, 65536, 655368, 4, 65538, 720896, 4, 65536, 720904, 4, 65538, 786432, 4, 65536, 786440, 4, 65538, 851968, 4, 65536, 851976, 4, 65538, 917504, 4, 65536, 917512, 4, 65538, 983040, 4, 65536, 983048, 4, 65538, 1048576, 4, 65536, 1048584, 4, 65538, 1114112, 4, 65536, 1114120, 4, 65538, 1179648, 4, 65536, 1179656, 4, 65538, 1245184, 4, 65536, 1245192, 4, 65538, 1310720, 4, 65536, 1310728, 4, 65538, 1376256, 4, 65536, 1376264, 4, 65538, 1441792, 4, 131072, 1441793, 4, 131073, 1441794, 4, 131073, 1441795, 4, 131073, 1441797, 4, 131073, 1441798, 4, 131073, 1441799, 4, 131073, 1441800, 4, 131074 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallWhiteboard" type="Sprite" parent="Background"]
+position = Vector2( 144, 36 )
+texture = ExtResource( 8 )
+
+[node name="WallText" type="Sprite" parent="Background/WallWhiteboard"]
+position = Vector2( 0, -2 )
+texture = ExtResource( 14 )
+
+[node name="Desks" type="Node2D" parent="Background"]
+
+[node name="FurnitureDesk1" type="Sprite" parent="Background/Desks"]
+position = Vector2( 24, 321 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureDesk2" type="Sprite" parent="Background/Desks"]
+position = Vector2( 67, 317 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureDesk3" type="Sprite" parent="Background/Desks"]
+position = Vector2( 105, 325 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureDesk4" type="Sprite" parent="Background/Desks"]
+position = Vector2( 185, 316 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="FurnitureDesk5" type="Sprite" parent="Background/Desks"]
+position = Vector2( 229, 320 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureDesk6" type="Sprite" parent="Background/Desks"]
+position = Vector2( 268, 322 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureDesk7" type="Sprite" parent="Background/Desks"]
+position = Vector2( 23, 451 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureDesk8" type="Sprite" parent="Background/Desks"]
+position = Vector2( 68, 449 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureDesk9" type="Sprite" parent="Background/Desks"]
+position = Vector2( 108, 452 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureDesk10" type="Sprite" parent="Background/Desks"]
+position = Vector2( 154, 443 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="FurnitureDesk11" type="Sprite" parent="Background/Desks"]
+position = Vector2( 200, 454 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureDesk12" type="Sprite" parent="Background/Desks"]
+position = Vector2( 271, 449 )
+texture = ExtResource( 23 )
+flip_h = true
+
+[node name="FurnitureDesk13" type="Sprite" parent="Background/Desks"]
+position = Vector2( 267, 576 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureDesk14" type="Sprite" parent="Background/Desks"]
+position = Vector2( 226, 573 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureDesk15" type="Sprite" parent="Background/Desks"]
+position = Vector2( 182, 581 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureDesk16" type="Sprite" parent="Background/Desks"]
+position = Vector2( 132, 576 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureDesk17" type="Sprite" parent="Background/Desks"]
+position = Vector2( 88, 575 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureDesk18" type="Sprite" parent="Background/Desks"]
+position = Vector2( 17, 579 )
+texture = ExtResource( 23 )
+
+[node name="FurnitureDesk20" type="Sprite" parent="Background/Desks"]
+position = Vector2( 70, 703 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureDesk21" type="Sprite" parent="Background/Desks"]
+position = Vector2( 110, 699 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureDesk22" type="Sprite" parent="Background/Desks"]
+position = Vector2( 182, 706 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureDesk25" type="Sprite" parent="Background/Desks"]
+position = Vector2( 27, 700 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="FurnitureDesk23" type="Sprite" parent="Background/Desks"]
+position = Vector2( 265, 705 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="FurnitureDesk24" type="Sprite" parent="Background/Desks"]
+position = Vector2( 224, 699 )
+texture = ExtResource( 4 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Desk" type="Node2D" parent="Main"]
+position = Vector2( 144, 98 )
+
+[node name="FurnitureDesk4" type="Sprite" parent="Main/Desk"]
+position = Vector2( 0, 13 )
+texture = ExtResource( 5 )
+
+[node name="MiscKnife" type="Sprite" parent="Main/Desk/FurnitureDesk4"]
+position = Vector2( -18, -11 )
+texture = ExtResource( 6 )
+
+[node name="MiscFork" type="Sprite" parent="Main/Desk/FurnitureDesk4"]
+position = Vector2( 17, -11 )
+texture = ExtResource( 7 )
+
+[node name="Crow" type="Sprite" parent="Main/Desk/FurnitureDesk4"]
+position = Vector2( 1, -11 )
+texture = ExtResource( 9 )
+hframes = 2
+
+[node name="RedItem" parent="Main/Desk/FurnitureDesk4/Crow" instance=ExtResource( 20 )]
+modulate = Color( 1, 0.196078, 0.196078, 1 )
+position = Vector2( -1, -1 )
+
+[node name="Bouncer" type="Sprite" parent="Main"]
+position = Vector2( 144, 304 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="People_1" type="Node2D" parent="Main"]
+visible = false
+position = Vector2( 144, 137 )
+
+[node name="MiscPerson6" type="Sprite" parent="Main/People_1"]
+position = Vector2( -26, 33 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson7" type="Sprite" parent="Main/People_1"]
+position = Vector2( 36, 27 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson12" type="Sprite" parent="Main/People_1"]
+position = Vector2( -109, 7 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson14" type="Sprite" parent="Main/People_1"]
+position = Vector2( -59, 2 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson15" type="Sprite" parent="Main/People_1"]
+position = Vector2( -87, -27 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson16" type="Sprite" parent="Main/People_1"]
+position = Vector2( -130, -22 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson17" type="Sprite" parent="Main/People_1"]
+position = Vector2( 97, -23 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson18" type="Sprite" parent="Main/People_1"]
+position = Vector2( 126, -35 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson19" type="Sprite" parent="Main/People_1"]
+position = Vector2( 70, -34 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson20" type="Sprite" parent="Main/People_1"]
+position = Vector2( 8, 21 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson3" type="Sprite" parent="Main/People_1"]
+position = Vector2( 1, 48 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson1" type="Sprite" parent="Main/People_1"]
+position = Vector2( -60, 38 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson5" type="Sprite" parent="Main/People_1"]
+position = Vector2( -84, 19 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson13" type="Sprite" parent="Main/People_1"]
+position = Vector2( -126, 35 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson4" type="Sprite" parent="Main/People_1"]
+position = Vector2( -110, 61 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson10" type="Sprite" parent="Main/People_1"]
+position = Vector2( 66, 6 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson2" type="Sprite" parent="Main/People_1"]
+position = Vector2( 63, 52 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson8" type="Sprite" parent="Main/People_1"]
+position = Vector2( 94, 18 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson11" type="Sprite" parent="Main/People_1"]
+position = Vector2( 119, 3 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson9" type="Sprite" parent="Main/People_1"]
+position = Vector2( 120, 46 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="People_2" type="Node2D" parent="Main"]
+visible = false
+position = Vector2( 144, 137 )
+
+[node name="MiscPerson3" type="Sprite" parent="Main/People_2"]
+position = Vector2( 75, 99 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson6" type="Sprite" parent="Main/People_2"]
+position = Vector2( -84, 91 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson7" type="Sprite" parent="Main/People_2"]
+position = Vector2( -72, 134 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson12" type="Sprite" parent="Main/People_2"]
+position = Vector2( -42, -55 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson14" type="Sprite" parent="Main/People_2"]
+position = Vector2( -63, -3 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson15" type="Sprite" parent="Main/People_2"]
+position = Vector2( -110, 122 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson16" type="Sprite" parent="Main/People_2"]
+position = Vector2( 38, -48 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 3
+
+[node name="MiscPerson17" type="Sprite" parent="Main/People_2"]
+position = Vector2( 98, 25 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson18" type="Sprite" parent="Main/People_2"]
+position = Vector2( 128, 64 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson19" type="Sprite" parent="Main/People_2"]
+position = Vector2( 99, 137 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson20" type="Sprite" parent="Main/People_2"]
+position = Vector2( 127, 8 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson1" type="Sprite" parent="Main/People_2"]
+position = Vector2( -64, 52 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson5" type="Sprite" parent="Main/People_2"]
+position = Vector2( -86, 30 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson13" type="Sprite" parent="Main/People_2"]
+position = Vector2( -124, 33 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson4" type="Sprite" parent="Main/People_2"]
+position = Vector2( -108, 66 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson10" type="Sprite" parent="Main/People_2"]
+position = Vector2( 69, 4 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson2" type="Sprite" parent="Main/People_2"]
+position = Vector2( 63, 56 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson8" type="Sprite" parent="Main/People_2"]
+position = Vector2( 97, 78 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson11" type="Sprite" parent="Main/People_2"]
+position = Vector2( 124, 112 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson9" type="Sprite" parent="Main/People_2"]
+position = Vector2( 63, 142 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="People_3" type="Node2D" parent="Main"]
+visible = false
+position = Vector2( 144, 137 )
+
+[node name="MiscPerson3" type="Sprite" parent="Main/People_3"]
+position = Vector2( -11, 40 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="MiscPerson6" type="Sprite" parent="Main/People_3"]
+position = Vector2( -36, 31 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="MiscPerson7" type="Sprite" parent="Main/People_3"]
+position = Vector2( 34, 21 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="MiscPerson12" type="Sprite" parent="Main/People_3"]
+position = Vector2( -109, -24 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson14" type="Sprite" parent="Main/People_3"]
+position = Vector2( -44, -52 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson15" type="Sprite" parent="Main/People_3"]
+position = Vector2( -86, -29 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson16" type="Sprite" parent="Main/People_3"]
+position = Vector2( -91, -3 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson17" type="Sprite" parent="Main/People_3"]
+position = Vector2( 70, -37 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson18" type="Sprite" parent="Main/People_3"]
+position = Vector2( 126, -35 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson19" type="Sprite" parent="Main/People_3"]
+position = Vector2( 16, 36 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="MiscPerson20" type="Sprite" parent="Main/People_3"]
+position = Vector2( 43, -49 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson1" type="Sprite" parent="Main/People_3"]
+position = Vector2( -62, -28 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson5" type="Sprite" parent="Main/People_3"]
+position = Vector2( -65, 2 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson13" type="Sprite" parent="Main/People_3"]
+position = Vector2( -125, -8 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 2
+
+[node name="MiscPerson4" type="Sprite" parent="Main/People_3"]
+position = Vector2( -58, 43 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="MiscPerson10" type="Sprite" parent="Main/People_3"]
+position = Vector2( 95, -34 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson8" type="Sprite" parent="Main/People_3"]
+position = Vector2( 85, 3 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson11" type="Sprite" parent="Main/People_3"]
+position = Vector2( 104, -11 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson9" type="Sprite" parent="Main/People_3"]
+position = Vector2( 66, -7 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -24 )
+hframes = 4
+
+[node name="MiscPerson2" type="Sprite" parent="Main/People_3"]
+position = Vector2( 60, 36 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -24 )
+hframes = 4
+frame = 1
+
+[node name="Wardrobe" type="Sprite" parent="Main"]
+position = Vector2( 144, 207 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -45 )
+hframes = 3
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 196607, 0, 0, 131081, 0, 0, 262143, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196617, 0, 0, 327679, 0, 0, 262153, 0, 0, 393215, 0, 0, 327689, 0, 0, 458751, 0, 0, 393225, 0, 0, 524287, 0, 0, 458761, 0, 0, 589823, 0, 0, 524297, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 786431, 0, 0, 720905, 0, 0, 851967, 0, 0, 786441, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851976, 0, 0, 851977, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917512, 0, 0, 917513, 0, 0, 1048575, 0, 0, 983049, 0, 0, 1114111, 0, 0, 1048585, 0, 0, 1179647, 0, 0, 1114112, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1245183, 0, 0, 1179648, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1310719, 0, 0, 1245193, 0, 0, 1376255, 0, 0, 1310729, 0, 0, 1441791, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1507327, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="on_enter" type="Node" parent="Other/Events"]
+script = ExtResource( 3 )
+
+[node name="item_knife_on_person_left" type="Node" parent="Other/Events"]
+script = ExtResource( 17 )
+Items = "ch1.blackpass_knife"
+Nodes = "misc_person_left"
+
+[node name="item_knife_on_person_right" type="Node" parent="Other/Events"]
+script = ExtResource( 17 )
+Items = "ch1.blackpass_knife"
+Nodes = "misc_person_right"
+
+[node name="item_knife_on_desk" type="Node" parent="Other/Events"]
+script = ExtResource( 17 )
+Items = "ch1.blackpass_knife"
+Nodes = "misc_desk"
+
+[node name="event_cutscene" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 300 )
+script = ExtResource( 12 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 8 )
+
+[node name="misc_desk" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 112 )
+script = ExtResource( 12 )
+
+[node name="item_red_item_get" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 112 )
+script = ExtResource( 12 )
+
+[node name="misc_whiteboard" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 48 )
+script = ExtResource( 12 )
+Area = Vector2( 96, 32 )
+
+[node name="misc_people_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 192 )
+script = ExtResource( 12 )
+Event = "misc_people"
+Area = Vector2( 32, 192 )
+
+[node name="misc_people_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 192 )
+script = ExtResource( 12 )
+Event = "misc_people"
+Area = Vector2( 32, 192 )
+
+[node name="misc_person_left" type="Node2D" parent="Other/Events"]
+position = Vector2( 104, 80 )
+script = ExtResource( 12 )
+Area = Vector2( 16, 32 )
+
+[node name="misc_person_right" type="Node2D" parent="Other/Events"]
+position = Vector2( 184, 80 )
+script = ExtResource( 12 )
+Area = Vector2( 16, 32 )
+
+[node name="misc_wardrobe" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 196 )
+script = ExtResource( 12 )
+Event = "misc_wardrobe"
+Directions = 2
+Area = Vector2( 46, 24 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 752 )
+script = ExtResource( 12 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 144, 720 )
+script = ExtResource( 13 )
+Direction = 2
+
+[node name="cutscene_stage_2" type="Node2D" parent="Other/Points"]
+position = Vector2( 144, 228 )
+script = ExtResource( 13 )
+Direction = 2
+
+[node name="cutscene_stage_3" type="Node2D" parent="Other/Points"]
+position = Vector2( 144, 91 )
+script = ExtResource( 13 )
+
+[node name="cutscene_stage_4a" type="Node2D" parent="Other/Points"]
+position = Vector2( 119, 80 )
+script = ExtResource( 13 )
+Direction = 1
+
+[node name="cutscene_stage_4b" type="Node2D" parent="Other/Points"]
+position = Vector2( 170, 80 )
+script = ExtResource( 13 )
+Direction = 4
+
+[node name="Updates" type="Node" parent="Other"]

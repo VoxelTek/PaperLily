@@ -1,0 +1,28 @@
+{
+	"Name": "Alba",
+	"NoDefaultSprites": true,
+	"Sprites": [
+		{
+			"State": "stand",
+			"TextureSuffix": "stand",
+			"Hframes": 4,
+			"Vframes": 1,
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		},
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 8,
+			"Vframes": 2,
+			"LeftFrames": "0",
+			"UpFrames": "8,9,10,11,12,13,14,15",
+			"RightFrames": "0",
+			"DownFrames": "0,1,2,3,4,5,6,7",
+			"Fps": 4,
+			"Loop": true
+		}
+	]
+}

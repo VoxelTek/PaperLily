@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/bedroom_a/misc_table.png" type="Texture" id=1]
+
+[node name="furniture_table_lacie" type="Node2D"]
+
+[node name="misc_table" type="Sprite" parent="."]
+position = Vector2( 2, 9 )
+texture = ExtResource( 1 )

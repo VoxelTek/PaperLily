@@ -1,0 +1,16 @@
+{
+	"name": "Mother?",
+	"NoDefaultSprites": true,
+	"Sprites": [
+		{
+			"State": "stand",
+			"TextureSuffix": "stand",
+			"Hframes": 4,
+			"Vframes": 1,
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		}
+	]
+}

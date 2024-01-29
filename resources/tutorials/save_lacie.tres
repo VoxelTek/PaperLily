@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://script/Subgame/Tutorials/Tutorial.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/tutorial/save_lacie.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Saving the Game"
+Text = "Crows can save your game. Save often, since the future is uncertain"
+Image = ExtResource( 2 )
+Inputs = null

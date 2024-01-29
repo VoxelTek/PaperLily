@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/burn.ogg-18e7713146159b6a4d67b9fdfd61acc9.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/burn.ogg"
+dest_files=[ "res://.import/burn.ogg-18e7713146159b6a4d67b9fdfd61acc9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

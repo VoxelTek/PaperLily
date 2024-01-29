@@ -1,0 +1,26 @@
+{
+	"Name": "",
+	"NoDefaultSprites": true,
+	"Sprites": [
+		{
+			"State": "stand",
+			"Hframes": 6,
+			"Vframes": 4,
+			"LeftFrames": "6",
+			"UpFrames": "18",
+			"RightFrames": "12",
+			"DownFrames": "0"
+		},
+		{
+			"State": "walk",
+			"Hframes": 6,
+			"Vframes": 4,
+			"LeftFrames": "9,10,9,11",
+			"UpFrames": "21,22,21,23",
+			"RightFrames": "15,16,15,17",
+			"DownFrames": "3,4,3,5",
+			"Fps": 6,
+			"Loop": true
+		}
+	]
+}

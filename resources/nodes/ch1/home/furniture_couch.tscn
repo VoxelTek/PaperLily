@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/home/livingroom/furniture_couch.png" type="Texture" id=1]
+
+[node name="furniture_couch" type="Node2D"]
+
+[node name="furniture_couch" type="Sprite" parent="."]
+texture = ExtResource( 1 )

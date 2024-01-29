@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_sai.ogg-2d8bfd36cda851f9e5dafbdef34d827b.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_sai.ogg"
+dest_files=[ "res://.import/ch1_sai.ogg-2d8bfd36cda851f9e5dafbdef34d827b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=20.23

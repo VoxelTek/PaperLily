@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scare.ogg-e270a24b607c68acd0d8e6d618418ceb.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/scare.ogg"
+dest_files=[ "res://.import/scare.ogg-e270a24b607c68acd0d8e6d618418ceb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

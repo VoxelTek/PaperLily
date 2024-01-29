@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/UI/TitleScreen.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/cg/ch1/paperlily_title.png" type="Texture" id=2]
+[ext_resource path="res://resources/font/default_small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/img/ui/title_logo_paperlily.png" type="Texture" id=4]
+[ext_resource path="res://assets/bgm/ch1_title.ogg" type="AudioStream" id=5]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+Bgm = ExtResource( 5 )
+
+[node name="Bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Logo" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 378.0
+margin_top = 94.0
+margin_right = 209.5
+margin_bottom = -175.0
+rect_min_size = Vector2( 471.5, 91 )
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="MenuContainer" type="CenterContainer" parent="."]
+margin_left = 389.0
+margin_top = 187.0
+margin_right = 589.0
+margin_bottom = 287.0
+rect_min_size = Vector2( 200, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoMargin" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/margin_right = 5
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoVBox" type="VBoxContainer" parent="InfoMargin"]
+margin_right = 95.0
+margin_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExtraInfo" type="Label" parent="InfoMargin/InfoVBox"]
+margin_right = 95.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 3 )
+text = "Fan Translation by Test"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionInfo" type="Label" parent="InfoMargin/InfoVBox"]
+margin_top = 12.0
+margin_right = 95.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 3 )
+text = "v1.0.0 Leef 6010 2020"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,80 @@
+{
+	"Caption": "system.settings.input.profile.wasd",
+	"Type": "keyboard",
+	"CaptionBase": "_captions_keyboard",
+	"Order": 2,
+	"Mappings": [
+		{
+			"Action": "input_up",
+			"Key": {
+				"Code": 87
+			}
+		},
+		{
+			"Action": "input_down",
+			"Key": {
+				"Code": 83
+			}
+		},
+		{
+			"Action": "input_left",
+			"Key": {
+				"Code": 65
+			}
+		},
+		{
+			"Action": "input_right",
+			"Key": {
+				"Code": 68
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 69
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 32
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 16777221
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 16777222
+			}
+		},
+		{
+			"Action": "input_special",
+			"Key": {
+				"Code": 81
+			}
+		},
+		{
+			"Action": "input_run",
+			"Key": {
+				"Code": 16777237
+			}
+		},
+		{
+			"Action": "input_cancel",
+			"Key": {
+				"Code": 16777217
+			}
+		},
+		{
+			"Action": "input_menu",
+			"Key": {
+				"Code": 16777217
+			}
+		}
+	]
+}

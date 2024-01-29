@@ -1,0 +1,697 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1FacilityB1fControlRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_facility.tres" type="TileSet" id=2]
+[ext_resource path="res://resources/lighting/ch1_facility_lightsoff_glow.tres" type="Resource" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/floor_platform.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_valve_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_locker.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/wall_box.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/struct_machinery.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/wall_panel.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/wall_pipe_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/wall_paper.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/wall_pipe_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_valve_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_box.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_valve_4.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_barrel.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_cables.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_valve_3.png" type="Texture" id=19]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=20]
+[ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=22]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=23]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=24]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/misc_valve_base.png" type="Texture" id=25]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=26]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=27]
+[ext_resource path="res://assets/bgm/ch1_facility.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/sprite/ch1/facility/controlroom/wall_pipe_3.png" type="Texture" id=29]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=30]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=31]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=32]
+[ext_resource path="res://assets/sprite/common/white.png" type="Texture" id=33]
+[ext_resource path="res://resources/lighting/ch1_facility_glow.tres" type="Resource" id=34]
+[ext_resource path="res://resources/material/unshaded.tres" type="Material" id=35]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("IndicatorRed1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("IndicatorRed2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("IndicatorRed3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("IndicatorRed4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "power_off"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("IndicatorRed1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("IndicatorRed2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("IndicatorRed3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("IndicatorRed4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 144, 21 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 31.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32.5, 12 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 17.5, 7 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 4, 32.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 3, 8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 10, 3 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 48, 4 )
+
+[node name="Ch1_Facility_B1F_ControlRoom" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 34 )
+Bgm = ExtResource( 28 )
+HideFollowers = true
+lightOn = ExtResource( 34 )
+lightOff = ExtResource( 3 )
+texValveSquare = ExtResource( 14 )
+texValvePentagon = ExtResource( 5 )
+texValveStar = ExtResource( 19 )
+texValveDiamond = ExtResource( 16 )
+
+[node name="TilesBgNoCol" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -262138, 6, 1, -262137, 6, 1, -262136, 6, 1, -131081, 6, 1, -131080, 6, 1, -131079, 6, 1, -131078, 6, 1, -131077, 6, 1, -131076, 6, 1, -131075, 6, 1, -131074, 6, 1, -131073, 6, 1, -196608, 6, 1, -196607, 6, 1, -196606, 6, 1, -196605, 6, 1, -196604, 6, 1, -196603, 6, 2, -196602, 6, 131073, -196601, 6, 131073, -196600, 6, 131073, -65545, 6, 131073, -65544, 6, 131073, -65543, 6, 131073, -65542, 6, 131073, -65541, 6, 131073, -65540, 6, 131073, -65539, 6, 131073, -65538, 6, 131073, -65537, 6, 131073, -131072, 6, 131073, -131071, 6, 131073, -131070, 6, 131073, -131069, 6, 131073, -131068, 6, 131073, -131067, 6, 131074, -131066, 6, 196609, -131065, 6, 196609, -131064, 6, 196609, -9, 6, 196609, -8, 6, 196609, -7, 6, 196609, -6, 6, 196609, -5, 6, 196609, -4, 6, 196609, -3, 6, 196609, -2, 6, 196609, -1, 6, 196609, -65536, 6, 196609, -65535, 6, 196609, -65534, 6, 196609, -65533, 6, 196609, -65532, 6, 196609, -65531, 6, 196610, -65530, 10, 65537, -65529, 10, 1, -65528, 10, 65537, 65527, 10, 65537, 65528, 10, 65536, 65529, 10, 0, 65530, 10, 0, 65531, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 65537, 65535, 10, 0, 0, 10, 0, 1, 10, 65537, 2, 10, 0, 3, 10, 65537, 4, 10, 0, 5, 10, 65537, 6, 10, 1, 7, 10, 0, 8, 10, 65536, 131063, 10, 1, 131064, 10, 65536, 131065, 10, 65537, 131066, 10, 65536, 131067, 10, 0, 131068, 10, 65536, 131069, 10, 65537, 131070, 10, 0, 131071, 10, 65537, 65536, 10, 0, 65537, 10, 65536, 65538, 10, 0, 65539, 10, 1, 65540, 10, 0, 65541, 10, 65537, 65542, 10, 0, 65543, 10, 1, 65544, 10, 65536, 196599, 10, 65536, 196600, 10, 1, 196601, 10, 65536, 196602, 10, 65537, 196603, 10, 65537, 196604, 10, 1, 196605, 10, 0, 196606, 10, 1, 196607, 10, 0, 131072, 10, 65536, 131073, 10, 65537, 131074, 10, 0, 131075, 10, 0, 131076, 10, 1, 131077, 10, 0, 131078, 10, 65537, 131079, 10, 65536, 131080, 10, 0, 262137, 10, 1, 262138, 10, 65537 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorPlatform" type="Sprite" parent="Background"]
+position = Vector2( 240, 3 )
+texture = ExtResource( 4 )
+
+[node name="Barrel" type="Sprite" parent="Background"]
+position = Vector2( 88, -1 )
+texture = ExtResource( 17 )
+
+[node name="Valve" parent="Background/Barrel" instance=ExtResource( 30 )]
+position = Vector2( -1, -18 )
+scale = Vector2( 1, 0.6 )
+
+[node name="MiscLocker" type="Sprite" parent="Background"]
+position = Vector2( 159, -19 )
+texture = ExtResource( 6 )
+
+[node name="WallBox" type="Sprite" parent="Background"]
+position = Vector2( -137, -68 )
+texture = ExtResource( 7 )
+
+[node name="WallPanel" type="Sprite" parent="Background"]
+position = Vector2( 255, -86 )
+texture = ExtResource( 9 )
+
+[node name="WallPipe1" type="Sprite" parent="Background"]
+position = Vector2( -245, -32 )
+texture = ExtResource( 10 )
+
+[node name="WallPipe2" type="Sprite" parent="Background"]
+position = Vector2( 95, -28 )
+texture = ExtResource( 13 )
+
+[node name="StructMachinery" type="Sprite" parent="Background"]
+position = Vector2( -112, -34 )
+texture = ExtResource( 8 )
+
+[node name="MiscValveBase" type="Sprite" parent="Background/StructMachinery"]
+position = Vector2( 17, 42 )
+texture = ExtResource( 25 )
+
+[node name="MiscValveBase2" type="Sprite" parent="Background/StructMachinery"]
+position = Vector2( 48, 42 )
+texture = ExtResource( 25 )
+
+[node name="MiscValveBase3" type="Sprite" parent="Background/StructMachinery"]
+position = Vector2( 79, 42 )
+texture = ExtResource( 25 )
+
+[node name="MiscValveBase4" type="Sprite" parent="Background/StructMachinery"]
+position = Vector2( 110, 42 )
+texture = ExtResource( 25 )
+
+[node name="MiscValve1" type="Sprite" parent="Background/StructMachinery"]
+position = Vector2( 17, 41 )
+texture = ExtResource( 14 )
+
+[node name="MiscValve2" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+position = Vector2( 48, 41 )
+texture = ExtResource( 5 )
+
+[node name="MiscValve3" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+position = Vector2( 79, 41 )
+texture = ExtResource( 19 )
+
+[node name="MiscValve4" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+position = Vector2( 110, 41 )
+texture = ExtResource( 16 )
+
+[node name="IndicatorRed1" type="Sprite" parent="Background/StructMachinery"]
+modulate = Color( 2.5, 0, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 59, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorRed2" type="Sprite" parent="Background/StructMachinery"]
+modulate = Color( 2.5, 0, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 70, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorRed3" type="Sprite" parent="Background/StructMachinery"]
+modulate = Color( 2.5, 0, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 81, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorRed4" type="Sprite" parent="Background/StructMachinery"]
+modulate = Color( 2.5, 0, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 92, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorGreen1" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+modulate = Color( 0, 2.5, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 59, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorGreen2" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+modulate = Color( 0, 2.5, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 70, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorGreen3" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+modulate = Color( 0, 2.5, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 81, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="IndicatorGreen4" type="Sprite" parent="Background/StructMachinery"]
+visible = false
+modulate = Color( 0, 2.5, 0, 1 )
+material = ExtResource( 35 )
+position = Vector2( 92, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Animation" type="AnimationPlayer" parent="Background/StructMachinery"]
+playback_speed = 1.5
+anims/RESET = SubResource( 1 )
+anims/power_off = SubResource( 2 )
+
+[node name="WallPaper" type="Sprite" parent="Background"]
+position = Vector2( 214, -80 )
+texture = ExtResource( 11 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscBarrel" type="Sprite" parent="Main"]
+position = Vector2( 209, 47 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscBarrel2" type="Sprite" parent="Main"]
+position = Vector2( 239, 53 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscBox" type="Sprite" parent="Main"]
+position = Vector2( -268, 13 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, 10 )
+
+[node name="WallPipe3" type="Sprite" parent="Main"]
+position = Vector2( -245, 16 )
+texture = ExtResource( 29 )
+offset = Vector2( 0, -56 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -393227, 5, 196610, -393226, 5, 196610, -393225, 5, 196610, -393224, 5, 196610, -393223, 5, 196610, -393222, 5, 196610, -393221, 5, 196610, -393220, 5, 196610, -393219, 5, 196610, -393218, 5, 196610, -393217, 5, 196610, -458752, 5, 196610, -458751, 5, 196610, -458750, 5, 196610, -458749, 5, 196610, -458748, 5, 196610, -458747, 5, 196610, -458746, 5, 196610, -458745, 5, 196610, -458744, 5, 196610, -458743, 5, 196610, -458742, 5, 196610, -327691, 5, 196610, -327690, 5, 196610, -327689, 5, 196610, -327688, 5, 196610, -327687, 5, 196610, -327686, 5, 196610, -327685, 5, 196610, -327684, 5, 196610, -327683, 5, 196610, -327682, 5, 196610, -327681, 5, 196610, -393216, 5, 196610, -393215, 5, 196610, -393214, 5, 196610, -393213, 5, 196610, -393212, 5, 196610, -393211, 5, 196610, -393210, 5, 196610, -393209, 5, 196610, -393208, 5, 196610, -393207, 5, 196610, -393206, 5, 196610, -262155, 5, 196610, -262154, 5, 196610, -262153, 5, 196610, -262152, 5, 196610, -262151, 5, 196610, -262150, 5, 196610, -262149, 5, 196610, -262148, 5, 196610, -262147, 5, 196610, -262146, 5, 196610, -262145, 5, 196610, -327680, 5, 196610, -327679, 5, 196610, -327678, 5, 196610, -327677, 5, 196610, -327676, 5, 196610, -327675, 5, 65539, -327674, 5, 262146, -327673, 5, 262146, -327672, 5, 262146, -327671, 5, 65538, -327670, 5, 196610, -196619, 5, 196610, -196618, 5, 65539, -196617, 5, 262146, -196616, 5, 262146, -196615, 5, 262146, -196614, 5, 262146, -196613, 5, 262146, -196612, 5, 262146, -196611, 5, 262146, -196610, 5, 262146, -196609, 5, 262146, -262144, 5, 262146, -262143, 5, 262146, -262142, 5, 262146, -262141, 5, 262146, -262140, 5, 262146, -262139, 5, 262147, -262135, 5, 196609, -262134, 5, 196610, -131083, 5, 196610, -131082, 5, 196611, -196599, 5, 196609, -196598, 5, 196610, -65547, 5, 196610, -65546, 5, 196611, -131063, 5, 196609, -131062, 5, 196610, -11, 5, 196610, -10, 5, 196611, -65527, 5, 196609, -65526, 5, 196610, 65525, 5, 196610, 65526, 5, 196611, 9, 5, 196609, 10, 5, 196610, 131061, 5, 196610, 131062, 5, 196611, 65545, 5, 196609, 65546, 5, 196610, 196597, 5, 196610, 196598, 5, 196611, 131081, 5, 196609, 131082, 5, 196610, 262133, 5, 196610, 262134, 5, 3, 262135, 5, 131074, 262136, 5, 131075, 262139, 5, 131073, 262140, 5, 131074, 262141, 5, 131074, 262142, 5, 131074, 262143, 5, 131074, 196608, 5, 131074, 196609, 5, 131074, 196610, 5, 131074, 196611, 5, 131074, 196612, 5, 131074, 196613, 5, 131074, 196614, 5, 131074, 196615, 5, 131074, 196616, 5, 131074, 196617, 5, 2, 196618, 5, 196610, 327669, 5, 196610, 327670, 5, 196610, 327671, 5, 196610, 327672, 5, 196610, 327673, 5, 196610, 327674, 5, 196610, 327675, 5, 196610, 327676, 5, 196610, 327677, 5, 196610, 327678, 5, 196610, 327679, 5, 196610, 262144, 5, 196610, 262145, 5, 196610, 262146, 5, 196610, 262147, 5, 196610, 262148, 5, 196610, 262149, 5, 196610, 262150, 5, 196610, 262151, 5, 196610, 262152, 5, 196610, 262153, 5, 196610, 262154, 5, 196610, 393205, 5, 196610, 393206, 5, 196610, 393207, 5, 196610, 393208, 5, 196610, 393209, 5, 196610, 393210, 5, 196610, 393211, 5, 196610, 393212, 5, 196610, 393213, 5, 196610, 393214, 5, 196610, 393215, 5, 196610, 327680, 5, 196610, 327681, 5, 196610, 327682, 5, 196610, 327683, 5, 196610, 327684, 5, 196610, 327685, 5, 196610, 327686, 5, 196610, 327687, 5, 196610, 327688, 5, 196610, 327689, 5, 196610, 327690, 5, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscCables" type="Sprite" parent="Foreground"]
+position = Vector2( -48, -53 )
+texture = ExtResource( 18 )
+hframes = 2
+frame = 1
+
+[node name="StructMachinery2" type="Sprite" parent="Foreground"]
+position = Vector2( -112, -93 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 352, 20 )
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( -192, 112 )
+scale = Vector2( 0.625, 0.25 )
+texture = ExtResource( 12 )
+flip_v = true
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light" type="Light2D" parent="Lighting"]
+position = Vector2( -189, 36 )
+texture = ExtResource( 27 )
+texture_scale = 4.0
+color = Color( 1, 0.552941, 0.552941, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2" type="Light2D" parent="Lighting"]
+position = Vector2( 256, 114 )
+texture = ExtResource( 27 )
+texture_scale = 4.0
+color = Color( 0.654902, 0.552941, 1, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light3" type="Light2D" parent="Lighting"]
+position = Vector2( 285, -117 )
+texture = ExtResource( 27 )
+texture_scale = 2.5
+color = Color( 0.423529, 0.176471, 0.654902, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light4" type="Light2D" parent="Lighting"]
+position = Vector2( -226, -3 )
+texture = ExtResource( 27 )
+texture_scale = 4.0
+color = Color( 0.972549, 0.498039, 0.309804, 1 )
+energy = 0.7
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Light5" type="Light2D" parent="Lighting"]
+position = Vector2( 166, 85 )
+texture = ExtResource( 27 )
+texture_scale = 4.0
+color = Color( 0.32549, 0.960784, 0.694118, 1 )
+energy = 0.7
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Light6" type="Light2D" parent="Lighting"]
+position = Vector2( -51, -94 )
+texture = ExtResource( 27 )
+texture_scale = 2.5
+color = Color( 0.980392, 0.317647, 0.490196, 1 )
+energy = 0.7
+range_height = 100.0
+range_item_cull_mask = 3
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+Height = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 31 )
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( -81, 11 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( -256.5, -5 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 95, 16 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 223.5, 28 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 232.5, 47 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 188, -16.5 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 253, 48 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 205, 43 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( 240, -52 )
+shape = SubResource( 11 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="on_enter_cutscene" type="Node" parent="Other/Events"]
+script = ExtResource( 32 )
+
+[node name="item_handle_1_on_valve_1" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_square"
+Nodes = "misc_valve_1"
+
+[node name="item_handle_1_on_valve_4" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_square"
+Nodes = "misc_valve_4"
+
+[node name="item_handle_2_on_valve_2" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_pentagon"
+Nodes = "misc_valve_2"
+
+[node name="item_handle_3_on_valve_2" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_star"
+Nodes = "misc_valve_2"
+
+[node name="item_handle_3_on_valve_3" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_star"
+Nodes = "misc_valve_3"
+
+[node name="item_handle_4_on_valve_1" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_diamond"
+Nodes = "misc_valve_1"
+
+[node name="item_handle_4_on_valve_4" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_diamond"
+Nodes = "misc_valve_4"
+
+[node name="item_wrong_handle_on_valve_1" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_star
+ch1.facility_handle_pentagon"
+Nodes = "misc_valve_1"
+
+[node name="item_wrong_handle_on_valve_2" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_square
+ch1.facility_handle_diamond"
+Nodes = "misc_valve_2"
+
+[node name="item_wrong_handle_on_valve_3" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_square
+ch1.facility_handle_pentagon
+ch1.facility_handle_diamond"
+Nodes = "misc_valve_3"
+
+[node name="item_wrong_handle_on_valve_4" type="Node" parent="Other/Events"]
+script = ExtResource( 24 )
+Items = "ch1.facility_handle_star
+ch1.facility_handle_pentagon"
+Nodes = "misc_valve_4"
+
+[node name="misc_lockers" type="Node2D" parent="Other/Events"]
+position = Vector2( 159, 10 )
+script = ExtResource( 22 )
+Directions = 2
+Area = Vector2( 64, 32 )
+
+[node name="misc_panel" type="Node2D" parent="Other/Events"]
+position = Vector2( 255, -64 )
+script = ExtResource( 22 )
+
+[node name="misc_note" type="Node2D" parent="Other/Events"]
+position = Vector2( 214, -64 )
+script = ExtResource( 22 )
+
+[node name="misc_machine" type="Node2D" parent="Other/Events"]
+position = Vector2( -82, 24 )
+script = ExtResource( 22 )
+Area = Vector2( 272, 16 )
+
+[node name="misc_valve_1" type="Node2D" parent="Other/Events"]
+position = Vector2( -96, 24 )
+script = ExtResource( 22 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_valve_2" type="Node2D" parent="Other/Events"]
+position = Vector2( -65, 24 )
+script = ExtResource( 22 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_valve_3" type="Node2D" parent="Other/Events"]
+position = Vector2( -34, 24 )
+script = ExtResource( 22 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_valve_4" type="Node2D" parent="Other/Events"]
+position = Vector2( -3, 24 )
+script = ExtResource( 22 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_barrel_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 88, 10 )
+script = ExtResource( 22 )
+
+[node name="misc_barrel_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 209, 44 )
+script = ExtResource( 23 )
+Event = "misc_barrel"
+Area = Vector2( 28, 20 )
+
+[node name="misc_barrel_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 238, 50 )
+script = ExtResource( 23 )
+Event = "misc_barrel"
+Area = Vector2( 28, 20 )
+
+[node name="misc_box" type="Node2D" parent="Other/Events"]
+position = Vector2( -269, 36 )
+script = ExtResource( 22 )
+Area = Vector2( 40, 48 )
+
+[node name="misc_coin" type="Node2D" parent="Other/Events"]
+position = Vector2( -280, 4 )
+script = ExtResource( 22 )
+Solid = false
+Area = Vector2( 16, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( -192, 144 )
+script = ExtResource( 22 )
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( -192, 112 )
+script = ExtResource( 20 )
+Direction = 2
+
+[node name="after_cutscene" type="Node2D" parent="Other/Points"]
+position = Vector2( -64, 80 )
+script = ExtResource( 20 )
+Direction = 4
+
+[node name="stairs" type="Node2D" parent="Other"]
+position = Vector2( 272, 39 )
+script = ExtResource( 21 )
+Type = 1
+Area = Vector2( 32, 34 )
+
+[node name="Updates" type="Node" parent="Other"]

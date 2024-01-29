@@ -1,0 +1,228 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1ForestLakesideTentInterior.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/bg_tent.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/misc_tent_firepit.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/misc_tent_lamp_2.png" type="Texture" id=6]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=7]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/misc_terrarium.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/chr_moth_boy.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/tent/chr_moth_girl.png" type="Texture" id=11]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=12]
+[ext_resource path="res://resources/nodes/ch1/fireplace_fire.tscn" type="PackedScene" id=13]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=14]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=15]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItemRoom.cs" type="Script" id=16]
+[ext_resource path="res://assets/sprite/common/sfx/anim_fire_8x1_v2.png" type="Texture" id=17]
+
+[node name="Ch1_Forest_Lakeside_Tent_Interior" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -272
+CameraLimitTop = -132
+CameraLimitRight = 368
+CameraLimitBottom = 228
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BgTent" type="Sprite" parent="Background"]
+position = Vector2( 48, 31 )
+texture = ExtResource( 4 )
+
+[node name="MiscTentLamp2" type="Sprite" parent="Background"]
+position = Vector2( 38, 1 )
+texture = ExtResource( 6 )
+
+[node name="MiscTentFirepit" type="Sprite" parent="Background"]
+position = Vector2( 48, 49 )
+texture = ExtResource( 5 )
+
+[node name="Fire" parent="Background/MiscTentFirepit" instance=ExtResource( 13 )]
+position = Vector2( 0, -22 )
+texture = ExtResource( 17 )
+
+[node name="ChrMothBoy" type="Sprite" parent="Background"]
+position = Vector2( 75, 27 )
+texture = ExtResource( 10 )
+hframes = 2
+script = ExtResource( 12 )
+FPS = 1.6
+
+[node name="ChrMothGirl" type="Sprite" parent="Background"]
+position = Vector2( 19, 30 )
+texture = ExtResource( 11 )
+hframes = 2
+script = ExtResource( 12 )
+FPS = 1.6
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Terrarium" type="Sprite" parent="Main"]
+position = Vector2( 85, 67 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, 2 )
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 48, 112 )
+scale = Vector2( 0.296875, 0.25 )
+texture = ExtResource( 8 )
+flip_v = true
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, 65535, 0, 0, 3, 0, 0, 131071, 0, 0, 65539, 0, 0, 196607, 0, 0, 131075, 0, 0, 262143, 0, 0, 196608, 0, 0, 196610, 0, 0, 196611, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_water_on_fire" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.bucket_full
+ch1.bucket_full_holy"
+Nodes = "misc_firepit"
+
+[node name="item_caterpillar_on_fire" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.forest_caterpillar"
+Nodes = "misc_firepit"
+
+[node name="item_salt_on_caterpillar" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.salt"
+Nodes = "misc_terrarium"
+
+[node name="item_caterpillar_on_moth_boy" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.forest_caterpillar"
+Nodes = "chr_moth_boy"
+
+[node name="item_caterpillar_on_moth_girl" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.forest_caterpillar"
+Nodes = "chr_moth_girl"
+
+[node name="item_lavender_on_moth_boy" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.forest_lavender"
+Nodes = "chr_moth_boy"
+
+[node name="item_lavender_on_moth_girl" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.forest_lavender"
+Nodes = "chr_moth_girl"
+
+[node name="item_doorknob_on_moth_girl" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.doorknob_facility"
+Nodes = "chr_moth_girl"
+
+[node name="item_doorknob_on_moth_boy" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.doorknob_facility"
+Nodes = "chr_moth_boy"
+
+[node name="item_bucket_on_moth_girl" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.bucket
+ch1.bucket_full
+ch1.bucket_full_holy"
+Nodes = "chr_moth_girl"
+
+[node name="item_runes_on_moth_girl" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.rune_jara
+ch1.rune_uruz
+ch1.rune_ansuz
+ch1.rune_raidho
+ch1.rune_algiz
+ch1.rune_tiwaz
+ch1.rune_othala"
+Nodes = "chr_moth_girl"
+
+[node name="item_runes_on_moth_boy" type="Node" parent="Other/Events"]
+script = ExtResource( 14 )
+Items = "ch1.rune_jara
+ch1.rune_uruz
+ch1.rune_ansuz
+ch1.rune_raidho
+ch1.rune_algiz
+ch1.rune_tiwaz
+ch1.rune_othala"
+Nodes = "chr_moth_boy"
+
+[node name="item_caterpillar" type="Node" parent="Other/Events"]
+script = ExtResource( 16 )
+Items = "ch1.forest_caterpillar"
+
+[node name="chr_moth_girl" type="Node2D" parent="Other/Events"]
+position = Vector2( 17, 49 )
+script = ExtResource( 3 )
+Area = Vector2( 40, 16 )
+
+[node name="chr_moth_boy" type="Node2D" parent="Other/Events"]
+position = Vector2( 79, 41 )
+script = ExtResource( 3 )
+Area = Vector2( 40, 16 )
+
+[node name="misc_terrarium" type="Node2D" parent="Other/Events"]
+position = Vector2( 85, 71 )
+script = ExtResource( 3 )
+Area = Vector2( 22, 10 )
+
+[node name="misc_firepit" type="Node2D" parent="Other/Events"]
+position = Vector2( 48, 49 )
+script = ExtResource( 3 )
+Area = Vector2( 22, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 48, 144 )
+script = ExtResource( 3 )
+Solid = false
+Trigger = 1
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 48, 112 )
+script = ExtResource( 7 )
+Direction = 2
+
+[node name="entrance2" type="Node2D" parent="Other/Points"]
+position = Vector2( 48, 48 )
+script = ExtResource( 7 )
+Direction = 2

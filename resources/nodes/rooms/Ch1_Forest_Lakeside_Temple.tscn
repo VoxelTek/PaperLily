@@ -1,0 +1,296 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/floor_lilypads_4.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/floor_lilypads_5.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/foliage_lilypad_flower_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/foliage_plant_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/misc_well.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/misc_fishbowl.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/floor_debris_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/floor_boards.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/floor_debris_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/misc_talismen.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/wall_window.png" type="Texture" id=14]
+[ext_resource path="res://resources/tileset/common_water.tres" type="TileSet" id=15]
+[ext_resource path="res://assets/bgm/ch1_lakeside.ogg" type="AudioStream" id=16]
+[ext_resource path="res://resources/material/ch1_lakeside_water.tres" type="Material" id=17]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/misc_pipe.png" type="Texture" id=18]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=19]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=22]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=23]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=24]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=25]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=26]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=27]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/misc_pinned_note.png" type="Texture" id=28]
+
+[node name="Ch1_Forest_Lakeside_Temple" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -240
+CameraLimitTop = -78
+CameraLimitRight = 400
+CameraLimitBottom = 242
+Bgm = ExtResource( 16 )
+BgmVolume = 0.5
+
+[node name="TilesWater" type="TileMap" parent="."]
+material = ExtResource( 17 )
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 25
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 1, 0, 0, 2, 0, 0, 3, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 327682, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BehindWindow" type="Node2D" parent="Background"]
+
+[node name="FoliageLilypadFlower3" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 102, 53 )
+texture = ExtResource( 5 )
+
+[node name="FloorLilypads5" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 97, 37 )
+texture = ExtResource( 4 )
+hframes = 2
+script = ExtResource( 21 )
+FPS = 1.0
+
+[node name="FloorLilypads4" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 53, 57 )
+texture = ExtResource( 3 )
+hframes = 2
+script = ExtResource( 21 )
+FPS = 1.0
+
+[node name="FloorLilypads6" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 72, 51 )
+texture = ExtResource( 4 )
+flip_h = true
+hframes = 2
+script = ExtResource( 21 )
+FPS = 1.0
+
+[node name="FoliageLilypadFlower2" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 63, 39 )
+texture = ExtResource( 5 )
+
+[node name="FoliagePlant2" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 36, 35 )
+texture = ExtResource( 6 )
+hframes = 2
+script = ExtResource( 21 )
+FPS = 1.0
+
+[node name="FoliagePlant3" type="Sprite" parent="Background/BehindWindow"]
+position = Vector2( 112, 57 )
+texture = ExtResource( 6 )
+flip_h = true
+hframes = 2
+script = ExtResource( 21 )
+FPS = 1.0
+
+[node name="FloorBoards" type="Sprite" parent="Background"]
+position = Vector2( 80, 128 )
+texture = ExtResource( 11 )
+
+[node name="WallWindow" type="Sprite" parent="Background"]
+position = Vector2( 80, 35 )
+texture = ExtResource( 14 )
+
+[node name="FloorDebris1" type="Sprite" parent="Background"]
+position = Vector2( 36, 74 )
+texture = ExtResource( 10 )
+
+[node name="FloorDebris2" type="Sprite" parent="Background"]
+position = Vector2( 114, 156 )
+texture = ExtResource( 12 )
+
+[node name="FloorDebris3" type="Sprite" parent="Background"]
+position = Vector2( 67, 88 )
+texture = ExtResource( 10 )
+
+[node name="MiscTalismen" type="Sprite" parent="Background"]
+position = Vector2( 80, 14 )
+texture = ExtResource( 13 )
+
+[node name="MiscPinnedNote" type="Sprite" parent="Background"]
+position = Vector2( 121, 40 )
+texture = ExtResource( 28 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscWell" type="Sprite" parent="Main"]
+position = Vector2( 80, 108 )
+texture = ExtResource( 7 )
+
+[node name="Fishbowl" type="Node2D" parent="Main/MiscWell"]
+position = Vector2( -1, -11 )
+
+[node name="MiscFishbowl" type="Sprite" parent="Main/MiscWell/Fishbowl"]
+texture = ExtResource( 8 )
+hframes = 6
+frame = 2
+script = ExtResource( 23 )
+FPS = 0.8
+AnimationFrames = "2,3"
+
+[node name="MiscPipe" type="Sprite" parent="Main/MiscWell"]
+position = Vector2( 19, 11 )
+texture = ExtResource( 18 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65537, 49, 196610, -131072, 49, 196610, -131071, 49, 196610, -131070, 49, 196610, -131069, 49, 196610, -131068, 49, 196610, -131067, 49, 196610, -1, 49, 196610, -65536, 49, 65539, -65535, 49, 262146, -65534, 49, 262146, -65533, 49, 262146, -65532, 49, 65538, -65531, 49, 196610, 65535, 49, 196610, 0, 49, 196611, 4, 49, 196609, 5, 49, 196610, 131071, 49, 196610, 65536, 49, 196611, 65540, 49, 196609, 65541, 49, 196610, 196607, 49, 196610, 131072, 49, 196611, 131076, 49, 196609, 131077, 49, 196610, 262143, 49, 196610, 196608, 49, 196611, 196612, 49, 196609, 196613, 49, 196610, 327679, 49, 196610, 262144, 49, 196611, 262148, 49, 196609, 262149, 49, 196610, 393215, 49, 196610, 327680, 49, 3, 327681, 49, 131075, 327683, 49, 131073, 327684, 49, 2, 327685, 49, 196610, 458751, 49, 196610, 393216, 49, 196610, 393217, 49, 196610, 393218, 49, 196610, 393219, 49, 196610, 393220, 49, 196610, 393221, 49, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 80, 176 )
+scale = Vector2( 0.84375, 0.25 )
+texture = ExtResource( 9 )
+flip_v = true
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 22 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_fish_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.forest_fish"
+Nodes = "misc_shrine"
+
+[node name="item_petals_1_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.lakeside_petals_pink"
+Nodes = "misc_shrine"
+
+[node name="item_petals_2_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.lakeside_petals_purple"
+Nodes = "misc_shrine"
+
+[node name="item_petals_3_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.lakeside_petals_white"
+Nodes = "misc_shrine"
+
+[node name="item_algae_1_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.lakeside_algae_black"
+Nodes = "misc_shrine"
+
+[node name="item_algae_2_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.lakeside_algae_blue"
+Nodes = "misc_shrine"
+
+[node name="item_algae_3_on_bowl" type="Node" parent="Other/Events"]
+script = ExtResource( 27 )
+Items = "ch1.lakeside_algae_green"
+Nodes = "misc_shrine"
+
+[node name="misc_shrine" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 114 )
+script = ExtResource( 20 )
+
+[node name="misc_boards" type="Node2D" parent="Other/Events"]
+position = Vector2( 120, 152 )
+script = ExtResource( 20 )
+Solid = false
+Area = Vector2( 16, 16 )
+
+[node name="misc_window" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 47 )
+script = ExtResource( 20 )
+Area = Vector2( 96, 32 )
+
+[node name="misc_note" type="Node2D" parent="Other/Events"]
+position = Vector2( 116, 59 )
+script = ExtResource( 20 )
+Area = Vector2( 24, 8 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 208 )
+script = ExtResource( 20 )
+Solid = false
+Trigger = 1
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 80, 176 )
+script = ExtResource( 19 )
+Direction = 2
+
+[node name="bubble_fish" type="Node2D" parent="Other/Points"]
+position = Vector2( 80, 71 )
+script = ExtResource( 19 )
+
+[node name="cutscene_camera" type="Node2D" parent="Other/Points"]
+position = Vector2( 80, 82 )
+script = ExtResource( 19 )
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="take_fish" type="Node" parent="Other/Actions"]
+script = ExtResource( 26 )
+
+[node name="stop_anim_1" type="Node" parent="Other/Actions/take_fish"]
+script = ExtResource( 25 )
+Node = NodePath("../../../../Main/MiscWell/Fishbowl/MiscFishbowl")
+Start = false
+
+[node name="take_fish_spr" type="Node" parent="Other/Actions/take_fish"]
+script = ExtResource( 24 )
+Node = NodePath("../../../../Main/MiscWell/Fishbowl/MiscFishbowl")
+Frame = 4
+
+[node name="kill_fish" type="Node" parent="Other/Actions"]
+script = ExtResource( 26 )
+
+[node name="stop_anim_2" type="Node" parent="Other/Actions/kill_fish"]
+script = ExtResource( 25 )
+Node = NodePath("../../../../Main/MiscWell/Fishbowl/MiscFishbowl")
+Start = false
+
+[node name="kill_fish_spr" type="Node" parent="Other/Actions/kill_fish"]
+script = ExtResource( 24 )
+Node = NodePath("../../../../Main/MiscWell/Fishbowl/MiscFishbowl")
+Frame = 5

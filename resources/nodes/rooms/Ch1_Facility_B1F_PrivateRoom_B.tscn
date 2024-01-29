@@ -1,0 +1,418 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/floor_cobblestone_4.png" type="Texture" id=2]
+[ext_resource path="res://resources/tileset/ch1_facility_privaterooms.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/misc_mailbox.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/floor_cobblestone_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/floor_cobblestone_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/floor_cobblestone_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/floor_cobblestone_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/foliage_tree.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/facility/room_b/floor_cobblestone_1.png" type="Texture" id=10]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=11]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=12]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/common/tiles_black.png" type="Texture" id=14]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=15]
+
+[node name="Ch1_Facility_B1F_PrivateRoom_B" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -13959159, 0, 458753, -13959158, 0, 458754, -13893624, 0, 458753, -13893623, 0, 458754, -13828091, 0, 458752, -13828090, 0, 458753, -13303804, 0, 458753, -13303803, 0, 458753, -13303802, 0, 458753, -13303801, 0, 458753, -13303800, 0, 458754, -13238270, 0, 458753, -13238269, 0, 458753, -13238268, 0, 458754, -12845056, 0, 458752, -12845055, 0, 458753, -12648447, 0, 458752, -12648446, 0, 458753, -12517374, 0, 458752, -12517373, 0, 458753, -12451837, 0, 458752, -12451836, 0, 458753, -12386300, 0, 458752, -12386299, 0, 458753, -12255227, 0, 458752, -12255226, 0, 458753, -12189690, 0, 458752, -12189689, 0, 458753, -12189688, 0, 458753, -12124152, 0, 458752, -12124151, 0, 458753, -12058615, 0, 458752, -12058614, 0, 458753, -11993078, 0, 458752, -11993077, 0, 458753, -11796468, 0, 458753, -11796467, 0, 458754, -11534325, 0, 458753, -11534324, 0, 458754, -11468790, 0, 458753, -11468789, 0, 458754, -11337720, 0, 458753, -11337719, 0, 458753, -11337718, 0, 458754, -11272185, 0, 458753, -11272184, 0, 458754, -11206650, 0, 458753, -11206649, 0, 458754, -11075580, 0, 458753, -11075579, 0, 458753, -11075578, 0, 458754, -10878973, 0, 458752, -10878972, 0, 458753, -10354684, 0, 458753, -10354683, 0, 458754, -10223613, 0, 458753, -10223612, 0, 458754, -10092542, 0, 458753, -10092541, 0, 458754, -9895936, 0, 458752, -9895935, 0, 458753, -9895934, 0, 458754, -8650751, 0, 65537, -8650750, 0, 196608, -8650749, 0, 458753, -8650748, 0, 65536, -8650747, 0, 65538, -8585216, 0, 65537, -8585215, 0, 458753, -8585214, 0, 458754, -8585212, 0, 458752, -8585211, 0, 458753, -8585210, 0, 65538, -8388608, 0, 458752, -8388602, 0, 458754, -8323071, 0, 458752, -8323070, 0, 458753, -8323068, 0, 458753, -8323067, 0, 458754, -7405566, 0, 458752, -7405565, 0, 458753, -7405564, 0, 458754, -6553600, 0, 458752, -6553599, 0, 458753, -6291455, 0, 458753, -6291454, 0, 458754, -5832704, 0, 458752, -5832703, 0, 458753, -5767167, 0, 458752, -5767166, 0, 458753, -5767165, 0, 458754, -4784121, 0, 458753, -4784120, 0, 458754, -4718586, 0, 458753, -4718585, 0, 458754, -4653052, 0, 458753, -4653051, 0, 458753, -4653050, 0, 458754, -4587517, 0, 458753, -4587516, 0, 458754, -4390910, 0, 458752, -4390909, 0, 458753, -3866622, 0, 458752, -3866621, 0, 458753, -3866620, 0, 458753, -3866619, 0, 458754, -2818044, 0, 458753, -2818043, 0, 458754, -2686974, 0, 458752, -2686973, 0, 458753, -2621437, 0, 458752, -2621436, 0, 458753, -2359291, 0, 458753, -2359290, 0, 458754, -2228220, 0, 458753, -2228219, 0, 458754, -2097150, 0, 458752, -2097149, 0, 458753, -2097148, 0, 458754, -1114111, 0, 458752, -1114110, 0, 458753, -1048574, 0, 458752, -1048573, 0, 458753, -786430, 0, 458752, -786429, 0, 458753, -524285, 0, 458752, -524284, 0, 458754, 720897, 0, 458752, 720898, 0, 458753, 720899, 0, 458753, 917509, 0, 458753, 917510, 0, 458754, 1048580, 0, 458753, 1048581, 0, 458754, 1114114, 0, 458752, 1114115, 0, 458753, 1245187, 0, 458752, 1245188, 0, 458754 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFloor" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -14221305, 0, 262144, -14221304, 0, 262145, -14221303, 0, 262146, -14155771, 0, 262144, -14155770, 0, 262145, -14155769, 0, 131073, -14155768, 0, 327681, -14155767, 0, 131074, -14155766, 0, 262146, -14090235, 0, 327680, -14090234, 0, 327681, -14090233, 0, 327681, -14090232, 0, 327681, -14090231, 0, 327681, -14090230, 0, 327682, -14024699, 0, 327680, -14024698, 0, 327681, -14024697, 0, 327681, -14024696, 0, 327681, -14024695, 0, 196610, -14024694, 0, 393218, -13959163, 0, 327680, -13959162, 0, 327681, -13959161, 0, 327681, -13959160, 0, 196610, -13959159, 0, 393218, -13893627, 0, 393216, -13893626, 0, 196609, -13893625, 0, 327681, -13893624, 0, 327682, -13828090, 0, 327680, -13828089, 0, 327681, -13828088, 0, 327682, -13762554, 0, 327680, -13762553, 0, 327681, -13762552, 0, 327682, -13697018, 0, 327680, -13697017, 0, 327681, -13697016, 0, 327682, -13631482, 0, 327680, -13631481, 0, 327681, -13631480, 0, 327682, -13565946, 0, 327680, -13565945, 0, 327681, -13565944, 0, 327682, -13500410, 0, 327680, -13500409, 0, 327681, -13500408, 0, 327682, -13434878, 0, 262144, -13434877, 0, 262145, -13434876, 0, 262145, -13434875, 0, 262145, -13434874, 0, 131073, -13434873, 0, 327681, -13434872, 0, 327682, -13369343, 0, 262144, -13369342, 0, 131073, -13369341, 0, 327681, -13369340, 0, 196610, -13369339, 0, 393217, -13369338, 0, 393217, -13369337, 0, 393217, -13369336, 0, 393218, -13303807, 0, 327680, -13303806, 0, 196610, -13303805, 0, 393217, -13303804, 0, 393218, -13238272, 0, 262144, -13238271, 0, 131073, -13238270, 0, 327682, -13172736, 0, 327680, -13172735, 0, 327681, -13172734, 0, 327682, -13107200, 0, 327680, -13107199, 0, 327681, -13107198, 0, 327682, -13041664, 0, 327680, -13041663, 0, 327681, -13041662, 0, 327682, -12976128, 0, 327680, -12976127, 0, 327681, -12976126, 0, 327682, -12910592, 0, 393216, -12910591, 0, 196609, -12910590, 0, 131074, -12910589, 0, 262146, -12845055, 0, 327680, -12845054, 0, 327681, -12845053, 0, 327682, -12779519, 0, 327680, -12779518, 0, 327681, -12779517, 0, 327682, -12713983, 0, 393216, -12713982, 0, 196609, -12713981, 0, 131074, -12713980, 0, 262146, -12648446, 0, 327680, -12648445, 0, 327681, -12648444, 0, 131074, -12648443, 0, 262146, -12582910, 0, 393216, -12582909, 0, 196609, -12582908, 0, 327681, -12582907, 0, 131074, -12582906, 0, 262146, -12517373, 0, 393216, -12517372, 0, 196609, -12517371, 0, 327681, -12517370, 0, 327682, -12451836, 0, 393216, -12451835, 0, 196609, -12451834, 0, 131074, -12451833, 0, 262146, -12386299, 0, 327680, -12386298, 0, 327681, -12386297, 0, 327682, -12320763, 0, 393216, -12320762, 0, 196609, -12320761, 0, 131074, -12320760, 0, 262145, -12320759, 0, 262146, -12255226, 0, 393216, -12255225, 0, 393217, -12255224, 0, 196609, -12255223, 0, 131074, -12255222, 0, 262146, -12189688, 0, 393216, -12189687, 0, 196609, -12189686, 0, 131074, -12189685, 0, 262146, -12124151, 0, 393216, -12124150, 0, 196609, -12124149, 0, 131074, -12124148, 0, 262146, -12058614, 0, 393216, -12058613, 0, 196609, -12058612, 0, 327682, -11993077, 0, 327680, -11993076, 0, 131074, -11993075, 0, 262146, -11927541, 0, 327680, -11927540, 0, 327681, -11927539, 0, 327682, -11862005, 0, 327680, -11862004, 0, 196610, -11862003, 0, 393218, -11796469, 0, 327680, -11796468, 0, 327682, -11730934, 0, 262144, -11730933, 0, 131073, -11730932, 0, 327682, -11665398, 0, 327680, -11665397, 0, 327681, -11665396, 0, 327682, -11599863, 0, 262144, -11599862, 0, 131073, -11599861, 0, 196610, -11599860, 0, 393218, -11534328, 0, 262144, -11534327, 0, 131073, -11534326, 0, 196610, -11534325, 0, 393218, -11468793, 0, 262144, -11468792, 0, 131073, -11468791, 0, 327681, -11468790, 0, 327682, -11403258, 0, 262144, -11403257, 0, 131073, -11403256, 0, 196610, -11403255, 0, 393217, -11403254, 0, 393218, -11337723, 0, 262144, -11337722, 0, 131073, -11337721, 0, 196610, -11337720, 0, 393218, -11272188, 0, 262144, -11272187, 0, 131073, -11272186, 0, 196610, -11272185, 0, 393218, -11206653, 0, 262144, -11206652, 0, 131073, -11206651, 0, 327681, -11206650, 0, 327682, -11141117, 0, 327680, -11141116, 0, 196610, -11141115, 0, 393217, -11141114, 0, 393218, -11075581, 0, 327680, -11075580, 0, 327682, -11010045, 0, 327680, -11010044, 0, 131074, -11010043, 0, 262146, -10944509, 0, 393216, -10944508, 0, 196609, -10944507, 0, 327682, -10878972, 0, 327680, -10878971, 0, 327682, -10813436, 0, 327680, -10813435, 0, 327682, -10747900, 0, 327680, -10747899, 0, 327682, -10682364, 0, 327680, -10682363, 0, 327682, -10616828, 0, 327680, -10616827, 0, 327682, -10551292, 0, 327680, -10551291, 0, 327682, -10485757, 0, 262144, -10485756, 0, 131073, -10485755, 0, 327682, -10420221, 0, 327680, -10420220, 0, 196610, -10420219, 0, 393218, -10354686, 0, 262144, -10354685, 0, 131073, -10354684, 0, 327682, -10289150, 0, 327680, -10289149, 0, 196610, -10289148, 0, 393218, -10223615, 0, 262144, -10223614, 0, 131073, -10223613, 0, 327682, -10158080, 0, 262144, -10158079, 0, 131073, -10158078, 0, 196610, -10158077, 0, 393218, -10092544, 0, 327680, -10092543, 0, 327681, -10092542, 0, 327682, -10027008, 0, 327680, -10027007, 0, 327681, -10027006, 0, 327682, -9961472, 0, 393216, -9961471, 0, 393217, -9961470, 0, 393218, -8781823, 0, 262144, -8781822, 0, 262145, -8781821, 0, 262145, -8781820, 0, 262145, -8781819, 0, 262146, -8716288, 0, 262144, -8716287, 0, 131073, -8716286, 0, 196610, -8716285, 0, 393217, -8716284, 0, 196609, -8716283, 0, 131074, -8716282, 0, 262146, -8650752, 0, 327680, -8650751, 0, 196610, -8650750, 0, 393218, -8650748, 0, 393216, -8650747, 0, 196609, -8650746, 0, 327682, -8585216, 0, 327680, -8585215, 0, 327682, -8585211, 0, 327680, -8585210, 0, 327682, -8519680, 0, 327680, -8519679, 0, 131074, -8519678, 0, 262146, -8519676, 0, 262144, -8519675, 0, 131073, -8519674, 0, 327682, -8454144, 0, 393216, -8454143, 0, 196609, -8454142, 0, 131074, -8454141, 0, 262145, -8454140, 0, 131073, -8454139, 0, 196610, -8454138, 0, 393218, -8388607, 0, 393216, -8388606, 0, 196609, -8388605, 0, 327681, -8388604, 0, 196610, -8388603, 0, 393218, -8323070, 0, 327680, -8323069, 0, 327681, -8323068, 0, 327682, -8257534, 0, 327680, -8257533, 0, 327681, -8257532, 0, 327682, -8191998, 0, 327680, -8191997, 0, 327681, -8191996, 0, 327682, -8126462, 0, 327680, -8126461, 0, 327681, -8126460, 0, 327682, -8060926, 0, 327680, -8060925, 0, 327681, -8060924, 0, 327682, -7995390, 0, 327680, -7995389, 0, 327681, -7995388, 0, 327682, -7929854, 0, 327680, -7929853, 0, 327681, -7929852, 0, 327682, -7864318, 0, 327680, -7864317, 0, 327681, -7864316, 0, 327682, -7798782, 0, 327680, -7798781, 0, 327681, -7798780, 0, 327682, -7733246, 0, 327680, -7733245, 0, 327681, -7733244, 0, 327682, -7667710, 0, 327680, -7667709, 0, 327681, -7667708, 0, 327682, -7602174, 0, 327680, -7602173, 0, 327681, -7602172, 0, 327682, -7536638, 0, 327680, -7536637, 0, 327681, -7536636, 0, 327682, -7471102, 0, 393216, -7471101, 0, 393217, -7471100, 0, 393218, -6750208, 0, 262144, -6750207, 0, 262145, -6750206, 0, 262146, -6684672, 0, 327680, -6684671, 0, 327681, -6684670, 0, 327682, -6619136, 0, 393216, -6619135, 0, 196609, -6619134, 0, 327682, -6553599, 0, 327680, -6553598, 0, 327682, -6488063, 0, 327680, -6488062, 0, 327682, -6422528, 0, 262144, -6422527, 0, 131073, -6422526, 0, 327682, -6356992, 0, 327680, -6356991, 0, 196610, -6356990, 0, 393218, -6291456, 0, 327680, -6291455, 0, 327682, -6225920, 0, 327680, -6225919, 0, 131074, -6225918, 0, 262146, -6160384, 0, 327680, -6160383, 0, 327681, -6160382, 0, 327682, -6094848, 0, 327680, -6094847, 0, 327681, -6094846, 0, 327682, -6029312, 0, 327680, -6029311, 0, 327681, -6029310, 0, 327682, -5963776, 0, 327680, -5963775, 0, 327681, -5963774, 0, 327682, -5898240, 0, 393216, -5898239, 0, 196609, -5898238, 0, 131074, -5898237, 0, 262146, -5832703, 0, 393216, -5832702, 0, 393217, -5832701, 0, 393218, -4980730, 0, 262144, -4980729, 0, 262145, -4980728, 0, 262146, -4915194, 0, 327680, -4915193, 0, 327681, -4915192, 0, 327682, -4849659, 0, 262144, -4849658, 0, 131073, -4849657, 0, 196610, -4849656, 0, 393218, -4784125, 0, 262144, -4784124, 0, 262145, -4784123, 0, 131073, -4784122, 0, 196610, -4784121, 0, 393218, -4718590, 0, 262144, -4718589, 0, 131073, -4718588, 0, 196610, -4718587, 0, 393217, -4718586, 0, 393218, -4653054, 0, 327680, -4653053, 0, 196610, -4653052, 0, 393218, -4587518, 0, 327680, -4587517, 0, 327682, -4521982, 0, 327680, -4521981, 0, 131074, -4521980, 0, 262146, -4456446, 0, 393216, -4456445, 0, 196609, -4456444, 0, 131074, -4456443, 0, 262146, -4390909, 0, 327680, -4390908, 0, 327681, -4390907, 0, 327682, -4325373, 0, 327680, -4325372, 0, 327681, -4325371, 0, 327682, -4259837, 0, 327680, -4259836, 0, 327681, -4259835, 0, 327682, -4194301, 0, 327680, -4194300, 0, 327681, -4194299, 0, 327682, -4128765, 0, 327680, -4128764, 0, 327681, -4128763, 0, 327682, -4063229, 0, 327680, -4063228, 0, 327681, -4063227, 0, 327682, -3997694, 0, 262144, -3997693, 0, 131073, -3997692, 0, 327681, -3997691, 0, 327682, -3932158, 0, 393216, -3932157, 0, 393217, -3932156, 0, 393217, -3932155, 0, 393218, -3080190, 0, 262144, -3080189, 0, 262145, -3080188, 0, 262145, -3080187, 0, 262146, -3014654, 0, 327680, -3014653, 0, 327681, -3014652, 0, 327681, -3014651, 0, 327682, -2949118, 0, 327680, -2949117, 0, 327681, -2949116, 0, 327681, -2949115, 0, 327682, -2883582, 0, 327680, -2883581, 0, 327681, -2883580, 0, 196610, -2883579, 0, 393218, -2818046, 0, 327680, -2818045, 0, 327681, -2818044, 0, 327682, -2752510, 0, 393216, -2752509, 0, 327681, -2752508, 0, 131074, -2752507, 0, 262146, -2686973, 0, 393216, -2686972, 0, 196609, -2686971, 0, 131074, -2686970, 0, 262146, -2621436, 0, 327680, -2621435, 0, 327681, -2621434, 0, 327682, -2555901, 0, 262144, -2555900, 0, 131073, -2555899, 0, 327681, -2555898, 0, 327682, -2490365, 0, 327680, -2490364, 0, 327681, -2490363, 0, 327681, -2490362, 0, 327682, -2424829, 0, 327680, -2424828, 0, 327681, -2424827, 0, 196610, -2424826, 0, 393218, -2359294, 0, 262144, -2359293, 0, 131073, -2359292, 0, 327681, -2359291, 0, 327682, -2293758, 0, 327680, -2293757, 0, 327681, -2293756, 0, 196610, -2293755, 0, 1, -2228222, 0, 327680, -2228221, 0, 327681, -2228220, 0, 327682, -2162686, 0, 393216, -2162685, 0, 393217, -2162684, 0, 393218, -1572862, 0, 262144, -1572861, 0, 262145, -1572860, 0, 262146, -1507326, 0, 327680, -1507325, 0, 327681, -1507324, 0, 327682, -1441790, 0, 327680, -1441789, 0, 327681, -1441788, 0, 327682, -1376254, 0, 327680, -1376253, 0, 327681, -1376252, 0, 327682, -1310718, 0, 327680, -1310717, 0, 327681, -1310716, 0, 327682, -1245183, 0, 262144, -1245182, 0, 131073, -1245181, 0, 327681, -1245180, 0, 327682, -1179647, 0, 393216, -1179646, 0, 196609, -1179645, 0, 327681, -1179644, 0, 327682, -1114110, 0, 393216, -1114109, 0, 196609, -1114108, 0, 327682, -1048573, 0, 327680, -1048572, 0, 327682, -983037, 0, 327680, -983036, 0, 327682, -917502, 0, 262144, -917501, 0, 131073, -917500, 0, 327682, -851966, 0, 393216, -851965, 0, 196609, -851964, 0, 327682, -786429, 0, 327680, -786428, 0, 327682, -720893, 0, 327680, -720892, 0, 327682, -655357, 0, 327680, -655356, 0, 327682, -589821, 0, 393216, -589820, 0, 393218, 65539, 0, 262144, 65540, 0, 262146, 131075, 0, 327680, 131076, 0, 327682, 196611, 0, 327680, 196612, 0, 327682, 262147, 0, 327680, 262148, 0, 327682, 327682, 0, 262144, 327683, 0, 131073, 327684, 0, 131074, 327685, 0, 262146, 393218, 0, 327680, 393219, 0, 327681, 393220, 0, 327681, 393221, 0, 327682, 458754, 0, 327680, 458755, 0, 327681, 458756, 0, 327681, 458757, 0, 327682, 524289, 0, 262144, 524290, 0, 131073, 524291, 0, 327681, 524292, 0, 327681, 524293, 0, 327682, 589825, 0, 327680, 589826, 0, 327681, 589827, 0, 327681, 589828, 0, 327681, 589829, 0, 131074, 589830, 0, 262146, 655361, 0, 393216, 655362, 0, 393217, 655363, 0, 196609, 655364, 0, 327681, 655365, 0, 327681, 655366, 0, 327682, 720899, 0, 327680, 720900, 0, 327681, 720901, 0, 327681, 720902, 0, 327682, 786435, 0, 327680, 786436, 0, 327681, 786437, 0, 327681, 786438, 0, 327682, 851971, 0, 327680, 851972, 0, 327681, 851973, 0, 196610, 851974, 0, 393218, 917506, 0, 262144, 917507, 0, 131073, 917508, 0, 327681, 917509, 0, 327682, 983042, 0, 327680, 983043, 0, 327681, 983044, 0, 327681, 983045, 0, 393218, 1048578, 0, 393216, 1048579, 0, 196609, 1048580, 0, 327682, 1114115, 0, 327680, 1114116, 0, 327682, 1179651, 0, 393216, 1179652, 0, 393218 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorCobblestone1" type="Sprite" parent="Ground"]
+position = Vector2( 131, 254 )
+texture = ExtResource( 10 )
+
+[node name="FloorCobblestone2" type="Sprite" parent="Ground"]
+position = Vector2( 103, 224 )
+texture = ExtResource( 8 )
+
+[node name="FloorCobblestone3" type="Sprite" parent="Ground"]
+position = Vector2( 89, 292 )
+texture = ExtResource( 8 )
+
+[node name="FloorCobblestone4" type="Sprite" parent="Ground"]
+position = Vector2( 150, 299 )
+texture = ExtResource( 5 )
+
+[node name="FloorCobblestone5" type="Sprite" parent="Ground"]
+position = Vector2( 131, 356 )
+texture = ExtResource( 2 )
+
+[node name="FloorCobblestone6" type="Sprite" parent="Ground"]
+position = Vector2( 176, 427 )
+texture = ExtResource( 6 )
+
+[node name="FloorCobblestone7" type="Sprite" parent="Ground"]
+position = Vector2( 124, 524 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="FloorCobblestone8" type="Sprite" parent="Ground"]
+position = Vector2( 126, 151 )
+texture = ExtResource( 7 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FoliageTree" type="Sprite" parent="Main"]
+position = Vector2( 57, 267 )
+texture = ExtResource( 9 )
+
+[node name="FoliageTree2" type="Sprite" parent="Main"]
+position = Vector2( 204, 302 )
+texture = ExtResource( 9 )
+
+[node name="FoliageTree3" type="Sprite" parent="Main"]
+position = Vector2( 90, 460 )
+texture = ExtResource( 9 )
+
+[node name="MiscMailbox" type="Sprite" parent="Main"]
+position = Vector2( 131, 251 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -21 )
+
+[node name="MiscMailbox2" type="Sprite" parent="Main"]
+position = Vector2( 113, -591 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -21 )
+
+[node name="MiscMailbox3" type="Sprite" parent="Main"]
+position = Vector2( 176, -1265 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -21 )
+
+[node name="MiscMailbox4" type="Sprite" parent="Main"]
+position = Vector2( 145, -2129 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -21 )
+
+[node name="MiscMailbox5" type="Sprite" parent="Main"]
+position = Vector2( 77, -3122 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -21 )
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -3712 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="TilesBlack" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -3616 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout2" type="Sprite" parent="Lighting"]
+position = Vector2( 96, -2912 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="TilesBlack2" type="Sprite" parent="Lighting"]
+position = Vector2( 96, -2816 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout3" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -1984 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="TilesBlack3" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -1888 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout4" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -1120 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="TilesBlack4" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -1024 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout5" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -352 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="TilesBlack5" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -256 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout6" type="Sprite" parent="Lighting"]
+position = Vector2( 128, 512 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="TilesBlack6" type="Sprite" parent="Lighting"]
+position = Vector2( 128, 608 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout7" type="Sprite" parent="Lighting"]
+position = Vector2( 128, 128 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+
+[node name="TilesBlack7" type="Sprite" parent="Lighting"]
+position = Vector2( 128, 32 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout8" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -672 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+
+[node name="TilesBlack8" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -768 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout9" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -1408 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+
+[node name="TilesBlack9" type="Sprite" parent="Lighting"]
+position = Vector2( 128, -1504 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout10" type="Sprite" parent="Lighting"]
+position = Vector2( 192, -2336 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+
+[node name="TilesBlack10" type="Sprite" parent="Lighting"]
+position = Vector2( 192, -2432 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="LightFadeout11" type="Sprite" parent="Lighting"]
+position = Vector2( 64, -3200 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 13 )
+
+[node name="TilesBlack11" type="Sprite" parent="Lighting"]
+position = Vector2( 64, -3296 )
+scale = Vector2( 8, 2 )
+texture = ExtResource( 14 )
+
+[node name="Events" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_mailbox_1" type="Node2D" parent="Events"]
+position = Vector2( 131, 251 )
+script = ExtResource( 15 )
+Area = Vector2( 20, 8 )
+
+[node name="misc_mailbox_2" type="Node2D" parent="Events"]
+position = Vector2( 113, -591 )
+script = ExtResource( 15 )
+Area = Vector2( 20, 8 )
+
+[node name="misc_mailbox_3" type="Node2D" parent="Events"]
+position = Vector2( 176, -1265 )
+script = ExtResource( 15 )
+Area = Vector2( 20, 8 )
+
+[node name="misc_mailbox_4" type="Node2D" parent="Events"]
+position = Vector2( 145, -2129 )
+script = ExtResource( 15 )
+Area = Vector2( 20, 8 )
+
+[node name="misc_mailbox_5" type="Node2D" parent="Events"]
+position = Vector2( 77, -3122 )
+script = ExtResource( 15 )
+Area = Vector2( 20, 8 )
+
+[node name="move_next_1" type="Node2D" parent="Events"]
+position = Vector2( 128, 48 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="move_next_2" type="Node2D" parent="Events"]
+position = Vector2( 112, -752 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 32 )
+
+[node name="move_next_3" type="Node2D" parent="Events"]
+position = Vector2( 128, -1488 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 128, 32 )
+
+[node name="move_next_4" type="Node2D" parent="Events"]
+position = Vector2( 240, -2416 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 32 )
+
+[node name="move_next_5" type="Node2D" parent="Events"]
+position = Vector2( 48, -3280 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 32 )
+
+[node name="move_back_1" type="Node2D" parent="Events"]
+position = Vector2( 128, 592 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="move_back_2" type="Node2D" parent="Events"]
+position = Vector2( 128, -272 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="move_back_3" type="Node2D" parent="Events"]
+position = Vector2( 112, -1040 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 32 )
+
+[node name="move_back_4" type="Node2D" parent="Events"]
+position = Vector2( 128, -1904 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 128, 32 )
+
+[node name="move_back_5" type="Node2D" parent="Events"]
+position = Vector2( 80, -2832 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 32 )
+
+[node name="move_back_6" type="Node2D" parent="Events"]
+position = Vector2( 112, -3632 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 32 )
+
+[node name="Points" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="island_1_south" type="Node2D" parent="Points"]
+position = Vector2( 128, 560 )
+script = ExtResource( 12 )
+Direction = 2
+
+[node name="island_1_north" type="Node2D" parent="Points"]
+position = Vector2( 128, 80 )
+script = ExtResource( 12 )
+
+[node name="island_2_south" type="Node2D" parent="Points"]
+position = Vector2( 128, -304 )
+script = ExtResource( 12 )
+Direction = 2
+
+[node name="island_2_north" type="Node2D" parent="Points"]
+position = Vector2( 112, -720 )
+script = ExtResource( 12 )
+
+[node name="island_3_south" type="Node2D" parent="Points"]
+position = Vector2( 112, -1072 )
+script = ExtResource( 12 )
+Direction = 2
+
+[node name="island_3_north" type="Node2D" parent="Points"]
+position = Vector2( 128, -1456 )
+script = ExtResource( 12 )
+
+[node name="island_4_south" type="Node2D" parent="Points"]
+position = Vector2( 128, -1936 )
+script = ExtResource( 12 )
+Direction = 2
+
+[node name="island_4_north" type="Node2D" parent="Points"]
+position = Vector2( 240, -2384 )
+script = ExtResource( 12 )
+
+[node name="island_5_south" type="Node2D" parent="Points"]
+position = Vector2( 64, -2864 )
+script = ExtResource( 12 )
+Direction = 2
+
+[node name="island_5_north" type="Node2D" parent="Points"]
+position = Vector2( 48, -3248 )
+script = ExtResource( 12 )
+
+[node name="island_6_south" type="Node2D" parent="Points"]
+position = Vector2( 112, -3664 )
+script = ExtResource( 12 )
+Direction = 2

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigame_block_slide.ogg-50bd84047ccbb07676498a6905bcb795.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/minigame_block_slide.ogg"
+dest_files=[ "res://.import/minigame_block_slide.ogg-50bd84047ccbb07676498a6905bcb795.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

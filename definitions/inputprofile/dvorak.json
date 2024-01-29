@@ -1,0 +1,92 @@
+{
+	"Caption": "system.settings.input.profile.dvorak",
+	"Type": "keyboard",
+	"CaptionBase": "_captions_keyboard",
+	"Order": 5,
+	"Mappings": [
+		{
+			"Action": "input_up",
+			"Key": {
+				"Code": 16777232
+			}
+		},
+		{
+			"Action": "input_down",
+			"Key": {
+				"Code": 16777234
+			}
+		},
+		{
+			"Action": "input_left",
+			"Key": {
+				"Code": 16777231
+			}
+		},
+		{
+			"Action": "input_right",
+			"Key": {
+				"Code": 16777233
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 59
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 32
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 16777221
+			}
+		},
+		{
+			"Action": "input_action",
+			"Key": {
+				"Code": 16777222
+			}
+		},
+		{
+			"Action": "input_special",
+			"Key": {
+				"Code": 74
+			}
+		},
+		{
+			"Action": "input_run",
+			"Key": {
+				"Code": 16777237
+			}
+		},
+		{
+			"Action": "input_cancel",
+			"Key": {
+				"Code": 81
+			}
+		},
+		{
+			"Action": "input_cancel",
+			"Key": {
+				"Code": 16777217
+			}
+		},
+		{
+			"Action": "input_menu",
+			"Key": {
+				"Code": 81
+			}
+		},
+		{
+			"Action": "input_menu",
+			"Key": {
+				"Code": 16777217
+			}
+		}
+	]
+}

@@ -1,0 +1,316 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1MkB1fCages.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/floor_hole.png" type="Texture" id=2]
+[ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/wall_painting_b.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_sm.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/wall_painting_a_bg.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/wall_frame.png" type="Texture" id=8]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=9]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=10]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=11]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=12]
+[ext_resource path="res://resources/nodes/ch1/mk/mk_darkness.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_mirror.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/wall_painting_a.png" type="Texture" id=15]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=16]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=17]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/wall_painting_a_bg2.png" type="Texture" id=19]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=22]
+[ext_resource path="res://assets/bgm/ch1_mk_d.ogg" type="AudioStream" id=23]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=24]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=25]
+[ext_resource path="res://resources/lighting/ch1_mk_dark.tres" type="Resource" id=26]
+
+[node name="Ch1_MK_B1F_Cages" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -96
+CameraLimitTop = -20
+CameraLimitRight = 544
+CameraLimitBottom = 340
+Bgm = ExtResource( 23 )
+HideFollowers = true
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 3, 19, 0, 4, 19, 0, 5, 19, 0, 6, 19, 0, 7, 19, 0, 8, 19, 0, 9, 19, 0, 10, 19, 0, 131072, 19, 0, 131073, 19, 0, 131074, 20, 0, 262147, 17, 0, 262148, 17, 0, 262149, 17, 0, 262150, 17, 0, 262151, 17, 0, 262152, 17, 0, 262153, 17, 0, 262154, 17, 0, 327683, 17, 0, 327684, 17, 0, 327685, 17, 0, 327686, 17, 0, 327687, 17, 0, 327688, 17, 0, 327689, 17, 0, 327690, 17, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 17, 0, 393220, 17, 0, 393221, 17, 0, 393222, 17, 0, 393223, 17, 0, 393224, 17, 0, 393225, 17, 0, 393226, 17, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 17, 0, 458756, 17, 0, 458757, 17, 0, 458758, 17, 0, 458759, 17, 0, 458760, 17, 0, 458761, 17, 0, 458762, 17, 0, 524291, 17, 0, 524292, 17, 0, 524293, 17, 0, 524294, 17, 0, 524295, 17, 0, 524296, 17, 0, 524297, 17, 0, 524298, 17, 0, 589827, 17, 0, 589828, 17, 0, 589829, 17, 0, 589830, 17, 0, 589831, 17, 0, 589832, 17, 0, 589833, 17, 0, 589834, 17, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorHole" type="Sprite" parent="Background"]
+position = Vector2( 225, 224 )
+texture = ExtResource( 2 )
+
+[node name="WallPaintingB" type="Sprite" parent="Background"]
+position = Vector2( 142, 65 )
+texture = ExtResource( 4 )
+
+[node name="WallPaintingB2" type="Sprite" parent="Background"]
+position = Vector2( 306, 65 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="WallFrame" type="Sprite" parent="Background"]
+position = Vector2( 224, 73 )
+texture = ExtResource( 8 )
+
+[node name="WallPaintingABg" type="Sprite" parent="Background"]
+position = Vector2( 224, 72 )
+texture = ExtResource( 7 )
+
+[node name="WallPaintingA" type="Node2D" parent="Background"]
+position = Vector2( 224, 72 )
+
+[node name="WallPaintingABg2" type="Sprite" parent="Background/WallPaintingA"]
+texture = ExtResource( 19 )
+
+[node name="WallPaintingA1" type="Sprite" parent="Background/WallPaintingA"]
+position = Vector2( 0, 8 )
+texture = ExtResource( 15 )
+hframes = 2
+
+[node name="MiscCageSm" type="Sprite" parent="Background"]
+position = Vector2( 117, 137 )
+texture = ExtResource( 5 )
+
+[node name="MiscCageSm2" type="Sprite" parent="Background"]
+position = Vector2( 152, 122 )
+texture = ExtResource( 5 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cage" type="Node2D" parent="Main"]
+position = Vector2( 322, 175 )
+
+[node name="MiscCageSm4" type="Sprite" parent="Main/cage"]
+position = Vector2( 0, -21 )
+texture = ExtResource( 5 )
+
+[node name="cage2" type="Node2D" parent="Main"]
+position = Vector2( 337, 259 )
+
+[node name="MiscCageSm4" type="Sprite" parent="Main/cage2"]
+position = Vector2( 0, -21 )
+texture = ExtResource( 5 )
+
+[node name="cage3" type="Node2D" parent="Main"]
+position = Vector2( 320, 280 )
+
+[node name="MiscCageSm4" type="Sprite" parent="Main/cage3"]
+position = Vector2( 0, -21 )
+texture = ExtResource( 5 )
+
+[node name="CageMirror" type="Node2D" parent="Main"]
+position = Vector2( 225, 306 )
+
+[node name="MiscCageSm4" type="Sprite" parent="Main/CageMirror"]
+position = Vector2( 0, -21 )
+texture = ExtResource( 5 )
+
+[node name="Mirror" type="Sprite" parent="Main/CageMirror"]
+position = Vector2( 2, -4 )
+texture = ExtResource( 14 )
+
+[node name="MkDarkness" parent="Main/CageMirror/Mirror" instance=ExtResource( 13 )]
+position = Vector2( -3, -1 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 18, 196610, -65537, 18, 196610, -131072, 18, 196610, -131071, 18, 196610, -131070, 18, 196610, -131069, 18, 196610, -131068, 18, 196610, -131067, 18, 196610, -131066, 18, 196610, -131065, 18, 196610, -131064, 18, 196610, -131063, 18, 196610, -131062, 18, 196610, -131061, 18, 196610, -131060, 18, 196610, -2, 18, 196610, -1, 18, 196610, -65536, 18, 196610, -65535, 18, 196610, -65534, 18, 65539, -65533, 18, 262146, -65532, 18, 262146, -65531, 18, 262146, -65530, 18, 262146, -65529, 18, 262146, -65528, 18, 262146, -65527, 18, 262146, -65526, 18, 262146, -65525, 18, 65538, -65524, 18, 196610, 65534, 18, 196610, 65535, 18, 196610, 0, 18, 196610, 1, 18, 196610, 2, 18, 196611, 11, 18, 196609, 12, 18, 196610, 131070, 18, 196610, 131071, 18, 196610, 65536, 18, 262146, 65537, 18, 262146, 65538, 18, 262147, 65547, 18, 196609, 65548, 18, 196610, 196606, 18, 196610, 196607, 18, 196610, 131083, 18, 196609, 131084, 18, 196610, 262142, 18, 196610, 262143, 18, 196610, 196619, 18, 196609, 196620, 18, 196610, 327678, 18, 196610, 327679, 18, 196610, 262155, 18, 196609, 262156, 18, 196610, 393214, 18, 196610, 393215, 18, 196610, 327691, 18, 196609, 327692, 18, 196610, 458750, 18, 196610, 458751, 18, 196610, 393227, 18, 196609, 393228, 18, 196610, 524286, 18, 196610, 524287, 18, 196610, 458763, 18, 196609, 458764, 18, 196610, 589822, 18, 196610, 589823, 18, 196610, 524288, 18, 131074, 524289, 18, 131074, 524290, 18, 131075, 524299, 18, 196609, 524300, 18, 196610, 655358, 18, 196610, 655359, 18, 196610, 589824, 18, 196610, 589825, 18, 196610, 589826, 18, 196611, 589835, 18, 196609, 589836, 18, 196610, 720894, 18, 196610, 720895, 18, 196610, 655360, 18, 196610, 655361, 18, 196610, 655362, 18, 3, 655363, 18, 131074, 655364, 18, 131074, 655365, 18, 131074, 655366, 18, 131074, 655367, 18, 131074, 655368, 18, 131074, 655369, 18, 131074, 655370, 18, 131074, 655371, 18, 2, 655372, 18, 196610, 786430, 18, 196610, 786431, 18, 196610, 720896, 18, 196610, 720897, 18, 196610, 720898, 18, 196610, 720899, 18, 196610, 720900, 18, 196610, 720901, 18, 196610, 720902, 18, 196610, 720903, 18, 196610, 720904, 18, 196610, 720905, 18, 196610, 720906, 18, 196610, 720907, 18, 196610, 720908, 18, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="light_fadeout_2" type="Sprite" parent="Foreground"]
+position = Vector2( 32, 160.5 )
+scale = Vector2( 0.5, 1.58594 )
+texture = ExtResource( 11 )
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 25 )
+Default = true
+Lighting = ExtResource( 17 )
+
+[node name="Light12" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 225, 130 )
+texture = ExtResource( 18 )
+texture_scale = 3.0
+color = Color( 1, 0.870588, 0.564706, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 25 )
+Lighting = ExtResource( 26 )
+
+[node name="Light13" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( 186, 183 )
+texture = ExtResource( 18 )
+texture_scale = 5.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.6
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="on_enter_save" type="Node" parent="Other/Events"]
+script = ExtResource( 22 )
+
+[node name="item_knife_on_painting" type="Node" parent="Other/Events"]
+script = ExtResource( 21 )
+Items = "ch1.mk_knife
+ch1.mk_knife_activated"
+Nodes = "misc_painting"
+
+[node name="item_lighter_on_painting" type="Node" parent="Other/Events"]
+script = ExtResource( 21 )
+Items = "ch1.mk_lighter"
+Nodes = "misc_painting"
+
+[node name="misc_painting" type="Node2D" parent="Other/Events"]
+position = Vector2( 224, 112 )
+script = ExtResource( 6 )
+Area = Vector2( 88, 32 )
+
+[node name="misc_paintings" type="Node2D" parent="Other/Events"]
+position = Vector2( 308, 112 )
+script = ExtResource( 6 )
+Area = Vector2( 64, 32 )
+
+[node name="misc_cage" type="Node2D" parent="Other/Events"]
+position = Vector2( 117, 148 )
+script = ExtResource( 6 )
+Event = "misc_cages"
+
+[node name="misc_cage2" type="Node2D" parent="Other/Events"]
+position = Vector2( 152, 133 )
+script = ExtResource( 6 )
+Event = "misc_cages"
+
+[node name="misc_cage3" type="Node2D" parent="Other/Events"]
+position = Vector2( 321, 173 )
+script = ExtResource( 10 )
+Event = "misc_cages"
+Area = Vector2( 32, 16 )
+
+[node name="misc_cage4" type="Node2D" parent="Other/Events"]
+position = Vector2( 336, 257 )
+script = ExtResource( 10 )
+Event = "misc_cages"
+Area = Vector2( 32, 16 )
+
+[node name="misc_cage5" type="Node2D" parent="Other/Events"]
+position = Vector2( 319, 278 )
+script = ExtResource( 10 )
+Event = "misc_cages"
+Area = Vector2( 33, 16 )
+
+[node name="misc_cage_mirror" type="Node2D" parent="Other/Events"]
+position = Vector2( 224, 304 )
+script = ExtResource( 10 )
+Area = Vector2( 33, 16 )
+
+[node name="misc_cage_mirror_failsafe" type="Node2D" parent="Other/Events"]
+position = Vector2( 224, 312 )
+script = ExtResource( 6 )
+Event = "misc_cage_mirror"
+Area = Vector2( 33, 16 )
+
+[node name="misc_cagefloor" type="Node2D" parent="Other/Events"]
+position = Vector2( 225, 224 )
+script = ExtResource( 10 )
+Solid = false
+Area = Vector2( 160, 80 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( -16, 224 )
+script = ExtResource( 6 )
+Area = Vector2( 32, 64 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 16, 224 )
+script = ExtResource( 9 )
+Direction = 4
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="mirror" type="Node" parent="Other/Updates"]
+script = ExtResource( 20 )
+Variable = "ch1.mk_took_mirror"
+Node = NodePath("../../../Main/CageMirror/Mirror")
+Invert = true
+
+[node name="painting_gone" type="Node" parent="Other/Updates"]
+script = ExtResource( 20 )
+Variable = "ch1.mk_painting_chase_clear"
+Node = NodePath("../../../Background/WallPaintingA")
+Invert = true
+
+[node name="creepy_lighting" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "general.serious"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")

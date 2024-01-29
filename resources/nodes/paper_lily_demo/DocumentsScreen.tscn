@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/Subgame/PaperLily/DocumentsScreen.cs" type="Script" id=1]
+
+[node name="Documents" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Bg" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+color = Color( 0, 0, 0, 0.8 )
+
+[node name="Center" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0

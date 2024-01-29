@@ -1,0 +1,500 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_fairyring.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plant_outline_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plant_outline_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plant_outline_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_06.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_04.png" type="Texture" id=13]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=14]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=15]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=16]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/wall_doorway.png" type="Texture" id=18]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=19]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=20]
+[ext_resource path="res://resources/lighting/ch1_fairyring.tres" type="Resource" id=21]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/wall_border.png" type="Texture" id=22]
+[ext_resource path="res://resources/material/sfx_floor_deform.tres" type="Material" id=23]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_atk_1.png" type="Texture" id=24]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=25]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1FairyHeadTrigger.cs" type="Script" id=26]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_atk_2.png" type="Texture" id=27]
+[ext_resource path="res://assets/sfx/gore1.ogg" type="AudioStream" id=28]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=29]
+
+[node name="Ch1_FairyRing_B2F_Puzzle_1" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 21 )
+CameraLimitLeft = 64
+CameraLimitTop = 0
+CameraLimitBottom = 480
+
+[node name="TilesFloor" type="TileMap" parent="."]
+material = ExtResource( 23 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 1
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262149, 9, 0, 262153, 9, 0, 262157, 9, 0, 262161, 9, 0, 262165, 9, 0, 393221, 9, 0, 393225, 9, 0, 393229, 9, 0, 393233, 9, 0, 393237, 9, 0, 524293, 9, 0, 524297, 9, 0, 524301, 9, 0, 524305, 9, 0, 524309, 9, 0, 655365, 9, 0, 655369, 9, 0, 655373, 9, 0, 655377, 9, 0, 655381, 9, 0, 786437, 9, 0, 786441, 9, 0, 786445, 9, 0, 786449, 9, 0, 786453, 9, 0, 851970, 7, 65537, 851971, 7, 65538, 851972, 7, 65539 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesWall" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 5, 1, 0, 9, 12, 0, 10, 2, 0, 13, 11, 0, 15, 1, 0, 19, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallBorder" type="Node2D" parent="Background"]
+
+[node name="WallBorder" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 161, 81 )
+texture = ExtResource( 22 )
+
+[node name="WallBorder2" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 736, 80 )
+texture = ExtResource( 22 )
+
+[node name="Head6" type="Sprite" parent="Background"]
+position = Vector2( 336, 149 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -10 )
+
+[node name="Head7" type="Sprite" parent="Background"]
+position = Vector2( 528, 148 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -10 )
+
+[node name="MiscPlants6" type="Sprite" parent="Background"]
+position = Vector2( 198, 113 )
+texture = ExtResource( 9 )
+
+[node name="MiscVine04" type="Sprite" parent="Background"]
+position = Vector2( 155, 206 )
+texture = ExtResource( 13 )
+
+[node name="MiscVine06" type="Sprite" parent="Background"]
+position = Vector2( 745, 140 )
+texture = ExtResource( 12 )
+
+[node name="WallDoorway" type="Sprite" parent="Background"]
+position = Vector2( 589, 89 )
+texture = ExtResource( 18 )
+
+[node name="MiscFairyAtk1" type="Sprite" parent="Background"]
+visible = false
+texture = ExtResource( 24 )
+offset = Vector2( 0, -4 )
+hframes = 8
+script = ExtResource( 25 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="MiscFairyAtk2" type="Sprite" parent="Background"]
+visible = false
+texture = ExtResource( 27 )
+offset = Vector2( 0, -20.5 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Head1" type="Sprite" parent="Main"]
+position = Vector2( 208, 310 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -10 )
+
+[node name="Head9" type="Sprite" parent="Main"]
+position = Vector2( 689, 245 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -10 )
+
+[node name="Head8" type="Sprite" parent="Main"]
+position = Vector2( 530, 373 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -10 )
+
+[node name="Head2" type="Sprite" parent="Main"]
+position = Vector2( 272, 212 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 25 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="Head3" type="Sprite" parent="Main"]
+position = Vector2( 400, 341 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 25 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="Head4" type="Sprite" parent="Main"]
+position = Vector2( 623, 212 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 25 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="Head5" type="Sprite" parent="Main"]
+position = Vector2( 622, 405 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 25 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="MiscPlantOutline2" type="Sprite" parent="Main"]
+position = Vector2( 402, 246 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline3" type="Sprite" parent="Main"]
+position = Vector2( 336, 370 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline1" type="Sprite" parent="Main"]
+position = Vector2( 462, 372 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline4" type="Sprite" parent="Main"]
+position = Vector2( 562, 439 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline6" type="Sprite" parent="Main"]
+position = Vector2( 691, 372 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline5" type="Sprite" parent="Main"]
+position = Vector2( 530, 243 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -16 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262167, 8, 0, 262168, 8, 0, 327703, 8, 0, 327704, 8, 0, 393239, 8, 0, 393240, 8, 0, 458775, 8, 0, 458776, 8, 0, 524311, 8, 0, 524312, 8, 0, 589847, 8, 0, 589848, 8, 0, 655383, 8, 0, 655384, 8, 0, 720919, 8, 0, 720920, 8, 0, 786455, 8, 0, 786456, 8, 0, 851991, 8, 0, 851992, 8, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout2" type="Sprite" parent="Lighting"]
+position = Vector2( 96, 416 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 17 )
+
+[node name="Light" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 456, 253 )
+texture = ExtResource( 20 )
+texture_scale = 8.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 19 )
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 262148, 0, 0, 262167, 0, 0, 327684, 0, 0, 327703, 0, 0, 393220, 0, 0, 393239, 0, 0, 458756, 0, 0, 458775, 0, 0, 524292, 0, 0, 524311, 0, 0, 589828, 0, 0, 589847, 0, 0, 655364, 0, 0, 655383, 0, 0, 720900, 0, 0, 720919, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786455, 0, 0, 851991, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="on_enter_save" type="Node" parent="Other/Events"]
+script = ExtResource( 16 )
+
+[node name="event_enter" type="Node2D" parent="Other/Events"]
+position = Vector2( 156, 432.364 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 32 )
+
+[node name="event_death_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 384 )
+script = ExtResource( 26 )
+AttackType = 1
+HeadNode = NodePath("../../../Main/Head1")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 128 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 272, 240 )
+script = ExtResource( 26 )
+HeadNode = NodePath("../../../Main/Head2")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 224, 24 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 400, 368 )
+script = ExtResource( 26 )
+HeadNode = NodePath("../../../Main/Head3")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 96, 24 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 608, 240 )
+script = ExtResource( 26 )
+HeadNode = NodePath("../../../Main/Head4")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 128, 24 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 656, 432 )
+script = ExtResource( 26 )
+HeadNode = NodePath("../../../Main/Head5")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 160, 24 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 336, 256 )
+script = ExtResource( 26 )
+AttackType = 1
+HeadNode = NodePath("../../../Background/Head6")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 192 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_7" type="Node2D" parent="Other/Events"]
+position = Vector2( 528, 192 )
+script = ExtResource( 26 )
+AttackType = 1
+HeadNode = NodePath("../../../Background/Head7")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 64 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_8" type="Node2D" parent="Other/Events"]
+position = Vector2( 528, 416 )
+script = ExtResource( 26 )
+AttackType = 1
+HeadNode = NodePath("../../../Main/Head8")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 64 )
+sfxDeath = ExtResource( 28 )
+
+[node name="event_death_9" type="Node2D" parent="Other/Events"]
+position = Vector2( 688, 304 )
+script = ExtResource( 26 )
+AttackType = 1
+HeadNode = NodePath("../../../Main/Head9")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 96 )
+sfxDeath = ExtResource( 28 )
+
+[node name="item_salt_on_head" type="Node" parent="Other/Events"]
+script = ExtResource( 29 )
+Items = "ch1.salt"
+Nodes = "misc_head_1
+misc_head_2
+misc_head_3
+misc_head_4
+misc_head_5
+misc_head_6
+misc_head_7
+misc_head_8
+misc_head_9"
+
+[node name="item_scissors_on_head" type="Node" parent="Other/Events"]
+script = ExtResource( 29 )
+Items = "ch1.scissors"
+Nodes = "misc_head_1
+misc_head_2
+misc_head_3
+misc_head_4
+misc_head_5
+misc_head_6
+misc_head_7
+misc_head_8
+misc_head_9"
+
+[node name="item_scissors_salt_on_plants" type="Node" parent="Other/Events"]
+script = ExtResource( 29 )
+Items = "ch1.salt
+ch1.scissors"
+Nodes = "misc_plant_1
+misc_plant_2
+misc_plant_3
+misc_plant_4
+misc_plant_5
+misc_plant_6"
+
+[node name="misc_head_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 304 )
+script = ExtResource( 14 )
+Event = "misc_head_a"
+
+[node name="misc_head_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 272, 208 )
+script = ExtResource( 14 )
+Event = "misc_head_b"
+
+[node name="misc_head_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 336, 144 )
+script = ExtResource( 14 )
+Event = "misc_head_a"
+
+[node name="misc_head_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 400, 336 )
+script = ExtResource( 14 )
+Event = "misc_head_b"
+
+[node name="misc_head_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 528, 368 )
+script = ExtResource( 14 )
+Event = "misc_head_a"
+
+[node name="misc_head_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 624, 400 )
+script = ExtResource( 14 )
+Event = "misc_head_b"
+
+[node name="misc_head_7" type="Node2D" parent="Other/Events"]
+position = Vector2( 688, 240 )
+script = ExtResource( 14 )
+Event = "misc_head_a"
+
+[node name="misc_head_8" type="Node2D" parent="Other/Events"]
+position = Vector2( 624, 208 )
+script = ExtResource( 14 )
+Event = "misc_head_b"
+
+[node name="misc_head_9" type="Node2D" parent="Other/Events"]
+position = Vector2( 528, 144 )
+script = ExtResource( 14 )
+Event = "misc_head_a"
+
+[node name="misc_plant_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 336, 368 )
+script = ExtResource( 14 )
+Event = "misc_plant"
+
+[node name="misc_plant_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 464, 368 )
+script = ExtResource( 14 )
+Event = "misc_plant"
+
+[node name="misc_plant_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 560, 432 )
+script = ExtResource( 14 )
+Event = "misc_plant"
+
+[node name="misc_plant_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 688, 368 )
+script = ExtResource( 14 )
+Event = "misc_plant"
+
+[node name="misc_plant_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 528, 240 )
+script = ExtResource( 14 )
+Event = "misc_plant"
+
+[node name="misc_plant_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 400, 240 )
+script = ExtResource( 14 )
+Event = "misc_plant"
+
+[node name="move_prev" type="Node2D" parent="Other/Events"]
+position = Vector2( 48, 432 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+
+[node name="move_next" type="Node2D" parent="Other/Events"]
+position = Vector2( 592, 112 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 80, 432 )
+script = ExtResource( 15 )
+Direction = 4
+
+[node name="return" type="Node2D" parent="Other/Points"]
+position = Vector2( 592, 144 )
+script = ExtResource( 15 )
+
+[node name="Updates" type="Node" parent="Other"]

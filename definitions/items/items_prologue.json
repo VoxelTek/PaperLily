@@ -1,0 +1,151 @@
+{
+	"items": [
+		{
+			"id": "prologue.bad_flower",
+			"icon": "flower02",
+			"name": "White Flower",
+			"description": "A white flower I found on the grass. It appears to be a lily... I think."
+		},
+		{
+			"id": "prologue.white_flower",
+			"icon": "flower01",
+			"name": "Wet White Flower",
+			"description": "A white flower I took from a vase. It's probably a Lily."
+		},
+		{
+			"id": "prologue.ritual_notes",
+			"icon": "paper",
+			"name": "Ritual Notes",
+			"description": "I put everything I need to remember here.",
+			"event": "prologue_item_notes"
+		},
+		{
+			"id": "prologue.ritual_notes2",
+			"icon": "paper2",
+			"name": "Ritual Notes (Drawing)",
+			"description": "This is how it looks in my head.",
+			"event": "prologue_item_notes2"
+		},
+		{
+			"id": "prologue.candles",
+			"icon": "candles",
+			"name": "Candles",
+			"description": "A bunch of candles. I need these for the ritual."
+		},
+		{
+			"id": "prologue.chalk",
+			"icon": "chalk",
+			"name": "Chalk",
+			"description": "A piece of chalk. I can draw various things with it."
+		},
+		{
+			"id": "prologue.curtains",
+			"icon": "curtains",
+			"name": "Curtains",
+			"description": "Red blackout curtains used to block as much light as possible."
+		},
+		{
+			"id": "prologue.lighter",
+			"icon": "lighter",
+			"name": "Lighter",
+			"description": "My personal lighter. I don't smoke, but I enjoy watching things burn."
+		},
+		{
+			"id": "prologue.lighter2",
+			"icon": "lighter2",
+			"name": "Old Lighter",
+			"description": "An old lighter I had lost a long time ago. It doesn't seem to work anymore."
+		},
+		{
+			"id": "prologue.scissors",
+			"icon": "scissors",
+			"name": "Scissors",
+			"description": "A regular pair of scissors. Not pointy enough to stab people with."
+		},
+		{
+			"id": "prologue.tuft01",
+			"icon": "tuft01",
+			"name": "Girl's Hair",
+			"description": "A tuft of hair I cut from the girl with brown hair."
+		},
+		{
+			"id": "prologue.tuft02",
+			"icon": "tuft02",
+			"name": "Girl's Hair",
+			"description": "A tuft of hair I cut from the girl with black hair."
+		},
+		{
+			"id": "prologue.tuft03",
+			"icon": "tuft03",
+			"name": "Girl's Hair",
+			"description": "A tuft of hair I cut from the girl with dark brown hair."
+		},
+		{
+			"id": "prologue.tuft00",
+			"icon": "tuft02",
+			"name": "My Hair",
+			"description": "A bit of hair I cut from myself. Looking at it makes me sad."
+		},
+		{
+			"id": "prologue.rune_berkana",
+			"icon": "rune_berkana",
+			"name": "Protective Rune",
+			"description": "A rune with some ancient symbol engraved."
+		},
+		{
+			"id": "prologue.rune_inguz",
+			"icon": "rune_inguz",
+			"name": "Protective Rune",
+			"description": "A rune with some ancient symbol engraved."
+		},
+		{
+			"id": "prologue.rune_kaunaz",
+			"icon": "rune_kaunaz",
+			"name": "Protective Rune",
+			"description": "A rune with some ancient symbol engraved."
+		},
+		{
+			"id": "prologue.girl1_notebook",
+			"name": "Student's Notebook",
+			"description": "A red notebook, probably forgotten by a student. The color and design are not my style.",
+			"event": "prologue_item_notebook",
+			"icon": "notebook_red"
+		},
+		{
+			"id": "prologue.key_theater_club",
+			"name": "Theater Club Key",
+			"description": "The key to open the theater club room.",
+			"icon": "key01"
+		},
+		{
+			"id": "prologue.hairpin",
+			"icon": "hairpin",
+			"name": "Dusty Hairpin",
+			"description": "My trusty hairpin! I have a feeling this could come in handy."
+		},
+		{
+			"id": "prologue.key_hod",
+			"name": "Fairly Normal-Looking Key",
+			"description": "A key I found on a long hallway.",
+			"icon": "key02"
+		},
+		{
+			"id": "prologue.lettuce",
+			"icon": "lettuce",
+			"name": "Lettuce",
+			"description": "You're not supposed to have this in your inventory."
+		},
+		{
+			"id": "prologue.locker_key",
+			"icon": "locker_key",
+			"name": "Small Key",
+			"description": "A small key, probably for a locker."
+		},
+		{
+			"id": "prologue.blueprints",
+			"icon": "blueprints",
+			"name": "Strange Blueprints",
+			"description": "Blueprints for an unknown device. You can't make heads or tails out of it."
+		}
+	]
+}

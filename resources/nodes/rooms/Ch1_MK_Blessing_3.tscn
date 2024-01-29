@@ -1,0 +1,388 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://script/Core/Nodes/ActionPositionPlayerAlign.cs" type="Script" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_4.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/bg_lamps.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/furniture_table.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_pillar_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_6.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_wetcloth.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_pillar_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/misc_basket.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_bucket.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/furniture_bed_sai.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/bg.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_1.png" type="Texture" id=20]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=21]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=22]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=23]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=24]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=25]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/furniture_bed_corpse.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_cobblestone_1.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_cobblestone_2.png" type="Texture" id=28]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=29]
+[ext_resource path="res://script/Core/Nodes/ActionFade2D.cs" type="Script" id=30]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_cobblestone_3.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/sfx_fire.png" type="Texture" id=32]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=33]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_bucket_empty.png" type="Texture" id=34]
+
+[node name="Ch1_MK_Blessing_3" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CobblestoneOut" type="Node2D" parent="Background"]
+visible = false
+
+[node name="FloorCobblestone1" type="Sprite" parent="Background/CobblestoneOut"]
+position = Vector2( 0, -14 )
+texture = ExtResource( 27 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone2" type="Sprite" parent="Background/CobblestoneOut"]
+position = Vector2( 0, -78 )
+texture = ExtResource( 27 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone3" type="Sprite" parent="Background/CobblestoneOut"]
+position = Vector2( 0, -141 )
+texture = ExtResource( 28 )
+
+[node name="Background" type="Node2D" parent="Background"]
+
+[node name="Bg" type="Sprite" parent="Background/Background"]
+position = Vector2( 223, 134 )
+texture = ExtResource( 19 )
+
+[node name="BgLamps" type="Sprite" parent="Background/Background"]
+position = Vector2( 232, 22 )
+texture = ExtResource( 7 )
+
+[node name="MiscPillar1" type="Sprite" parent="Background/Background"]
+position = Vector2( 129, 20 )
+texture = ExtResource( 10 )
+
+[node name="MiscPillar2" type="Sprite" parent="Background/Background"]
+position = Vector2( 306, 21 )
+texture = ExtResource( 13 )
+
+[node name="Floor1" type="Sprite" parent="Background/Background"]
+position = Vector2( 78, 231 )
+texture = ExtResource( 20 )
+
+[node name="Floor2" type="Sprite" parent="Background/Background"]
+position = Vector2( 129, 280 )
+texture = ExtResource( 14 )
+
+[node name="Floor3" type="Sprite" parent="Background/Background"]
+position = Vector2( 92, 357 )
+texture = ExtResource( 16 )
+
+[node name="Floor4" type="Sprite" parent="Background/Background"]
+position = Vector2( 392, 197 )
+texture = ExtResource( 6 )
+
+[node name="Floor5" type="Sprite" parent="Background/Background"]
+position = Vector2( 341, 282 )
+texture = ExtResource( 8 )
+
+[node name="Floor6" type="Sprite" parent="Background/Background"]
+position = Vector2( 379, 352 )
+texture = ExtResource( 11 )
+
+[node name="FurnitureBedSai" type="Sprite" parent="Background/Background"]
+position = Vector2( 221, 109 )
+texture = ExtResource( 18 )
+
+[node name="FurnitureBedCorpse" type="Sprite" parent="Background/Background"]
+position = Vector2( 221, 109 )
+texture = ExtResource( 26 )
+
+[node name="Fire" type="Sprite" parent="Background/Background"]
+visible = false
+position = Vector2( 221, 104 )
+texture = ExtResource( 32 )
+offset = Vector2( 0, 0.5 )
+hframes = 8
+script = ExtResource( 33 )
+FPS = 10.0
+
+[node name="FurnitureTable" type="Sprite" parent="Background/Background"]
+position = Vector2( 180, 96 )
+texture = ExtResource( 9 )
+
+[node name="FurnitureTable2" type="Sprite" parent="Background/Background"]
+position = Vector2( 263, 96 )
+texture = ExtResource( 9 )
+
+[node name="MiscWetcloth" type="Sprite" parent="Background/Background"]
+position = Vector2( 215, 236 )
+texture = ExtResource( 12 )
+
+[node name="MiscBasket" type="Sprite" parent="Background/Background"]
+position = Vector2( 74, 209 )
+texture = ExtResource( 15 )
+hframes = 2
+
+[node name="MiscBucket2" type="Sprite" parent="Background/Background"]
+position = Vector2( 130, 277 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -6 )
+
+[node name="MiscBucket3" type="Sprite" parent="Background/Background"]
+position = Vector2( 398, 346 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -6 )
+
+[node name="CobblestoneIn" type="Node2D" parent="Background/Background"]
+position = Vector2( 224, 897 )
+
+[node name="FloorCobblestone1" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 201 )
+texture = ExtResource( 27 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone2" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 137 )
+texture = ExtResource( 27 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone3" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 74 )
+texture = ExtResource( 28 )
+
+[node name="FloorCobblestone4" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 11 )
+texture = ExtResource( 28 )
+
+[node name="FloorCobblestone5" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -51 )
+texture = ExtResource( 31 )
+
+[node name="FloorCobblestone6" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -115 )
+texture = ExtResource( 31 )
+
+[node name="FloorCobblestone7" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -179 )
+texture = ExtResource( 31 )
+
+[node name="FloorCobblestone8" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -243 )
+texture = ExtResource( 31 )
+
+[node name="FloorCobblestone9" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -307 )
+texture = ExtResource( 31 )
+
+[node name="FloorCobblestone10" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -372 )
+texture = ExtResource( 28 )
+
+[node name="FloorCobblestone11" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -435 )
+texture = ExtResource( 28 )
+
+[node name="FloorCobblestone12" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -501 )
+texture = ExtResource( 27 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone13" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -564 )
+texture = ExtResource( 27 )
+offset = Vector2( 0.5, 0 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscBucket" type="Sprite" parent="Main"]
+position = Vector2( 160, 200 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -6 )
+
+[node name="MiscBucketEmpty" type="Sprite" parent="Main"]
+position = Vector2( 160, 200 )
+texture = ExtResource( 34 )
+offset = Vector2( 0, -6 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 655365, 0, 0, 655368, 0, 0, 720901, 0, 0, 720904, 0, 0, 786437, 0, 0, 786440, 0, 0, 851973, 0, 0, 851976, 0, 0, 917509, 0, 0, 917512, 0, 0, 983045, 0, 0, 983048, 0, 0, 1048581, 0, 0, 1048584, 0, 0, 1114117, 0, 0, 1114120, 0, 0, 1179653, 0, 0, 1179656, 0, 0, 1245189, 0, 0, 1245192, 0, 0, 1310725, 0, 0, 1310728, 0, 0, 1376261, 0, 0, 1376264, 0, 0, 1441797, 0, 0, 1441800, 0, 0, 1507333, 0, 0, 1507336, 0, 0, 1572869, 0, 0, 1572872, 0, 0, 1638405, 0, 0, 1638408, 0, 0, 1703941, 0, 0, 1703944, 0, 0, 1769477, 0, 0, 1769480, 0, 0, 1835013, 0, 0, 1835016, 0, 0, 1900549, 0, 0, 1900552, 0, 0, 1966085, 0, 0, 1966088, 0, 0, 2031621, 0, 0, 2031624, 0, 0, 2097157, 0, 0, 2097160, 0, 0, 2162693, 0, 0, 2162696, 0, 0, 2228229, 0, 0, 2228232, 0, 0, 2293765, 0, 0, 2293768, 0, 0, 2359301, 0, 0, 2359302, 0, 0, 2359303, 0, 0, 2359304, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( 82, 96, 82, 106, 101, 120, 135, 135, 135, 142, 109, 156, 109, 162, 126, 182, 126, 191, 134, 197, 147, 217, 155, 224, 170, 228, 173, 235, 192, 245, 192, 288, 64, 288, 64, 96 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( 360, 96, 360, 101, 353, 107, 349, 117, 332, 129, 332, 132, 325, 140, 325, 145, 355, 155, 355, 158, 325, 169, 325, 174, 328, 176, 328, 201, 283, 222, 283, 228, 286, 233, 286, 243, 292, 248, 292, 253, 261, 265, 258, 270, 263, 282, 256, 288, 384, 288, 384, 96 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_rag" type="Node2D" parent="Other/Events"]
+position = Vector2( 215, 235 )
+script = ExtResource( 22 )
+Solid = false
+Area = Vector2( 24, 16 )
+
+[node name="item_rag_on_bed" type="Node" parent="Other/Events"]
+script = ExtResource( 25 )
+Items = "ch1.mk_compress_activated"
+Nodes = "misc_bed"
+
+[node name="item_rag_on_bucket" type="Node" parent="Other/Events"]
+script = ExtResource( 25 )
+Items = "ch1.mk_compress_activated"
+Nodes = "misc_bucket"
+
+[node name="misc_bed" type="Node2D" parent="Other/Events"]
+position = Vector2( 221, 126 )
+script = ExtResource( 22 )
+Area = Vector2( 52, 62 )
+
+[node name="misc_table_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 181, 97 )
+script = ExtResource( 22 )
+Event = "misc_table"
+
+[node name="misc_table_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 261, 97 )
+script = ExtResource( 22 )
+Event = "misc_table"
+
+[node name="misc_bucket" type="Node2D" parent="Other/Events"]
+position = Vector2( 159, 201 )
+script = ExtResource( 23 )
+Area = Vector2( 21, 8 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 224, 1120 )
+script = ExtResource( 21 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="rag_item_visibility" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.temp_ending_1_12_took_compress"
+Node = NodePath("../../../Background/Background/MiscWetcloth")
+Invert = true
+
+[node name="sai_in_bed" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.temp_ending_1_12_sai_well_done"
+Invert = true
+
+[node name="corpse_in_bed" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.temp_ending_1_12_sai_well_done"
+Node = NodePath("../../../Background/Background/FurnitureBedCorpse")
+
+[node name="bucket_empty" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.temp_ending_1_12_sai_well_done"
+Node = NodePath("../../../Main/MiscBucketEmpty")
+
+[node name="bucket_full" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.temp_ending_1_12_sai_well_done"
+Node = NodePath("../../../Main/MiscBucket")
+Invert = true
+
+[node name="fire" type="Node" parent="Other/Updates"]
+script = ExtResource( 24 )
+Variable = "ch1.temp_ending_1_12_sai_cooking"
+Node = NodePath("../../../Background/Background/Fire")
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="hide_bg" type="Node" parent="Other/Actions"]
+script = ExtResource( 29 )
+
+[node name="hide_sai" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 30 )
+Node = NodePath("../../../../Background/Background/FurnitureBedSai")
+FadeIn = false
+Duration = 0.0
+
+[node name="hide_background" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 30 )
+Node = NodePath("../../../../Background/Background")
+FadeIn = false
+Duration = 2.0
+
+[node name="hide_bucket_1" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 30 )
+Node = NodePath("../../../../Main/MiscBucket")
+FadeIn = false
+Duration = 2.0
+
+[node name="hide_bucket_2" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 30 )
+Node = NodePath("../../../../Main/MiscBucketEmpty")
+FadeIn = false
+Duration = 2.0
+
+[node name="show_path" type="Node" parent="Other/Actions"]
+script = ExtResource( 29 )
+
+[node name="align" type="Node" parent="Other/Actions/show_path"]
+script = ExtResource( 2 )
+Node = NodePath("../../../../Background/CobblestoneOut")
+
+[node name="fade_in" type="Node" parent="Other/Actions/show_path"]
+script = ExtResource( 30 )
+Node = NodePath("../../../../Background/CobblestoneOut")
+Duration = 2.0

@@ -1,0 +1,48 @@
+[gd_resource type="TileSet" load_steps=3 format=2]
+
+[ext_resource path="res://resources/animation/ch1_forest_lakeside_ripples_2.tres" type="Texture" id=1]
+[ext_resource path="res://resources/animation/ch1_forest_lakeside_ripples.tres" type="Texture" id=2]
+
+[resource]
+50/name = "ripples_1"
+50/texture = ExtResource( 2 )
+50/tex_offset = Vector2( 0, 0 )
+50/modulate = Color( 1, 1, 1, 1 )
+50/region = Rect2( 0, 0, 320, 512 )
+50/tile_mode = 2
+50/autotile/icon_coordinate = Vector2( 1, 2 )
+50/autotile/tile_size = Vector2( 32, 32 )
+50/autotile/spacing = 0
+50/autotile/occluder_map = [  ]
+50/autotile/navpoly_map = [  ]
+50/autotile/priority_map = [  ]
+50/autotile/z_index_map = [  ]
+50/occluder_offset = Vector2( 0, 0 )
+50/navigation_offset = Vector2( 0, 0 )
+50/shape_offset = Vector2( 0, 0 )
+50/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+50/shape_one_way = false
+50/shape_one_way_margin = 0.0
+50/shapes = [  ]
+50/z_index = 0
+51/name = "ripples_2"
+51/texture = ExtResource( 1 )
+51/tex_offset = Vector2( 0, 0 )
+51/modulate = Color( 1, 1, 1, 1 )
+51/region = Rect2( 0, 0, 320, 384 )
+51/tile_mode = 2
+51/autotile/icon_coordinate = Vector2( 1, 1 )
+51/autotile/tile_size = Vector2( 32, 32 )
+51/autotile/spacing = 0
+51/autotile/occluder_map = [  ]
+51/autotile/navpoly_map = [  ]
+51/autotile/priority_map = [  ]
+51/autotile/z_index_map = [  ]
+51/occluder_offset = Vector2( 0, 0 )
+51/navigation_offset = Vector2( 0, 0 )
+51/shape_offset = Vector2( 0, 0 )
+51/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+51/shape_one_way = false
+51/shape_one_way_margin = 0.0
+51/shapes = [  ]
+51/z_index = 0

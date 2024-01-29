@@ -1,0 +1,90 @@
+{
+	"achievements": [
+		{
+			"id": "CH1_FIRST_CHOICE",
+			"description": "Pick a drink and a snack."
+		},
+		{
+			"id": "CH1_FOREST",
+			"description": "Arrive at the forest."
+		},
+		{
+			"id": "CH1_LAKESIDE",
+			"description": "Arrive at the lakeside."
+		},
+		{
+			"id": "CH1_FACILITY",
+			"description": "Arrive at the facility."
+		},
+		{
+			"id": "CH1_MK_HOME",
+			"description": "Escape Miss Knives' Cage."
+		},
+		{
+			"id": "CH1_GOOD_END",
+			"description": "Reached the true end."
+		},
+
+		{
+			"id": "CH1_BAD_END",
+			"description": "Reached a dead end."
+		},
+		{
+			"id": "CH1_TRIO",
+			"description": "Meet Kozmo, Milion and Alba."
+		},
+		{
+			"id": "CH1_SECRET_PASSAGE",
+			"description": "Find the secret passage."
+		},
+		{
+			"id": "CH1_DAREDEVIL",
+			"description": "Collect all the coins in the Locked Site."
+		},
+		{
+			"id": "CH1_GIFT_GIVER",
+			"description": "Give a gift to the Shadow Girl."
+		},
+		{
+			"id": "CH1_ELECTRICIAN",
+			"description": "Fix the whole electrical panel in the facility."
+		},
+		{
+			"id": "CH1_FREE_SAI",
+			"description": "Free Sai from Miss Knives' cage."
+		},
+		{
+			"id": "CH1_PRESS_STAB_TO_WAKE",
+			"description": "Stab yourself. Suffer the consequences."
+		},
+		{
+			"id": "CH1_MK_CLEAR",
+			"description": "Defeat Miss Knives without skipping the battle."
+		},
+
+		{
+			"id": "CH1_RUNE_MASTER",
+			"description": "Give 6 or more runes to Rune."
+		},
+		{
+			"id": "CH1_COIN_MASTER",
+			"description": "Finish the chapter with 20 coins in your possession."
+		},
+		{
+			"id": "CH1_MUSICBOX",
+			"description": "Listen to the music box until the end."
+		},
+		{
+			"id": "CH1_QUEEN_OF_IDIOTS",
+			"description": "Get caught by the fairy ring. Twice."
+		},
+		{
+			"id": "CH1_OMOCHIKAERI",
+			"description": "Take the caterpillar home."
+		},
+		{
+			"id": "CH1_BUCKET",
+			"description": "Use the bucket to lower the water level."
+		}
+	]
+}

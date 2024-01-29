@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Home_2F_Bedroom_A.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_indoors.png" type="Texture" id=3]
+
+[node name="Ch1_Cutscene_Change_Clothes" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+CameraLimitLeft = -128
+CameraLimitTop = -52
+CameraLimitRight = 512
+CameraLimitBottom = 308
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="LacieIndoors" type="Sprite" parent="Room/Main" index="2"]
+position = Vector2( 152, 224 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -24 )
+hframes = 9
+vframes = 4
+
+[editable path="Room"]

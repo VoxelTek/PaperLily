@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bus_idle_loop.ogg-c97318adef955b24ee6cdb0212228bce.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/bus_idle_loop.ogg"
+dest_files=[ "res://.import/bus_idle_loop.ogg-c97318adef955b24ee6cdb0212228bce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=3.891

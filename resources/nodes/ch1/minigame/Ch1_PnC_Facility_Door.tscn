@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/door/doorknob_slot.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/door/bg_border.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/door/bg_lakeside_door.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/door/doorknob_exit.png" type="Texture" id=4]
+[ext_resource path="res://script/Subgame/PointAndClickMinigame/PointAndClickSnapTarget.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/door/doorknob_garden.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/door/doorknob_library.png" type="Texture" id=7]
+[ext_resource path="res://resources/material/ch1_pnc_door_outline.tres" type="Material" id=8]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1PncFacilityDoor.cs" type="Script" id=9]
+
+[node name="Ch1_PnC_Facility_Door" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -474.0
+margin_bottom = -118.0
+rect_min_size = Vector2( 166, 242 )
+script = ExtResource( 9 )
+SnapEnabled = true
+HideCursor = true
+EventTargets = {
+
+}
+CloseEventTargets = {
+
+}
+FunctionTargets = {
+"Slot1": "Slot1",
+"Slot2": "Slot2",
+"Slot3": "Slot3",
+"Slot4": "Slot4",
+"Slot5": "Slot5",
+"Slot6": "Slot6"
+}
+HighlightShader = ExtResource( 8 )
+texNoDoorknob = ExtResource( 1 )
+texExitDoorknob = ExtResource( 4 )
+texGardenDoorknob = ExtResource( 6 )
+texLibraryDoorknob = ExtResource( 7 )
+
+[node name="BgLakesideDoor" type="TextureRect" parent="."]
+margin_right = 166.0
+margin_bottom = 242.0
+texture = ExtResource( 3 )
+
+[node name="BgBorder" type="TextureRect" parent="."]
+margin_left = -7.0
+margin_top = -8.0
+margin_right = 173.0
+margin_bottom = 250.0
+texture = ExtResource( 2 )
+
+[node name="Targets" type="Control" parent="."]
+
+[node name="Slot1" type="TextureRect" parent="Targets"]
+margin_left = 39.0
+margin_top = 32.0
+margin_right = 71.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+FirstTarget = true
+SnapOffset = Vector2( 16, 16 )
+Right = "Slot2"
+Down = "Slot3"
+
+[node name="Slot2" type="TextureRect" parent="Targets"]
+margin_left = 93.0
+margin_top = 32.0
+margin_right = 125.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 16, 16 )
+Left = "Slot1"
+Down = "Slot4"
+
+[node name="Slot3" type="TextureRect" parent="Targets"]
+margin_left = 39.0
+margin_top = 99.0
+margin_right = 71.0
+margin_bottom = 131.0
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 16, 16 )
+Up = "Slot1"
+Right = "Slot4"
+Down = "Slot5"
+
+[node name="Slot4" type="TextureRect" parent="Targets"]
+margin_left = 93.0
+margin_top = 99.0
+margin_right = 125.0
+margin_bottom = 131.0
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 16, 16 )
+Left = "Slot3"
+Up = "Slot2"
+Down = "Slot6"
+
+[node name="Slot5" type="TextureRect" parent="Targets"]
+margin_left = 39.0
+margin_top = 166.0
+margin_right = 71.0
+margin_bottom = 198.0
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 16, 16 )
+Up = "Slot3"
+Right = "Slot6"
+
+[node name="Slot6" type="TextureRect" parent="Targets"]
+margin_left = 93.0
+margin_top = 166.0
+margin_right = 125.0
+margin_bottom = 198.0
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 16, 16 )
+Left = "Slot5"
+Up = "Slot4"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gore4.ogg-f4c0f4a0469ab2533c0431a998efa485.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/gore4.ogg"
+dest_files=[ "res://.import/gore4.ogg-f4c0f4a0469ab2533c0431a998efa485.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

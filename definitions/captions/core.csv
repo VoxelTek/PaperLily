@@ -1,0 +1,158 @@
+,en
+system.common.ok,OK
+system.common.yes,Yes
+system.common.no,No
+system.common.on,On
+system.common.off,Off
+system.common.auto,Auto
+system.common.next,Next
+system.common.back,Back
+system.common.apply,Apply
+system.common.cancel,Cancel
+system.common.done,Done
+system.common.loading,Loading...
+system.common.key,Key
+system.common.button,Button
+system.common.axis,Axis
+system.common.keyboard,Keyboard
+system.common.controller,Controller
+system.menu.newgame,New Game
+system.menu.continue,Continue
+system.menu.website,Website
+system.menu.website.itchio,Itch.io Page
+system.menu.website.translator,Translator Page
+system.menu.website.kickstarter,Kickstarter
+system.menu.save,Save
+system.menu.save.game,Save Game
+system.menu.save.slot,SLOT {0}
+system.menu.save.slot.empty,<EMPTY>
+system.menu.save.corrupted,CORRUPTED
+system.menu.save.obsolete,OBSOLETE
+system.menu.save.location.unknown,Unknown Location
+system.menu.save.overwrite.areyousure,Are you sure you want to overwrite this save file?
+system.menu.load,Load
+system.menu.load.game,Load Game
+system.menu.quit,Quit
+system.menu.debugroom,Debug Room
+system.menu.settings,Settings
+system.menu.inventory,Inventory
+system.menu.status,Status
+system.menu.objectives,Objectives
+system.menu.objectives.empty,(There are no objectives)
+system.menu.mainmenu,Main Menu
+system.menu.log,Log
+system.menu.extras,Extras
+system.menu.gallery,Gallery
+system.menu.credits,Credits
+system.menu.info,{0} Select {1} Back
+system.menu.quit.debugroom,Go to Debug Room
+system.menu.quit.mainmenu,Quit to Title Screen
+system.menu.quit.desktop,Quit to Desktop
+system.menu.quit.areyousure,Are you sure you want to quit? Unsaved progress will be lost.
+system.menu.paused,Game Paused!
+system.menu.startup.settings.info,{0}{1} Select {2} Confirm
+system.menu.currency,Coins: {0}
+system.actions.up,Up
+system.actions.down,Down
+system.actions.left,Left
+system.actions.right,Right
+system.actions.action,Action/OK
+system.actions.cancel,Cancel
+system.actions.run,Run
+system.actions.special,Special
+system.actions.menu,Menu
+system.settings.batterysaver,Battery Saver Mode
+system.settings.brightness,Brightness
+system.settings.contrast,Contrast
+system.settings.fpslimit,FPS Limit
+system.settings.fpsunlocked,Unlocked
+system.settings.vsync,V-Sync
+system.settings.gsync,G-Sync
+system.settings.compvsync,Comp.V-Sync
+system.settings.fullscreen,Full Screen
+system.settings.resolutionscale,Internal Resolution
+system.settings.gamma,Gamma
+system.settings.renderer,Renderer
+system.settings.renderer.gles2,OpenGL ES 2.x
+system.settings.renderer.gles3,OpenGL ES 3.x
+system.settings.resolution,Resolution
+system.settings.windowsize,Window Size
+system.settings.saturation,Saturation
+system.settings.volume.master,General Volume
+system.settings.volume.bgm,BGM Volume
+system.settings.volume.sfx,SFX Volume
+system.settings.volume.system,Interface Volume
+system.settings.volume.text,Text Scrolling Volume
+system.settings.volume.mute,Mute All Audio
+system.settings.hidecursor,Hide Mouse Cursor
+system.settings.objectivenotifications,Objective Notifications
+system.settings.audio,Sound Settings
+system.settings.video,Screen Settings
+system.settings.input,Control Settings
+system.settings.input.error,Invalid custom controls: All actions need to be assigned!
+system.settings.game,Game Settings
+system.settings.input.profile,Profile
+system.settings.input.profile.caption,{0}: {1}
+system.settings.input.profile.classic,Classic
+system.settings.input.profile.wasd,WASD
+system.settings.input.profile.azerty,Azerty Classic
+system.settings.input.profile.azerty-wasd,Azerty WASD
+system.settings.input.profile.dvorak,Dvorak Classic
+system.settings.input.profile.dvorak-wasd,Dvorak WASD
+system.settings.input.profile.xbox,Xbox
+system.settings.input.profile.ds4,DualShock 4
+system.settings.input.profile.ds4jp,DualShock 4 (JP)
+system.settings.input.profile.switchpro,Switch Pro
+system.settings.input.profile.genericpad,Generic
+system.settings.input.profile.custom,Custom
+system.settings.input.presskey,Press a key to assign to {0}...
+system.settings.input.pressbutton,Press a button to assign to {0}...
+system.settings.input.autoswitch,Auto Switch
+system.settings.input.deadzone,Controller Deadzone
+system.settings.advanced,Advanced Settings
+system.settings.revertall,Revert Settings to Default
+system.settings.notrecommended,Not recommended
+system.settings.restartrequired,Restart required
+system.settings.current,Current: {0}
+system.settings.game.skipenabled,Skip Dialogue
+system.settings.game.language,Language Settings
+system.settings.game.language.select,Select Language
+system.settings.game.language.select.extra,Unofficial Translations
+system.settings.game.language.extra,More...
+system.settings.game.language.extra.warning,"Attention!
+
+You're about to view unofficial translations. These translations are
+not developed by Leef 6010 and we take no responsibility for their accuracy.
+
+Proceed?"
+system.objectives.updated,Objectives Updated!
+system.objectives.done,(Done)
+system.minigames.boxpuzzle.info,{0} Give Up {1} Reset
+system.minigames.pointandclick.info,{0} Slow
+system.tutorials.next,{0} Next
+system.tutorials.okay,{0} Okay
+system.storyplayer.item.get,Obtained {0} {1}
+system.credits.story,Designed By
+system.credits.artdesign,Art
+system.credits.codescripting,Programming
+system.credits.testing,Playtesting
+system.credits.fonts,Fonts
+system.credits.ui,UI Design
+system.credits.ui.more,Additional UI Design
+system.credits.logo,Paper Lily Logo
+system.credits.ost,Paper Lily OST
+system.credits.music,Music
+system.credits.music.more,Additional Music
+system.credits.sfx,SFX
+system.credits.shaders,Additional Shaders & Special Effects
+system.credits.communications.jp,Japanese Communications
+system.credits.communications.kr,Korean Communications
+system.credits.assets.more,Additional Assets
+system.credits.specialthanks,Special Thanks
+system.credits.madeby,Created By
+system.credits.madewith,Made Using
+system.credits.godotengine,Godot Engine
+system.credits.thanksforplaying,Thank You for Playing!
+system.screen.death.text,You Died
+system.screen.death.retry,Retry
+system.screen.death.giveup,Give Up

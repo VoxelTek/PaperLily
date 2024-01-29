@@ -1,0 +1,28 @@
+{
+	"name": "Rune",
+	"NoDefaultSprites": true,
+	"Sprites": [
+		{
+			"State": "stand",
+			"TextureSuffix": "stand",
+			"Hframes": 4,
+			"Vframes": 1,
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		},
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 2,
+			"Vframes": 1,
+			"LeftFrames": "0,1",
+			"UpFrames": "0,1",
+			"RightFrames": "0,1",
+			"DownFrames": "0,1",
+			"Fps": 1.6,
+			"Loop": true
+		}
+	]
+}

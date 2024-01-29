@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneHome2fHallway.cs" type="Script" id=1]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Home_2F_Hallway.tscn" type="PackedScene" id=4]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/hiro_ruffle.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_fix.png" type="Texture" id=7]
+
+[node name="Ch1_Cutscene_Home_2F_Hallway" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+
+[node name="Room" parent="." instance=ExtResource( 4 )]
+
+[node name="Ruffle" type="Sprite" parent="Room/Main" index="0"]
+visible = false
+position = Vector2( 449, 125 )
+texture = ExtResource( 6 )
+hframes = 10
+script = ExtResource( 5 )
+FPS = 5.0
+Loop = false
+Autostart = false
+
+[node name="FixHair" type="Sprite" parent="Room/Main" index="1"]
+visible = false
+position = Vector2( 464, 129 )
+texture = ExtResource( 7 )
+hframes = 9
+script = ExtResource( 5 )
+FPS = 5.0
+Loop = false
+Autostart = false
+
+[node name="Points" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lacie" type="Node2D" parent="Points"]
+position = Vector2( 447, 232 )
+script = ExtResource( 2 )
+Direction = 2
+
+[node name="hiro" type="Node2D" parent="Points"]
+position = Vector2( 464, 112 )
+script = ExtResource( 2 )
+
+[node name="camera" type="Node2D" parent="Points"]
+position = Vector2( 464, 144 )
+script = ExtResource( 2 )
+
+[editable path="Room"]

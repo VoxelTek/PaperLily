@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_lacie.ogg-0fac0aa97a382c3437e284d1b5e7b762.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_lacie.ogg"
+dest_files=[ "res://.import/ch1_lacie.ogg-0fac0aa97a382c3437e284d1b5e7b762.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=9.934

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_mk_q.ogg-d58e537437b7264110876a576290adbd.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_mk_q.ogg"
+dest_files=[ "res://.import/ch1_mk_q.ogg-d58e537437b7264110876a576290adbd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=31.707

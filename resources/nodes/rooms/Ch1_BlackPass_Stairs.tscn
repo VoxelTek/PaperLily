@@ -1,0 +1,163 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1BlackPassStairs.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_blackpass.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/blackpass/stairs/floor_stairs.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/blackpass/stairs/floor_stairs_piece_1.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=6]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=7]
+[ext_resource path="res://assets/sprite/ch1/blackpass/stairs/floor_stairs_piece_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/blackpass/stairs/floor_stairs_piece_2.png" type="Texture" id=9]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=10]
+[ext_resource path="res://resources/lighting/ch1_blackpass.tres" type="Resource" id=11]
+
+[node name="Ch1_BlackPass_Stairs" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 11 )
+CameraLimitTop = 0
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Item1" type="Node2D" parent="Background"]
+
+[node name="FloorStairs" type="Sprite" parent="Background/Item1"]
+position = Vector2( 33, 31 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairsPiece1" type="Sprite" parent="Background/Item1"]
+position = Vector2( 33, 71 )
+texture = ExtResource( 5 )
+
+[node name="Item2" type="Node2D" parent="Background"]
+
+[node name="FloorStairs" type="Sprite" parent="Background/Item2"]
+position = Vector2( 33, 94 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairs2" type="Sprite" parent="Background/Item2"]
+position = Vector2( 33, 157 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairsPiece2" type="Sprite" parent="Background/Item2"]
+position = Vector2( 33, 199 )
+texture = ExtResource( 9 )
+
+[node name="Item3" type="Node2D" parent="Background"]
+
+[node name="FloorStairs" type="Sprite" parent="Background/Item3"]
+position = Vector2( 33, 94 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairs2" type="Sprite" parent="Background/Item3"]
+position = Vector2( 33, 157 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairs3" type="Sprite" parent="Background/Item3"]
+position = Vector2( 33, 220 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairs4" type="Sprite" parent="Background/Item3"]
+position = Vector2( 33, 283 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairs5" type="Sprite" parent="Background/Item3"]
+position = Vector2( 33, 346 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairsPiece3" type="Sprite" parent="Background/Item3"]
+position = Vector2( 33, 387 )
+texture = ExtResource( 8 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_item_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 32, 80 )
+script = ExtResource( 3 )
+Event = "misc_end"
+Area = Vector2( 64, 32 )
+
+[node name="misc_item_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 32, 208 )
+script = ExtResource( 3 )
+Event = "misc_end"
+Area = Vector2( 64, 32 )
+
+[node name="misc_item_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 32, 400 )
+script = ExtResource( 3 )
+Event = "misc_end"
+Area = Vector2( 64, 32 )
+
+[node name="move_up" type="Node2D" parent="Other/Events"]
+position = Vector2( 32, -16 )
+script = ExtResource( 3 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 32, 16 )
+script = ExtResource( 10 )
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65535, 0, 0, 2, 0, 0, 131071, 0, 0, 65538, 0, 0, 196607, 0, 0, 131074, 0, 0, 262143, 0, 0, 196610, 0, 0, 327679, 0, 0, 262146, 0, 0, 393215, 0, 0, 327682, 0, 0, 458751, 0, 0, 393218, 0, 0, 524287, 0, 0, 458754, 0, 0, 589823, 0, 0, 524290, 0, 0, 655359, 0, 0, 589826, 0, 0, 720895, 0, 0, 655362, 0, 0, 786431, 0, 0, 720898, 0, 0, 851967, 0, 0, 786434, 0, 0, 917503, 0, 0, 851970, 0, 0, 983039, 0, 0, 917506, 0, 0, 1048575, 0, 0, 983042, 0, 0, 1114111, 0, 0, 1048578, 0, 0, 1179647, 0, 0, 1114114, 0, 0, 1245183, 0, 0, 1179650, 0, 0, 1310719, 0, 0, 1245186, 0, 0, 1376255, 0, 0, 1310722, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}

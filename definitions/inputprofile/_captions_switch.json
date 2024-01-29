@@ -1,0 +1,171 @@
+{
+	"Type": "controller",
+	"Captions": [	
+		{
+			"Caption": "img:switch_b",
+			"Button": {
+				"Code": 0
+			}
+		},
+		{
+			"Caption": "img:switch_a",
+			"Button": {
+				"Code": 1
+			}
+		},
+		{
+			"Caption": "img:switch_y",
+			"Button": {
+				"Code": 2
+			}
+		},
+		{
+			"Caption": "img:switch_x",
+			"Button": {
+				"Code": 3
+			}
+		},
+		{
+			"Caption": "img:switch_l",
+			"Button": {
+				"Code": 4
+			}
+		},
+		{
+			"Caption": "img:switch_r",
+			"Button": {
+				"Code": 5
+			}
+		},
+		{
+			"Caption": "img:switch_zl",
+			"Button": {
+				"Code": 6
+			}
+		},
+		{
+			"Caption": "img:switch_zr",
+			"Button": {
+				"Code": 7
+			}
+		},
+		{
+			"Caption": "img:switch_ls",
+			"Button": {
+				"Code": 8
+			}
+		},
+		{
+			"Caption": "img:switch_rs",
+			"Button": {
+				"Code": 9
+			}
+		},
+		{
+			"Caption": "img:switch_minus",
+			"Button": {
+				"Code": 10
+			}
+		},
+		{
+			"Caption": "img:switch_plus",
+			"Button": {
+				"Code": 11
+			}
+		},
+		{
+			"Caption": "img:switch_dpad_up",
+			"Button": {
+				"Code": 12
+			}
+		},
+		{
+			"Caption": "img:switch_dpad_down",
+			"Button": {
+				"Code": 13
+			}
+		},
+		{
+			"Caption": "img:switch_dpad_left",
+			"Button": {
+				"Code": 14
+			}
+		},
+		{
+			"Caption": "img:switch_dpad_right",
+			"Button": {
+				"Code": 15
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_left",
+			"Axis": {
+				"Code": 0,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_right",
+			"Axis": {
+				"Code": 0,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_up",
+			"Axis": {
+				"Code": 1,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_down",
+			"Axis": {
+				"Code": 1,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_left",
+			"Axis": {
+				"Code": 2,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_right",
+			"Axis": {
+				"Code": 2,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_up",
+			"Axis": {
+				"Code": 3,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_down",
+			"Axis": {
+				"Code": 3,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:switch_zl",
+			"Axis": {
+				"Code": 6,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:switch_zr",
+			"Axis": {
+				"Code": 7,
+				"Value": -1
+			}
+		}
+	]
+}

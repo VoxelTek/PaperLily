@@ -1,0 +1,223 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/forest/artist/wall_web.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/floor_station_stairs02.png" type="Texture" id=3]
+[ext_resource path="res://resources/tileset/ch1_forest_station_interior.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/sprite/ch1/forest/artist/wall_painting_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/door_way.png" type="Texture" id=6]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=7]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=8]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=9]
+[ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=10]
+[ext_resource path="res://assets/bgm/ch1_forest_q.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_gate.png" type="Texture" id=12]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=13]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=14]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=15]
+[ext_resource path="res://resources/lighting/ch1_forest_station_interior_creepy.tres" type="Resource" id=16]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=17]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=18]
+[ext_resource path="res://resources/lighting/basic.tres" type="Resource" id=19]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=21]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=22]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=23]
+
+[node name="Ch1_Forest_Station_Interior_Hallway" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Bgm = ExtResource( 11 )
+BgmVolume = 0.5
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 196593, 3, 0, 196594, 3, 0, 196595, 3, 0, 196596, 3, 0, 196597, 3, 0, 196598, 3, 0, 196599, 3, 0, 196600, 3, 0, 196601, 3, 0, 196602, 3, 0, 196603, 3, 0, 393201, 0, 0, 393202, 0, 0, 393203, 0, 0, 393204, 0, 0, 393205, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 458737, 0, 0, 458738, 0, 0, 458739, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_station_stairs02" type="Sprite" parent="Background"]
+position = Vector2( -432, 172 )
+texture = ExtResource( 3 )
+
+[node name="DoorWay" type="Sprite" parent="Background"]
+position = Vector2( -224, 120 )
+texture = ExtResource( 6 )
+
+[node name="WallPainting1" type="Sprite" parent="Background"]
+position = Vector2( -292, 111 )
+texture = ExtResource( 5 )
+
+[node name="WallPainting2" type="Sprite" parent="Background"]
+position = Vector2( -156, 111 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="WallWeb" type="Sprite" parent="Background"]
+position = Vector2( -470, 75 )
+texture = ExtResource( 2 )
+
+[node name="WallGate" type="Sprite" parent="Background"]
+position = Vector2( -224, 121 )
+texture = ExtResource( 12 )
+
+[node name="ScissorsShiny" parent="Background" instance=ExtResource( 22 )]
+position = Vector2( -160, 192 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65519, 1, 196610, 65520, 1, 196610, 65521, 1, 196610, 65522, 1, 196610, 65523, 1, 196610, 65524, 1, 196610, 65525, 1, 196610, 65526, 1, 196610, 65527, 1, 196610, 65528, 1, 196610, 65529, 1, 196610, 65530, 1, 196610, 65531, 1, 196610, 65532, 1, 196610, 65533, 1, 196610, 131055, 1, 196610, 131056, 1, 196610, 131057, 1, 262146, 131058, 1, 262146, 131059, 1, 262146, 131060, 1, 262146, 131061, 1, 262146, 131062, 1, 262146, 131063, 1, 262146, 131064, 1, 262146, 131065, 1, 262146, 131066, 1, 262146, 131067, 1, 262146, 131068, 1, 65538, 131069, 1, 196610, 196591, 1, 196610, 196592, 1, 196610, 196604, 1, 196609, 196605, 1, 196610, 262127, 1, 196610, 262128, 1, 196610, 262140, 1, 196609, 262141, 1, 196610, 327663, 1, 196610, 327664, 1, 196610, 327676, 1, 196609, 327677, 1, 196610, 393199, 1, 196610, 393200, 1, 196610, 393212, 1, 196609, 393213, 1, 196610, 458735, 1, 196610, 458736, 1, 196610, 458748, 1, 196609, 458749, 1, 196610, 524271, 1, 196610, 524272, 1, 196610, 524273, 1, 131074, 524274, 1, 131074, 524275, 1, 131074, 524276, 1, 131074, 524277, 1, 131074, 524278, 1, 131074, 524279, 1, 131074, 524280, 1, 131074, 524281, 1, 131074, 524282, 1, 131074, 524283, 1, 131074, 524284, 1, 2, 524285, 1, 196610, 589807, 1, 196610, 589808, 1, 196610, 589809, 1, 196610, 589810, 1, 196610, 589811, 1, 196610, 589812, 1, 196610, 589813, 1, 196610, 589814, 1, 196610, 589815, 1, 196610, 589816, 1, 196610, 589817, 1, 196610, 589818, 1, 196610, 589819, 1, 196610, 589820, 1, 196610, 589821, 1, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 15 )
+Default = true
+Lighting = ExtResource( 19 )
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 15 )
+Lighting = ExtResource( 16 )
+
+[node name="Light7" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( -229, 153 )
+texture = ExtResource( 17 )
+texture_scale = 4.0
+color = Color( 0.372549, 0.576471, 0.580392, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 14 )
+BlendMode = 1
+
+[node name="LightFadeout" type="Sprite" parent="Lighting"]
+position = Vector2( -448, 144.5 )
+scale = Vector2( 0.5, 1.367 )
+texture = ExtResource( 9 )
+
+[node name="Other2" type="Node2D" parent="."]
+script = ExtResource( 21 )
+
+[node name="Events" type="Node2D" parent="Other2"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_scissors_on_gate" type="Node" parent="Other2/Events"]
+script = ExtResource( 13 )
+Items = "ch1.scissors"
+Nodes = "move_enter"
+
+[node name="item_boltcutter_on_gate" type="Node" parent="Other2/Events"]
+script = ExtResource( 13 )
+Items = "ch1.forest_bolt_cutter"
+Nodes = "move_enter"
+
+[node name="item_scissors_get" type="Node2D" parent="Other2/Events"]
+position = Vector2( -160, 192 )
+script = ExtResource( 7 )
+Solid = false
+Area = Vector2( 24, 20 )
+
+[node name="misc_painting_left" type="Node2D" parent="Other2/Events"]
+position = Vector2( -292, 144 )
+script = ExtResource( 7 )
+
+[node name="misc_painting_right" type="Node2D" parent="Other2/Events"]
+position = Vector2( -155, 144 )
+script = ExtResource( 7 )
+
+[node name="move_upstairs" type="Node2D" parent="Other2/Events"]
+position = Vector2( -496, 160 )
+script = ExtResource( 7 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 128 )
+
+[node name="move_enter" type="Node2D" parent="Other2/Events"]
+position = Vector2( -224, 144 )
+script = ExtResource( 7 )
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other2"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="from_upstairs" type="Node2D" parent="Other2/Points"]
+position = Vector2( -368, 192 )
+script = ExtResource( 8 )
+Direction = 4
+
+[node name="stairs" type="Node2D" parent="Other2"]
+position = Vector2( -432, 160 )
+script = ExtResource( 10 )
+Area = Vector2( 96, 128 )
+Degrees = 30.0
+InvertX = true
+Passthrough = true
+
+[node name="BoundaryUnpassable" type="StaticBody2D" parent="Other2"]
+collision_layer = 10
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision2" type="CollisionPolygon2D" parent="Other2/BoundaryUnpassable"]
+position = Vector2( -476, -10 )
+polygon = PoolVector2Array( -6, 127, 92, 170, 92, 127 )
+
+[node name="Collision3" type="CollisionPolygon2D" parent="Other2/BoundaryUnpassable"]
+position = Vector2( -475, 54 )
+polygon = PoolVector2Array( -7, 127, 91, 170, -7, 170 )
+
+[node name="Updates" type="Node" parent="Other2"]
+
+[node name="creepy_lighting" type="Node" parent="Other2/Updates"]
+script = ExtResource( 20 )
+Variable = "general.serious"
+Value = "true"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")
+
+[node name="scissors_shiny" type="Node" parent="Other2/Updates"]
+script = ExtResource( 23 )
+Variable = "ch1.forest_station_took_scissors"
+Node = NodePath("../../../Background/ScissorsShiny")
+Invert = true

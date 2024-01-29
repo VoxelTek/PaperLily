@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=2]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=3]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Facility_B2F_CouncilRoom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_10/sai_crouch.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_10/lacie_cloak.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_10/lacie_dead.png" type="Texture" id=7]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=8]
+
+[node name="Ch1_Cutscene_Ending_10" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Subroom = NodePath("Ch1_Facility_B2F_CouncilRoom")
+
+[node name="Ch1_Facility_B2F_CouncilRoom" parent="." instance=ExtResource( 4 )]
+
+[node name="LacieCloak" type="Sprite" parent="Ch1_Facility_B2F_CouncilRoom/Background" index="4"]
+position = Vector2( 195, 66 )
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="SaiCrouch" type="Sprite" parent="Ch1_Facility_B2F_CouncilRoom/Background" index="5"]
+visible = false
+position = Vector2( 212, 44 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0.5 )
+
+[node name="LacieDead" type="Sprite" parent="Ch1_Facility_B2F_CouncilRoom/Background" index="6"]
+visible = false
+position = Vector2( 197, 61 )
+texture = ExtResource( 7 )
+
+[node name="MiscCloak" parent="Ch1_Facility_B2F_CouncilRoom/Main/FurnitureChair1" index="0"]
+visible = false
+
+[node name="Points" type="Node" parent="."]
+
+[node name="cutscene_camera" type="Node2D" parent="Points"]
+position = Vector2( 161, 110 )
+script = ExtResource( 2 )
+
+[node name="sai" type="Node2D" parent="Points"]
+position = Vector2( 230, 87 )
+script = ExtResource( 2 )
+Direction = 1
+
+[node name="lacie_bubble" type="Node2D" parent="Points"]
+position = Vector2( 194, 26 )
+script = ExtResource( 2 )
+Direction = 1
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="lacie_shadow_face" type="Node" parent="Actions"]
+script = ExtResource( 8 )
+Node = NodePath("../../Ch1_Facility_B2F_CouncilRoom/Background/LacieCloak")
+Frame = 1
+
+[node name="hide_lacie" type="Node" parent="Actions"]
+script = ExtResource( 3 )
+Node = NodePath("../../Ch1_Facility_B2F_CouncilRoom/Background/LacieCloak")
+Visible = false
+
+[node name="show_sai" type="Node" parent="Actions"]
+script = ExtResource( 3 )
+Node = NodePath("../../Ch1_Facility_B2F_CouncilRoom/Background/SaiCrouch")
+
+[node name="show_dead_lacie" type="Node" parent="Actions"]
+script = ExtResource( 3 )
+Node = NodePath("../../Ch1_Facility_B2F_CouncilRoom/Background/LacieDead")
+
+[editable path="Ch1_Facility_B2F_CouncilRoom"]

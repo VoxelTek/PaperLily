@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigame_death.ogg-c5e086e5a7322db7d248d2947a975227.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/minigame_death.ogg"
+dest_files=[ "res://.import/minigame_death.ogg-c5e086e5a7322db7d248d2947a975227.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

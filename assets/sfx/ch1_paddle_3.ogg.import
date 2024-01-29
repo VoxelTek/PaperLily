@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_paddle_3.ogg-4b48ac7427028029060850e9e9d4328b.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ch1_paddle_3.ogg"
+dest_files=[ "res://.import/ch1_paddle_3.ogg-4b48ac7427028029060850e9e9d4328b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

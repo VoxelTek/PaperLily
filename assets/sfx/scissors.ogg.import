@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scissors.ogg-0da8f550ab2e660ffd84632f54fa9f2b.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/scissors.ogg"
+dest_files=[ "res://.import/scissors.ogg-0da8f550ab2e660ffd84632f54fa9f2b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

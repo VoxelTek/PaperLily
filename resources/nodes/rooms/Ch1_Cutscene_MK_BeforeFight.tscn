@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneMkBeforeFight.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_MK_Livingroom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=3]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=4]
+[ext_resource path="res://assets/bgm/ch1_mk_boss_a.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/bgm/ch1_mk_boss_0.ogg" type="AudioStream" id=6]
+[ext_resource path="res://resources/minigame/ch1_battle_missknives.tres" type="Resource" id=7]
+[ext_resource path="res://assets/sprite/ch1/cutscene/mk_anxious.png" type="Texture" id=8]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=9]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=10]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=11]
+[ext_resource path="res://assets/bgm/ch1_mk_boss_b.ogg" type="AudioStream" id=12]
+
+[node name="Ch1_Cutscene_MK_BeforeFight" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 4 )
+Subroom = NodePath("Room")
+resBattle = ExtResource( 7 )
+bgmPart0 = ExtResource( 6 )
+bgmPartA = ExtResource( 5 )
+bgmPartB = ExtResource( 12 )
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="MkAnxious" type="Sprite" parent="Room/Main" index="5"]
+visible = false
+light_mask = 2
+position = Vector2( 400, 144 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -35 )
+hframes = 6
+script = ExtResource( 9 )
+LoopFrame = 4
+
+[node name="cutscene_lacie" type="Node2D" parent="."]
+position = Vector2( 256, 160 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="cutscene_sai" type="Node2D" parent="."]
+position = Vector2( 224, 176 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="show_mk" type="Node" parent="Actions"]
+script = ExtResource( 10 )
+Node = NodePath("../../Room/Main/MkAnxious")
+
+[node name="animate_mk" type="Node" parent="Actions"]
+script = ExtResource( 11 )
+Node = NodePath("../../Room/Main/MkAnxious")
+
+[editable path="Room"]

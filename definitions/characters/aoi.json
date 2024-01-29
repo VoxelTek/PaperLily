@@ -1,0 +1,49 @@
+{
+	"Name": "Aoi",
+	"Sprites": [
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 2,
+			"Vframes": 1,
+			"LeftFrames": "0,1",
+			"UpFrames": "0,1",
+			"RightFrames": "0,1",
+			"DownFrames": "0,1",
+			"Fps": 4,
+			"Loop": true
+		},
+		{
+			"State": "pant",
+			"TextureSuffix": "pant",
+			"Hframes": 2,
+			"Vframes": 1,
+			"LeftFrames": "0,1",
+			"UpFrames": "0,1",
+			"RightFrames": "0,1",
+			"DownFrames": "0,1",
+			"Fps": 3,
+			"Loop": true
+		},
+		{
+			"State": "dark",
+			"TextureSuffix": "dark",
+			"Hframes": 1,
+			"Vframes": 1,
+			"LeftFrames": "0",
+			"UpFrames": "0",
+			"RightFrames": "0",
+			"DownFrames": "0"
+		},
+		{
+			"State": "shock",
+			"TextureSuffix": "shock",
+			"Hframes": 1,
+			"Vframes": 1,
+			"LeftFrames": "0",
+			"UpFrames": "0",
+			"RightFrames": "0",
+			"DownFrames": "0"
+		}
+	]
+}

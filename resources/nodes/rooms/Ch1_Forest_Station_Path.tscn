@@ -1,0 +1,443 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_forest_station_interior.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/floor_stairs.png" type="Texture" id=6]
+[ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall dirt_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall dirt_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall dirt_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall dirt_5.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall dirt_1.png" type="Texture" id=12]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=13]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=14]
+[ext_resource path="res://assets/bgm/ch1_forest_q.ogg" type="AudioStream" id=15]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=16]
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=18]
+[ext_resource path="res://script/Nodes/TeleportTrigger.cs" type="Script" id=19]
+[ext_resource path="res://script/Core/Nodes/VariableEnabler.cs" type="Script" id=20]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall_eyecu_poster.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/path/wall_eyecu_poster_bad.png" type="Texture" id=22]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=23]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=24]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 17 )
+Modulate = Color( 0.333333, 0.364706, 0.380392, 1 )
+UseNormals = true
+PlayerLightState = false
+PlayerLightEnergy = 1.0
+PlayerLightMode = 0
+EnvironmentLightMode = 0
+GlowLevel = 0
+BackgroundColor = Color( 0, 0, 0, 1 )
+
+[node name="Ch1_Forest_Station_Path" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = SubResource( 1 )
+CameraLimitLeft = 0
+CameraLimitRight = 2144
+Bgm = ExtResource( 15 )
+BgmVolume = 0.5
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 1, 262146, 1, 1, 262146, 2, 1, 262146, 3, 1, 262146, 4, 1, 262146, 5, 1, 262146, 6, 1, 262146, 7, 1, 262146, 8, 1, 262146, 9, 1, 262146, 10, 1, 262146, 11, 1, 262146, 12, 1, 262146, 13, 1, 262146, 14, 1, 262146, 15, 1, 262146, 16, 1, 262146, 17, 1, 262146, 18, 1, 262146, 19, 1, 262146, 20, 1, 262146, 21, 1, 262146, 22, 1, 262146, 23, 1, 262146, 24, 1, 262146, 25, 1, 262146, 26, 1, 262146, 27, 1, 262146, 28, 1, 262146, 29, 1, 262146, 30, 1, 262146, 31, 1, 262146, 32, 1, 262146, 33, 1, 262146, 34, 1, 262146, 35, 1, 262146, 36, 1, 262146, 37, 1, 262146, 38, 1, 262146, 39, 1, 262146, 40, 1, 262146, 41, 1, 262146, 42, 1, 262146, 43, 1, 262146, 44, 1, 262146, 45, 1, 262146, 46, 1, 262146, 47, 1, 262146, 48, 1, 262146, 49, 1, 262146, 50, 1, 262146, 51, 1, 262146, 52, 1, 262146, 53, 1, 262146, 54, 1, 262146, 55, 1, 262146, 56, 1, 262146, 57, 1, 262146, 58, 1, 262146, 59, 1, 262146, 60, 1, 262146, 61, 1, 262146, 62, 1, 262146, 63, 1, 262146, 64, 1, 262146, 65, 1, 262146, 66, 1, 262146, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 65548, 3, 0, 65549, 3, 0, 65550, 3, 0, 65551, 3, 0, 65552, 3, 0, 65553, 3, 0, 65554, 3, 0, 65555, 3, 0, 65556, 3, 0, 65557, 3, 0, 65558, 3, 0, 65559, 3, 0, 65560, 3, 0, 65561, 3, 0, 65562, 3, 0, 65563, 3, 0, 65564, 3, 0, 65565, 3, 0, 65566, 3, 0, 65567, 3, 0, 65568, 3, 0, 65569, 3, 0, 65570, 3, 0, 65571, 3, 0, 65572, 3, 0, 65573, 3, 0, 65574, 3, 0, 65575, 3, 0, 65576, 3, 0, 65577, 3, 0, 65578, 3, 0, 65579, 3, 0, 65580, 3, 0, 65581, 3, 0, 65582, 3, 0, 65583, 3, 0, 65584, 3, 0, 65585, 3, 0, 65586, 3, 0, 65587, 3, 0, 65588, 3, 0, 65589, 3, 0, 65590, 3, 0, 65591, 3, 0, 65592, 3, 0, 65593, 3, 0, 65594, 3, 0, 65595, 3, 0, 65596, 3, 0, 65597, 3, 0, 65598, 3, 0, 65599, 3, 0, 65600, 3, 0, 65601, 3, 0, 65602, 3, 0, 262144, 5, 0, 262145, 5, 0, 262146, 5, 0, 262147, 5, 0, 262148, 5, 0, 262149, 5, 0, 262150, 5, 0, 262151, 5, 0, 262152, 5, 0, 262153, 5, 0, 262154, 5, 0, 262155, 5, 0, 262156, 5, 0, 262157, 5, 0, 262158, 5, 0, 262159, 5, 0, 262160, 5, 0, 262161, 5, 0, 262162, 5, 0, 262163, 5, 0, 262164, 5, 0, 262165, 5, 0, 262166, 5, 0, 262167, 5, 0, 262168, 5, 0, 262169, 5, 0, 262170, 5, 0, 262171, 5, 0, 262172, 5, 0, 262173, 5, 0, 262174, 5, 0, 262175, 5, 0, 262176, 5, 0, 262177, 5, 0, 262178, 5, 0, 262179, 5, 0, 262180, 5, 0, 262181, 5, 0, 262182, 5, 0, 262183, 5, 0, 262184, 5, 0, 262185, 5, 0, 262186, 5, 0, 262187, 5, 0, 262188, 5, 0, 262189, 5, 0, 262190, 5, 0, 262191, 5, 0, 262192, 5, 0, 262193, 5, 0, 262194, 5, 0, 262195, 5, 0, 262196, 5, 0, 262197, 5, 0, 262198, 5, 0, 262199, 5, 0, 262200, 5, 0, 262201, 5, 0, 262202, 5, 0, 262203, 5, 0, 262204, 5, 0, 262205, 5, 0, 262206, 5, 0, 262207, 5, 0, 262208, 5, 0, 262209, 5, 0, 262210, 5, 0, 327680, 5, 0, 327681, 5, 0, 327682, 5, 0, 327683, 5, 0, 327684, 5, 0, 327685, 5, 0, 327686, 5, 0, 327687, 5, 0, 327688, 5, 0, 327689, 5, 0, 327690, 5, 0, 327691, 5, 0, 327692, 5, 0, 327693, 5, 0, 327694, 5, 0, 327695, 5, 0, 327696, 5, 0, 327697, 5, 0, 327698, 5, 0, 327699, 5, 0, 327700, 5, 0, 327701, 5, 0, 327702, 5, 0, 327703, 5, 0, 327704, 5, 0, 327705, 5, 0, 327706, 5, 0, 327707, 5, 0, 327708, 5, 0, 327709, 5, 0, 327710, 5, 0, 327711, 5, 0, 327712, 5, 0, 327713, 5, 0, 327714, 5, 0, 327715, 5, 0, 327716, 5, 0, 327717, 5, 0, 327718, 5, 0, 327719, 5, 0, 327720, 5, 0, 327721, 5, 0, 327722, 5, 0, 327723, 5, 0, 327724, 5, 0, 327725, 5, 0, 327726, 5, 0, 327727, 5, 0, 327728, 5, 0, 327729, 5, 0, 327730, 5, 0, 327731, 5, 0, 327732, 5, 0, 327733, 5, 0, 327734, 5, 0, 327735, 5, 0, 327736, 5, 0, 327737, 5, 0, 327738, 5, 0, 327739, 5, 0, 327740, 5, 0, 327741, 5, 0, 327742, 5, 0, 327743, 5, 0, 327744, 5, 0, 327745, 5, 0, 327746, 5, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorPathStairs" type="Sprite" parent="Background"]
+position = Vector2( 48, 138 )
+texture = ExtResource( 6 )
+
+[node name="FloorPathStairs2" type="Sprite" parent="Background"]
+position = Vector2( 2096, 138 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="WallDirt" type="Node2D" parent="Background"]
+
+[node name="WallDirt15" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 882, 110 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt16" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1045, 40 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt17" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 2068, 94 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt12" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 11, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt18" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 97, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt21" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 997, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt22" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1870, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt23" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1882, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt24" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 2033, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt10" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1022, 80 )
+texture = ExtResource( 8 )
+
+[node name="WallDirt11" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1965, 80 )
+texture = ExtResource( 8 )
+
+[node name="WallDirt28" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1100, 40 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="WallDirt6" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 940, 119 )
+texture = ExtResource( 11 )
+
+[node name="WallDirt7" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 972, 119 )
+texture = ExtResource( 11 )
+
+[node name="WallDirt8" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 2014, 119 )
+texture = ExtResource( 11 )
+
+[node name="WallDirt9" type="Sprite" parent="Background/WallDirt"]
+position = Vector2( 1894, 119 )
+texture = ExtResource( 11 )
+
+[node name="Group1" type="Node2D" parent="Background/WallDirt"]
+
+[node name="WallDirt1" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 125, 122 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt13" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 497, 111 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="WallDirt14" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 596, 114 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt2" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 270, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt19" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 470, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt20" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 697, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt3" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 330, 80 )
+texture = ExtResource( 8 )
+
+[node name="WallDirt4" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 445, 47 )
+texture = ExtResource( 10 )
+
+[node name="WallDirt25" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 731, 47 )
+texture = ExtResource( 10 )
+
+[node name="WallDirt26" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 787, 112 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="WallDirt5" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 537, 119 )
+texture = ExtResource( 11 )
+
+[node name="WallDirt27" type="Sprite" parent="Background/WallDirt/Group1"]
+position = Vector2( 657, 40 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="Group2" type="Node2D" parent="Background/WallDirt"]
+position = Vector2( 1024, 0 )
+
+[node name="WallDirt1" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 125, 122 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt13" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 497, 111 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="WallDirt14" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 596, 114 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt2" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 270, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt19" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 470, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt20" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 697, 46 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt3" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 330, 80 )
+texture = ExtResource( 8 )
+
+[node name="WallDirt4" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 445, 47 )
+texture = ExtResource( 10 )
+
+[node name="WallDirt25" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 731, 47 )
+texture = ExtResource( 10 )
+
+[node name="WallDirt26" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 787, 112 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="WallDirt5" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 537, 119 )
+texture = ExtResource( 11 )
+
+[node name="WallDirt27" type="Sprite" parent="Background/WallDirt/Group2"]
+position = Vector2( 657, 40 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="PosterBad" type="Sprite" parent="Background"]
+position = Vector2( 1873, 88 )
+texture = ExtResource( 22 )
+
+[node name="PosterBad2" type="Sprite" parent="Background"]
+position = Vector2( 1854, 65 )
+texture = ExtResource( 22 )
+
+[node name="PosterBad3" type="Sprite" parent="Background"]
+position = Vector2( 1894, 75 )
+texture = ExtResource( 22 )
+
+[node name="PosterAnim" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 1873, 88 )
+texture = ExtResource( 21 )
+hframes = 4
+script = ExtResource( 24 )
+AnimationFrames = "0,1,0,2,3,2,0,1,0"
+FrameDurations = "5000,100,6000,200,2000,100,8000,100,60000"
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light8" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 402, 121 )
+texture = ExtResource( 18 )
+texture_scale = 6.0
+color = Color( 0.701961, 0.8, 0.803922, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+BlendMode = 1
+
+[node name="Light9" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 572, 315 )
+texture = ExtResource( 18 )
+texture_scale = 6.0
+color = Color( 0.972549, 1, 0.152941, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+BlendMode = 1
+
+[node name="Light11" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 1426, 121 )
+texture = ExtResource( 18 )
+texture_scale = 6.0
+color = Color( 0.701961, 0.8, 0.803922, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+BlendMode = 1
+
+[node name="Light12" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 1596, 315 )
+texture = ExtResource( 18 )
+texture_scale = 6.0
+color = Color( 0.972549, 1, 0.152941, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 16 )
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196644, 0, 0, 196645, 0, 0, 196646, 0, 0, 196647, 0, 0, 196648, 0, 0, 196649, 0, 0, 196650, 0, 0, 196651, 0, 0, 196652, 0, 0, 196653, 0, 0, 196654, 0, 0, 196655, 0, 0, 196656, 0, 0, 196657, 0, 0, 196658, 0, 0, 196659, 0, 0, 196660, 0, 0, 196661, 0, 0, 196662, 0, 0, 196663, 0, 0, 196664, 0, 0, 196665, 0, 0, 196666, 0, 0, 196667, 0, 0, 196668, 0, 0, 196669, 0, 0, 196670, 0, 0, 196671, 0, 0, 196672, 0, 0, 196673, 0, 0, 196674, 0, 0, 196675, 0, 0, 327679, 0, 0, 262211, 0, 0, 393215, 0, 0, 327747, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 0, 0, 393257, 0, 0, 393258, 0, 0, 393259, 0, 0, 393260, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0, 393264, 0, 0, 393265, 0, 0, 393266, 0, 0, 393267, 0, 0, 393268, 0, 0, 393269, 0, 0, 393270, 0, 0, 393271, 0, 0, 393272, 0, 0, 393273, 0, 0, 393274, 0, 0, 393275, 0, 0, 393276, 0, 0, 393277, 0, 0, 393278, 0, 0, 393279, 0, 0, 393280, 0, 0, 393281, 0, 0, 393282, 0, 0, 393283, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BoundaryImpassable" type="StaticBody2D" parent="Other"]
+collision_layer = 10
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision2" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 4, -42 )
+polygon = PoolVector2Array( -6, 127, 92, 170, 92, 127 )
+
+[node name="Collision3" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 5, 22 )
+polygon = PoolVector2Array( -7, 127, 91, 170, -7, 170 )
+
+[node name="Collision4" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 2140, -42 )
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -6, 127, 92, 170, 92, 127 )
+
+[node name="Collision5" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 2137, 22 )
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -7, 127, 91, 170, -7, 170 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_poster" type="Node2D" parent="Other/Events"]
+position = Vector2( 1872, 112 )
+script = ExtResource( 14 )
+Area = Vector2( 64, 32 )
+
+[node name="move_left" type="Node2D" parent="Other/Events"]
+position = Vector2( -16, 112 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 96 )
+
+[node name="move_right" type="Node2D" parent="Other/Events"]
+position = Vector2( 2160, 112 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 96 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 112, 160 )
+script = ExtResource( 13 )
+Direction = 4
+
+[node name="from_station" type="Node2D" parent="Other/Points"]
+position = Vector2( 2032, 160 )
+script = ExtResource( 13 )
+Direction = 1
+
+[node name="stairs" type="Node2D" parent="Other"]
+position = Vector2( 48, 128 )
+script = ExtResource( 7 )
+Area = Vector2( 96, 128 )
+Degrees = 30.0
+InvertX = true
+Passthrough = true
+
+[node name="stairs2" type="Node2D" parent="Other"]
+position = Vector2( 2096, 128 )
+script = ExtResource( 7 )
+Area = Vector2( 96, 128 )
+Degrees = 30.0
+Passthrough = true
+
+[node name="teleport_stuck" type="Node2D" parent="Other"]
+position = Vector2( 476, 160 )
+script = ExtResource( 19 )
+Area = Vector2( 8, 64 )
+Target = Vector2( 1024, 0 )
+Relative = true
+
+[node name="Camera2D" type="Camera2D" parent="Other/teleport_stuck"]
+position = Vector2( 1000, 0 )
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="set_teleport_stuck" type="Node" parent="Other/Updates"]
+script = ExtResource( 20 )
+Variable = "ch1.forest_station_sign_gone"
+Node = NodePath("../../teleport_stuck")
+
+[node name="animated_poster" type="Node" parent="Other/Updates"]
+script = ExtResource( 23 )
+Variable = "general.serious"
+Node = NodePath("../../../Background/PosterAnim")

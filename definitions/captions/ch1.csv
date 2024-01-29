@@ -1,0 +1,60 @@
+,en
+system.screen.paperlily.warning,"This is a demo.
+It might not properly represent the quality of the final product."
+system.screen.paperlily.introwarning,"This game may contain flashing lights and effects,
+as well as depictions of violence and strong language."
+system.screen.paperlilych1.specialthanks.video,Video Creators and Streamers
+system.screen.paperlilych1.specialthanks.comment,Commenters and Reviewers
+system.screen.paperlilych1.specialthanks.family,Our Families and Friends
+system.screen.paperlilych1.credits.mkcontest,Miss Knives Contest Winners
+system.screen.paperlilych1.credits.cabbage,Cabbage Masters
+system.screen.paperlilych1.notefromdevs,"Note from the devs:
+Congratulations for getting this far in the Paper Lily story!
+Thank you so much for your support and enthusiasm for this little world we created. Please don't hesitate to leave a review if you have the time, it helps immensely.
+
+We're still only two idiots making this game, so if you want to support future development please consider purchasing the supporter pack!"
+system.endings.1-1,True End 1-1 - Against All Odds
+system.menu.costume.default,Change into uniform
+system.menu.costume.indoors,Change into indoor clothes
+system.menu.costume.cancel,Don't change
+system.cg.ch1_todolist_title,Things to do
+system.cg.ch1_todolist_subtitle,(before I die)
+system.cg.ch1_todolist_item1,- Go out
+system.cg.ch1_todolist_item2,- Eat the meal mom left me
+system.cg.ch1_todolist_item3,- Fill up the bird feeder
+system.cg.ch1_todolist_item4,- Feed my Tamaghost
+system.cg.ch1_todolist_item5,- Say goodbye to Hiro
+misc.strings.order_1A,A coffee and a flan
+misc.strings.order_1B,A coffee and macarons
+misc.strings.order_1C,A coffee and an eclair
+misc.strings.order_2A,A tea and a flan
+misc.strings.order_2B,A tea and macarons
+misc.strings.order_2C,A tea and an eclair
+misc.strings.order_3A,A milkshake and a flan
+misc.strings.order_3B,A milkshake and macarons
+misc.strings.order_3C,A milkshake and an eclair
+misc.characters.unknown,???
+misc.characters.npc_a,Girl A
+misc.characters.npc_b,Girl B
+misc.characters.npc_c,Man
+misc.characters.npc_d,Lady
+misc.characters.npc_e,Child
+misc.characters.npc_f,Mother
+misc.characters.student,Student
+misc.characters.student_bully,Bully
+misc.characters.student_all,Everyone
+misc.characters.mother,Mother
+misc.characters.father,Father
+misc.characters.neighbor,Neighbor
+misc.characters.demon_1,Long-Faced Monster
+misc.characters.demon_2,One-Eyed Monster
+misc.characters.demon_3,Doctor?
+misc.characters.voice_1,Voice 1
+misc.characters.voice_2,Voice 2
+misc.characters.voice_3,Voice 3
+misc.characters.prisoner,Prisoner
+misc.characters.lk,Miss Knives (Young)
+misc.characters.iris,Iris
+misc.characters.boy1,Boy 1
+misc.characters.boy2,Boy 2
+misc.characters.boy3,Boy 3

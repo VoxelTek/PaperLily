@@ -1,0 +1,825 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Subgame/PaperLilyDemo/CreditsScreen2.cs" type="Script" id=1]
+[ext_resource path="res://resources/font/default.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/font/default_large.tres" type="DynamicFont" id=3]
+[ext_resource path="res://resources/nodes/paper_lily_demo/CreditsScreen3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/img/ui/credits_godot.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/ui/leef_logo.png" type="Texture" id=6]
+[ext_resource path="res://resources/font/default_small.tres" type="DynamicFont" id=7]
+
+[node name="CreditsScreen2" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 675.0
+script = ExtResource( 1 )
+WaitTime = 0.0
+NoSkip = true
+KeepState = true
+NextScreen = ExtResource( 4 )
+
+[node name="Bg" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 2747.0
+rect_min_size = Vector2( 640, 360 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sections" type="VBoxContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 2747.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Separator1" type="ColorRect" parent="Sections"]
+margin_right = 640.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections"]
+margin_top = 140.0
+margin_right = 640.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.music.more"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "\"Butterfly Waltz\" by Neal K Sound"
+align = 1
+
+[node name="Label6" type="Label" parent="Sections/VBoxContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 640.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "\"With All Your Heart\" by Neal K Sound"
+align = 1
+
+[node name="Separator3" type="ColorRect" parent="Sections"]
+margin_top = 260.0
+margin_right = 640.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 90 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Sections"]
+margin_top = 370.0
+margin_right = 640.0
+margin_bottom = 437.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer2"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.ui.more"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer2"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer2/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "Hogwash"
+align = 1
+
+[node name="Separator12" type="ColorRect" parent="Sections"]
+margin_top = 457.0
+margin_right = 640.0
+margin_bottom = 477.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="Sections"]
+margin_top = 497.0
+margin_right = 640.0
+margin_bottom = 564.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer10"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.communications.kr"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer10"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer10/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "BROKENPASTEL"
+align = 1
+
+[node name="Separator5" type="ColorRect" parent="Sections"]
+margin_top = 584.0
+margin_right = 640.0
+margin_bottom = 604.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Sections"]
+margin_top = 624.0
+margin_right = 640.0
+margin_bottom = 922.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer3"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.assets.more"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer3"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 298.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label7" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "DOVA-SYNDROME"
+align = 1
+
+[node name="Label8" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 33.0
+margin_right = 640.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "FreeSound.org"
+align = 1
+
+[node name="Label9" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 66.0
+margin_right = 640.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 3 )
+text = "SoundBible.com"
+align = 1
+
+[node name="Label10" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 99.0
+margin_right = 640.0
+margin_bottom = 122.0
+custom_fonts/font = ExtResource( 3 )
+text = "GameDev Market"
+align = 1
+
+[node name="Label11" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 132.0
+margin_right = 640.0
+margin_bottom = 155.0
+custom_fonts/font = ExtResource( 3 )
+text = "MusMus"
+align = 1
+
+[node name="Label12" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 165.0
+margin_right = 640.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 3 )
+text = "ZapSplat.com"
+align = 1
+
+[node name="Label6" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 198.0
+margin_right = 640.0
+margin_bottom = 221.0
+custom_fonts/font = ExtResource( 3 )
+text = "1001 Fonts"
+align = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer3/VBoxContainer"]
+margin_top = 231.0
+margin_right = 640.0
+margin_bottom = 254.0
+custom_fonts/font = ExtResource( 3 )
+text = "Keyboard & Controller Prompts by Xelu"
+align = 1
+
+[node name="Separator6" type="ColorRect" parent="Sections"]
+margin_top = 942.0
+margin_right = 640.0
+margin_bottom = 962.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="Sections"]
+margin_top = 982.0
+margin_right = 640.0
+margin_bottom = 1181.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer5"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.testing"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer5"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 199.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer5/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "angelsiu"
+align = 1
+
+[node name="Label6" type="Label" parent="Sections/VBoxContainer5/VBoxContainer"]
+margin_top = 33.0
+margin_right = 640.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 3 )
+text = "Meilotea"
+align = 1
+
+[node name="Label7" type="Label" parent="Sections/VBoxContainer5/VBoxContainer"]
+margin_top = 66.0
+margin_right = 640.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 3 )
+text = "SamAishi"
+align = 1
+
+[node name="Label9" type="Label" parent="Sections/VBoxContainer5/VBoxContainer"]
+margin_top = 99.0
+margin_right = 640.0
+margin_bottom = 122.0
+custom_fonts/font = ExtResource( 3 )
+text = "Zahra"
+align = 1
+
+[node name="Label8" type="Label" parent="Sections/VBoxContainer5/VBoxContainer"]
+margin_top = 132.0
+margin_right = 640.0
+margin_bottom = 155.0
+custom_fonts/font = ExtResource( 3 )
+text = "Kalendan"
+align = 1
+
+[node name="Separator4" type="ColorRect" parent="Sections"]
+margin_top = 1201.0
+margin_right = 640.0
+margin_bottom = 1221.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="Sections"]
+margin_top = 1241.0
+margin_right = 640.0
+margin_bottom = 1308.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer12"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.credits.logo"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer12"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer12/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "L.D."
+align = 1
+
+[node name="Separator8" type="ColorRect" parent="Sections"]
+margin_top = 1328.0
+margin_right = 640.0
+margin_bottom = 1348.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="Sections"]
+margin_top = 1368.0
+margin_right = 640.0
+margin_bottom = 1435.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer11"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Miss Knives Original Design"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer11"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer11/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+text = "ShotaDeer"
+align = 1
+
+[node name="Separator7" type="ColorRect" parent="Sections"]
+margin_top = 1455.0
+margin_right = 640.0
+margin_bottom = 1475.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="Sections"]
+margin_top = 1495.0
+margin_right = 640.0
+margin_bottom = 1922.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer6"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.screen.paperlilych1.credits.mkcontest"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Sections/VBoxContainer6"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 397.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 0
+columns = 2
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_right = 320.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Aidito_Arusu"
+align = 1
+
+[node name="Label6" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_right = 640.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "alavyx"
+align = 1
+
+[node name="Label7" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 33.0
+margin_right = 320.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "AshikoTsuki"
+align = 1
+
+[node name="Label8" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 33.0
+margin_right = 640.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "bread_ren"
+align = 1
+
+[node name="Label9" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 66.0
+margin_right = 320.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Checkerfield"
+align = 1
+
+[node name="Label10" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 640.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "JinwuLoi"
+align = 1
+
+[node name="Label11" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 99.0
+margin_right = 320.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "judeinutil"
+align = 1
+
+[node name="Label12" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 99.0
+margin_right = 640.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "jujubr"
+align = 1
+
+[node name="Label13" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 132.0
+margin_right = 320.0
+margin_bottom = 155.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "JuneforJosh"
+align = 1
+
+[node name="Label14" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 132.0
+margin_right = 640.0
+margin_bottom = 155.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "maereu_"
+align = 1
+
+[node name="Label15" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 165.0
+margin_right = 320.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Nao_w24"
+align = 1
+
+[node name="Label16" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 165.0
+margin_right = 640.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Nexys"
+align = 1
+
+[node name="Label17" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 198.0
+margin_right = 320.0
+margin_bottom = 221.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Pytheaz"
+align = 1
+
+[node name="Label18" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 198.0
+margin_right = 640.0
+margin_bottom = 221.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "ReiKizurumi"
+align = 1
+
+[node name="Label19" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 231.0
+margin_right = 320.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "rosey_ice"
+align = 1
+
+[node name="Label20" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 231.0
+margin_right = 640.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "skelegirrrl"
+align = 1
+
+[node name="Label21" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 264.0
+margin_right = 320.0
+margin_bottom = 287.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "straipsy"
+align = 1
+
+[node name="Label22" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 264.0
+margin_right = 640.0
+margin_bottom = 287.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "SUG4RGUTS"
+align = 1
+
+[node name="Label23" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 297.0
+margin_right = 320.0
+margin_bottom = 320.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "sunmiuv"
+align = 1
+
+[node name="Label24" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 297.0
+margin_right = 640.0
+margin_bottom = 320.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "ThatNorthWind"
+align = 1
+
+[node name="Label25" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_top = 330.0
+margin_right = 320.0
+margin_bottom = 353.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "TigerSextonVA"
+align = 1
+
+[node name="Label26" type="Label" parent="Sections/VBoxContainer6/GridContainer"]
+margin_left = 320.0
+margin_top = 330.0
+margin_right = 640.0
+margin_bottom = 353.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "z0th3br0"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer6"]
+margin_top = 427.0
+margin_right = 640.0
+margin_bottom = 427.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Separator13" type="ColorRect" parent="Sections"]
+margin_top = 1942.0
+margin_right = 640.0
+margin_bottom = 1962.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="Sections"]
+margin_top = 1982.0
+margin_right = 640.0
+margin_bottom = 2178.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer7"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "system.screen.paperlilych1.credits.cabbage"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Sections/VBoxContainer7"]
+margin_top = 44.0
+margin_right = 640.0
+margin_bottom = 166.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 0
+columns = 2
+
+[node name="Label5" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_right = 320.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "GunvoltPD"
+align = 1
+
+[node name="Label6" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_left = 320.0
+margin_right = 640.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "ikarii"
+align = 1
+
+[node name="Label7" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_top = 33.0
+margin_right = 320.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Bibba"
+align = 1
+
+[node name="Label8" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_left = 320.0
+margin_top = 33.0
+margin_right = 640.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Clpz"
+align = 1
+
+[node name="Label9" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_top = 66.0
+margin_right = 320.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "MayenTanoshi"
+align = 1
+
+[node name="Label10" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 640.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Sourpounce"
+align = 1
+
+[node name="Label11" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_top = 99.0
+margin_right = 320.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "PJBanan4Bread"
+align = 1
+
+[node name="Label12" type="Label" parent="Sections/VBoxContainer7/GridContainer"]
+margin_left = 320.0
+margin_top = 99.0
+margin_right = 640.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Lasseh"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sections/VBoxContainer7"]
+margin_top = 196.0
+margin_right = 640.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Separator9" type="ColorRect" parent="Sections"]
+margin_top = 2198.0
+margin_right = 640.0
+margin_bottom = 2218.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="Sections"]
+margin_top = 2238.0
+margin_right = 640.0
+margin_bottom = 2361.0
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer9"]
+margin_right = 640.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 7 )
+text = "system.credits.madewith"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Sections/VBoxContainer9"]
+margin_top = 16.0
+margin_right = 640.0
+margin_bottom = 96.0
+
+[node name="TextureRect" type="TextureRect" parent="Sections/VBoxContainer9/CenterContainer"]
+margin_left = 280.0
+margin_right = 360.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Sections/VBoxContainer9"]
+margin_top = 100.0
+margin_right = 640.0
+margin_bottom = 123.0
+custom_fonts/font = ExtResource( 3 )
+text = "system.credits.godotengine"
+align = 1
+
+[node name="Separator10" type="ColorRect" parent="Sections"]
+margin_top = 2381.0
+margin_right = 640.0
+margin_bottom = 2481.0
+rect_min_size = Vector2( 0, 100 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="Sections"]
+margin_top = 2501.0
+margin_right = 640.0
+margin_bottom = 2617.0
+
+[node name="Label" type="Label" parent="Sections/VBoxContainer8"]
+margin_right = 640.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 7 )
+text = "system.credits.madeby"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Sections/VBoxContainer8"]
+margin_top = 16.0
+margin_right = 640.0
+margin_bottom = 116.0
+
+[node name="TextureRect" type="TextureRect" parent="Sections/VBoxContainer8/CenterContainer"]
+margin_left = 270.0
+margin_right = 370.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Separator11" type="ColorRect" parent="Sections"]
+margin_top = 2637.0
+margin_right = 640.0
+margin_bottom = 2747.0
+rect_min_size = Vector2( 0, 110 )
+color = Color( 1, 1, 1, 0 )

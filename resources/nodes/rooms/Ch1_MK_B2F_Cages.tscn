@@ -1,0 +1,507 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1MkB2fCages.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_chain.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_sm_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_sm_shadow.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_shadow.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_sm.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cages.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_base.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_chain_2.png" type="Texture" id=11]
+[ext_resource path="res://resources/nodes/ch1/mk/wall_column.tscn" type="PackedScene" id=12]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=13]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_back.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_chain_4.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_chain_3.png" type="Texture" id=16]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=17]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=18]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/cutscene/sai_caged.png" type="Texture" id=20]
+[ext_resource path="res://assets/bgm/ch1_mk_q.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_sm_back.png" type="Texture" id=22]
+[ext_resource path="res://resources/nodes/ch1/save_crow.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/sprite/ch1/mk/cages/misc_cage_sm_front.png" type="Texture" id=24]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=25]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=26]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=27]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=28]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=29]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=30]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_collapse.png" type="Texture" id=31]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=32]
+[ext_resource path="res://assets/sprite/ch1/cutscene/crow_dead.png" type="Texture" id=33]
+[ext_resource path="res://assets/bgm/ch1_mk_d.ogg" type="AudioStream" id=34]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=35]
+[ext_resource path="res://resources/lighting/ch1_mk_dark.tres" type="Resource" id=36]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=37]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=38]
+
+[node name="Ch1_MK_B2F_Cages" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+BgmCrossfade = true
+HideFollowers = true
+SaveLocation = "system.locations.ch1.mk"
+SaveImage = "ch1_mk"
+bgmQuiet = ExtResource( 21 )
+bgmDynamic = ExtResource( 34 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 19, 0, 1, 19, 0, 2, 19, 0, 3, 19, 0, 4, 19, 0, 5, 19, 0, 6, 19, 0, 7, 19, 0, 8, 19, 0, 9, 19, 0, 262144, 17, 0, 262145, 17, 0, 262146, 17, 0, 262147, 17, 0, 262148, 17, 0, 262149, 17, 0, 262150, 17, 0, 262151, 17, 0, 262152, 17, 0, 262153, 17, 0, 327680, 17, 0, 327681, 17, 0, 327682, 17, 0, 327683, 17, 0, 327684, 17, 0, 327685, 17, 0, 327686, 17, 0, 327687, 17, 0, 327688, 17, 0, 327689, 17, 0, 393216, 17, 0, 393217, 17, 0, 393218, 17, 0, 393219, 17, 0, 393220, 17, 0, 393221, 17, 0, 393222, 17, 0, 393223, 17, 0, 393224, 17, 0, 393225, 17, 0, 458752, 17, 0, 458753, 17, 0, 458754, 17, 0, 458755, 17, 0, 458756, 17, 0, 458757, 17, 0, 458758, 17, 0, 458759, 17, 0, 458760, 17, 0, 458761, 17, 0, 524288, 17, 0, 524289, 17, 0, 524290, 17, 0, 524291, 17, 0, 524292, 17, 0, 524293, 17, 0, 524294, 17, 0, 524295, 17, 0, 524296, 17, 0, 524297, 17, 0, 589824, 17, 0, 589825, 17, 0, 589826, 17, 0, 589827, 17, 0, 589828, 17, 0, 589829, 17, 0, 589830, 17, 0, 589831, 17, 0, 589832, 17, 0, 589833, 17, 0, 655360, 17, 0, 655361, 17, 0, 655362, 17, 0, 655363, 17, 0, 655364, 17, 0, 655365, 17, 0, 655366, 17, 0, 655367, 17, 0, 655368, 17, 0, 655369, 17, 0, 720898, 17, 0, 720899, 17, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_column" parent="Background" instance=ExtResource( 12 )]
+position = Vector2( 6, 129 )
+
+[node name="wall_column2" parent="Background" instance=ExtResource( 12 )]
+position = Vector2( 315, 130 )
+
+[node name="MiscCageSmShadow" type="Sprite" parent="Background"]
+position = Vector2( 19, 280 )
+texture = ExtResource( 5 )
+
+[node name="MiscCageShadow" type="Sprite" parent="Background"]
+position = Vector2( 243, 234 )
+texture = ExtResource( 6 )
+
+[node name="MiscCageShadow2" type="Sprite" parent="Background"]
+position = Vector2( 54, 154 )
+texture = ExtResource( 6 )
+
+[node name="MiscCageSmShadow2" type="Sprite" parent="Background"]
+position = Vector2( 130, 146 )
+texture = ExtResource( 5 )
+
+[node name="MiscCageSmShadow3" type="Sprite" parent="Background"]
+position = Vector2( 198, 144 )
+texture = ExtResource( 5 )
+
+[node name="MiscCageSmShadow4" type="Sprite" parent="Background"]
+position = Vector2( 176, 135 )
+texture = ExtResource( 5 )
+
+[node name="MiscCageChain4" type="Sprite" parent="Background"]
+position = Vector2( 202, 288 )
+texture = ExtResource( 15 )
+
+[node name="LacieCollapse" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 139, 276 )
+texture = ExtResource( 31 )
+hframes = 8
+frame = 7
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cage1" type="Node2D" parent="Main"]
+position = Vector2( 53, 154 )
+
+[node name="MiscCageBase3" type="Sprite" parent="Main/cage1"]
+position = Vector2( 1, -32 )
+texture = ExtResource( 10 )
+
+[node name="MiscCageBack" type="Sprite" parent="Main/cage1"]
+position = Vector2( 1, -70 )
+texture = ExtResource( 14 )
+
+[node name="SaiGone" type="Node2D" parent="Main/cage1"]
+
+[node name="Sai" type="Sprite" parent="Main/cage1/SaiGone"]
+position = Vector2( 0, -52 )
+texture = ExtResource( 20 )
+hframes = 5
+
+[node name="MiscCage2" type="Sprite" parent="Main/cage1"]
+position = Vector2( 1, -65 )
+texture = ExtResource( 8 )
+
+[node name="cage2" type="Node2D" parent="Main"]
+position = Vector2( 155, 267 )
+
+[node name="MiscCageBase" type="Sprite" parent="Main/cage2"]
+position = Vector2( 1, -1 )
+texture = ExtResource( 10 )
+
+[node name="MiscCageChain3" type="Sprite" parent="Main/cage2"]
+position = Vector2( 16, -41 )
+texture = ExtResource( 16 )
+
+[node name="MiscCageBack2" type="Sprite" parent="Main/cage2"]
+position = Vector2( 0, -39 )
+texture = ExtResource( 14 )
+
+[node name="MiscCage" type="Sprite" parent="Main/cage2"]
+position = Vector2( 0, -34 )
+texture = ExtResource( 8 )
+
+[node name="cage3" type="Node2D" parent="Main"]
+position = Vector2( 243, 234 )
+
+[node name="MiscCageBase2" type="Sprite" parent="Main/cage3"]
+position = Vector2( 0, -38 )
+texture = ExtResource( 10 )
+
+[node name="MiscCageBack3" type="Sprite" parent="Main/cage3"]
+position = Vector2( 0, -76 )
+texture = ExtResource( 14 )
+
+[node name="MiscCage2" type="Sprite" parent="Main/cage3"]
+position = Vector2( 0, -71 )
+texture = ExtResource( 8 )
+
+[node name="cage4" type="Node2D" parent="Main"]
+position = Vector2( 288, 142 )
+
+[node name="MiscCageBase4" type="Sprite" parent="Main/cage4"]
+position = Vector2( 0, -1 )
+texture = ExtResource( 10 )
+
+[node name="MiscCageBack4" type="Sprite" parent="Main/cage4"]
+position = Vector2( 0, -39 )
+texture = ExtResource( 14 )
+
+[node name="MiscCage3" type="Sprite" parent="Main/cage4"]
+position = Vector2( 0, -34 )
+texture = ExtResource( 8 )
+
+[node name="cage5" type="Node2D" parent="Main"]
+position = Vector2( 302, 317 )
+
+[node name="MiscCageSm" type="Sprite" parent="Main/cage5"]
+position = Vector2( 1, -19 )
+texture = ExtResource( 7 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 18, 196610, -65537, 18, 196610, -131072, 18, 196610, -131071, 18, 196610, -131070, 18, 196610, -131069, 18, 196610, -131068, 18, 196610, -131067, 18, 196610, -131066, 18, 196610, -131065, 18, 196610, -131064, 18, 196610, -131063, 18, 196610, -131062, 18, 196610, -131061, 18, 196610, -2, 18, 196610, -1, 18, 65539, -65536, 18, 262146, -65535, 18, 262146, -65534, 18, 262146, -65533, 18, 262146, -65532, 18, 262146, -65531, 18, 262146, -65530, 18, 262146, -65529, 18, 262146, -65528, 18, 262146, -65527, 18, 262146, -65526, 18, 65538, -65525, 18, 196610, 65534, 18, 196610, 65535, 18, 196611, 10, 18, 196609, 11, 18, 196610, 131070, 18, 196610, 131071, 18, 196611, 65546, 18, 196609, 65547, 18, 196610, 196606, 18, 196610, 196607, 18, 196611, 131082, 18, 196609, 131083, 18, 196610, 262142, 18, 196610, 262143, 18, 196611, 196618, 18, 196609, 196619, 18, 196610, 327678, 18, 196610, 327679, 18, 196611, 262154, 18, 196609, 262155, 18, 196610, 393214, 18, 196610, 393215, 18, 196611, 327690, 18, 196609, 327691, 18, 196610, 458750, 18, 196610, 458751, 18, 196611, 393226, 18, 196609, 393227, 18, 196610, 524286, 18, 196610, 524287, 18, 196611, 458762, 18, 196609, 458763, 18, 196610, 589822, 18, 196610, 589823, 18, 196611, 524298, 18, 196609, 524299, 18, 196610, 655358, 18, 196610, 655359, 18, 196611, 589834, 18, 196609, 589835, 18, 196610, 720894, 18, 196610, 720895, 18, 196611, 655370, 18, 196609, 655371, 18, 196610, 786430, 18, 196610, 786431, 18, 3, 720896, 18, 131074, 720897, 18, 131075, 720900, 18, 131073, 720901, 18, 131074, 720902, 18, 131074, 720903, 18, 131074, 720904, 18, 131074, 720905, 18, 131074, 720906, 18, 2, 720907, 18, 196610, 851966, 18, 196610, 851967, 18, 196610, 786432, 18, 196610, 786433, 18, 196610, 786434, 18, 196610, 786435, 18, 196610, 786436, 18, 196610, 786437, 18, 196610, 786438, 18, 196610, 786439, 18, 196610, 786440, 18, 196610, 786441, 18, 196610, 786442, 18, 196610, 786443, 18, 196610, 917502, 18, 196610, 917503, 18, 196610, 851968, 18, 196610, 851969, 18, 196610, 851970, 18, 196610, 851971, 18, 196610, 851972, 18, 196610, 851973, 18, 196610, 851974, 18, 196610, 851975, 18, 196610, 851976, 18, 196610, 851977, 18, 196610, 851978, 18, 196610, 851979, 18, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscCageChain" type="Sprite" parent="Foreground"]
+position = Vector2( 243, 58 )
+texture = ExtResource( 3 )
+
+[node name="MiscCageSm2" type="Sprite" parent="Foreground"]
+position = Vector2( 19, 112 )
+texture = ExtResource( 4 )
+
+[node name="MiscCageSm3" type="Sprite" parent="Foreground"]
+position = Vector2( 285, 323 )
+texture = ExtResource( 22 )
+
+[node name="Crow" parent="Foreground/MiscCageSm3" instance=ExtResource( 23 )]
+position = Vector2( 3, 9 )
+flip_h = true
+
+[node name="CrowDead" type="Sprite" parent="Foreground/MiscCageSm3"]
+visible = false
+position = Vector2( 0, 19 )
+texture = ExtResource( 33 )
+
+[node name="MiscCageSmFront" type="Sprite" parent="Foreground/MiscCageSm3"]
+texture = ExtResource( 24 )
+
+[node name="MiscCageChain2" type="Sprite" parent="Foreground"]
+position = Vector2( 54, 20 )
+texture = ExtResource( 11 )
+
+[node name="MiscCages" type="Sprite" parent="Foreground"]
+position = Vector2( 164, 46 )
+texture = ExtResource( 9 )
+
+[node name="fadeout6" type="Sprite" parent="Foreground"]
+position = Vector2( 58, 384 )
+scale = Vector2( 0.59375, -0.25 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 35 )
+Default = true
+Lighting = ExtResource( 26 )
+
+[node name="Light12" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 28, 177 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Light13" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 254, 302 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 0.415686, 0.917647, 0.917647, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Light14" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 249, 24 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 35 )
+Lighting = ExtResource( 36 )
+
+[node name="Light20" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( 86, 146 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 0.537255, 0.654902, 0.807843, 1 )
+energy = 0.5
+script = ExtResource( 25 )
+BlendMode = 1
+Layers = 1
+
+[node name="Light21" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( 242, 384 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 0.537255, 0.654902, 0.807843, 1 )
+energy = 0.4
+script = ExtResource( 25 )
+BlendMode = 1
+Layers = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="items_sai" type="Node" parent="Other/Events"]
+
+[node name="item_key_correct_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_key_cage"
+Nodes = "misc_cage_sai"
+
+[node name="item_lockpick_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.lockpick"
+Nodes = "misc_cage_sai"
+
+[node name="item_key_wrong_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_bedroom_key
+ch1.mk_key_wisteria"
+Nodes = "misc_cage_sai"
+
+[node name="item_jar_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_jar"
+Nodes = "misc_cage_sai"
+
+[node name="item_paint_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_jar_paint_red
+ch1.mk_jar_paint_yellow
+ch1.mk_jar_paint_blue"
+Nodes = "misc_cage_sai"
+
+[node name="item_lighter_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_lighter"
+Nodes = "misc_cage_sai"
+
+[node name="item_mirror_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_hand_mirror_activated"
+Nodes = "misc_cage_sai"
+
+[node name="item_compress_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_compress_activated"
+Nodes = "misc_cage_sai"
+
+[node name="item_knife_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_knife_activated"
+Nodes = "misc_cage_sai"
+
+[node name="item_knife_blk_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_knife"
+Nodes = "misc_cage_sai"
+
+[node name="item_foot_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_foot_activated"
+Nodes = "misc_cage_sai"
+
+[node name="item_canvas_on_sai" type="Node" parent="Other/Events/items_sai"]
+script = ExtResource( 29 )
+Items = "ch1.mk_canvas_activated"
+Nodes = "misc_cage_sai"
+
+[node name="on_enter_sai_crow_react" type="Node" parent="Other/Events"]
+script = ExtResource( 38 )
+
+[node name="item_key_on_crow" type="Node" parent="Other/Events"]
+script = ExtResource( 29 )
+Items = "ch1.mk_key_cage
+ch1.mk_bedroom_key
+ch1.mk_key_wisteria
+ch1.lockpick"
+Nodes = "misc_cage5"
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 96, 400 )
+script = ExtResource( 13 )
+Area = Vector2( 64, 32 )
+
+[node name="misc_cage_lacie" type="Node2D" parent="Other/Events"]
+position = Vector2( 155, 267 )
+script = ExtResource( 18 )
+Area = Vector2( 57, 26 )
+
+[node name="misc_cage2" type="Node2D" parent="Other/Events"]
+position = Vector2( 288, 142 )
+script = ExtResource( 18 )
+Area = Vector2( 57, 26 )
+
+[node name="misc_cage3" type="Node2D" parent="Other/Events"]
+position = Vector2( 243, 234 )
+script = ExtResource( 18 )
+Area = Vector2( 57, 20 )
+
+[node name="misc_cage_sai" type="Node2D" parent="Other/Events"]
+position = Vector2( 53, 154 )
+script = ExtResource( 18 )
+Area = Vector2( 57, 20 )
+
+[node name="misc_cage5" type="Node2D" parent="Other/Events"]
+position = Vector2( 284, 342 )
+script = ExtResource( 18 )
+Area = Vector2( 34, 16 )
+
+[node name="misc_cage6" type="Node2D" parent="Other/Events"]
+position = Vector2( 302, 317 )
+script = ExtResource( 18 )
+Area = Vector2( 34, 16 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 96, 368 )
+script = ExtResource( 17 )
+Direction = 2
+
+[node name="lacie_escape" type="Node2D" parent="Other/Points"]
+position = Vector2( 141, 291 )
+script = ExtResource( 17 )
+
+[node name="lacie_escape_bubble" type="Node2D" parent="Other/Points"]
+position = Vector2( 137, 261 )
+script = ExtResource( 17 )
+
+[node name="sai_escape" type="Node2D" parent="Other/Points"]
+position = Vector2( 53, 180 )
+script = ExtResource( 17 )
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="sai_rescued" type="Node" parent="Other/Updates"]
+script = ExtResource( 30 )
+Variable = "ch1.mk_rescued_sai"
+Node = NodePath("../../../Main/cage1/SaiGone/Sai")
+Invert = true
+
+[node name="sai_gone" type="Node" parent="Other/Updates"]
+script = ExtResource( 30 )
+Variable = "general.serious"
+Node = NodePath("../../../Main/cage1/SaiGone")
+Invert = true
+
+[node name="crow_alive" type="Node" parent="Other/Updates"]
+script = ExtResource( 30 )
+Variable = "ch1.mk_crow_dead"
+Node = NodePath("../../../Foreground/MiscCageSm3/Crow")
+Invert = true
+
+[node name="crow_dead" type="Node" parent="Other/Updates"]
+script = ExtResource( 30 )
+Variable = "ch1.mk_crow_dead"
+Node = NodePath("../../../Foreground/MiscCageSm3/CrowDead")
+
+[node name="creepy_lighting" type="Node" parent="Other/Updates"]
+script = ExtResource( 37 )
+Variable = "general.serious"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="lacie_on_floor" type="Node" parent="Other/Actions"]
+script = ExtResource( 32 )
+Node = NodePath("../../../Background/LacieCollapse")

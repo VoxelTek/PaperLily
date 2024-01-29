@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/lighting/ch1_bus.tres" type="Resource" id=2]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Bus_B.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_death_bus.png" type="Texture" id=4]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=5]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=6]
+
+[node name="Ch1_Cutscene_Bus_B_Death" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 2 )
+CameraLimitLeft = 64
+CameraLimitTop = 64
+CameraLimitRight = 704
+CameraLimitBottom = 424
+Subroom = NodePath("Ch1_Bus_B")
+
+[node name="Ch1_Bus_B" parent="." instance=ExtResource( 3 )]
+
+[node name="curtains_b" parent="Ch1_Bus_B/Background" index="15"]
+visible = false
+
+[node name="LacieDeathBus" type="Sprite" parent="Ch1_Bus_B/Background" index="16"]
+position = Vector2( 552, 225 )
+texture = ExtResource( 4 )
+hframes = 15
+script = ExtResource( 5 )
+FPS = 8.0
+Loop = false
+Autostart = false
+FrameDurations = "100,100,200,200,200,200,200,200,200,80,80,80,100,100,100"
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="play_death" type="Node" parent="Actions"]
+script = ExtResource( 6 )
+Node = NodePath("../../Ch1_Bus_B/Background/LacieDeathBus")
+
+[editable path="Ch1_Bus_B"]

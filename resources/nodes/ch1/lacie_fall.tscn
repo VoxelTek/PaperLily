@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_fall.png" type="Texture" id=2]
+
+[node name="LacieFall" type="Sprite"]
+texture = ExtResource( 2 )
+offset = Vector2( 0, -14 )
+hframes = 4
+script = ExtResource( 1 )
+FPS = 15.0
+Loop = false

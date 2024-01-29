@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_hit_ceramic.ogg-5b6d99d00cbe3ac8ad27e35d55d382c2.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ch1_hit_ceramic.ogg"
+dest_files=[ "res://.import/ch1_hit_ceramic.ogg-5b6d99d00cbe3ac8ad27e35d55d382c2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,243 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/bg_day.png" type="Texture" id=1]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1PncPhoneDay.cs" type="Script" id=2]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/border.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/symbols_day.png" type="Texture" id=4]
+[ext_resource path="res://script/Subgame/PointAndClickMinigame/PointAndClickSnapTarget.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_9.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_pound.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_6.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_0.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_5.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_8.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_7.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_asterisk.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/minigame/pointandclick/phone/button_4.png" type="Texture" id=17]
+[ext_resource path="res://resources/material/ch1_pnc_phone_day_outline.tres" type="Material" id=18]
+[ext_resource path="res://assets/sfx/dtmf_9.ogg" type="AudioStream" id=19]
+[ext_resource path="res://assets/sfx/dtmf_6.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/sfx/dtmf_7.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/sfx/dtmf_pound.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/sfx/dtmf_asterisk.ogg" type="AudioStream" id=23]
+[ext_resource path="res://assets/sfx/dtmf_5.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/sfx/dtmf_8.ogg" type="AudioStream" id=25]
+[ext_resource path="res://assets/sfx/dtmf_1.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/sfx/dtmf_3.ogg" type="AudioStream" id=27]
+[ext_resource path="res://assets/sfx/dtmf_0.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/sfx/dtmf_2.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/sfx/dtmf_4.ogg" type="AudioStream" id=30]
+
+[node name="Ch1_PnC_Phone_Day" type="Control"]
+margin_right = 242.0
+margin_bottom = 242.0
+rect_min_size = Vector2( 242, 242 )
+script = ExtResource( 2 )
+SnapEnabled = true
+HideCursor = true
+FunctionTargets = {
+"0": "Dial0",
+"1": "Dial1",
+"2": "Dial2",
+"3": "Dial3",
+"4": "Dial4",
+"5": "Dial5",
+"6": "Dial6",
+"7": "Dial7",
+"8": "Dial8",
+"9": "Dial9",
+"asterisk": "DialAsterisk",
+"pound": "DialPound"
+}
+HighlightShader = ExtResource( 18 )
+TexDigits = ExtResource( 4 )
+SfxDialTones = [ ExtResource( 28 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 22 ) ]
+
+[node name="CenterContainer" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 256, 257 )
+
+[node name="Bg" type="TextureRect" parent="CenterContainer"]
+margin_left = 7.0
+margin_top = 8.0
+margin_right = 249.0
+margin_bottom = 250.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="TextureRect" parent="CenterContainer"]
+margin_right = 256.0
+margin_bottom = 257.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Targets" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 257 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="TextureRect" parent="Targets"]
+margin_left = 83.0
+margin_top = 56.0
+margin_right = 125.0
+margin_bottom = 98.0
+texture = ExtResource( 6 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Right = "2"
+Down = "4"
+
+[node name="2" type="TextureRect" parent="Targets"]
+margin_left = 133.0
+margin_top = 56.0
+margin_right = 175.0
+margin_bottom = 98.0
+texture = ExtResource( 14 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "1"
+Right = "3"
+Down = "5"
+
+[node name="3" type="TextureRect" parent="Targets"]
+margin_left = 183.0
+margin_top = 56.0
+margin_right = 225.0
+margin_bottom = 98.0
+texture = ExtResource( 9 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "2"
+Down = "6"
+
+[node name="4" type="TextureRect" parent="Targets"]
+margin_left = 83.0
+margin_top = 104.0
+margin_right = 125.0
+margin_bottom = 146.0
+texture = ExtResource( 17 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Up = "1"
+Right = "5"
+Down = "7"
+
+[node name="5" type="TextureRect" parent="Targets"]
+margin_left = 133.0
+margin_top = 104.0
+margin_right = 175.0
+margin_bottom = 146.0
+texture = ExtResource( 12 )
+script = ExtResource( 5 )
+FirstTarget = true
+SnapOffset = Vector2( 20, 20 )
+Left = "4"
+Up = "2"
+Right = "6"
+Down = "8"
+
+[node name="6" type="TextureRect" parent="Targets"]
+margin_left = 183.0
+margin_top = 104.0
+margin_right = 225.0
+margin_bottom = 146.0
+texture = ExtResource( 10 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "5"
+Up = "3"
+Down = "9"
+
+[node name="7" type="TextureRect" parent="Targets"]
+margin_left = 83.0
+margin_top = 152.0
+margin_right = 125.0
+margin_bottom = 194.0
+texture = ExtResource( 15 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Up = "4"
+Right = "8"
+Down = "asterisk"
+
+[node name="8" type="TextureRect" parent="Targets"]
+margin_left = 133.0
+margin_top = 152.0
+margin_right = 175.0
+margin_bottom = 194.0
+texture = ExtResource( 13 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "7"
+Up = "5"
+Right = "9"
+Down = "0"
+
+[node name="9" type="TextureRect" parent="Targets"]
+margin_left = 183.0
+margin_top = 152.0
+margin_right = 225.0
+margin_bottom = 194.0
+texture = ExtResource( 7 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "8"
+Up = "6"
+Down = "pound"
+
+[node name="asterisk" type="TextureRect" parent="Targets"]
+margin_left = 83.0
+margin_top = 200.0
+margin_right = 125.0
+margin_bottom = 242.0
+texture = ExtResource( 16 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Up = "7"
+Right = "0"
+
+[node name="0" type="TextureRect" parent="Targets"]
+margin_left = 133.0
+margin_top = 200.0
+margin_right = 175.0
+margin_bottom = 242.0
+texture = ExtResource( 11 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "asterisk"
+Up = "8"
+Right = "pound"
+
+[node name="pound" type="TextureRect" parent="Targets"]
+margin_left = 183.0
+margin_top = 200.0
+margin_right = 225.0
+margin_bottom = 242.0
+texture = ExtResource( 8 )
+script = ExtResource( 5 )
+SnapOffset = Vector2( 20, 20 )
+Left = "0"
+Up = "9"
+
+[node name="Display" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 17.0
+margin_right = 249.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 0, 32 )
+custom_constants/separation = -5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

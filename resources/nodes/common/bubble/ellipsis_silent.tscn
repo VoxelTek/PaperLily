@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprite/common/bubble/ellipsis.png" type="Texture" id=1]
+[ext_resource path="res://script/Nodes/Bubble.cs" type="Script" id=2]
+[ext_resource path="res://resources/material/unshaded.tres" type="Material" id=3]
+[ext_resource path="res://assets/sfx/ui_dot.ogg" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animation"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.7, 0.8, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+
+[node name="bubble_ellipsis_silent" type="Sprite"]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )
+hframes = 9
+script = ExtResource( 2 )
+sfxSound = ExtResource( 4 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/animation = SubResource( 1 )

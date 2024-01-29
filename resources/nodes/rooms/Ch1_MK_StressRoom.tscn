@@ -1,0 +1,264 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/sprite/common/floor_blood02.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/common/floor_blood04.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/common/floor_blood11.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/common/floor_blood05.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/chr_guesswho.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_wood.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_knives.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/floor_bg.png" type="Texture" id=13]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=14]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=15]
+[ext_resource path="res://resources/nodes/ch1/mk/mk_darkness.tscn" type="PackedScene" id=16]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=17]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=18]
+[ext_resource path="res://script/Core/Nodes/VariableSpriteFrames.cs" type="Script" id=19]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=20]
+[ext_resource path="res://assets/bgm/ch1_mk_d.ogg" type="AudioStream" id=21]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=22]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=23]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=24]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/chr_guesswho_doll.png" type="Texture" id=25]
+[ext_resource path="res://script/Core/Nodes/VariableEnabler.cs" type="Script" id=26]
+
+[node name="Ch1_MK_StressRoom" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 17 )
+CameraLimitLeft = -176
+CameraLimitRight = 464
+Bgm = ExtResource( 21 )
+BgmVolume = 0.0
+HideFollowers = true
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 589828, 26, 0, 655364, 26, 0, 720900, 26, 0, 786436, 26, 0, 851972, 26, 0, 917508, 26, 0, 983044, 26, 0, 1048580, 26, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg" type="Sprite" parent="Ground"]
+position = Vector2( 144, 141 )
+texture = ExtResource( 13 )
+
+[node name="FloorBlood02" type="Sprite" parent="Ground"]
+position = Vector2( 117, 173 )
+texture = ExtResource( 6 )
+
+[node name="FloorBlood04" type="Sprite" parent="Ground"]
+position = Vector2( 82, 206 )
+texture = ExtResource( 7 )
+
+[node name="FloorBlood11" type="Sprite" parent="Ground"]
+position = Vector2( 193, 230 )
+texture = ExtResource( 8 )
+
+[node name="FloorBlood12" type="Sprite" parent="Ground"]
+position = Vector2( 116, 221 )
+texture = ExtResource( 8 )
+
+[node name="FloorBlood13" type="Sprite" parent="Ground"]
+position = Vector2( 52, 214 )
+texture = ExtResource( 8 )
+
+[node name="FloorBlood14" type="Sprite" parent="Ground"]
+position = Vector2( 91, 156 )
+texture = ExtResource( 8 )
+
+[node name="FloorBlood03" type="Sprite" parent="Ground"]
+position = Vector2( 219, 214 )
+texture = ExtResource( 6 )
+
+[node name="FloorBlood06" type="Sprite" parent="Ground"]
+position = Vector2( 212, 174 )
+texture = ExtResource( 7 )
+
+[node name="FloorBlood07" type="Sprite" parent="Ground"]
+position = Vector2( 131, 196 )
+texture = ExtResource( 9 )
+
+[node name="FloorBlood05" type="Sprite" parent="Ground"]
+position = Vector2( 159, 196 )
+texture = ExtResource( 9 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StakeEmpty" type="Sprite" parent="Main"]
+position = Vector2( 139, 172 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -50 )
+hframes = 5
+
+[node name="Stake" type="Sprite" parent="Main"]
+position = Vector2( 139, 172 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -50 )
+hframes = 5
+frame = 1
+
+[node name="Knives" type="Sprite" parent="Main/Stake"]
+position = Vector2( 6, -53 )
+texture = ExtResource( 12 )
+
+[node name="MkDarkness" parent="Main/Stake/Knives" instance=ExtResource( 16 )]
+position = Vector2( -2, 1 )
+
+[node name="Wood" type="Sprite" parent="Main"]
+position = Vector2( 145, 182 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -6 )
+
+[node name="GuesswhoDoll" type="Sprite" parent="Main"]
+position = Vector2( 144, 288 )
+texture = ExtResource( 25 )
+offset = Vector2( 0, -38 )
+hframes = 2
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light12" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 145, 157 )
+texture = ExtResource( 18 )
+texture_scale = 3.0
+color = Color( 1, 0.513726, 0.513726, 1 )
+energy = 0.6
+range_item_cull_mask = 3
+script = ExtResource( 4 )
+BlendMode = 1
+
+[node name="LightFadeout" type="Sprite" parent="Lighting"]
+position = Vector2( 144, 512 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 23 )
+flip_v = true
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 327679, 0, 0, 262144, 0, 0, 262152, 0, 0, 262153, 0, 0, 393215, 0, 0, 327689, 0, 0, 458751, 0, 0, 393225, 0, 0, 524287, 0, 0, 458752, 1, 65538, 458760, 1, 65539, 458761, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 1, 65538, 524294, 1, 65539, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 655363, 0, 0, 655365, 0, 0, 720899, 0, 0, 720901, 0, 0, 786435, 0, 0, 786437, 0, 0, 851971, 0, 0, 851973, 0, 0, 917507, 0, 0, 917509, 0, 0, 983043, 0, 0, 983045, 0, 0, 1048579, 0, 0, 1048581, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_lighter_on_stake" type="Node" parent="Other/Events"]
+script = ExtResource( 22 )
+Items = "ch1.mk_lighter"
+Nodes = "misc_stake"
+
+[node name="misc_stake" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 184 )
+script = ExtResource( 14 )
+Area = Vector2( 76, 26 )
+
+[node name="misc_doll" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 288 )
+script = ExtResource( 14 )
+Area = Vector2( 32, 16 )
+
+[node name="event_leaving" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 272 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+Area = Vector2( 160, 32 )
+
+[node name="event_leaving_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 380 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 8 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 560 )
+script = ExtResource( 14 )
+Solid = false
+Trigger = 1
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 144, 528 )
+script = ExtResource( 15 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="head_tilt" type="Node" parent="Other/Updates"]
+script = ExtResource( 19 )
+Variable = "ch1.mk_head_tilt"
+Node = NodePath("../../../Main/Stake")
+FalseFrame = 1
+TrueFrame = 2
+
+[node name="head_tilt_2" type="Node" parent="Other/Updates"]
+script = ExtResource( 19 )
+Variable = "ch1.mk_head_tilt"
+Node = NodePath("../../../Main/GuesswhoDoll")
+
+[node name="knives" type="Node" parent="Other/Updates"]
+script = ExtResource( 20 )
+Variable = "ch1.mk_took_knife"
+Node = NodePath("../../../Main/Stake/Knives")
+Invert = true
+
+[node name="hide_character" type="Node" parent="Other/Updates"]
+script = ExtResource( 20 )
+Variable = "general.serious"
+Node = NodePath("../../../Main/Stake")
+Invert = true
+
+[node name="doll_evt" type="Node" parent="Other/Updates"]
+script = ExtResource( 26 )
+Variable = "general.serious"
+Node = NodePath("../../Events/misc_doll")
+
+[node name="doll_spr" type="Node" parent="Other/Updates"]
+script = ExtResource( 20 )
+Variable = "general.serious"
+Node = NodePath("../../../Main/GuesswhoDoll")

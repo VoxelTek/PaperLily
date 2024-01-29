@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneMkSpidey1.cs" type="Script" id=1]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=2]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ch1_spider_in.png" type="Texture" id=3]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV2.cs" type="Script" id=4]
+[ext_resource path="res://resources/nodes/rooms/Ch1_MK_B1F_Hallway.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=7]
+
+[node name="Ch1_Cutscene_MK_Spidey_1" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 2 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 5 )]
+
+[node name="MiscPot" parent="Room/Background" index="12"]
+visible = false
+
+[node name="SpiderIn" type="Sprite" parent="Room/Background" index="14"]
+position = Vector2( 910, 569 )
+texture = ExtResource( 3 )
+hframes = 7
+script = ExtResource( 4 )
+Loop = false
+Autostart = false
+FrameDurations = "0,150,150,120,40,50,1000"
+
+[node name="SpiderIdle" type="Sprite" parent="Room/Background" index="15"]
+visible = false
+position = Vector2( 910, 569 )
+texture = ExtResource( 3 )
+hframes = 7
+frame = 5
+script = ExtResource( 7 )
+FPS = 2.0
+Autostart = false
+AnimationFrames = "5,6"
+
+[node name="ch1_spider_talk" type="Node2D" parent="."]
+position = Vector2( 904, 631 )
+script = ExtResource( 6 )
+Direction = 2
+
+[node name="lacie" type="Node2D" parent="."]
+position = Vector2( 904, 663 )
+script = ExtResource( 6 )
+Direction = 2
+
+[editable path="Room"]

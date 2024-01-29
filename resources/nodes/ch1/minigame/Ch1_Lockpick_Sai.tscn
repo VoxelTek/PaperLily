@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Subgame/TimingBarMinigame/TimingBar.cs" type="Script" id=1]
+[ext_resource path="res://script/Subgame/TimingBarMinigame/TimingBarSegment.cs" type="Script" id=2]
+[ext_resource path="res://assets/sprite/common/minigame/timingbar/icon_lock.png" type="Texture" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Offset = -70
+Range = 120
+Speed = 2.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Offset = 0
+Range = 120
+Speed = 2.0
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Offset = 70
+Range = 120
+Speed = 2.0
+
+[node name="Ch1_Lockpick_Sai" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+OnSuccessEvent = "event_lockpick_success"
+OnFailureEvent = "ch1_event_lockpick_sai_fail"
+TexIcon = ExtResource( 3 )
+Attempts = 5
+Segments = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

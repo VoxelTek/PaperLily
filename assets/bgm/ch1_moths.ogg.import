@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_moths.ogg-e4240e05b5272500e34daf572ef02d8d.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_moths.ogg"
+dest_files=[ "res://.import/ch1_moths.ogg-e4240e05b5272500e34daf572ef02d8d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=3.076

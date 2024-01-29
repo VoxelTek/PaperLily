@@ -1,0 +1,515 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1BlackPassHub.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_blackpass.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/floor_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/floor_stairs_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/furniture_bed.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/floor_stairs_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/floor_stairs_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/floor_stairs_red.png" type="Texture" id=9]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=10]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=11]
+[ext_resource path="res://assets/bgm/ch1_blackpass.ogg" type="AudioStream" id=12]
+[ext_resource path="res://resources/lighting/ch1_blackpass.tres" type="Resource" id=13]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hub/misc_door_3.png" type="Texture" id=14]
+[ext_resource path="res://script/Nodes/TeleportTrigger.cs" type="Script" id=15]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=16]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=17]
+[ext_resource path="res://resources/nodes/ch1/bp_door.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_liedown_2.png" type="Texture" id=19]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=21]
+[ext_resource path="res://resources/nodes/common/lights/Spotlight.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_dark.png" type="Texture" id=23]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.5, 18.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 0.5, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 0.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 0.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 0.5, 53.5 )
+
+[node name="Ch1_BlackPass_Hub" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 13 )
+Bgm = ExtResource( 12 )
+texLacieDark = ExtResource( 23 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 14, 2, 0, 15, 1, 3, 16, 3, 0, 65550, 2, 0, 65551, 1, 3, 65552, 3, 0, 131086, 2, 0, 131087, 1, 3, 131088, 3, 0, 196622, 2, 0, 196623, 1, 3, 196624, 3, 0, 262158, 2, 0, 262159, 1, 3, 262160, 3, 0, 327694, 2, 0, 327695, 1, 3, 327696, 3, 0, 393230, 2, 0, 393231, 1, 3, 393232, 3, 0, 458766, 2, 0, 458767, 1, 3, 458768, 3, 0, 524302, 2, 0, 524303, 1, 3, 524304, 3, 0, 589838, 2, 0, 589839, 1, 3, 589840, 3, 0, 655366, 1, 0, 655367, 1, 1, 655368, 1, 1, 655369, 1, 1, 655370, 1, 1, 655371, 1, 1, 655372, 1, 1, 655373, 1, 1, 655374, 1, 2, 655375, 1, 3, 655376, 1, 4, 655377, 1, 1, 655378, 1, 1, 655379, 1, 1, 655380, 1, 1, 655381, 1, 1, 655382, 1, 1, 655383, 1, 1, 655384, 1, 5, 720902, 1, 65536, 720903, 1, 65537, 720904, 1, 65537, 720905, 1, 65537, 720906, 1, 65537, 720907, 1, 65537, 720908, 1, 65537, 720909, 1, 65537, 720910, 1, 65537, 720911, 1, 65537, 720912, 1, 65537, 720913, 1, 65537, 720914, 1, 65537, 720915, 1, 65537, 720916, 1, 65537, 720917, 1, 65537, 720918, 1, 65540, 720919, 1, 65540, 720920, 1, 65536, 786438, 1, 65536, 786456, 1, 65536, 851974, 1, 65536, 851992, 1, 65536, 917510, 1, 65536, 917528, 1, 65536, 983046, 1, 65536, 983064, 1, 65536, 1048582, 1, 65536, 1048600, 1, 65536, 1114118, 1, 65536, 1114136, 1, 65536, 1179654, 1, 65536, 1179672, 1, 65536, 1245190, 1, 65536, 1245208, 1, 65536, 1310726, 1, 65536, 1310744, 1, 65536, 1376262, 1, 65536, 1376280, 1, 65536, 1441798, 1, 65536, 1441816, 1, 65536, 1507334, 1, 65536, 1507352, 1, 65541, 1572870, 1, 65536, 1572888, 1, 65541, 1638406, 1, 131072, 1638407, 1, 131073, 1638408, 1, 131073, 1638409, 1, 131073, 1638410, 1, 131073, 1638411, 1, 131073, 1638412, 1, 131073, 1638413, 1, 131073, 1638414, 1, 131073, 1638415, 1, 131073, 1638416, 1, 131073, 1638417, 1, 131073, 1638418, 1, 131073, 1638419, 1, 131073, 1638420, 1, 131073, 1638421, 1, 131073, 1638422, 1, 131073, 1638423, 1, 131073, 1638424, 1, 131077, 1703942, 1, 196608, 1703943, 1, 196609, 1703944, 1, 196609, 1703945, 1, 196609, 1703946, 1, 196609, 1703947, 1, 196609, 1703948, 1, 196609, 1703949, 1, 196609, 1703950, 1, 196609, 1703951, 1, 196609, 1703952, 1, 196609, 1703953, 1, 196609, 1703954, 1, 196609, 1703955, 1, 196609, 1703956, 1, 196609, 1703957, 1, 196609, 1703958, 1, 196609, 1703959, 1, 196609, 1703960, 1, 196613 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorBg" type="Sprite" parent="Background"]
+position = Vector2( 496, 584 )
+texture = ExtResource( 4 )
+
+[node name="FloorStairs1" type="Sprite" parent="Background"]
+position = Vector2( 496, 373 )
+texture = ExtResource( 7 )
+
+[node name="FloorStairsBottom1" type="Sprite" parent="Background"]
+position = Vector2( 358, 868 )
+texture = ExtResource( 7 )
+
+[node name="FloorStairsBottom2" type="Sprite" parent="Background"]
+position = Vector2( 634, 868 )
+texture = ExtResource( 7 )
+
+[node name="FloorStairs4" type="Sprite" parent="Background"]
+position = Vector2( 241, 585 )
+texture = ExtResource( 8 )
+
+[node name="FloorStairs5" type="Sprite" parent="Background"]
+position = Vector2( 751, 585 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="FloorStairs6" type="Sprite" parent="Background"]
+position = Vector2( 496, 801 )
+texture = ExtResource( 5 )
+
+[node name="FloorStairsRed" type="Sprite" parent="Background"]
+position = Vector2( 497, 1082 )
+texture = ExtResource( 9 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureBed" type="Sprite" parent="Main"]
+position = Vector2( 494, 567 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, 8 )
+
+[node name="Lacie" type="Sprite" parent="Main/FurnitureBed"]
+visible = false
+position = Vector2( -2, 7 )
+texture = ExtResource( 19 )
+hframes = 2
+
+[node name="Spotlight" parent="Main/FurnitureBed/Lacie" instance=ExtResource( 22 )]
+
+[node name="LargeDoor" type="Sprite" parent="Main"]
+position = Vector2( 496, 2 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, -48 )
+hframes = 2
+
+[node name="Door1" parent="Main" instance=ExtResource( 18 )]
+position = Vector2( 272, 322 )
+
+[node name="Door2" parent="Main" instance=ExtResource( 18 )]
+position = Vector2( 336, 322 )
+
+[node name="Door3" parent="Main" instance=ExtResource( 18 )]
+position = Vector2( 400, 322 )
+
+[node name="Door4" parent="Main" instance=ExtResource( 18 )]
+position = Vector2( 592, 322 )
+
+[node name="Door5" parent="Main" instance=ExtResource( 18 )]
+position = Vector2( 656, 322 )
+
+[node name="Door6" parent="Main" instance=ExtResource( 18 )]
+position = Vector2( 720, 322 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65488, 0, 0, -65487, 0, 0, -65486, 0, 0, -65485, 0, 0, -65484, 0, 0, 48, 0, 0, 52, 0, 0, 65584, 0, 0, 65588, 0, 0, 131120, 0, 0, 131124, 0, 0, 196656, 0, 0, 196657, 0, 0, 196658, 0, 0, 196659, 0, 0, 196660, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_leave_square_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 358, 888 )
+script = ExtResource( 10 )
+Event = "event_leave_square"
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 8 )
+
+[node name="event_leave_square_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 634, 888 )
+script = ExtResource( 10 )
+Event = "event_leave_square"
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 8 )
+
+[node name="event_ending_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 496, 40 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 8 )
+
+[node name="event_lost" type="Node2D" parent="Other/Events"]
+position = Vector2( 1616, 48 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 96 )
+
+[node name="misc_bed" type="Node2D" parent="Other/Events"]
+position = Vector2( 494, 584 )
+script = ExtResource( 10 )
+Area = Vector2( 66, 36 )
+
+[node name="misc_door_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 272, 326 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Directions = 2
+Area = Vector2( 40, 4 )
+
+[node name="misc_door_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 336, 326 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Directions = 2
+Area = Vector2( 40, 4 )
+
+[node name="misc_door_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 400, 326 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Directions = 2
+Area = Vector2( 40, 4 )
+
+[node name="misc_door_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 592, 326 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Directions = 2
+Area = Vector2( 40, 4 )
+
+[node name="misc_door_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 656, 326 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Directions = 2
+Area = Vector2( 40, 4 )
+
+[node name="misc_door_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 720, 326 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Directions = 2
+Area = Vector2( 40, 4 )
+
+[node name="misc_door_final" type="Node2D" parent="Other/Events"]
+position = Vector2( 496, 0 )
+script = ExtResource( 10 )
+Directions = 2
+Area = Vector2( 64, 8 )
+
+[node name="misc_door_final_back" type="Node2D" parent="Other/Events"]
+position = Vector2( 496, 0 )
+script = ExtResource( 10 )
+Directions = 8
+Area = Vector2( 64, 8 )
+
+[node name="move_downstairs" type="Node2D" parent="Other/Events"]
+position = Vector2( 496, 1107 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 8 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wake_up" type="Node2D" parent="Other/Points"]
+position = Vector2( 494, 610 )
+script = ExtResource( 11 )
+
+[node name="cutscene_camera" type="Node2D" parent="Other/Points"]
+position = Vector2( 494, 578 )
+script = ExtResource( 11 )
+
+[node name="cutscene_bubble" type="Node2D" parent="Other/Points"]
+position = Vector2( 482, 544 )
+script = ExtResource( 11 )
+
+[node name="from_downstairs" type="Node2D" parent="Other/Points"]
+position = Vector2( 496, 1036 )
+script = ExtResource( 11 )
+Direction = 2
+
+[node name="from_door_1" type="Node2D" parent="Other/Points"]
+position = Vector2( 272, 340 )
+script = ExtResource( 11 )
+
+[node name="from_door_2" type="Node2D" parent="Other/Points"]
+position = Vector2( 336, 340 )
+script = ExtResource( 11 )
+
+[node name="from_door_3" type="Node2D" parent="Other/Points"]
+position = Vector2( 400, 340 )
+script = ExtResource( 11 )
+
+[node name="from_door_4" type="Node2D" parent="Other/Points"]
+position = Vector2( 592, 340 )
+script = ExtResource( 11 )
+
+[node name="from_door_5" type="Node2D" parent="Other/Points"]
+position = Vector2( 656, 340 )
+script = ExtResource( 11 )
+
+[node name="from_door_6" type="Node2D" parent="Other/Points"]
+position = Vector2( 720, 340 )
+script = ExtResource( 11 )
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="lacie_bed_show" type="Node" parent="Other/Actions"]
+script = ExtResource( 21 )
+Node = NodePath("../../../Main/FurnitureBed/Lacie")
+
+[node name="lacie_bed_eyes" type="Node" parent="Other/Actions"]
+script = ExtResource( 20 )
+Node = NodePath("../../../Main/FurnitureBed/Lacie")
+Frame = 1
+
+[node name="Stairs" type="Node2D" parent="Other"]
+position = Vector2( 496, 369 )
+script = ExtResource( 3 )
+Type = 1
+Area = Vector2( 64, 40 )
+Passthrough = true
+
+[node name="Stairs2" type="Node2D" parent="Other"]
+position = Vector2( 496, 801 )
+script = ExtResource( 3 )
+Type = 1
+Area = Vector2( 64, 40 )
+Passthrough = true
+
+[node name="Stairs5" type="Node2D" parent="Other"]
+position = Vector2( 238, 585 )
+script = ExtResource( 3 )
+Area = Vector2( 40, 72 )
+Degrees = 35.0
+InvertX = true
+Passthrough = true
+
+[node name="Stairs6" type="Node2D" parent="Other"]
+position = Vector2( 754, 585 )
+script = ExtResource( 3 )
+Area = Vector2( 40, 72 )
+Degrees = 35.0
+Passthrough = true
+
+[node name="Stairs_Bottom1" type="Node2D" parent="Other"]
+position = Vector2( 358, 864 )
+script = ExtResource( 3 )
+Type = 1
+Area = Vector2( 64, 40 )
+Passthrough = true
+
+[node name="Stairs_Bottom2" type="Node2D" parent="Other"]
+position = Vector2( 634, 864 )
+script = ExtResource( 3 )
+Type = 1
+Area = Vector2( 64, 40 )
+Passthrough = true
+
+[node name="Stairs_Red" type="Node2D" parent="Other"]
+position = Vector2( 496, 1084 )
+script = ExtResource( 3 )
+Type = 1
+Area = Vector2( 64, 64 )
+
+[node name="teleport_lost_1" type="Node2D" parent="Other"]
+position = Vector2( -272, 577 )
+script = ExtResource( 15 )
+Area = Vector2( 32, 1600 )
+Target = Vector2( 1616, 48 )
+
+[node name="teleport_lost_2" type="Node2D" parent="Other"]
+position = Vector2( 1264, 577 )
+script = ExtResource( 15 )
+Area = Vector2( 32, 1600 )
+Target = Vector2( 1616, 48 )
+
+[node name="teleport_lost_3" type="Node2D" parent="Other"]
+position = Vector2( 496, -239 )
+script = ExtResource( 15 )
+Area = Vector2( 1568, 32 )
+Target = Vector2( 1616, 48 )
+
+[node name="teleport_lost_4" type="Node2D" parent="Other"]
+position = Vector2( 496, 1393 )
+script = ExtResource( 15 )
+Area = Vector2( 1568, 32 )
+Target = Vector2( 1616, 48 )
+
+[node name="Stairs_Red_Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Stairs_Red_Boundary"]
+polygon = PoolVector2Array( 459, 1043, 464, 1043, 463, 1111, 528, 1111, 528, 1043, 534, 1043, 534, 1122, 459, 1122 )
+
+[node name="BoundaryImpassable" type="StaticBody2D" parent="Other"]
+collision_layer = 10
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 463.5, 370.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 528.5, 370.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 456, 360 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 536, 360 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 325.5, 865.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 390.5, 865.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 318, 855 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 398, 855 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 601.5, 865.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 666.5, 865.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 594, 855 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 674, 855 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 463.5, 801 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 528.5, 801 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 539, 816.5 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 453, 816.5 )
+shape = SubResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( -64, 32 )
+polygon = PoolVector2Array( 322, 530, 322, 517, 287, 517 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( -64, 32 )
+polygon = PoolVector2Array( 287, 589, 287, 574, 322, 589 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 718.308, 606 )
+polygon = PoolVector2Array( 15.6921, 15.3446, 50.6921, 0.344604, 50.6921, 15.3446 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 716.719, 572 )
+polygon = PoolVector2Array( 17.281, -10.0001, 52.281, -23.0001, 17.281, -23.0001 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 768.5, 541 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 768.5, 629 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 223.5, 629 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 223.5, 541 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 192.5, 584.5 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Other/BoundaryImpassable"]
+position = Vector2( 799.5, 584.5 )
+shape = SubResource( 6 )

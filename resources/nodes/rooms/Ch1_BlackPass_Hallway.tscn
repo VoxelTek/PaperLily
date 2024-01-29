@@ -1,0 +1,743 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1BlackPassHallway.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_blackpass.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_blinds.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_window_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_window_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_window_1.png" type="Texture" id=6]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=7]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=8]
+[ext_resource path="res://assets/sprite/ch1/blackpass/common/furniture_wardrobe.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/furniture_lockers.png" type="Texture" id=10]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_window_people_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_window_pullcord.png" type="Texture" id=13]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=14]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/wall_window_people_1.png" type="Texture" id=15]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=16]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/furniture_lockers_2.png" type="Texture" id=17]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=18]
+[ext_resource path="res://assets/sprite/ch1/blackpass/hallway/chr_student.png" type="Texture" id=19]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=20]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=21]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=22]
+[ext_resource path="res://assets/bgm/ch1_blackpass.ogg" type="AudioStream" id=23]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=24]
+[ext_resource path="res://assets/sprite/common/floor_paper.png" type="Texture" id=25]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=26]
+
+[node name="Ch1_BlackPass_Hallway" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -832
+Bgm = ExtResource( 23 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1769408, 4, 65536, -1769402, 4, 65538, -1703872, 4, 65536, -1703866, 4, 65538, -1638336, 4, 65536, -1638330, 4, 65538, -1572800, 4, 65536, -1572794, 4, 65538, -1507264, 4, 65536, -1507258, 4, 65538, -1441728, 4, 131072, -1441727, 4, 131073, -1441726, 4, 131073, -1441725, 4, 131073, -1441724, 4, 131073, -1441723, 4, 131073, -1441722, 4, 131074, -1376192, 4, 65536, -1376186, 4, 65538, -1310656, 4, 65536, -1310650, 4, 65538, -1245120, 4, 65536, -1245114, 4, 65538, -1179584, 4, 65536, -1179578, 4, 65538, -1114048, 4, 65536, -1114042, 4, 65538, -1048512, 4, 65536, -1048506, 4, 65538, -982976, 4, 65536, -982970, 4, 65538, -851995, 4, 65538, -917440, 4, 65536, -917434, 4, 65538, -786459, 4, 65538, -851904, 4, 65536, -851898, 4, 65538, -720923, 4, 65538, -786368, 4, 65536, -786362, 4, 65538, -655387, 4, 65538, -720832, 4, 65536, -720826, 4, 65538, -589851, 4, 65538, -655296, 4, 65536, -655290, 4, 65538, -524315, 4, 65538, -589760, 4, 1, -589759, 4, 2, -589756, 4, 65538, -589755, 4, 1, -589754, 4, 1, -458779, 4, 65538, -524223, 4, 65538, -524220, 4, 65538, -393243, 4, 65538, -458687, 4, 65538, -458684, 4, 65538, -327707, 4, 65538, -393151, 4, 65538, -393148, 4, 65538, -262171, 4, 65538, -327615, 4, 65538, -327612, 4, 65538, -196635, 4, 65538, -196634, 4, 131073, -196633, 4, 131073, -196632, 4, 131073, -196631, 4, 131073, -196630, 4, 131073, -196629, 4, 131073, -196628, 4, 131073, -196627, 4, 131073, -196626, 4, 131073, -196625, 4, 131073, -196624, 4, 131073, -196623, 4, 131073, -196622, 4, 131073, -196621, 4, 131073, -196620, 4, 131073, -196619, 4, 131073, -196618, 4, 131073, -196617, 4, 131073, -196616, 4, 131073, -196615, 4, 131073, -196614, 4, 131073, -196613, 4, 131073, -196612, 4, 131073, -196611, 4, 131073, -196610, 4, 131073, -196609, 4, 131073, -262144, 4, 131073, -262143, 4, 131073, -262142, 4, 131073, -262141, 4, 131073, -262140, 4, 131073, -262139, 4, 131073, -262138, 4, 131073, -262137, 4, 131073, -262136, 4, 131073, -262135, 4, 131073, -262134, 4, 131073, -262133, 4, 131073, -262132, 4, 131073, -262131, 4, 131073, -262130, 4, 131073, -262129, 4, 131073, -262128, 4, 131073, -262127, 4, 131073, -262126, 4, 131073, -262125, 4, 131073, -262124, 4, 131073, -262123, 4, 131073, -262122, 4, 131073, -262121, 4, 131073, -262120, 4, 131073, -262119, 4, 131073, -262118, 4, 131073, -262117, 4, 131073, -262116, 4, 131073, -262115, 4, 131073, -262114, 4, 131073, -262113, 4, 131073, -262112, 4, 131073, -262111, 4, 131073, -262110, 4, 131073, -262109, 4, 131073, -262108, 4, 131073, -262107, 4, 131073, -262106, 4, 131073, -262105, 4, 131073, -262104, 4, 131073, -262103, 4, 131073, -262102, 4, 131073, -262101, 4, 131073, -262100, 4, 131073, -262099, 4, 131073, -262098, 4, 131073, -262097, 4, 131073, -262096, 4, 131073, -262095, 4, 131073, -262094, 4, 131073, -262093, 4, 131073, -262092, 4, 131073, -262091, 4, 131073, -262090, 4, 131073, -262089, 4, 131073, -262088, 4, 131073, -262087, 4, 131073, -262086, 4, 131073, -262085, 4, 131073, -262084, 4, 131073, -262083, 4, 131073, -262082, 4, 131073, -262081, 4, 131073, -262080, 4, 131073, -262079, 4, 131074, -262076, 4, 65538, -131099, 4, 65538, -196540, 4, 65538, -65563, 4, 65538, -131004, 4, 65538, -27, 4, 65538, -26, 4, 131073, -25, 4, 131073, -24, 4, 131073, -23, 4, 131073, -22, 4, 131073, -21, 4, 131073, -20, 4, 131073, -19, 4, 131073, -18, 4, 131073, -17, 4, 131073, -16, 4, 131073, -15, 4, 131073, -14, 4, 131073, -13, 4, 131073, -12, 4, 131073, -11, 4, 131073, -10, 4, 131073, -9, 4, 131073, -8, 4, 131073, -7, 4, 131073, -6, 4, 131073, -5, 4, 131073, -4, 4, 131073, -3, 4, 131073, -2, 4, 131073, -1, 4, 131073, -65536, 4, 131073, -65535, 4, 131073, -65534, 4, 131073, -65533, 4, 131073, -65532, 4, 131073, -65531, 4, 131073, -65530, 4, 131073, -65529, 4, 131073, -65528, 4, 131073, -65527, 4, 131073, -65526, 4, 131073, -65525, 4, 131073, -65524, 4, 131073, -65523, 4, 131073, -65522, 4, 131073, -65521, 4, 131073, -65520, 4, 131073, -65519, 4, 131073, -65518, 4, 131073, -65517, 4, 131073, -65516, 4, 131073, -65515, 4, 131073, -65514, 4, 131073, -65513, 4, 131073, -65512, 4, 131073, -65511, 4, 131073, -65510, 4, 131073, -65509, 4, 131073, -65508, 4, 131073, -65507, 4, 131073, -65506, 4, 131073, -65505, 4, 131073, -65504, 4, 131073, -65503, 4, 131073, -65502, 4, 131073, -65501, 4, 131073, -65500, 4, 131073, -65499, 4, 131073, -65498, 4, 131073, -65497, 4, 131073, -65496, 4, 131073, -65495, 4, 131073, -65494, 4, 131073, -65493, 4, 131073, -65492, 4, 131073, -65491, 4, 131073, -65490, 4, 131073, -65489, 4, 131073, -65488, 4, 131073, -65487, 4, 131073, -65486, 4, 131073, -65485, 4, 131073, -65484, 4, 131073, -65483, 4, 131073, -65482, 4, 131073, -65481, 4, 131073, -65480, 4, 131073, -65479, 4, 131073, -65478, 4, 131073, -65477, 4, 131073, -65476, 4, 131073, -65475, 4, 131073, -65474, 4, 131073, -65473, 4, 131073, -65472, 4, 131073, -65471, 4, 131073, -65470, 4, 131073, -65469, 4, 131073, -65468, 4, 131074 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Windows" type="Node2D" parent="Background"]
+
+[node name="Windows" type="Node2D" parent="Background/Windows"]
+
+[node name="WallWindow1" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( -764, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow2" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( -427, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow3" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( -170, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow4" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( -10, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow5" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 101, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow6" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 187, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow7" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 273, -151 )
+texture = ExtResource( 6 )
+
+[node name="WallWindow9" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 445, -151 )
+texture = ExtResource( 4 )
+
+[node name="WallWindow24" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 359, -151 )
+texture = ExtResource( 4 )
+
+[node name="WallWindow10" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 531, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow11" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 617, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow12" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 703, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow13" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 789, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow14" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 875, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow15" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 961, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow16" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1047, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow17" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1133, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow18" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1219, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow19" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1305, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow20" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1391, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow21" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1477, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow22" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1563, -151 )
+texture = ExtResource( 5 )
+
+[node name="WallWindow23" type="Sprite" parent="Background/Windows/Windows"]
+position = Vector2( 1649, -151 )
+texture = ExtResource( 5 )
+
+[node name="WindowPeople" type="Node2D" parent="Background/Windows"]
+
+[node name="WallWindowPeople2" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1649, -151 )
+texture = ExtResource( 12 )
+hframes = 2
+script = ExtResource( 14 )
+
+[node name="WallWindowPeople3" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1563, -151 )
+texture = ExtResource( 12 )
+hframes = 2
+frame = 1
+script = ExtResource( 14 )
+AnimationFrames = "1,0"
+
+[node name="WallWindowPeople4" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1477, -151 )
+texture = ExtResource( 12 )
+hframes = 2
+script = ExtResource( 14 )
+
+[node name="WallWindowPeople5" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1391, -151 )
+texture = ExtResource( 12 )
+hframes = 2
+frame = 1
+script = ExtResource( 14 )
+AnimationFrames = "1,0"
+
+[node name="WallWindowPeople6" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1305, -151 )
+texture = ExtResource( 12 )
+hframes = 2
+script = ExtResource( 14 )
+
+[node name="WallWindowPeople7" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1219, -151 )
+texture = ExtResource( 15 )
+hframes = 2
+frame = 1
+script = ExtResource( 14 )
+AnimationFrames = "1,0"
+
+[node name="WallWindowPeople8" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1133, -151 )
+texture = ExtResource( 15 )
+hframes = 2
+script = ExtResource( 14 )
+
+[node name="WallWindowPeople1" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 1047, -151 )
+texture = ExtResource( 15 )
+hframes = 2
+frame = 1
+script = ExtResource( 14 )
+AnimationFrames = "1,0"
+
+[node name="WallWindowPeople9" type="Sprite" parent="Background/Windows/WindowPeople"]
+position = Vector2( 961, -151 )
+texture = ExtResource( 15 )
+hframes = 2
+script = ExtResource( 14 )
+
+[node name="WindowBlinds" type="Node2D" parent="Background/Windows"]
+
+[node name="WallBlinds" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( -764, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds2" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( -427, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds3" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( -170, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds4" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( -10, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds5" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 101, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds6" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 187, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds7" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 273, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds8" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 359, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds9" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 445, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds10" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 531, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds11" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 617, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds12" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 703, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds13" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 789, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds14" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 875, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds15" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 961, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds16" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1047, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds17" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1133, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds18" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1219, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds19" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1305, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds20" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1391, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds21" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1477, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds22" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1563, -174 )
+texture = ExtResource( 3 )
+
+[node name="WallBlinds23" type="Sprite" parent="Background/Windows/WindowBlinds"]
+position = Vector2( 1649, -174 )
+texture = ExtResource( 3 )
+
+[node name="FloorPaper" type="Sprite" parent="Background"]
+position = Vector2( -429, -46 )
+texture = ExtResource( 25 )
+
+[node name="WallWindowPullcord" type="Sprite" parent="Background"]
+position = Vector2( 1701, -150 )
+texture = ExtResource( 13 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LockersRow1" type="Node2D" parent="Main"]
+position = Vector2( 2160, -323 )
+
+[node name="FurnitureLockers" type="Sprite" parent="Main/LockersRow1"]
+position = Vector2( -29, -41 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureLockers2" type="Sprite" parent="Main/LockersRow1"]
+position = Vector2( 28, -41 )
+texture = ExtResource( 10 )
+
+[node name="LockersRow2" type="Node2D" parent="Main"]
+position = Vector2( 2160, -437 )
+
+[node name="FurnitureLockers4" type="Sprite" parent="Main/LockersRow2"]
+position = Vector2( -83, -41 )
+texture = ExtResource( 10 )
+
+[node name="DollLocker" type="Sprite" parent="Main/LockersRow2/FurnitureLockers4"]
+visible = false
+position = Vector2( -3, 17 )
+texture = ExtResource( 17 )
+hframes = 3
+frame = 1
+
+[node name="FurnitureLockers3" type="Sprite" parent="Main/LockersRow2"]
+position = Vector2( -26, -41 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureLockers5" type="Sprite" parent="Main/LockersRow2"]
+position = Vector2( 31, -41 )
+texture = ExtResource( 10 )
+
+[node name="LockersRow3" type="Node2D" parent="Main"]
+position = Vector2( 2160, -547 )
+
+[node name="FurnitureLockers6" type="Sprite" parent="Main/LockersRow3"]
+position = Vector2( 82, -41 )
+texture = ExtResource( 10 )
+
+[node name="LacieLocker" type="Sprite" parent="Main/LockersRow3/FurnitureLockers6"]
+position = Vector2( -3, 17 )
+texture = ExtResource( 17 )
+hframes = 3
+
+[node name="RedItem" parent="Main/LockersRow3/FurnitureLockers6" instance=ExtResource( 11 )]
+visible = false
+modulate = Color( 1, 0.196078, 0.196078, 1 )
+position = Vector2( 0, 21 )
+
+[node name="FurnitureLockers7" type="Sprite" parent="Main/LockersRow3"]
+position = Vector2( 25, -41 )
+texture = ExtResource( 10 )
+
+[node name="Student" type="Sprite" parent="Main/LockersRow3"]
+visible = false
+position = Vector2( -13, -38 )
+texture = ExtResource( 19 )
+offset = Vector2( 0.5, 0.5 )
+hframes = 7
+script = ExtResource( 20 )
+Loop = false
+Autostart = false
+FrameDurations = "100,100,100,400,100,100,100"
+
+[node name="LockersRow4" type="Node2D" parent="Main"]
+position = Vector2( 2160, -656 )
+
+[node name="FurnitureLockers8" type="Sprite" parent="Main/LockersRow4"]
+position = Vector2( -83, -41 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureWardrobe" type="Sprite" parent="Main/LockersRow4"]
+position = Vector2( -30, -45 )
+texture = ExtResource( 9 )
+hframes = 3
+
+[node name="FurnitureLockers9" type="Sprite" parent="Main/LockersRow4"]
+position = Vector2( 23, -41 )
+texture = ExtResource( 10 )
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 22 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1441729, 0, 0, -1441728, 0, 0, -1441727, 0, 0, -1441726, 0, 0, -1441725, 0, 0, -1441724, 0, 0, -1441723, 0, 0, -1441722, 0, 0, -1441721, 0, 0, -1376193, 0, 0, -1376185, 0, 0, -1310657, 0, 0, -1310649, 0, 0, -1245121, 0, 0, -1245113, 0, 0, -1179585, 0, 0, -1179577, 0, 0, -1114049, 0, 0, -1114041, 0, 0, -1048513, 0, 0, -1048505, 0, 0, -982977, 0, 0, -982969, 0, 0, -917441, 0, 0, -917433, 0, 0, -851905, 0, 0, -851897, 0, 0, -786369, 0, 0, -786361, 0, 0, -720833, 0, 0, -720825, 0, 0, -655297, 0, 0, -655289, 0, 0, -589761, 0, 0, -589760, 0, 0, -589759, 0, 0, -589755, 0, 0, -589754, 0, 0, -589753, 0, 0, -524223, 0, 0, -524219, 0, 0, -458687, 0, 0, -458683, 0, 0, -393151, 0, 0, -393147, 0, 0, -327615, 0, 0, -327611, 0, 0, -196635, 0, 0, -196634, 0, 0, -196633, 0, 0, -196632, 0, 0, -196631, 0, 0, -196630, 0, 0, -196629, 0, 0, -196628, 0, 0, -196627, 0, 0, -196626, 0, 0, -196625, 0, 0, -196624, 0, 0, -196623, 0, 0, -196622, 0, 0, -196621, 0, 0, -196620, 0, 0, -196619, 0, 0, -196618, 0, 0, -196617, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -262118, 0, 0, -262117, 0, 0, -262116, 0, 0, -262115, 0, 0, -262114, 0, 0, -262113, 0, 0, -262112, 0, 0, -262111, 0, 0, -262110, 0, 0, -262109, 0, 0, -262108, 0, 0, -262107, 0, 0, -262106, 0, 0, -262105, 0, 0, -262104, 0, 0, -262103, 0, 0, -262102, 0, 0, -262101, 0, 0, -262100, 0, 0, -262099, 0, 0, -262098, 0, 0, -262097, 0, 0, -262096, 0, 0, -262095, 0, 0, -262094, 0, 0, -262093, 0, 0, -262092, 0, 0, -262091, 0, 0, -262090, 0, 0, -262089, 0, 0, -262088, 0, 0, -262087, 0, 0, -262086, 0, 0, -262085, 0, 0, -262084, 0, 0, -262083, 0, 0, -262082, 0, 0, -262081, 0, 0, -262080, 0, 0, -262079, 0, 0, -262075, 0, 0, -131099, 0, 0, -196539, 0, 0, -65563, 0, 0, -131003, 0, 0, -27, 0, 0, -65467, 0, 0, 65509, 0, 0, 65510, 0, 0, 65511, 0, 0, 65512, 0, 0, 65513, 0, 0, 65514, 0, 0, 65515, 0, 0, 65516, 0, 0, 65517, 0, 0, 65518, 0, 0, 65519, 0, 0, 65520, 0, 0, 65521, 0, 0, 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 52, 0, 0, 53, 0, 0, 54, 0, 0, 55, 0, 0, 56, 0, 0, 57, 0, 0, 58, 0, 0, 59, 0, 0, 60, 0, 0, 61, 0, 0, 62, 0, 0, 63, 0, 0, 64, 0, 0, 65, 0, 0, 66, 0, 0, 67, 0, 0, 68, 0, 0, 69, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_note" type="Node2D" parent="Other/Events"]
+position = Vector2( -429, -46 )
+script = ExtResource( 7 )
+Solid = false
+Area = Vector2( 16, 16 )
+
+[node name="event_describe" type="Node2D" parent="Other/Events"]
+position = Vector2( 2160, -284 )
+script = ExtResource( 7 )
+Solid = false
+Trigger = 1
+Area = Vector2( 96, 8 )
+
+[node name="event_peeking" type="Node2D" parent="Other/Events"]
+position = Vector2( 2245, -440 )
+script = ExtResource( 7 )
+Solid = false
+Trigger = 1
+Area = Vector2( 48, 8 )
+
+[node name="misc_wardrobe" type="Node2D" parent="Other/Events"]
+position = Vector2( 2130, -663 )
+script = ExtResource( 7 )
+Directions = 2
+Area = Vector2( 48, 16 )
+
+[node name="misc_pullcord" type="Node2D" parent="Other/Events"]
+position = Vector2( 1701, -104 )
+script = ExtResource( 7 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_windows_1" type="Node2D" parent="Other/Events"]
+position = Vector2( -764, -100 )
+script = ExtResource( 7 )
+Event = "misc_windows"
+Area = Vector2( 88, 8 )
+
+[node name="misc_windows_2" type="Node2D" parent="Other/Events"]
+position = Vector2( -427, -100 )
+script = ExtResource( 7 )
+Event = "misc_windows"
+Area = Vector2( 88, 8 )
+
+[node name="misc_windows_3" type="Node2D" parent="Other/Events"]
+position = Vector2( -170, -100 )
+script = ExtResource( 7 )
+Event = "misc_windows"
+Area = Vector2( 88, 8 )
+
+[node name="misc_windows_4" type="Node2D" parent="Other/Events"]
+position = Vector2( -10, -100 )
+script = ExtResource( 7 )
+Event = "misc_windows"
+Area = Vector2( 88, 8 )
+
+[node name="misc_windows_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 489, -100 )
+script = ExtResource( 7 )
+Event = "misc_windows"
+Area = Vector2( 864, 8 )
+
+[node name="misc_windows_people" type="Node2D" parent="Other/Events"]
+position = Vector2( 1309, -100 )
+script = ExtResource( 7 )
+Area = Vector2( 768, 8 )
+
+[node name="misc_locker_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 2207, -334 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 2188, -334 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 2169, -334 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 2150, -334 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 2131, -334 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 2112, -334 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_7" type="Node2D" parent="Other/Events"]
+position = Vector2( 2058, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_8" type="Node2D" parent="Other/Events"]
+position = Vector2( 2077, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker_doll"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_9" type="Node2D" parent="Other/Events"]
+position = Vector2( 2096, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_10" type="Node2D" parent="Other/Events"]
+position = Vector2( 2115, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_11" type="Node2D" parent="Other/Events"]
+position = Vector2( 2134, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_12" type="Node2D" parent="Other/Events"]
+position = Vector2( 2153, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_13" type="Node2D" parent="Other/Events"]
+position = Vector2( 2172, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_14" type="Node2D" parent="Other/Events"]
+position = Vector2( 2191, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_15" type="Node2D" parent="Other/Events"]
+position = Vector2( 2210, -448 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_16" type="Node2D" parent="Other/Events"]
+position = Vector2( 2166, -558 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_17" type="Node2D" parent="Other/Events"]
+position = Vector2( 2185, -558 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_18" type="Node2D" parent="Other/Events"]
+position = Vector2( 2204, -558 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_19" type="Node2D" parent="Other/Events"]
+position = Vector2( 2223, -558 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_20" type="Node2D" parent="Other/Events"]
+position = Vector2( 2242, -558 )
+script = ExtResource( 7 )
+Event = "misc_locker_correct"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_21" type="Node2D" parent="Other/Events"]
+position = Vector2( 2261, -558 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_22" type="Node2D" parent="Other/Events"]
+position = Vector2( 2058, -667 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_23" type="Node2D" parent="Other/Events"]
+position = Vector2( 2077, -667 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_24" type="Node2D" parent="Other/Events"]
+position = Vector2( 2096, -667 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_25" type="Node2D" parent="Other/Events"]
+position = Vector2( 2164, -667 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_26" type="Node2D" parent="Other/Events"]
+position = Vector2( 2183, -667 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_27" type="Node2D" parent="Other/Events"]
+position = Vector2( 2202, -667 )
+script = ExtResource( 7 )
+Event = "misc_locker"
+Directions = 2
+Area = Vector2( 20, 24 )
+
+[node name="misc_locker_mess" type="Node2D" parent="Other/Events"]
+position = Vector2( 2247, -536 )
+script = ExtResource( 7 )
+Enabled = false
+Area = Vector2( 48, 32 )
+
+[node name="misc_reditem" type="Node2D" parent="Other/Events"]
+position = Vector2( 2239, -536 )
+script = ExtResource( 7 )
+
+[node name="move_back" type="Node2D" parent="Other/Events"]
+position = Vector2( -848, -48 )
+script = ExtResource( 7 )
+Area = Vector2( 32, 96 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( -816, -48 )
+script = ExtResource( 8 )
+Direction = 4
+
+[node name="cutscene" type="Node2D" parent="Other/Points"]
+position = Vector2( 2130, -639 )
+script = ExtResource( 8 )
+Direction = 2
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="open_locker_doll" type="Node" parent="Other/Actions"]
+script = ExtResource( 18 )
+Node = NodePath("../../../Main/LockersRow2/FurnitureLockers4/DollLocker")
+
+[node name="close_locker_doll" type="Node" parent="Other/Actions"]
+script = ExtResource( 18 )
+Node = NodePath("../../../Main/LockersRow2/FurnitureLockers4/DollLocker")
+Visible = false
+
+[node name="show_student_peeking" type="Node" parent="Other/Actions"]
+script = ExtResource( 24 )
+
+[node name="play" type="Node" parent="Other/Actions/show_student_peeking"]
+script = ExtResource( 21 )
+Node = NodePath("../../../../Main/LockersRow3/Student")
+
+[node name="hide_student" type="Node" parent="Other/Actions"]
+script = ExtResource( 18 )
+Node = NodePath("../../../Main/LockersRow3/Student")
+Visible = false
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="show_student_on_bp2" type="Node" parent="Other/Updates"]
+script = ExtResource( 26 )
+Variable = "general.blackpass_visits"
+Value = "2"
+ActionTrue = NodePath("show_student")
+
+[node name="show_student" type="Node" parent="Other/Updates/show_student_on_bp2"]
+script = ExtResource( 18 )
+Node = NodePath("../../../../Main/LockersRow3/Student")

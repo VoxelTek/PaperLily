@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://resources/shader/sfx_floor_deform.gdshader" type="Shader" id=1]
+[ext_resource path="res://resources/other/sfx_floor_deform_noise.tres" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/flow_speed = Vector2( 3, 0 )
+shader_param/fps_limit = 2.0
+shader_param/max_luminance = 0.8
+shader_param/noise = ExtResource( 2 )

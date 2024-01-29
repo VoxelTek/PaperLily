@@ -1,0 +1,274 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneCafe.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch2_Cafe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_sit_cafe.png" type="Texture" id=4]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_a_sit.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_b_sit.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_d_sit.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_c_sit.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_e_sit.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_f_sit.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_g_sit.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_npc_e_idle.png" type="Texture" id=13]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=14]
+[ext_resource path="res://script/Nodes/NPCStaticTurnable.cs" type="Script" id=15]
+[ext_resource path="res://assets/sprite/ch1/cutscene/chr_cafe_cashier_drop.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch2/cafe/misc_flan.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch2/cafe/misc_cup.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch2/cafe/misc_leftovers_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch2/cafe/misc_leftovers_2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch2/cafe/misc_leftovers_3.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_dark.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch2/cafe/misc_napkins.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch2/cafe/furniture_chair_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/common/character/ch1_cashier/ch1_cashier_idle.png" type="Texture" id=25]
+
+[node name="Ch1_Cutscene_Cafe" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+texLacieDark = ExtResource( 22 )
+
+[node name="Ch2_Cafe" parent="." instance=ExtResource( 2 )]
+
+[node name="MiscNapkins" type="Sprite" parent="Ch2_Cafe/Background/FurnitureTableSquare" index="0"]
+position = Vector2( -2, -30 )
+texture = ExtResource( 23 )
+
+[node name="MiscLeftovers3" type="Sprite" parent="Ch2_Cafe/Background/FurnitureTableSquare2" index="0"]
+position = Vector2( 11, 2 )
+texture = ExtResource( 21 )
+
+[node name="MiscFlan" type="Sprite" parent="Ch2_Cafe/Background/FurnitureTableSquare2" index="1"]
+position = Vector2( -12, 5 )
+texture = ExtResource( 17 )
+
+[node name="MiscCup" type="Sprite" parent="Ch2_Cafe/Background/FurnitureTableSquare2" index="2"]
+position = Vector2( -12, -9 )
+texture = ExtResource( 18 )
+
+[node name="MiscCup2" type="Sprite" parent="Ch2_Cafe/Background/FurnitureTableSquare2" index="3"]
+position = Vector2( 6, -7 )
+texture = ExtResource( 18 )
+
+[node name="MiscNapkins" type="Sprite" parent="Ch2_Cafe/Background/FurnitureTableSquare2" index="4"]
+position = Vector2( -2, -25 )
+texture = ExtResource( 23 )
+
+[node name="NpcA2" type="StaticBody2D" parent="Ch2_Cafe/Background/FurnitureBench" index="0"]
+position = Vector2( 10, 0 )
+script = ExtResource( 15 )
+DefaultDirection = 4
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Background/FurnitureBench/NpcA2"]
+texture = ExtResource( 6 )
+hframes = 4
+frame = 2
+
+[node name="NpcD" type="StaticBody2D" parent="Ch2_Cafe/Background/FurnitureBench2" index="0"]
+position = Vector2( 6, 0 )
+script = ExtResource( 15 )
+DefaultDirection = 4
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Background/FurnitureBench2/NpcD"]
+texture = ExtResource( 8 )
+hframes = 4
+frame = 2
+
+[node name="NpcB2" type="StaticBody2D" parent="Ch2_Cafe/Background/FurnitureBench3" index="0"]
+position = Vector2( -6, 0 )
+script = ExtResource( 15 )
+DefaultDirection = 1
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Background/FurnitureBench3/NpcB2"]
+texture = ExtResource( 7 )
+hframes = 4
+
+[node name="NpcC" type="StaticBody2D" parent="Ch2_Cafe/Background/FurnitureBench4" index="0"]
+position = Vector2( -11, 0 )
+script = ExtResource( 15 )
+DefaultDirection = 1
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Background/FurnitureBench4/NpcC"]
+texture = ExtResource( 9 )
+hframes = 4
+
+[node name="Table1Chair4" type="Sprite" parent="Ch2_Cafe/Background" index="13"]
+position = Vector2( 372, 201 )
+texture = ExtResource( 24 )
+
+[node name="NpcE" type="StaticBody2D" parent="Ch2_Cafe/Background/Table1Chair4"]
+visible = false
+position = Vector2( 4, -10 )
+script = ExtResource( 15 )
+DefaultDirection = 4
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Background/Table1Chair4/NpcE"]
+texture = ExtResource( 10 )
+hframes = 4
+frame = 2
+
+[node name="NpcEIdle" type="Sprite" parent="Ch2_Cafe/Background/Table1Chair4"]
+position = Vector2( 4, -10 )
+texture = ExtResource( 13 )
+hframes = 2
+script = ExtResource( 14 )
+FPS = 3.0
+
+[node name="Table1Chair4" parent="Ch2_Cafe/Main" index="4"]
+visible = false
+
+[node name="NpcF" type="Node2D" parent="Ch2_Cafe/Main/Table1" index="0"]
+position = Vector2( 0, -36 )
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Main/Table1/NpcF"]
+texture = ExtResource( 11 )
+
+[node name="MiscLeftovers2" type="Sprite" parent="Ch2_Cafe/Main/Table1" index="1"]
+position = Vector2( -17, -6 )
+texture = ExtResource( 20 )
+
+[node name="MiscLeftovers3" type="Sprite" parent="Ch2_Cafe/Main/Table1" index="2"]
+position = Vector2( 0, -14 )
+texture = ExtResource( 21 )
+
+[node name="MiscCup" type="Sprite" parent="Ch2_Cafe/Main/Table1" index="3"]
+position = Vector2( 12, -9 )
+texture = ExtResource( 18 )
+
+[node name="MiscNapkins" type="Sprite" parent="Ch2_Cafe/Main/Table1" index="4"]
+position = Vector2( -2, -4 )
+texture = ExtResource( 23 )
+
+[node name="NpcG" type="StaticBody2D" parent="Ch2_Cafe/Main/Table2" index="0"]
+position = Vector2( 2, -37 )
+script = ExtResource( 15 )
+DefaultDirection = 8
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Main/Table2/NpcG"]
+texture = ExtResource( 12 )
+hframes = 4
+frame = 3
+
+[node name="MiscLeftovers1" type="Sprite" parent="Ch2_Cafe/Main/Table2" index="1"]
+position = Vector2( 1, -13 )
+texture = ExtResource( 19 )
+
+[node name="MiscCup" type="Sprite" parent="Ch2_Cafe/Main/Table2" index="2"]
+position = Vector2( 13, -14 )
+texture = ExtResource( 18 )
+
+[node name="MiscNapkins" type="Sprite" parent="Ch2_Cafe/Main/Table2" index="3"]
+position = Vector2( -9, -6 )
+texture = ExtResource( 23 )
+
+[node name="MiscNapkins" type="Sprite" parent="Ch2_Cafe/Main/Table3" index="0"]
+position = Vector2( -1, -8 )
+texture = ExtResource( 23 )
+
+[node name="NpcA" type="StaticBody2D" parent="Ch2_Cafe/Main/Table3Chair1" index="0"]
+position = Vector2( 7, -14 )
+script = ExtResource( 15 )
+DefaultDirection = 4
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Main/Table3Chair1/NpcA"]
+texture = ExtResource( 6 )
+hframes = 4
+frame = 2
+
+[node name="NpcB" type="StaticBody2D" parent="Ch2_Cafe/Main/Table3Chair2" index="0"]
+position = Vector2( 2, -15 )
+script = ExtResource( 15 )
+DefaultDirection = 1
+
+[node name="Sprite" type="Sprite" parent="Ch2_Cafe/Main/Table3Chair2/NpcB"]
+texture = ExtResource( 7 )
+hframes = 4
+
+[node name="MiscNapkins" type="Sprite" parent="Ch2_Cafe/Main/Table4" index="0"]
+position = Vector2( -3, -4 )
+texture = ExtResource( 23 )
+flip_h = true
+
+[node name="LacieSit" type="Sprite" parent="Ch2_Cafe/Main/Table4Chair2" index="0"]
+position = Vector2( -3, -14 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="ChrCafeCashierDrop" type="Sprite" parent="Ch2_Cafe/Main" index="19"]
+position = Vector2( 176, 139 )
+texture = ExtResource( 16 )
+hframes = 3
+frame = 2
+
+[node name="CashierIdle" type="Sprite" parent="Ch2_Cafe/Main" index="20"]
+visible = false
+position = Vector2( 153, 125 )
+texture = ExtResource( 25 )
+hframes = 2
+script = ExtResource( 14 )
+FPS = 1.5
+
+[node name="Points" type="Node2D" parent="."]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Points"]
+position = Vector2( 176, 368 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="cashier" type="Node2D" parent="Points"]
+position = Vector2( 336, 164 )
+script = ExtResource( 3 )
+Direction = 1
+
+[node name="cashier_2" type="Node2D" parent="Points"]
+position = Vector2( 152, 148 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="npc_a" type="Node2D" parent="Points"]
+position = Vector2( 280, 215 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="npc_b" type="Node2D" parent="Points"]
+position = Vector2( 341, 215 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="get_up" type="Node2D" parent="Points"]
+position = Vector2( 447, 309 )
+script = ExtResource( 3 )
+Direction = 1
+
+[node name="center" type="Node2D" parent="Points"]
+position = Vector2( 240, 192 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="bubble_lacie" type="Node2D" parent="Points"]
+position = Vector2( 447, 232 )
+script = ExtResource( 3 )
+
+[node name="bubble_npc_e" type="Node2D" parent="Points"]
+position = Vector2( 376, 152 )
+script = ExtResource( 3 )
+
+[node name="bubble_npc_f" type="Node2D" parent="Points"]
+position = Vector2( 411, 124 )
+script = ExtResource( 3 )
+
+[node name="bubble_cashier" type="Node2D" parent="Points"]
+position = Vector2( 174, 162 )
+script = ExtResource( 3 )
+
+[editable path="Ch2_Cafe"]

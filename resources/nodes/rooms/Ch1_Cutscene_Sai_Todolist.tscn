@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Facility_B1F_ControlRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/lighting/ch1_facility_glow.tres" type="Resource" id=3]
+[ext_resource path="res://assets/sprite/common/floor_paper.png" type="Texture" id=4]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=5]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=6]
+
+[node name="Ch1_Cutscene_Sai_Todolist" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 3 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="FloorPaper" type="Sprite" parent="Room/Background" index="9"]
+visible = false
+position = Vector2( -95, 79 )
+texture = ExtResource( 4 )
+offset = Vector2( 22, 0 )
+
+[node name="cutscene_lacie" type="Node2D" parent="."]
+position = Vector2( -160, 80 )
+script = ExtResource( 5 )
+Direction = 4
+
+[node name="cutscene_sai" type="Node2D" parent="."]
+position = Vector2( -192, 80 )
+script = ExtResource( 5 )
+Direction = 4
+
+[node name="show_paper" type="Node" parent="."]
+script = ExtResource( 6 )
+Node = NodePath("../Room/Background/FloorPaper")
+
+[node name="hide_paper" type="Node" parent="."]
+script = ExtResource( 6 )
+Node = NodePath("../Room/Background/FloorPaper")
+Visible = false
+
+[editable path="Room"]

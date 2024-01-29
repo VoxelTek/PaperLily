@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dtmf_asterisk.ogg-784d405b62c1336c5d9612a5bc3d881f.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/dtmf_asterisk.ogg"
+dest_files=[ "res://.import/dtmf_asterisk.ogg-784d405b62c1336c5d9612a5bc3d881f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

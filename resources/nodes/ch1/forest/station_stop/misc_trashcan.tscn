@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/misc_trashcan.png" type="Texture" id=1]
+
+[node name="misc_trashcan" type="Node2D"]
+
+[node name="misc_trashcan" type="Sprite" parent="."]
+position = Vector2( 0, -13 )
+texture = ExtResource( 1 )

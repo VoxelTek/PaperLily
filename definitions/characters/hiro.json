@@ -1,0 +1,16 @@
+{
+	"name": "Hiro",
+	"Sprites": [
+		{
+			"State": "sit",
+			"TextureSuffix": "sit",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,-12",
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_forest_lockedsite.ogg-b7958e3bd3082ca5482e8368f4865638.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_forest_lockedsite.ogg"
+dest_files=[ "res://.import/ch1_forest_lockedsite.ogg-b7958e3bd3082ca5482e8368f4865638.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=17.5

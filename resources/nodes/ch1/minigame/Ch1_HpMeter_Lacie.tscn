@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/Subgame/HpMeter/HpMeter.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/common/minigame/battle/hud_lacie.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/common/minigame/battle/hud_hp_empty.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/common/minigame/battle/hud_hp_full.png" type="Texture" id=4]
+
+[node name="LacieHp" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+texUi = ExtResource( 2 )
+texHpFull = ExtResource( 4 )
+texHpEmpty = ExtResource( 3 )

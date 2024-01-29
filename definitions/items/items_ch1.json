@@ -1,0 +1,827 @@
+{
+	"items": [
+		{
+			"id": "ch1.cellphone",
+			"name": "Cellphone",
+			"description": "My personal phone. Hiro bought it for me.",
+			"icon": "cellphone"
+		},
+		{
+			"id": "ch1.todolist",
+			"name": "To-Do List",
+			"description": "A list of things I want to do before I die.",
+			"icon": "paper",
+			"event": "ch1_item_todolist"
+		},
+		{
+			"id": "ch1.todolist_hidden",
+			"name": "To-Do List",
+			"description": "A list of things I want to do before I die.",
+			"icon": "paper",
+			"event": "ch1_item_todolist",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.ribbon",
+			"name": "Red Ribbon",
+			"description": "A soft and silky red ribbon.",
+			"icon": "ribbon_red"
+		},
+		{
+			"id": "ch1.thread",
+			"name": "Red Thread",
+			"description": "Some red thread from mother's sewing kit. The color matches my scarf.",
+			"icon": "thread_red"
+		},
+		{
+			"id": "ch1.shoelaces",
+			"name": "Red Shoelaces",
+			"description": "From the shoerack. Does something like this count?",
+			"icon": "ch1_shoelaces"
+		},
+		{
+			"id": "ch1.paint",
+			"name": "Red Paint",
+			"description": "A can of red paint. It's dusty.",
+			"icon": "paint_red"
+		},
+		{
+			"id": "ch1.bird_food",
+			"name": "Bird Food",
+			"description": "All-Natural Non-GMO Certified Organic Bird Food. It's as expensive as it sounds.",
+			"icon": "bird_food"
+		},
+		{
+			"id": "ch1.marker",
+			"name": "Red Marker",
+			"description": "A non-erasable alcohol-based red marker.",
+			"icon": "marker_red"
+		},
+		{
+			"id": "ch1.lipstick",
+			"name": "Lipstick",
+			"description": "Some red lipstick from mother's makeup set. It says \"Crimson Passion\".",
+			"icon": "lipstick"
+		},
+		{
+			"id": "ch1.ritual_instructions",
+			"name": "Ritual Letter",
+			"description": "The ritual instructions I received.",
+			"icon": "paper3",
+			"event": "ch1_item_ritual_letter"
+		},
+		{
+			"id": "ch1.ritual_instructions_hidden",
+			"name": "Ritual Letter",
+			"description": "The ritual instructions I received.",
+			"icon": "paper3",
+			"event": "ch1_item_ritual_letter",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.salt",
+			"name": "Table Salt",
+			"description": "\"For cooking and baking\". Salt can supposedly ward off spirits and such.",
+			"icon": "ch1_salt"
+		},
+		{
+			"id": "ch1.notebook",
+			"name": "Notebook",
+			"description": "I keep my personal notes and papers I find here.",
+			"icon": "notebook",
+			"event": "ch1_documents"
+		},
+		{
+			"id": "ch1.rune_jara",
+			"name": "Rune",
+			"description": "A rune stone I bought from a shady online merchant.",
+			"icon": "rune_jara",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.rune_uruz",
+			"name": "Rune",
+			"description": "A rune stone I found.",
+			"icon": "rune_uruz",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.rune_ansuz",
+			"name": "Rune",
+			"description": "A rune stone I found.",
+			"icon": "rune_ansuz",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.rune_raidho",
+			"name": "Rune",
+			"description": "A rune stone I found.",
+			"icon": "rune_raidho",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.rune_algiz",
+			"name": "Rune",
+			"description": "A rune stone I found.",
+			"icon": "rune_algiz",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.rune_tiwaz",
+			"name": "Rune",
+			"description": "A rune stone I found.",
+			"icon": "rune_tiwaz",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.rune_othala",
+			"name": "Rune",
+			"description": "A rune stone I found.",
+			"icon": "rune_othala",
+			"tags": ["rune"]
+		},
+		{
+			"id": "ch1.forest_station_number",
+			"name": "Number 375",
+			"description": "A waiting number for the train station in the forest. Unusually high.",
+			"icon": "ch1_forest_station_number"
+		},
+		{
+			"id": "ch1.forest_station_sign",
+			"name": "Blue Sign",
+			"description": "It says \"Daylight Gate\".",
+			"icon": "ch1_sign"
+		},
+		{
+			"id": "ch1.forest_harmless_snack",
+			"name": "Pack of Chips",
+			"description": "Looks like regular potato chips. The brand is literally called \"Harmless Snack\".",
+			"icon": "ch1_chips",
+			"event": "ch1_item_harmless_snack"
+		},
+		{
+			"id": "ch1.forest_harmless_snack_2",
+			"name": "Chocolate Bar",
+			"description": "Looks like a bar of chocolate. The brand is literally called \"Harmless Snack\".",
+			"icon": "ch1_chocobar",
+			"event": "ch1_item_harmless_snack"
+		},
+		{
+			"id": "ch1.forest_bugnet",
+			"name": "Bug Net",
+			"description": "A bug net Rune gave me. I don't know what I'll do with it.",
+			"icon": "ch1_bugnet"
+		},
+		{
+			"id": "ch1.forest_lamp_empty",
+			"name": "Empty Lamp",
+			"description": "The case of a street lamp. It has nothing inside.",
+			"icon": "ch1_lamp_empty"
+		},
+		{
+			"id": "ch1.forest_lamp_full",
+			"name": "Lamp with Fireflies",
+			"description": "A street lamp full of fireflies.",
+			"icon": "ch1_lamp_full"
+		},
+		{
+			"id": "ch1.forest_jar_empty",
+			"name": "Empty Jar",
+			"description": "A jar with nothing inside.",
+			"icon": "jar_empty"
+		},
+		{
+			"id": "ch1.forest_jar_full",
+			"name": "Jar of Fireflies",
+			"description": "A jar full of fireflies.",
+			"icon": "jar_fireflies"
+		},
+		{
+			"id": "ch1.forest_bolt_cutter",
+			"name": "Bolt Cutter",
+			"description": "A bolt cutter Rune gave me. Looks strong.",
+			"icon": "ch1_bolt_cutter"
+		},
+		{
+			"id": "ch1.forest_fish",
+			"name": "Fish",
+			"description": "A fish thing I purchased from a merchant. I don't think I should eat this.",
+			"icon": "ch1_fish"
+		},
+		{
+			"id": "ch1.red_jar",
+			"name": "Jar of Slugs",
+			"description": "A jar of slugs. Heavy.",
+			"icon": "ch1_red_jar"
+		},
+		{
+			"id": "ch1.red_notes",
+			"name": "Stone Curse Notes",
+			"description": "Notes explaining a ritual to remove a \"Stone Curse\".",
+			"icon": "paper4",
+			"event": "ch1_item_red_notes_1",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.forest_pot",
+			"name": "Artistic Pot",
+			"description": "A pot I found. Hopefully it works as a new head for Kozmo.",
+			"icon": "ch1_head_artistic"
+		},
+		{
+			"id": "ch1.forest_stone_cure",
+			"name": "Stone Curse Cure",
+			"description": "A sort of potion I made. It should cure a simple stone curses.",
+			"icon": "ch1_forest_stone_cure"
+		},
+		{
+			"id": "ch1.red_pot",
+			"name": "Weird Sculpture",
+			"description": "A thing I found. I'm almost a bit ashamed of having to give this to Kozmo.",
+			"icon": "ch1_head_red"
+		},
+		{
+			"id": "ch1.tpot_head",
+			"name": "Teapot-Shaped Head",
+			"description": "It came off the sculptor. It's empty inside.",
+			"icon": "ch1_head_kozmo"
+		},
+		{
+			"id": "ch1.kett_flower",
+			"name": "Artist's Flower",
+			"description": "It came off the sculptor. It smells good.",
+			"icon": "ch1_kett_flower"
+		},
+		{
+			"id": "ch1.cursed_wood",
+			"name": "Cursed Tree Bark",
+			"description": "A piece I tore off a tree. Allegedly cursed.",
+			"icon": "ch1_cursed_wood"
+		},
+		{
+			"id": "ch1.mushrooms",
+			"name": "Ink Mushrooms",
+			"description": "Black mushrooms.",
+			"icon": "ch1_ink_mushroom"
+		},
+		{
+			"id": "ch1.candleman_candle",
+			"name": "Lit Candle",
+			"description": "A candle I took from a statue at the sculptor's house.",
+			"icon": "ch1_candle"
+		},
+		{
+			"id": "ch1.candleman_candle_unlit",
+			"name": "Unlit Candle",
+			"description": "A candle I took from a statue at the sculptor's house.",
+			"icon": "ch1_candle_off"
+		},
+		{
+			"id": "ch1.candleman_candle_blue",
+			"name": "Blue Candle",
+			"description": "A candle that the candle person gave to me.",
+			"icon": "ch1_candle_blue"
+		},
+		{
+			"id": "ch1.forest_adapter",
+			"name": "AC Adapter",
+			"description": "A power plug adapter. It converts a 3-prong plug for a 2-prong socket.",
+			"icon": "ch1_forest_adapter"
+		},
+		{
+			"id": "ch1.scissors",
+			"name": "Scissors",
+			"description": "A pair of scissors. Pointy!",
+			"icon": "scissors_green"
+		},
+		{
+			"id": "ch1.forest_lockedsite_key",
+			"name": "Padlock Key",
+			"description": "A key that should open the gate with the warning sign.",
+			"icon": "ch1_key_padlock"
+		},
+		{
+			"id": "ch1.forest_caterpillar",
+			"name": "Caterpillar",
+			"description": "The moths asked me to get rid of him for a reward.",
+			"icon": "ch1_forest_caterpillar"
+		},
+		{
+			"id": "ch1.forest_lockedsite_letter",
+			"name": "Treasure Hunter's Letter",
+			"description": "A letter I found under a statue.",
+			"icon": "ch1_th_note_1",
+			"event": "ch1_item_forest_lockedsite_letter",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.hunter_note_1",
+			"name": "Treasure Hunter's Note 1",
+			"description": "A note I found. It talks about the Locked Site.",
+			"icon": "ch1_th_note_2",
+			"event": "ch1_item_forest_lockedsite_note_1",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.hunter_note_2",
+			"name": "Treasure Hunter's Note 2",
+			"description": "A note I found. It talks about the Locked Site.",
+			"icon": "ch1_th_note_3",
+			"event": "ch1_item_forest_lockedsite_note_2",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.hunter_note_3",
+			"name": "Treasure Hunter's Note 3",
+			"description": "A note I found. It talks about the Locked Site.",
+			"icon": "ch1_th_note_4",
+			"event": "ch1_item_forest_lockedsite_note_3",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.hunter_note_4",
+			"name": "Treasure Hunter's Note 4",
+			"description": "A note I found. It talks about the Locked Site.",
+			"icon": "ch1_th_note_1",
+			"event": "ch1_item_forest_lockedsite_note_4",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.red_passage_code",
+			"name": "Secret Passage Code",
+			"description": "Contains the code to open the secret passage under Red's house.",
+			"icon": "ch1_th_note_4",
+			"event": "ch1_item_red_passage_code",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.forest_paddles",
+			"name": "Boat Paddle",
+			"description": "Perfect for rowing a boat.",
+			"icon": "ch1_forest_paddle"
+		},
+		{
+			"id": "ch1.forest_bunny",
+			"name": "Injured Bunny",
+			"description": "It couldn't run away, so now it's in my inventory. Looks like it has a broken leg.",
+			"icon": "rabbit"
+		},
+		{
+			"id": "ch1.forest_flower_pink",
+			"name": "Pink Flower",
+			"description": "Pretty!",
+			"icon": "ch1_forest_flower_pink"
+		},
+		{
+			"id": "ch1.forest_lavender",
+			"name": "Lavender Flower",
+			"description": "Smells like laundry.",
+			"icon": "lavender"
+		},
+		{
+			"id": "ch1.forest_white_branch",
+			"name": "White Tree Branch",
+			"description": "Pretty!",
+			"icon": "ch1_forest_white_branch"
+		},
+		{
+			"id": "ch1.lakeside_goldfish",
+			"name": "Goldfish",
+			"description": "",
+			"icon": "ch1_goldfish"
+		},
+		{
+			"id": "ch1.lakeside_deadfish",
+			"name": "Dead Goldfish",
+			"description": "Might have been better off where it was.",
+			"icon": "ch1_goldfish_dead"
+		},
+		{
+			"id": "ch1.lakeside_algae_black",
+			"name": "Black Algae",
+			"description": "Some algae I fished from the bottom of the lake.",
+			"icon": "algae_1"
+		},
+		{
+			"id": "ch1.lakeside_algae_blue",
+			"name": "Blue Algae",
+			"description": "Some algae I fished from the bottom of the lake.",
+			"icon": "algae_2"
+		},
+		{
+			"id": "ch1.lakeside_algae_green",
+			"name": "Green Algae",
+			"description": "Some algae I fished from the bottom of the lake.",
+			"icon": "algae_3"
+		},
+		{
+			"id": "ch1.lakeside_petals_pink",
+			"name": "Pink Petals",
+			"description": "Some flower petals I found.",
+			"icon": "petals_1"
+		},
+		{
+			"id": "ch1.lakeside_petals_purple",
+			"name": "Purple Petals",
+			"description": "Some flower petals I found.",
+			"icon": "petals_2"
+		},
+		{
+			"id": "ch1.lakeside_petals_white",
+			"name": "White Petals",
+			"description": "Some flower petals I found.",
+			"icon": "petals_3"
+		},
+		{
+			"id": "ch1.facility_handle_square",
+			"name": "Handle (Square)",
+			"description": "A purple handle for a valve mechanism. The protusion is square-shaped.",
+			"icon": "valve_purple"
+		},
+		{
+			"id": "ch1.facility_handle_pentagon",
+			"name": "Handle (Pentagon)",
+			"description": "A red handle for a valve mechanism. The protusion is pentagon-shaped.",
+			"icon": "valve_red"
+		},
+		{
+			"id": "ch1.facility_handle_star",
+			"name": "Handle (Star)",
+			"description": "A yellow handle for a valve mechanism. The protusion is shaped like a 5-point star.",
+			"icon": "valve_yellow"
+		},
+		{
+			"id": "ch1.facility_handle_diamond",
+			"name": "Handle (Diamond)",
+			"description": "A white handle for a valve mechanism. The protusion is diamond-shaped.",
+			"icon": "valve_white"
+		},
+		{
+			"id": "ch1.facility_fuse_5",
+			"name": "Fuse (5)",
+			"description": "",
+			"icon": "ch1_facility_fuse",
+			"hidden": true
+		},
+		{
+			"id": "ch1.facility_fuse_10",
+			"name": "Fuse (10)",
+			"description": "",
+			"icon": "ch1_facility_fuse",
+			"hidden": true
+		},
+		{
+			"id": "ch1.facility_fuse_15",
+			"name": "Fuse (15)",
+			"description": "",
+			"icon": "ch1_facility_fuse",
+			"hidden": true
+		},
+		{
+			"id": "ch1.facility_fuse_20",
+			"name": "Fuse (20)",
+			"description": "",
+			"icon": "ch1_facility_fuse",
+			"hidden": true
+		},
+		{
+			"id": "ch1.facility_fuse_25",
+			"name": "Fuse (25)",
+			"description": "",
+			"icon": "ch1_facility_fuse",
+			"hidden": true
+		},
+		{
+			"id": "ch1.facility_fuse_40",
+			"name": "Fuse (40)",
+			"description": "",
+			"icon": "ch1_facility_fuse",
+			"hidden": true
+		},
+		{
+			"id": "ch1.blackpass_knife",
+			"name": "_____",
+			"description": "It's sharp.",
+			"icon": "ch1_knife"
+		},
+		{
+			"id": "ch1.facility_key_gates",
+			"name": "Iron Key",
+			"description": "A fairly large metallic key.",
+			"icon": "ch1_key_padlock"
+		},
+		{
+			"id": "ch1.facility_key_archives",
+			"name": "Copper Key",
+			"description": "A regular key. It probably opens a door somewhere.",
+			"icon": "key06"
+		},
+		{
+			"id": "ch1.bucket",
+			"name": "Bucket",
+			"description": "A metallic bucket. It can transport various liquid substances.",
+			"icon": "bucket"
+		},
+		{
+			"id": "ch1.bucket_full",
+			"name": "Bucket of Water",
+			"description": "A bucket full of water. It's heavy.",
+			"icon": "bucket_full"
+		},
+		{
+			"id": "ch1.bucket_full_holy",
+			"name": "Bucket of Special Water",
+			"description": "A bucket full of water. It comes from a special faucet in the forest.",
+			"icon": "bucket_full"
+		},
+		{
+			"id": "ch1.screwdriver",
+			"name": "Flat Screwdriver",
+			"description": "A simple screwdriver.",
+			"icon": "screwdriver"
+		},
+		{
+			"id": "ch1.coin",
+			"name": "Coin",
+			"description": "A coin that's not quite like the ones back home.",
+			"icon": "coin"
+		},
+		{
+			"id": "ch1.doorknob_return",
+			"name": "Return Doorknob",
+			"description": "Apparently, this is my ticket back home. I purchased it online.",
+			"icon": "doorknob_return"
+		},
+		{
+			"id": "ch1.doorknob_grave",
+			"name": "Doorknob With Flower",
+			"description": "A doorknob. I found this lying around.",
+			"icon": "doorknob_grave"
+		},
+		{
+			"id": "ch1.doorknob_library_fragment",
+			"name": "Doorknob Fragment",
+			"description": "Pieces of a doorknob. I can't put them back together on my own.",
+			"icon": "doorknob_library_fragments"
+		},
+		{
+			"id": "ch1.doorknob_library",
+			"name": "Gray Doorknob",
+			"description": "A doorknob. It has the same symbol as my letter.",
+			"icon": "doorknob_library"
+		},
+		{
+			"id": "ch1.doorknob_garden",
+			"name": "White Doorknob",
+			"description": "A doorknob. It looks like a white lily.",
+			"icon": "doorknob_garden"
+		},
+		{
+			"id": "ch1.doorknob_facility",
+			"name": "Doorknob With Eye",
+			"description": "A doorknob I got from the moths. Can probably be used at that door with the slots.",
+			"icon": "doorknob_facility"
+		},
+		{
+			"id": "ch1.doorknob_lighthouse_fragment",
+			"name": "Doorknob Fragment",
+			"description": "Pieces of a doorknob. I can't put them back together on my own.",
+			"icon": "doorknob_lighthouse_fragments"
+		},
+		{
+			"id": "ch1.paper_lily_instructions",
+			"name": "Paper Lily Folding Steps",
+			"description": "Instructions detailing how to fold a piece of paper to look like a lily flower.",
+			"icon": "paper5",
+			"event": "ch1_item_paper_lily_instructions",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.facility_map",
+			"name": "Facility Map",
+			"description": "A map of the facility, drawn by someone.",
+			"icon": "ch1_facility_map",
+			"event": "ch1_item_facility_map",
+			"tags": ["document"],
+			"hidden": true,
+			"persistent": true
+		},
+		{
+			"id": "ch1.mk_knife",
+			"name": "Black Knife",
+			"description": "A fully black knife. It's still very sharp.",
+			"icon": "ch1_mk_knife_s",
+			"event": "ch1_item_mk_knife"
+		},
+		{
+			"id": "ch1.mk_knife_activated",
+			"name": "Knife",
+			"description": "A knife.",
+			"icon": "ch1_mk_knife"
+		},
+		{
+			"id": "ch1.mk_foot_activated",
+			"name": "Human Foot",
+			"description": "A foot that used to belong to someone.",
+			"icon": "ch1_mk_foot"
+		},
+		{
+			"id": "ch1.mk_canvas_activated",
+			"name": "Sketchbook",
+			"description": "A sketchbook full of colors you splattered all over it.",
+			"icon": "ch1_mk_skeetchbook",
+			"event": "ch1_item_mk_canvas"
+		},
+		{
+			"id": "ch1.mk_hand_mirror",
+			"name": "Black Object",
+			"description": "An unknown circular object that's fully black. Feels like wood and glass.",
+			"icon": "ch1_mk_mirror_s",
+			"event": "ch1_event_mk_mirror"
+		},
+		{
+			"id": "ch1.mk_hand_mirror_activated",
+			"name": "Hand Mirror",
+			"description": "A wooden hand mirror.",
+			"icon": "ch1_mk_mirror"
+		},
+		{
+			"id": "ch1.mk_compress",
+			"name": "Black Object",
+			"description": "An unknown object that's fully black. Feels like a piece of fabric.",
+			"icon": "ch1_mk_compress_s"
+		},
+		{
+			"id": "ch1.mk_compress_activated",
+			"name": "Cold Compress",
+			"description": "A wet rag.",
+			"icon": "ch1_mk_compress"
+		},
+		{
+			"id": "ch1.mk_eyeball",
+			"name": "Eyeball",
+			"description": "An eyeball. The owner seems to have had golden eyes.",
+			"icon": "ch1_mk_eyeball"
+		},
+		{
+			"id": "ch1.mk_key_cage",
+			"name": "Small Key",
+			"description": "A small key. Looks like it could belong to a padlock or something similar.",
+			"icon": "key03"
+		},
+		{
+			"id": "ch1.mk_bedroom_key",
+			"name": "Key",
+			"description": "A key for something.",
+			"icon": "ch1_mk_bedroom_key"
+		},
+		{
+			"id": "ch1.mk_key_wisteria",
+			"name": "Key",
+			"description": "A key for something.",
+			"icon": "key04"
+		},
+		{
+			"id": "ch1.mk_jar",
+			"name": "Glass Jar",
+			"description": "A small glass jar. I found 3 of them.",
+			"icon": "jar_empty"
+		},
+		{
+			"id": "ch1.mk_jar_water",
+			"name": "Jar of Water",
+			"description": "A small glass jar full of water.",
+			"icon": "jar_water"
+		},
+		{
+			"id": "ch1.mk_jar_pigment_red",
+			"name": "Jar of Red Pigment",
+			"description": "A small glass jar with red pigment. Needs water.",
+			"icon": "jar_pigment_red"
+		},
+		{
+			"id": "ch1.mk_jar_pigment_yellow",
+			"name": "Jar of Yellow Pigment",
+			"description": "A small glass jar with yellow pigment. Needs water.",
+			"icon": "jar_pigment_yellow"
+		},
+		{
+			"id": "ch1.mk_jar_pigment_blue",
+			"name": "Jar of Blue Pigment",
+			"description": "A small glass jar with blue pigment. Needs water.",
+			"icon": "jar_pigment_blue"
+		},
+		{
+			"id": "ch1.mk_jar_paint_red",
+			"name": "Jar of Red Paint",
+			"description": "A small glass jar with red paint.",
+			"icon": "jar_paint_red"
+		},
+		{
+			"id": "ch1.mk_jar_paint_yellow",
+			"name": "Jar of Yellow Paint",
+			"description": "A small glass jar with yellow paint.",
+			"icon": "jar_paint_yellow"
+		},
+		{
+			"id": "ch1.mk_jar_paint_blue",
+			"name": "Jar of Blue Paint",
+			"description": "A small glass jar with blue paint.",
+			"icon": "jar_paint_blue"
+		},
+		{
+			"id": "ch1.mk_tool",
+			"name": "Grabber",
+			"description": "A long tool that can be used to grab distant objects.",
+			"icon": "lighter3"
+		},
+		{
+			"id": "ch1.mk_lighter",
+			"name": "Lighter",
+			"description": "A lighter.",
+			"icon": "lighter3"
+		},
+		{
+			"id": "ch1.lockpick",
+			"name": "Lock Pick",
+			"description": "A lock pick. I don't know how to use this...",
+			"icon": "lockpick"
+		},
+		{
+			"id": "ch1.rainbow_potion",
+			"name": "Rainbow Potion",
+			"description": "A strange potion. I wonder what it does...",
+			"icon": "rainbow_potion",
+			"event": "ch1_rainbow_potion"
+		},
+		{
+			"id": "ch1.rainbow_potion_tmp",
+			"name": "Temp.Rainbow Potion",
+			"description": "A strange potion. It has a shorter duration than the original one.",
+			"icon": "rainbow_potion",
+			"event": "ch1_rainbow_potion_tmp"
+		},
+		{
+			"id": "ch1.lily",
+			"name": "Lily",
+			"description": "A lily. I'm supposed to bring it home with me.",
+			"icon": "flower01"
+		},
+		{
+			"id": "ch1.aoi_flower",
+			"name": "Flower",
+			"description": "",
+			"icon": "flower_wilted"
+		},
+		{
+			"id": "ch1.aoi_sewingkit",
+			"name": "Sewing Kit",
+			"description": "",
+			"icon": "sewingkit"
+		},
+		{
+			"id": "ch1.aoi_cabbage",
+			"name": "Cabbage",
+			"description": "",
+			"icon": "cabbage"
+		},
+		{
+			"id": "global.reditem_1",
+			"name": "Red Item I",
+			"description": "A red item. I can't tell what it is.",
+			"icon": "red_sparkle"
+		},
+		{
+			"id": "global.reditem_2",
+			"name": "Red Item II",
+			"description": "A red item. I can't tell what it is.",
+			"icon": "red_sparkle"
+		},
+		{
+			"id": "global.reditem_3",
+			"name": "Red Item III",
+			"description": "A red item. I can't tell what it is.",
+			"icon": "red_sparkle"
+		}
+	]
+}

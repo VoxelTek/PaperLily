@@ -1,0 +1,64 @@
+{
+	"Name": "Bunny",
+	"NoDefaultSprites": true,
+	"Sprites": [
+		{
+			"State": "walk",
+			"TextureSuffix": "",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "6,7,8",
+			"UpFrames": "9,10,11",
+			"RightFrames": "3,4,5",
+			"DownFrames": "0,1,2",
+			"Fps": 15,
+			"Loop": true
+		},
+		{
+			"State": "run",
+			"TextureSuffix": "",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "6,7,8",
+			"UpFrames": "9,10,11",
+			"RightFrames": "3,4,5",
+			"DownFrames": "0,1,2",
+			"Fps": 15,
+			"Loop": true
+		},
+		{
+			"State": "stand",
+			"TextureSuffix": "",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "6",
+			"UpFrames": "9",
+			"RightFrames": "3",
+			"DownFrames": "0"
+		},
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 2,
+			"Vframes": 1,
+			"LeftFrames": "0,1",
+			"UpFrames": "0,1",
+			"RightFrames": "0,1",
+			"DownFrames": "0,1",
+			"Fps": 1.6,
+			"Loop": true
+		},
+		{
+			"State": "melt",
+			"TextureSuffix": "melt",
+			"Hframes": 8,
+			"Vframes": 1,
+			"LeftFrames": "0,1,2,3,4,5,6,7",
+			"UpFrames": "0,1,2,3,4,5,6,7",
+			"RightFrames": "0,1,2,3,4,5,6,7",
+			"DownFrames": "0,1,2,3,4,5,6,7",
+			"Fps": 10,
+			"Loop": false
+		}
+	]
+}

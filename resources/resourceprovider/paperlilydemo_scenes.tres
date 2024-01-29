@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://script/Core/SceneProvider.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/paper_lily_demo/TitleScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/nodes/paper_lily_demo/CreditsScreen1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/nodes/common/DeathScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/nodes/paper_lily_demo/LogoScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://resources/nodes/common/LoadingScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://resources/nodes/common/SavingScreen.tscn" type="PackedScene" id=7]
+
+[resource]
+script = ExtResource( 1 )
+FirstScreen = ExtResource( 5 )
+TitleScreen = ExtResource( 2 )
+CreditsScreen = ExtResource( 3 )
+DeathScreen = ExtResource( 4 )
+LoadingScreen = ExtResource( 6 )
+SavingScreen = ExtResource( 7 )

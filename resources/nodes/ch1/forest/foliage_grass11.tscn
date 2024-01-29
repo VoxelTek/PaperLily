@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprite/ch1/forest/common/foliage_grass11.png" type="Texture" id=1]
+
+[node name="foliage_grass11" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -17 )

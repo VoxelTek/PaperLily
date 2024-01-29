@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dtmf_5.ogg-9ae6dc01cb473610e11d19a9a735cf6a.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/dtmf_5.ogg"
+dest_files=[ "res://.import/dtmf_5.ogg-9ae6dc01cb473610e11d19a9a735cf6a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

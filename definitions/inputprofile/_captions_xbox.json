@@ -1,0 +1,171 @@
+{
+	"Type": "controller",
+	"Captions": [	
+		{
+			"Caption": "img:xbone_a",
+			"Button": {
+				"Code": 0
+			}
+		},
+		{
+			"Caption": "img:xbone_b",
+			"Button": {
+				"Code": 1
+			}
+		},
+		{
+			"Caption": "img:xbone_x",
+			"Button": {
+				"Code": 2
+			}
+		},
+		{
+			"Caption": "img:xbone_y",
+			"Button": {
+				"Code": 3
+			}
+		},
+		{
+			"Caption": "img:xbone_lb",
+			"Button": {
+				"Code": 4
+			}
+		},
+		{
+			"Caption": "img:xbone_rb",
+			"Button": {
+				"Code": 5
+			}
+		},
+		{
+			"Caption": "img:xbone_lt",
+			"Button": {
+				"Code": 6
+			}
+		},
+		{
+			"Caption": "img:xbone_rt",
+			"Button": {
+				"Code": 7
+			}
+		},
+		{
+			"Caption": "img:xbone_ls",
+			"Button": {
+				"Code": 8
+			}
+		},
+		{
+			"Caption": "img:xbone_rs",
+			"Button": {
+				"Code": 9
+			}
+		},
+		{
+			"Caption": "img:xbone_view",
+			"Button": {
+				"Code": 10
+			}
+		},
+		{
+			"Caption": "img:xbone_menu",
+			"Button": {
+				"Code": 11
+			}
+		},
+		{
+			"Caption": "img:xbone_dpad_up",
+			"Button": {
+				"Code": 12
+			}
+		},
+		{
+			"Caption": "img:xbone_dpad_down",
+			"Button": {
+				"Code": 13
+			}
+		},
+		{
+			"Caption": "img:xbone_dpad_left",
+			"Button": {
+				"Code": 14
+			}
+		},
+		{
+			"Caption": "img:xbone_dpad_right",
+			"Button": {
+				"Code": 15
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_left",
+			"Axis": {
+				"Code": 0,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_right",
+			"Axis": {
+				"Code": 0,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_up",
+			"Axis": {
+				"Code": 1,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_ls_down",
+			"Axis": {
+				"Code": 1,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_left",
+			"Axis": {
+				"Code": 2,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_right",
+			"Axis": {
+				"Code": 2,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_up",
+			"Axis": {
+				"Code": 3,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:ds4_rs_down",
+			"Axis": {
+				"Code": 3,
+				"Value": 1
+			}
+		},
+		{
+			"Caption": "img:xbone_lt",
+			"Axis": {
+				"Code": 6,
+				"Value": -1
+			}
+		},
+		{
+			"Caption": "img:xbone_rt",
+			"Axis": {
+				"Code": 7,
+				"Value": -1
+			}
+		}
+	]
+}

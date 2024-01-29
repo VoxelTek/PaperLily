@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_smash.ogg-db0b94aa6edd3279dfaa3e08709095f4.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ch1_smash.ogg"
+dest_files=[ "res://.import/ch1_smash.ogg-db0b94aa6edd3279dfaa3e08709095f4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

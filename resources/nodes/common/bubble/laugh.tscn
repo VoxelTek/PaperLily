@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprite/common/bubble/laugh.png" type="Texture" id=1]
+[ext_resource path="res://script/Nodes/Bubble.cs" type="Script" id=2]
+[ext_resource path="res://resources/material/unshaded.tres" type="Material" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animation"
+length = 1.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1 ]
+}
+
+[node name="bubble_laugh" type="Sprite"]
+material = ExtResource( 3 )
+texture = ExtResource( 1 )
+hframes = 2
+script = ExtResource( 2 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/animation = SubResource( 1 )

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/img/tutorial/interaction_lacie.png" type="Texture" id=1]
+[ext_resource path="res://script/Subgame/Tutorials/Tutorial.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+Name = "Interacting"
+Text = "Press {0} to interact with the environment"
+Image = ExtResource( 1 )
+Inputs = PoolStringArray( "input_action" )

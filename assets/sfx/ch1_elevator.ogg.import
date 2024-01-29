@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_elevator.ogg-c63ecf0d0ee195bd15eb8822a0e87423.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ch1_elevator.ogg"
+dest_files=[ "res://.import/ch1_elevator.ogg-c63ecf0d0ee195bd15eb8822a0e87423.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

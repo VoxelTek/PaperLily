@@ -1,0 +1,225 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1BlackPassKitchen.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_blackpass.tres" type="TileSet" id=2]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/furniture_chair.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/furniture_bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/furniture_table.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/furniture_counter_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/furniture_counter_2.png" type="Texture" id=8]
+[ext_resource path="res://script/Core/Nodes/NpcStaticTurnableVer2.cs" type="Script" id=9]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=10]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=11]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=12]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/item_meat.png" type="Texture" id=14]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV2.cs" type="Script" id=15]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=16]
+[ext_resource path="res://assets/sprite/ch1/blackpass/kitchen/chr_mom_cutting.png" type="Texture" id=17]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=18]
+
+[node name="Ch1_BlackPass_Kitchen" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65530, 4, 196611, -65529, 4, 131073, -65528, 4, 131073, -65527, 4, 131073, -65526, 4, 131073, -65525, 4, 131073, -65524, 4, 131073, -65523, 4, 131073, -65522, 4, 131073, -65521, 4, 131075, 6, 4, 65538, 15, 4, 65536, 65542, 4, 65538, 65551, 4, 65536, 131078, 4, 65538, 131087, 4, 65536, 196614, 4, 65538, 196623, 4, 65536, 262144, 4, 131073, 262145, 4, 131073, 262146, 4, 131073, 262147, 4, 131073, 262148, 4, 131073, 262149, 4, 131073, 262150, 4, 131074, 262159, 4, 65536, 327686, 4, 65538, 327695, 4, 65536, 393222, 4, 65538, 393231, 4, 65536, 458752, 4, 131073, 458753, 4, 131073, 458754, 4, 131073, 458755, 4, 131073, 458756, 4, 131073, 458757, 4, 131073, 458758, 4, 131074, 458767, 4, 65536, 524303, 4, 65536, 589839, 4, 65536, 655360, 4, 1, 655361, 4, 1, 655362, 4, 1, 655363, 4, 1, 655364, 4, 1, 655365, 4, 1, 655366, 4, 1, 655367, 4, 1, 655368, 4, 1, 655369, 4, 1, 655370, 4, 1, 655371, 4, 2, 655374, 4, 0, 655375, 4, 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureBg" type="Sprite" parent="Background"]
+position = Vector2( 352, 64 )
+texture = ExtResource( 5 )
+
+[node name="FurnitureCounter2" type="Sprite" parent="Background"]
+position = Vector2( 465, 177 )
+texture = ExtResource( 8 )
+
+[node name="RedItem" type="Sprite" parent="Background"]
+position = Vector2( 436, 171 )
+texture = ExtResource( 14 )
+
+[node name="Shiny" parent="Background/RedItem" instance=ExtResource( 13 )]
+modulate = Color( 1, 0.196078, 0.196078, 1 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureCounter1" type="Sprite" parent="Main"]
+position = Vector2( 236, 178 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, 30 )
+
+[node name="Table" type="Node2D" parent="Main"]
+position = Vector2( 352, 190 )
+
+[node name="FurnitureChair" type="Sprite" parent="Main/Table"]
+position = Vector2( -32, 5 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureChair2" type="Sprite" parent="Main/Table"]
+position = Vector2( -32, 38 )
+texture = ExtResource( 4 )
+
+[node name="FurnitureChair3" type="Sprite" parent="Main/Table"]
+position = Vector2( 32, 38 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="FurnitureChair4" type="Sprite" parent="Main/Table"]
+position = Vector2( 32, 5 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="FurnitureTable" type="Sprite" parent="Main/Table"]
+position = Vector2( 0, 26 )
+texture = ExtResource( 6 )
+
+[node name="chr_mom" type="Node2D" parent="Main"]
+position = Vector2( 442, 160 )
+script = ExtResource( 9 )
+CharacterId = "ch1_blackpass_mom"
+DefaultDirection = 4
+
+[node name="MomCuttingCutscene" type="Sprite" parent="Main"]
+visible = false
+position = Vector2( 445, 160 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -18 )
+hframes = 8
+script = ExtResource( 15 )
+Loop = false
+Autostart = false
+FrameDurations = "200,200,200,20,200,200,200,200"
+
+[node name="MomCutting" type="Sprite" parent="Main"]
+visible = false
+position = Vector2( 445, 160 )
+texture = ExtResource( 17 )
+offset = Vector2( 0, -18 )
+hframes = 8
+frame = 1
+script = ExtResource( 16 )
+AnimationFrames = "1,3"
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 262150, 0, 0, 262158, 0, 0, 327686, 0, 0, 327694, 0, 0, 393222, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655374, 0, 0, 655375, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_knife_on_mom" type="Node" parent="Other/Events"]
+script = ExtResource( 12 )
+Items = "ch1.blackpass_knife"
+Nodes = "chr_mom"
+
+[node name="event_cutscene" type="Node2D" parent="Other/Events"]
+position = Vector2( 244, 288 )
+script = ExtResource( 10 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 64 )
+
+[node name="misc_counter" type="Node2D" parent="Other/Events"]
+position = Vector2( 464, 160 )
+script = ExtResource( 10 )
+Area = Vector2( 32, 128 )
+
+[node name="misc_counter_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 236, 216 )
+script = ExtResource( 10 )
+Area = Vector2( 24, 80 )
+
+[node name="misc_counter_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 337, 116 )
+script = ExtResource( 10 )
+Area = Vector2( 224, 24 )
+
+[node name="misc_table" type="Node2D" parent="Other/Events"]
+position = Vector2( 352, 220 )
+script = ExtResource( 10 )
+Area = Vector2( 88, 72 )
+
+[node name="chr_mom" type="Node2D" parent="Other/Events"]
+position = Vector2( 442, 160 )
+script = ExtResource( 10 )
+RelatedNode = NodePath("../../../Main/chr_mom")
+Area = Vector2( 32, 24 )
+
+[node name="misc_reditem" type="Node2D" parent="Other/Events"]
+position = Vector2( 436, 171 )
+script = ExtResource( 10 )
+Solid = false
+Area = Vector2( 16, 16 )
+
+[node name="move_back" type="Node2D" parent="Other/Events"]
+position = Vector2( -16, 288 )
+script = ExtResource( 10 )
+Area = Vector2( 32, 64 )
+
+[node name="move_garage" type="Node2D" parent="Other/Events"]
+position = Vector2( 416, 368 )
+script = ExtResource( 10 )
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 16, 288 )
+script = ExtResource( 11 )
+Direction = 4
+
+[node name="from_garage" type="Node2D" parent="Other/Points"]
+position = Vector2( 416, 336 )
+script = ExtResource( 11 )
+Direction = 2
+
+[node name="ch1_cutscene_walk_in" type="Node2D" parent="Other/Points"]
+position = Vector2( 244, 288 )
+script = ExtResource( 11 )
+Direction = 4
+
+[node name="ch1_cutscene" type="Node2D" parent="Other/Points"]
+position = Vector2( 433, 288 )
+script = ExtResource( 11 )
+Direction = 2
+
+[node name="ch1_cutscene_cutting" type="Node2D" parent="Other/Points"]
+position = Vector2( 433, 224 )
+script = ExtResource( 11 )
+Direction = 2

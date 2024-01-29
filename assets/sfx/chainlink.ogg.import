@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chainlink.ogg-37e586a367f6f826cd1e99f3b865daff.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/chainlink.ogg"
+dest_files=[ "res://.import/chainlink.ogg-37e586a367f6f826cd1e99f3b865daff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

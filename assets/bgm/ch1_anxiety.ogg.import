@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_anxiety.ogg-80b918bc225e1c19b864aa531f49f93c.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_anxiety.ogg"
+dest_files=[ "res://.import/ch1_anxiety.ogg-80b918bc225e1c19b864aa531f49f93c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=2.4

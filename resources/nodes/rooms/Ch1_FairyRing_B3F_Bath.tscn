@@ -1,0 +1,396 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_fairyring.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://resources/material/sfx_floor_deform.tres" type="Material" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_01.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_02.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/wall_border.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_09.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_12.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_6.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/fg_plants_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/fg_plants_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_13.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_04.png" type="Texture" id=16]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/bath/struct_bathtub.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/bath/floor_flooring.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/bath/misc_plants_7.png" type="Texture" id=20]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=21]
+[ext_resource path="res://resources/lighting/ch1_fairyring.tres" type="Resource" id=22]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=23]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_6/aoi_tub.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_6/lacie_tub.png" type="Texture" id=25]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=26]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=27]
+[ext_resource path="res://assets/sprite/ch1/cutscene/ending_6/aoi_melt.png" type="Texture" id=28]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=29]
+[ext_resource path="res://script/Core/Nodes/ActionFade2D.cs" type="Script" id=30]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=31]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=32]
+
+[node name="Ch1_FairyRing_B3F_Bath" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 22 )
+
+[node name="TilesFloor" type="TileMap" parent="."]
+material = ExtResource( 6 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 1
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 720912, 0, 0, 720916, 10, 0, 786452, 10, 65536, 851980, 0, 0, 851984, 0, 0, 851988, 10, 0, 852004, 0, 0, 852008, 0, 0, 852012, 0, 0, 852016, 0, 0, 852020, 0, 0, 917524, 10, 65536, 983040, 0, 0, 983044, 0, 0, 983048, 0, 0, 983052, 0, 0, 983056, 0, 0, 983060, 0, 0, 983064, 0, 0, 983068, 0, 0, 983072, 0, 0, 983076, 0, 0, 983092, 0, 0, 1114124, 0, 0, 1114128, 0, 0, 1114132, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesWall" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 458768, 1, 0, 458772, 12, 0, 589836, 3, 0, 589860, 1, 0, 589864, 12, 0, 589865, 2, 0, 589868, 12, 0, 589869, 12, 0, 589870, 11, 0, 589872, 1, 0, 589876, 1, 0, 720896, 12, 0, 720897, 2, 0, 720900, 11, 0, 720902, 1, 0, 720906, 11, 0, 720917, 12, 0, 720918, 11, 0, 720920, 2, 0, 720923, 11, 0, 720925, 11, 0, 720927, 1, 0, 720931, 12, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorFlooring" type="Sprite" parent="Background"]
+position = Vector2( 590, 401 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, 0.5 )
+
+[node name="MiscPlants6" type="Sprite" parent="Background"]
+position = Vector2( 637, 340 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="MiscPlants7" type="Sprite" parent="Background"]
+position = Vector2( 535, 356 )
+texture = ExtResource( 20 )
+
+[node name="WallBorder" type="Sprite" parent="Background"]
+position = Vector2( 1152, 432 )
+texture = ExtResource( 9 )
+
+[node name="WallBorder2" type="Sprite" parent="Background"]
+position = Vector2( 1792, 368 )
+texture = ExtResource( 9 )
+
+[node name="WallBorder3" type="Sprite" parent="Background"]
+position = Vector2( 673, 432 )
+texture = ExtResource( 9 )
+
+[node name="WallBorder4" type="Sprite" parent="Background"]
+position = Vector2( 384, 432 )
+texture = ExtResource( 9 )
+
+[node name="WallBorder5" type="Sprite" parent="Background"]
+position = Vector2( 1, 432 )
+texture = ExtResource( 9 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StructBathtub" type="Sprite" parent="Main"]
+position = Vector2( 589, 379 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, 4 )
+
+[node name="LacieTub" type="Sprite" parent="Main/StructBathtub"]
+visible = false
+position = Vector2( 16, -13 )
+texture = ExtResource( 25 )
+hframes = 3
+
+[node name="AoiTub" type="Sprite" parent="Main/StructBathtub"]
+visible = false
+position = Vector2( -13, -13 )
+texture = ExtResource( 24 )
+hframes = 3
+
+[node name="AoiMelt" type="Sprite" parent="Main/StructBathtub"]
+visible = false
+position = Vector2( 0, -15 )
+texture = ExtResource( 28 )
+hframes = 14
+script = ExtResource( 27 )
+FPS = 8.0
+Loop = false
+Autostart = false
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscVine13" type="Sprite" parent="Foreground"]
+position = Vector2( 378, 633 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine21" type="Sprite" parent="Foreground"]
+position = Vector2( 519, 635 )
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="MiscVine25" type="Sprite" parent="Foreground"]
+position = Vector2( 777, 585 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine26" type="Sprite" parent="Foreground"]
+position = Vector2( 724, 628 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine22" type="Sprite" parent="Foreground"]
+position = Vector2( 444, 639 )
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="MiscVine23" type="Sprite" parent="Foreground"]
+position = Vector2( 343, 560 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine24" type="Sprite" parent="Foreground"]
+position = Vector2( 361, 611 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine20" type="Sprite" parent="Foreground"]
+position = Vector2( 3, 572 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine27" type="Sprite" parent="Foreground"]
+position = Vector2( -32, 503 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine28" type="Sprite" parent="Foreground"]
+position = Vector2( -12, 437 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine29" type="Sprite" parent="Foreground"]
+position = Vector2( 23, 387 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine10" type="Sprite" parent="Foreground"]
+position = Vector2( 593, 598 )
+texture = ExtResource( 10 )
+
+[node name="MiscVine11" type="Sprite" parent="Foreground"]
+position = Vector2( 83, 539 )
+texture = ExtResource( 10 )
+
+[node name="MiscVine12" type="Sprite" parent="Foreground"]
+position = Vector2( 260, 546 )
+texture = ExtResource( 10 )
+
+[node name="MiscVine16" type="Sprite" parent="Foreground"]
+position = Vector2( 1286, 525 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine17" type="Sprite" parent="Foreground"]
+position = Vector2( 1629, 520 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine30" type="Sprite" parent="Foreground"]
+position = Vector2( 1803, 569 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine18" type="Sprite" parent="Foreground"]
+position = Vector2( 703, 609 )
+texture = ExtResource( 11 )
+
+[node name="MiscVine19" type="Sprite" parent="Foreground"]
+position = Vector2( 187, 542 )
+texture = ExtResource( 11 )
+
+[node name="FgPlants1" type="Sprite" parent="Foreground"]
+position = Vector2( 1883, 502 )
+texture = ExtResource( 14 )
+
+[node name="FgPlants2" type="Sprite" parent="Foreground"]
+position = Vector2( 1197, 542 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="MiscVine01" type="Sprite" parent="Foreground"]
+position = Vector2( 11, 516 )
+texture = ExtResource( 7 )
+
+[node name="MiscVine02" type="Sprite" parent="Foreground"]
+position = Vector2( 15, 485 )
+texture = ExtResource( 8 )
+
+[node name="MiscVine04" type="Sprite" parent="Foreground"]
+position = Vector2( 47, 477 )
+texture = ExtResource( 16 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 1048633, 8, 0, 1048634, 8, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 583, 397 )
+texture = ExtResource( 31 )
+texture_scale = 6.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 32 )
+BlendMode = 1
+
+[node name="Light2" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 1237, 589 )
+texture = ExtResource( 31 )
+texture_scale = 6.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 32 )
+BlendMode = 1
+
+[node name="Light3" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 1643, 304 )
+texture = ExtResource( 31 )
+texture_scale = 6.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 32 )
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 720911, 0, 0, 720917, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786453, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786470, 0, 0, 786471, 0, 0, 786472, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 851979, 0, 0, 851989, 0, 0, 852003, 0, 0, 852024, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917560, 0, 0, 1048575, 0, 0, 983080, 0, 0, 983081, 0, 0, 983082, 0, 0, 983083, 0, 0, 983084, 0, 0, 983085, 0, 0, 983086, 0, 0, 983087, 0, 0, 983088, 0, 0, 983089, 0, 0, 983090, 0, 0, 983091, 0, 0, 983096, 0, 0, 1114111, 0, 0, 1048615, 0, 0, 1048616, 0, 0, 1048627, 0, 0, 1048632, 0, 0, 1179647, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0, 1114144, 0, 0, 1114145, 0, 0, 1114146, 0, 0, 1114147, 0, 0, 1114148, 0, 0, 1114149, 0, 0, 1114150, 0, 0, 1114151, 0, 0, 1114163, 0, 0, 1114164, 0, 0, 1114165, 0, 0, 1114166, 0, 0, 1114167, 0, 0, 1114168, 0, 0, 1179659, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_end" type="Node2D" parent="Other/Events"]
+position = Vector2( 60, 512 )
+script = ExtResource( 21 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 64 )
+
+[node name="misc_bath" type="Node2D" parent="Other/Events"]
+position = Vector2( 588, 386 )
+script = ExtResource( 21 )
+Area = Vector2( 73, 32 )
+
+[node name="misc_plants_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 592, 368 )
+script = ExtResource( 21 )
+Event = "Ch1_FairyRing_B1F_Entrance.misc_plants"
+Area = Vector2( 160, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 1728, 480 )
+script = ExtResource( 17 )
+
+[node name="cutscene_camera_bath" type="Node2D" parent="Other/Points"]
+position = Vector2( 588, 416 )
+script = ExtResource( 17 )
+
+[node name="cutscene_lacie_bath" type="Node2D" parent="Other/Points"]
+position = Vector2( 588, 434 )
+script = ExtResource( 17 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="show_lacie_tub" type="Node" parent="Other/Actions"]
+script = ExtResource( 23 )
+Node = NodePath("../../../Main/StructBathtub/LacieTub")
+
+[node name="show_aoi_tub" type="Node" parent="Other/Actions"]
+script = ExtResource( 23 )
+Node = NodePath("../../../Main/StructBathtub/AoiTub")
+
+[node name="aoi_open_eyes" type="Node" parent="Other/Actions"]
+script = ExtResource( 26 )
+Node = NodePath("../../../Main/StructBathtub/AoiTub")
+Frame = 1
+
+[node name="lacie_open_eyes" type="Node" parent="Other/Actions"]
+script = ExtResource( 26 )
+Node = NodePath("../../../Main/StructBathtub/LacieTub")
+Frame = 1
+
+[node name="aoi_turn" type="Node" parent="Other/Actions"]
+script = ExtResource( 26 )
+Node = NodePath("../../../Main/StructBathtub/AoiTub")
+Frame = 2
+
+[node name="lacie_turn" type="Node" parent="Other/Actions"]
+script = ExtResource( 26 )
+Node = NodePath("../../../Main/StructBathtub/LacieTub")
+Frame = 2
+
+[node name="show_melt" type="Node" parent="Other/Actions"]
+script = ExtResource( 23 )
+Node = NodePath("../../../Main/StructBathtub/AoiMelt")
+
+[node name="play_melt" type="Node" parent="Other/Actions"]
+script = ExtResource( 29 )
+Node = NodePath("../../../Main/StructBathtub/AoiMelt")
+
+[node name="fade_melt" type="Node" parent="Other/Actions"]
+script = ExtResource( 30 )
+Node = NodePath("../../../Main/StructBathtub/AoiMelt")
+FadeIn = false
+Duration = 1.0

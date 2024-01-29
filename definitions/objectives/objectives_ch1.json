@@ -1,0 +1,347 @@
+{
+	"objectives": [
+		{
+			"id": "ch1.go_to_room",
+			"name": "Go to your room",
+			"description": "This day needs to end. I want to lie in bed."
+		},
+		{
+			"id": "ch1.ritual_items",
+			"name": "Find the ritual items",
+			"description": "I should gather the items that I'll need for the ritual. Shouldn't be too hard.",
+			"children": [
+				{
+					"id": "paint",
+					"name": "Something red to draw",
+					"description": "I need to find something red to paint or mark the front of the house with."
+				},
+				{
+					"id": "ribbon",
+					"name": "Something red to tie",
+					"description": "I need to find something red to tie onto the phone cord."
+				}
+			]
+		},
+		{
+			"id": "ch1.prepare_ritual",
+			"name": "Prepare the ritual",
+			"description": "I need to prepare the ritual before night time.",
+			"onComplete": ["ch1.talk_to_brother"],
+			"children": [
+				{
+					"id": "paint_front",
+					"name": "Paint symbol",
+					"description": "I need to paint a symbol on the front door of the house. I hope no one will see me..."
+				},
+				{
+					"id": "tie_ribbon",
+					"name": "Tie string on phone cord",
+					"description": "I need to tie a red ribbon on the cord of my landline phone in the kitchen."
+				},
+				{
+					"id": "set_alarm_clock",
+					"name": "Set alarm clock",
+					"description": "I need to set an alarm for midnight."
+				}
+			]
+		},
+		{
+			"id": "ch1.revert_ritual_instructions",
+			"name": "Get the ritual reversal instructions",
+			"description": "I messed up the ritual. I need to undo it by following the steps I left at my PC.",
+			"onComplete": ["ch1.revert_ritual_execution"]
+		},
+		{
+			"id": "ch1.revert_ritual_execution",
+			"name": "Undo the ritual",
+			"description": "I need to undo the ritual for my own safety.",
+			"onComplete": ["ch1.revert_ritual_sleep"],
+			"children": [
+				{
+					"id": "remove_ribbon",
+					"name": "Untie red string"
+				},
+				{
+					"id": "salt_front",
+					"name": "Add salt to front door"
+				},
+				{
+					"id": "salt_back",
+					"name": "Add salt to back door"
+				},
+				{
+					"id": "salt_garage",
+					"name": "Add salt to garage door"
+				}
+			]
+		},
+		{
+			"id": "ch1.revert_ritual_sleep",
+			"name": "Go to sleep",
+			"description": "The ritual reversal is complete. There's nothing left to do other than to get in bed."
+		},
+		{
+			"id": "ch1.talk_to_brother",
+			"name": "Talk to Hiro",
+			"description": "I need to tell Hiro to leave the house...",
+			"onComplete": ["ch1.go_to_sleep"]
+		},
+		{
+			"id": "ch1.go_to_sleep",
+			"name": "Get in bed",
+			"description": "Apparently, I need to lie in bed until the alarm goes off."
+		},
+		{
+			"id": "ch1.dial_number",
+			"name": "Call the Bus",
+			"description": "I need to call the bus. The phone number I should dial is 999281#0.",
+			"onComplete": ["ch1.take_bus"]
+		},
+		{
+			"id": "ch1.take_bus",
+			"name": "Take the Bus",
+			"description": "Get on the bus. Hurry!"
+		},
+		{
+			"id": "ch1.explore_parkinglot",
+			"name": "Look Around",
+			"description": "I arrived somewhere. What do I do now?"
+		},
+
+
+		{
+			"id": "ch1.explore_forest",
+			"name": "Explore the Forest",
+			"description": "I arrived at my destination. Can I find someone to help me?"
+		},
+		{
+			"id": "ch1.rotate_signs",
+			"name": "Rotate the Signs",
+			"description": "I think I can open up a path towards the Daylight Gate if I rotate the blue signs towards the correct direction."
+		},
+		{
+			"id": "ch1.open_daylight_gate",
+			"name": "Open the Daylight Gate",
+			"description": "There's a gate impeding my progress. I need to find a way to open it."
+		},
+		{
+			"id": "ch1.locked_site_enter",
+			"name": "Enter the Locked Site",
+			"description": "Seems like the only way north might be through the Locked Site."
+		},
+		{
+			"id": "ch1.locked_site_light",
+			"name": "Find a Light",
+			"description": "Apparently, I'll' need a light to walk into the Locked Site."
+		},
+		{
+			"id": "ch1.locked_site_keys",
+			"name": "Find 3 Keys",
+			"description": "I found clues to the location of the three keys for the padlocks:\n-Behind a tree\n-In a cactus pot\n-Under a fake rug",
+			"children": [
+				{
+					"id": "key_1",
+					"name": "Key 1"
+				},
+				{
+					"id": "key_2",
+					"name": "Key 2"
+				},
+				{
+					"id": "key_3",
+					"name": "Key 3"
+				}
+			]
+		},
+
+		{
+			"id": "ch1.fairyring_escape",
+			"name": "Find an Exit",
+			"description": "You're trapped inside the fairy ring. Find a way out!"
+		},
+
+		{
+			"id": "ch1.kozmo_find_head",
+			"name": "Find a Head",
+			"description": "Find a new head for Kozmo. Hurry, he seems in danger!",
+			"onComplete": ["ch1.kozmo_give_head"]
+		},
+		{
+			"id": "ch1.kozmo_give_head",
+			"name": "Give the new head to Kozmo",
+			"description": "Kozmo needs his new head. Hurry!"
+		},
+
+		{
+			"id": "ch1.forest_find_lighthouse",
+			"name": "Find the Lighthouse",
+			"description": "By continuing north through the forest, I should be able to find the lighthouse at some point."
+		},
+		{
+			"id": "ch1.forest_lakeside_paddles",
+			"name": "Find Paddles",
+			"description": "There's a boat I can take to continue north, but I need paddles."
+		},
+		{
+			"id": "ch1.forest_lakeside_remove_mermaid",
+			"name": "Get Rid of the Monster",
+			"description": "There's a boat I can take to continue north, but a monster is guarding it."
+		},
+		{
+			"id": "ch1.forest_lakeside_take_boat",
+			"name": "Take the Boat",
+			"description": "Taking the boat might be the only way to continue north."
+		},
+		{
+			"id": "ch1.forest_lakeside_caterpillar",
+			"name": "Get Rid of the Caterpillar",
+			"description": "The moths will reward me with a doorknob if I get rid of the it...",
+			"onComplete": ["ch1.forest_lakeside_moths_reward"]
+		},
+		{
+			"id": "ch1.forest_lakeside_moths_reward",
+			"name": "Get Your Reward",
+			"description": "The moths should reward me with a doorknob now.",
+			"onComplete": ["ch1.forest_lakeside_doorknob"]
+		},
+		{
+			"id": "ch1.forest_lakeside_doorknob",
+			"name": "Use the Doorknob",
+			"description": "I got a doorknob from the moths. It seems to be the only way forward."
+		},
+
+
+		{
+			"id": "ch1.facility_escape_cell",
+			"name": "Escape your prison",
+			"description": "I woke up in a strange prison cell. I need to get out of here."
+		},
+		{
+			"id": "ch1.facility_investigate",
+			"name": "Investigate the facility",
+			"description": "Explore this place.",
+			"onComplete": ["ch1.facility_go_deeper"]
+		},
+		{
+			"id": "ch1.facility_go_deeper",
+			"name": "Find a way to go deeper down",
+			"description": "The only way out of the facility is by going deeper down, according to Rune.",
+			"onComplete": ["ch1.facility_find_door"]
+		},
+		{
+			"id": "ch1.facility_remove_flood",
+			"name": "Lower the water level",
+			"description": "In order to go deeper, the water level may need to be lowered somehow."
+		},
+		{
+			"id": "ch1.facility_fix_elevator",
+			"name": "Fix the elevator",
+			"description": "In order to go deeper, the elevator could perhaps be fixed."
+		},
+		{
+			"id": "ch1.facility_find_door",
+			"name": "Find the cursed door",
+			"description": "Rune said there should be a cursed door that leads outside, somewhere deep in this facility.",
+			"onComplete": ["ch1.return_complete_ritual"]
+		},
+
+
+		{
+			"id": "ch1.mk_find_exit",
+			"name": "Find an exit",
+			"description": "Find a way to leave this strange house.",
+			"onComplete": ["ch1.mk_find_items"]
+		},
+		{
+			"id": "ch1.mk_find_own_items",
+			"name": "Find your items",
+			"description": "Find out what happened to your items and retrieve them."
+		},
+		{
+			"id": "ch1.mk_rescue_sai",
+			"name": "Help Sai escape",
+			"description": "Find a way to unlock the cage Sai is in."
+		},
+		{
+			"id": "ch1.mk_find_items",
+			"name": "Find and Unseal 5 Special Items",
+			"description": "Miss Knives keeps 5 important items in her house. I need to find and unseal each of them.",
+			"onComplete": ["ch1.mk_ask_spider"]
+		},
+		{
+			"id": "ch1.mk_ask_spider",
+			"name": "Ask Spider What To Do Next",
+			"description": "I have the 5 items, but I don't know what to do with them.",
+			"onComplete": ["ch1.mk_burn_items"]
+		},
+		{
+			"id": "ch1.mk_find_lighter",
+			"name": "Find a Lighter",
+			"description": "I need to find something to start a fire with."
+		},
+		{
+			"id": "ch1.mk_burn_items",
+			"name": "Burn the 5 Special Items",
+			"description": "I need to burn the items in the correct order. There's a fireplace I could use."
+		},
+		{
+			"id": "ch1.mk_plant_drink",
+			"name": "Bring Alcohol to the Plant",
+			"description": "One of the plants requires alcohol (or water)."
+		},
+		{
+			"id": "ch1.mk_plant_eat",
+			"name": "Bring Food to the Plant",
+			"description": "One of the plants requires to be fed. Meat is recommended."
+		},
+		{
+			"id": "ch1.mk_plant_music",
+			"name": "Play Music for the Plant",
+			"description": "One of the plants requires music."
+		},
+		{
+			"id": "ch1.mk_plant_flowers",
+			"name": "Bring Flowers to the Plant",
+			"description": "One of the plants requires a flower crown."
+		},
+
+		{
+			"id": "ch1.return_complete_ritual",
+			"name": "Perform the Paper Lily ritual",
+			"description": "In order to open the door, the letter needs to be folded into a paper lily and placed in the jar.",
+			"onComplete": ["ch1.return_go_home"]
+		},
+		{
+			"id": "ch1.return_go_home",
+			"name": "Go through the door",
+			"description": "The door is open. I can go home."
+		},
+
+
+		{
+			"id": "ch1.blackpass_1_leave",
+			"name": "Get to the Wardrobe",
+			"description": "I can only wake up from these dreams when I reach the large wardrobe at the end."
+		},
+		{
+			"id": "ch1.blackpass_2_leave",
+			"name": "Get to the Wardrobe",
+			"description": "I can only wake up from these dreams when I reach the large wardrobe at the end."
+		},
+		{
+			"id": "ch1.blackpass_3_leave",
+			"name": "Get to the Wardrobe",
+			"description": "I can only wake up from these dreams when I reach the large wardrobe at the end."
+		},
+		{
+			"id": "ch1.blackpass_4_leave",
+			"name": "Get to the Wardrobe",
+			"description": "I can only wake up from these dreams when I reach the large wardrobe at the end."
+		},
+		{
+			"id": "ch1.blackpass_mom_quest",
+			"name": "Find a _____ for mom",
+			"description": "It's in a closet in the garage."
+		}
+	]
+}

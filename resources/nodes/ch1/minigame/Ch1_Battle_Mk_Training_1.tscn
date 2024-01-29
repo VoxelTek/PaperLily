@@ -1,0 +1,100 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://resources/material/sfx_squishscroll.tres" type="Material" id=1]
+[ext_resource path="res://resources/material/transition_saw.tres" type="Material" id=2]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/mk_atk_knife.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/default_panel_mask.png" type="Texture" id=4]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1MinigameBattleMkIntro.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/panel_exclamation.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/mk_panel.png" type="Texture" id=7]
+[ext_resource path="res://assets/sfx/battle_intro.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/sprite/common/minigame/battle/hud_hp_full.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/common/minigame/battle/hud_lacie.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/common/minigame/battle/hud_hp_empty.png" type="Texture" id=11]
+[ext_resource path="res://assets/sfx/slice2.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sfx/minigame_death.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sfx/minigame_damage.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/mk_bg.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/common/tiles_black.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/mk_atk_knife_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sfx/ch1_stab.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sfx/fire2.ogg" type="AudioStream" id=19]
+[ext_resource path="res://assets/sprite/ch1/minigame/battle/mk_atk_knife_3.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/common/sfx/anim_fire_8x1.png" type="Texture" id=21]
+[ext_resource path="res://assets/sfx/ch1_throw.ogg" type="AudioStream" id=22]
+
+[node name="Ch1_Battle_Mk_Training_1" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -186.0
+margin_bottom = -39.0
+rect_min_size = Vector2( 640, 360 )
+script = ExtResource( 5 )
+CellPadding = Vector2( 1, 1 )
+PlayArea = Rect2( 0, 64, 640, 232 )
+texPanel = ExtResource( 7 )
+texPanelMask = ExtResource( 4 )
+texPanelAlert = ExtResource( 6 )
+SuccessEvent = "ch1_event_mk_intro_clear"
+FailureEvent = "ch1_death_impact_nosound"
+TimeoutWin = true
+TimeoutTime = 16.5
+PlayerColor = Color( 1, 1, 1, 0.117647 )
+TelegraphColor = Color( 1, 0.501961, 0.501961, 1 )
+TelegraphColor2 = Color( 1, 1, 1, 1 )
+DamageColor = Color( 1, 0.788235, 0.419608, 0.392157 )
+matTransition = ExtResource( 2 )
+sfxTransition = ExtResource( 8 )
+sfxDamage = ExtResource( 14 )
+sfxDeath = ExtResource( 13 )
+texUi = ExtResource( 10 )
+texHpFull = ExtResource( 9 )
+texHpEmpty = ExtResource( 11 )
+texKnife = ExtResource( 3 )
+texKnifePanel = ExtResource( 17 )
+texKnifeSlash = ExtResource( 20 )
+texFire = ExtResource( 21 )
+sfxStab = ExtResource( 18 )
+sfxSlash = ExtResource( 12 )
+sfxThrow = ExtResource( 22 )
+sfxFire = ExtResource( 19 )
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+scale = Vector2( 20, 11.25 )
+texture = ExtResource( 16 )
+
+[node name="BgAnim" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.4 )
+material = ExtResource( 1 )
+position = Vector2( 319.679, 180 )
+scale = Vector2( 0.642, 0.514286 )
+texture = ExtResource( 15 )
+offset = Vector2( 0.5, 0 )
+
+[node name="BlackBar" type="Sprite" parent="."]
+position = Vector2( 320, 328 )
+scale = Vector2( 20, 2 )
+texture = ExtResource( 16 )
+
+[node name="BlackBar2" type="Sprite" parent="."]
+position = Vector2( 320, 32 )
+scale = Vector2( 20, 2 )
+texture = ExtResource( 16 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 0, -0.5 )
+points = PoolVector2Array( 0, 64, 640, 64 )
+width = 1.0
+default_color = Color( 0.231373, 0.176471, 0.321569, 1 )
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2( 0, 232.5 )
+points = PoolVector2Array( 0, 64, 640, 64 )
+width = 1.0
+default_color = Color( 0.231373, 0.176471, 0.321569, 1 )
+
+[node name="PlayArea" type="Node2D" parent="."]
+position = Vector2( 0, 64 )
+
+[node name="Main" type="YSort" parent="."]

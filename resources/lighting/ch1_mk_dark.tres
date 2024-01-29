@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/common/lights/Light_Candle.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.0128205, 0.259259, 0.833333, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.209579, 0.222615, 0.261719, 1, 0.70556, 0.532776, 0.792969, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[resource]
+script = ExtResource( 1 )
+Modulate = Color( 0.117647, 0.168627, 0.227451, 1 )
+UseNormals = false
+PlayerLightNode = ExtResource( 2 )
+PlayerLightState = true
+PlayerLightEnergy = 0.5
+PlayerLightMode = 2
+EnvironmentLightMode = 0
+GlowLevel = 4
+ColorCorrection = SubResource( 2 )
+BackgroundColor = Color( 0, 0, 0, 1 )

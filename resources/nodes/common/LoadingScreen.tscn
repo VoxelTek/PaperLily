@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/img/ui/loading.png" type="Texture" id=1]
+[ext_resource path="res://script/UI/Nodes/AnimatedTextureRect.cs" type="Script" id=2]
+[ext_resource path="res://script/UI/LoadingScreen.cs" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 5
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 190, 190 )
+
+[node name="LoadingScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="LoadingIndicatorContainer" type="MarginContainer" parent="."]
+anchor_left = 0.98
+anchor_top = 0.98
+anchor_right = 0.98
+anchor_bottom = 0.98
+margin_left = -40.0
+margin_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="LoadingIndicator" type="TextureRect" parent="LoadingIndicatorContainer"]
+visible = false
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture = SubResource( 1 )
+expand = true
+script = ExtResource( 2 )
+Texture = ExtResource( 1 )
+Hframes = 8
+FPS = 10.0

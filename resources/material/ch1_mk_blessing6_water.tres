@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://resources/shader/sfx_water.gdshader" type="Shader" id=1]
+[ext_resource path="res://assets/sprite/common/sfx/water_cel_scale.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/common/sfx/noise_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/common/sfx/noise_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/common/sfx/water_sparkle.png" type="Texture" id=5]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/water_color = Color( 0.392157, 0.0431373, 0.819608, 1 )
+shader_param/water_shine_color = Color( 0.87451, 0.435294, 0.827451, 1 )
+shader_param/water_transparency = 1.0
+shader_param/manual_time_enabled = false
+shader_param/manual_time = 0.0
+shader_param/water_flow_direction_rad = 0.0
+shader_param/water_flow_speed = 1.0
+shader_param/water_chaos_speed = 1.2
+shader_param/water_still = true
+shader_param/sparkle_amount = 0.0
+shader_param/sparkle_speed = 0.0
+shader_param/fps_limit = 12.0
+shader_param/blob_noise = ExtResource( 4 )
+shader_param/sparkle_texture = ExtResource( 5 )
+shader_param/random_noise = ExtResource( 3 )
+shader_param/cel_scale = ExtResource( 2 )

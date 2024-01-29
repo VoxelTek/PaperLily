@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://script/Subgame/Tutorials/Tutorial.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/tutorial/documents.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Documents"
+Text = "Your papers and notes are stored in the notebook in your inventory."
+Image = ExtResource( 2 )
+Inputs = null

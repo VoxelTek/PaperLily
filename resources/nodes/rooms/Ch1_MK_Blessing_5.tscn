@@ -1,0 +1,303 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/chr_guesswho.png" type="Texture" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_4.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/bg.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/misc_stake.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/misc_knife.png" type="Texture" id=12]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=13]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=14]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=15]
+[ext_resource path="res://script/Core/Nodes/ActionPlayerStateOverride.cs" type="Script" id=16]
+[ext_resource path="res://script/Core/Nodes/ActionPlayerSpeed.cs" type="Script" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_cobblestone_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_cobblestone_2.png" type="Texture" id=19]
+[ext_resource path="res://script/Core/Nodes/ActionFade2D.cs" type="Script" id=20]
+[ext_resource path="res://assets/sprite/ch1/mk/common/floor_cobblestone_3.png" type="Texture" id=21]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=22]
+[ext_resource path="res://script/Core/Nodes/ActionPositionPlayerAlign.cs" type="Script" id=23]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/misc_wood.png-2e49ba30220160a7153c419d20ea6921.stex"
+
+[node name="Ch1_MK_Blessing_5" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CobblestoneOut" type="Node2D" parent="Background"]
+visible = false
+
+[node name="FloorCobblestone1" type="Sprite" parent="Background/CobblestoneOut"]
+position = Vector2( 0, -14 )
+texture = ExtResource( 18 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone2" type="Sprite" parent="Background/CobblestoneOut"]
+position = Vector2( 0, -78 )
+texture = ExtResource( 18 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone3" type="Sprite" parent="Background/CobblestoneOut"]
+position = Vector2( 0, -141 )
+texture = ExtResource( 19 )
+
+[node name="Background" type="Node2D" parent="Background"]
+
+[node name="Bg" type="Sprite" parent="Background/Background"]
+position = Vector2( 215, 95 )
+texture = ExtResource( 7 )
+
+[node name="Floor1" type="Sprite" parent="Background/Background"]
+position = Vector2( 89, 220 )
+texture = ExtResource( 9 )
+
+[node name="Floor2" type="Sprite" parent="Background/Background"]
+position = Vector2( 128, 264 )
+texture = ExtResource( 10 )
+
+[node name="Floor3" type="Sprite" parent="Background/Background"]
+position = Vector2( 324, 225 )
+texture = ExtResource( 8 )
+
+[node name="Floor4" type="Sprite" parent="Background/Background"]
+position = Vector2( 303, 273 )
+texture = ExtResource( 6 )
+
+[node name="CobblestoneIn" type="Node2D" parent="Background/Background"]
+position = Vector2( 224, 827 )
+
+[node name="FloorCobblestone1" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 201 )
+texture = ExtResource( 18 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone2" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 137 )
+texture = ExtResource( 18 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone3" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 74 )
+texture = ExtResource( 19 )
+
+[node name="FloorCobblestone4" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, 11 )
+texture = ExtResource( 19 )
+
+[node name="FloorCobblestone5" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -51 )
+texture = ExtResource( 21 )
+
+[node name="FloorCobblestone6" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -115 )
+texture = ExtResource( 21 )
+
+[node name="FloorCobblestone7" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -179 )
+texture = ExtResource( 21 )
+
+[node name="FloorCobblestone8" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -243 )
+texture = ExtResource( 21 )
+
+[node name="FloorCobblestone9" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -307 )
+texture = ExtResource( 21 )
+
+[node name="FloorCobblestone10" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -372 )
+texture = ExtResource( 19 )
+
+[node name="FloorCobblestone11" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -435 )
+texture = ExtResource( 19 )
+
+[node name="FloorCobblestone12" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -501 )
+texture = ExtResource( 18 )
+offset = Vector2( 0.5, 0 )
+
+[node name="FloorCobblestone13" type="Sprite" parent="Background/Background/CobblestoneIn"]
+position = Vector2( 0, -564 )
+texture = ExtResource( 18 )
+offset = Vector2( 0.5, 0 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stake" type="Sprite" parent="Main"]
+position = Vector2( 217, 130 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -50 )
+hframes = 2
+
+[node name="MiscKnife" type="Sprite" parent="Main/Stake"]
+position = Vector2( 14, -39 )
+texture = ExtResource( 12 )
+
+[node name="StakeHiro" type="Sprite" parent="Main"]
+visible = false
+position = Vector2( 222, 130 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -50 )
+hframes = 2
+
+[node name="Wood" type="Sprite" parent="Main"]
+position = Vector2( 223, 139 )
+texture = SubResource( 1 )
+offset = Vector2( 0, -6 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 1, 2, 131080, 1, 3, 131081, 0, 0, 131082, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 524293, 0, 0, 524296, 0, 0, 589829, 0, 0, 589832, 0, 0, 655365, 0, 0, 655368, 0, 0, 720901, 0, 0, 720904, 0, 0, 786437, 0, 0, 786440, 0, 0, 851973, 0, 0, 851976, 0, 0, 917509, 0, 0, 917512, 0, 0, 983045, 0, 0, 983048, 0, 0, 1048581, 0, 0, 1048584, 0, 0, 1114117, 0, 0, 1114120, 0, 0, 1179653, 0, 0, 1179656, 0, 0, 1245189, 0, 0, 1245192, 0, 0, 1310725, 0, 0, 1310728, 0, 0, 1376261, 0, 0, 1376264, 0, 0, 1441797, 0, 0, 1441800, 0, 0, 1507333, 0, 0, 1507336, 0, 0, 1572869, 0, 0, 1572872, 0, 0, 1638405, 0, 0, 1638408, 0, 0, 1703941, 0, 0, 1703944, 0, 0, 1769477, 0, 0, 1769480, 0, 0, 1835013, 0, 0, 1835016, 0, 0, 1900549, 0, 0, 1900552, 0, 0, 1966085, 0, 0, 1966088, 0, 0, 2031621, 0, 0, 2031624, 0, 0, 2097157, 0, 0, 2097160, 0, 0, 2162693, 0, 0, 2162694, 1, 1, 2162695, 1, 1, 2162696, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( 113, 96, 113, 108, 126, 118, 152, 122, 152, 127, 140, 134, 118, 138, 91, 151, 91, 159, 99, 168, 118, 176, 118, 181, 118, 187, 138, 191, 142, 196, 133, 201, 127, 201, 121, 204, 125, 210, 138, 216, 152, 218, 160, 224, 64, 224, 64, 96 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Other/Boundary"]
+polygon = PoolVector2Array( 332, 96, 332, 103, 313, 116, 313, 123, 327, 124, 333, 138, 339, 142, 339, 147, 314, 157, 307, 169, 311, 174, 332, 181, 332, 187, 322, 194, 308, 199, 298, 208, 256, 209, 256, 224, 352, 224, 352, 96 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_stake" type="Node2D" parent="Other/Events"]
+position = Vector2( 222, 140 )
+script = ExtResource( 14 )
+Area = Vector2( 76, 26 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 224, 1040 )
+script = ExtResource( 13 )
+Direction = 2
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="lacie_limp" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+
+[node name="limp_stand" type="Node" parent="Other/Actions/lacie_limp"]
+script = ExtResource( 16 )
+OldState = "walk"
+NewState = "limp_walk"
+
+[node name="limp_walk" type="Node" parent="Other/Actions/lacie_limp"]
+script = ExtResource( 16 )
+OldState = "stand"
+NewState = "shadow_stand"
+
+[node name="walk_slow" type="Node" parent="Other/Actions/lacie_limp"]
+script = ExtResource( 17 )
+Multiplier = 0.4
+
+[node name="hide_bg" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+
+[node name="hide_background" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 20 )
+Node = NodePath("../../../../Background/Background")
+FadeIn = false
+Duration = 2.0
+
+[node name="hide_stake" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 20 )
+Node = NodePath("../../../../Main/Stake")
+FadeIn = false
+Duration = 2.0
+
+[node name="hide_wood" type="Node" parent="Other/Actions/hide_bg"]
+script = ExtResource( 20 )
+Node = NodePath("../../../../Main/Wood")
+FadeIn = false
+Duration = 2.0
+
+[node name="show_hiro" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+
+[node name="hide_stake_1" type="Node" parent="Other/Actions/show_hiro"]
+script = ExtResource( 22 )
+Node = NodePath("../../../../Main/Stake")
+Visible = false
+
+[node name="show_stake_2" type="Node" parent="Other/Actions/show_hiro"]
+script = ExtResource( 22 )
+Node = NodePath("../../../../Main/StakeHiro")
+
+[node name="hide_hiro" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+
+[node name="show_stake_1" type="Node" parent="Other/Actions/hide_hiro"]
+script = ExtResource( 22 )
+Node = NodePath("../../../../Main/Stake")
+
+[node name="hide_stake_2" type="Node" parent="Other/Actions/hide_hiro"]
+script = ExtResource( 22 )
+Node = NodePath("../../../../Main/StakeHiro")
+Visible = false
+
+[node name="hide_knife" type="Node" parent="Other/Actions"]
+script = ExtResource( 22 )
+Node = NodePath("../../../Main/Stake/MiscKnife")
+Visible = false
+
+[node name="show_path" type="Node" parent="Other/Actions"]
+script = ExtResource( 15 )
+
+[node name="align" type="Node" parent="Other/Actions/show_path"]
+script = ExtResource( 23 )
+Node = NodePath("../../../../Background/CobblestoneOut")
+
+[node name="fade_in" type="Node" parent="Other/Actions/show_path"]
+script = ExtResource( 20 )
+Node = NodePath("../../../../Background/CobblestoneOut")
+Duration = 2.0

@@ -1,0 +1,378 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1MkBedroom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/wall_column.png" type="Texture" id=3]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=4]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/misc_box.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/floor_carpets.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/furniture_nightstand.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/wall_window.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/furniture_vanity.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/wall_curtain.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/wall_lights.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/wall_lights2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/mk/common/misc_hanger.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/furniture_stool.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/furniture_bed.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/misc_basket.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=17]
+[ext_resource path="res://assets/bgm/ch1_mk_d.ogg" type="AudioStream" id=18]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=19]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/misc_compress.png" type="Texture" id=20]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=21]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=22]
+[ext_resource path="res://resources/nodes/ch1/mk/mk_darkness.tscn" type="PackedScene" id=23]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=24]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=25]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=26]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/mk/bedroom/misc_bear.png" type="Texture" id=28]
+[ext_resource path="res://script/Nodes/ChairV2.cs" type="Script" id=29]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=30]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=31]
+[ext_resource path="res://resources/lighting/ch1_mk_dark.tres" type="Resource" id=32]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=33]
+
+[node name="Ch1_MK_Bedroom" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitTop = -32
+CameraLimitBottom = 512
+Bgm = ExtResource( 18 )
+HideFollowers = true
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 8, 0, 1, 8, 1, 2, 8, 1, 3, 8, 1, 4, 8, 1, 5, 8, 1, 6, 8, 1, 7, 8, 1, 8, 8, 1, 9, 8, 1, 10, 8, 1, 11, 8, 2, 65536, 8, 131072, 65537, 8, 131073, 65538, 8, 65537, 65539, 8, 65537, 65540, 8, 131073, 65541, 8, 131073, 65542, 8, 131073, 65543, 8, 131073, 65544, 8, 65537, 65545, 8, 65537, 65546, 8, 65537, 65547, 8, 131074, 131072, 8, 131072, 131073, 8, 65537, 131074, 8, 65537, 131075, 8, 131073, 131076, 8, 131073, 131077, 8, 65537, 131078, 8, 65537, 131079, 8, 65537, 131080, 8, 131073, 131081, 8, 65537, 131082, 8, 65537, 131083, 8, 131074, 196608, 8, 65536, 196609, 8, 131073, 196610, 8, 65537, 196611, 8, 65537, 196612, 8, 65537, 196613, 8, 131073, 196614, 8, 131073, 196615, 8, 65537, 196616, 8, 131073, 196617, 8, 131073, 196618, 8, 131073, 196619, 8, 65538, 262144, 8, 65536, 262145, 8, 131073, 262146, 8, 65537, 262147, 8, 65537, 262148, 8, 65537, 262149, 8, 65537, 262150, 8, 131073, 262151, 8, 65537, 262152, 8, 131073, 262153, 8, 65537, 262154, 8, 131073, 262155, 8, 131074, 327680, 8, 196608, 327681, 8, 196609, 327682, 8, 196609, 327683, 8, 196609, 327684, 8, 196609, 327685, 8, 196609, 327686, 8, 196609, 327687, 8, 196609, 327688, 8, 196609, 327689, 8, 196609, 327690, 8, 196609, 327691, 8, 196610, 393216, 6, 0, 393217, 6, 0, 393218, 6, 0, 393219, 6, 0, 393220, 6, 0, 393221, 6, 0, 393222, 6, 0, 393223, 6, 0, 393224, 6, 0, 393225, 6, 0, 393226, 6, 0, 393227, 6, 0, 458752, 6, 0, 458753, 6, 0, 458754, 6, 0, 458755, 6, 0, 458756, 6, 0, 458757, 6, 0, 458758, 6, 0, 458759, 6, 0, 458760, 6, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 524288, 6, 0, 524289, 6, 0, 524290, 6, 0, 524291, 6, 0, 524292, 6, 0, 524293, 6, 0, 524294, 6, 0, 524295, 6, 0, 524296, 6, 0, 524297, 6, 0, 524298, 6, 0, 524299, 6, 0, 589824, 6, 0, 589825, 6, 0, 589826, 6, 0, 589827, 6, 0, 589828, 6, 0, 589829, 6, 0, 589830, 6, 0, 589831, 6, 0, 589832, 6, 0, 589833, 6, 0, 589834, 6, 0, 589835, 6, 0, 655360, 6, 0, 655361, 6, 0, 655362, 6, 0, 655363, 6, 0, 655364, 6, 0, 655365, 6, 0, 655366, 6, 0, 655367, 6, 0, 655368, 6, 0, 655369, 6, 0, 655370, 6, 0, 655371, 6, 0, 720896, 6, 0, 720897, 6, 0, 720898, 6, 0, 720899, 6, 0, 720900, 6, 0, 720901, 6, 0, 720902, 6, 0, 720903, 6, 0, 720904, 6, 0, 720905, 6, 0, 720906, 6, 0, 720907, 6, 0, 786432, 6, 0, 786433, 6, 0, 786434, 6, 0, 786435, 6, 0, 786436, 6, 0, 786437, 6, 0, 786438, 6, 0, 786439, 6, 0, 786440, 6, 0, 786441, 6, 0, 786442, 6, 0, 786443, 6, 0, 851968, 6, 0, 851969, 6, 0, 851970, 6, 0, 851971, 6, 0, 851972, 6, 0, 851973, 6, 0, 851974, 6, 0, 851975, 6, 0, 851976, 6, 0, 851977, 6, 0, 851978, 6, 0, 851979, 6, 0, 917509, 6, 0, 917510, 6, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_carpets" type="Sprite" parent="Background"]
+position = Vector2( 182, 306 )
+texture = ExtResource( 6 )
+
+[node name="wall_column" type="Sprite" parent="Background"]
+position = Vector2( 88, 96 )
+texture = ExtResource( 3 )
+
+[node name="wall_column2" type="Sprite" parent="Background"]
+position = Vector2( 297, 96 )
+texture = ExtResource( 3 )
+
+[node name="furniture_nightstand" type="Sprite" parent="Background"]
+position = Vector2( 94, 194 )
+texture = ExtResource( 7 )
+
+[node name="furniture_nightstand2" type="Sprite" parent="Background"]
+position = Vector2( 291, 194 )
+texture = ExtResource( 7 )
+
+[node name="wall_window" type="Sprite" parent="Background"]
+position = Vector2( 40, 93 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="wall_window2" type="Sprite" parent="Background"]
+position = Vector2( 344, 93 )
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
+
+[node name="misc_hanger" type="Sprite" parent="Background"]
+position = Vector2( 67, 171 )
+texture = ExtResource( 13 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bed" type="Node2D" parent="Main"]
+position = Vector2( 192, 303 )
+
+[node name="Bed" type="Sprite" parent="Main/Bed"]
+position = Vector2( 0, -126 )
+texture = ExtResource( 15 )
+
+[node name="Compress" type="Sprite" parent="Main/Bed/Bed"]
+position = Vector2( 51, 87 )
+texture = ExtResource( 20 )
+
+[node name="MkDarkness" parent="Main/Bed/Bed/Compress" instance=ExtResource( 23 )]
+
+[node name="MiscBear" type="Sprite" parent="Main/Bed/Bed"]
+position = Vector2( -28, 42 )
+texture = ExtResource( 28 )
+
+[node name="basket" type="Node2D" parent="Main"]
+position = Vector2( 359, 432 )
+
+[node name="misc_basket" type="Sprite" parent="Main/basket"]
+position = Vector2( 0, -19 )
+texture = ExtResource( 16 )
+hframes = 2
+frame = 1
+
+[node name="furniture_stool" type="Sprite" parent="Main"]
+position = Vector2( 76, 416 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, 12 )
+
+[node name="Vanity" type="Node2D" parent="Main"]
+position = Vector2( 16, 383 )
+
+[node name="Vanity" type="Sprite" parent="Main/Vanity"]
+position = Vector2( 0, 5 )
+texture = ExtResource( 9 )
+
+[node name="Box" type="Sprite" parent="Main/Vanity/Vanity"]
+position = Vector2( 1, -20 )
+texture = ExtResource( 5 )
+
+[node name="curtains" type="Node2D" parent="Main"]
+position = Vector2( 11, 213 )
+
+[node name="wall_curtain" type="Sprite" parent="Main/curtains"]
+position = Vector2( 13, -102 )
+texture = ExtResource( 10 )
+
+[node name="wall_curtain2" type="Sprite" parent="Main/curtains"]
+position = Vector2( 349, -102 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 7, 196610, -65537, 7, 196610, -131072, 7, 196610, -131071, 7, 196610, -131070, 7, 196610, -131069, 7, 196610, -131068, 7, 196610, -131067, 7, 196610, -131066, 7, 196610, -131065, 7, 196610, -131064, 7, 196610, -131063, 7, 196610, -131062, 7, 196610, -131061, 7, 196610, -131060, 7, 196610, -131059, 7, 196610, -2, 7, 196610, -1, 7, 65539, -65536, 7, 262146, -65535, 7, 262146, -65534, 7, 262146, -65533, 7, 262146, -65532, 7, 262146, -65531, 7, 262146, -65530, 7, 262146, -65529, 7, 262146, -65528, 7, 262146, -65527, 7, 262146, -65526, 7, 262146, -65525, 7, 262146, -65524, 7, 65538, -65523, 7, 196610, 65534, 7, 196610, 65535, 7, 196611, 12, 7, 196609, 13, 7, 196610, 131070, 7, 196610, 131071, 7, 196611, 65548, 7, 196609, 65549, 7, 196610, 196606, 7, 196610, 196607, 7, 196611, 131084, 7, 196609, 131085, 7, 196610, 262142, 7, 196610, 262143, 7, 196611, 196620, 7, 196609, 196621, 7, 196610, 327678, 7, 196610, 327679, 7, 196611, 262156, 7, 196609, 262157, 7, 196610, 393214, 7, 196610, 393215, 7, 196611, 327692, 7, 196609, 327693, 7, 196610, 458750, 7, 196610, 458751, 7, 196611, 393228, 7, 196609, 393229, 7, 196610, 524286, 7, 196610, 524287, 7, 196611, 458764, 7, 196609, 458765, 7, 196610, 589822, 7, 196610, 589823, 7, 196611, 524300, 7, 196609, 524301, 7, 196610, 655358, 7, 196610, 655359, 7, 196611, 589836, 7, 196609, 589837, 7, 196610, 720894, 7, 196610, 720895, 7, 196611, 655372, 7, 196609, 655373, 7, 196610, 786430, 7, 196610, 786431, 7, 196611, 720908, 7, 196609, 720909, 7, 196610, 851966, 7, 196610, 851967, 7, 196611, 786444, 7, 196609, 786445, 7, 196610, 917502, 7, 196610, 917503, 7, 196611, 851980, 7, 196609, 851981, 7, 196610, 983038, 7, 196610, 983039, 7, 3, 917504, 7, 131074, 917505, 7, 131074, 917506, 7, 131074, 917507, 7, 131074, 917508, 7, 131075, 917511, 7, 131073, 917512, 7, 131074, 917513, 7, 131074, 917514, 7, 131074, 917515, 7, 131074, 917516, 7, 2, 917517, 7, 196610, 1048574, 7, 196610, 1048575, 7, 196610, 983040, 7, 196610, 983041, 7, 196610, 983042, 7, 196610, 983043, 7, 196610, 983044, 7, 196610, 983045, 7, 196610, 983046, 7, 196610, 983047, 7, 196610, 983048, 7, 196610, 983049, 7, 196610, 983050, 7, 196610, 983051, 7, 196610, 983052, 7, 196610, 983053, 7, 196610, 1114110, 7, 196610, 1114111, 7, 196610, 1048576, 7, 196610, 1048577, 7, 196610, 1048578, 7, 196610, 1048579, 7, 196610, 1048580, 7, 196610, 1048581, 7, 196610, 1048582, 7, 196610, 1048583, 7, 196610, 1048584, 7, 196610, 1048585, 7, 196610, 1048586, 7, 196610, 1048587, 7, 196610, 1048588, 7, 196610, 1048589, 7, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wall_lights" type="Sprite" parent="Foreground"]
+position = Vector2( 71, 48 )
+texture = ExtResource( 11 )
+
+[node name="wall_lights2" type="Sprite" parent="Foreground"]
+position = Vector2( 276, 78 )
+texture = ExtResource( 12 )
+
+[node name="fadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 155, 480 )
+scale = Vector2( 0.585937, -0.25 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 31 )
+Default = true
+Lighting = ExtResource( 26 )
+
+[node name="Light12" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 71, 58 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Light13" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 238, 43 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Light14" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 354, 122 )
+texture = ExtResource( 27 )
+texture_scale = 3.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Light15" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 188, 396 )
+texture = ExtResource( 27 )
+texture_scale = 5.0
+color = Color( 0.564706, 1, 0.807843, 1 )
+energy = 0.6
+range_item_cull_mask = 3
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 31 )
+Lighting = ExtResource( 32 )
+
+[node name="Light13" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( 182, 240 )
+texture = ExtResource( 27 )
+texture_scale = 6.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_window_left" type="Node2D" parent="Other/Events"]
+position = Vector2( 40, 176 )
+script = ExtResource( 19 )
+Event = "misc_window"
+Area = Vector2( 48, 32 )
+
+[node name="misc_window_right" type="Node2D" parent="Other/Events"]
+position = Vector2( 344, 176 )
+script = ExtResource( 19 )
+Event = "misc_window"
+Area = Vector2( 48, 32 )
+
+[node name="misc_table_left" type="Node2D" parent="Other/Events"]
+position = Vector2( 94, 198 )
+script = ExtResource( 19 )
+Event = "misc_table"
+
+[node name="misc_table_right" type="Node2D" parent="Other/Events"]
+position = Vector2( 290, 198 )
+script = ExtResource( 19 )
+Event = "misc_table"
+
+[node name="misc_hanger" type="Node2D" parent="Other/Events"]
+position = Vector2( 70, 192 )
+script = ExtResource( 19 )
+
+[node name="misc_basket" type="Node2D" parent="Other/Events"]
+position = Vector2( 359, 430 )
+script = ExtResource( 4 )
+Area = Vector2( 26, 14 )
+
+[node name="misc_vanity" type="Node2D" parent="Other/Events"]
+position = Vector2( 16, 411 )
+script = ExtResource( 19 )
+Area = Vector2( 32, 96 )
+
+[node name="misc_box" type="Node2D" parent="Other/Events"]
+position = Vector2( 15, 383 )
+script = ExtResource( 19 )
+Area = Vector2( 32, 40 )
+
+[node name="misc_bed" type="Node2D" parent="Other/Events"]
+position = Vector2( 192, 243 )
+script = ExtResource( 19 )
+Area = Vector2( 160, 122 )
+
+[node name="item_compress_get" type="Node2D" parent="Other/Events"]
+position = Vector2( 244, 296 )
+script = ExtResource( 19 )
+Directions = 2
+Area = Vector2( 32, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 192, 496 )
+script = ExtResource( 19 )
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 192, 464 )
+script = ExtResource( 22 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="cold_compress" type="Node" parent="Other/Updates"]
+script = ExtResource( 25 )
+Variable = "ch1.mk_took_compress"
+Node = NodePath("../../../Main/Bed/Bed/Compress")
+Invert = true
+
+[node name="creepy_lighting" type="Node" parent="Other/Updates"]
+script = ExtResource( 30 )
+Variable = "general.serious"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")
+
+[node name="stool" type="Node2D" parent="Other"]
+position = Vector2( 75, 430 )
+script = ExtResource( 29 )
+Area = Vector2( 23, 32 )
+Directions = 13
+RelatedNode = NodePath("../../Main/furniture_stool")
+PlayerOffsetLeft = Vector2( 12, 0 )
+PlayerOffsetRight = Vector2( -11, 0 )
+PlayerOffsetDown = Vector2( 0, -21 )

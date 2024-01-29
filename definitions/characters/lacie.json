@@ -1,0 +1,151 @@
+{
+	"Name": "Lacie",
+	"Sprites": [
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 9,
+			"Vframes": 2,
+			"LeftFrames": "0,0,0,1,2,3,4,5,4,5,4,5,4,3,6,7,0,8,0,8,0",
+			"UpFrames": "9,9,9,10,11,12,13,14,13,14,13,14,13,12,15,16,9,17,9,17,9",
+			"RightFrames": "0,0,0,1,2,3,4,5,4,5,4,5,4,3,6,7,0,8,0,8,0",
+			"DownFrames": "0,0,0,1,2,3,4,5,4,5,4,5,4,3,6,7,0,8,0,8,0",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "sneak",
+			"TextureSuffix": "sneak",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "3,4,3,5",
+			"UpFrames": "9,10,9,11",
+			"RightFrames": "6,7,6,8",
+			"DownFrames": "1,0,2,0",
+			"Fps": 5,
+			"Loop": true
+		},
+		{
+			"State": "sit",
+			"TextureSuffix": "sit",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,0",
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		},
+		{
+			"State": "shadow_stand",
+			"TextureSuffix": "shadow",
+			"Hframes": 9,
+			"Vframes": 4,
+			"LeftFrames": "9",
+			"UpFrames": "27",
+			"RightFrames": "18",
+			"DownFrames": "0"
+		},
+		{
+			"State": "shadow_walk",
+			"TextureSuffix": "shadow",
+			"Hframes": 9,
+			"Vframes": 4,
+			"LeftFrames": "10,9,11,9",
+			"UpFrames": "28,27,29,27",
+			"RightFrames": "19,18,20,18",
+			"DownFrames": "1,0,2,0",
+			"Fps": 6,
+			"Loop": true
+		},
+		{
+			"State": "push",
+			"TextureSuffix": "push",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "1,0",
+			"UpFrames": "4,3,5,3",
+			"RightFrames": "7,6",
+			"DownFrames": "10,9,11,9",
+			"Fps": 3,
+			"Loop": true
+		},
+		{
+			"State": "push_stand",
+			"TextureSuffix": "push",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "0",
+			"UpFrames": "3",
+			"RightFrames": "6",
+			"DownFrames": "9"
+		},
+		{
+			"State": "battle_idle",
+			"TextureSuffix": "battle",
+			"Hframes": 2,
+			"Vframes": 1,
+			"Offset": "0,-21",
+			"DownFrames": "0,1",
+			"Fps": 2.5,
+			"Loop": true
+		},
+		{
+			"State": "battle_move",
+			"TextureSuffix": "battle_move",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,-21",
+			"LeftFrames": "0",
+			"UpFrames": "1",
+			"RightFrames": "2",
+			"DownFrames": "3"
+		},
+		{
+			"State": "fall",
+			"TextureSuffix": "fall",
+			"Hframes": 4,
+			"Vframes": 1,
+			"Offset": "0,-14",
+			"LeftFrames": "0,1,2,3",
+			"UpFrames": "0,1,2,3",
+			"Rightrames": "0,1,2,3",
+			"DownFrames": "0,1,2,3",
+			"Fps": 15,
+			"Loop": false
+		},
+		{
+			"State": "collapse",
+			"TextureSuffix": "collapse",
+			"Hframes": 8,
+			"Vframes": 1,
+			"Offset": "0,-14",
+			"DownFrames": "0,0,1,1,2,2,3,4,5,5,5,5,5,5,6,6,6,6,6,6,6,6,7",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "collapsed",
+			"TextureSuffix": "collapse",
+			"Hframes": 8,
+			"Vframes": 1,
+			"Offset": "0,-14",
+			"LeftFrames": "7",
+			"UpFrames": "7",
+			"RightFrames": "7",
+			"DownFrames": "7"
+		},
+		{
+			"State": "limp_walk",
+			"TextureSuffix": "limp",
+			"Hframes": 4,
+			"Vframes": 4,
+			"LeftFrames": "4,5,6,7",
+			"UpFrames": "12,13,14,15",
+			"RightFrames": "8,9,10,11",
+			"DownFrames": "0,1,2,3",
+			"Fps": 4,
+			"Loop": true
+		}
+	]
+}

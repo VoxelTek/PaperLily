@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Artist_3F.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprite/ch1/forest/artist/chr_candleman.png" type="Texture" id=3]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=4]
+[ext_resource path="res://resources/lighting/ch1_forest_artist.tres" type="Resource" id=5]
+[ext_resource path="res://assets/bgm/ch1_forest_a.ogg" type="AudioStream" id=6]
+
+[node name="Ch1_Cutscene_Candleman" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 5 )
+Bgm = ExtResource( 6 )
+BgmCrossfade = true
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="ChrCandleman" type="Sprite" parent="Room/Main" index="1"]
+position = Vector2( 169, 140 )
+texture = ExtResource( 3 )
+hframes = 3
+script = ExtResource( 4 )
+
+[editable path="Room"]

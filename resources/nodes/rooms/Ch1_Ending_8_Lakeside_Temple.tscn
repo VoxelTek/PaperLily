@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Forest_Lakeside_Temple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/material/ch1_lakeside_water_red.tres" type="Material" id=3]
+[ext_resource path="res://resources/lighting/ch1_forest_lakeside_red.tres" type="Resource" id=4]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/misc_fishbowl.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/VariableSpriteFrames.cs" type="Script" id=6]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=7]
+
+[node name="Ch1_Ending_8_Lakeside_Temple" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 4 )
+CameraLimitLeft = -240
+CameraLimitTop = -78
+CameraLimitRight = 400
+CameraLimitBottom = 242
+Subroom = NodePath("Ch1_Forest_Lakeside_Temple")
+
+[node name="Ch1_Forest_Lakeside_Temple" parent="." instance=ExtResource( 2 )]
+
+[node name="TilesWater" parent="Ch1_Forest_Lakeside_Temple" index="0"]
+material = ExtResource( 3 )
+
+[node name="BehindWindow" parent="Ch1_Forest_Lakeside_Temple/Background" index="0"]
+visible = false
+
+[node name="Fishbowl" parent="Ch1_Forest_Lakeside_Temple/Main/MiscWell" index="0"]
+visible = false
+
+[node name="FishbowlRed" type="Sprite" parent="Ch1_Forest_Lakeside_Temple/Main/MiscWell" index="1"]
+position = Vector2( -1, -11 )
+texture = ExtResource( 5 )
+hframes = 6
+
+[node name="item_goldfish_on_bowl" type="Node" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="0"]
+script = ExtResource( 7 )
+Items = "ch1.lakeside_deadfish"
+Nodes = "misc_shrine"
+
+[node name="misc_boards" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="9"]
+Event = "Ch1_Forest_Lakeside_Temple.misc_boards"
+
+[node name="Updates" type="Node" parent="Ch1_Forest_Lakeside_Temple/Other" index="3"]
+
+[node name="fish_gone" type="Node" parent="Ch1_Forest_Lakeside_Temple/Other/Updates"]
+script = ExtResource( 6 )
+Variable = "ch1.forest_lakeside_goldfish_gone"
+Node = NodePath("../../../Main/MiscWell/FishbowlRed")
+FalseFrame = 1
+TrueFrame = 0
+
+[editable path="Ch1_Forest_Lakeside_Temple"]

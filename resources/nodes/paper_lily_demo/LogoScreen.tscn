@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/UI/SimpleScreen.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/ui/leef_logo.png" type="Texture" id=2]
+[ext_resource path="res://resources/nodes/paper_lily_demo/TitleScreen.tscn" type="PackedScene" id=3]
+
+[node name="LogoScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+NextScreen = ExtResource( 3 )
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 360 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="CenterContainer"]
+margin_left = 252.0
+margin_top = 112.0
+margin_right = 387.0
+margin_bottom = 247.0
+rect_min_size = Vector2( 135, 135 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

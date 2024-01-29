@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/UI/Frames/DialogueFrameNode.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/ui/frame_dialogue.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/ui/dialogue_name_separator_2.png" type="Texture" id=3]
+
+[node name="DialogueFrame" type="MarginContainer"]
+script = ExtResource( 1 )
+ContentMarginLeft = 45
+ContentMarginTop = 20
+ContentMarginRight = 45
+ContentMarginBottom = 6
+TexFrame = ExtResource( 2 )
+TexNameSeparator = ExtResource( 3 )
+TextureScaleFactor = 3.0
+NamePlateSize = Vector2( 0, 15 )
+NamePlateTextPosition = Vector2( 0, -4 )
+NameSeparatorPosition = Vector2( -15, 9 )

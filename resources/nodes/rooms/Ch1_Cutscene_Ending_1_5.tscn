@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/nodes/rooms/Ch1_Forest_Station_Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=2]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=4]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_death_eyecu.png" type="Texture" id=6]
+[ext_resource path="res://resources/lighting/ch1_forest.tres" type="Resource" id=7]
+
+[node name="Ch1_Cutscene_Ending_1_5" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 7 )
+Subroom = NodePath("Ch1_Forest_Station_Platform")
+
+[node name="Ch1_Forest_Station_Platform" parent="." instance=ExtResource( 1 )]
+
+[node name="eyecu_eat" type="Sprite" parent="Ch1_Forest_Station_Platform/Ground" index="3"]
+visible = false
+position = Vector2( -27, 212 )
+texture = ExtResource( 6 )
+hframes = 3
+vframes = 3
+script = ExtResource( 4 )
+FPS = 3.3
+AnimationFrames = "0,1,3,0,1,3,0,1,3,0,1,2,3"
+
+[node name="eyecu_lift" type="Sprite" parent="Ch1_Forest_Station_Platform/Ground" index="4"]
+visible = false
+position = Vector2( -27, 212 )
+texture = ExtResource( 6 )
+hframes = 3
+vframes = 3
+frame = 4
+script = ExtResource( 4 )
+FPS = 3.3
+Loop = false
+AnimationFrames = "4,5,6,7
+"
+
+[node name="Points" type="Node" parent="."]
+
+[node name="cutscene_lacie" type="Node2D" parent="Points"]
+position = Vector2( 114, 112 )
+script = ExtResource( 3 )
+Direction = 2
+
+[node name="cutscene_eat" type="Node2D" parent="Points"]
+position = Vector2( -29, 224 )
+script = ExtResource( 3 )
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="hide_eyecu" type="Node" parent="Actions"]
+script = ExtResource( 5 )
+Node = NodePath("../../Ch1_Forest_Station_Platform/Main/StructBench2/ChrEyecuSit")
+Visible = false
+
+[node name="show_eat" type="Node" parent="Actions"]
+script = ExtResource( 5 )
+Node = NodePath("../../Ch1_Forest_Station_Platform/Ground/eyecu_eat")
+
+[node name="hide_eat" type="Node" parent="Actions"]
+script = ExtResource( 5 )
+Node = NodePath("../../Ch1_Forest_Station_Platform/Ground/eyecu_eat")
+Visible = false
+
+[node name="show_lift" type="Node" parent="Actions"]
+script = ExtResource( 5 )
+Node = NodePath("../../Ch1_Forest_Station_Platform/Ground/eyecu_lift")
+
+[editable path="Ch1_Forest_Station_Platform"]

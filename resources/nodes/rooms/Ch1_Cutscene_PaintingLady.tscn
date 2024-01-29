@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=2]
+[ext_resource path="res://resources/nodes/rooms/Ch1_MK_B1F_Cages.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_reach_cage.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV2.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_painting_lady.png" type="Texture" id=7]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=8]
+
+[node name="Ch1_Cutscene_PaintingLady" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 2 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 3 )]
+
+[node name="PaintingLady" type="Sprite" parent="Room/Background/WallPaintingA" index="1"]
+position = Vector2( 0, 44 )
+texture = ExtResource( 7 )
+hframes = 13
+script = ExtResource( 6 )
+Loop = false
+FrameDurations = "2000,1000,100,100,100,1000,100,100,100,100,100,100,100"
+
+[node name="WallPaintingA1" parent="Room/Background/WallPaintingA" index="2"]
+visible = false
+
+[node name="LacieReachCage" type="Sprite" parent="Room/Main/CageMirror/Mirror" index="1"]
+position = Vector2( -15, -17 )
+texture = ExtResource( 5 )
+hframes = 3
+script = ExtResource( 4 )
+FPS = 2.0
+LoopFrame = 1
+
+[node name="painting_gone" parent="Room/Other/Updates" index="1"]
+Enabled = false
+
+[node name="cutscene_center" type="Node2D" parent="."]
+position = Vector2( 224, 160 )
+script = ExtResource( 8 )
+
+[editable path="Room"]

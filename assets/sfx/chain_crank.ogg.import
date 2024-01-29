@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chain_crank.ogg-b120d1924d59c86208bbb577cdbd11fd.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/chain_crank.ogg"
+dest_files=[ "res://.import/chain_crank.ogg-b120d1924d59c86208bbb577cdbd11fd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

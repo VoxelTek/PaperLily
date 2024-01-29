@@ -1,0 +1,1020 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_fairyring.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=6]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plant_outline_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_4.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_6.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plant_outline_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_07.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_03.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_11.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_14.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_09.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_12.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_08.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_05.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_02.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_01.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/fg_plants_2.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/fg_plants_1.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_13.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_06.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_10.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_vine_04.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/common/tiles_white.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_plants_5.png" type="Texture" id=33]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=34]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=35]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=36]
+[ext_resource path="res://resources/lighting/ch1_fairyring.tres" type="Resource" id=37]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/wall_border.png" type="Texture" id=38]
+[ext_resource path="res://resources/material/sfx_floor_deform.tres" type="Material" id=39]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1FairyHeadTrigger.cs" type="Script" id=40]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_atk_1.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprite/ch1/forest/fairyring/misc_fairy_atk_2.png" type="Texture" id=42]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=43]
+[ext_resource path="res://assets/sfx/gore1.ogg" type="AudioStream" id=44]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=45]
+
+[node name="Ch1_FairyRing_B2F_Hall_1" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 37 )
+CameraLimitRight = 4608
+
+[node name="TilesFloor" type="TileMap" parent="."]
+material = ExtResource( 39 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 1
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65472, 0, 0, -65468, 0, 0, -65464, 0, 0, -65460, 0, 0, 65600, 0, 0, 65612, 0, 0, 196652, 0, 0, 196656, 0, 0, 196660, 0, 0, 196664, 0, 0, 196672, 0, 0, 196684, 0, 0, 262150, 10, 65538, 262151, 10, 65539, 262152, 10, 65536, 262153, 10, 65537, 262166, 7, 65538, 262167, 7, 65539, 327684, 0, 0, 327688, 0, 0, 327692, 0, 0, 327696, 0, 0, 327699, 9, 0, 327703, 7, 3, 327704, 9, 0, 327724, 0, 0, 327736, 0, 0, 327740, 0, 0, 327744, 0, 0, 327756, 0, 0, 327788, 0, 0, 327792, 0, 0, 327796, 0, 0, 327800, 0, 0, 327804, 0, 0, 393239, 7, 65539, 458756, 0, 0, 458760, 0, 0, 458764, 9, 0, 458768, 9, 0, 458772, 9, 0, 458776, 9, 0, 458796, 0, 0, 458828, 0, 0, 458860, 0, 0, 458876, 0, 0, 458880, 0, 0, 458884, 0, 0, 458888, 0, 0, 458892, 0, 0, 589830, 10, 2, 589831, 10, 3, 589832, 10, 0, 589833, 10, 1, 589844, 9, 0, 589848, 9, 0, 589870, 0, 0, 589872, 8, 0, 589873, 8, 0, 589900, 0, 0, 589932, 0, 0, 655408, 8, 0, 655409, 8, 0, 720920, 0, 0, 720942, 0, 0, 720944, 8, 0, 720945, 8, 0, 720972, 0, 0, 721004, 0, 0, 786480, 8, 0, 786481, 8, 0, 851992, 0, 0, 852014, 0, 0, 852016, 8, 0, 852017, 8, 0, 852044, 0, 0, 852076, 0, 0, 917552, 8, 0, 917553, 8, 0, 983064, 0, 0, 983086, 0, 0, 983088, 8, 0, 983089, 8, 0, 983116, 0, 0, 983136, 9, 0, 983148, 0, 0, 1048624, 8, 0, 1048625, 8, 0, 1114139, 0, 0, 1114140, 8, 0, 1114141, 8, 0, 1114142, 8, 0, 1114156, 9, 0, 1114160, 8, 0, 1114161, 8, 0, 1114188, 0, 0, 1114192, 0, 0, 1114204, 9, 0, 1114208, 9, 0, 1114212, 9, 0, 1114216, 9, 0, 1114220, 9, 0, 1179675, 0, 0, 1179676, 8, 0, 1179677, 8, 0, 1179678, 8, 0, 1245212, 8, 0, 1245213, 8, 0, 1245214, 8, 0, 1245228, 9, 0, 1245232, 9, 0, 1245264, 0, 0, 1245268, 0, 0, 1245272, 0, 0, 1245276, 9, 0, 1245280, 9, 0, 1245284, 9, 0, 1245288, 9, 0, 1245292, 9, 0, 1310747, 0, 0, 1310748, 8, 0, 1310749, 8, 0, 1310750, 8, 0, 1310772, 7, 65536, 1310773, 7, 65537, 1310774, 7, 65538, 1310775, 7, 65539, 1376284, 0, 0, 1376288, 0, 0, 1376300, 9, 0, 1376304, 9, 0, 1376308, 9, 0, 1376348, 9, 0, 1376352, 9, 0, 1376356, 9, 0, 1376360, 9, 0, 1441819, 7, 65539, 1507360, 0, 0, 1507364, 0, 0, 1507368, 0, 0, 1507371, 7, 3, 1507372, 9, 0, 1507376, 9, 0, 1507380, 9, 0, 1507424, 9, 0, 1507428, 9, 0, 1572907, 7, 65539 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesWall" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -327616, 2, 0, -327613, 2, 0, -327610, 1, 0, -327606, 2, 0, -327603, 2, 0, -65492, 2, 0, -65489, 2, 0, -65486, 1, 0, -65482, 11, 0, -65480, 1, 0, 6, 1, 0, 22, 11, 0, 65538, 3, 0, 65546, 1, 0, 65550, 2, 0, 65553, 2, 0, 65556, 11, 0, 65560, 5, 0, 65596, 1, 0, 65644, 1, 0, 65648, 1, 0, 65652, 2, 0, 65655, 1, 0, 65659, 11, 0, 65661, 2, 0, 196736, 11, 0, 196738, 2, 0, 196741, 2, 0, 196744, 1, 0, 196748, 1, 0, 720992, 1, 0, 852048, 3, 0, 852060, 2, 0, 852063, 12, 0, 852068, 2, 0, 852071, 11, 0, 852073, 2, 0, 983088, 3, 0, 983124, 1, 0, 983128, 1, 0, 1048628, 5, 0, 1114140, 1, 0, 1114144, 1, 0, 1245220, 2, 0, 1245223, 2, 0, 1245226, 11, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallBorder" type="Node2D" parent="Background"]
+
+[node name="WallBorder" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 2560, -80 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder19" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 2689, 560 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder20" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 2944, 560 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder21" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 2945, 495 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder22" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 3072, 495 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder23" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 3073, 433 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder24" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 3200, 434 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder25" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 3201, 496 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder26" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 3456, 496 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder27" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 3457, 112 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder28" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 4096, 112 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder29" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 4097, 176 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder30" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 4608, 176 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder2" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 2049, -80 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder3" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 2048, 112 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder4" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 1921, 112 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder5" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 1920, 48 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder6" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 1409, 48 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder7" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 1408, 688 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder8" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 1153, 688 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder9" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 1152, 623 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder10" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 897, 624 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder11" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 769, 89 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder12" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 704, 112 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder13" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 321, 112 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder14" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 320, 80 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder15" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 193, 80 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder16" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 129, 116 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder17" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 705, 80 )
+texture = ExtResource( 38 )
+
+[node name="WallBorder18" type="Sprite" parent="Background/WallBorder"]
+position = Vector2( 768, 80 )
+texture = ExtResource( 38 )
+
+[node name="vines" type="Node2D" parent="Background"]
+
+[node name="MiscVine10" type="Sprite" parent="Background/vines"]
+position = Vector2( 257, 125 )
+texture = ExtResource( 29 )
+
+[node name="MiscVine01" type="Sprite" parent="Background/vines"]
+position = Vector2( 138, 263 )
+texture = ExtResource( 24 )
+
+[node name="MiscVine12" type="Sprite" parent="Background/vines"]
+position = Vector2( 163, 311 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine31" type="Sprite" parent="Background/vines"]
+position = Vector2( 1672, 93 )
+texture = ExtResource( 29 )
+
+[node name="MiscVine57" type="Sprite" parent="Background/vines"]
+position = Vector2( 4022, 158 )
+texture = ExtResource( 29 )
+
+[node name="MiscVine67" type="Sprite" parent="Background/vines"]
+position = Vector2( 2498, -35 )
+texture = ExtResource( 29 )
+
+[node name="MiscVine70" type="Sprite" parent="Background/vines"]
+position = Vector2( 1540, 216 )
+texture = ExtResource( 28 )
+
+[node name="MiscPlants2" type="Sprite" parent="Background"]
+position = Vector2( 3467, 160 )
+texture = ExtResource( 18 )
+
+[node name="MiscPlants7" type="Sprite" parent="Background"]
+position = Vector2( 1448, 120 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, -26 )
+
+[node name="MiscPlants6" type="Sprite" parent="Background"]
+position = Vector2( 2645, 562 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, -26 )
+flip_h = true
+
+[node name="TilesWhite" type="Sprite" parent="Background"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 752, 192 )
+scale = Vector2( 1, 4 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite2" type="Sprite" parent="Background"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 1520, 720 )
+scale = Vector2( 7, 1 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite3" type="Sprite" parent="Background"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 1520, 688 )
+texture = ExtResource( 32 )
+
+[node name="SolutionVisualize" type="Node2D" parent="Background"]
+visible = false
+
+[node name="TilesWhite3" type="Sprite" parent="Background/SolutionVisualize"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 3200, 752 )
+scale = Vector2( 7.99999, 1 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite4" type="Sprite" parent="Background/SolutionVisualize"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 3120, 624 )
+scale = Vector2( 3, 1 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite5" type="Sprite" parent="Background/SolutionVisualize"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 3056, 672 )
+scale = Vector2( 1, 4 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite6" type="Sprite" parent="Background/SolutionVisualize"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 3248, 592 )
+scale = Vector2( 1, 3 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite7" type="Sprite" parent="Background/SolutionVisualize"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 3120, 592 )
+texture = ExtResource( 32 )
+
+[node name="TilesWhite8" type="Sprite" parent="Background/SolutionVisualize"]
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 3183, 720 )
+texture = ExtResource( 32 )
+
+[node name="MiscPlants5" type="Sprite" parent="Background"]
+position = Vector2( 3140, 468 )
+texture = ExtResource( 33 )
+flip_h = true
+
+[node name="MiscFairyAtk1" type="Sprite" parent="Background"]
+visible = false
+texture = ExtResource( 41 )
+offset = Vector2( 0, -4 )
+hframes = 8
+script = ExtResource( 43 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="MiscFairyAtk2" type="Sprite" parent="Background"]
+visible = false
+texture = ExtResource( 42 )
+offset = Vector2( 0, -20.5 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscFairy1" type="Sprite" parent="Main"]
+position = Vector2( 1519, 694 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 43 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="MiscFairy2" type="Sprite" parent="Main"]
+position = Vector2( 3120, 599 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 43 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="MiscFairy5" type="Sprite" parent="Main"]
+position = Vector2( 3184, 728 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -10 )
+hframes = 5
+script = ExtResource( 43 )
+FPS = 16.0
+Loop = false
+Autostart = false
+
+[node name="MiscPlantOutline1" type="Sprite" parent="Main"]
+position = Vector2( 1650, 726 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline2" type="Sprite" parent="Main"]
+position = Vector2( 3185, 633 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline3" type="Sprite" parent="Main"]
+position = Vector2( 752, 276 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlantOutline4" type="Sprite" parent="Main"]
+position = Vector2( 3250, 659 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, -16 )
+
+[node name="MiscPlants4" type="Sprite" parent="Main"]
+position = Vector2( 862, 167 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -26 )
+
+[node name="MiscFairy3" type="Sprite" parent="Main"]
+position = Vector2( 3055, 631 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+
+[node name="MiscFairy4" type="Sprite" parent="Main"]
+position = Vector2( 3248, 570 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+
+[node name="MiscFairy6" type="Sprite" parent="Main"]
+position = Vector2( 753, 149 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -10 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65612, 8, 0, 65613, 8, 0, 65641, 8, 0, 65642, 8, 0, 65643, 8, 0, 131074, 8, 0, 131075, 8, 0, 131138, 8, 0, 131139, 8, 0, 131148, 8, 0, 131149, 8, 0, 131177, 8, 0, 131178, 8, 0, 131179, 8, 0, 196610, 8, 0, 196611, 8, 0, 196674, 8, 0, 196675, 8, 0, 196684, 8, 0, 196685, 8, 0, 196713, 8, 0, 196714, 8, 0, 196715, 8, 0, 262146, 8, 0, 262147, 8, 0, 262210, 8, 0, 262211, 8, 0, 262220, 8, 0, 262221, 8, 0, 262249, 8, 0, 262250, 8, 0, 262251, 8, 0, 327736, 8, 0, 327746, 8, 0, 327747, 8, 0, 327756, 8, 0, 327757, 8, 0, 327785, 8, 0, 327786, 8, 0, 327787, 8, 0, 393260, 8, 0, 393272, 8, 0, 393273, 8, 0, 393281, 8, 0, 393282, 8, 0, 393283, 8, 0, 393292, 8, 0, 393293, 8, 0, 393321, 8, 0, 393322, 8, 0, 393323, 8, 0, 458764, 8, 0, 458765, 8, 0, 458766, 8, 0, 458767, 8, 0, 458768, 8, 0, 458769, 8, 0, 458770, 8, 0, 458796, 8, 0, 458828, 8, 0, 458829, 8, 0, 458857, 8, 0, 458858, 8, 0, 458859, 8, 0, 524300, 8, 0, 524301, 8, 0, 524302, 8, 0, 524303, 8, 0, 524304, 8, 0, 524305, 8, 0, 524306, 8, 0, 524307, 8, 0, 524332, 8, 0, 524364, 8, 0, 524365, 8, 0, 524412, 8, 0, 524413, 8, 0, 524421, 8, 0, 524422, 8, 0, 524423, 8, 0, 524428, 8, 0, 524429, 8, 0, 524430, 8, 0, 524431, 8, 0, 589900, 8, 0, 589901, 8, 0, 589902, 8, 0, 655380, 8, 0, 655436, 8, 0, 655437, 8, 0, 655438, 8, 0, 720920, 8, 0, 720921, 8, 0, 720972, 8, 0, 720973, 8, 0, 720974, 8, 0, 786456, 8, 0, 786457, 8, 0, 786508, 8, 0, 786509, 8, 0, 786510, 8, 0, 851992, 8, 0, 851993, 8, 0, 852044, 8, 0, 852045, 8, 0, 852046, 8, 0, 852079, 8, 0, 917528, 8, 0, 917529, 8, 0, 917580, 8, 0, 917581, 8, 0, 917582, 8, 0, 917615, 8, 0, 983064, 8, 0, 983065, 8, 0, 983066, 8, 0, 983116, 8, 0, 983117, 8, 0, 983118, 8, 0, 983151, 8, 0, 1048600, 8, 0, 1048601, 8, 0, 1048602, 8, 0, 1048652, 8, 0, 1048653, 8, 0, 1048654, 8, 0, 1048687, 8, 0, 1114188, 8, 0, 1114189, 8, 0, 1114190, 8, 0, 1114223, 8, 0, 1179724, 8, 0, 1179725, 8, 0, 1179726, 8, 0, 1179759, 8, 0, 1245295, 8, 0, 1310800, 8, 0, 1310801, 8, 0, 1310831, 8, 0, 1441819, 8, 0, 1572896, 8, 0, 1572897, 8, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FgPlants2" type="Sprite" parent="Foreground"]
+position = Vector2( 263, 328 )
+texture = ExtResource( 25 )
+
+[node name="MiscVine09" type="Sprite" parent="Foreground"]
+position = Vector2( 148, 285 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine11" type="Sprite" parent="Foreground"]
+position = Vector2( 150, 218 )
+texture = ExtResource( 16 )
+
+[node name="MiscVine07" type="Sprite" parent="Foreground"]
+position = Vector2( 376, 258 )
+texture = ExtResource( 28 )
+
+[node name="MiscVine13" type="Sprite" parent="Foreground"]
+position = Vector2( 427, 258 )
+texture = ExtResource( 27 )
+flip_v = true
+
+[node name="MiscVine14" type="Sprite" parent="Foreground"]
+position = Vector2( 357, 328 )
+texture = ExtResource( 27 )
+flip_v = true
+
+[node name="MiscVine15" type="Sprite" parent="Foreground"]
+position = Vector2( 581, 263 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine16" type="Sprite" parent="Foreground"]
+position = Vector2( 637, 350 )
+texture = ExtResource( 27 )
+flip_h = true
+
+[node name="MiscVine17" type="Sprite" parent="Foreground"]
+position = Vector2( 814, 392 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine18" type="Sprite" parent="Foreground"]
+position = Vector2( 798, 443 )
+texture = ExtResource( 27 )
+flip_h = true
+
+[node name="MiscVine19" type="Sprite" parent="Foreground"]
+position = Vector2( 814, 473 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine20" type="Sprite" parent="Foreground"]
+position = Vector2( 868, 744 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine21" type="Sprite" parent="Foreground"]
+position = Vector2( 923, 732 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine22" type="Sprite" parent="Foreground"]
+position = Vector2( 1049, 764 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine08" type="Sprite" parent="Foreground"]
+position = Vector2( 1147, 786 )
+texture = ExtResource( 21 )
+
+[node name="MiscVine03" type="Sprite" parent="Foreground"]
+position = Vector2( 861, 650 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine23" type="Sprite" parent="Foreground"]
+position = Vector2( 891, 242 )
+texture = ExtResource( 28 )
+
+[node name="MiscVine24" type="Sprite" parent="Foreground"]
+position = Vector2( 887, 312 )
+texture = ExtResource( 14 )
+
+[node name="MiscVine31" type="Sprite" parent="Foreground"]
+position = Vector2( 752, 358 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="FgPlants3" type="Sprite" parent="Foreground"]
+position = Vector2( 1294, 811 )
+texture = ExtResource( 25 )
+
+[node name="MiscVine06" type="Sprite" parent="Foreground"]
+position = Vector2( 1795, 685 )
+texture = ExtResource( 28 )
+
+[node name="MiscVine02" type="Sprite" parent="Foreground"]
+position = Vector2( 1418, 565 )
+texture = ExtResource( 23 )
+
+[node name="MiscVine04" type="Sprite" parent="Foreground"]
+position = Vector2( 1781, 770 )
+texture = ExtResource( 30 )
+flip_h = true
+
+[node name="MiscVine25" type="Sprite" parent="Foreground"]
+position = Vector2( 1489, 477 )
+texture = ExtResource( 16 )
+
+[node name="MiscVine26" type="Sprite" parent="Foreground"]
+position = Vector2( 1530, 397 )
+texture = ExtResource( 28 )
+
+[node name="MiscVine27" type="Sprite" parent="Foreground"]
+position = Vector2( 1431, 307 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine28" type="Sprite" parent="Foreground"]
+position = Vector2( 1400, 194 )
+texture = ExtResource( 27 )
+flip_h = true
+
+[node name="MiscVine29" type="Sprite" parent="Foreground"]
+position = Vector2( 1573, 200 )
+texture = ExtResource( 27 )
+flip_v = true
+
+[node name="FgPlants1" type="Sprite" parent="Foreground"]
+position = Vector2( 2022, 185 )
+texture = ExtResource( 26 )
+
+[node name="MiscVine30" type="Sprite" parent="Foreground"]
+position = Vector2( 1823, 225 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine32" type="Sprite" parent="Foreground"]
+position = Vector2( 1635, 162 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine71" type="Sprite" parent="Foreground"]
+position = Vector2( 1534, 271 )
+texture = ExtResource( 14 )
+
+[node name="MiscVine05" type="Sprite" parent="Foreground"]
+position = Vector2( 2104, 134 )
+texture = ExtResource( 22 )
+
+[node name="MiscVine33" type="Sprite" parent="Foreground"]
+position = Vector2( 2158, 71 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine34" type="Sprite" parent="Foreground"]
+position = Vector2( 2128, 182 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine35" type="Sprite" parent="Foreground"]
+position = Vector2( 2463, 70 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine36" type="Sprite" parent="Foreground"]
+position = Vector2( 2500, 111 )
+texture = ExtResource( 15 )
+
+[node name="MiscVine37" type="Sprite" parent="Foreground"]
+position = Vector2( 2477, 301 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine40" type="Sprite" parent="Foreground"]
+position = Vector2( 2558, 203 )
+texture = ExtResource( 28 )
+
+[node name="MiscVine68" type="Sprite" parent="Foreground"]
+position = Vector2( 2230, 31 )
+texture = ExtResource( 20 )
+
+[node name="MiscVine69" type="Sprite" parent="Foreground"]
+position = Vector2( 2063, 0 )
+texture = ExtResource( 30 )
+
+[node name="MiscVine54" type="Sprite" parent="Foreground"]
+position = Vector2( 2592, 674 )
+texture = ExtResource( 27 )
+flip_h = true
+flip_v = true
+
+[node name="MiscVine38" type="Sprite" parent="Foreground"]
+position = Vector2( 2530, 638 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine39" type="Sprite" parent="Foreground"]
+position = Vector2( 2634, 666 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine41" type="Sprite" parent="Foreground"]
+position = Vector2( 3564, 695 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine42" type="Sprite" parent="Foreground"]
+position = Vector2( 3595, 381 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine43" type="Sprite" parent="Foreground"]
+position = Vector2( 3632, 218 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine44" type="Sprite" parent="Foreground"]
+position = Vector2( 3730, 209 )
+texture = ExtResource( 21 )
+
+[node name="MiscVine45" type="Sprite" parent="Foreground"]
+position = Vector2( 4000, 281 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine46" type="Sprite" parent="Foreground"]
+position = Vector2( 3957, 251 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine47" type="Sprite" parent="Foreground"]
+position = Vector2( 4039, 286 )
+texture = ExtResource( 29 )
+
+[node name="MiscVine49" type="Sprite" parent="Foreground"]
+position = Vector2( 4484, 303 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine50" type="Sprite" parent="Foreground"]
+position = Vector2( 4348, 304 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine51" type="Sprite" parent="Foreground"]
+position = Vector2( 4260, 303 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine52" type="Sprite" parent="Foreground"]
+position = Vector2( 2930, 760 )
+texture = ExtResource( 27 )
+flip_h = true
+
+[node name="MiscVine53" type="Sprite" parent="Foreground"]
+position = Vector2( 3059, 822 )
+texture = ExtResource( 27 )
+flip_h = true
+
+[node name="MiscVine55" type="Sprite" parent="Foreground"]
+position = Vector2( 3341, 821 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine56" type="Sprite" parent="Foreground"]
+position = Vector2( 3470, 758 )
+texture = ExtResource( 27 )
+
+[node name="MiscVine58" type="Sprite" parent="Foreground"]
+position = Vector2( 3923, 214 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine59" type="Sprite" parent="Foreground"]
+position = Vector2( 3473, 334 )
+texture = ExtResource( 22 )
+flip_h = true
+
+[node name="MiscVine60" type="Sprite" parent="Foreground"]
+position = Vector2( 3550, 432 )
+texture = ExtResource( 28 )
+
+[node name="MiscVine61" type="Sprite" parent="Foreground"]
+position = Vector2( 3547, 594 )
+texture = ExtResource( 15 )
+flip_h = true
+
+[node name="MiscVine62" type="Sprite" parent="Foreground"]
+position = Vector2( 3404, 720 )
+texture = ExtResource( 21 )
+
+[node name="MiscVine63" type="Sprite" parent="Foreground"]
+position = Vector2( 3504, 663 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine64" type="Sprite" parent="Foreground"]
+position = Vector2( 2896, 667 )
+texture = ExtResource( 19 )
+
+[node name="MiscVine65" type="Sprite" parent="Foreground"]
+position = Vector2( 2777, 679 )
+texture = ExtResource( 21 )
+
+[node name="MiscVine66" type="Sprite" parent="Foreground"]
+position = Vector2( 2721, 671 )
+texture = ExtResource( 20 )
+
+[node name="MiscPlants3" type="Sprite" parent="Foreground"]
+position = Vector2( 138, 160 )
+texture = ExtResource( 17 )
+
+[node name="MiscVine48" type="Sprite" parent="Foreground"]
+position = Vector2( 3573, 265 )
+texture = ExtResource( 28 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightFadeout2" type="Sprite" parent="Lighting"]
+position = Vector2( 4544, 160 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 31 )
+flip_h = true
+
+[node name="Light" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 258, 211 )
+texture = ExtResource( 36 )
+texture_scale = 4.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Light2" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 810, 246 )
+texture = ExtResource( 36 )
+texture_scale = 6.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Light3" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 1487, 716 )
+texture = ExtResource( 36 )
+texture_scale = 8.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Light4" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 1544, 127 )
+texture = ExtResource( 36 )
+texture_scale = 4.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Light5" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 2286, 127 )
+texture = ExtResource( 36 )
+texture_scale = 9.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Light6" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 3122, 539 )
+texture = ExtResource( 36 )
+texture_scale = 11.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Light7" type="Light2D" parent="Lighting"]
+light_mask = 3
+position = Vector2( 3948, 301 )
+texture = ExtResource( 36 )
+texture_scale = 6.0
+color = Color( 0.921569, 0.454902, 0.376471, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 35 )
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -131009, 0, 0, -131008, 0, 0, -131007, 0, 0, -131006, 0, 0, -131005, 0, 0, -131004, 0, 0, -131003, 0, 0, -131002, 0, 0, -131001, 0, 0, -131000, 0, 0, -130999, 0, 0, -130998, 0, 0, -130997, 0, 0, -130996, 0, 0, -130995, 0, 0, -130994, 0, 0, -130993, 0, 0, -130992, 0, 0, -65473, 0, 0, -65456, 0, 0, 63, 0, 0, 80, 0, 0, 65599, 0, 0, 65604, 0, 0, 65605, 0, 0, 65606, 0, 0, 65607, 0, 0, 65608, 0, 0, 65609, 0, 0, 65610, 0, 0, 65611, 0, 0, 65612, 0, 0, 65613, 0, 0, 65616, 0, 0, 131115, 0, 0, 131116, 0, 0, 131117, 0, 0, 131118, 0, 0, 131119, 0, 0, 131120, 0, 0, 131121, 0, 0, 131122, 0, 0, 131123, 0, 0, 131124, 0, 0, 131125, 0, 0, 131126, 0, 0, 131127, 0, 0, 131128, 0, 0, 131129, 0, 0, 131130, 0, 0, 131131, 0, 0, 131132, 0, 0, 131135, 0, 0, 131138, 0, 0, 131139, 0, 0, 131140, 0, 0, 131149, 0, 0, 131152, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196651, 0, 0, 196668, 0, 0, 196671, 0, 0, 196674, 0, 0, 196685, 0, 0, 196688, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262187, 0, 0, 262204, 0, 0, 262205, 0, 0, 262206, 0, 0, 262207, 0, 0, 262210, 0, 0, 262221, 0, 0, 262224, 0, 0, 262251, 0, 0, 262252, 0, 0, 262253, 0, 0, 262254, 0, 0, 262255, 0, 0, 262256, 0, 0, 262257, 0, 0, 262258, 0, 0, 262259, 0, 0, 262260, 0, 0, 262261, 0, 0, 262262, 0, 0, 262263, 0, 0, 262264, 0, 0, 262265, 0, 0, 262266, 0, 0, 262267, 0, 0, 262268, 0, 0, 262269, 0, 0, 262270, 0, 0, 262271, 0, 0, 262272, 0, 0, 327683, 0, 0, 327708, 0, 0, 327723, 0, 0, 327728, 0, 0, 327729, 0, 0, 327730, 0, 0, 327731, 0, 0, 327732, 0, 0, 327733, 0, 0, 327734, 0, 0, 327735, 0, 0, 327736, 0, 0, 327746, 0, 0, 327757, 0, 0, 327760, 0, 0, 327787, 0, 0, 327808, 0, 0, 393219, 0, 0, 393244, 0, 0, 393259, 0, 0, 393260, 0, 0, 393264, 0, 0, 393272, 0, 0, 393273, 0, 0, 393281, 0, 0, 393282, 0, 0, 393293, 0, 0, 393296, 0, 0, 393323, 0, 0, 393344, 0, 0, 393345, 0, 0, 393346, 0, 0, 393347, 0, 0, 393348, 0, 0, 393349, 0, 0, 393350, 0, 0, 393351, 0, 0, 393352, 0, 0, 393353, 0, 0, 393354, 0, 0, 393355, 0, 0, 393356, 0, 0, 393357, 0, 0, 393358, 0, 0, 393359, 0, 0, 458755, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458780, 0, 0, 458796, 0, 0, 458800, 0, 0, 458809, 0, 0, 458810, 0, 0, 458811, 0, 0, 458812, 0, 0, 458813, 0, 0, 458814, 0, 0, 458815, 0, 0, 458816, 0, 0, 458817, 0, 0, 458829, 0, 0, 458832, 0, 0, 458859, 0, 0, 458864, 0, 0, 458865, 0, 0, 458866, 0, 0, 458867, 0, 0, 458868, 0, 0, 458869, 0, 0, 458870, 0, 0, 458871, 0, 0, 458872, 0, 0, 458873, 0, 0, 458874, 0, 0, 458875, 0, 0, 524291, 0, 0, 524300, 0, 0, 524306, 0, 0, 524307, 0, 0, 524316, 0, 0, 524332, 0, 0, 524336, 0, 0, 524365, 0, 0, 524368, 0, 0, 524395, 0, 0, 524400, 0, 0, 524411, 0, 0, 524412, 0, 0, 524413, 0, 0, 524421, 0, 0, 524422, 0, 0, 524423, 0, 0, 524428, 0, 0, 524429, 0, 0, 524430, 0, 0, 524431, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589843, 0, 0, 589852, 0, 0, 589868, 0, 0, 589869, 0, 0, 589872, 0, 0, 589901, 0, 0, 589902, 0, 0, 589904, 0, 0, 589931, 0, 0, 589936, 0, 0, 589949, 0, 0, 589950, 0, 0, 589951, 0, 0, 589952, 0, 0, 589953, 0, 0, 589954, 0, 0, 589955, 0, 0, 589956, 0, 0, 589957, 0, 0, 589959, 0, 0, 589960, 0, 0, 589961, 0, 0, 589962, 0, 0, 589963, 0, 0, 589964, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655379, 0, 0, 655380, 0, 0, 655388, 0, 0, 655405, 0, 0, 655408, 0, 0, 655438, 0, 0, 655440, 0, 0, 655467, 0, 0, 655472, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720924, 0, 0, 720941, 0, 0, 720944, 0, 0, 720974, 0, 0, 720976, 0, 0, 721003, 0, 0, 721008, 0, 0, 786457, 0, 0, 786460, 0, 0, 786477, 0, 0, 786480, 0, 0, 786510, 0, 0, 786512, 0, 0, 786539, 0, 0, 786544, 0, 0, 851993, 0, 0, 851996, 0, 0, 852013, 0, 0, 852016, 0, 0, 852046, 0, 0, 852048, 0, 0, 852075, 0, 0, 852079, 0, 0, 852080, 0, 0, 917529, 0, 0, 917532, 0, 0, 917549, 0, 0, 917552, 0, 0, 917582, 0, 0, 917584, 0, 0, 917611, 0, 0, 917615, 0, 0, 983065, 0, 0, 983066, 0, 0, 983068, 0, 0, 983085, 0, 0, 983088, 0, 0, 983118, 0, 0, 983120, 0, 0, 983147, 0, 0, 983151, 0, 0, 1048602, 0, 0, 1048604, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048624, 0, 0, 1048654, 0, 0, 1048656, 0, 0, 1048657, 0, 0, 1048658, 0, 0, 1048659, 0, 0, 1048660, 0, 0, 1048667, 0, 0, 1048668, 0, 0, 1048669, 0, 0, 1048670, 0, 0, 1048671, 0, 0, 1048676, 0, 0, 1048677, 0, 0, 1048678, 0, 0, 1048679, 0, 0, 1048680, 0, 0, 1048681, 0, 0, 1048682, 0, 0, 1048683, 0, 0, 1048687, 0, 0, 1114138, 0, 0, 1114140, 0, 0, 1114155, 0, 0, 1114160, 0, 0, 1114190, 0, 0, 1114196, 0, 0, 1114203, 0, 0, 1114223, 0, 0, 1179674, 0, 0, 1179676, 0, 0, 1179691, 0, 0, 1179696, 0, 0, 1179697, 0, 0, 1179698, 0, 0, 1179699, 0, 0, 1179700, 0, 0, 1179726, 0, 0, 1179732, 0, 0, 1179733, 0, 0, 1179734, 0, 0, 1179735, 0, 0, 1179736, 0, 0, 1179737, 0, 0, 1179738, 0, 0, 1179739, 0, 0, 1179759, 0, 0, 1245210, 0, 0, 1245212, 0, 0, 1245227, 0, 0, 1245236, 0, 0, 1245237, 0, 0, 1245238, 0, 0, 1245239, 0, 0, 1245240, 0, 0, 1245262, 0, 0, 1245263, 0, 0, 1245295, 0, 0, 1310746, 0, 0, 1310748, 0, 0, 1310749, 0, 0, 1310750, 0, 0, 1310751, 0, 0, 1310752, 0, 0, 1310753, 0, 0, 1310754, 0, 0, 1310755, 0, 0, 1310756, 0, 0, 1310763, 0, 0, 1310776, 0, 0, 1310799, 0, 0, 1310800, 0, 0, 1310801, 0, 0, 1310831, 0, 0, 1376282, 0, 0, 1376292, 0, 0, 1376299, 0, 0, 1376312, 0, 0, 1376337, 0, 0, 1376338, 0, 0, 1376339, 0, 0, 1376340, 0, 0, 1376341, 0, 0, 1376342, 0, 0, 1376343, 0, 0, 1376344, 0, 0, 1376345, 0, 0, 1376346, 0, 0, 1376347, 0, 0, 1376364, 0, 0, 1376365, 0, 0, 1376366, 0, 0, 1376367, 0, 0, 1441818, 0, 0, 1441819, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1441832, 0, 0, 1441833, 0, 0, 1441834, 0, 0, 1441835, 0, 0, 1441848, 0, 0, 1441883, 0, 0, 1441900, 0, 0, 1507355, 0, 0, 1507356, 0, 0, 1507357, 0, 0, 1507358, 0, 0, 1507359, 0, 0, 1507384, 0, 0, 1507419, 0, 0, 1507420, 0, 0, 1507421, 0, 0, 1507422, 0, 0, 1507423, 0, 0, 1507432, 0, 0, 1507433, 0, 0, 1507434, 0, 0, 1507435, 0, 0, 1507436, 0, 0, 1572895, 0, 0, 1572896, 0, 0, 1572897, 0, 0, 1572920, 0, 0, 1572959, 0, 0, 1572968, 0, 0, 1638433, 0, 0, 1638434, 0, 0, 1638435, 0, 0, 1638436, 0, 0, 1638437, 0, 0, 1638438, 0, 0, 1638439, 0, 0, 1638440, 0, 0, 1638441, 0, 0, 1638442, 0, 0, 1638443, 0, 0, 1638444, 0, 0, 1638445, 0, 0, 1638446, 0, 0, 1638447, 0, 0, 1638448, 0, 0, 1638449, 0, 0, 1638450, 0, 0, 1638451, 0, 0, 1638452, 0, 0, 1638453, 0, 0, 1638454, 0, 0, 1638455, 0, 0, 1638456, 0, 0, 1638495, 0, 0, 1638496, 0, 0, 1638497, 0, 0, 1638498, 0, 0, 1638499, 0, 0, 1638500, 0, 0, 1638501, 0, 0, 1638502, 0, 0, 1638503, 0, 0, 1638504, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_puzzle_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 604, 192 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 64 )
+
+[node name="event_puzzle_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 1404, 768 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 64 )
+
+[node name="event_puzzle_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 2940, 640 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+Area = Vector2( 8, 64 )
+
+[node name="event_death_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 752, 208 )
+script = ExtResource( 40 )
+AttackType = 1
+HeadNode = NodePath("../../../Main/MiscFairy6")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 96 )
+sfxDeath = ExtResource( 44 )
+
+[node name="event_death_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 1520, 720 )
+script = ExtResource( 40 )
+HeadNode = NodePath("../../../Main/MiscFairy1")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 224, 24 )
+sfxDeath = ExtResource( 44 )
+
+[node name="event_death_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 3056, 688 )
+script = ExtResource( 40 )
+AttackType = 1
+HeadNode = NodePath("../../../Main/MiscFairy3")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 96 )
+sfxDeath = ExtResource( 44 )
+
+[node name="event_death_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 3248, 608 )
+script = ExtResource( 40 )
+AttackType = 1
+HeadNode = NodePath("../../../Main/MiscFairy4")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk2")
+Area = Vector2( 24, 64 )
+sfxDeath = ExtResource( 44 )
+
+[node name="event_death_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 3120, 624 )
+script = ExtResource( 40 )
+HeadNode = NodePath("../../../Main/MiscFairy2")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 96, 24 )
+sfxDeath = ExtResource( 44 )
+
+[node name="event_death_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 3200, 752 )
+script = ExtResource( 40 )
+HeadNode = NodePath("../../../Main/MiscFairy5")
+AnimationNode = NodePath("../../../Background/MiscFairyAtk1")
+Area = Vector2( 256, 24 )
+sfxDeath = ExtResource( 44 )
+
+[node name="item_salt_on_head" type="Node" parent="Other/Events"]
+script = ExtResource( 45 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.item_salt_on_head"
+Items = "ch1.salt"
+Nodes = "misc_head_1
+misc_head_2
+misc_head_3
+misc_head_4
+misc_head_5
+misc_head_6"
+
+[node name="item_scissors_on_head" type="Node" parent="Other/Events"]
+script = ExtResource( 45 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.item_scissors_on_head"
+Items = "ch1.scissors"
+Nodes = "misc_head_1
+misc_head_2
+misc_head_3
+misc_head_4
+misc_head_5
+misc_head_6"
+
+[node name="item_scissors_salt_on_plants" type="Node" parent="Other/Events"]
+script = ExtResource( 45 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.item_scissors_salt_on_plants"
+Items = "ch1.salt
+ch1.scissors"
+Nodes = "misc_plant_1
+misc_plant_2
+misc_plant_3
+misc_plant_4"
+
+[node name="misc_plant_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 752, 272 )
+script = ExtResource( 6 )
+
+[node name="misc_plant_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 1648, 720 )
+script = ExtResource( 6 )
+
+[node name="misc_plant_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 3184, 624 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_plant"
+
+[node name="misc_plant_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 3248, 656 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_plant"
+
+[node name="misc_head_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 752, 144 )
+script = ExtResource( 6 )
+
+[node name="misc_head_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 1520, 688 )
+script = ExtResource( 6 )
+
+[node name="misc_head_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 3056, 624 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_a"
+
+[node name="misc_head_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 3120, 592 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_b"
+
+[node name="misc_head_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 3248, 560 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_a"
+
+[node name="misc_head_6" type="Node2D" parent="Other/Events"]
+position = Vector2( 3183, 720 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_b"
+
+[node name="misc_plants_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 864, 170 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B1F_Entrance.misc_plants"
+Area = Vector2( 64, 32 )
+
+[node name="misc_plants_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 1431, 112 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B1F_Entrance.misc_plants"
+Area = Vector2( 64, 32 )
+
+[node name="misc_plants_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 2663, 560 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B1F_Entrance.misc_plants"
+Area = Vector2( 64, 32 )
+
+[node name="misc_plants_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 3136, 528 )
+script = ExtResource( 6 )
+Event = "Ch1_FairyRing_B1F_Entrance.misc_plants"
+Area = Vector2( 128, 32 )
+
+[node name="move_next" type="Node2D" parent="Other/Events"]
+position = Vector2( 4624, 240 )
+script = ExtResource( 6 )
+Solid = false
+Trigger = 1
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="from_above" type="Node2D" parent="Other/Points"]
+position = Vector2( 256, 224 )
+script = ExtResource( 7 )
+
+[node name="return" type="Node2D" parent="Other/Points"]
+position = Vector2( 4592, 240 )
+script = ExtResource( 7 )
+Direction = 1
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="visualize_solution" type="Node" parent="Other/Updates"]
+script = ExtResource( 34 )
+Variable = "ch1.forest_fairyring_visualize_solution"
+Node = NodePath("../../../Background/SolutionVisualize")

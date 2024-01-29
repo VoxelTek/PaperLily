@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/font/ch1_cg_todolist.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/img/cg/ch1/todolist.png" type="Texture" id=2]
+[ext_resource path="res://resources/font/ch1_cg_todolist_subtitle.tres" type="DynamicFont" id=3]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CgTodolist.cs" type="Script" id=4]
+
+[node name="ToDoListCg" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 4 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 43.0
+margin_right = 398.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "system.cg.ch1_todolist_title"
+align = 1
+valign = 2
+
+[node name="Subtitle" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 59.0
+margin_right = 398.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "system.cg.ch1_todolist_subtitle"
+align = 1
+valign = 2
+
+[node name="Item1" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 84.0
+margin_right = 398.0
+margin_bottom = 105.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "system.cg.ch1_todolist_item1"
+valign = 2
+
+[node name="Item2" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 111.0
+margin_right = 398.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "system.cg.ch1_todolist_item2"
+valign = 2
+
+[node name="Item3" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 139.0
+margin_right = 398.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "system.cg.ch1_todolist_item3"
+valign = 2
+
+[node name="Item4" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 167.0
+margin_right = 398.0
+margin_bottom = 188.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "system.cg.ch1_todolist_item4"
+valign = 2
+
+[node name="Item5" type="Label" parent="."]
+margin_left = 246.0
+margin_top = 195.0
+margin_right = 398.0
+margin_bottom = 216.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "system.cg.ch1_todolist_item5"
+valign = 2
+
+[node name="CrossOut1" type="ColorRect" parent="."]
+margin_left = 246.0
+margin_top = 97.0
+margin_right = 398.0
+margin_bottom = 98.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CrossOut2" type="ColorRect" parent="."]
+margin_left = 246.0
+margin_top = 124.0
+margin_right = 398.0
+margin_bottom = 125.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CrossOut3" type="ColorRect" parent="."]
+margin_left = 246.0
+margin_top = 152.0
+margin_right = 398.0
+margin_bottom = 153.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CrossOut4" type="ColorRect" parent="."]
+margin_left = 246.0
+margin_top = 180.0
+margin_right = 398.0
+margin_bottom = 181.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CrossOut5" type="ColorRect" parent="."]
+margin_left = 246.0
+margin_top = 208.0
+margin_right = 398.0
+margin_bottom = 209.0
+color = Color( 0, 0, 0, 1 )

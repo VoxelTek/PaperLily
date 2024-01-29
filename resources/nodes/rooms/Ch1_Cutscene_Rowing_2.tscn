@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Forest_Lakeside_North.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/lighting/ch1_forest_lakeside.tres" type="Resource" id=3]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=4]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSprite.cs" type="Script" id=5]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_boat_rowing.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/misc_boat_underwater.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Room/Background/LacieRowing:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -124, 181 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Room/Background/LacieRowing:Playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Room/Water/BoatUnderwater:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -123, 228 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "animation"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Room/Background/LacieRowing:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 5, 6, 6.5, 7, 7.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -124, 181 ), Vector2( -124, -180 ), Vector2( -124, -270 ), Vector2( -124, -320 ), Vector2( -124, -350 ), Vector2( -124, -370 ), Vector2( -124, -380 ), Vector2( -124, -385 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Room/Background/LacieRowing:Playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Room/Water/BoatUnderwater:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 5, 6, 6.5, 7, 7.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -123, 228 ), Vector2( -123, -133 ), Vector2( -123, -223 ), Vector2( -123, -273 ), Vector2( -123, -303 ), Vector2( -123, -323 ), Vector2( -123, -333 ), Vector2( -123, -338 ) ]
+}
+
+[node name="Ch1_Cutscene_Rowing_2" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 3 )
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="BoatUnderwater" type="Sprite" parent="Room/Water" index="5"]
+position = Vector2( -123, 228 )
+texture = ExtResource( 7 )
+
+[node name="LacieRowing" type="Sprite" parent="Room/Background" index="45"]
+position = Vector2( -124, 181 )
+texture = ExtResource( 6 )
+hframes = 4
+frame = 2
+script = ExtResource( 5 )
+Playing = true
+AnimationFrames = "1,3,1,2,2,2,2,2,2,2"
+
+[node name="cutscene_start" type="Node2D" parent="."]
+position = Vector2( -124, 181 )
+script = ExtResource( 4 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "animation"
+anims/RESET = SubResource( 1 )
+anims/animation = SubResource( 2 )
+
+[editable path="Room"]

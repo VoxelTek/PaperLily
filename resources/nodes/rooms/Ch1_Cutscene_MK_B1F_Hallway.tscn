@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_MK_B1F_Hallway.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneMkB1fHallway.cs" type="Script" id=3]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=4]
+
+[node name="Ch1_Cutscene_MK_B1F_Hallway" type="Node2D"]
+script = ExtResource( 3 )
+Cutscene = true
+Lighting = ExtResource( 4 )
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="Points" type="Node2D" parent="."]
+
+[node name="event_first_enter_sai" type="Node2D" parent="Points"]
+position = Vector2( 231, 608 )
+script = ExtResource( 1 )
+Direction = 4
+
+[node name="event_first_enter_lacie" type="Node2D" parent="Points"]
+position = Vector2( 199, 608 )
+script = ExtResource( 1 )
+Direction = 4

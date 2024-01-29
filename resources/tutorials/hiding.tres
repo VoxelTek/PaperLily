@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://script/Subgame/Tutorials/Tutorial.cs" type="Script" id=1]
+[ext_resource path="res://assets/img/tutorial/hiding.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Hiding"
+Text = "Hide in the bushes with {0} to avoid being caught."
+Image = ExtResource( 2 )
+Inputs = PoolStringArray( "input_action" )

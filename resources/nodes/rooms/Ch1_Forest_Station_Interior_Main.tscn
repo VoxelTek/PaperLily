@@ -1,0 +1,707 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_forest_station_interior.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/floor_station_stairs01.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/misc_trashcan.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/struct_vendingmachine.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_booth_overlay.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt01.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt08.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt06.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt09.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/struct_ticketdispenser.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt03.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt05.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt02.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt04.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_dirt07.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/misc_plant_dead.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/struct_chairs01.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/struct_chairs02.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/decor_clock.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/decor_papers02.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/struct_chairs03.png" type="Texture" id=22]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=23]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/decor_papers01.png" type="Texture" id=24]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=25]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=26]
+[ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=27]
+[ext_resource path="res://script/Nodes/Chair.cs" type="Script" id=28]
+[ext_resource path="res://assets/bgm/ch1_forest_q.ogg" type="AudioStream" id=29]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=30]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/wall_booth.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/chr_booking_clerk.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/misc_blood.png" type="Texture" id=33]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=34]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/misc_glass_crack.png" type="Texture" id=35]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=36]
+[ext_resource path="res://script/Core/Nodes/VariableEnabler.cs" type="Script" id=37]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=38]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=39]
+[ext_resource path="res://resources/lighting/ch1_forest_station_interior_creepy.tres" type="Resource" id=40]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=41]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=42]
+[ext_resource path="res://resources/lighting/basic.tres" type="Resource" id=43]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=44]
+[ext_resource path="res://script/Core/Nodes/VariableSpriteFrames.cs" type="Script" id=45]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.5, 56 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 45.5, 4 )
+
+[node name="Ch1_Forest_Station_Interior_Main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Bgm = ExtResource( 29 )
+BgmVolume = 0.5
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -196620, 7, 196610, -196619, 7, 196610, -196618, 7, 196610, -196617, 7, 196610, -196616, 7, 196610, -196615, 7, 196610, -196614, 7, 196610, -196613, 7, 196610, -196612, 7, 196610, -196611, 7, 196610, -196610, 7, 196610, -196609, 7, 196610, -262144, 7, 196610, -262143, 7, 196610, -262142, 7, 196610, -262141, 7, 196610, -131084, 7, 196610, -131083, 7, 196610, -131082, 7, 196610, -131081, 7, 0, -131080, 7, 0, -131079, 7, 0, -131078, 7, 0, -131077, 7, 0, -131076, 7, 0, -131075, 7, 0, -131074, 7, 0, -131073, 7, 0, -196608, 7, 0, -196607, 7, 0, -196606, 7, 196610, -196605, 7, 196610, -65548, 7, 196610, -65547, 7, 196610, -65546, 7, 196610, -65545, 7, 0, -65544, 3, 0, -65543, 3, 0, -65542, 3, 0, -65541, 3, 0, -65540, 3, 0, -65539, 3, 0, -65538, 3, 0, -65537, 3, 0, -131071, 7, 0, -131070, 7, 196610, -131069, 7, 196610, -12, 7, 196610, -11, 7, 0, -10, 7, 0, -9, 7, 0, -65535, 7, 0, -65534, 7, 196610, -65533, 7, 196610, 65524, 7, 196610, 65525, 7, 0, 65526, 3, 0, 65527, 4, 0, 1, 7, 0, 2, 7, 0, 131060, 7, 196610, 131061, 7, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 2, 0, 65537, 3, 0, 65538, 3, 0, 196596, 7, 196610, 196597, 7, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 262132, 7, 196610, 262133, 7, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 327668, 7, 196610, 327669, 7, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 393204, 7, 196610, 393205, 7, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 458740, 7, 196610, 458741, 7, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393217, 7, 0, 393218, 7, 131074, 393219, 7, 131074, 524276, 7, 196610, 524277, 7, 0, 524278, 7, 0, 524279, 7, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458753, 7, 0, 458754, 7, 196610, 458755, 7, 196610, 589812, 7, 196610, 589813, 7, 196610, 589814, 7, 196610, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524289, 7, 0, 524290, 7, 196610, 524291, 7, 196610, 655348, 7, 196610, 655349, 7, 196610, 655350, 7, 196610, 655351, 7, 0, 655352, 7, 0, 655353, 7, 0, 655354, 7, 0, 655355, 7, 0, 655356, 7, 0, 655357, 0, 0, 655358, 0, 0, 655359, 7, 0, 589824, 7, 0, 589825, 7, 0, 589826, 7, 196610, 589827, 7, 196610, 720884, 7, 196610, 720885, 7, 196610, 720886, 7, 196610, 720887, 7, 196610, 720888, 7, 196610, 720889, 7, 196610, 720890, 7, 196610, 720891, 7, 196610, 720892, 7, 0, 720893, 7, 0, 720894, 7, 0, 720895, 7, 0, 655360, 7, 196610, 655361, 7, 196610, 655362, 7, 196610, 655363, 7, 196610, 786420, 7, 196610, 786421, 7, 196610, 786422, 7, 196610, 786423, 7, 196610, 786424, 7, 196610, 786425, 7, 196610, 786426, 7, 196610, 786427, 7, 196610, 786428, 7, 196610, 786429, 7, 196610, 786430, 7, 196610, 786431, 7, 196610, 720896, 7, 196610, 720897, 7, 196610, 720898, 7, 196610, 720899, 7, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_station_stairs01" type="Sprite" parent="Background"]
+position = Vector2( 49, 158 )
+texture = ExtResource( 3 )
+
+[node name="WallBooth" type="Sprite" parent="Background"]
+position = Vector2( -144, -7 )
+texture = ExtResource( 31 )
+
+[node name="ChrBookingClerk" type="Sprite" parent="Background/WallBooth"]
+visible = false
+position = Vector2( 1, -4 )
+texture = ExtResource( 32 )
+
+[node name="WallBoothOverlay" type="Sprite" parent="Background/WallBooth"]
+position = Vector2( 3, -10 )
+texture = ExtResource( 6 )
+
+[node name="MiscGlassCrack" type="Sprite" parent="Background/WallBooth"]
+position = Vector2( -12, 3 )
+texture = ExtResource( 35 )
+offset = Vector2( 0.5, 0 )
+
+[node name="Wall damage" type="Node2D" parent="Background"]
+
+[node name="WallDirt01" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -224, -32 )
+texture = ExtResource( 7 )
+
+[node name="WallDirt02" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( 17, 48 )
+texture = ExtResource( 14 )
+
+[node name="WallDirt03" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -36, -17 )
+texture = ExtResource( 12 )
+
+[node name="WallDirt04" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -14, -48 )
+texture = ExtResource( 15 )
+
+[node name="WallDirt05" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -74, 21 )
+texture = ExtResource( 13 )
+
+[node name="WallDirt07" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -276, 83 )
+texture = ExtResource( 16 )
+
+[node name="WallDirt06" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -140, 18 )
+texture = ExtResource( 9 )
+
+[node name="WallDirt08" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -328, 32 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="WallDirt09" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -262, 16 )
+texture = ExtResource( 14 )
+
+[node name="WallDirt10" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( 82, 48 )
+texture = ExtResource( 15 )
+
+[node name="WallDirt11" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( 46, 119 )
+texture = ExtResource( 8 )
+
+[node name="WallDirt12" type="Sprite" parent="Background/Wall damage"]
+position = Vector2( -291, 89 )
+texture = ExtResource( 10 )
+
+[node name="StructVendingmachine" type="Sprite" parent="Background"]
+position = Vector2( -22, 9 )
+texture = ExtResource( 5 )
+
+[node name="ChairsLeft" type="Sprite" parent="Background"]
+position = Vector2( -308, 139 )
+texture = ExtResource( 19 )
+
+[node name="DecorClock" type="Sprite" parent="Background"]
+position = Vector2( -288, 22 )
+texture = ExtResource( 20 )
+
+[node name="DecorPapers02" type="Sprite" parent="Background"]
+position = Vector2( -287, 51 )
+texture = ExtResource( 21 )
+
+[node name="DecorPapers01" type="Sprite" parent="Background"]
+position = Vector2( -275, 70 )
+texture = ExtResource( 24 )
+
+[node name="MiscPlantDead" type="Sprite" parent="Background"]
+position = Vector2( -230, 13 )
+texture = ExtResource( 17 )
+hframes = 6
+
+[node name="MiscTrashcan" type="Sprite" parent="Background"]
+position = Vector2( -56, 27 )
+texture = ExtResource( 4 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StructTicketdispenser" type="Sprite" parent="Main"]
+position = Vector2( -31, 270 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -30 )
+
+[node name="ChairsMiddle" type="Sprite" parent="Main"]
+position = Vector2( -190, 87 )
+texture = ExtResource( 22 )
+offset = Vector2( 0, 51 )
+
+[node name="ChairsRight" type="Sprite" parent="Main"]
+position = Vector2( -98, 87 )
+texture = ExtResource( 22 )
+offset = Vector2( 0, 51 )
+
+[node name="MiscBlood" type="Sprite" parent="Main/ChairsRight"]
+position = Vector2( -13, 33 )
+texture = ExtResource( 33 )
+
+[node name="ChairsBottom" type="Sprite" parent="Main"]
+position = Vector2( -193, 245 )
+texture = ExtResource( 18 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -196620, 1, 196610, -196619, 1, 196610, -196618, 1, 196610, -196617, 1, 196610, -196616, 1, 196610, -196615, 1, 196610, -196614, 1, 196610, -196613, 1, 196610, -196612, 1, 196610, -196611, 1, 196610, -196610, 1, 196610, -196609, 1, 196610, -262144, 1, 196610, -262143, 1, 196610, -262142, 1, 196610, -262141, 1, 196610, -262140, 1, 196610, -262139, 1, 196610, -131084, 1, 196610, -131083, 1, 196610, -131082, 1, 196610, -131081, 1, 65539, -131080, 1, 262146, -131079, 1, 262146, -131078, 1, 262146, -131077, 1, 262146, -131076, 1, 262146, -131075, 1, 262146, -131074, 1, 262146, -131073, 1, 262146, -196608, 1, 65538, -196607, 1, 196610, -196606, 1, 196610, -196605, 1, 196610, -196604, 1, 196610, -196603, 1, 196610, -65548, 1, 196610, -65547, 1, 196610, -65546, 1, 196610, -65545, 1, 196611, -131072, 1, 196609, -131071, 1, 196610, -131070, 1, 196610, -131069, 1, 196610, -131068, 1, 196610, -131067, 1, 196610, -12, 1, 196610, -11, 1, 65539, -10, 1, 262146, -9, 1, 262147, -65536, 1, 196609, -65535, 1, 196610, -65534, 1, 196610, -65533, 1, 196610, -65532, 1, 196610, -65531, 1, 196610, 65524, 1, 196610, 65525, 1, 196611, 0, 1, 262145, 1, 1, 262146, 2, 1, 262146, 3, 1, 65538, 4, 1, 196610, 5, 1, 196610, 131060, 1, 196610, 131061, 1, 196611, 65539, 1, 196609, 65540, 1, 196610, 65541, 1, 196610, 196596, 1, 196610, 196597, 1, 196611, 131075, 1, 196609, 131076, 1, 196610, 131077, 1, 196610, 262132, 1, 196610, 262133, 1, 196611, 196611, 1, 196609, 196612, 1, 196610, 196613, 1, 196610, 327668, 1, 196610, 327669, 1, 196611, 262147, 1, 196609, 262148, 1, 196610, 262149, 1, 196610, 393204, 1, 196610, 393205, 1, 196611, 327683, 1, 196609, 327684, 1, 196610, 327685, 1, 196610, 458740, 1, 196610, 458741, 1, 3, 458742, 1, 131074, 458743, 1, 131075, 393216, 1, 131073, 393217, 1, 131074, 393218, 1, 131074, 393219, 1, 2, 393220, 1, 196610, 393221, 1, 196610, 524276, 1, 196610, 524277, 1, 196610, 524278, 1, 196610, 524279, 1, 196611, 458752, 1, 196609, 458753, 1, 196610, 458754, 1, 196610, 458755, 1, 196610, 458756, 1, 196610, 458757, 1, 196610, 589812, 1, 196610, 589813, 1, 196610, 589814, 1, 196610, 589815, 1, 3, 589816, 1, 131074, 589817, 1, 131074, 589818, 1, 131074, 589819, 1, 131074, 589820, 1, 131075, 589823, 1, 131073, 524288, 1, 2, 524289, 1, 196610, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 655348, 1, 196610, 655349, 1, 196610, 655350, 1, 196610, 655351, 1, 196610, 655352, 1, 196610, 655353, 1, 196610, 655354, 1, 196610, 655355, 1, 196610, 655356, 1, 196611, 655359, 1, 196609, 589824, 1, 196610, 589825, 1, 196610, 589826, 1, 196610, 589827, 1, 196610, 589828, 1, 196610, 589829, 1, 196610, 720884, 1, 196610, 720885, 1, 196610, 720886, 1, 196610, 720887, 1, 196610, 720888, 1, 196610, 720889, 1, 196610, 720890, 1, 196610, 720891, 1, 196610, 720892, 1, 196610, 720893, 1, 196610, 720894, 1, 196610, 720895, 1, 196610, 655360, 1, 196610, 655361, 1, 196610, 655362, 1, 196610, 655363, 1, 196610, 655364, 1, 196610, 655365, 1, 196610, 786420, 1, 196610, 786421, 1, 196610, 786422, 1, 196610, 786423, 1, 196610, 786424, 1, 196610, 786425, 1, 196610, 786426, 1, 196610, 786427, 1, 196610, 786428, 1, 196610, 786429, 1, 196610, 786430, 1, 196610, 786431, 1, 196610, 720896, 1, 196610, 720897, 1, 196610, 720898, 1, 196610, 720899, 1, 196610, 720900, 1, 196610, 720901, 1, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_station_stairs02" type="Sprite" parent="Foreground"]
+position = Vector2( 49, 191 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 71, 112, 4 )
+
+[node name="floor_station_stairs03" type="Sprite" parent="Foreground"]
+position = Vector2( 95, 158 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 100, 0, 4, 80 )
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fadeout" type="Sprite" parent="Lighting"]
+position = Vector2( -104, 320 )
+scale = Vector2( 0.625, -0.5 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 39 )
+Default = true
+Lighting = ExtResource( 43 )
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 39 )
+Lighting = ExtResource( 40 )
+
+[node name="Light7" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( -229, 55 )
+texture = ExtResource( 41 )
+texture_scale = 4.0
+color = Color( 0.372549, 0.576471, 0.580392, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 38 )
+BlendMode = 1
+
+[node name="Light8" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( -14, 120 )
+texture = ExtResource( 41 )
+texture_scale = 4.0
+color = Color( 0.372549, 0.576471, 0.580392, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 38 )
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boundary" type="StaticBody2D" parent="Other"]
+collision_layer = 2
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision1" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( -190.5, 141 )
+shape = SubResource( 1 )
+
+[node name="Collision2" type="CollisionShape2D" parent="Other/Boundary"]
+position = Vector2( -98, 141 )
+shape = SubResource( 1 )
+
+[node name="BoundaryUnpassable" type="StaticBody2D" parent="Other"]
+collision_layer = 10
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision1" type="CollisionShape2D" parent="Other/BoundaryUnpassable"]
+position = Vector2( 45.5, 126 )
+shape = SubResource( 2 )
+
+[node name="Collision2" type="CollisionPolygon2D" parent="Other/BoundaryUnpassable"]
+position = Vector2( -1, 0 )
+polygon = PoolVector2Array( 1, 130, 92, 170, 92, 130 )
+
+[node name="Collision3" type="CollisionPolygon2D" parent="Other/BoundaryUnpassable"]
+position = Vector2( 0, 59 )
+polygon = PoolVector2Array( 0, 130, 91, 170, 0, 170 )
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_glass_crack" type="Node2D" parent="Other/Events"]
+position = Vector2( -122, 87 )
+script = ExtResource( 23 )
+Solid = false
+Trigger = 1
+Area = Vector2( 64, 96 )
+
+[node name="item_scissors_on_plant" type="Node" parent="Other/Events"]
+script = ExtResource( 30 )
+Items = "ch1.scissors"
+Nodes = "misc_plant"
+
+[node name="misc_counter" type="Node2D" parent="Other/Events"]
+position = Vector2( -144, 16 )
+script = ExtResource( 23 )
+Directions = 2
+Area = Vector2( 128, 32 )
+
+[node name="misc_notes_1" type="Node2D" parent="Other/Events"]
+position = Vector2( -276, 79 )
+script = ExtResource( 23 )
+
+[node name="misc_notes_2" type="Node2D" parent="Other/Events"]
+position = Vector2( -92, 24 )
+script = ExtResource( 23 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_notes_3" type="Node2D" parent="Other/Events"]
+position = Vector2( -188, 24 )
+script = ExtResource( 23 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_plant" type="Node2D" parent="Other/Events"]
+position = Vector2( -239, 35 )
+script = ExtResource( 23 )
+Area = Vector2( 32, 16 )
+
+[node name="misc_trashcan" type="Node2D" parent="Other/Events"]
+position = Vector2( -57, 38 )
+script = ExtResource( 23 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_blood" type="Node2D" parent="Other/Events"]
+position = Vector2( -110, 118 )
+script = ExtResource( 23 )
+Area = Vector2( 24, 62 )
+
+[node name="misc_vendingmachine" type="Node2D" parent="Other/Events"]
+position = Vector2( -24, 38 )
+script = ExtResource( 23 )
+Area = Vector2( 48, 16 )
+
+[node name="misc_numbermachine" type="Node2D" parent="Other/Events"]
+position = Vector2( -16, 264 )
+script = ExtResource( 23 )
+Area = Vector2( 32, 16 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( -64, 336 )
+script = ExtResource( 23 )
+Area = Vector2( 64, 32 )
+
+[node name="move_downstairs" type="Node2D" parent="Other/Events"]
+position = Vector2( 107, 181 )
+script = ExtResource( 23 )
+Solid = false
+Trigger = 1
+Area = Vector2( 32, 96 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="from_downstairs" type="Node2D" parent="Other/Points"]
+position = Vector2( -15, 160 )
+script = ExtResource( 25 )
+Direction = 1
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( -64, 304 )
+script = ExtResource( 25 )
+Direction = 2
+
+[node name="ChairsStairs" type="Node" parent="Other"]
+
+[node name="stairs" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( 48, 178 )
+script = ExtResource( 27 )
+Area = Vector2( 96, 96 )
+Degrees = 30.0
+InvertX = true
+Passthrough = true
+
+[node name="chair" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -143, 245 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 22 )
+RelatedNode = NodePath("../../../Main/ChairsBottom")
+PlayerOffset = Vector2( 0, -11 )
+Direction = 2
+
+[node name="chair2" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -168, 245 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 22 )
+RelatedNode = NodePath("../../../Main/ChairsBottom")
+PlayerOffset = Vector2( 0, -11 )
+Direction = 2
+
+[node name="chair3" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -193, 245 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 22 )
+RelatedNode = NodePath("../../../Main/ChairsBottom")
+PlayerOffset = Vector2( 0, -11 )
+Direction = 2
+
+[node name="chair4" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -218, 245 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 22 )
+RelatedNode = NodePath("../../../Main/ChairsBottom")
+PlayerOffset = Vector2( 0, -11 )
+Direction = 2
+
+[node name="chair5" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -243, 245 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 22 )
+RelatedNode = NodePath("../../../Main/ChairsBottom")
+PlayerOffset = Vector2( 0, -11 )
+Direction = 2
+
+[node name="chair6" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -308, 181 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Background/ChairsLeft")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair7" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -308, 160 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Background/ChairsLeft")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair8" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -308, 139 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Background/ChairsLeft")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair9" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -308, 118 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Background/ChairsLeft")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair10" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -308, 97 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Background/ChairsLeft")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair11" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -179, 181 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair12" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -179, 160 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair13" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -179, 139 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair14" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -179, 118 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair15" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -179, 97 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair16" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -202, 181 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair17" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -202, 160 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair18" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -202, 139 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair19" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -202, 118 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair20" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -202, 97 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsMiddle")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair21" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -87, 181 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair22" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -87, 160 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair23" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -87, 139 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair24" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -87, 118 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair25" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -87, 97 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( 12, 0 )
+Direction = 4
+
+[node name="chair26" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -110, 181 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair27" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -110, 160 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair28" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -110, 139 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair29" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -110, 118 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="chair30" type="Node2D" parent="Other/ChairsStairs"]
+position = Vector2( -110, 97 )
+script = ExtResource( 28 )
+Area = Vector2( 24, 20 )
+RelatedNode = NodePath("../../../Main/ChairsRight")
+PlayerOffset = Vector2( -12, 0 )
+Direction = 1
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="glass_crack" type="Node" parent="Other/Updates"]
+script = ExtResource( 36 )
+Variable = "ch1.forest_station_seen_glass_crack"
+Node = NodePath("../../../Background/WallBooth/MiscGlassCrack")
+
+[node name="chair_blood" type="Node" parent="Other/Updates"]
+script = ExtResource( 36 )
+Variable = "general.serious"
+Node = NodePath("../../../Main/ChairsRight/MiscBlood")
+
+[node name="chair_blood_evt" type="Node" parent="Other/Updates"]
+script = ExtResource( 37 )
+Variable = "general.serious"
+Node = NodePath("../../Events/misc_blood")
+
+[node name="chair_blood_chair_1" type="Node" parent="Other/Updates"]
+script = ExtResource( 37 )
+Variable = "general.serious"
+Node = NodePath("../../ChairsStairs/chair28")
+Invert = true
+
+[node name="chair_blood_chair_2" type="Node" parent="Other/Updates"]
+script = ExtResource( 37 )
+Variable = "general.serious"
+Node = NodePath("../../ChairsStairs/chair29")
+Invert = true
+
+[node name="chair_blood_chair_3" type="Node" parent="Other/Updates"]
+script = ExtResource( 37 )
+Variable = "general.serious"
+Node = NodePath("../../ChairsStairs/chair30")
+Invert = true
+
+[node name="creepy_lighting" type="Node" parent="Other/Updates"]
+script = ExtResource( 44 )
+Variable = "general.serious"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")
+
+[node name="cut_plant" type="Node" parent="Other/Updates"]
+script = ExtResource( 45 )
+Variable = "ch1.forest_station_cut_interior"
+Node = NodePath("../../../Background/MiscPlantDead")
+TrueFrame = 3

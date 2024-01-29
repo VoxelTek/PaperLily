@@ -1,0 +1,712 @@
+[gd_scene load_steps=80 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1FacilityB2fLab.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_facility.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/wall_blood_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_blood_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_blood_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_blood_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_blood_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_blood_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/facility/common/floor_blood_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_cage_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_bed_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_bag_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_cage_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_bag_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_counter_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/floor_paper .png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_cage_1.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_counter_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_cage_5.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_cage_3.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/furniture_bed_1.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/wall_blood_2.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/wall_whiteboard.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/facility/common/misc_bones_4.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/wall_blood_3.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/wall_lightswitch.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/struct_tube_2.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/struct_well.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/struct_tube_3.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_bottles_2.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/ch1/facility/common/misc_bones_3.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_glass_2.png" type="Texture" id=32]
+[ext_resource path="res://resources/lighting/ch1_facility.tres" type="Resource" id=33]
+[ext_resource path="res://assets/sprite/ch1/facility/common/misc_bones_2.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_glass_3.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_goop_1.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_goop_3.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_glass_1.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_book_2.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_bottles_1.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprite/ch1/facility/common/misc_bones_1.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_bottles_4.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_goop_2.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_goop_4.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_jars_hanging.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_book_1.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_jar_broken.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_marker.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/struct_lockers.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/struct_tube_1.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_bottles_3.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprite/ch1/facility/common/misc_bones_8.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprite/common/light_fadeout_2.png" type="Texture" id=53]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=54]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=55]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/floor_tile_offset_3.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/floor_tile_offset_1.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/foliage_vegetation_2.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/foliage_vegetation_4.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/foliage_vegetation_3.png" type="Texture" id=60]
+[ext_resource path="res://resources/nodes/ch1/facility/floor_hole_4.tscn" type="PackedScene" id=61]
+[ext_resource path="res://resources/nodes/ch1/facility/floor_hole_2.tscn" type="PackedScene" id=62]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/floor_tile_offset_2.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/foliage_vegetation_5.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprite/ch1/facility/hallways/foliage_vegetation_1.png" type="Texture" id=65]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCustom.cs" type="Script" id=66]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=67]
+[ext_resource path="res://assets/bgm/ch1_facility.ogg" type="AudioStream" id=68]
+[ext_resource path="res://assets/sprite/ch1/cutscene/sai_lean.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprite/ch1/facility/lab/misc_gate.png" type="Texture" id=70]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=71]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=72]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=73]
+[ext_resource path="res://resources/lighting/ch1_facility_lightsoff.tres" type="Resource" id=74]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=75]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=76]
+[ext_resource path="res://script/Core/Nodes/VariableSpriteFrames.cs" type="Script" id=77]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.5, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33, 16 )
+
+[node name="Ch1_Facility_B2F_Lab" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 33 )
+Bgm = ExtResource( 68 )
+lightOn = ExtResource( 33 )
+lightOff = ExtResource( 74 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -524296, 9, 1, -524295, 9, 1, -524294, 9, 1, -524293, 9, 1, -524292, 9, 1, -524291, 9, 1, -524290, 9, 1, -524289, 9, 1, -589824, 9, 1, -589823, 9, 1, -589822, 9, 1, -589821, 9, 1, -589820, 9, 1, -589819, 9, 1, -458760, 9, 65537, -458759, 9, 65537, -458758, 9, 65537, -458757, 9, 65537, -458756, 9, 65537, -458755, 9, 65537, -458754, 9, 65537, -458753, 9, 65537, -524288, 9, 65537, -524287, 9, 65537, -524286, 9, 65537, -524285, 9, 65537, -524284, 9, 65537, -524283, 9, 65537, -524282, 9, 0, -393224, 9, 131073, -393223, 9, 131073, -393222, 9, 131073, -393221, 9, 131073, -393220, 9, 131073, -393219, 9, 131073, -393218, 9, 131073, -393217, 9, 131073, -458752, 9, 131073, -458751, 9, 131073, -458750, 9, 131073, -458749, 9, 131073, -458748, 9, 131073, -458747, 9, 131073, -458746, 9, 65536, -327688, 4, 65536, -327687, 4, 65536, -327686, 4, 65536, -327685, 4, 65536, -327684, 4, 65536, -327683, 4, 65536, -327682, 4, 65536, -327681, 4, 0, -393216, 4, 0, -393215, 4, 65536, -393214, 4, 65536, -393213, 4, 65536, -393212, 4, 65536, -393211, 4, 0, -393210, 9, 131072, -262152, 4, 0, -262151, 4, 65536, -262150, 4, 65536, -262149, 4, 65536, -262148, 4, 65536, -262147, 4, 65537, -262146, 4, 65537, -262145, 4, 65536, -327680, 4, 65537, -327679, 4, 0, -327678, 4, 65536, -327677, 4, 65536, -327676, 4, 65537, -327675, 4, 65536, -327674, 4, 65536, -196616, 4, 65536, -196615, 4, 65537, -196614, 4, 65537, -196613, 4, 65537, -196612, 4, 65536, -196611, 4, 0, -196610, 4, 65537, -196609, 4, 65537, -262144, 4, 65537, -262143, 4, 65537, -262142, 4, 65536, -262141, 4, 65536, -262140, 4, 0, -262139, 4, 65536, -262138, 4, 65536, -131080, 4, 0, -131079, 4, 65537, -131078, 4, 0, -131077, 4, 65536, -131076, 4, 65536, -131075, 4, 65537, -131074, 4, 0, -131073, 4, 65536, -196608, 4, 65536, -196607, 4, 65537, -196606, 4, 65536, -196605, 4, 65536, -196604, 4, 65537, -196603, 4, 65537, -65544, 4, 65536, -65543, 4, 0, -65541, 4, 65536, -65540, 4, 65536, -65539, 4, 65536, -65538, 4, 65537, -131071, 4, 0, -131070, 4, 65536, -131069, 4, 65536, -131068, 4, 65536, -131067, 4, 65537, -8, 4, 65537, -7, 4, 65537, -5, 4, 65537, -4, 4, 65536, -3, 4, 65536, -2, 4, 65536, -65535, 4, 65536, -65534, 4, 0, -65533, 4, 65536, -65532, 4, 65536, -65531, 4, 0, 65528, 4, 0, 65531, 4, 65536, 65532, 4, 65536, 65533, 4, 65536, 65534, 4, 65536, 1, 4, 65536, 2, 4, 65536, 3, 4, 65536, 4, 4, 65536, 5, 4, 65537, 131064, 4, 65536, 196591, 9, 1, 196592, 9, 1, 196593, 9, 1, 196594, 9, 1, 196600, 4, 0, 262127, 9, 65537, 262128, 9, 65537, 262129, 9, 65537, 262130, 9, 65537, 262136, 4, 65536, 327663, 9, 131073, 327664, 9, 131073, 327665, 9, 131073, 327666, 9, 131073, 327667, 9, 0, 327668, 9, 1, 327669, 9, 1, 327670, 9, 1, 327671, 9, 2, 327672, 4, 65537, 393199, 4, 1, 393200, 4, 1, 393201, 4, 1, 393202, 4, 1, 393203, 9, 65536, 393204, 9, 65537, 393205, 9, 65537, 393206, 9, 65537, 393207, 9, 65538, 393208, 4, 0, 458735, 4, 0, 458736, 4, 1, 458737, 4, 65537, 458738, 4, 1, 458739, 9, 131072, 458740, 9, 131073, 458741, 9, 131073, 458742, 9, 131073, 458743, 9, 131074, 458744, 4, 65537, 524271, 4, 1, 524272, 4, 0, 524273, 4, 1, 524274, 4, 1, 524275, 4, 65537, 524276, 4, 1, 524277, 4, 1, 524278, 4, 1, 524279, 4, 1, 524280, 4, 65536, 524284, 9, 1, 524285, 9, 1, 524286, 9, 1, 589816, 4, 1, 589817, 9, 0, 589818, 9, 1, 589819, 9, 2, 589820, 9, 65537, 589821, 9, 65537, 589822, 9, 65537, 655352, 4, 0, 655353, 9, 65536, 655354, 9, 65537, 655355, 9, 65538, 655356, 9, 131073, 655357, 9, 131073, 655358, 9, 131073, 720888, 4, 1, 720889, 9, 131072, 720890, 9, 131073, 720891, 9, 131074, 720892, 4, 1, 720893, 4, 1, 720894, 4, 65537, 786424, 4, 1, 786425, 4, 0, 786426, 4, 1, 786427, 4, 65537, 786428, 4, 0, 786429, 4, 1, 786430, 4, 1, 851964, 4, 65537, 851965, 4, 1, 851966, 4, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="floor_hole_4" parent="Ground" instance=ExtResource( 61 )]
+position = Vector2( -551, 267 )
+
+[node name="floor_hole_2" parent="Ground" instance=ExtResource( 62 )]
+position = Vector2( -45, 401 )
+
+[node name="FloorBlood1" type="Sprite" parent="Ground"]
+position = Vector2( 105, -127 )
+texture = ExtResource( 4 )
+
+[node name="FloorBlood2" type="Sprite" parent="Ground"]
+position = Vector2( 79, 14 )
+texture = ExtResource( 6 )
+
+[node name="FloorBlood3" type="Sprite" parent="Ground"]
+position = Vector2( -66, 17 )
+texture = ExtResource( 5 )
+
+[node name="FloorBlood4" type="Sprite" parent="Ground"]
+position = Vector2( -123, -36 )
+texture = ExtResource( 7 )
+
+[node name="FloorBlood5" type="Sprite" parent="Ground"]
+position = Vector2( -12, -116 )
+texture = ExtResource( 8 )
+
+[node name="FloorBlood6" type="Sprite" parent="Ground"]
+position = Vector2( -160, -134 )
+texture = ExtResource( 9 )
+
+[node name="FloorBlood7" type="Sprite" parent="Ground"]
+position = Vector2( -202, -144 )
+texture = ExtResource( 9 )
+
+[node name="FloorPaper" type="Sprite" parent="Ground"]
+position = Vector2( 50, -179 )
+texture = ExtResource( 16 )
+
+[node name="MiscMarker" type="Sprite" parent="Ground"]
+position = Vector2( 13, -188 )
+texture = ExtResource( 48 )
+
+[node name="Debris" type="Node2D" parent="Ground"]
+
+[node name="FloorTileOffset2" type="Sprite" parent="Ground/Debris"]
+position = Vector2( 1, -144 )
+texture = ExtResource( 63 )
+
+[node name="FloorTileOffset3" type="Sprite" parent="Ground/Debris"]
+position = Vector2( 65, -48 )
+texture = ExtResource( 63 )
+
+[node name="FloorTileOffset4" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -199, -95 )
+texture = ExtResource( 56 )
+
+[node name="FloorTileOffset5" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -176, -96 )
+texture = ExtResource( 63 )
+
+[node name="FloorTileOffset1" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -239, -8 )
+texture = ExtResource( 57 )
+
+[node name="FloorTileOffset6" type="Sprite" parent="Ground/Debris"]
+position = Vector2( 160, 0 )
+texture = ExtResource( 63 )
+
+[node name="FloorTileOffset7" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -463, 224 )
+texture = ExtResource( 63 )
+
+[node name="FloorTileOffset8" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -103, 401 )
+texture = ExtResource( 56 )
+
+[node name="FloorTileOffset9" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -47, 344 )
+texture = ExtResource( 57 )
+
+[node name="FoliageVegetation5" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -265, 222 )
+texture = ExtResource( 60 )
+
+[node name="FoliageVegetation6" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -391, 219 )
+texture = ExtResource( 64 )
+
+[node name="FoliageVegetation1" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -137, 344 )
+texture = ExtResource( 65 )
+
+[node name="FoliageVegetation7" type="Sprite" parent="Ground/Debris"]
+position = Vector2( -167, 349 )
+texture = ExtResource( 58 )
+
+[node name="ShinyFuse" parent="Ground" instance=ExtResource( 75 )]
+position = Vector2( -508, 219 )
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FurnitureCage1" type="Sprite" parent="Background"]
+position = Vector2( -236, -198 )
+texture = ExtResource( 17 )
+
+[node name="FurnitureCage2" type="Sprite" parent="Background"]
+position = Vector2( -198, -198 )
+texture = ExtResource( 13 )
+
+[node name="FurnitureCage3" type="Sprite" parent="Background"]
+position = Vector2( -160, -196 )
+texture = ExtResource( 20 )
+
+[node name="FurnitureCage4" type="Sprite" parent="Background"]
+position = Vector2( -215, -240 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureCage5" type="Sprite" parent="Background"]
+position = Vector2( -77, -195 )
+texture = ExtResource( 19 )
+
+[node name="FurnitureCage6" type="Sprite" parent="Background"]
+position = Vector2( -127, -194 )
+texture = ExtResource( 10 )
+
+[node name="FurnitureCage7" type="Sprite" parent="Background"]
+position = Vector2( -132, -230 )
+texture = ExtResource( 20 )
+
+[node name="FurnitureCounter2" type="Sprite" parent="Background"]
+position = Vector2( 113, -194 )
+texture = ExtResource( 18 )
+
+[node name="MiscBones8" type="Sprite" parent="Background"]
+position = Vector2( -217, -161 )
+texture = ExtResource( 52 )
+
+[node name="MiscBag2" type="Sprite" parent="Background"]
+position = Vector2( -178, -176 )
+texture = ExtResource( 12 )
+
+[node name="MiscBones4" type="Sprite" parent="Background"]
+position = Vector2( -171, -150 )
+texture = ExtResource( 24 )
+
+[node name="MiscBag1" type="Sprite" parent="Background"]
+position = Vector2( -198, -158 )
+texture = ExtResource( 14 )
+
+[node name="MiscBook1" type="Sprite" parent="Background"]
+position = Vector2( 119, -212 )
+texture = ExtResource( 46 )
+
+[node name="MiscJarBroken" type="Sprite" parent="Background"]
+position = Vector2( -32, -184 )
+texture = ExtResource( 47 )
+
+[node name="StructLockers" type="Sprite" parent="Background"]
+position = Vector2( 163, -215 )
+texture = ExtResource( 49 )
+
+[node name="StructTube1" type="Sprite" parent="Background"]
+position = Vector2( -526, 133 )
+texture = ExtResource( 50 )
+
+[node name="StructTube2" type="Sprite" parent="Background"]
+position = Vector2( -434, 133 )
+texture = ExtResource( 27 )
+
+[node name="StructTube3" type="Sprite" parent="Background"]
+position = Vector2( -480, 130 )
+texture = ExtResource( 29 )
+
+[node name="MiscGlass1" type="Sprite" parent="Background"]
+position = Vector2( -493, 193 )
+texture = ExtResource( 38 )
+
+[node name="MiscGlass2" type="Sprite" parent="Background"]
+position = Vector2( -466, 205 )
+texture = ExtResource( 32 )
+
+[node name="MiscGlass3" type="Sprite" parent="Background"]
+position = Vector2( -495, 211 )
+texture = ExtResource( 35 )
+
+[node name="WallLightswitch" type="Sprite" parent="Background"]
+position = Vector2( 208, -207 )
+texture = ExtResource( 26 )
+
+[node name="WallWhiteboard" type="Sprite" parent="Background"]
+position = Vector2( 42, -230 )
+texture = ExtResource( 23 )
+
+[node name="WallBlood1" type="Sprite" parent="Background"]
+position = Vector2( 205, -201 )
+texture = ExtResource( 3 )
+
+[node name="WallBlood2" type="Sprite" parent="Background"]
+position = Vector2( 158, -201 )
+texture = ExtResource( 22 )
+
+[node name="WallBlood3" type="Sprite" parent="Background"]
+position = Vector2( 7, -211 )
+texture = ExtResource( 25 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FoliageVegetation2" type="Sprite" parent="Main"]
+position = Vector2( -1, -145 )
+texture = ExtResource( 58 )
+offset = Vector2( 0, -3 )
+
+[node name="FoliageVegetation4" type="Sprite" parent="Main"]
+position = Vector2( -206, -96 )
+texture = ExtResource( 59 )
+offset = Vector2( 0, -5 )
+
+[node name="FoliageVegetation3" type="Sprite" parent="Main"]
+position = Vector2( -465, 223 )
+texture = ExtResource( 58 )
+offset = Vector2( 0, -3 )
+
+[node name="FoliageVegetation8" type="Sprite" parent="Main"]
+position = Vector2( -67, 361 )
+texture = ExtResource( 59 )
+offset = Vector2( 0, -5 )
+
+[node name="FurnitureBed1" type="Sprite" parent="Main"]
+position = Vector2( -78, -44 )
+texture = ExtResource( 21 )
+offset = Vector2( 0, 16 )
+
+[node name="FurnitureBed2" type="Sprite" parent="Main"]
+position = Vector2( 129, -32 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, 6 )
+
+[node name="FurnitureCounter1" type="Sprite" parent="Main"]
+position = Vector2( -151, -16 )
+texture = ExtResource( 15 )
+
+[node name="MiscBones1" type="Sprite" parent="Main/FurnitureCounter1"]
+position = Vector2( 0, 21 )
+texture = ExtResource( 41 )
+
+[node name="MiscBones2" type="Sprite" parent="Main/FurnitureCounter1"]
+position = Vector2( 1, 36 )
+texture = ExtResource( 34 )
+
+[node name="MiscBottles1" type="Sprite" parent="Main/FurnitureCounter1"]
+position = Vector2( -1, -45 )
+texture = ExtResource( 40 )
+
+[node name="MiscBottles2" type="Sprite" parent="Main/FurnitureCounter1"]
+position = Vector2( -1, -1 )
+texture = ExtResource( 30 )
+
+[node name="FurnitureCounter2" type="Sprite" parent="Main"]
+position = Vector2( 41, -16 )
+texture = ExtResource( 15 )
+
+[node name="MiscBottles3" type="Sprite" parent="Main/FurnitureCounter2"]
+position = Vector2( -5, 6 )
+texture = ExtResource( 51 )
+
+[node name="MiscBones3" type="Sprite" parent="Main/FurnitureCounter2"]
+position = Vector2( 0, 17 )
+texture = ExtResource( 31 )
+
+[node name="MiscBottles4" type="Sprite" parent="Main/FurnitureCounter2"]
+position = Vector2( -1, 30 )
+texture = ExtResource( 42 )
+
+[node name="MiscBones1" type="Sprite" parent="Main/FurnitureCounter2"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 41 )
+
+[node name="MiscGoop1" type="Sprite" parent="Main"]
+position = Vector2( -112, 369 )
+texture = ExtResource( 36 )
+offset = Vector2( 0, -2 )
+
+[node name="MiscGoop2" type="Sprite" parent="Main"]
+position = Vector2( -86, 364 )
+texture = ExtResource( 43 )
+offset = Vector2( 0, -3 )
+
+[node name="MiscGoop3" type="Sprite" parent="Main"]
+position = Vector2( -54, 369 )
+texture = ExtResource( 37 )
+offset = Vector2( 0, -4 )
+
+[node name="MiscGoop4" type="Sprite" parent="Main"]
+position = Vector2( -95, 385 )
+texture = ExtResource( 44 )
+offset = Vector2( 0, -2 )
+
+[node name="StructWell" type="Sprite" parent="Main"]
+position = Vector2( -79, 377 )
+texture = ExtResource( 28 )
+offset = Vector2( 0, -26 )
+hframes = 2
+
+[node name="MiscBook2" type="Sprite" parent="Main"]
+position = Vector2( 83, -177 )
+texture = ExtResource( 39 )
+offset = Vector2( 0, 3 )
+
+[node name="SaiLean" type="Sprite" parent="Main"]
+position = Vector2( 211, -103 )
+texture = ExtResource( 69 )
+offset = Vector2( 0, -26 )
+flip_h = true
+
+[node name="MiscGate" type="Sprite" parent="Main"]
+position = Vector2( -240, 92 )
+texture = ExtResource( 70 )
+offset = Vector2( 0, -41 )
+hframes = 2
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -655371, 8, 196610, -655370, 8, 196610, -655369, 8, 196610, -655368, 8, 196610, -655367, 8, 196610, -655366, 8, 196610, -655365, 8, 196610, -655364, 8, 196610, -655363, 8, 196610, -655362, 8, 196610, -655361, 8, 196610, -720896, 8, 196610, -720895, 8, 196610, -720894, 8, 196610, -720893, 8, 196610, -720892, 8, 196610, -720891, 8, 196610, -720890, 8, 196610, -720889, 8, 196610, -720888, 8, 196610, -589835, 8, 196610, -589834, 8, 196610, -589833, 8, 65539, -589832, 8, 262146, -589831, 8, 262146, -589830, 8, 262146, -589829, 8, 262146, -589828, 8, 262146, -589827, 8, 262146, -589826, 8, 262146, -589825, 8, 262146, -655360, 8, 262146, -655359, 8, 262146, -655358, 8, 262146, -655357, 8, 262146, -655356, 8, 262146, -655355, 8, 262146, -655354, 8, 65538, -655353, 8, 196610, -655352, 8, 196610, -524299, 8, 196610, -524298, 8, 196610, -524297, 8, 196611, -589818, 8, 262145, -589817, 8, 196610, -589816, 8, 196610, -458763, 8, 196610, -458762, 8, 196610, -458761, 8, 196611, -524281, 8, 196610, -524280, 8, 196610, -393227, 8, 196610, -393226, 8, 196610, -393225, 8, 196611, -458745, 8, 196610, -458744, 8, 196610, -327691, 8, 196610, -327690, 8, 196610, -327689, 8, 196611, -393209, 8, 196610, -393208, 8, 196610, -262155, 8, 196610, -262154, 8, 196610, -262153, 8, 196611, -327673, 8, 196610, -327672, 8, 196610, -196619, 8, 196610, -196618, 8, 196610, -196617, 8, 196611, -262137, 8, 196610, -262136, 8, 196610, -131083, 8, 196610, -131082, 8, 196610, -131081, 8, 196611, -196602, 8, 131073, -196601, 8, 196610, -196600, 8, 196610, -65547, 8, 196610, -65546, 8, 196610, -65545, 8, 196611, -65543, 8, 131073, -65542, 8, 131075, -65537, 8, 131073, -131072, 8, 131075, -131066, 8, 196609, -131065, 8, 196610, -131064, 8, 196610, -20, 8, 196610, -19, 8, 196610, -18, 8, 196610, -17, 8, 196610, -16, 8, 196610, -15, 8, 196610, -14, 8, 196610, -13, 8, 196610, -12, 8, 196610, -11, 8, 196610, -10, 8, 196610, -9, 8, 196611, -7, 8, 196609, -6, 8, 196611, -1, 8, 196609, -65536, 8, 196611, -65530, 8, 196609, -65529, 8, 196610, -65528, 8, 196610, 65516, 8, 196610, 65517, 8, 196610, 65518, 8, 196610, 65519, 8, 196610, 65520, 8, 196610, 65521, 8, 196610, 65522, 8, 196610, 65523, 8, 196610, 65524, 8, 196610, 65525, 8, 196610, 65526, 8, 196610, 65527, 8, 196611, 65529, 8, 196609, 65530, 8, 196611, 65535, 8, 196609, 0, 8, 196611, 6, 8, 196609, 7, 8, 196610, 8, 8, 196610, 131052, 8, 196610, 131053, 8, 196610, 131054, 8, 65539, 131055, 8, 262146, 131056, 8, 262146, 131057, 8, 262146, 131058, 8, 262146, 131059, 8, 65538, 131060, 8, 196610, 131061, 8, 196610, 131062, 8, 196610, 131063, 8, 196611, 131065, 8, 196609, 131066, 8, 3, 131067, 8, 131074, 131068, 8, 131074, 131069, 8, 131074, 131070, 8, 131074, 131071, 8, 2, 65536, 8, 3, 65537, 8, 131074, 65538, 8, 131074, 65539, 8, 131074, 65540, 8, 131074, 65541, 8, 131074, 65542, 8, 2, 65543, 8, 196610, 65544, 8, 196610, 196588, 8, 196610, 196589, 8, 196610, 196590, 8, 196611, 196595, 8, 196609, 196596, 8, 196610, 196597, 8, 196610, 196598, 8, 196610, 196599, 8, 196611, 196601, 8, 196609, 196602, 8, 196610, 196603, 8, 196610, 196604, 8, 196610, 196605, 8, 196610, 196606, 8, 196610, 196607, 8, 196610, 131072, 8, 196610, 131073, 8, 196610, 131074, 8, 196610, 131075, 8, 196610, 131076, 8, 196610, 131077, 8, 196610, 131078, 8, 196610, 131079, 8, 196610, 131080, 8, 196610, 262124, 8, 196610, 262125, 8, 196610, 262126, 8, 196611, 262131, 8, 262145, 262132, 8, 262146, 262133, 8, 262146, 262134, 8, 262146, 262135, 8, 262147, 262137, 8, 196609, 262138, 8, 196610, 262139, 8, 196610, 262140, 8, 196610, 262141, 8, 196610, 262142, 8, 196610, 262143, 8, 196610, 196608, 8, 196610, 196609, 8, 196610, 196610, 8, 196610, 196611, 8, 196610, 196612, 8, 196610, 196613, 8, 196610, 196614, 8, 196610, 196615, 8, 196610, 196616, 8, 196610, 327660, 8, 196610, 327661, 8, 196610, 327662, 8, 196611, 327673, 8, 196609, 327674, 8, 196610, 327675, 8, 196610, 327676, 8, 196610, 327677, 8, 196610, 327678, 8, 196610, 327679, 8, 196610, 262144, 8, 196610, 393196, 8, 196610, 393197, 8, 196610, 393198, 8, 196611, 393209, 8, 196609, 393210, 8, 196610, 393211, 8, 196610, 393212, 8, 196610, 393213, 8, 196610, 393214, 8, 196610, 393215, 8, 196610, 327680, 8, 196610, 458732, 8, 196610, 458733, 8, 196610, 458734, 8, 196611, 458745, 8, 196609, 458746, 8, 196610, 458747, 8, 65539, 458748, 8, 262146, 458749, 8, 262146, 458750, 8, 262146, 458751, 8, 65538, 393216, 8, 196610, 524268, 8, 196610, 524269, 8, 196610, 524270, 8, 196611, 524281, 8, 262145, 524282, 8, 262146, 524283, 8, 262147, 524287, 8, 196609, 458752, 8, 196610, 589804, 8, 196610, 589805, 8, 196610, 589806, 8, 3, 589807, 8, 131074, 589808, 8, 131074, 589809, 8, 131074, 589810, 8, 131074, 589811, 8, 131074, 589812, 8, 131074, 589813, 8, 131074, 589814, 8, 131074, 589815, 8, 131075, 589823, 8, 196609, 524288, 8, 196610, 655340, 8, 196610, 655341, 8, 196610, 655342, 8, 196610, 655343, 8, 196610, 655344, 8, 196610, 655345, 8, 196610, 655346, 8, 196610, 655347, 8, 196610, 655348, 8, 196610, 655349, 8, 196610, 655350, 8, 196610, 655351, 8, 196611, 655359, 8, 196609, 589824, 8, 196610, 720876, 8, 196610, 720877, 8, 196610, 720878, 8, 196610, 720879, 8, 196610, 720880, 8, 196610, 720881, 8, 196610, 720882, 8, 196610, 720883, 8, 196610, 720884, 8, 196610, 720885, 8, 196610, 720886, 8, 196610, 720887, 8, 196611, 720895, 8, 196609, 655360, 8, 196610, 786422, 8, 196610, 786423, 8, 196611, 786431, 8, 196609, 720896, 8, 196610, 851958, 8, 196610, 851959, 8, 3, 851960, 8, 131074, 851961, 8, 131074, 851962, 8, 131074, 851963, 8, 131075, 851967, 8, 196609, 786432, 8, 196610, 917494, 8, 196610, 917495, 8, 196610, 917496, 8, 196610, 917497, 8, 196610, 917498, 8, 196610, 917499, 8, 3, 917500, 8, 131074, 917501, 8, 131074, 917502, 8, 131074, 917503, 8, 2, 851968, 8, 196610, 983030, 8, 196610, 983031, 8, 196610, 983032, 8, 196610, 983033, 8, 196610, 983034, 8, 196610, 983035, 8, 196610, 983036, 8, 196610, 983037, 8, 196610, 983038, 8, 196610, 983039, 8, 196610, 917504, 8, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscJarsHanging" type="Sprite" parent="Foreground"]
+position = Vector2( -38, -260 )
+texture = ExtResource( 45 )
+
+[node name="StructTube4" type="Sprite" parent="Foreground"]
+position = Vector2( -526, 62 )
+texture = ExtResource( 50 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 36, 10 )
+
+[node name="StructTube5" type="Sprite" parent="Foreground"]
+position = Vector2( -434, 62 )
+texture = ExtResource( 27 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 38, 10 )
+
+[node name="StructTube6" type="Sprite" parent="Foreground"]
+position = Vector2( -480, 62 )
+texture = ExtResource( 29 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 75, 10 )
+
+[node name="LightFadeout" type="Sprite" parent="Foreground"]
+position = Vector2( 208, -175.5 )
+scale = Vector2( 0.25, 1.36719 )
+texture = ExtResource( 53 )
+flip_h = true
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light4" type="Light2D" parent="Lighting"]
+position = Vector2( 17, -128 )
+texture = ExtResource( 72 )
+texture_scale = 5.0
+color = Color( 0.988235, 0.454902, 0.454902, 1 )
+energy = 0.45
+range_item_cull_mask = 3
+script = ExtResource( 73 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light5" type="Light2D" parent="Lighting"]
+position = Vector2( -477, 190 )
+texture = ExtResource( 72 )
+texture_scale = 4.0
+color = Color( 0.27451, 0.321569, 0.827451, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 73 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light6" type="Light2D" parent="Lighting"]
+position = Vector2( -82, 350 )
+texture = ExtResource( 72 )
+texture_scale = 4.0
+color = Color( 0.415686, 0.658824, 0.580392, 1 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 73 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 71 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item_key_on_gate" type="Node" parent="Other/Events"]
+script = ExtResource( 76 )
+Items = "ch1.facility_key_gates"
+Nodes = "misc_gate"
+
+[node name="item_cellphone_on_sai" type="Node" parent="Other/Events"]
+script = ExtResource( 76 )
+Items = "ch1.cellphone"
+Nodes = "chr_sai"
+
+[node name="item_doorknob_on_sai" type="Node" parent="Other/Events"]
+script = ExtResource( 76 )
+Items = "ch1.doorknob_return
+ch1.doorknob_graveyard"
+Nodes = "chr_sai"
+
+[node name="item_runes_on_sai" type="Node" parent="Other/Events"]
+script = ExtResource( 76 )
+Items = "ch1.rune_jara
+ch1.rune_uruz
+ch1.rune_ansuz
+ch1.rune_raidho
+ch1.rune_algiz
+ch1.rune_tiwaz
+ch1.rune_othala"
+Nodes = "chr_sai"
+
+[node name="chr_sai" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, -112 )
+script = ExtResource( 55 )
+
+[node name="item_fuse_get" type="Node2D" parent="Other/Events"]
+position = Vector2( -508, 219 )
+script = ExtResource( 55 )
+Solid = false
+Area = Vector2( 16, 16 )
+
+[node name="misc_gate" type="Node2D" parent="Other/Events"]
+position = Vector2( -240, 92 )
+script = ExtResource( 55 )
+Area = Vector2( 32, 8 )
+
+[node name="misc_lightswitch" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, -168 )
+script = ExtResource( 55 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_lockers" type="Node2D" parent="Other/Events"]
+position = Vector2( 166, -184 )
+script = ExtResource( 55 )
+Area = Vector2( 64, 16 )
+
+[node name="misc_drawers" type="Node2D" parent="Other/Events"]
+position = Vector2( 113, -184 )
+script = ExtResource( 55 )
+Area = Vector2( 40, 16 )
+
+[node name="misc_book" type="Node2D" parent="Other/Events"]
+position = Vector2( 83, -174 )
+script = ExtResource( 55 )
+Area = Vector2( 16, 16 )
+
+[node name="misc_brokenjar" type="Node2D" parent="Other/Events"]
+position = Vector2( -35, -184 )
+script = ExtResource( 55 )
+Area = Vector2( 32, 16 )
+
+[node name="misc_whiteboard" type="Node2D" parent="Other/Events"]
+position = Vector2( 42, -208 )
+script = ExtResource( 55 )
+Area = Vector2( 96, 32 )
+
+[node name="misc_cages" type="Node2D" parent="Other/Events"]
+position = Vector2( -163, -184 )
+script = ExtResource( 55 )
+Area = Vector2( 224, 32 )
+
+[node name="misc_bones" type="Node2D" parent="Other/Events"]
+position = Vector2( -216, -168 )
+script = ExtResource( 55 )
+
+[node name="misc_bags" type="Node2D" parent="Other/Events"]
+position = Vector2( -187, -153 )
+script = ExtResource( 55 )
+Area = Vector2( 58, 32 )
+
+[node name="misc_bed_left" type="Node2D" parent="Other/Events"]
+position = Vector2( -80, -17 )
+script = ExtResource( 55 )
+Area = Vector2( 35, 56 )
+
+[node name="misc_bed_right" type="Node2D" parent="Other/Events"]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 128, -12 )
+script = ExtResource( 66 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other/Events/misc_bed_right"]
+position = Vector2( 0.5, -4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Other/Events/misc_bed_right"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="misc_counter_left" type="Node2D" parent="Other/Events"]
+position = Vector2( -151, -8 )
+script = ExtResource( 55 )
+Area = Vector2( 16, 80 )
+
+[node name="misc_counter_right" type="Node2D" parent="Other/Events"]
+position = Vector2( 41, -8 )
+script = ExtResource( 55 )
+Area = Vector2( 16, 80 )
+
+[node name="misc_well" type="Node2D" parent="Other/Events"]
+position = Vector2( -80, 370 )
+script = ExtResource( 67 )
+Area = Vector2( 40, 24 )
+
+[node name="misc_tube_left" type="Node2D" parent="Other/Events"]
+position = Vector2( -528, 188 )
+script = ExtResource( 55 )
+Event = "misc_tube"
+
+[node name="misc_tube_center" type="Node2D" parent="Other/Events"]
+position = Vector2( -480, 188 )
+script = ExtResource( 55 )
+Area = Vector2( 64, 32 )
+
+[node name="misc_tube_right" type="Node2D" parent="Other/Events"]
+position = Vector2( -432, 188 )
+script = ExtResource( 55 )
+Event = "misc_tube"
+
+[node name="misc_goop_1" type="Node2D" parent="Other/Events"]
+position = Vector2( -48, 367 )
+script = ExtResource( 55 )
+Event = "misc_goop"
+Solid = false
+Area = Vector2( 16, 8 )
+
+[node name="misc_goop_2" type="Node2D" parent="Other/Events"]
+position = Vector2( -112, 367 )
+script = ExtResource( 55 )
+Event = "misc_goop"
+Solid = false
+Area = Vector2( 16, 8 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 240, -128 )
+script = ExtResource( 55 )
+Area = Vector2( 32, 64 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 208, -128 )
+script = ExtResource( 54 )
+Direction = 1
+
+[node name="ch1_cutscene_sai" type="Node2D" parent="Other/Points"]
+position = Vector2( 208, -144 )
+script = ExtResource( 54 )
+
+[node name="ch1_cutscene_lacie" type="Node2D" parent="Other/Points"]
+position = Vector2( 176, -128 )
+script = ExtResource( 54 )
+Direction = 1
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="well_pull_up" type="Node" parent="Other/Updates"]
+script = ExtResource( 77 )
+Variable = "ch1.facility_well_pulled"
+Node = NodePath("../../../Main/StructWell")

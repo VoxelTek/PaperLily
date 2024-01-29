@@ -1,0 +1,340 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1CutsceneBusA.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_scooch.png" type="Texture" id=2]
+[ext_resource path="res://resources/tileset/ch1_bus.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_sit.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/bus/walls_a.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/bus/window_a.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/bus/seats_a.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/bus/seats_back_a.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/bus/stairs_a.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/bus/curtains_a.png" type="Texture" id=10]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=11]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=12]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=13]
+[ext_resource path="res://resources/lighting/ch1_bus.tres" type="Resource" id=14]
+[ext_resource path="res://assets/sprite/ch1/bus/wall_rules.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=16]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animation"
+length = 4.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 5, 23 ), Vector2( 7, 0 ), Vector2( 7, -8 ), Vector2( 7, -18 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 0, 1, 2, 0, 1, 2, 0, 3 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "animation"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.9, 1, 1.1, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 561, 310, 0, 0, 0, 0, 561, 260, 0, 0, 0, 0, 580, 260 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 580, 260, 0, 0, 0, 0, 314, 260 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 314, 260, 0, 0, 0, 0, 314, 245 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BusMoveAnimation/Placeholder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 7 ),
+"transitions": PoolRealArray( 2, 0.5, 0, 2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -300, 0 ), Vector2( -600, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Ch1_Cutscene_Bus_A" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 14 )
+CameraLimitLeft = 64
+CameraLimitTop = 64
+CameraLimitRight = 704
+CameraLimitBottom = 424
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262148, 9, 0, 262149, 10, 0, 262150, 10, 0, 262151, 10, 0, 262152, 10, 0, 262153, 10, 0, 262154, 10, 0, 262155, 10, 0, 262156, 10, 0, 262157, 10, 0, 262158, 10, 0, 327684, 11, 0, 327685, 12, 0, 327686, 12, 0, 327687, 12, 0, 327688, 12, 0, 327689, 12, 0, 327690, 12, 0, 327691, 12, 0, 327692, 12, 0, 327693, 12, 0, 327694, 12, 0, 393220, 13, 0, 393221, 17, 0, 393222, 17, 0, 393223, 17, 0, 393224, 17, 0, 393225, 17, 0, 393226, 17, 0, 393227, 17, 0, 393228, 17, 0, 393229, 17, 0, 393230, 17, 0, 458756, 13, 0, 458757, 17, 0, 458758, 17, 0, 458759, 17, 0, 458760, 17, 0, 458761, 17, 0, 458762, 17, 0, 458763, 17, 0, 458764, 17, 0, 458765, 17, 0, 458766, 17, 0, 458767, 17, 0, 458768, 17, 0, 458769, 17, 0, 458770, 17, 0, 524292, 13, 0, 524293, 17, 0, 524294, 17, 0, 524295, 17, 0, 524296, 17, 0, 524297, 17, 0, 524298, 17, 0, 524299, 17, 0, 524300, 17, 0, 524301, 17, 0, 524302, 17, 0, 524303, 17, 0, 524304, 17, 0, 524305, 17, 0, 524306, 17, 0, 589828, 14, 0, 589829, 17, 0, 589830, 17, 0, 589831, 17, 0, 589832, 17, 0, 589833, 17, 0, 589834, 17, 0, 589835, 17, 0, 589836, 17, 0, 589837, 17, 0, 589838, 17, 0, 589839, 17, 0, 589840, 17, 0, 655364, 15, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="window_a" type="Sprite" parent="Background"]
+position = Vector2( 192, 168 )
+texture = ExtResource( 6 )
+
+[node name="window_a2" type="Sprite" parent="Background"]
+position = Vector2( 256, 168 )
+texture = ExtResource( 6 )
+
+[node name="window_a3" type="Sprite" parent="Background"]
+position = Vector2( 320, 168 )
+texture = ExtResource( 6 )
+
+[node name="window_a4" type="Sprite" parent="Background"]
+position = Vector2( 384, 168 )
+texture = ExtResource( 6 )
+
+[node name="window_a5" type="Sprite" parent="Background"]
+position = Vector2( 448, 168 )
+texture = ExtResource( 6 )
+
+[node name="walls_a" type="Sprite" parent="Background"]
+position = Vector2( 544, 232 )
+texture = ExtResource( 5 )
+
+[node name="seats_a" type="Sprite" parent="Background"]
+position = Vector2( 213, 203 )
+texture = ExtResource( 7 )
+
+[node name="seats_a3" type="Sprite" parent="Background"]
+position = Vector2( 261, 203 )
+texture = ExtResource( 7 )
+
+[node name="seats_a5" type="Sprite" parent="Background"]
+position = Vector2( 309, 203 )
+texture = ExtResource( 7 )
+
+[node name="lacie" type="Sprite" parent="Background/seats_a5"]
+position = Vector2( 5, 23 )
+texture = ExtResource( 4 )
+hframes = 4
+frame = 3
+
+[node name="Animation" type="AnimationPlayer" parent="Background/seats_a5/lacie"]
+playback_speed = 2.0
+anims/animation = SubResource( 1 )
+
+[node name="seats_a7" type="Sprite" parent="Background"]
+position = Vector2( 357, 203 )
+texture = ExtResource( 7 )
+
+[node name="seats_a9" type="Sprite" parent="Background"]
+position = Vector2( 405, 203 )
+texture = ExtResource( 7 )
+
+[node name="seats_a11" type="Sprite" parent="Background"]
+position = Vector2( 453, 203 )
+texture = ExtResource( 7 )
+
+[node name="seats_back_a" type="Sprite" parent="Background"]
+position = Vector2( 172, 243 )
+texture = ExtResource( 8 )
+
+[node name="stairs_a" type="Sprite" parent="Background"]
+position = Vector2( 560, 301 )
+texture = ExtResource( 9 )
+
+[node name="wall_rules" type="Sprite" parent="Background"]
+position = Vector2( 494, 207 )
+texture = ExtResource( 15 )
+
+[node name="curtains_a" type="Sprite" parent="Background"]
+position = Vector2( 552, 230 )
+texture = ExtResource( 10 )
+hframes = 9
+
+[node name="Animation" type="AnimationPlayer" parent="Background/curtains_a"]
+anims/animation = SubResource( 2 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="seats_a2" type="Sprite" parent="Foreground"]
+position = Vector2( 213, 289 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 72 )
+
+[node name="seats_a4" type="Sprite" parent="Foreground"]
+position = Vector2( 261, 289 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 72 )
+
+[node name="seats_a6" type="Sprite" parent="Foreground"]
+position = Vector2( 309, 289 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 72 )
+
+[node name="seats_a8" type="Sprite" parent="Foreground"]
+position = Vector2( 357, 289 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 72 )
+
+[node name="seats_a10" type="Sprite" parent="Foreground"]
+position = Vector2( 405, 289 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 72 )
+
+[node name="seats_a12" type="Sprite" parent="Foreground"]
+position = Vector2( 453, 289 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 72 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 655365, 16, 0, 655366, 16, 0, 655367, 16, 0, 655368, 16, 0, 655369, 16, 0, 655370, 16, 0, 655371, 16, 0, 655372, 16, 0, 655373, 16, 0, 655374, 16, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light" type="Light2D" parent="Lighting"]
+position = Vector2( 361, 240 )
+texture = ExtResource( 13 )
+texture_scale = 4.0
+color = Color( 0.905882, 0.803922, 1, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="light_fadeout" type="Sprite" parent="Lighting"]
+position = Vector2( 560, 301 )
+scale = Vector2( 0.5, 0.390625 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Points" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="enter" type="Node2D" parent="Points"]
+position = Vector2( 561, 310 )
+script = ExtResource( 11 )
+
+[node name="walk" type="Path2D" parent="Points"]
+curve = SubResource( 3 )
+
+[node name="walk2" type="Path2D" parent="Points"]
+curve = SubResource( 4 )
+
+[node name="walk3" type="Path2D" parent="Points"]
+curve = SubResource( 5 )
+
+[node name="BusMoveAnimation" type="AnimationPlayer" parent="."]
+anims/animation = SubResource( 6 )
+
+[node name="Placeholder" type="Node2D" parent="BusMoveAnimation"]
+visible = false

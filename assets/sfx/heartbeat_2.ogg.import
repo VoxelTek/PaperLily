@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heartbeat_2.ogg-a3a5271e1723177124b1d3b8a20dbde6.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/heartbeat_2.ogg"
+dest_files=[ "res://.import/heartbeat_2.ogg-a3a5271e1723177124b1d3b8a20dbde6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

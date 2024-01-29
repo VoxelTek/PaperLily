@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wardrobe_close.ogg-7bd328be3c6615b47809bec9ff9242d9.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/wardrobe_close.ogg"
+dest_files=[ "res://.import/wardrobe_close.ogg-7bd328be3c6615b47809bec9ff9242d9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://script/Core/Nodes/CharacterSprite.cs" type="Script" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/lacie_panic.png" type="Texture" id=5]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=6]
+
+[node name="Ch1_Cutscene_Ending_3" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lacie" type="Sprite" parent="Main"]
+script = ExtResource( 2 )
+CharacterId = "lacie"
+State = "walk"
+Direction = 4
+
+[node name="LaciePanic" type="Sprite" parent="Main"]
+visible = false
+position = Vector2( 0, -16 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="panic" type="Node" parent="Other/Actions"]
+script = ExtResource( 6 )
+
+[node name="hide_lacie" type="Node" parent="Other/Actions/panic"]
+script = ExtResource( 4 )
+Node = NodePath("../../../../Main/lacie")
+Visible = false
+
+[node name="show_lacie_panic" type="Node" parent="Other/Actions/panic"]
+script = ExtResource( 4 )
+Node = NodePath("../../../../Main/LaciePanic")

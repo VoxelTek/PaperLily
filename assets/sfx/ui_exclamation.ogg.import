@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ui_exclamation.ogg-8f1bb7eadd9bb6eb79b4d973da664c6d.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/ui_exclamation.ogg"
+dest_files=[ "res://.import/ui_exclamation.ogg-8f1bb7eadd9bb6eb79b4d973da664c6d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

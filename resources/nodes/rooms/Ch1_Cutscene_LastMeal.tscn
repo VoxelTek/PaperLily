@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_Home_1F_Kitchen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=3]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_plate_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_plate_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/common/character/lacie/lacie_sit.png" type="Texture" id=6]
+
+[node name="Ch1_Cutscene_LastMeal" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Subroom = NodePath("Room")
+
+[node name="Room" parent="." instance=ExtResource( 2 )]
+
+[node name="furniture_chair5" parent="Room/Main/furniture_table" index="3"]
+position = Vector2( 49, 12 )
+
+[node name="Sprite" type="Sprite" parent="Room/Main/furniture_table/furniture_chair5" index="0"]
+position = Vector2( 10, 3.99997 )
+texture = ExtResource( 6 )
+hframes = 4
+frame = 2
+
+[node name="PlateFull" type="Sprite" parent="Room/Main/furniture_table" index="11"]
+position = Vector2( 21, 2 )
+texture = ExtResource( 4 )
+
+[node name="PlateEmpty" type="Sprite" parent="Room/Main/furniture_table" index="12"]
+visible = false
+position = Vector2( 21, 2 )
+texture = ExtResource( 5 )
+
+[node name="cutscene_center" type="Node2D" parent="Room/Other/Points" index="3"]
+position = Vector2( 224, -81 )
+script = ExtResource( 3 )
+
+[node name="bubble" type="Node2D" parent="."]
+position = Vector2( 270, -115 )
+script = ExtResource( 3 )
+
+[editable path="Room"]
+[editable path="Room/Main/furniture_table"]

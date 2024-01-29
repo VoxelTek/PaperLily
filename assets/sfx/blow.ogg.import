@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/blow.ogg-39c24453ea057aa1a77bb1b51192e947.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/blow.ogg"
+dest_files=[ "res://.import/blow.ogg-39c24453ea057aa1a77bb1b51192e947.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

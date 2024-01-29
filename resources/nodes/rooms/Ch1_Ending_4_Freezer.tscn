@@ -1,0 +1,210 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_ending_4.tres" type="TileSet" id=2]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=3]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=4]
+[ext_resource path="res://resources/tileset/common_collision.tres" type="TileSet" id=5]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=6]
+[ext_resource path="res://assets/sprite/ch1/ending_4/freezer/misc_freezer.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/ending_4/freezer/light_1.png" type="Texture" id=9]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=10]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=11]
+[ext_resource path="res://assets/sprite/common/light04.png" type="Texture" id=12]
+[ext_resource path="res://resources/lighting/ch1_ending_4_freezer.tres" type="Resource" id=13]
+[ext_resource path="res://script/Core/Nodes/VariableSpriteFrames.cs" type="Script" id=14]
+
+[node name="Ch1_Ending_4_Freezer" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Lighting = ExtResource( 13 )
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65537, 10, 0, 65538, 10, 0, 65539, 10, 0, 65540, 10, 0, 65541, 10, 0, 262145, 13, 0, 262146, 13, 0, 262147, 13, 0, 262148, 13, 0, 262149, 13, 0, 327681, 13, 0, 327682, 13, 0, 327683, 13, 0, 327684, 13, 0, 327685, 13, 0, 393217, 13, 0, 393218, 13, 0, 393219, 13, 0, 393220, 13, 0, 393221, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458756, 13, 0, 458757, 13, 0, 524291, 13, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MiscFreezer" type="Sprite" parent="Background"]
+position = Vector2( 47, 132 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer2" type="Sprite" parent="Background"]
+position = Vector2( 79, 132 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer3" type="Sprite" parent="Background"]
+position = Vector2( 111, 132 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer4" type="Sprite" parent="Background"]
+position = Vector2( 143, 132 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer5" type="Sprite" parent="Background"]
+position = Vector2( 175, 132 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer6" type="Sprite" parent="Background"]
+position = Vector2( 47, 94 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer7" type="Sprite" parent="Background"]
+position = Vector2( 79, 94 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer8" type="Sprite" parent="Background"]
+position = Vector2( 111, 94 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer9" type="Sprite" parent="Background"]
+position = Vector2( 143, 94 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="MiscFreezer10" type="Sprite" parent="Background"]
+position = Vector2( 175, 94 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1, 8, 196610, -65536, 8, 196610, -65535, 8, 196610, -65534, 8, 196610, -65533, 8, 196610, -65532, 8, 196610, -65531, 8, 196610, -65530, 8, 196610, -65529, 8, 196610, 65535, 8, 196610, 0, 8, 65539, 1, 8, 262146, 2, 8, 262146, 3, 8, 262146, 4, 8, 262146, 5, 8, 262146, 6, 8, 65538, 7, 8, 196610, 131071, 8, 196610, 65536, 8, 196611, 65542, 8, 196609, 65543, 8, 196610, 196607, 8, 196610, 131072, 8, 196611, 131078, 8, 196609, 131079, 8, 196610, 262143, 8, 196610, 196608, 8, 196611, 196614, 8, 196609, 196615, 8, 196610, 327679, 8, 196610, 262144, 8, 196611, 262150, 8, 196609, 262151, 8, 196610, 393215, 8, 196610, 327680, 8, 196611, 327686, 8, 196609, 327687, 8, 196610, 458751, 8, 196610, 393216, 8, 196611, 393222, 8, 196609, 393223, 8, 196610, 524287, 8, 196610, 458752, 8, 196611, 458758, 8, 196609, 458759, 8, 196610, 589823, 8, 196610, 524288, 8, 3, 524289, 8, 131074, 524290, 8, 131074, 524292, 8, 131074, 524293, 8, 131074, 524294, 8, 2, 524295, 8, 196610, 655359, 8, 196610, 589824, 8, 196610, 589825, 8, 196610, 589826, 8, 196610, 589827, 8, 196610, 589828, 8, 196610, 589829, 8, 196610, 589830, 8, 196610, 589831, 8, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light1" type="Light2D" parent="Lighting"]
+position = Vector2( 111, 188 )
+texture = ExtResource( 9 )
+offset = Vector2( 0.5, 0 )
+energy = 0.4
+range_item_cull_mask = 3
+script = ExtResource( 10 )
+
+[node name="Light2" type="Light2D" parent="Lighting"]
+position = Vector2( 112, 154 )
+scale = Vector2( 1, 1.2 )
+texture = ExtResource( 12 )
+offset = Vector2( 0.5, 0 )
+texture_scale = 0.6
+range_item_cull_mask = 3
+script = ExtResource( 10 )
+
+[node name="LightFadeout" type="Sprite" parent="Lighting"]
+position = Vector2( 112, 272 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+flip_v = true
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TilesCol" type="TileMap" parent="Other"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262144, 0, 0, 262150, 0, 0, 327680, 0, 0, 327686, 0, 0, 393216, 0, 0, 393222, 0, 0, 458752, 0, 0, 458758, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="misc_fridge_1" type="Node2D" parent="Other/Events"]
+position = Vector2( 48, 133 )
+script = ExtResource( 11 )
+Event = "misc_fridge_noopen"
+
+[node name="misc_fridge_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 80, 133 )
+script = ExtResource( 11 )
+Event = "misc_fridge_noopen"
+
+[node name="misc_fridge_3" type="Node2D" parent="Other/Events"]
+position = Vector2( 112, 133 )
+script = ExtResource( 11 )
+
+[node name="misc_fridge_4" type="Node2D" parent="Other/Events"]
+position = Vector2( 144, 133 )
+script = ExtResource( 11 )
+Event = "misc_fridge_noopen"
+
+[node name="misc_fridge_5" type="Node2D" parent="Other/Events"]
+position = Vector2( 176, 133 )
+script = ExtResource( 11 )
+Event = "misc_fridge_noopen"
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 112, 304 )
+script = ExtResource( 11 )
+Solid = false
+Trigger = 1
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 112, 240 )
+script = ExtResource( 6 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="fridge_open" type="Node" parent="Other/Updates"]
+script = ExtResource( 14 )
+Variable = "ch1.temp_ending_1_4_fridge"
+Node = NodePath("../../../Background/MiscFreezer3")

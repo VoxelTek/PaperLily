@@ -1,0 +1,410 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://script/Subgame/Chapter1/Ch1MkKitchen.cs" type="Script" id=1]
+[ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_cauldron_liquid.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_storage2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_fruitbowl.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_storage1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_hanging_spices.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_bottles.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_box.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_flour.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/furniture_shelf.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_storage3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_frog.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_jar.png" type="Texture" id=14]
+[ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/floor_box.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_cookiejar.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_spices.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_shelf.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_plant.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_cauldron.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_cuttingboard.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/floor_carpet.png" type="Texture" id=23]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=24]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=25]
+[ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=26]
+[ext_resource path="res://resources/nodes/ch1/mk/mk_darkness.tscn" type="PackedScene" id=27]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=28]
+[ext_resource path="res://script/Nodes/Light.cs" type="Script" id=29]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=30]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=31]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/misc_cauldron_spoon.png" type="Texture" id=32]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=33]
+[ext_resource path="res://script/Nodes/PushableObject.cs" type="Script" id=34]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=35]
+[ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=36]
+[ext_resource path="res://script/Core/Nodes/CharacterSprite.cs" type="Script" id=37]
+[ext_resource path="res://script/Core/Nodes/ActionPlayerVisibility.cs" type="Script" id=38]
+[ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=39]
+[ext_resource path="res://script/Nodes/RoomLighting.cs" type="Script" id=40]
+[ext_resource path="res://resources/lighting/ch1_mk_dark.tres" type="Resource" id=41]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=42]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=43]
+[ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_storage1_spook.png" type="Texture" id=44]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=45]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.5, 12 )
+
+[node name="Ch1_MK_Kitchen" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+CameraLimitLeft = -208
+CameraLimitTop = -32
+CameraLimitRight = 432
+CameraLimitBottom = 384
+HideFollowers = true
+
+[node name="TilesBg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 23, 0, 1, 23, 0, 2, 23, 0, 3, 23, 0, 4, 23, 0, 5, 23, 0, 6, 23, 0, 262144, 21, 0, 262145, 21, 0, 262146, 21, 0, 262147, 21, 0, 262148, 21, 0, 262149, 21, 0, 262150, 21, 0, 327680, 21, 0, 327681, 21, 0, 327682, 21, 0, 327683, 21, 0, 327684, 21, 0, 327685, 21, 0, 327686, 21, 0, 393216, 21, 0, 393217, 21, 0, 393218, 21, 0, 393219, 21, 0, 393220, 21, 0, 393221, 21, 0, 393222, 21, 0, 458752, 21, 0, 458753, 21, 0, 458754, 21, 0, 458755, 21, 0, 458756, 21, 0, 458757, 21, 0, 458758, 21, 0, 524288, 21, 0, 524289, 21, 0, 524290, 21, 0, 524291, 21, 0, 524292, 21, 0, 524293, 21, 0, 524294, 21, 0, 589824, 21, 0, 589825, 21, 0, 589826, 21, 0, 589827, 21, 0, 589828, 21, 0, 589829, 21, 0, 589830, 21, 0, 655364, 21, 0, 655365, 21, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorCarpet" type="Sprite" parent="Background"]
+position = Vector2( 91, 239 )
+texture = ExtResource( 23 )
+
+[node name="WallStorage1" type="Sprite" parent="Background"]
+position = Vector2( 136, 85 )
+texture = ExtResource( 6 )
+
+[node name="Spook" type="Sprite" parent="Background/WallStorage1"]
+visible = false
+texture = ExtResource( 44 )
+hframes = 2
+vframes = 2
+script = ExtResource( 43 )
+Loop = false
+Autostart = false
+FrameDurations = "100,80,50,100"
+
+[node name="WallStorage2" type="Sprite" parent="Background"]
+position = Vector2( 200, 85 )
+texture = ExtResource( 4 )
+
+[node name="WallStorage3" type="Sprite" parent="Background"]
+position = Vector2( 168, 47 )
+texture = ExtResource( 12 )
+
+[node name="WallShelf" type="Sprite" parent="Background"]
+position = Vector2( 64, 39 )
+texture = ExtResource( 19 )
+
+[node name="WallShelf2" type="Sprite" parent="Background"]
+position = Vector2( 64, 71 )
+texture = ExtResource( 19 )
+
+[node name="WallShelf3" type="Sprite" parent="Background"]
+position = Vector2( 64, 103 )
+texture = ExtResource( 19 )
+
+[node name="WallHangingSpices" type="Sprite" parent="Background"]
+position = Vector2( 112, 24 )
+texture = ExtResource( 7 )
+
+[node name="MiscBottles" type="Sprite" parent="Background"]
+position = Vector2( 34, 61 )
+texture = ExtResource( 8 )
+
+[node name="MiscBox" type="Sprite" parent="Background"]
+position = Vector2( 69, 65 )
+texture = ExtResource( 9 )
+
+[node name="Cookiejar" type="Sprite" parent="Background"]
+position = Vector2( 67, 91 )
+texture = ExtResource( 17 )
+hframes = 2
+
+[node name="MiscFlour" type="Sprite" parent="Background"]
+position = Vector2( 31, 31 )
+texture = ExtResource( 10 )
+
+[node name="MiscFrog" type="Sprite" parent="Background"]
+position = Vector2( 96, 95 )
+texture = ExtResource( 13 )
+
+[node name="MiscFruitbowl" type="Sprite" parent="Background"]
+position = Vector2( 97, 64 )
+texture = ExtResource( 5 )
+
+[node name="MiscJar" type="Sprite" parent="Background"]
+position = Vector2( 92, 31 )
+texture = ExtResource( 14 )
+
+[node name="MiscPlant" type="Sprite" parent="Background"]
+position = Vector2( 49, 30 )
+texture = ExtResource( 20 )
+
+[node name="MiscSpices" type="Sprite" parent="Background"]
+position = Vector2( 69, 34 )
+texture = ExtResource( 18 )
+
+[node name="Main" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cauldron" type="Node2D" parent="Main"]
+position = Vector2( 88, 219 )
+
+[node name="Cauldron" type="Sprite" parent="Main/cauldron"]
+position = Vector2( 0, -8 )
+texture = ExtResource( 21 )
+
+[node name="Liquid" type="Sprite" parent="Main/cauldron/Cauldron"]
+position = Vector2( 0, -44 )
+texture = ExtResource( 3 )
+vframes = 3
+frame = 1
+
+[node name="MkDarkness" parent="Main/cauldron/Cauldron/Liquid" instance=ExtResource( 27 )]
+position = Vector2( -6, -1 )
+
+[node name="MiscCauldronSpoon" type="Sprite" parent="Main/cauldron/Cauldron"]
+position = Vector2( -24, -49 )
+texture = ExtResource( 32 )
+
+[node name="lacie_ladder" type="Sprite" parent="Main/cauldron/Cauldron"]
+visible = false
+position = Vector2( 0, -15 )
+script = ExtResource( 37 )
+CharacterId = "lacie"
+State = "stand"
+Direction = 2
+
+[node name="shelf" type="Node2D" parent="Main"]
+position = Vector2( 208, 171 )
+
+[node name="FurnitureShelf" type="Sprite" parent="Main/shelf"]
+position = Vector2( 0, 68 )
+texture = ExtResource( 11 )
+
+[node name="MiscCuttingboard" type="Sprite" parent="Main/shelf/FurnitureShelf"]
+position = Vector2( 0, -28 )
+texture = ExtResource( 22 )
+
+[node name="PushBox" type="KinematicBody2D" parent="Main"]
+position = Vector2( 203, 137 )
+script = ExtResource( 34 )
+PositionVariable = "ch1.mk_kitchen_box_pos"
+
+[node name="MiscBox" type="Sprite" parent="Main/PushBox"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/PushBox"]
+position = Vector2( -0.5, 4 )
+shape = SubResource( 1 )
+
+[node name="TilesFg" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65538, 22, 196610, -65537, 22, 196610, -131072, 22, 196610, -131071, 22, 196610, -131070, 22, 196610, -131069, 22, 196610, -131068, 22, 196610, -131067, 22, 196610, -131066, 22, 196610, -131065, 22, 196610, -131064, 22, 196610, -2, 22, 196610, -1, 22, 65539, -65536, 22, 262146, -65535, 22, 262146, -65534, 22, 262146, -65533, 22, 262146, -65532, 22, 262146, -65531, 22, 262146, -65530, 22, 262146, -65529, 22, 65538, -65528, 22, 196610, 65534, 22, 196610, 65535, 22, 196611, 7, 22, 196609, 8, 22, 196610, 131070, 22, 196610, 131071, 22, 196611, 65543, 22, 196609, 65544, 22, 196610, 196606, 22, 196610, 196607, 22, 196611, 131079, 22, 196609, 131080, 22, 196610, 262142, 22, 196610, 262143, 22, 196611, 196615, 22, 196609, 196616, 22, 196610, 327678, 22, 196610, 327679, 22, 196611, 262151, 22, 196609, 262152, 22, 196610, 393214, 22, 196610, 393215, 22, 196611, 327687, 22, 196609, 327688, 22, 196610, 458750, 22, 196610, 458751, 22, 196611, 393223, 22, 196609, 393224, 22, 196610, 524286, 22, 196610, 524287, 22, 196611, 458759, 22, 196609, 458760, 22, 196610, 589822, 22, 196610, 589823, 22, 196611, 524295, 22, 196609, 524296, 22, 196610, 655358, 22, 196610, 655359, 22, 196611, 589831, 22, 196609, 589832, 22, 196610, 720894, 22, 196610, 720895, 22, 3, 655360, 22, 131074, 655361, 22, 131074, 655362, 22, 131074, 655363, 22, 131075, 655366, 22, 131073, 655367, 22, 2, 655368, 22, 196610, 786430, 22, 196610, 786431, 22, 196610, 720896, 22, 196610, 720897, 22, 196610, 720898, 22, 196610, 720899, 22, 196610, 720900, 22, 196610, 720901, 22, 196610, 720902, 22, 196610, 720903, 22, 196610, 720904, 22, 196610, 851966, 22, 196610, 851967, 22, 196610, 786432, 22, 196610, 786433, 22, 196610, 786434, 22, 196610, 786435, 22, 196610, 786436, 22, 196610, 786437, 22, 196610, 786438, 22, 196610, 786439, 22, 196610, 786440, 22, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fadeout6" type="Sprite" parent="Foreground"]
+position = Vector2( 122, 352 )
+scale = Vector2( 0.59375, -0.25 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Lighting" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 39 )
+
+[node name="normal" type="Node" parent="Lighting"]
+script = ExtResource( 40 )
+Default = true
+Lighting = ExtResource( 28 )
+
+[node name="Light12" type="Light2D" parent="Lighting/normal"]
+visible = false
+light_mask = 3
+position = Vector2( 107, 177 )
+texture = ExtResource( 30 )
+texture_scale = 4.0
+color = Color( 0.564706, 0.898039, 1, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="creepy" type="Node" parent="Lighting"]
+script = ExtResource( 40 )
+Lighting = ExtResource( 41 )
+
+[node name="Light13" type="Light2D" parent="Lighting/creepy"]
+visible = false
+light_mask = 3
+position = Vector2( 118, 174 )
+texture = ExtResource( 30 )
+texture_scale = 4.0
+color = Color( 1, 0.564706, 0.564706, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_lock_": true
+}
+BlendMode = 1
+
+[node name="Other" type="Node2D" parent="."]
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Events" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="event_spoonman" type="Node2D" parent="Other/Events"]
+position = Vector2( 96, 245 )
+script = ExtResource( 24 )
+Solid = false
+Trigger = 1
+Area = Vector2( 192, 8 )
+
+[node name="item_knife_on_frog" type="Node" parent="Other/Events"]
+script = ExtResource( 31 )
+Items = "ch1.mk_knife
+ch1.mk_knife_activated"
+Nodes = "misc_shelf3"
+
+[node name="item_knife_on_foot" type="Node" parent="Other/Events"]
+script = ExtResource( 31 )
+Items = "ch1.mk_knife
+ch1.mk_knife_activated"
+Nodes = "misc_cauldron
+misc_cauldron_ladder"
+
+[node name="misc_cauldron" type="Node2D" parent="Other/Events"]
+position = Vector2( 88, 232 )
+script = ExtResource( 24 )
+Area = Vector2( 96, 48 )
+
+[node name="misc_cauldron_ladder" type="Node2D" parent="Other/Events"]
+position = Vector2( 88, 260 )
+script = ExtResource( 24 )
+Area = Vector2( 32, 16 )
+
+[node name="misc_counter" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 244 )
+script = ExtResource( 24 )
+Area = Vector2( 32, 152 )
+
+[node name="misc_cuttingboard" type="Node2D" parent="Other/Events"]
+position = Vector2( 208, 216 )
+script = ExtResource( 24 )
+
+[node name="misc_shelf1" type="Node2D" parent="Other/Events"]
+position = Vector2( 32, 112 )
+script = ExtResource( 24 )
+
+[node name="misc_shelf2" type="Node2D" parent="Other/Events"]
+position = Vector2( 64, 112 )
+script = ExtResource( 24 )
+
+[node name="misc_shelf3" type="Node2D" parent="Other/Events"]
+position = Vector2( 96, 112 )
+script = ExtResource( 24 )
+
+[node name="misc_barrel" type="Node2D" parent="Other/Events"]
+position = Vector2( 201, 112 )
+script = ExtResource( 24 )
+
+[node name="misc_barrel_2" type="Node2D" parent="Other/Events"]
+position = Vector2( 136, 112 )
+script = ExtResource( 24 )
+
+[node name="move_exit" type="Node2D" parent="Other/Events"]
+position = Vector2( 160, 368 )
+script = ExtResource( 24 )
+Area = Vector2( 64, 32 )
+
+[node name="Points" type="Node2D" parent="Other"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="entrance" type="Node2D" parent="Other/Points"]
+position = Vector2( 160, 336 )
+script = ExtResource( 25 )
+Direction = 2
+
+[node name="from_ladder" type="Node2D" parent="Other/Points"]
+position = Vector2( 88, 284 )
+script = ExtResource( 25 )
+Direction = 2
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="frog" type="Node" parent="Other/Updates"]
+script = ExtResource( 33 )
+Variable = "ch1.mk_frog_gone"
+Node = NodePath("../../../Background/MiscFrog")
+Invert = true
+
+[node name="creepy_lighting" type="Node" parent="Other/Updates"]
+script = ExtResource( 42 )
+Variable = "general.serious"
+ActionTrue = NodePath("../../../Lighting/creepy")
+ActionFalse = NodePath("../../../Lighting/normal")
+
+[node name="Actions" type="Node" parent="Other"]
+
+[node name="show_lacie_ladder" type="Node" parent="Other/Actions"]
+script = ExtResource( 35 )
+
+[node name="hide_player" type="Node" parent="Other/Actions/show_lacie_ladder"]
+script = ExtResource( 38 )
+Visible = false
+
+[node name="show_sprite" type="Node" parent="Other/Actions/show_lacie_ladder"]
+script = ExtResource( 36 )
+Node = NodePath("../../../../Main/cauldron/Cauldron/lacie_ladder")
+
+[node name="hide_lacie_ladder" type="Node" parent="Other/Actions"]
+script = ExtResource( 35 )
+
+[node name="show_player" type="Node" parent="Other/Actions/hide_lacie_ladder"]
+script = ExtResource( 38 )
+
+[node name="hide_sprite" type="Node" parent="Other/Actions/hide_lacie_ladder"]
+script = ExtResource( 36 )
+Node = NodePath("../../../../Main/cauldron/Cauldron/lacie_ladder")
+Visible = false
+
+[node name="play_spoon_man" type="Node" parent="Other/Actions"]
+script = ExtResource( 45 )
+Node = NodePath("../../../Background/WallStorage1/Spook")

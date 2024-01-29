@@ -1,0 +1,90 @@
+{
+	"Caption": "system.settings.input.profile.xbox",
+	"Type": "controller",
+	"CaptionBase": "_captions_xbox",
+	"Order": 7,
+	"Mappings": [
+		{
+			"Action": "input_up",
+			"Button": {
+				"Code": 12
+			}
+		},
+		{
+			"Action": "input_down",
+			"Button": {
+				"Code": 13
+			}
+		},
+		{
+			"Action": "input_left",
+			"Button": {
+				"Code": 14
+			}
+		},
+		{
+			"Action": "input_right",
+			"Button": {
+				"Code": 15
+			}
+		},
+		{
+			"Action": "input_up",
+			"Axis": {
+				"Code": 1,
+				"Value": -1
+			}
+		},
+		{
+			"Action": "input_down",
+			"Axis": {
+				"Code": 1,
+				"Value": 1
+			}
+		},
+		{
+			"Action": "input_left",
+			"Axis": {
+				"Code": 0,
+				"Value": -1
+			}
+		},
+		{
+			"Action": "input_right",
+			"Axis": {
+				"Code": 0,
+				"Value": 1
+			}
+		},
+		{
+			"Action": "input_action",
+			"Button": {
+				"Code": 0
+			}
+		},
+		{
+			"Action": "input_cancel",
+			"Button": {
+				"Code": 1
+			}
+		},
+		{
+			"Action": "input_run",
+			"Button": {
+				"Code": 2
+			}
+		},
+		{
+			"Action": "input_special",
+			"Button": {
+				"Code": 3
+			}
+		},
+		{
+			"Action": "input_menu",
+			"Button": {
+				"Code": 11
+			}
+		}
+	]
+}

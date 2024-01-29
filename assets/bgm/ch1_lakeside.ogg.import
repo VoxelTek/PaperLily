@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_lakeside.ogg-70c1fb4031ae9978991e2b81eb14a5a1.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_lakeside.ogg"
+dest_files=[ "res://.import/ch1_lakeside.ogg-70c1fb4031ae9978991e2b81eb14a5a1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=27.499

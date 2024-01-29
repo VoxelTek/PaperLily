@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/Managers/Rooms/GameRoomNested.cs" type="Script" id=1]
+[ext_resource path="res://resources/nodes/rooms/Ch1_MK_StressRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/lighting/ch1_mk.tres" type="Resource" id=3]
+[ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=4]
+
+[node name="Ch1_Cutscene_Ending_12_Stress" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+Cutscene = true
+Lighting = ExtResource( 3 )
+Subroom = NodePath("Ch1_MK_StressRoom")
+
+[node name="Ch1_MK_StressRoom" parent="." instance=ExtResource( 2 )]
+
+[node name="Stake" parent="Ch1_MK_StressRoom/Main" index="1"]
+frame = 3
+
+[node name="Knives" parent="Ch1_MK_StressRoom/Main/Stake" index="0"]
+visible = false
+
+[node name="GuesswhoDoll" parent="Ch1_MK_StressRoom/Main" index="3"]
+visible = false
+
+[node name="cutscene_camera" type="Node2D" parent="Ch1_MK_StressRoom/Other/Points" index="1"]
+position = Vector2( 144, 152 )
+script = ExtResource( 4 )
+
+[node name="head_tilt" parent="Ch1_MK_StressRoom/Other/Updates" index="0"]
+Enabled = false
+
+[node name="head_tilt_2" parent="Ch1_MK_StressRoom/Other/Updates" index="1"]
+Enabled = false
+
+[node name="knives" parent="Ch1_MK_StressRoom/Other/Updates" index="2"]
+Enabled = false
+
+[node name="hide_character" parent="Ch1_MK_StressRoom/Other/Updates" index="3"]
+Enabled = false
+
+[node name="doll_evt" parent="Ch1_MK_StressRoom/Other/Updates" index="4"]
+Enabled = false
+
+[node name="doll_spr" parent="Ch1_MK_StressRoom/Other/Updates" index="5"]
+Enabled = false
+
+[editable path="Ch1_MK_StressRoom"]

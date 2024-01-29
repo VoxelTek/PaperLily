@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ch1_hiro.ogg-a15a5cc34933d6597c21b229c136fefe.oggstr"
+
+[deps]
+
+source_file="res://assets/bgm/ch1_hiro.ogg"
+dest_files=[ "res://.import/ch1_hiro.ogg-a15a5cc34933d6597c21b229c136fefe.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=1.2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV2.cs" type="Script" id=1]
+[ext_resource path="res://assets/sprite/ch1/cutscene/crow_blink.png" type="Texture" id=2]
+
+[node name="Crow" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 2
+script = ExtResource( 1 )
+FrameDurations = "6000, 150"

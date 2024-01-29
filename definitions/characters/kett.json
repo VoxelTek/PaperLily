@@ -1,0 +1,133 @@
+{
+	"Name": "Kett",
+	"Sprites": [
+		{
+			"State": "idle",
+			"TextureSuffix": "idle",
+			"Hframes": 2,
+			"Vframes": 1,
+			"DownFrames": "0,1",
+			"Fps": 1.6,
+			"Loop": true
+		},
+		{
+			"State": "stand",
+			"TextureSuffix": "",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "3",
+			"UpFrames": "9",
+			"RightFrames": "6",
+			"DownFrames": "0"
+		},
+		{
+			"State": "walk",
+			"TextureSuffix": "",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "4,3,5,3",
+			"UpFrames": "10,9,11,9",
+			"RightFrames": "7,6,8,6",
+			"DownFrames": "1,0,2,0",
+			"Fps": 6,
+			"Loop": true
+		},
+		{
+			"State": "mad_stand",
+			"TextureSuffix": "mad",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "3",
+			"UpFrames": "9",
+			"RightFrames": "6",
+			"DownFrames": "0"
+		},
+		{
+			"State": "mad_walk",
+			"TextureSuffix": "mad",
+			"Hframes": 3,
+			"Vframes": 4,
+			"LeftFrames": "4,3,5,3",
+			"UpFrames": "10,9,11,9",
+			"RightFrames": "7,6,8,6",
+			"DownFrames": "1,0,2,0",
+			"Fps": 6,
+			"Loop": true
+		},
+		{
+			"State": "bloom_red",
+			"TextureSuffix": "bloom_red",
+			"Hframes": 14,
+			"Vframes": 1,
+			"DownFrames": "0,1,2,3,4,5,6,7,8,9,10,11,12,13",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "bloom_green",
+			"TextureSuffix": "bloom_green",
+			"Hframes": 14,
+			"Vframes": 1,
+			"DownFrames": "0,1,2,3,4,5,6,7,8,9,10,11,12,13",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "bloom_yellow",
+			"TextureSuffix": "bloom_yellow",
+			"Hframes": 14,
+			"Vframes": 1,
+			"DownFrames": "0,1,2,3,4,5,6,7,8,9,10,11,12,13",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "cut_red",
+			"TextureSuffix": "cut_red",
+			"Hframes": 15,
+			"Vframes": 1,
+			"Offset": "-3,-23",
+			"DownFrames": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "cut_green",
+			"TextureSuffix": "cut_green",
+			"Hframes": 15,
+			"Vframes": 1,
+			"Offset": "-3,-23",
+			"DownFrames": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "cut_yellow",
+			"TextureSuffix": "cut_yellow",
+			"Hframes": 15,
+			"Vframes": 1,
+			"Offset": "-3,-23",
+			"DownFrames": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14",
+			"Fps": 6,
+			"Loop": false
+		},
+		{
+			"State": "sniff",
+			"TextureSuffix": "sniff",
+			"Hframes": 4,
+			"Vframes": 1,
+			"DownFrames": "0,1,2,3",
+			"Fps": 3,
+			"Loop": false
+		},
+		{
+			"State": "snack",
+			"TextureSuffix": "snack",
+			"Hframes": 6,
+			"Vframes": 1,
+			"DownFrames": "0,1,2,3,4,5",
+			"Fps": 6,
+			"Loop": false
+		}
+	]
+}
