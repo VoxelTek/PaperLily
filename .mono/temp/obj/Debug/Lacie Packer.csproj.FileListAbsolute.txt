@@ -3,3 +3,4 @@
 /home/voxeltek/Documents/PaperLily/.mono/temp/obj/Debug/Lacie Packer.AssemblyInfoInputs.cache
 /home/voxeltek/Documents/PaperLily/.mono/temp/obj/Debug/Lacie Packer.AssemblyInfo.cs
 /home/voxeltek/Documents/PaperLily/.mono/temp/obj/Debug/Lacie Packer.csproj.CoreCompileInputs.cache
+/home/voxeltek/Documents/PaperLily/.mono/temp/obj/Debug/Lacie Packer.sourcelink.json
