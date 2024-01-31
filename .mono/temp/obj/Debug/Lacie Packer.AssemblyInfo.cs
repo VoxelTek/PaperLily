@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lacie Packer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73ad24551e59f1e38dfdf4a03d19d35b0ffd3f42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+516325122754254fb8f47dc2ee548eee794277b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lacie Packer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lacie Packer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
