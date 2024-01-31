@@ -1,109 +1,108 @@
-using System;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.GameMenuContainer
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Animation;
 using LacieEngine.Core;
+using System;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public class GameMenuContainer : Control, IMenuEntryContainer
-	{
-		private static readonly Vector2 MainPanelSize = new Vector2(150f, 200f);
+  public class GameMenuContainer : Godot.Control, IMenuEntryContainer
+  {
+    private static readonly Vector2 MainPanelSize = new Vector2(150f, 200f);
+    private static readonly Vector2 TextPanelSize = new Vector2(150f, 45f);
+    private static readonly Vector2 PartyPanelSize = new Vector2(150f, 80f);
+    private PVar varCurrency = (PVar) "general.currency_demon";
 
-		private static readonly Vector2 TextPanelSize = new Vector2(150f, 45f);
+    public Frame Control { get; private set; }
 
-		private static readonly Vector2 PartyPanelSize = new Vector2(150f, 80f);
+    public IMenuEntryList Menu { get; set; }
 
-		private PVar varCurrency = "general.currency_demon";
+    public Action OnClose { get; set; }
 
-		public Frame Control { get; private set; }
+    public override void _EnterTree()
+    {
+      this.Name = "GameMenu";
+      this.SetAnchorsAndMarginsPreset(Godot.Control.LayoutPreset.Wide);
+      ColorRect darkenerOverlay = UIUtil.CreateDarkenerOverlay();
+      MarginContainer container = GDUtil.MakeNode<MarginContainer>(nameof (GameMenuContainer));
+      container.SetContainerMargins(2);
+      HBoxContainer hboxContainer1 = GDUtil.MakeNode<HBoxContainer>("MenuColumnsContainer");
+      hboxContainer1.SetSeparation(2);
+      VBoxContainer box = GDUtil.MakeNode<VBoxContainer>("LeftColumnContainer");
+      box.SetSeparation(2);
+      this.Control = (Frame) new MenuFrame();
+      this.Control.MinimumSize = GameMenuContainer.MainPanelSize;
+      this.Menu = (IMenuEntryList) new GameMenu((Godot.Control) hboxContainer1, (IMenuEntryContainer) this);
+      this.Menu.OnBack = (Action) (() => this.OnClose());
+      this.Menu.Root();
+      container.AddChild((Node) hboxContainer1);
+      hboxContainer1.AddChild((Node) box);
+      box.AddChild((Node) this.Control);
+      Frame node1 = (Frame) new MenuFrame2();
+      node1.MinimumSize = GameMenuContainer.TextPanelSize;
+      Label label = GDUtil.MakeNode<Label>("MoneyLabel");
+      label.SetDefaultFontAndColor();
+      if ((int) this.varCurrency.Value > 0)
+        label.Text = Game.Language.GetFormattedCaption("system.menu.currency", (string) this.varCurrency.Value);
+      else
+        label.Text = Game.Settings.ProductName;
+      label.Align = Label.AlignEnum.Center;
+      node1.AddToFrame((Node) label);
+      node1.Modulate = UIUtil.Transparent;
+      box.AddChild((Node) node1);
+      Frame node2 = (Frame) new MenuFrame2();
+      node2.MinimumSize = GameMenuContainer.PartyPanelSize;
+      node2.ContentMarginLeft = 0;
+      node2.ContentMarginTop = 15;
+      node2.ContentMarginRight = 0;
+      node2.ContentMarginBottom = 15;
+      node2.Modulate = UIUtil.Transparent;
+      HBoxContainer hboxContainer2 = GDUtil.MakeNode<HBoxContainer>("CharacterHBox");
+      hboxContainer2.SetSeparation(0);
+      hboxContainer2.Alignment = BoxContainer.AlignMode.Center;
+      foreach (string characterId in Game.State.Party)
+        hboxContainer2.AddFirst((Node) this.CreateWalkingCharacterTexture(characterId));
+      node2.AddToFrame((Node) hboxContainer2);
+      box.AddChild((Node) node2);
+      Frame boxWithInputIcons = UIUtil.CreateInfoBoxWithInputIcons("system.menu.info", "input_action", "input_cancel");
+      boxWithInputIcons.Modulate = UIUtil.Transparent;
+      boxWithInputIcons.SetAnchorsPreset(Godot.Control.LayoutPreset.BottomRight);
+      boxWithInputIcons.GrowHorizontal = Godot.Control.GrowDirection.Begin;
+      boxWithInputIcons.GrowVertical = Godot.Control.GrowDirection.Begin;
+      this.AddChild((Node) darkenerOverlay);
+      this.AddChild((Node) container);
+      this.AddChild((Node) boxWithInputIcons);
+      Game.Animations.Play((LacieAnimation) new SlideInLeftAnimation((Godot.Control) this.Control, new float?(150f)));
+      Game.Animations.PlayDelayed((LacieAnimation) new SlideInLeftAnimation((Godot.Control) node1, new float?(150f)), 0.08f);
+      Game.Animations.PlayDelayed((LacieAnimation) new SlideInLeftAnimation((Godot.Control) node2, new float?(150f)), 0.16f);
+      Game.Animations.PlayDelayed((LacieAnimation) new SlideInBottomAnimation((Godot.Control) boxWithInputIcons, new float?(150f)), 0.01f);
+    }
 
-		public IMenuEntryList Menu { get; set; }
+    public override void _Input(InputEvent @event) => this.Menu.HandleInput(@event);
 
-		public Action OnClose { get; set; }
-
-		public override void _EnterTree()
-		{
-			base.Name = "GameMenu";
-			SetAnchorsAndMarginsPreset(LayoutPreset.Wide);
-			ColorRect darkener = UIUtil.CreateDarkenerOverlay();
-			MarginContainer container = GDUtil.MakeNode<MarginContainer>("GameMenuContainer");
-			container.SetContainerMargins(2);
-			HBoxContainer hBox = GDUtil.MakeNode<HBoxContainer>("MenuColumnsContainer");
-			hBox.SetSeparation(2);
-			VBoxContainer vBox = GDUtil.MakeNode<VBoxContainer>("LeftColumnContainer");
-			vBox.SetSeparation(2);
-			Control = new MenuFrame();
-			Control.MinimumSize = MainPanelSize;
-			Menu = new GameMenu(hBox, this);
-			Menu.OnBack = delegate
-			{
-				OnClose();
-			};
-			Menu.Root();
-			container.AddChild(hBox);
-			hBox.AddChild(vBox);
-			vBox.AddChild(Control);
-			Frame moneyFrame = new MenuFrame2();
-			moneyFrame.MinimumSize = TextPanelSize;
-			Label moneyLabel = GDUtil.MakeNode<Label>("MoneyLabel");
-			moneyLabel.SetDefaultFontAndColor();
-			if ((int)varCurrency.Value > 0)
-			{
-				moneyLabel.Text = Game.Language.GetFormattedCaption("system.menu.currency", varCurrency.Value);
-			}
-			else
-			{
-				moneyLabel.Text = Game.Settings.ProductName;
-			}
-			moneyLabel.Align = Label.AlignEnum.Center;
-			moneyFrame.AddToFrame(moneyLabel);
-			moneyFrame.Modulate = UIUtil.Transparent;
-			vBox.AddChild(moneyFrame);
-			Frame charaFrame = new MenuFrame2();
-			charaFrame.MinimumSize = PartyPanelSize;
-			charaFrame.ContentMarginLeft = 0;
-			charaFrame.ContentMarginTop = 15;
-			charaFrame.ContentMarginRight = 0;
-			charaFrame.ContentMarginBottom = 15;
-			charaFrame.Modulate = UIUtil.Transparent;
-			HBoxContainer characterHBox = GDUtil.MakeNode<HBoxContainer>("CharacterHBox");
-			characterHBox.SetSeparation(0);
-			characterHBox.Alignment = BoxContainer.AlignMode.Center;
-			foreach (string partyMember in Game.State.Party)
-			{
-				characterHBox.AddFirst(CreateWalkingCharacterTexture(partyMember));
-			}
-			charaFrame.AddToFrame(characterHBox);
-			vBox.AddChild(charaFrame);
-			Frame infoBox = UIUtil.CreateInfoBoxWithInputIcons("system.menu.info", "input_action", "input_cancel");
-			infoBox.Modulate = UIUtil.Transparent;
-			infoBox.SetAnchorsPreset(LayoutPreset.BottomRight);
-			infoBox.GrowHorizontal = GrowDirection.Begin;
-			infoBox.GrowVertical = GrowDirection.Begin;
-			AddChild(darkener);
-			AddChild(container);
-			AddChild(infoBox);
-			Game.Animations.Play(new SlideInLeftAnimation(Control, 150f));
-			Game.Animations.PlayDelayed(new SlideInLeftAnimation(moneyFrame, 150f), 0.08f);
-			Game.Animations.PlayDelayed(new SlideInLeftAnimation(charaFrame, 150f), 0.16f);
-			Game.Animations.PlayDelayed(new SlideInBottomAnimation(infoBox, 150f), 0.01f);
-		}
-
-		public override void _Input(InputEvent @event)
-		{
-			Menu.HandleInput(@event);
-		}
-
-		private AnimatedTextureRect CreateWalkingCharacterTexture(string characterId)
-		{
-			AnimatedTextureRect textureRect = new AnimatedTextureRect();
-			Texture texture = (textureRect.Texture = GD.Load<Texture>("res://assets/sprite/common/character/" + characterId + "/" + characterId + ".png"));
-			textureRect.Hframes = 9;
-			textureRect.Vframes = 4;
-			textureRect.FPS = 6f;
-			textureRect.AnimationFrames = new int[4] { 18, 19, 18, 20 };
-			textureRect.SizeFlagsVertical = 8;
-			return textureRect;
-		}
-	}
+    private AnimatedTextureRect CreateWalkingCharacterTexture(string characterId)
+    {
+      AnimatedTextureRect characterTexture = new AnimatedTextureRect();
+      Texture texture = GD.Load<Texture>("res://assets/sprite/common/character/" + characterId + "/" + characterId + ".png");
+      characterTexture.Texture = texture;
+      characterTexture.Hframes = 9;
+      characterTexture.Vframes = 4;
+      characterTexture.FPS = 6f;
+      characterTexture.AnimationFrames = new int[4]
+      {
+        18,
+        19,
+        18,
+        20
+      };
+      characterTexture.SizeFlagsVertical = 8;
+      return characterTexture;
+    }
+  }
 }

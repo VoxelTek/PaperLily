@@ -1,60 +1,58 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.ResolutionMenuEntry
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Core;
 using LacieEngine.Settings;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public class ResolutionMenuEntry : SettingMenuEntry<ResolutionSetting, Vector2>
-	{
-		public class ResolutionLabel : Label
-		{
-			private ResolutionSetting setting;
+  public class ResolutionMenuEntry : SettingMenuEntry<ResolutionSetting, Vector2>
+  {
+    public ResolutionMenuEntry(IMenuEntryList menu)
+      : base(menu)
+    {
+    }
 
-			public ResolutionLabel(ResolutionSetting setting)
-			{
-				this.setting = setting;
-			}
+    public override Control DrawEntry()
+    {
+      MarginContainer container = new MarginContainer();
+      container.SetContainerMarginLeft(10);
+      container.SetContainerMarginRight(10);
+      this.nCaptionLabel = GDUtil.MakeNode<Label>("Label");
+      this.nCaptionLabel.Text = this.setting.CaptionLabel();
+      this.nCaptionLabel.Align = Label.AlignEnum.Left;
+      this.nCaptionLabel.SetAnchorsPreset(Control.LayoutPreset.LeftWide);
+      this.nCaptionLabel.SetDefaultFontAndColor();
+      this.nValueLabel = (Label) new ResolutionMenuEntry.ResolutionLabel((ResolutionSetting) this.setting);
+      this.nValueLabel.Name = "Value";
+      this.nValueLabel.Text = this.setting.ValueLabel();
+      this.nValueLabel.Align = Label.AlignEnum.Right;
+      this.nValueLabel.SetDefaultFontAndColor();
+      container.AddChild((Node) this.nCaptionLabel);
+      container.AddChild((Node) this.nValueLabel);
+      return (Control) container;
+    }
 
-			public override void _Ready()
-			{
-				ApplyCurrentResolution();
-				GetTree().Root.Connect("size_changed", this, "ApplyCurrentResolution");
-			}
+    public class ResolutionLabel : Label
+    {
+      private ResolutionSetting setting;
 
-			public override void _Process(float delta)
-			{
-				base.Text = setting.ValueLabel();
-			}
+      public ResolutionLabel(ResolutionSetting setting) => this.setting = setting;
 
-			public void ApplyCurrentResolution()
-			{
-				setting.ApplyCurrentResolution();
-			}
-		}
+      public override void _Ready()
+      {
+        this.ApplyCurrentResolution();
+        int num = (int) this.GetTree().Root.Connect("size_changed", (Object) this, "ApplyCurrentResolution");
+      }
 
-		public ResolutionMenuEntry(IMenuEntryList menu)
-			: base(menu)
-		{
-		}
+      public override void _Process(float delta) => this.Text = this.setting.ValueLabel();
 
-		public override Control DrawEntry()
-		{
-			MarginContainer marginContainer = new MarginContainer();
-			marginContainer.SetContainerMarginLeft(10);
-			marginContainer.SetContainerMarginRight(10);
-			nCaptionLabel = GDUtil.MakeNode<Label>("Label");
-			nCaptionLabel.Text = setting.CaptionLabel();
-			nCaptionLabel.Align = Label.AlignEnum.Left;
-			nCaptionLabel.SetAnchorsPreset(Control.LayoutPreset.LeftWide);
-			nCaptionLabel.SetDefaultFontAndColor();
-			nValueLabel = new ResolutionLabel((ResolutionSetting)setting);
-			nValueLabel.Name = "Value";
-			nValueLabel.Text = setting.ValueLabel();
-			nValueLabel.Align = Label.AlignEnum.Right;
-			nValueLabel.SetDefaultFontAndColor();
-			marginContainer.AddChild(nCaptionLabel);
-			marginContainer.AddChild(nValueLabel);
-			return marginContainer;
-		}
-	}
+      public void ApplyCurrentResolution() => this.setting.ApplyCurrentResolution();
+    }
+  }
 }

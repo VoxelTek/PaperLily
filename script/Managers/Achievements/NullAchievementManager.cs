@@ -1,17 +1,21 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Achievements.NullAchievementManager
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using LacieEngine.API;
 
+#nullable disable
 namespace LacieEngine.Achievements
 {
-	[Injectable]
-	public class NullAchievementManager : IAchievementManager, IModule
-	{
-		public bool IsValid(string achievementId)
-		{
-			return true;
-		}
+  [Injectable]
+  public class NullAchievementManager : IAchievementManager, IModule
+  {
+    public bool IsValid(string achievementId) => true;
 
-		public void Unlock(string achievementId)
-		{
-		}
-	}
+    public void Unlock(string achievementId)
+    {
+    }
+  }
 }

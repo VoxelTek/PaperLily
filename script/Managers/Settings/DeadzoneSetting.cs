@@ -1,56 +1,52 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Settings.DeadzoneSetting
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using System;
 
+#nullable disable
 namespace LacieEngine.Settings
 {
-	internal class DeadzoneSetting : Setting<float>
-	{
-		private static readonly Lazy<DeadzoneSetting> _lazyInstance = new Lazy<DeadzoneSetting>(() => new DeadzoneSetting());
+  internal class DeadzoneSetting : Setting<float>
+  {
+    private static readonly Lazy<DeadzoneSetting> _lazyInstance = new Lazy<DeadzoneSetting>((Func<DeadzoneSetting>) (() => new DeadzoneSetting()));
+    private const Decimal Max = 0.95M;
+    private const Decimal Min = 0M;
+    private const Decimal Step = 0.05M;
+    private Decimal _value;
 
-		private const decimal Max = 0.95m;
+    public static DeadzoneSetting Instance => DeadzoneSetting._lazyInstance.Value;
 
-		private const decimal Min = 0m;
+    public DeadzoneSetting()
+    {
+      this.Name = "system.settings.input.deadzone";
+      this.Path = "lacie_engine/input/joystick_deadzone";
+      this.Value = this.ReadValue();
+      this._value = (Decimal) this.Value;
+    }
 
-		private const decimal Step = 0.05m;
+    public override string ValueLabel() => ((int) ((double) this.Value * 100.0)).ToString() + "%";
 
-		private decimal _value;
+    public override void Decrement()
+    {
+      this._value -= 0.05M;
+      if (this._value < 0M)
+        this._value = 0M;
+      this.Value = (float) this._value;
+    }
 
-		public static DeadzoneSetting Instance => _lazyInstance.Value;
+    public override void Increment()
+    {
+      this._value += 0.05M;
+      if (this._value > 0.95M)
+        this._value = 0.95M;
+      this.Value = (float) this._value;
+    }
 
-		public DeadzoneSetting()
-		{
-			base.Name = "system.settings.input.deadzone";
-			base.Path = "lacie_engine/input/joystick_deadzone";
-			base.Value = ReadValue();
-			_value = (decimal)base.Value;
-		}
-
-		public override string ValueLabel()
-		{
-			return (int)(base.Value * 100f) + "%";
-		}
-
-		public override void Decrement()
-		{
-			_value -= 0.05m;
-			if (_value < 0m)
-			{
-				_value = default(decimal);
-			}
-			base.Value = (float)_value;
-		}
-
-		public override void Increment()
-		{
-			_value += 0.05m;
-			if (_value > 0.95m)
-			{
-				_value = 0.95m;
-			}
-			base.Value = (float)_value;
-		}
-
-		public override void Apply()
-		{
-		}
-	}
+    public override void Apply()
+    {
+    }
+  }
 }

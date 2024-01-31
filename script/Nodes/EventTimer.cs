@@ -1,151 +1,136 @@
-using System;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Nodes.EventTimer
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
+using System;
 
+#nullable disable
 namespace LacieEngine.Nodes
 {
-	public class EventTimer : Node
-	{
-		private Action _callback;
+  public class EventTimer : Node
+  {
+    private Action _callback;
+    private bool _visible = true;
+    private Label nLabel;
+    private Timer nTimer;
 
-		private bool _visible = true;
+    public bool SelfDestructWhenFinished { get; set; }
 
-		private Label nLabel;
+    public bool Visible
+    {
+      get => !this.nLabel.IsValid() ? this._visible : this.nLabel.Visible;
+      set
+      {
+        if (this.nLabel.IsValid())
+          this.nLabel.Visible = value;
+        else
+          this._visible = value;
+      }
+    }
 
-		private Timer nTimer;
+    public override void _EnterTree()
+    {
+      this.Name = "Timer";
+      this.nLabel = GDUtil.MakeNode<Label>("TimerLabel");
+      this.nLabel.SetDefaultFontAndColor();
+      this.nLabel.RectPosition = new Vector2(300f, 5f);
+      this.nLabel.Visible = this._visible;
+      Game.Screen.AddToLayer(IScreenManager.Layer.HUD, (Node) this.nLabel);
+    }
 
-		public bool SelfDestructWhenFinished { get; set; }
+    public override void _ExitTree()
+    {
+      this.nTimer.DeleteIfValid();
+      this.nLabel.DeleteIfValid();
+    }
 
-		public bool Visible
-		{
-			get
-			{
-				if (!nLabel.IsValid())
-				{
-					return _visible;
-				}
-				return nLabel.Visible;
-			}
-			set
-			{
-				if (nLabel.IsValid())
-				{
-					nLabel.Visible = value;
-				}
-				else
-				{
-					_visible = value;
-				}
-			}
-		}
+    public override void _Process(float delta)
+    {
+      if (!this.nTimer.IsValid())
+        return;
+      this.nLabel.Text = ((int) ((double) this.nTimer.TimeLeft / 60.0)).ToString().PadLeft(2, '0') + ":" + ((int) ((double) this.nTimer.TimeLeft % 60.0)).ToString().PadLeft(2, '0');
+    }
 
-		public override void _EnterTree()
-		{
-			base.Name = "Timer";
-			nLabel = GDUtil.MakeNode<Label>("TimerLabel");
-			nLabel.SetDefaultFontAndColor();
-			nLabel.RectPosition = new Vector2(300f, 5f);
-			nLabel.Visible = _visible;
-			Game.Screen.AddToLayer(IScreenManager.Layer.HUD, nLabel);
-		}
+    public void StartTimer(float seconds, Action timeoutCallback)
+    {
+      this.nTimer.DeleteIfValid();
+      this.nTimer = GDUtil.MakeNode<Timer>("ActualTimer");
+      this.nTimer.Autostart = true;
+      this.nTimer.WaitTime = seconds;
+      this.nTimer.OneShot = true;
+      int num = (int) this.nTimer.Connect("timeout", (Godot.Object) this, "Timeout");
+      this._callback = timeoutCallback;
+      this.AddChild((Node) this.nTimer);
+    }
 
-		public override void _ExitTree()
-		{
-			nTimer.DeleteIfValid();
-			nLabel.DeleteIfValid();
-		}
+    public void StopTimer()
+    {
+      this.nTimer.DeleteIfValid();
+      this._callback = (Action) null;
+    }
 
-		public override void _Process(float delta)
-		{
-			if (nTimer.IsValid())
-			{
-				nLabel.Text = ((int)(nTimer.TimeLeft / 60f)).ToString().PadLeft(2, '0') + ":" + ((int)(nTimer.TimeLeft % 60f)).ToString().PadLeft(2, '0');
-			}
-		}
+    public void PauseTimer()
+    {
+      if (!this.nTimer.IsValid())
+        Log.Error((object) "Timer needs to be started first!");
+      else
+        this.nTimer.Paused = true;
+    }
 
-		public void StartTimer(float seconds, Action timeoutCallback)
-		{
-			nTimer.DeleteIfValid();
-			nTimer = GDUtil.MakeNode<Timer>("ActualTimer");
-			nTimer.Autostart = true;
-			nTimer.WaitTime = seconds;
-			nTimer.OneShot = true;
-			nTimer.Connect("timeout", this, "Timeout");
-			_callback = timeoutCallback;
-			AddChild(nTimer);
-		}
+    public void ResumeTimer()
+    {
+      if (!this.nTimer.IsValid())
+        Log.Error((object) "Timer needs to be started first!");
+      else
+        this.nTimer.Paused = false;
+    }
 
-		public void StopTimer()
-		{
-			nTimer.DeleteIfValid();
-			_callback = null;
-		}
+    public void IncreaseTime(float seconds)
+    {
+      if (!this.nTimer.IsValid())
+      {
+        Log.Error((object) "Timer needs to be started first!");
+      }
+      else
+      {
+        this.nTimer.Stop();
+        this.nTimer.WaitTime += seconds;
+        this.nTimer.Start();
+      }
+    }
 
-		public void PauseTimer()
-		{
-			if (!nTimer.IsValid())
-			{
-				Log.Error("Timer needs to be started first!");
-			}
-			else
-			{
-				nTimer.Paused = true;
-			}
-		}
+    public void DecreaseTime(float seconds)
+    {
+      if (!this.nTimer.IsValid())
+      {
+        Log.Error((object) "Timer needs to be started first!");
+      }
+      else
+      {
+        this.nTimer.Stop();
+        if ((double) this.nTimer.WaitTime - (double) seconds > 0.0)
+        {
+          this.nTimer.WaitTime -= seconds;
+          this.nTimer.Start();
+        }
+        else
+          this.Timeout();
+      }
+    }
 
-		public void ResumeTimer()
-		{
-			if (!nTimer.IsValid())
-			{
-				Log.Error("Timer needs to be started first!");
-			}
-			else
-			{
-				nTimer.Paused = false;
-			}
-		}
-
-		public void IncreaseTime(float seconds)
-		{
-			if (!nTimer.IsValid())
-			{
-				Log.Error("Timer needs to be started first!");
-			}
-			else
-			{
-				nTimer.Stop();
-				nTimer.WaitTime += seconds;
-				nTimer.Start();
-			}
-		}
-
-		public void DecreaseTime(float seconds)
-		{
-			if (!nTimer.IsValid())
-			{
-				Log.Error("Timer needs to be started first!");
-				return;
-			}
-			nTimer.Stop();
-			if (nTimer.WaitTime - seconds > 0f)
-			{
-				nTimer.WaitTime -= seconds;
-				nTimer.Start();
-			}
-			else
-			{
-				Timeout();
-			}
-		}
-
-		public void Timeout()
-		{
-			_callback?.Invoke();
-			if (SelfDestructWhenFinished)
-			{
-				this.DeleteIfValid();
-			}
-		}
-	}
+    public void Timeout()
+    {
+      Action callback = this._callback;
+      if (callback != null)
+        callback();
+      if (!this.SelfDestructWhenFinished)
+        return;
+      this.DeleteIfValid();
+    }
+  }
 }

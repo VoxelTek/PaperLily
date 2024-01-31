@@ -1,39 +1,40 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.API.IGameCamera
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 
+#nullable disable
 namespace LacieEngine.API
 {
-	public interface IGameCamera
-	{
-		Camera2D Node { get; }
+  public interface IGameCamera
+  {
+    Camera2D Node { get; }
 
-		bool Current
-		{
-			get
-			{
-				return Node.Current;
-			}
-			set
-			{
-				Node.Current = value;
-			}
-		}
+    bool Current
+    {
+      get => this.Node.Current;
+      set => this.Node.Current = value;
+    }
 
-		float ZoomLevel { get; set; }
+    float ZoomLevel { get; set; }
 
-		void ApplyRoomSettings();
+    void ApplyRoomSettings();
 
-		void Shake(float time, float power);
+    void Shake(float time, float power);
 
-		void Shake(float time);
+    void Shake(float time);
 
-		void Shake();
+    void Shake();
 
-		void TrackNode(Node2D node);
+    void TrackNode(Node2D node);
 
-		void TrackPlayer();
+    void TrackPlayer();
 
-		void Unlock();
+    void Unlock();
 
-		void RefreshZoom();
-	}
+    void RefreshZoom();
+  }
 }

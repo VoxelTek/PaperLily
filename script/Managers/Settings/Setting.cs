@@ -1,48 +1,18 @@
-using Godot;
-using LacieEngine.Core;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Settings.SettingParent
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
 
+using Godot;
+
+#nullable disable
 namespace LacieEngine.Settings
 {
-	public abstract class Setting<T> : SettingParent
-	{
-		public string Name { get; protected set; }
+  public abstract class SettingParent
+  {
+    public abstract void WriteValue(ConfigFile configFile);
 
-		public string Path { get; protected set; }
-
-		public T Value { get; set; }
-
-		public bool OwnSound { get; protected set; }
-
-		public virtual T ReadValue()
-		{
-			return GDUtil.ReadSetting<T>(Path);
-		}
-
-		public override void WriteValue(ConfigFile configFile)
-		{
-			if (!ReadValue().Equals(Value))
-			{
-				ProjectSettings.SetSetting(Path, Value);
-				string section = Path.Substring(0, Path.IndexOf("/"));
-				string path = Path;
-				int num = Path.IndexOf("/") + 1;
-				string key = path.Substring(num, path.Length - num);
-				configFile.SetValue(section, key, Value);
-			}
-		}
-
-		public virtual string CaptionLabel()
-		{
-			return Name;
-		}
-
-		public virtual string ValueLabel()
-		{
-			return Value.ToString();
-		}
-
-		public abstract void Increment();
-
-		public abstract void Decrement();
-	}
+    public abstract void Apply();
+  }
 }

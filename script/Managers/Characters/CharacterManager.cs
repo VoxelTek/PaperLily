@@ -1,267 +1,214 @@
-using System;
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Characters.CharacterManager
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
+using System;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.Characters
 {
-	[Injectable]
-	public class CharacterManager : ICharacterManager, IModule, ITranslatable, IStateOverridable
-	{
-		private const double AssetReloadPeriod = 5.0;
+  [Injectable]
+  public class CharacterManager : ICharacterManager, IModule, ITranslatable, IStateOverridable
+  {
+    private const double AssetReloadPeriod = 5.0;
+    private Dictionary<string, Character> characters;
+    private Dictionary<string, DateTime> lastLoadDate;
+    private Dictionary<string, IList<string>> characterResources;
 
-		private Dictionary<string, Character> characters;
+    public ICharacter Get(string id)
+    {
+      if (this.characters.ContainsKey(id))
+        return (ICharacter) this.characters[id];
+      Log.Error((object) "Character ", (object) id, (object) " not found!");
+      return (ICharacter) null;
+    }
 
-		private Dictionary<string, DateTime> lastLoadDate;
+    public bool Exists(string id) => this.characters.ContainsKey(id);
 
-		private Dictionary<string, IList<string>> characterResources;
+    public bool IsMoodValid(string id, string mood)
+    {
+      return this.characters.ContainsKey(id) && this.characters[id].Moods.Contains(mood);
+    }
 
-		public ICharacter Get(string id)
-		{
-			if (characters.ContainsKey(id))
-			{
-				return characters[id];
-			}
-			Log.Error("Character ", id, " not found!");
-			return null;
-		}
+    public void Init()
+    {
+      Log.Info((object) "Loading characters...");
+      this.characters = new Dictionary<string, Character>();
+      this.lastLoadDate = new Dictionary<string, DateTime>();
+      this.characterResources = new Dictionary<string, IList<string>>();
+      foreach (string str1 in GDUtil.ListFilesInPath("res://definitions/characters/", suffix: ".json", fullPath: false))
+      {
+        string str2 = str1.Substring(0, str1.LastIndexOf(".json"));
+        CharacterDTO characterDto = GDUtil.ReadJsonFile<CharacterDTO>("res://definitions/characters/" + str1);
+        Character character = new Character() { Id = str2 };
+        character.Name = character.OriginalName = characterDto.Name;
+        character.Costumes.AddRange((IEnumerable<string>) characterDto.Costumes);
+        character.Moods.AddRange((IEnumerable<string>) this.FindMoodsForCharacter(str2));
+        this.GatherResourcesForCharacter(character.Id);
+        this.LoadCharacterSpriteData(character, characterDto);
+        this.characters.Add(str2, character);
+      }
+    }
 
-		public bool Exists(string id)
-		{
-			return characters.ContainsKey(id);
-		}
+    public IList<string> GetDependencies(string characterId)
+    {
+      return this.characterResources.ContainsKey(characterId) ? this.characterResources[characterId] : (IList<string>) Array.Empty<string>();
+    }
 
-		public bool IsMoodValid(string id, string mood)
-		{
-			if (!characters.ContainsKey(id))
-			{
-				return false;
-			}
-			return characters[id].Moods.Contains(mood);
-		}
+    public void LoadResourcesForCharacter(string characterId)
+    {
+      if (!this.characters.ContainsKey(characterId) || !this.characterResources.ContainsKey(characterId) || this.lastLoadDate.ContainsKey(characterId) && this.lastLoadDate[characterId].AddSeconds(5.0) > DateTime.Now)
+        return;
+      this.lastLoadDate[characterId] = DateTime.Now;
+      Log.Trace((object) "Loading character resources for ", (object) characterId);
+      foreach (string path in (IEnumerable<string>) this.characterResources[characterId])
+      {
+        if (!path.EndsWith(".json"))
+          Game.Memory.Cache(path);
+      }
+    }
 
-		public void Init()
-		{
-			Log.Info("Loading characters...");
-			characters = new Dictionary<string, Character>();
-			lastLoadDate = new Dictionary<string, DateTime>();
-			characterResources = new Dictionary<string, IList<string>>();
-			foreach (string filename in GDUtil.ListFilesInPath("res://definitions/characters/", null, ".json", fullPath: false))
-			{
-				string id = filename.Substring(0, filename.LastIndexOf(".json"));
-				CharacterDTO characterDto = GDUtil.ReadJsonFile<CharacterDTO>("res://definitions/characters/" + filename);
-				Character character = new Character();
-				character.Id = id;
-				string text2 = (character.Name = (character.OriginalName = characterDto.Name));
-				character.Costumes.AddRange(characterDto.Costumes);
-				character.Moods.AddRange(FindMoodsForCharacter(id));
-				GatherResourcesForCharacter(character.Id);
-				LoadCharacterSpriteData(character, characterDto);
-				characters.Add(id, character);
-			}
-		}
+    public void OverrideCharacterName(string characterId, string newName)
+    {
+      Game.State.OverrideCharacterNames[characterId] = newName;
+      this.characters[characterId].Name = newName;
+    }
 
-		public IList<string> GetDependencies(string characterId)
-		{
-			if (characterResources.ContainsKey(characterId))
-			{
-				return characterResources[characterId];
-			}
-			return Array.Empty<string>();
-		}
+    public void RemoveOverrideCharacterName(string characterId)
+    {
+      Game.State.OverrideCharacterNames.Remove(characterId);
+      if (Game.Language.TranslationEnabled)
+        this.characters[characterId].Name = Game.Language.GetCaption(this.characters[characterId].OriginalName);
+      else
+        this.characters[characterId].Name = this.characters[characterId].OriginalName;
+    }
 
-		public void LoadResourcesForCharacter(string characterId)
-		{
-			if (!characters.ContainsKey(characterId) || !characterResources.ContainsKey(characterId) || (lastLoadDate.ContainsKey(characterId) && lastLoadDate[characterId].AddSeconds(5.0) > DateTime.Now))
-			{
-				return;
-			}
-			lastLoadDate[characterId] = DateTime.Now;
-			Log.Trace("Loading character resources for ", characterId);
-			foreach (string path in characterResources[characterId])
-			{
-				if (!path.EndsWith(".json"))
-				{
-					Game.Memory.Cache(path);
-				}
-			}
-		}
+    public void OverrideMood(string characterId, string mood, string newMood)
+    {
+      Game.State.Overrides["chara." + characterId + ".busts." + mood] = newMood;
+    }
 
-		public void OverrideCharacterName(string characterId, string newName)
-		{
-			Game.State.OverrideCharacterNames[characterId] = newName;
-			characters[characterId].Name = newName;
-		}
+    public void RemoveOverrideMoods(string characterId)
+    {
+      Game.State.Overrides.RemoveAll<string, string>((Func<string, string, bool>) ((k, v) => k.StartsWith("chara." + characterId + ".busts.")));
+    }
 
-		public void RemoveOverrideCharacterName(string characterId)
-		{
-			Game.State.OverrideCharacterNames.Remove(characterId);
-			if (Game.Language.TranslationEnabled)
-			{
-				characters[characterId].Name = Game.Language.GetCaption(characters[characterId].OriginalName);
-			}
-			else
-			{
-				characters[characterId].Name = characters[characterId].OriginalName;
-			}
-		}
+    public Texture GetMoodTexture(string characterId, string mood)
+    {
+      if (Game.State.Overrides.ContainsKey("chara." + characterId + ".busts." + mood))
+        mood = Game.State.Overrides["chara." + characterId + ".busts." + mood];
+      else if (Game.State.Overrides.ContainsKey("chara." + characterId + ".busts.all"))
+        mood = Game.State.Overrides["chara." + characterId + ".busts.all"];
+      return GD.Load<Texture>("res://assets/img/bust/" + characterId + "/" + mood + ".png");
+    }
 
-		public void OverrideMood(string characterId, string mood, string newMood)
-		{
-			Game.State.Overrides["chara." + characterId + ".busts." + mood] = newMood;
-		}
+    private void GatherResourcesForCharacter(string characterId)
+    {
+      List<string> stringList = new List<string>();
+      stringList.Add("res://definitions/characters/" + characterId + ".json");
+      if (GDUtil.FolderExists("res://assets/sprite/common/character/" + characterId))
+        stringList.AddRange((IEnumerable<string>) GDUtil.ListFilesInPath("res://assets/sprite/common/character/" + characterId + "/", ".png"));
+      if (GDUtil.FolderExists("res://assets/img/bust/" + characterId))
+        stringList.AddRange((IEnumerable<string>) GDUtil.ListFilesInPath("res://assets/img/bust/" + characterId + "/", ".png"));
+      this.characterResources[characterId] = (IList<string>) stringList;
+    }
 
-		public void RemoveOverrideMoods(string characterId)
-		{
-			Game.State.Overrides.RemoveAll((string k, string v) => k.StartsWith("chara." + characterId + ".busts."));
-		}
+    private IList<string> FindMoodsForCharacter(string characterId)
+    {
+      if (!GDUtil.FolderExists("res://assets/img/bust/" + characterId))
+        return (IList<string>) Array.Empty<string>();
+      List<string> moodsForCharacter = new List<string>();
+      foreach (string str in GDUtil.ListFilesInPath("res://assets/img/bust/" + characterId + "/", suffix: ".png", fullPath: false))
+        moodsForCharacter.Add(str.StripSuffix(".png"));
+      return (IList<string>) moodsForCharacter;
+    }
 
-		public Texture GetMoodTexture(string characterId, string mood)
-		{
-			if (Game.State.Overrides.ContainsKey("chara." + characterId + ".busts." + mood))
-			{
-				mood = Game.State.Overrides["chara." + characterId + ".busts." + mood];
-			}
-			else if (Game.State.Overrides.ContainsKey("chara." + characterId + ".busts.all"))
-			{
-				mood = Game.State.Overrides["chara." + characterId + ".busts.all"];
-			}
-			return GD.Load<Texture>("res://assets/img/bust/" + characterId + "/" + mood + ".png");
-		}
+    private void LoadCharacterSpriteData(Character character, CharacterDTO characterDto)
+    {
+      if (!characterDto.NoDefaultSprites)
+      {
+        character.StateSprites["stand"] = new Character.CharacterStateSprites(Character.DefaultStand);
+        character.StateSprites["walk"] = new Character.CharacterStateSprites(Character.DefaultWalk);
+        character.StateSprites["run"] = new Character.CharacterStateSprites(Character.DefaultRun);
+      }
+      foreach (CharacterDTO.CharacterSpriteDTO sprite in characterDto.Sprites)
+      {
+        if (sprite.State == "idle")
+          character.IdleAnimation = true;
+        Character.CharacterStateSprites characterStateSprites = new Character.CharacterStateSprites();
+        characterStateSprites.TextureVariation = sprite.TextureSuffix.IsNullOrEmpty() ? "" : "_" + sprite.TextureSuffix;
+        characterStateSprites.Hframes = sprite.Hframes;
+        characterStateSprites.Vframes = sprite.Vframes;
+        if (!sprite.Offset.IsNullOrEmpty())
+          characterStateSprites.OffsetOverride = new Vector2?(GDUtil.StringToVector2(sprite.Offset));
+        if (IsAnimatedSprite(sprite))
+        {
+          characterStateSprites.Animated = true;
+          characterStateSprites.AnimationFps = sprite.Fps;
+          characterStateSprites.AnimationLeftFrames = sprite.LeftFrames;
+          characterStateSprites.AnimationUpFrames = sprite.UpFrames;
+          characterStateSprites.AnimationRightFrames = sprite.RightFrames;
+          characterStateSprites.AnimationDownFrames = sprite.DownFrames;
+          characterStateSprites.Loop = sprite.Loop;
+        }
+        else
+        {
+          int.TryParse(sprite.LeftFrames, out characterStateSprites.LeftFrame);
+          int.TryParse(sprite.UpFrames, out characterStateSprites.UpFrame);
+          int.TryParse(sprite.RightFrames, out characterStateSprites.RightFrame);
+          int.TryParse(sprite.DownFrames, out characterStateSprites.DownFrame);
+        }
+        character.StateSprites[sprite.State] = characterStateSprites;
+      }
+      string str1 = "res://assets/sprite/common/character/" + character.Id + "/" + character.Id;
+      foreach (Character.CharacterStateSprites characterStateSprites in character.StateSprites.Values)
+      {
+        string str2 = characterStateSprites.TextureVariation + ".png";
+        string str3 = characterStateSprites.TextureVariation + "_n.png";
+        characterStateSprites.Texture = GDUtil.FileExists(str1 + str2) ? GD.Load<Texture>(str1 + str2) : (Texture) null;
+        characterStateSprites.NormalMap = GDUtil.FileExists(str1 + str3) ? GD.Load<Texture>(str1 + str3) : (Texture) null;
+        if (characterStateSprites.Texture == null)
+          Log.Error((object) "[CharacterManager] [", (object) character.Id, (object) "] No texture variation found ", (object) characterStateSprites.TextureVariation);
+      }
 
-		private void GatherResourcesForCharacter(string characterId)
-		{
-			List<string> resources = new List<string>();
-			resources.Add("res://definitions/characters/" + characterId + ".json");
-			if (GDUtil.FolderExists("res://assets/sprite/common/character/" + characterId))
-			{
-				resources.AddRange(GDUtil.ListFilesInPath("res://assets/sprite/common/character/" + characterId + "/", ".png"));
-			}
-			if (GDUtil.FolderExists("res://assets/img/bust/" + characterId))
-			{
-				resources.AddRange(GDUtil.ListFilesInPath("res://assets/img/bust/" + characterId + "/", ".png"));
-			}
-			characterResources[characterId] = resources;
-		}
+      static bool IsAnimatedSprite(CharacterDTO.CharacterSpriteDTO spriteDto)
+      {
+        return IsAnimatedFrames(spriteDto.LeftFrames) || IsAnimatedFrames(spriteDto.UpFrames) || IsAnimatedFrames(spriteDto.RightFrames) || IsAnimatedFrames(spriteDto.DownFrames);
+      }
 
-		private IList<string> FindMoodsForCharacter(string characterId)
-		{
-			if (GDUtil.FolderExists("res://assets/img/bust/" + characterId))
-			{
-				List<string> moods = new List<string>();
-				{
-					foreach (string bustFile in GDUtil.ListFilesInPath("res://assets/img/bust/" + characterId + "/", null, ".png", fullPath: false))
-					{
-						moods.Add(bustFile.StripSuffix(".png"));
-					}
-					return moods;
-				}
-			}
-			return Array.Empty<string>();
-		}
+      static bool IsAnimatedFrames(string framesStr)
+      {
+        return !framesStr.IsNullOrEmpty() && framesStr.Split(",").Length > 1;
+      }
+    }
 
-		private void LoadCharacterSpriteData(Character character, CharacterDTO characterDto)
-		{
-			if (!characterDto.NoDefaultSprites)
-			{
-				character.StateSprites["stand"] = new Character.CharacterStateSprites(Character.DefaultStand);
-				character.StateSprites["walk"] = new Character.CharacterStateSprites(Character.DefaultWalk);
-				character.StateSprites["run"] = new Character.CharacterStateSprites(Character.DefaultRun);
-			}
-			foreach (CharacterDTO.CharacterSpriteDTO spriteDto2 in characterDto.Sprites)
-			{
-				if (spriteDto2.State == "idle")
-				{
-					character.IdleAnimation = true;
-				}
-				Character.CharacterStateSprites stateSprite2 = new Character.CharacterStateSprites();
-				stateSprite2.TextureVariation = (spriteDto2.TextureSuffix.IsNullOrEmpty() ? "" : ("_" + spriteDto2.TextureSuffix));
-				stateSprite2.Hframes = spriteDto2.Hframes;
-				stateSprite2.Vframes = spriteDto2.Vframes;
-				if (!spriteDto2.Offset.IsNullOrEmpty())
-				{
-					stateSprite2.OffsetOverride = GDUtil.StringToVector2(spriteDto2.Offset);
-				}
-				if (IsAnimatedSprite(spriteDto2))
-				{
-					stateSprite2.Animated = true;
-					stateSprite2.AnimationFps = spriteDto2.Fps;
-					stateSprite2.AnimationLeftFrames = spriteDto2.LeftFrames;
-					stateSprite2.AnimationUpFrames = spriteDto2.UpFrames;
-					stateSprite2.AnimationRightFrames = spriteDto2.RightFrames;
-					stateSprite2.AnimationDownFrames = spriteDto2.DownFrames;
-					stateSprite2.Loop = spriteDto2.Loop;
-				}
-				else
-				{
-					int.TryParse(spriteDto2.LeftFrames, out stateSprite2.LeftFrame);
-					int.TryParse(spriteDto2.UpFrames, out stateSprite2.UpFrame);
-					int.TryParse(spriteDto2.RightFrames, out stateSprite2.RightFrame);
-					int.TryParse(spriteDto2.DownFrames, out stateSprite2.DownFrame);
-				}
-				character.StateSprites[spriteDto2.State] = stateSprite2;
-			}
-			string p = "res://assets/sprite/common/character/" + character.Id + "/" + character.Id;
-			foreach (Character.CharacterStateSprites stateSprite in character.StateSprites.Values)
-			{
-				string s = stateSprite.TextureVariation + ".png";
-				string i = stateSprite.TextureVariation + "_n.png";
-				stateSprite.Texture = (GDUtil.FileExists(p + s) ? GD.Load<Texture>(p + s) : null);
-				stateSprite.NormalMap = (GDUtil.FileExists(p + i) ? GD.Load<Texture>(p + i) : null);
-				if (stateSprite.Texture == null)
-				{
-					Log.Error("[CharacterManager] [", character.Id, "] No texture variation found ", stateSprite.TextureVariation);
-				}
-			}
-			static bool IsAnimatedFrames(string framesStr)
-			{
-				if (!framesStr.IsNullOrEmpty())
-				{
-					return framesStr.Split(",").Length > 1;
-				}
-				return false;
-			}
-			static bool IsAnimatedSprite(CharacterDTO.CharacterSpriteDTO spriteDto)
-			{
-				if (!IsAnimatedFrames(spriteDto.LeftFrames) && !IsAnimatedFrames(spriteDto.UpFrames) && !IsAnimatedFrames(spriteDto.RightFrames))
-				{
-					return IsAnimatedFrames(spriteDto.DownFrames);
-				}
-				return true;
-			}
-		}
+    public void ApplyTranslationOverrides()
+    {
+      foreach (Character character in this.characters.Values)
+        character.Name = Game.Language.GetCaption(character.OriginalName);
+    }
 
-		public void ApplyTranslationOverrides()
-		{
-			foreach (Character character in characters.Values)
-			{
-				character.Name = Game.Language.GetCaption(character.OriginalName);
-			}
-		}
+    public void ApplyStateOverrides()
+    {
+      foreach (Character character in this.characters.Values)
+      {
+        if (Game.State.OverrideCharacterNames.ContainsKey(character.Id))
+          character.Name = Game.State.OverrideCharacterNames[character.Id];
+      }
+    }
 
-		public void ApplyStateOverrides()
-		{
-			foreach (Character character in characters.Values)
-			{
-				if (Game.State.OverrideCharacterNames.ContainsKey(character.Id))
-				{
-					character.Name = Game.State.OverrideCharacterNames[character.Id];
-				}
-			}
-		}
+    public void Clean()
+    {
+      foreach (Character character in this.characters.Values)
+        character.Name = character.OriginalName;
+    }
 
-		public void Clean()
-		{
-			foreach (Character value in characters.Values)
-			{
-				value.Name = value.OriginalName;
-			}
-		}
-
-		private string CharacterNameContext(ICharacter character)
-		{
-			return "characters.name." + character.Id;
-		}
-	}
+    private string CharacterNameContext(ICharacter character) => "characters.name." + character.Id;
+  }
 }

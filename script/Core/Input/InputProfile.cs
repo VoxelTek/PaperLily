@@ -1,264 +1,225 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Core.InputProfile
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
+using Godot;
 using System;
 using System.Collections.Generic;
-using Godot;
 
+#nullable disable
 namespace LacieEngine.Core
 {
-	public class InputProfile : IComparable<InputProfile>
-	{
-		public enum InputType
-		{
-			Keyboard,
-			Controller
-		}
+  public class InputProfile : IComparable<InputProfile>
+  {
+    public string Name;
+    public string Caption;
+    public int Order;
+    public InputProfile.InputType Type;
+    public List<InputProfile.Mapping> Mappings = new List<InputProfile.Mapping>();
+    public string CaptionBase;
+    public Dictionary<uint, string> KeyCaptions;
+    public Dictionary<int, string> JoystickButtonCaptions;
+    public Dictionary<int, string> JoystickAxisPlusCaptions;
+    public Dictionary<int, string> JoystickAxisMinusCaptions;
 
-		public class Mapping
-		{
-			public string Action;
+    public InputProfile(InputProfile.InputType type)
+    {
+      this.Type = type;
+      this.Mappings = new List<InputProfile.Mapping>();
+      this.KeyCaptions = new Dictionary<uint, string>();
+      this.JoystickButtonCaptions = new Dictionary<int, string>();
+      this.JoystickAxisPlusCaptions = new Dictionary<int, string>();
+      this.JoystickAxisMinusCaptions = new Dictionary<int, string>();
+    }
 
-			public InputEvent Event;
-		}
+    public InputProfile(InputProfile baseProfile)
+    {
+      this.Type = baseProfile.Type;
+      this.Mappings = new List<InputProfile.Mapping>((IEnumerable<InputProfile.Mapping>) baseProfile.Mappings);
+      this.CaptionBase = baseProfile.CaptionBase;
+      this.KeyCaptions = new Dictionary<uint, string>((IDictionary<uint, string>) baseProfile.KeyCaptions);
+      this.JoystickButtonCaptions = new Dictionary<int, string>((IDictionary<int, string>) baseProfile.JoystickButtonCaptions);
+      this.JoystickAxisPlusCaptions = new Dictionary<int, string>((IDictionary<int, string>) baseProfile.JoystickAxisPlusCaptions);
+      this.JoystickAxisMinusCaptions = new Dictionary<int, string>((IDictionary<int, string>) baseProfile.JoystickAxisMinusCaptions);
+    }
 
-		public string Name;
+    public void AddKeyMapping(string action, uint key, bool shift = false, bool ctrl = false, bool alt = false)
+    {
+      InputEventKey inputEventKey = new InputEventKey();
+      inputEventKey.Scancode = key;
+      inputEventKey.Shift = shift;
+      inputEventKey.Control = ctrl;
+      inputEventKey.Alt = alt;
+      this.Mappings.Add(new InputProfile.Mapping()
+      {
+        Action = action,
+        Event = (InputEvent) inputEventKey
+      });
+    }
 
-		public string Caption;
+    public void AddButtonMapping(string action, int button)
+    {
+      this.Mappings.Add(new InputProfile.Mapping()
+      {
+        Action = action,
+        Event = (InputEvent) new InputEventJoypadButton()
+        {
+          ButtonIndex = button
+        }
+      });
+    }
 
-		public int Order;
+    public void AddAxisMapping(string action, int axis, int value)
+    {
+      this.Mappings.Add(new InputProfile.Mapping()
+      {
+        Action = action,
+        Event = (InputEvent) new InputEventJoypadMotion()
+        {
+          Axis = axis,
+          AxisValue = (value > 0 ? 1f : -1f)
+        }
+      });
+    }
 
-		public InputType Type;
+    public bool IsComplete()
+    {
+      foreach (string action in Inputs.AllGame)
+      {
+        if (!this.IsActionMapped(action))
+          return false;
+      }
+      return true;
+    }
 
-		public List<Mapping> Mappings = new List<Mapping>();
+    public bool IsActionMapped(string action)
+    {
+      foreach (InputProfile.Mapping mapping in this.Mappings)
+      {
+        if (mapping.Action == action)
+          return true;
+      }
+      return false;
+    }
 
-		public string CaptionBase;
+    public void UnassignMapping(string action)
+    {
+      this.Mappings.RemoveAll((Predicate<InputProfile.Mapping>) (mapping => mapping.Action == action));
+    }
 
-		public Dictionary<uint, string> KeyCaptions;
+    public void UnassignEvent(InputEvent @event)
+    {
+      List<InputProfile.Mapping> toRemove = new List<InputProfile.Mapping>();
+      foreach (InputProfile.Mapping mapping in this.Mappings)
+      {
+        if (mapping.Event is InputEventKey inputEventKey1 && @event is InputEventKey inputEventKey2)
+        {
+          if ((int) inputEventKey1.Scancode == (int) inputEventKey2.Scancode)
+            toRemove.Add(mapping);
+        }
+        else if (mapping.Event is InputEventJoypadButton eventJoypadButton1 && @event is InputEventJoypadButton eventJoypadButton2)
+        {
+          if (eventJoypadButton1.ButtonIndex == eventJoypadButton2.ButtonIndex)
+            toRemove.Add(mapping);
+        }
+        else if (mapping.Event is InputEventJoypadMotion eventJoypadMotion1 && @event is InputEventJoypadMotion eventJoypadMotion2 && eventJoypadMotion1.Axis == eventJoypadMotion2.Axis && (double) eventJoypadMotion1.AxisValue == (double) eventJoypadMotion2.AxisValue)
+          toRemove.Add(mapping);
+      }
+      this.Mappings.RemoveAll((Predicate<InputProfile.Mapping>) (mapping => toRemove.Contains(mapping)));
+    }
 
-		public Dictionary<int, string> JoystickButtonCaptions;
+    public void AddKeyCaption(uint key, string caption) => this.KeyCaptions[key] = caption;
 
-		public Dictionary<int, string> JoystickAxisPlusCaptions;
+    public void AddButtonCaption(int button, string caption)
+    {
+      this.JoystickButtonCaptions[button] = caption;
+    }
 
-		public Dictionary<int, string> JoystickAxisMinusCaptions;
+    public void AddAxisCaption(int axis, int value, string caption)
+    {
+      if (value > 0)
+        this.JoystickAxisPlusCaptions[axis] = caption;
+      else
+        this.JoystickAxisMinusCaptions[axis] = caption;
+    }
 
-		public InputProfile(InputType type)
-		{
-			Type = type;
-			Mappings = new List<Mapping>();
-			KeyCaptions = new Dictionary<uint, string>();
-			JoystickButtonCaptions = new Dictionary<int, string>();
-			JoystickAxisPlusCaptions = new Dictionary<int, string>();
-			JoystickAxisMinusCaptions = new Dictionary<int, string>();
-		}
+    public string GetCaptionForAction(string action)
+    {
+      foreach (InputProfile.Mapping mapping in this.Mappings)
+      {
+        if (mapping.Action == action)
+          return this.GetCaptionForEvent(mapping.Event);
+      }
+      return "-";
+    }
 
-		public InputProfile(InputProfile baseProfile)
-		{
-			Type = baseProfile.Type;
-			Mappings = new List<Mapping>(baseProfile.Mappings);
-			CaptionBase = baseProfile.CaptionBase;
-			KeyCaptions = new Dictionary<uint, string>(baseProfile.KeyCaptions);
-			JoystickButtonCaptions = new Dictionary<int, string>(baseProfile.JoystickButtonCaptions);
-			JoystickAxisPlusCaptions = new Dictionary<int, string>(baseProfile.JoystickAxisPlusCaptions);
-			JoystickAxisMinusCaptions = new Dictionary<int, string>(baseProfile.JoystickAxisMinusCaptions);
-		}
+    public string GetAllCaptionsForAction(string action)
+    {
+      List<string> values = new List<string>();
+      foreach (InputProfile.Mapping mapping in this.Mappings)
+      {
+        if (mapping.Action == action)
+          values.Add(this.GetCaptionForEvent(mapping.Event));
+      }
+      return values.Count > 0 ? string.Join("/", (IEnumerable<string>) values) : "-";
+    }
 
-		public void AddKeyMapping(string action, uint key, bool shift = false, bool ctrl = false, bool alt = false)
-		{
-			InputEventKey evt = new InputEventKey();
-			evt.Scancode = key;
-			evt.Shift = shift;
-			evt.Control = ctrl;
-			evt.Alt = alt;
-			Mapping mapping = new Mapping();
-			mapping.Action = action;
-			mapping.Event = evt;
-			Mappings.Add(mapping);
-		}
+    public string GetCaptionForEvent(InputEvent evt)
+    {
+      if (this.CaptionBase != null && Inputs.Profiles.ContainsKey(this.CaptionBase))
+        return Inputs.Profiles[this.CaptionBase].GetCaptionForEvent(evt);
+      switch (evt)
+      {
+        case InputEventKey inputEventKey:
+          uint scancode = inputEventKey.Scancode;
+          return this.KeyCaptions.ContainsKey(scancode) ? this.ProcessCaption(this.KeyCaptions[scancode]) : OS.GetScancodeString(scancode);
+        case InputEventJoypadButton eventJoypadButton:
+          int buttonIndex = eventJoypadButton.ButtonIndex;
+          return this.JoystickButtonCaptions.ContainsKey(buttonIndex) ? this.ProcessCaption(this.JoystickButtonCaptions[buttonIndex]) : Game.Language.GetCaption("system.common.button") + " " + (buttonIndex + 1).ToString();
+        case InputEventJoypadMotion eventJoypadMotion:
+          int axis = eventJoypadMotion.Axis;
+          float axisValue = eventJoypadMotion.AxisValue;
+          if ((double) axisValue > 0.0 && this.JoystickAxisPlusCaptions.ContainsKey(axis))
+            return this.ProcessCaption(this.JoystickAxisPlusCaptions[axis]);
+          return this.JoystickAxisMinusCaptions.ContainsKey(axis) ? this.ProcessCaption(this.JoystickAxisMinusCaptions[axis]) : Game.Language.GetCaption("system.common.axis") + " " + (axis + 1).ToString() + ((double) axisValue > 0.0 ? " +" : " -");
+        default:
+          return "-";
+      }
+    }
 
-		public void AddButtonMapping(string action, int button)
-		{
-			InputEventJoypadButton evt = new InputEventJoypadButton();
-			evt.ButtonIndex = button;
-			Mapping mapping = new Mapping();
-			mapping.Action = action;
-			mapping.Event = evt;
-			Mappings.Add(mapping);
-		}
+    private string ProcessCaption(string caption)
+    {
+      if (!caption.StartsWith("img:"))
+        return Game.Language.GetCaption(caption);
+      string[] strArray = new string[5]
+      {
+        "[img]",
+        "res://assets/img/ui/input/",
+        null,
+        null,
+        null
+      };
+      string str = caption;
+      strArray[2] = str.Substring(4, str.Length - 4);
+      strArray[3] = ".png";
+      strArray[4] = "[/img]";
+      return string.Concat(strArray);
+    }
 
-		public void AddAxisMapping(string action, int axis, int value)
-		{
-			InputEventJoypadMotion evt = new InputEventJoypadMotion();
-			evt.Axis = axis;
-			evt.AxisValue = ((value > 0) ? 1f : (-1f));
-			Mapping mapping = new Mapping();
-			mapping.Action = action;
-			mapping.Event = evt;
-			Mappings.Add(mapping);
-		}
+    public int CompareTo(InputProfile profile) => this.Order.CompareTo(profile.Order);
 
-		public bool IsComplete()
-		{
-			string[] allGame = Inputs.AllGame;
-			foreach (string action in allGame)
-			{
-				if (!IsActionMapped(action))
-				{
-					return false;
-				}
-			}
-			return true;
-		}
+    public enum InputType
+    {
+      Keyboard,
+      Controller,
+    }
 
-		public bool IsActionMapped(string action)
-		{
-			foreach (Mapping mapping in Mappings)
-			{
-				if (mapping.Action == action)
-				{
-					return true;
-				}
-			}
-			return false;
-		}
-
-		public void UnassignMapping(string action)
-		{
-			Mappings.RemoveAll((Mapping mapping) => mapping.Action == action);
-		}
-
-		public void UnassignEvent(InputEvent @event)
-		{
-			List<Mapping> toRemove = new List<Mapping>();
-			foreach (Mapping mapping2 in Mappings)
-			{
-				if (mapping2.Event is InputEventKey mappingKey && @event is InputEventKey eventKey)
-				{
-					if (mappingKey.Scancode == eventKey.Scancode)
-					{
-						toRemove.Add(mapping2);
-					}
-				}
-				else if (mapping2.Event is InputEventJoypadButton mappingButton && @event is InputEventJoypadButton eventButton)
-				{
-					if (mappingButton.ButtonIndex == eventButton.ButtonIndex)
-					{
-						toRemove.Add(mapping2);
-					}
-				}
-				else if (mapping2.Event is InputEventJoypadMotion mappingMotion && @event is InputEventJoypadMotion eventMotion && mappingMotion.Axis == eventMotion.Axis && mappingMotion.AxisValue == eventMotion.AxisValue)
-				{
-					toRemove.Add(mapping2);
-				}
-			}
-			Mappings.RemoveAll((Mapping mapping) => toRemove.Contains(mapping));
-		}
-
-		public void AddKeyCaption(uint key, string caption)
-		{
-			KeyCaptions[key] = caption;
-		}
-
-		public void AddButtonCaption(int button, string caption)
-		{
-			JoystickButtonCaptions[button] = caption;
-		}
-
-		public void AddAxisCaption(int axis, int value, string caption)
-		{
-			if (value > 0)
-			{
-				JoystickAxisPlusCaptions[axis] = caption;
-			}
-			else
-			{
-				JoystickAxisMinusCaptions[axis] = caption;
-			}
-		}
-
-		public string GetCaptionForAction(string action)
-		{
-			foreach (Mapping mapping in Mappings)
-			{
-				if (mapping.Action == action)
-				{
-					return GetCaptionForEvent(mapping.Event);
-				}
-			}
-			return "-";
-		}
-
-		public string GetAllCaptionsForAction(string action)
-		{
-			List<string> captions = new List<string>();
-			foreach (Mapping mapping in Mappings)
-			{
-				if (mapping.Action == action)
-				{
-					captions.Add(GetCaptionForEvent(mapping.Event));
-				}
-			}
-			if (captions.Count > 0)
-			{
-				return string.Join("/", captions);
-			}
-			return "-";
-		}
-
-		public string GetCaptionForEvent(InputEvent evt)
-		{
-			if (CaptionBase != null && Inputs.Profiles.ContainsKey(CaptionBase))
-			{
-				return Inputs.Profiles[CaptionBase].GetCaptionForEvent(evt);
-			}
-			if (evt is InputEventKey eventKey)
-			{
-				uint code2 = eventKey.Scancode;
-				if (KeyCaptions.ContainsKey(code2))
-				{
-					return ProcessCaption(KeyCaptions[code2]);
-				}
-				return OS.GetScancodeString(code2);
-			}
-			if (evt is InputEventJoypadButton eventButton)
-			{
-				int code3 = eventButton.ButtonIndex;
-				if (JoystickButtonCaptions.ContainsKey(code3))
-				{
-					return ProcessCaption(JoystickButtonCaptions[code3]);
-				}
-				return Game.Language.GetCaption("system.common.button") + " " + (code3 + 1);
-			}
-			if (evt is InputEventJoypadMotion eventMotion)
-			{
-				int code = eventMotion.Axis;
-				float value = eventMotion.AxisValue;
-				if (value > 0f && JoystickAxisPlusCaptions.ContainsKey(code))
-				{
-					return ProcessCaption(JoystickAxisPlusCaptions[code]);
-				}
-				if (JoystickAxisMinusCaptions.ContainsKey(code))
-				{
-					return ProcessCaption(JoystickAxisMinusCaptions[code]);
-				}
-				return Game.Language.GetCaption("system.common.axis") + " " + (code + 1) + ((value > 0f) ? " +" : " -");
-			}
-			return "-";
-		}
-
-		private string ProcessCaption(string caption)
-		{
-			if (caption.StartsWith("img:"))
-			{
-				string[] obj = new string[5] { "[img]", "res://assets/img/ui/input/", null, null, null };
-				obj[2] = caption.Substring(4, caption.Length - 4);
-				obj[3] = ".png";
-				obj[4] = "[/img]";
-				return string.Concat(obj);
-			}
-			return Game.Language.GetCaption(caption);
-		}
-
-		public int CompareTo(InputProfile profile)
-		{
-			return Order.CompareTo(profile.Order);
-		}
-	}
+    public class Mapping
+    {
+      public string Action;
+      public InputEvent Event;
+    }
+  }
 }

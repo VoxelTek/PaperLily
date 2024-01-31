@@ -1,180 +1,150 @@
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.StartupLanguageMenu
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Settings;
+using System;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public class StartupLanguageMenu : SimpleVerticalMenu
-	{
-		public class LanguageChangeMenuEntry : IMenuEntry
-		{
-			private string _languageId;
+  public class StartupLanguageMenu : SimpleVerticalMenu
+  {
+    private bool _extraLanguages;
 
-			private string _caption;
+    public StartupLanguageMenu(
+      bool extraLanguages,
+      IMenuEntryList parentMenu,
+      IMenuEntryContainer container)
+    {
+      this._extraLanguages = extraLanguages;
+      this.Parent = parentMenu;
+      this.Container = container;
+    }
 
-			private bool _extraLanguages;
+    public override Control DrawContent()
+    {
+      this.Entries = new List<IMenuEntry>();
+      foreach (string languageId in this._extraLanguages ? Game.Language.GetExtraLanguages() : Game.Language.GetAvailableLanguages())
+        this.Entries.Add((IMenuEntry) new StartupLanguageMenu.LanguageChangeMenuEntry(languageId, this._extraLanguages, (IMenuEntryList) this));
+      if (!this._extraLanguages && !Game.Language.GetExtraLanguages().IsEmpty<string>())
+        this.Entries.Add((IMenuEntry) new StartupLanguageMenu.MoreLanguagesMenuEntry((IMenuEntryList) this));
+      return UIUtil.CreateVerticalEntryList(this.Entries, out this._selectBgs);
+    }
 
-			public IMenuEntryList Parent { get; set; }
+    public override void Back()
+    {
+      Game.Settings.SaveSettings();
+      Game.Settings.RevertSettings();
+      if (this.OnBack != null)
+        this.OnBack();
+      else
+        this.Parent?.Root();
+    }
 
-			public LanguageChangeMenuEntry(string languageId, bool extraLanguages, IMenuEntryList parent)
-			{
-				Parent = parent;
-				_languageId = languageId;
-				_caption = Game.Language.LanguageNames[languageId];
-				_extraLanguages = extraLanguages;
-			}
+    public override void HandleInput(InputEvent @event)
+    {
+      switch (Inputs.Handle(@event, Inputs.Processor.Menu, Inputs.AllUi, true))
+      {
+        case "input_up":
+        case "input_down":
+        case "input_action":
+          UIUtil.HandleVerticalNavigationInput((IMenuEntryList) this, @event);
+          break;
+        case "input_cancel":
+          Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation2.ogg");
+          this.Entries[this.Selection].Cancel();
+          break;
+      }
+    }
 
-			public Control DrawEntry()
-			{
-				return UIUtil.CreateSimpleEntry(_caption);
-			}
+    public class LanguageChangeMenuEntry : IMenuEntry
+    {
+      private string _languageId;
+      private string _caption;
+      private bool _extraLanguages;
 
-			public void Accept()
-			{
-				Parent.Container.Control.Visible = false;
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-				if (_languageId != Game.Settings.TranslationBaseLocale)
-				{
-					Game.Language.LoadLanguage(Game.Settings.TranslationBaseLocale);
-				}
-				Game.Settings.SetTranslationLocale(_languageId);
-				Game.Language.LoadLanguage(_languageId);
-				if (_extraLanguages)
-				{
-					Parent.Parent.Back();
-				}
-				else
-				{
-					Parent.Back();
-				}
-			}
+      public IMenuEntryList Parent { get; set; }
 
-			public void Cancel()
-			{
-				if (_extraLanguages && Parent.Container.Control is TitledMenuFrame frame)
-				{
-					frame.TitleText = "system.settings.game.language.select";
-				}
-				Parent.Back();
-			}
-		}
+      public LanguageChangeMenuEntry(string languageId, bool extraLanguages, IMenuEntryList parent)
+      {
+        this.Parent = parent;
+        this._languageId = languageId;
+        this._caption = Game.Language.LanguageNames[languageId];
+        this._extraLanguages = extraLanguages;
+      }
 
-		public class MoreLanguagesMenuEntry : IMenuEntry
-		{
-			public IMenuEntryList Parent { get; set; }
+      public Control DrawEntry() => UIUtil.CreateSimpleEntry(this._caption);
 
-			public MoreLanguagesMenuEntry(IMenuEntryList parent)
-			{
-				Parent = parent;
-			}
+      public void Accept()
+      {
+        this.Parent.Container.Control.Visible = false;
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+        if (this._languageId != Game.Settings.TranslationBaseLocale)
+          Game.Language.LoadLanguage(Game.Settings.TranslationBaseLocale);
+        Game.Settings.SetTranslationLocale(this._languageId);
+        Game.Language.LoadLanguage(this._languageId);
+        if (this._extraLanguages)
+          this.Parent.Parent.Back();
+        else
+          this.Parent.Back();
+      }
 
-			public Control DrawEntry()
-			{
-				return UIUtil.CreateSimpleEntry("system.settings.game.language.extra");
-			}
+      public void Cancel()
+      {
+        if (this._extraLanguages && this.Parent.Container.Control is TitledMenuFrame control)
+          control.TitleText = "system.settings.game.language.select";
+        this.Parent.Back();
+      }
+    }
 
-			public void Accept()
-			{
-				if (!Game.Settings.TranslationExtraEnabled)
-				{
-					Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-					AreYouSureContainer areYouSure = new AreYouSureContainer();
-					areYouSure.OnYes = delegate
-					{
-						EnableExtraLanguages();
-					};
-					areYouSure.OnClose = delegate
-					{
-						areYouSure.Delete();
-					};
-					areYouSure.Text = "system.settings.game.language.extra.warning";
-					Game.Screen.AddToLayer(IScreenManager.Layer.Screen, areYouSure);
-				}
-				else
-				{
-					Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-					ShowExtraLanguages();
-				}
-			}
+    public class MoreLanguagesMenuEntry : IMenuEntry
+    {
+      public IMenuEntryList Parent { get; set; }
 
-			private void EnableExtraLanguages()
-			{
-				TranslationExtraEnabledSetting.Instance.Value = true;
-				Game.Settings.SaveSettings();
-				ShowExtraLanguages();
-			}
+      public MoreLanguagesMenuEntry(IMenuEntryList parent) => this.Parent = parent;
 
-			private void ShowExtraLanguages()
-			{
-				if (Parent.Container.Control is TitledMenuFrame frame)
-				{
-					frame.TitleText = "system.settings.game.language.select.extra";
-				}
-				((IMenuEntryList)new StartupLanguageMenu(extraLanguages: true, Parent, Parent.Container)).Root();
-			}
-		}
+      public Control DrawEntry() => UIUtil.CreateSimpleEntry("system.settings.game.language.extra");
 
-		private bool _extraLanguages;
+      public void Accept()
+      {
+        if (!Game.Settings.TranslationExtraEnabled)
+        {
+          Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+          AreYouSureContainer areYouSure = new AreYouSureContainer()
+          {
+            OnYes = (Action) (() => this.EnableExtraLanguages())
+          };
+          areYouSure.OnClose = (Action) (() => areYouSure.Delete());
+          areYouSure.Text = "system.settings.game.language.extra.warning";
+          Game.Screen.AddToLayer(IScreenManager.Layer.Screen, (Node) areYouSure);
+        }
+        else
+        {
+          Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+          this.ShowExtraLanguages();
+        }
+      }
 
-		public StartupLanguageMenu(bool extraLanguages, IMenuEntryList parentMenu, IMenuEntryContainer container)
-		{
-			_extraLanguages = extraLanguages;
-			base.Parent = parentMenu;
-			base.Container = container;
-		}
+      private void EnableExtraLanguages()
+      {
+        TranslationExtraEnabledSetting.Instance.Value = true;
+        Game.Settings.SaveSettings();
+        this.ShowExtraLanguages();
+      }
 
-		public override Control DrawContent()
-		{
-			base.Entries = new List<IMenuEntry>();
-			foreach (string languageId in _extraLanguages ? Game.Language.GetExtraLanguages() : Game.Language.GetAvailableLanguages())
-			{
-				base.Entries.Add(new LanguageChangeMenuEntry(languageId, _extraLanguages, this));
-			}
-			if (!_extraLanguages && !Game.Language.GetExtraLanguages().IsEmpty())
-			{
-				base.Entries.Add(new MoreLanguagesMenuEntry(this));
-			}
-			return UIUtil.CreateVerticalEntryList(base.Entries, out _selectBgs);
-		}
-
-		public override void Back()
-		{
-			Game.Settings.SaveSettings();
-			Game.Settings.RevertSettings();
-			if (base.OnBack != null)
-			{
-				base.OnBack();
-			}
-			else
-			{
-				base.Parent?.Root();
-			}
-		}
-
-		public override void HandleInput(InputEvent @event)
-		{
-			string input = Inputs.Handle(@event, Inputs.Processor.Menu, Inputs.AllUi, allowEcho: true);
-			if (input != null)
-			{
-				switch (input)
-				{
-				case "input_up":
-				case "input_down":
-				case "input_action":
-					UIUtil.HandleVerticalNavigationInput(this, @event);
-					break;
-				case "input_cancel":
-					Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation2.ogg");
-					base.Entries[base.Selection].Cancel();
-					break;
-				case "input_left":
-					break;
-				case "input_right":
-					break;
-				}
-			}
-		}
-	}
+      private void ShowExtraLanguages()
+      {
+        if (this.Parent.Container.Control is TitledMenuFrame control)
+          control.TitleText = "system.settings.game.language.select.extra";
+        new StartupLanguageMenu(true, this.Parent, this.Parent.Container).Root();
+      }
+    }
+  }
 }

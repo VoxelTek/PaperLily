@@ -1,115 +1,95 @@
-using System;
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.StoryPlayer.LsbEventProvider
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using LacieEngine.API;
 using LacieEngine.Core;
+using System;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.StoryPlayer
 {
-	[Injectable]
-	public class LsbEventProvider : IEventProvider, IModule, ITranslatable
-	{
-		private Dictionary<string, StoryPlayerEvent[]> _events;
+  [Injectable]
+  public class LsbEventProvider : IEventProvider, IModule, ITranslatable
+  {
+    private Dictionary<string, StoryPlayerEvent[]> _events;
+    private ISet<string> _eventIds;
 
-		private ISet<string> _eventIds;
+    public void Init()
+    {
+      Log.Info((object) "Loading events...");
+      Dictionary<string, List<StoryPlayerEvent>> dictionary = new Dictionary<string, List<StoryPlayerEvent>>();
+      this._eventIds = (ISet<string>) new HashSet<string>();
+      foreach (string filename in GDUtil.ListFilesInPath("res://definitions/events/", ".lsb"))
+      {
+        foreach (StoryPlayerEvent @event in GDUtil.ReadBinaryFile(filename, Game.Settings.LsbKey) as StoryPlayerEvent[])
+        {
+          this.ProcessEvent(@event);
+          if (!dictionary.ContainsKey(@event.Room))
+            dictionary[@event.Room] = new List<StoryPlayerEvent>();
+          dictionary[@event.Room].Add(@event);
+          this._eventIds.Add(@event.Id);
+        }
+      }
+      this._events = new Dictionary<string, StoryPlayerEvent[]>();
+      foreach (string key in dictionary.Keys)
+        this._events[key] = dictionary[key].ToArray();
+    }
 
-		public void Init()
-		{
-			Log.Info("Loading events...");
-			Dictionary<string, List<StoryPlayerEvent>> tempEvents = new Dictionary<string, List<StoryPlayerEvent>>();
-			_eventIds = new HashSet<string>();
-			foreach (string item in GDUtil.ListFilesInPath("res://definitions/events/", ".lsb"))
-			{
-				StoryPlayerEvent[] array = GDUtil.ReadBinaryFile(item, Game.Settings.LsbKey) as StoryPlayerEvent[];
-				foreach (StoryPlayerEvent @event in array)
-				{
-					ProcessEvent(@event);
-					if (!tempEvents.ContainsKey(@event.Room))
-					{
-						tempEvents[@event.Room] = new List<StoryPlayerEvent>();
-					}
-					tempEvents[@event.Room].Add(@event);
-					_eventIds.Add(@event.Id);
-				}
-			}
-			_events = new Dictionary<string, StoryPlayerEvent[]>();
-			foreach (string pack in tempEvents.Keys)
-			{
-				_events[pack] = tempEvents[pack].ToArray();
-			}
-		}
+    public StoryPlayerEvent[] GetEventsForRoom(string room)
+    {
+      return this._events.ContainsKey(room) ? this._events[room] : Array.Empty<StoryPlayerEvent>();
+    }
 
-		public StoryPlayerEvent[] GetEventsForRoom(string room)
-		{
-			if (_events.ContainsKey(room))
-			{
-				return _events[room];
-			}
-			return Array.Empty<StoryPlayerEvent>();
-		}
+    public StoryPlayerEvent LoadEvent(string name, string room = null)
+    {
+      foreach (StoryPlayerEvent storyPlayerEvent in this._events[room.IsNullOrEmpty() ? "Global" : room])
+      {
+        if (storyPlayerEvent.Name == name)
+          return storyPlayerEvent;
+      }
+      Log.Error((object) "Event not found: ", (object) room, (object) ".", (object) name);
+      return (StoryPlayerEvent) null;
+    }
 
-		public StoryPlayerEvent LoadEvent(string name, string room = null)
-		{
-			string eventFolder = (room.IsNullOrEmpty() ? "Global" : room);
-			StoryPlayerEvent[] array = _events[eventFolder];
-			foreach (StoryPlayerEvent @event in array)
-			{
-				if (@event.Name == name)
-				{
-					return @event;
-				}
-			}
-			Log.Error("Event not found: ", room, ".", name);
-			return null;
-		}
+    public bool EventExists(string eventId) => this._eventIds.Contains(eventId);
 
-		public bool EventExists(string eventId)
-		{
-			return _eventIds.Contains(eventId);
-		}
+    public StoryPlayerEvent LoadEventFromPath(string _)
+    {
+      throw new NotImplementedException("LSB Event Provider should not be called from plugin!");
+    }
 
-		public StoryPlayerEvent LoadEventFromPath(string _)
-		{
-			throw new NotImplementedException("LSB Event Provider should not be called from plugin!");
-		}
+    public void ApplyTranslationOverrides()
+    {
+      foreach (string key in this._events.Keys)
+      {
+        foreach (StoryPlayerEvent @event in this._events[key])
+          this.OverrideCaptions(@event);
+      }
+    }
 
-		public void ApplyTranslationOverrides()
-		{
-			foreach (string pack in _events.Keys)
-			{
-				StoryPlayerEvent[] array = _events[pack];
-				foreach (StoryPlayerEvent @event in array)
-				{
-					OverrideCaptions(@event);
-				}
-			}
-		}
+    private void ProcessEvent(StoryPlayerEvent @event)
+    {
+      foreach (StoryPlayerCommand storyPlayerCommand in @event.Dialogue)
+      {
+        Injector.Resolve((object) storyPlayerCommand);
+        this.OverrideCaptions(@event);
+        storyPlayerCommand.Event = @event;
+      }
+    }
 
-		private void ProcessEvent(StoryPlayerEvent @event)
-		{
-			StoryPlayerCommand[] dialogue = @event.Dialogue;
-			foreach (StoryPlayerCommand obj in dialogue)
-			{
-				Injector.Resolve(obj);
-				OverrideCaptions(@event);
-				obj.Event = @event;
-			}
-		}
-
-		private void OverrideCaptions(StoryPlayerEvent @event)
-		{
-			if (!Game.Language.TranslationEnabled)
-			{
-				return;
-			}
-			ICaptionSet captions = Game.Language.GetStoryCaptions(@event.Room);
-			if (captions != null)
-			{
-				StoryPlayerCommand[] dialogue = @event.Dialogue;
-				for (int i = 0; i < dialogue.Length; i++)
-				{
-					dialogue[i].OverrideCaptions(captions);
-				}
-			}
-		}
-	}
+    private void OverrideCaptions(StoryPlayerEvent @event)
+    {
+      if (!Game.Language.TranslationEnabled)
+        return;
+      ICaptionSet storyCaptions = Game.Language.GetStoryCaptions(@event.Room);
+      if (storyCaptions == null)
+        return;
+      foreach (StoryPlayerCommand storyPlayerCommand in @event.Dialogue)
+        storyPlayerCommand.OverrideCaptions(storyCaptions);
+    }
+  }
 }

@@ -1,100 +1,89 @@
-using System;
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.StoryPlayer.StoryPlayerChoiceCommand
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Translations;
+using System;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.StoryPlayer
 {
-	[Serializable]
-	public class StoryPlayerChoiceCommand : StoryPlayerCommand
-	{
-		[Serializable]
-		public class Choice
-		{
-			public string ChoiceText;
+  [Serializable]
+  public class StoryPlayerChoiceCommand : StoryPlayerCommand
+  {
+    public string Text { get; set; }
 
-			public int GotoLine;
+    public List<StoryPlayerChoiceCommand.Choice> Choices { get; set; } = new List<StoryPlayerChoiceCommand.Choice>();
 
-			public LogicStatement Condition;
-		}
+    public override void Execute(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
+    {
+      List<StoryPlayerChoiceCommand.Choice> collection = new List<StoryPlayerChoiceCommand.Choice>();
+      foreach (StoryPlayerChoiceCommand.Choice choice in this.Choices)
+      {
+        if (choice.Condition == null || choice.Condition.Evaluate())
+          collection.Add(choice);
+      }
+      if (collection.IsEmpty<StoryPlayerChoiceCommand.Choice>())
+      {
+        Log.Trace((object) "Choice block: no choices are valid.");
+        storyPlayer.SetNextBlockContinue();
+        storyPlayer.Next();
+      }
+      else if (collection.Count == 1)
+      {
+        Log.Trace((object) "Choice block: only one choice is valid.");
+        storyPlayer.SetNextBlockToLine(collection[0].GotoLine);
+        storyPlayer.Next();
+      }
+      else
+      {
+        storyPlayer.UI.SetFramePosition();
+        storyPlayer.UI.SetFrameType();
+        storyPlayer.Text.SetText(this.Text);
+        storyPlayer.UI.ShowDialogueBox();
+        storyPlayer.Characters.HideAllCharacters();
+        storyPlayer.Characters.ShowCharacter((string) null);
+        foreach (StoryPlayerChoiceCommand.Choice choice in collection)
+          storyPlayer.Choices.AddChoice(choice.ChoiceText, choice.GotoLine);
+        storyPlayer.AdvanceDisabled = false;
+      }
+    }
 
-		public string Text { get; set; }
+    public override void FindCaptions(TranslatableMessages captions)
+    {
+      captions.Add(this.Text, this.ChoiceTextContext());
+      foreach (StoryPlayerChoiceCommand.Choice choice in this.Choices)
+        captions.Add(choice.ChoiceText, this.ChoiceOptionContext());
+    }
 
-		public List<Choice> Choices { get; set; } = new List<Choice>();
+    public override void OverrideCaptions(ICaptionSet captions)
+    {
+      string context1 = this.ChoiceTextContext();
+      string context2 = this.ChoiceOptionContext();
+      if (captions.ContainsKey(this.Text))
+        this.Text = captions.Get(this.Text, context1);
+      foreach (StoryPlayerChoiceCommand.Choice choice in this.Choices)
+      {
+        if (captions.ContainsKey(choice.ChoiceText))
+          choice.ChoiceText = captions.Get(choice.ChoiceText, context2);
+      }
+    }
 
+    private string ChoiceTextContext() => "events." + this.Event.Id + ".choice";
 
-		public override void Execute(StoryPlayer storyPlayer)
-		{
-			List<Choice> visibleChoices = new List<Choice>();
-			foreach (Choice choice2 in Choices)
-			{
-				if (choice2.Condition == null || choice2.Condition.Evaluate())
-				{
-					visibleChoices.Add(choice2);
-				}
-			}
-			if (visibleChoices.IsEmpty())
-			{
-				Log.Trace("Choice block: no choices are valid.");
-				storyPlayer.SetNextBlockContinue();
-				storyPlayer.Next();
-				return;
-			}
-			if (visibleChoices.Count == 1)
-			{
-				Log.Trace("Choice block: only one choice is valid.");
-				storyPlayer.SetNextBlockToLine(visibleChoices[0].GotoLine);
-				storyPlayer.Next();
-				return;
-			}
-			storyPlayer.UI.SetFramePosition();
-			storyPlayer.UI.SetFrameType();
-			storyPlayer.Text.SetText(Text);
-			storyPlayer.UI.ShowDialogueBox();
-			storyPlayer.Characters.HideAllCharacters();
-			storyPlayer.Characters.ShowCharacter(null);
-			foreach (Choice choice in visibleChoices)
-			{
-				storyPlayer.Choices.AddChoice(choice.ChoiceText, choice.GotoLine);
-			}
-			storyPlayer.AdvanceDisabled = false;
-		}
+    private string ChoiceOptionContext() => "events." + this.Event.Id + ".choice." + this.Text;
 
-		public override void FindCaptions(TranslatableMessages captions)
-		{
-			captions.Add(Text, ChoiceTextContext());
-			foreach (Choice choice in Choices)
-			{
-				captions.Add(choice.ChoiceText, ChoiceOptionContext());
-			}
-		}
-
-		public override void OverrideCaptions(ICaptionSet captions)
-		{
-			string context = ChoiceTextContext();
-			string choiceContext = ChoiceOptionContext();
-			if (captions.ContainsKey(Text))
-			{
-				Text = captions.Get(Text, context);
-			}
-			foreach (Choice choice in Choices)
-			{
-				if (captions.ContainsKey(choice.ChoiceText))
-				{
-					choice.ChoiceText = captions.Get(choice.ChoiceText, choiceContext);
-				}
-			}
-		}
-
-		private string ChoiceTextContext()
-		{
-			return "events." + base.Event.Id + ".choice";
-		}
-
-		private string ChoiceOptionContext()
-		{
-			return "events." + base.Event.Id + ".choice." + Text;
-		}
-	}
+    [Serializable]
+    public class Choice
+    {
+      public string ChoiceText;
+      public int GotoLine;
+      public LogicStatement Condition;
+    }
+  }
 }

@@ -1,49 +1,46 @@
-using LacieEngine.Core;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Settings.BrightnessSetting
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
 
+using LacieEngine.Core;
+using System;
+
+#nullable disable
 namespace LacieEngine.Settings
 {
-	internal class BrightnessSetting : Setting<decimal>
-	{
-		private const decimal Max = 2m;
+  internal class BrightnessSetting : Setting<Decimal>
+  {
+    private const Decimal Max = 2M;
+    private const Decimal Min = 0.1M;
+    private const Decimal Step = 0.01M;
+    private Decimal value;
 
-		private const decimal Min = 0.1m;
+    public BrightnessSetting()
+    {
+      this.Name = "system.settings.brightness";
+      this.value = Game.Settings.Brightness;
+    }
 
-		private const decimal Step = 0.01m;
+    public override string ValueLabel() => ((int) (this.value * 100M)).ToString() + "%";
 
-		private decimal value;
+    public override void Decrement()
+    {
+      this.value -= 0.01M;
+      if (!(this.value < 0.1M))
+        return;
+      this.value = 0.1M;
+    }
 
-		public BrightnessSetting()
-		{
-			base.Name = "system.settings.brightness";
-			value = Game.Settings.Brightness;
-		}
+    public override void Increment()
+    {
+      this.value += 0.01M;
+      if (!(this.value > 2M))
+        return;
+      this.value = 2M;
+    }
 
-		public override string ValueLabel()
-		{
-			return (int)(value * 100m) + "%";
-		}
-
-		public override void Decrement()
-		{
-			value -= 0.01m;
-			if (value < 0.1m)
-			{
-				value = 0.1m;
-			}
-		}
-
-		public override void Increment()
-		{
-			value += 0.01m;
-			if (value > 2m)
-			{
-				value = 2m;
-			}
-		}
-
-		public override void Apply()
-		{
-			Game.Settings.SetBrightness(value);
-		}
-	}
+    public override void Apply() => Game.Settings.SetBrightness(this.value);
+  }
 }

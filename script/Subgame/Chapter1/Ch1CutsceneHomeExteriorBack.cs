@@ -1,97 +1,76 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Subgame.Chapter1.Ch1CutsceneHomeExteriorBack
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
-using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Nodes;
 using LacieEngine.Rooms;
 
+#nullable disable
 namespace LacieEngine.Subgame.Chapter1
 {
-	[Tool]
-	public class Ch1CutsceneHomeExteriorBack : GameRoom
-	{
-		[GetNode("Room")]
-		private GameRoom nRoom;
+  [Tool]
+  public class Ch1CutsceneHomeExteriorBack : GameRoom
+  {
+    [LacieEngine.API.GetNode("Room")]
+    private GameRoom nRoom;
+    [LacieEngine.API.GetNode("Room/Background/furniture_bench/LacieSit")]
+    private Sprite nLacieSit;
+    [LacieEngine.API.GetNode("Room/Background/furniture_bench/HiroSit")]
+    private Sprite nHiroSit;
+    [LacieEngine.API.GetNode("Room/Background/furniture_bench/chr_hiro")]
+    private NpcStaticTurnableVer2 nHiroNpc;
+    private NPCWalker nLacie;
 
-		[GetNode("Room/Background/furniture_bench/LacieSit")]
-		private Sprite nLacieSit;
+    public override void _UpdateRoom() => this.nRoom._UpdateRoom();
 
-		[GetNode("Room/Background/furniture_bench/HiroSit")]
-		private Sprite nHiroSit;
+    public override Node2D GetMainLayer() => this.nRoom.GetMainLayer();
 
-		[GetNode("Room/Background/furniture_bench/chr_hiro")]
-		private NpcStaticTurnableVer2 nHiroNpc;
+    public override Node FindNodeInRoom(string nodeName) => this.nRoom.FindNodeInRoom(nodeName);
 
-		private NPCWalker nLacie;
+    public override void _BeforeFadeIn()
+    {
+      this.nLacie = new NPCWalker("lacie", "right");
+      this.nLacie.Position = this.GetPoint("lacie");
+      this.nHiroNpc.Turn(Direction.Left);
+      this.GetMainLayer().AddChild((Node) this.nLacie);
+    }
 
-		public override void _UpdateRoom()
-		{
-			nRoom._UpdateRoom();
-		}
+    public async void LacieSit()
+    {
+      Ch1CutsceneHomeExteriorBack baseNode = this;
+      await baseNode.DelaySeconds(0.3);
+      baseNode.nHiroNpc.Turn(Direction.Down);
+      await baseNode.DelaySeconds(0.3);
+      baseNode.nHiroNpc.Turn(Direction.Right);
+      await baseNode.DelaySeconds(0.3);
+      baseNode.nLacie.Visible = false;
+      baseNode.nLacieSit.Visible = true;
+    }
 
-		public override Node2D GetMainLayer()
-		{
-			return nRoom.GetMainLayer();
-		}
+    public void LacieStand()
+    {
+      this.nLacie.Visible = true;
+      this.nLacieSit.Visible = false;
+    }
 
-		public override Node FindNodeInRoom(string nodeName)
-		{
-			return nRoom.FindNodeInRoom(nodeName);
-		}
+    public void HiroRead()
+    {
+      this.nHiroNpc.Modulate = Godot.Colors.Transparent;
+      this.nHiroSit.Visible = true;
+    }
 
-		public override void _BeforeFadeIn()
-		{
-			nLacie = new NPCWalker("lacie", "right");
-			nLacie.Position = GetPoint("lacie");
-			nHiroNpc.Turn(Direction.Left);
-			GetMainLayer().AddChild(nLacie);
-		}
+    public void HiroTurn() => this.nHiroSit.Frame = 1;
 
-		public async void LacieSit()
-		{
-			await this.DelaySeconds(0.3);
-			nHiroNpc.Turn(Direction.Down);
-			await this.DelaySeconds(0.3);
-			nHiroNpc.Turn(Direction.Right);
-			await this.DelaySeconds(0.3);
-			nLacie.Visible = false;
-			nLacieSit.Visible = true;
-		}
+    public void HiroTurnBack() => this.nHiroSit.Frame = 0;
 
-		public void LacieStand()
-		{
-			nLacie.Visible = true;
-			nLacieSit.Visible = false;
-		}
+    public void HiroSmile() => this.nHiroSit.Frame = 2;
 
-		public void HiroRead()
-		{
-			nHiroNpc.Modulate = Colors.Transparent;
-			nHiroSit.Visible = true;
-		}
+    public void LacieTurn() => this.nLacieSit.Frame = 1;
 
-		public void HiroTurn()
-		{
-			nHiroSit.Frame = 1;
-		}
-
-		public void HiroTurnBack()
-		{
-			nHiroSit.Frame = 0;
-		}
-
-		public void HiroSmile()
-		{
-			nHiroSit.Frame = 2;
-		}
-
-		public void LacieTurn()
-		{
-			nLacieSit.Frame = 1;
-		}
-
-		public void LacieTurnBack()
-		{
-			nLacieSit.Frame = 0;
-		}
-	}
+    public void LacieTurnBack() => this.nLacieSit.Frame = 0;
+  }
 }

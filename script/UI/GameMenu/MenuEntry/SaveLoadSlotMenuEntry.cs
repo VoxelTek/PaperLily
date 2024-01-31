@@ -1,78 +1,79 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.SaveLoadSlotMenuEntry
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
+using System;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public abstract class SaveLoadSlotMenuEntry : IMenuEntry
-	{
-		public enum Mode
-		{
-			Save,
-			Load
-		}
+  public abstract class SaveLoadSlotMenuEntry : IMenuEntry
+  {
+    protected static readonly Vector2 SaveSlotSize = new Vector2(1095f, 114f) / 3f;
+    protected SaveLoadMenu.Mode mode;
+    protected SaveFileInformation saveInfo;
 
-		protected static readonly Vector2 SaveSlotSize = new Vector2(1095f, 114f) / 3f;
+    public IMenuEntryList Parent { get; set; }
 
-		protected SaveLoadMenu.Mode mode;
+    public SaveLoadSlotMenuEntry(
+      SaveLoadMenu.Mode mode,
+      SaveFileInformation saveInfo,
+      IMenuEntryList parentMenu)
+    {
+      this.mode = mode;
+      this.saveInfo = saveInfo;
+      this.Parent = parentMenu;
+    }
 
-		protected SaveFileInformation saveInfo;
+    public abstract Control DrawEntry();
 
-		public IMenuEntryList Parent { get; set; }
+    public abstract void Deselect();
 
-		public SaveLoadSlotMenuEntry(SaveLoadMenu.Mode mode, SaveFileInformation saveInfo, IMenuEntryList parentMenu)
-		{
-			this.mode = mode;
-			this.saveInfo = saveInfo;
-			Parent = parentMenu;
-		}
+    public abstract void Select();
 
-		public abstract Control DrawEntry();
+    public void Accept()
+    {
+      if (this.mode == SaveLoadMenu.Mode.Save)
+      {
+        if (!this.saveInfo.Empty)
+        {
+          Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+          AreYouSureContainer areYouSure = new AreYouSureContainer()
+          {
+            OnYes = (Action) (() => this.ReallySave())
+          };
+          areYouSure.OnClose = (Action) (() => areYouSure.Delete());
+          areYouSure.Text = "system.menu.save.overwrite.areyousure";
+          Game.Screen.AddToLayer(IScreenManager.Layer.Screen, (Node) areYouSure);
+        }
+        else
+          this.ReallySave();
+      }
+      else if (!this.saveInfo.Empty && !this.saveInfo.Corrupted && (!this.saveInfo.Event.IsNullOrEmpty() && Game.Events.Exists(this.saveInfo.Event) || this.saveInfo.Event.IsNullOrEmpty() && ResourceLoader.Exists("res://resources/nodes/rooms/" + this.saveInfo.Room + ".tscn")))
+      {
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+        Game.Core.StartGameFromSave(this.saveInfo.Id);
+      }
+      else
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_bad.ogg");
+    }
 
-		public abstract void Deselect();
+    private void ReallySave()
+    {
+      Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+      GameState.Save(this.saveInfo.Id);
+      this.Parent.Back();
+    }
 
-		public abstract void Select();
-
-		public void Accept()
-		{
-			if (mode == SaveLoadMenu.Mode.Save)
-			{
-				if (!saveInfo.Empty)
-				{
-					Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-					AreYouSureContainer areYouSure = new AreYouSureContainer();
-					areYouSure.OnYes = delegate
-					{
-						ReallySave();
-					};
-					areYouSure.OnClose = delegate
-					{
-						areYouSure.Delete();
-					};
-					areYouSure.Text = "system.menu.save.overwrite.areyousure";
-					Game.Screen.AddToLayer(IScreenManager.Layer.Screen, areYouSure);
-				}
-				else
-				{
-					ReallySave();
-				}
-			}
-			else if (!saveInfo.Empty && !saveInfo.Corrupted && ((!saveInfo.Event.IsNullOrEmpty() && Game.Events.Exists(saveInfo.Event)) || (saveInfo.Event.IsNullOrEmpty() && ResourceLoader.Exists("res://resources/nodes/rooms/" + saveInfo.Room + ".tscn"))))
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-				Game.Core.StartGameFromSave(saveInfo.Id);
-			}
-			else
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_bad.ogg");
-			}
-		}
-
-		private void ReallySave()
-		{
-			Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-			GameState.Save(saveInfo.Id);
-			Parent.Back();
-		}
-	}
+    public enum Mode
+    {
+      Save,
+      Load,
+    }
+  }
 }

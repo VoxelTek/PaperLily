@@ -1,0 +1,92 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Lacie Packer/1.0.0": {
+        "dependencies": {
+          "Karambolo.PO": "1.11.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Steamworks.NET": "20.1.0"
+        },
+        "runtime": {
+          "Lacie Packer.dll": {}
+        }
+      },
+      "Karambolo.Common/3.4.1": {
+        "runtime": {
+          "lib/netstandard2.1/Karambolo.Common.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.1.133"
+          }
+        }
+      },
+      "Karambolo.PO/1.11.0": {
+        "dependencies": {
+          "Karambolo.Common": "3.4.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Karambolo.PO.dll": {
+            "assemblyVersion": "1.11.0.0",
+            "fileVersion": "1.11.0.87"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "Steamworks.NET/20.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/Steamworks.NET.dll": {
+            "assemblyVersion": "20.1.0.0",
+            "fileVersion": "20.1.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lacie Packer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Karambolo.Common/3.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-brI11MafHi2Vtc/umlWvaNz7gFI9wwE6sYf+lllW7q8veFE2G+jl+Yk0UF5+soNYfM7ifXvN6mfuNMHSCtfbrg==",
+      "path": "karambolo.common/3.4.1",
+      "hashPath": "karambolo.common.3.4.1.nupkg.sha512"
+    },
+    "Karambolo.PO/1.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u+SkKcbUMIge2C/CYwQkTR1pJMaiRzJ9XXFsozBD9VpZjv0m4ktQjcyr3HLL3NnRozslEK4vaaxawGwY8MPa/w==",
+      "path": "karambolo.po/1.11.0",
+      "hashPath": "karambolo.po.1.11.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Steamworks.NET/20.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+GntwnyJ5tCNvUIaQxv2+ehDvZJzGUqlSB5xRBk1hTj1qqBJ6s4vK/OfGD/jae7aTmXiGSm8wpJORosNtQevJQ==",
+      "path": "steamworks.net/20.1.0",
+      "hashPath": "steamworks.net.20.1.0.nupkg.sha512"
+    }
+  }
+}

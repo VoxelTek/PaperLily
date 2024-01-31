@@ -1,36 +1,29 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Rooms.Ch1CutsceneReleaseCaterpillar
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
-using LacieEngine.API;
 using LacieEngine.Core;
 
+#nullable disable
 namespace LacieEngine.Rooms
 {
-	[Tool]
-	public class Ch1CutsceneReleaseCaterpillar : GameRoom
-	{
-		[GetNode("Room")]
-		private GameRoom nRoom;
+  [Tool]
+  public class Ch1CutsceneReleaseCaterpillar : GameRoom
+  {
+    [LacieEngine.API.GetNode("Room")]
+    private GameRoom nRoom;
+    [LacieEngine.API.GetNode("Animation")]
+    private AnimationPlayer nAnimation;
 
-		[GetNode("Animation")]
-		private AnimationPlayer nAnimation;
+    public override void _UpdateRoom() => this.nRoom._UpdateRoom();
 
-		public override void _UpdateRoom()
-		{
-			nRoom._UpdateRoom();
-		}
+    public override Node2D GetMainLayer() => this.nRoom.GetMainLayer();
 
-		public override Node2D GetMainLayer()
-		{
-			return nRoom.GetMainLayer();
-		}
+    public override Node FindNodeInRoom(string nodeName) => this.nRoom.FindNodeInRoom(nodeName);
 
-		public override Node FindNodeInRoom(string nodeName)
-		{
-			return nRoom.FindNodeInRoom(nodeName);
-		}
-
-		public void PlayAnimation()
-		{
-			nAnimation.PlayFirstAnimation();
-		}
-	}
+    public void PlayAnimation() => this.nAnimation.PlayFirstAnimation();
+  }
 }

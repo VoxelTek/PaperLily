@@ -1,167 +1,139 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Rooms.GameRoom
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Nodes;
 
+#nullable disable
 namespace LacieEngine.Rooms
 {
-	[Tool]
-	[ExportType(icon = "room")]
-	public class GameRoom : Node2D, INodeWithInjections, IInspectorCustomizer
-	{
-		[Export(PropertyHint.None, "")]
-		public bool Cutscene;
+  [Tool]
+  [ExportType(icon = "room")]
+  public class GameRoom : Node2D, INodeWithInjections, IInspectorCustomizer
+  {
+    [Export(PropertyHint.None, "")]
+    public bool Cutscene;
+    [Export(PropertyHint.None, "")]
+    public Lighting Lighting;
+    [Export(PropertyHint.Range, "0.1,3.0")]
+    public float CameraZoom = 1f;
+    [Export(PropertyHint.None, "")]
+    public int CameraLimitLeft = -10000000;
+    [Export(PropertyHint.None, "")]
+    public int CameraLimitTop = -10000000;
+    [Export(PropertyHint.None, "")]
+    public int CameraLimitRight = 10000000;
+    [Export(PropertyHint.None, "")]
+    public int CameraLimitBottom = 10000000;
+    [Export(PropertyHint.None, "")]
+    public AudioStream Bgm;
+    [Export(PropertyHint.Range, "0,1")]
+    public float BgmVolume = 1f;
+    [Export(PropertyHint.None, "")]
+    public bool BgmCrossfade;
+    [Export(PropertyHint.Enum, "default,sidescroller")]
+    public string Type = "default";
+    [Export(PropertyHint.None, "")]
+    public bool DisableRunning;
+    [Export(PropertyHint.None, "")]
+    public bool EnableSneaking;
+    [Export(PropertyHint.None, "")]
+    public bool HideFollowers;
+    [Export(PropertyHint.None, "")]
+    public string SaveLocation = "";
+    [Export(PropertyHint.None, "")]
+    public string SaveImage = "";
 
-		[Export(PropertyHint.None, "")]
-		public Lighting Lighting;
+    public bool Ready { get; set; }
 
-		[Export(PropertyHint.Range, "0.1,3.0")]
-		public float CameraZoom = 1f;
+    public override sealed void _Ready()
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public int CameraLimitLeft = -10000000;
+    public override sealed void _EnterTree()
+    {
+      if (!Engine.EditorHint)
+        return;
+      this.SetProcess(false);
+    }
 
-		[Export(PropertyHint.None, "")]
-		public int CameraLimitTop = -10000000;
+    public override sealed void _Process(float delta)
+    {
+      if (!this.Ready)
+        return;
+      this._RoomProcess(delta);
+    }
 
-		[Export(PropertyHint.None, "")]
-		public int CameraLimitRight = 10000000;
+    public override sealed void _PhysicsProcess(float delta)
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public int CameraLimitBottom = 10000000;
+    public virtual void _Initialize()
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public AudioStream Bgm;
+    public virtual void _BeforeFadeIn()
+    {
+    }
 
-		[Export(PropertyHint.Range, "0,1")]
-		public float BgmVolume = 1f;
+    public virtual void _BeforeFadeOut()
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public bool BgmCrossfade;
+    public virtual void _AfterFadeIn()
+    {
+    }
 
-		[Export(PropertyHint.Enum, "default,sidescroller")]
-		public string Type = "default";
+    public virtual void _AfterFadeOut()
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public bool DisableRunning;
+    public virtual void _UpdateRoom()
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public bool EnableSneaking;
+    public virtual void _RoomProcess(float delta)
+    {
+    }
 
-		[Export(PropertyHint.None, "")]
-		public bool HideFollowers;
+    public virtual Node2D GetMainLayer() => this.GetNode<Node2D>((NodePath) "Main");
 
-		[Export(PropertyHint.None, "")]
-		public string SaveLocation = "";
+    public virtual Node FindNodeInRoom(string nodeName)
+    {
+      if (Game.Room.RegisteredNPCs.ContainsKey(nodeName.ToLower()))
+        return (Node) Game.Room.RegisteredNPCs[nodeName.ToLower()];
+      if (Game.Room.RegisteredPoints.ContainsKey(nodeName.ToLower()))
+        return (Node) Game.Room.RegisteredPoints[nodeName.ToLower()];
+      if (this.GetMainLayer().HasNode((NodePath) nodeName))
+        return this.GetMainLayer().GetNode((NodePath) nodeName);
+      if (this.HasNode((NodePath) ("Background/" + nodeName)))
+        return this.GetNode((NodePath) ("Background/" + nodeName));
+      if (this.HasNode((NodePath) ("Foreground/" + nodeName)))
+        return this.GetNode((NodePath) ("Foreground/" + nodeName));
+      return this.HasNode((NodePath) ("Events/" + nodeName)) ? this.GetNode((NodePath) ("Events/" + nodeName)) : (Node) null;
+    }
 
-		[Export(PropertyHint.None, "")]
-		public string SaveImage = "";
+    public virtual SpawnPoint GetSpawnPoint(string pointName)
+    {
+      if (Game.Room.RegisteredPoints.ContainsKey(pointName))
+        return Game.Room.RegisteredPoints[pointName];
+      Log.Warn((object) "Registered point not found: ", (object) pointName);
+      return (SpawnPoint) null;
+    }
 
-		public bool Ready { get; set; }
+    public virtual Vector2 GetPoint(string pointName)
+    {
+      SpawnPoint spawnPoint = this.GetSpawnPoint(pointName);
+      return spawnPoint == null ? Vector2.Zero : spawnPoint.Position;
+    }
 
-		public sealed override void _Ready()
-		{
-		}
-
-		public sealed override void _EnterTree()
-		{
-			if (Engine.EditorHint)
-			{
-				SetProcess(enable: false);
-			}
-		}
-
-		public sealed override void _Process(float delta)
-		{
-			if (Ready)
-			{
-				_RoomProcess(delta);
-			}
-		}
-
-		public sealed override void _PhysicsProcess(float delta)
-		{
-		}
-
-		public virtual void _Initialize()
-		{
-		}
-
-		public virtual void _BeforeFadeIn()
-		{
-		}
-
-		public virtual void _BeforeFadeOut()
-		{
-		}
-
-		public virtual void _AfterFadeIn()
-		{
-		}
-
-		public virtual void _AfterFadeOut()
-		{
-		}
-
-		public virtual void _UpdateRoom()
-		{
-		}
-
-		public virtual void _RoomProcess(float delta)
-		{
-		}
-
-		public virtual Node2D GetMainLayer()
-		{
-			return GetNode<Node2D>("Main");
-		}
-
-		public virtual Node FindNodeInRoom(string nodeName)
-		{
-			if (Game.Room.RegisteredNPCs.ContainsKey(nodeName.ToLower()))
-			{
-				return Game.Room.RegisteredNPCs[nodeName.ToLower()];
-			}
-			if (Game.Room.RegisteredPoints.ContainsKey(nodeName.ToLower()))
-			{
-				return Game.Room.RegisteredPoints[nodeName.ToLower()];
-			}
-			if (GetMainLayer().HasNode(nodeName))
-			{
-				return GetMainLayer().GetNode(nodeName);
-			}
-			if (HasNode("Background/" + nodeName))
-			{
-				return GetNode("Background/" + nodeName);
-			}
-			if (HasNode("Foreground/" + nodeName))
-			{
-				return GetNode("Foreground/" + nodeName);
-			}
-			if (HasNode("Events/" + nodeName))
-			{
-				return GetNode("Events/" + nodeName);
-			}
-			return null;
-		}
-
-		public virtual SpawnPoint GetSpawnPoint(string pointName)
-		{
-			if (Game.Room.RegisteredPoints.ContainsKey(pointName))
-			{
-				return Game.Room.RegisteredPoints[pointName];
-			}
-			Log.Warn("Registered point not found: ", pointName);
-			return null;
-		}
-
-		public virtual Vector2 GetPoint(string pointName)
-		{
-			return GetSpawnPoint(pointName)?.Position ?? Vector2.Zero;
-		}
-
-		public virtual void ChangeLayer(int newLayer)
-		{
-		}
-	}
+    public virtual void ChangeLayer(int newLayer)
+    {
+    }
+  }
 }

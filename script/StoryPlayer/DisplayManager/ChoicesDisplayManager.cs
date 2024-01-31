@@ -1,92 +1,89 @@
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.StoryPlayer.ChoicesDisplayManager
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Core;
 using LacieEngine.UI;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.StoryPlayer
 {
-	public class ChoicesDisplayManager
-	{
-		private Control nChoices;
+  public class ChoicesDisplayManager
+  {
+    private Control nChoices;
+    private Control nChoiceList;
+    private LacieEngine.StoryPlayer.StoryPlayer storyPlayer;
+    private List<string> choiceLabels;
+    private List<int> choiceJumps;
+    private int currentChoice;
 
-		private Control nChoiceList;
+    public bool HasChoices => this.choiceJumps.Count > 0;
 
-		private StoryPlayer storyPlayer;
+    public bool Visible => this.nChoices.Visible;
 
-		private List<string> choiceLabels;
+    public ChoicesDisplayManager(LacieEngine.StoryPlayer.StoryPlayer storyPlayer, Control nChoices)
+    {
+      this.storyPlayer = storyPlayer;
+      this.nChoices = nChoices;
+      nChoices.Visible = false;
+      this.choiceLabels = new List<string>();
+      this.choiceJumps = new List<int>();
+    }
 
-		private List<int> choiceJumps;
+    public void Show()
+    {
+      Frame frame = Game.Settings.UiProvider.MakeChoicesFrame();
+      this.nChoiceList = UIUtil.CreateOptionList(this.choiceLabels);
+      frame.AddToFrame((Node) this.nChoiceList);
+      this.nChoices.AddChild((Node) frame);
+      this.currentChoice = -1;
+      this.nChoices.Visible = true;
+    }
 
-		private int currentChoice;
+    public void ClearAndHide()
+    {
+      this.choiceLabels.Clear();
+      this.choiceJumps.Clear();
+      foreach (Node child in this.nChoices.GetChildren())
+        child.Delete();
+      this.nChoices.Visible = false;
+    }
 
-		public bool HasChoices => choiceJumps.Count > 0;
+    public void AddChoice(string choiceText, int line)
+    {
+      this.choiceLabels.Add(choiceText);
+      this.choiceJumps.Add(line);
+    }
 
-		public bool Visible => nChoices.Visible;
-
-		public ChoicesDisplayManager(StoryPlayer storyPlayer, Control nChoices)
-		{
-			this.storyPlayer = storyPlayer;
-			this.nChoices = nChoices;
-			nChoices.Visible = false;
-			choiceLabels = new List<string>();
-			choiceJumps = new List<int>();
-		}
-
-		public void Show()
-		{
-			Frame frame = Game.Settings.UiProvider.MakeChoicesFrame();
-			nChoiceList = UIUtil.CreateOptionList(choiceLabels);
-			frame.AddToFrame(nChoiceList);
-			nChoices.AddChild(frame);
-			currentChoice = -1;
-			nChoices.Visible = true;
-		}
-
-		public void ClearAndHide()
-		{
-			choiceLabels.Clear();
-			choiceJumps.Clear();
-			foreach (Node child in nChoices.GetChildren())
-			{
-				child.Delete();
-			}
-			nChoices.Visible = false;
-		}
-
-		public void AddChoice(string choiceText, int line)
-		{
-			choiceLabels.Add(choiceText);
-			choiceJumps.Add(line);
-		}
-
-		public void HandleInput(InputEvent @event)
-		{
-			if (@event.IsActionPressed("input_up"))
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
-				if (--currentChoice <= -1)
-				{
-					currentChoice = choiceJumps.Count - 1;
-				}
-				UIUtil.HighlightItem(nChoiceList, currentChoice);
-			}
-			else if (@event.IsActionPressed("input_down"))
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
-				if (++currentChoice >= choiceJumps.Count)
-				{
-					currentChoice = 0;
-				}
-				UIUtil.HighlightItem(nChoiceList, currentChoice);
-			}
-			else if (@event.IsActionPressed("input_action") && currentChoice >= 0)
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-				int gotoLine = choiceJumps[currentChoice];
-				storyPlayer.SetNextBlockToLine(gotoLine);
-				ClearAndHide();
-				storyPlayer.Next();
-			}
-		}
-	}
+    public void HandleInput(InputEvent @event)
+    {
+      if (@event.IsActionPressed("input_up"))
+      {
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
+        if (--this.currentChoice <= -1)
+          this.currentChoice = this.choiceJumps.Count - 1;
+        UIUtil.HighlightItem(this.nChoiceList, this.currentChoice);
+      }
+      else if (@event.IsActionPressed("input_down"))
+      {
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
+        if (++this.currentChoice >= this.choiceJumps.Count)
+          this.currentChoice = 0;
+        UIUtil.HighlightItem(this.nChoiceList, this.currentChoice);
+      }
+      else
+      {
+        if (!@event.IsActionPressed("input_action") || this.currentChoice < 0)
+          return;
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+        this.storyPlayer.SetNextBlockToLine(this.choiceJumps[this.currentChoice]);
+        this.ClearAndHide();
+        this.storyPlayer.Next();
+      }
+    }
+  }
 }

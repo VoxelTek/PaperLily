@@ -1,154 +1,145 @@
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Audio.AdvancedMusicPlayer
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Animation;
 using LacieEngine.Core;
+using System;
 
+#nullable disable
 namespace LacieEngine.Audio
 {
-	public class AdvancedMusicPlayer : Node
-	{
-		public class AudioInformation
-		{
-			public AudioStream Stream;
+  public class AdvancedMusicPlayer : Node
+  {
+    public const string NODE_NAME = "AdvancedMusicPlayer";
+    private AudioStreamPlayer nCurrentPlayer;
+    private AudioStreamPlayer nAltPlayer;
+    private float _maxVolume;
+    private AdvancedMusicPlayer.AudioInformation _current;
+    private System.Collections.Generic.Queue<AdvancedMusicPlayer.AudioInformation> _queue = new System.Collections.Generic.Queue<AdvancedMusicPlayer.AudioInformation>();
+    private bool _playing;
 
-			public float LeftAttachPoint;
+    public bool Loop { get; set; }
 
-			public float RightAttchPoint;
-		}
+    public bool Playing => this._playing;
 
-		public const string NODE_NAME = "AdvancedMusicPlayer";
+    public bool Empty => this._queue.IsEmpty<AdvancedMusicPlayer.AudioInformation>();
 
-		private AudioStreamPlayer nCurrentPlayer;
+    public override void _EnterTree()
+    {
+      this.Name = nameof (AdvancedMusicPlayer);
+      this.nCurrentPlayer = new AudioStreamPlayer();
+      this.AddChild((Node) this.nCurrentPlayer);
+      this.nAltPlayer = new AudioStreamPlayer();
+      this.AddChild((Node) this.nAltPlayer);
+      this.UpdateMaxVolume();
+      Game.Audio.VolumeChanged += new Action(this.UpdateMaxVolume);
+      Log.Debug((object) "[AdvancedMusicPlayer] Created.");
+    }
 
-		private AudioStreamPlayer nAltPlayer;
+    public override void _ExitTree()
+    {
+      Game.Audio.VolumeChanged -= new Action(this.UpdateMaxVolume);
+    }
 
-		private float _maxVolume;
+    public override void _Process(float delta)
+    {
+      if (this._playing && !this._queue.IsEmpty<AdvancedMusicPlayer.AudioInformation>() && (double) this.nCurrentPlayer.GetPlaybackPosition() >= (double) this._current.RightAttchPoint - (double) this._queue.Peek().LeftAttachPoint)
+      {
+        Log.Debug((object) "[AdvancedMusicPlayer] Switching Track...");
+        this._current = this._queue.Dequeue();
+        this.nAltPlayer.Stream = this._current.Stream;
+        this.nAltPlayer.VolumeDb = GD.Linear2Db(this._maxVolume);
+        this.nAltPlayer.Playing = true;
+        this.SwapChannels();
+      }
+      else if (this._playing && this.Loop && this._queue.IsEmpty<AdvancedMusicPlayer.AudioInformation>() && (double) this.nCurrentPlayer.GetPlaybackPosition() >= (double) this._current.RightAttchPoint - (double) this._current.LeftAttachPoint)
+      {
+        Log.Debug((object) "[AdvancedMusicPlayer] Looping Track...");
+        this.nAltPlayer.Stream = this._current.Stream;
+        this.nAltPlayer.VolumeDb = GD.Linear2Db(this._maxVolume);
+        this.nAltPlayer.Playing = true;
+        this.SwapChannels();
+      }
+      if (this.nCurrentPlayer.Playing || this.nAltPlayer.Playing)
+        return;
+      this._playing = false;
+    }
 
-		private AudioInformation _current;
+    public void Play(AdvancedMusicPlayer.AudioInformation audio)
+    {
+      if (this.nCurrentPlayer.Playing && audio.Stream == this._current.Stream)
+        return;
+      Log.Debug((object) "[AdvancedMusicPlayer] Starting Track...");
+      this.Stop();
+      this._current = audio;
+      this.nCurrentPlayer.Stream = audio.Stream;
+      this.nCurrentPlayer.VolumeDb = GD.Linear2Db(this._maxVolume);
+      this.nCurrentPlayer.Play();
+      this._playing = true;
+    }
 
-		private Queue<AudioInformation> _queue = new Queue<AudioInformation>();
+    public void Stop(float time = 1.5f)
+    {
+      Log.Debug((object) "[AdvancedMusicPlayer] Stopping...");
+      this._playing = false;
+      this.Loop = false;
+      this._queue.Clear();
+      this.StopPlayer(this.nCurrentPlayer, time);
+      this.StopPlayer(this.nAltPlayer, time);
+    }
 
-		private bool _playing;
+    public void Queue(AdvancedMusicPlayer.AudioInformation audio)
+    {
+      Log.Debug((object) "[AdvancedMusicPlayer] Queuing...");
+      if (!this._playing)
+        this.Play(audio);
+      else
+        this._queue.Enqueue(audio);
+    }
 
-		public bool Loop { get; set; }
+    public void ClearQueue()
+    {
+      Log.Debug((object) "[AdvancedMusicPlayer] Clearing Queue...");
+      this._queue.Clear();
+    }
 
-		public bool Playing => _playing;
+    public void UpdateMaxVolume()
+    {
+      Decimal linear = (Decimal) (!Game.Settings.MuteAudio ? 1 : 0) * Game.Settings.VolumeMaster * 0.90M * Game.Settings.VolumeBgm;
+      this._maxVolume = (float) linear;
+      if (!this.nCurrentPlayer.Playing)
+        return;
+      this.nCurrentPlayer.VolumeDb = GD.Linear2Db((float) linear);
+    }
 
-		public bool Empty => _queue.IsEmpty();
+    private async void StopPlayer(AudioStreamPlayer player, float time)
+    {
+      if (!player.Playing)
+        return;
+      LacieAnimation animation = (LacieAnimation) new AudioVolumeFadeOutAnimation(this.nCurrentPlayer, time);
+      Game.Animations.Play(animation);
+      await animation.WaitUntilFinished();
+      player.Stop();
+      this.SwapChannels();
+    }
 
-		public override void _EnterTree()
-		{
-			base.Name = "AdvancedMusicPlayer";
-			nCurrentPlayer = new AudioStreamPlayer();
-			AddChild(nCurrentPlayer);
-			nAltPlayer = new AudioStreamPlayer();
-			AddChild(nAltPlayer);
-			UpdateMaxVolume();
-			Game.Audio.VolumeChanged += UpdateMaxVolume;
-			Log.Debug("[AdvancedMusicPlayer] Created.");
-		}
+    private void SwapChannels()
+    {
+      AudioStreamPlayer nCurrentPlayer = this.nCurrentPlayer;
+      AudioStreamPlayer nAltPlayer = this.nAltPlayer;
+      this.nAltPlayer = nCurrentPlayer;
+      this.nCurrentPlayer = nAltPlayer;
+    }
 
-		public override void _ExitTree()
-		{
-			Game.Audio.VolumeChanged -= UpdateMaxVolume;
-		}
-
-		public override void _Process(float delta)
-		{
-			if (_playing && !_queue.IsEmpty() && nCurrentPlayer.GetPlaybackPosition() >= _current.RightAttchPoint - _queue.Peek().LeftAttachPoint)
-			{
-				Log.Debug("[AdvancedMusicPlayer] Switching Track...");
-				_current = _queue.Dequeue();
-				nAltPlayer.Stream = _current.Stream;
-				nAltPlayer.VolumeDb = GD.Linear2Db(_maxVolume);
-				nAltPlayer.Playing = true;
-				SwapChannels();
-			}
-			else if (_playing && Loop && _queue.IsEmpty() && nCurrentPlayer.GetPlaybackPosition() >= _current.RightAttchPoint - _current.LeftAttachPoint)
-			{
-				Log.Debug("[AdvancedMusicPlayer] Looping Track...");
-				nAltPlayer.Stream = _current.Stream;
-				nAltPlayer.VolumeDb = GD.Linear2Db(_maxVolume);
-				nAltPlayer.Playing = true;
-				SwapChannels();
-			}
-			if (!nCurrentPlayer.Playing && !nAltPlayer.Playing)
-			{
-				_playing = false;
-			}
-		}
-
-		public void Play(AudioInformation audio)
-		{
-			if (!nCurrentPlayer.Playing || audio.Stream != _current.Stream)
-			{
-				Log.Debug("[AdvancedMusicPlayer] Starting Track...");
-				Stop();
-				_current = audio;
-				nCurrentPlayer.Stream = audio.Stream;
-				nCurrentPlayer.VolumeDb = GD.Linear2Db(_maxVolume);
-				nCurrentPlayer.Play();
-				_playing = true;
-			}
-		}
-
-		public void Stop(float time = 1.5f)
-		{
-			Log.Debug("[AdvancedMusicPlayer] Stopping...");
-			_playing = false;
-			Loop = false;
-			_queue.Clear();
-			StopPlayer(nCurrentPlayer, time);
-			StopPlayer(nAltPlayer, time);
-		}
-
-		public void Queue(AudioInformation audio)
-		{
-			Log.Debug("[AdvancedMusicPlayer] Queuing...");
-			if (!_playing)
-			{
-				Play(audio);
-			}
-			else
-			{
-				_queue.Enqueue(audio);
-			}
-		}
-
-		public void ClearQueue()
-		{
-			Log.Debug("[AdvancedMusicPlayer] Clearing Queue...");
-			_queue.Clear();
-		}
-
-		public void UpdateMaxVolume()
-		{
-			decimal volume = (decimal)((!Game.Settings.MuteAudio) ? 1 : 0) * Game.Settings.VolumeMaster * 0.90m * Game.Settings.VolumeBgm;
-			_maxVolume = (float)volume;
-			if (nCurrentPlayer.Playing)
-			{
-				nCurrentPlayer.VolumeDb = GD.Linear2Db((float)volume);
-			}
-		}
-
-		private async void StopPlayer(AudioStreamPlayer player, float time)
-		{
-			if (player.Playing)
-			{
-				LacieAnimation volumeFadeOut = new AudioVolumeFadeOutAnimation(nCurrentPlayer, time);
-				Game.Animations.Play(volumeFadeOut);
-				await volumeFadeOut.WaitUntilFinished();
-				player.Stop();
-				SwapChannels();
-			}
-		}
-
-		private void SwapChannels()
-		{
-			AudioStreamPlayer audioStreamPlayer = nCurrentPlayer;
-			AudioStreamPlayer audioStreamPlayer2 = nAltPlayer;
-			nAltPlayer = audioStreamPlayer;
-			nCurrentPlayer = audioStreamPlayer2;
-		}
-	}
+    public class AudioInformation
+    {
+      public AudioStream Stream;
+      public float LeftAttachPoint;
+      public float RightAttchPoint;
+    }
+  }
 }

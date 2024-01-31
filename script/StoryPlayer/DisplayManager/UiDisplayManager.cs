@@ -1,134 +1,130 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.StoryPlayer.UiDisplayManager
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Animation;
 using LacieEngine.Core;
 using LacieEngine.UI;
 
+#nullable disable
 namespace LacieEngine.StoryPlayer
 {
-	public class UiDisplayManager
-	{
-		public enum FramePosition
-		{
-			None,
-			Bottom,
-			Center
-		}
+  public class UiDisplayManager
+  {
+    private const int DistanceFromBottom = 10;
+    private static readonly Color HiddenColor = UIUtil.Transparent;
+    private static readonly float AnimationDisplacement = 50f;
+    private UiDisplayManager.FramePosition currentFramePos;
+    private UiDisplayManager.FrameType currentFrameType;
+    private Vector2 visiblePos;
+    private LacieEngine.StoryPlayer.StoryPlayer storyPlayer;
+    private Material blurMat;
 
-		public enum FrameType
-		{
-			Normal,
-			NoBackground,
-			Blur
-		}
+    public bool Visible { get; private set; }
 
-		private const int DistanceFromBottom = 10;
+    public UiDisplayManager(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
+    {
+      this.storyPlayer = storyPlayer;
+      this.blurMat = GD.Load<Material>("res://resources/material/screen_blur.tres");
+      this.HideUi();
+    }
 
-		private static readonly Color HiddenColor = UIUtil.Transparent;
+    public void SetFramePosition(UiDisplayManager.FramePosition pos = UiDisplayManager.FramePosition.Bottom)
+    {
+      if (this.currentFramePos == pos)
+        return;
+      this.currentFramePos = pos;
+      switch (pos)
+      {
+        case UiDisplayManager.FramePosition.Bottom:
+          this.visiblePos = new Vector2((float) (((double) Game.Settings.BaseResolution.x - (double) this.storyPlayer.nFrame.RectSize.x) / 2.0), (float) ((double) Game.Settings.BaseResolution.y - (double) this.storyPlayer.nFrame.RectSize.y - 10.0));
+          break;
+        case UiDisplayManager.FramePosition.Center:
+          this.visiblePos = new Vector2((float) (((double) Game.Settings.BaseResolution.x - (double) this.storyPlayer.nFrame.RectSize.x) / 2.0), (float) (((double) Game.Settings.BaseResolution.y - (double) this.storyPlayer.nFrame.RectSize.y - 10.0) / 2.0));
+          break;
+      }
+      this.HideUi();
+    }
 
-		private static readonly float AnimationDisplacement = 50f;
+    public void SetFrameType(UiDisplayManager.FrameType type = UiDisplayManager.FrameType.Normal)
+    {
+      if (this.currentFrameType == type)
+        return;
+      switch (type)
+      {
+        case UiDisplayManager.FrameType.Normal:
+          this.storyPlayer.nDialogueFrame.Background.Modulate = Godot.Colors.White;
+          this.storyPlayer.nDialogueFrame.Background.Material = (Material) null;
+          this.storyPlayer.nDialogueFrame.NameSeparator.Modulate = Godot.Colors.White;
+          this.storyPlayer.nDialogueFrame.ContinueIndicator.SetAnchorsAndMarginsPreset(Control.LayoutPreset.BottomRight);
+          this.currentFrameType = UiDisplayManager.FrameType.Normal;
+          break;
+        case UiDisplayManager.FrameType.NoBackground:
+          this.storyPlayer.nDialogueFrame.Background.Modulate = Godot.Colors.Transparent;
+          this.storyPlayer.nDialogueFrame.Background.Material = (Material) null;
+          this.storyPlayer.nDialogueFrame.NameSeparator.Modulate = Godot.Colors.Transparent;
+          this.storyPlayer.nDialogueFrame.ContinueIndicator.SetAnchorsAndMarginsPreset(Control.LayoutPreset.CenterBottom);
+          this.currentFrameType = UiDisplayManager.FrameType.NoBackground;
+          break;
+        case UiDisplayManager.FrameType.Blur:
+          this.storyPlayer.nDialogueFrame.Background.Modulate = new Color("#606060");
+          this.storyPlayer.nDialogueFrame.Background.Material = this.blurMat;
+          this.storyPlayer.nDialogueFrame.NameSeparator.Modulate = Godot.Colors.Transparent;
+          this.storyPlayer.nDialogueFrame.ContinueIndicator.SetAnchorsAndMarginsPreset(Control.LayoutPreset.CenterBottom);
+          this.currentFrameType = UiDisplayManager.FrameType.Blur;
+          break;
+      }
+    }
 
-		private FramePosition currentFramePos;
+    public void ShowDialogueBox()
+    {
+      this.AnimateUiIn();
+      this.Visible = true;
+    }
 
-		private FrameType currentFrameType;
+    public void HideDialogueBox()
+    {
+      this.storyPlayer.nDialogueFrame.ContinueIndicator.Visible = false;
+      this.AnimateUiOut();
+      this.Visible = false;
+    }
 
-		private Vector2 visiblePos;
+    private void AnimateUiIn()
+    {
+      if (this.Visible)
+        return;
+      Game.Animations.Play((LacieAnimation) new SlideInBottomAnimation(this.storyPlayer.nFrame, new float?(UiDisplayManager.AnimationDisplacement), new Vector2?(this.visiblePos)));
+    }
 
-		private StoryPlayer storyPlayer;
+    private void AnimateUiOut()
+    {
+      if (!this.Visible)
+        return;
+      Game.Animations.Play((LacieAnimation) new SlideOutBottomAnimation(this.storyPlayer.nFrame, new float?(UiDisplayManager.AnimationDisplacement), new Vector2?(this.visiblePos)));
+    }
 
-		private Material blurMat;
+    private void HideUi()
+    {
+      Game.Animations.StopAnimations((Node) this.storyPlayer.nFrame);
+      this.storyPlayer.nFrame.Modulate = UiDisplayManager.HiddenColor;
+      this.Visible = false;
+    }
 
-		public bool Visible { get; private set; }
+    public enum FramePosition
+    {
+      None,
+      Bottom,
+      Center,
+    }
 
-		public UiDisplayManager(StoryPlayer storyPlayer)
-		{
-			this.storyPlayer = storyPlayer;
-			blurMat = GD.Load<Material>("res://resources/material/screen_blur.tres");
-			HideUi();
-		}
-
-		public void SetFramePosition(FramePosition pos = FramePosition.Bottom)
-		{
-			if (currentFramePos != pos)
-			{
-				currentFramePos = pos;
-				switch (pos)
-				{
-				case FramePosition.Bottom:
-					visiblePos = new Vector2((Game.Settings.BaseResolution.x - storyPlayer.nFrame.RectSize.x) / 2f, Game.Settings.BaseResolution.y - storyPlayer.nFrame.RectSize.y - 10f);
-					break;
-				case FramePosition.Center:
-					visiblePos = new Vector2((Game.Settings.BaseResolution.x - storyPlayer.nFrame.RectSize.x) / 2f, (Game.Settings.BaseResolution.y - storyPlayer.nFrame.RectSize.y - 10f) / 2f);
-					break;
-				}
-				HideUi();
-			}
-		}
-
-		public void SetFrameType(FrameType type = FrameType.Normal)
-		{
-			if (currentFrameType != type)
-			{
-				switch (type)
-				{
-				case FrameType.Normal:
-					storyPlayer.nDialogueFrame.Background.Modulate = Colors.White;
-					storyPlayer.nDialogueFrame.Background.Material = null;
-					storyPlayer.nDialogueFrame.NameSeparator.Modulate = Colors.White;
-					storyPlayer.nDialogueFrame.ContinueIndicator.SetAnchorsAndMarginsPreset(Control.LayoutPreset.BottomRight);
-					currentFrameType = FrameType.Normal;
-					break;
-				case FrameType.NoBackground:
-					storyPlayer.nDialogueFrame.Background.Modulate = Colors.Transparent;
-					storyPlayer.nDialogueFrame.Background.Material = null;
-					storyPlayer.nDialogueFrame.NameSeparator.Modulate = Colors.Transparent;
-					storyPlayer.nDialogueFrame.ContinueIndicator.SetAnchorsAndMarginsPreset(Control.LayoutPreset.CenterBottom);
-					currentFrameType = FrameType.NoBackground;
-					break;
-				case FrameType.Blur:
-					storyPlayer.nDialogueFrame.Background.Modulate = new Color("#606060");
-					storyPlayer.nDialogueFrame.Background.Material = blurMat;
-					storyPlayer.nDialogueFrame.NameSeparator.Modulate = Colors.Transparent;
-					storyPlayer.nDialogueFrame.ContinueIndicator.SetAnchorsAndMarginsPreset(Control.LayoutPreset.CenterBottom);
-					currentFrameType = FrameType.Blur;
-					break;
-				}
-			}
-		}
-
-		public void ShowDialogueBox()
-		{
-			AnimateUiIn();
-			Visible = true;
-		}
-
-		public void HideDialogueBox()
-		{
-			storyPlayer.nDialogueFrame.ContinueIndicator.Visible = false;
-			AnimateUiOut();
-			Visible = false;
-		}
-
-		private void AnimateUiIn()
-		{
-			if (!Visible)
-			{
-				Game.Animations.Play(new SlideInBottomAnimation(storyPlayer.nFrame, AnimationDisplacement, visiblePos));
-			}
-		}
-
-		private void AnimateUiOut()
-		{
-			if (Visible)
-			{
-				Game.Animations.Play(new SlideOutBottomAnimation(storyPlayer.nFrame, AnimationDisplacement, visiblePos));
-			}
-		}
-
-		private void HideUi()
-		{
-			Game.Animations.StopAnimations(storyPlayer.nFrame);
-			storyPlayer.nFrame.Modulate = HiddenColor;
-			Visible = false;
-		}
-	}
+    public enum FrameType
+    {
+      Normal,
+      NoBackground,
+      Blur,
+    }
+  }
 }

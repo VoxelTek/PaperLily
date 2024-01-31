@@ -1,138 +1,129 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Subgame.Chapter1.HidingBush
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Animation;
 using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Nodes;
 
+#nullable disable
 namespace LacieEngine.Subgame.Chapter1
 {
-	public class HidingBush : Node2D
-	{
-		[GetNode("Particles")]
-		private Particles2D nParticles;
+  public class HidingBush : Node2D
+  {
+    [LacieEngine.API.GetNode("Particles")]
+    private Particles2D nParticles;
+    [LacieEngine.API.GetNode("Spawn")]
+    private SpawnPoint nPoint;
+    private Timer nCanLeaveTimer;
+    private Timer nCloseCallTimer;
+    private bool _canLeave;
+    private bool _closeCallDanger;
 
-		[GetNode("Spawn")]
-		private SpawnPoint nPoint;
+    public bool CloseCall { get; set; }
 
-		private Timer nCanLeaveTimer;
+    public string CloseCallSuccessEvent { get; set; }
 
-		private Timer nCloseCallTimer;
+    public string CloseCallFailureEvent { get; set; }
 
-		private bool _canLeave;
+    public AudioStream SfxBush { get; set; }
 
-		private bool _closeCallDanger;
+    public override void _Ready()
+    {
+      this.SetProcessInput(false);
+      this.InjectNodes();
+    }
 
-		public bool CloseCall { get; set; }
+    public void Activate()
+    {
+      Game.Audio.PlaySfx(this.SfxBush);
+      this.LightMask = 0;
+      this.Material = GD.Load<Material>("res://resources/material/animation_shake_unshaded.tres").Duplicate() as Material;
+      ((ShaderMaterial) this.Material).SetShaderParam("shakes", (object) 2);
+      Game.Animations.Play((LacieAnimation) new ShaderProgressAnimation((CanvasItem) this, 0.4f));
+      Game.InputProcessor = Inputs.Processor.PlayerInObject;
+      Game.Player.Node.Visible = false;
+      Game.Player.SetPlayerState(CharacterState.InObject);
+      GameCamera camera = Game.Camera as GameCamera;
+      camera.ZoomLevel = 0.5f;
+      camera.Unlock();
+      camera.GlobalPosition = this.GlobalPosition;
+      this.nParticles.Emitting = false;
+      this.nParticles.Restart();
+      this.nParticles.Emitting = true;
+      this.nParticles.LightMask = 0;
+      this.nParticles.Material = GD.Load<Material>("res://resources/material/unshaded.tres");
+      this._canLeave = false;
+      this.nCanLeaveTimer = GDUtil.MakeNode<Timer>("CanLeaveTimer");
+      this.nCanLeaveTimer.Autostart = true;
+      this.nCanLeaveTimer.WaitTime = 1f;
+      this.nCanLeaveTimer.OneShot = true;
+      int num1 = (int) this.nCanLeaveTimer.Connect("timeout", (Object) this, "AllowLeave");
+      this.AddChild((Node) this.nCanLeaveTimer);
+      if (this.CloseCall)
+      {
+        this._closeCallDanger = true;
+        this.nCloseCallTimer = GDUtil.MakeNode<Timer>("CloseCallTimer");
+        this.nCloseCallTimer.Autostart = true;
+        this.nCloseCallTimer.WaitTime = 5f;
+        this.nCloseCallTimer.OneShot = true;
+        int num2 = (int) this.nCloseCallTimer.Connect("timeout", (Object) this, "CloseCallDisengage");
+        this.AddChild((Node) this.nCloseCallTimer);
+      }
+      this.SetProcessInput(true);
+    }
 
-		public string CloseCallSuccessEvent { get; set; }
+    public void Deactivate()
+    {
+      if (!this._canLeave)
+        return;
+      Game.Audio.PlaySfx(this.SfxBush);
+      this.LightMask = 1;
+      this.Material = GD.Load<Material>("res://resources/material/animation_shake.tres").Duplicate() as Material;
+      ((ShaderMaterial) this.Material).SetShaderParam("shakes", (object) 2);
+      Game.Animations.Play((LacieAnimation) new ShaderProgressAnimation((CanvasItem) this, 0.4f));
+      Game.Player.Node.Visible = true;
+      Game.Player.SetDirection(Direction.Down);
+      Game.Player.Node.GlobalPosition = this.nPoint.GlobalPosition;
+      Game.Player.Turn((Direction) this.nPoint.Direction);
+      Game.InputProcessor = Inputs.Processor.Player;
+      IGameCamera camera = Game.Camera;
+      camera.ZoomLevel = 1f;
+      camera.TrackPlayer();
+      camera.ApplyRoomSettings();
+      camera.Node.GlobalPosition = Game.Player.Node.GlobalPosition;
+      this.nParticles.Emitting = false;
+      this.nParticles.Restart();
+      this.nParticles.Emitting = true;
+      this.nParticles.LightMask = 1;
+      this.nParticles.Material = (Material) null;
+      string evt = (string) null;
+      if (this.CloseCall)
+        evt = this._closeCallDanger ? this.CloseCallFailureEvent : this.CloseCallSuccessEvent;
+      this.nCanLeaveTimer.DeleteIfValid();
+      this.nCloseCallTimer.DeleteIfValid();
+      this.CloseCall = false;
+      this.CloseCallFailureEvent = (string) null;
+      this.CloseCallSuccessEvent = (string) null;
+      this.SetProcessInput(false);
+      if (evt == null)
+        return;
+      Game.Events.PlayEvent(evt);
+    }
 
-		public string CloseCallFailureEvent { get; set; }
+    public override void _Input(InputEvent @event)
+    {
+      if (!Inputs.HandleSingle(@event, Inputs.Processor.PlayerInObject, "input_action"))
+        return;
+      this.Deactivate();
+    }
 
-		public AudioStream SfxBush { get; set; }
+    public void AllowLeave() => this._canLeave = true;
 
-		public override void _Ready()
-		{
-			SetProcessInput(enable: false);
-			this.InjectNodes();
-		}
-
-		public void Activate()
-		{
-			Game.Audio.PlaySfx(SfxBush);
-			base.LightMask = 0;
-			base.Material = GD.Load<Material>("res://resources/material/animation_shake_unshaded.tres").Duplicate() as Material;
-			((ShaderMaterial)base.Material).SetShaderParam("shakes", 2);
-			Game.Animations.Play(new ShaderProgressAnimation(this, 0.4f));
-			Game.InputProcessor = Inputs.Processor.PlayerInObject;
-			Game.Player.Node.Visible = false;
-			Game.Player.SetPlayerState(CharacterState.InObject);
-			GameCamera obj = Game.Camera as GameCamera;
-			obj.ZoomLevel = 0.5f;
-			obj.Unlock();
-			obj.GlobalPosition = base.GlobalPosition;
-			nParticles.Emitting = false;
-			nParticles.Restart();
-			nParticles.Emitting = true;
-			nParticles.LightMask = 0;
-			nParticles.Material = GD.Load<Material>("res://resources/material/unshaded.tres");
-			_canLeave = false;
-			nCanLeaveTimer = GDUtil.MakeNode<Timer>("CanLeaveTimer");
-			nCanLeaveTimer.Autostart = true;
-			nCanLeaveTimer.WaitTime = 1f;
-			nCanLeaveTimer.OneShot = true;
-			nCanLeaveTimer.Connect("timeout", this, "AllowLeave");
-			AddChild(nCanLeaveTimer);
-			if (CloseCall)
-			{
-				_closeCallDanger = true;
-				nCloseCallTimer = GDUtil.MakeNode<Timer>("CloseCallTimer");
-				nCloseCallTimer.Autostart = true;
-				nCloseCallTimer.WaitTime = 5f;
-				nCloseCallTimer.OneShot = true;
-				nCloseCallTimer.Connect("timeout", this, "CloseCallDisengage");
-				AddChild(nCloseCallTimer);
-			}
-			SetProcessInput(enable: true);
-		}
-
-		public void Deactivate()
-		{
-			if (_canLeave)
-			{
-				Game.Audio.PlaySfx(SfxBush);
-				base.LightMask = 1;
-				base.Material = GD.Load<Material>("res://resources/material/animation_shake.tres").Duplicate() as Material;
-				((ShaderMaterial)base.Material).SetShaderParam("shakes", 2);
-				Game.Animations.Play(new ShaderProgressAnimation(this, 0.4f));
-				Game.Player.Node.Visible = true;
-				Game.Player.SetDirection(Direction.Down);
-				Game.Player.Node.GlobalPosition = nPoint.GlobalPosition;
-				Game.Player.Turn(nPoint.Direction);
-				Game.InputProcessor = Inputs.Processor.Player;
-				IGameCamera camera = Game.Camera;
-				camera.ZoomLevel = 1f;
-				camera.TrackPlayer();
-				camera.ApplyRoomSettings();
-				camera.Node.GlobalPosition = Game.Player.Node.GlobalPosition;
-				nParticles.Emitting = false;
-				nParticles.Restart();
-				nParticles.Emitting = true;
-				nParticles.LightMask = 1;
-				nParticles.Material = null;
-				string eventToCall = null;
-				if (CloseCall)
-				{
-					eventToCall = (_closeCallDanger ? CloseCallFailureEvent : CloseCallSuccessEvent);
-				}
-				nCanLeaveTimer.DeleteIfValid();
-				nCloseCallTimer.DeleteIfValid();
-				CloseCall = false;
-				CloseCallFailureEvent = null;
-				CloseCallSuccessEvent = null;
-				SetProcessInput(enable: false);
-				if (eventToCall != null)
-				{
-					Game.Events.PlayEvent(eventToCall);
-				}
-			}
-		}
-
-		public override void _Input(InputEvent @event)
-		{
-			if (Inputs.HandleSingle(@event, Inputs.Processor.PlayerInObject, "input_action"))
-			{
-				Deactivate();
-			}
-		}
-
-		public void AllowLeave()
-		{
-			_canLeave = true;
-		}
-
-		public void CloseCallDisengage()
-		{
-			_closeCallDanger = false;
-		}
-	}
+    public void CloseCallDisengage() => this._closeCallDanger = false;
+  }
 }

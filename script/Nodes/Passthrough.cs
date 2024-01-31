@@ -1,79 +1,79 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Nodes.Passthrough
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 
+#nullable disable
 namespace LacieEngine.Nodes
 {
-	[Tool]
-	[ExportType(icon = "ghost")]
-	public class Passthrough : Node2D, IEditorArea, IToggleable
-	{
-		public class PassthroughArea : Area2D
-		{
-			private Passthrough _parent;
+  [Tool]
+  [ExportType(icon = "ghost")]
+  public class Passthrough : Node2D, IEditorArea, IToggleable
+  {
+    [Export(PropertyHint.None, "")]
+    public Vector2 Area { get; set; } = new Vector2(32f, 32f);
 
-			private PassthroughArea()
-			{
-			}
+    [Export(PropertyHint.None, "")]
+    public bool Enabled { get; set; } = true;
 
-			public PassthroughArea(Passthrough parent)
-			{
-				base.Name = "PassthroughArea";
-				_parent = parent;
-			}
+    public override void _EnterTree()
+    {
+      if (Engine.EditorHint)
+        return;
+      Passthrough.PassthroughArea passthroughArea = new Passthrough.PassthroughArea(this);
+      passthroughArea.CollisionLayer = 9U;
+      passthroughArea.CollisionMask = 0U;
+      this.AddChild((Node) passthroughArea);
+      CollisionShape2D collisionShape2D = new CollisionShape2D();
+      collisionShape2D.Shape = (Shape2D) new RectangleShape2D()
+      {
+        Extents = (this.Area / 2f)
+      };
+      collisionShape2D.Position = this.GetPixelPerfectOffset();
+      passthroughArea.AddChild((Node) collisionShape2D);
+    }
 
-			public override void _Ready()
-			{
-				Connect("body_entered", this, "StartCollisionBypass");
-				Connect("body_exited", this, "EndCollisionBypass");
-			}
+    void IEditorArea.Update() => this.Update();
 
-			public void StartCollisionBypass(object body)
-			{
-				if (_parent.Enabled && body is WalkingCharacter w)
-				{
-					w.CollisionMask |= 8u;
-					w.CollisionMask &= 4294967292u;
-				}
-			}
+    public class PassthroughArea : Area2D
+    {
+      private Passthrough _parent;
 
-			public void EndCollisionBypass(object body)
-			{
-				if (_parent.Enabled && body is WalkingCharacter w)
-				{
-					w.CollisionMask |= 3u;
-					w.CollisionMask &= 4294967287u;
-				}
-			}
-		}
+      private PassthroughArea()
+      {
+      }
 
-		[Export(PropertyHint.None, "")]
-		public Vector2 Area { get; set; } = new Vector2(32f, 32f);
+      public PassthroughArea(Passthrough parent)
+      {
+        this.Name = nameof (PassthroughArea);
+        this._parent = parent;
+      }
 
+      public override void _Ready()
+      {
+        int num1 = (int) this.Connect("body_entered", (Object) this, "StartCollisionBypass");
+        int num2 = (int) this.Connect("body_exited", (Object) this, "EndCollisionBypass");
+      }
 
-		[Export(PropertyHint.None, "")]
-		public bool Enabled { get; set; } = true;
+      public void StartCollisionBypass(object body)
+      {
+        if (!this._parent.Enabled || !(body is WalkingCharacter walkingCharacter))
+          return;
+        walkingCharacter.CollisionMask |= 8U;
+        walkingCharacter.CollisionMask &= 4294967292U;
+      }
 
-
-		public override void _EnterTree()
-		{
-			if (!Engine.EditorHint)
-			{
-				PassthroughArea _collisionNode = new PassthroughArea(this);
-				_collisionNode.CollisionLayer = 9u;
-				_collisionNode.CollisionMask = 0u;
-				AddChild(_collisionNode);
-				CollisionShape2D _shapeNode = new CollisionShape2D();
-				RectangleShape2D rect = new RectangleShape2D();
-				rect.Extents = Area / 2f;
-				_shapeNode.Shape = rect;
-				_shapeNode.Position = this.GetPixelPerfectOffset();
-				_collisionNode.AddChild(_shapeNode);
-			}
-		}
-
-		void IEditorArea.Update()
-		{
-			Update();
-		}
-	}
+      public void EndCollisionBypass(object body)
+      {
+        if (!this._parent.Enabled || !(body is WalkingCharacter walkingCharacter))
+          return;
+        walkingCharacter.CollisionMask |= 3U;
+        walkingCharacter.CollisionMask &= 4294967287U;
+      }
+    }
+  }
 }

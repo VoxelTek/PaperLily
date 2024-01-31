@@ -1,27 +1,27 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Nodes.DynamicOccluderLD
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Core;
 
+#nullable disable
 namespace LacieEngine.Nodes
 {
-	internal class DynamicOccluderLD : LightOccluder2D
-	{
-		private Position2D nCenter;
+  internal class DynamicOccluderLD : LightOccluder2D
+  {
+    private Position2D nCenter;
 
-		public override void _Ready()
-		{
-			nCenter = GetNode("Center") as Position2D;
-		}
+    public override void _Ready() => this.nCenter = this.GetNode((NodePath) "Center") as Position2D;
 
-		public override void _Process(float delta)
-		{
-			if (Game.Player.GetCenter().x < nCenter.GlobalPosition.x && Game.Player.GetCenter().y > nCenter.GlobalPosition.y)
-			{
-				base.Visible = false;
-			}
-			else
-			{
-				base.Visible = true;
-			}
-		}
-	}
+    public override void _Process(float delta)
+    {
+      if ((double) Game.Player.GetCenter().x < (double) this.nCenter.GlobalPosition.x && (double) Game.Player.GetCenter().y > (double) this.nCenter.GlobalPosition.y)
+        this.Visible = false;
+      else
+        this.Visible = true;
+    }
+  }
 }

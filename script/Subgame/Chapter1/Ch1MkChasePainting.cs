@@ -1,84 +1,70 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Rooms.Ch1MkChasePainting
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
-using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Nodes;
+using System;
 
+#nullable disable
 namespace LacieEngine.Rooms
 {
-	[Tool]
-	public class Ch1MkChasePainting : GameRoom
-	{
-		[Export(PropertyHint.None, "")]
-		private Texture texPaintNormal;
+  [Tool]
+  public class Ch1MkChasePainting : GameRoom
+  {
+    [Export(PropertyHint.None, "")]
+    private Texture texPaintNormal;
+    [Export(PropertyHint.None, "")]
+    private Texture texPaintHurt;
+    [Export(PropertyHint.None, "")]
+    private Texture texPaintNoEye;
+    [LacieEngine.API.GetNode("Other/Navigation")]
+    private Navigation2D nNavigation;
+    private PVar varTookEyeLady = (PVar) "ch1.mk_took_eye_lady";
+    private PVar varHurtLady = (PVar) "ch1.mk_hurt_lady";
+    private PEvent evtDeath = (PEvent) "ch1_death_impact";
+    private NPCChaser nChaser;
+    private const float CHASER_SPEED = 1.72f;
+    private const float CHASER_SPEED_HURT = 1.35f;
+    private const int CHASER_HITBOX_RADIUS = 16;
 
-		[Export(PropertyHint.None, "")]
-		private Texture texPaintHurt;
+    public override void _BeforeFadeIn() => this.SpawnEnemy();
 
-		[Export(PropertyHint.None, "")]
-		private Texture texPaintNoEye;
+    public override void _AfterFadeIn() => this.nChaser.Chasing = true;
 
-		[GetNode("Other/Navigation")]
-		private Navigation2D nNavigation;
+    private void SpawnEnemy()
+    {
+      this.nChaser = new NPCChaser("ch1_mk_painting");
+      SpawnPoint spawnPoint = this.GetSpawnPoint("enemy_spawn");
+      this.nChaser.Position = spawnPoint.Position;
+      this.nChaser.MoveSpeedMultiplier = (bool) this.varHurtLady.Value ? 1.35f : 1.72f;
+      this.nChaser.TouchHitboxRadius = 16;
+      Texture texture = this.texPaintNormal;
+      if ((bool) this.varTookEyeLady.Value)
+        texture = this.texPaintNoEye;
+      else if ((bool) this.varHurtLady.Value)
+        texture = this.texPaintHurt;
+      this.GetMainLayer().AddChild((Node) this.nChaser);
+      this.nChaser.OverrideTextureForState("walk", texture);
+      this.nChaser.SetNavigation(this.nNavigation);
+      this.nChaser.Caught += new Action(this.PlayerDeath);
+      this.nChaser.Turn((Direction) spawnPoint.Direction);
+    }
 
-		private PVar varTookEyeLady = "ch1.mk_took_eye_lady";
+    public void PlayerDeath()
+    {
+      this.evtDeath.Play();
+      this.SetProcess(false);
+    }
 
-		private PVar varHurtLady = "ch1.mk_hurt_lady";
-
-		private PEvent evtDeath = "ch1_death_impact";
-
-		private NPCChaser nChaser;
-
-		private const float CHASER_SPEED = 1.72f;
-
-		private const float CHASER_SPEED_HURT = 1.35f;
-
-		private const int CHASER_HITBOX_RADIUS = 16;
-
-		public override void _BeforeFadeIn()
-		{
-			SpawnEnemy();
-		}
-
-		public override void _AfterFadeIn()
-		{
-			nChaser.Chasing = true;
-		}
-
-		private void SpawnEnemy()
-		{
-			nChaser = new NPCChaser("ch1_mk_painting");
-			SpawnPoint spawn = GetSpawnPoint("enemy_spawn");
-			nChaser.Position = spawn.Position;
-			nChaser.MoveSpeedMultiplier = (varHurtLady.Value ? 1.35f : 1.72f);
-			nChaser.TouchHitboxRadius = 16;
-			Texture tex = texPaintNormal;
-			if ((bool)varTookEyeLady.Value)
-			{
-				tex = texPaintNoEye;
-			}
-			else if ((bool)varHurtLady.Value)
-			{
-				tex = texPaintHurt;
-			}
-			GetMainLayer().AddChild(nChaser);
-			nChaser.OverrideTextureForState("walk", tex);
-			nChaser.SetNavigation(nNavigation);
-			nChaser.Caught += PlayerDeath;
-			nChaser.Turn(spawn.Direction);
-		}
-
-		public void PlayerDeath()
-		{
-			evtDeath.Play();
-			SetProcess(enable: false);
-		}
-
-		private void PauseChaser()
-		{
-			if (nChaser.IsValid())
-			{
-				nChaser.Chasing = false;
-			}
-		}
-	}
+    private void PauseChaser()
+    {
+      if (!this.nChaser.IsValid())
+        return;
+      this.nChaser.Chasing = false;
+    }
+  }
 }

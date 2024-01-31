@@ -1,49 +1,54 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.IMenuEntryList
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
+using Godot;
 using System;
 using System.Collections.Generic;
-using Godot;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public interface IMenuEntryList
-	{
-		IMenuEntryContainer Container { get; set; }
+  public interface IMenuEntryList
+  {
+    IMenuEntryContainer Container { get; set; }
 
-		IMenuEntryList Parent { get; set; }
+    IMenuEntryList Parent { get; set; }
 
-		int Selection { get; set; }
+    int Selection { get; set; }
 
-		List<IMenuEntry> Entries { get; }
+    List<IMenuEntry> Entries { get; }
 
-		Action OnBack { get; set; }
+    Action OnBack { get; set; }
 
-		Control DrawContent();
+    Control DrawContent();
 
-		void Update()
-		{
-			foreach (IMenuEntry entry in Entries)
-			{
-				entry.Update();
-			}
-		}
+    void Update()
+    {
+      foreach (IMenuEntry entry in this.Entries)
+        entry.Update();
+    }
 
-		void Back();
+    void Back();
 
-		void Root()
-		{
-			Container.Clear();
-			Container.AddToFrame(DrawContent());
-			Container.Menu = this;
-			ResetSelection();
-		}
+    void Root()
+    {
+      this.Container.Clear();
+      this.Container.AddToFrame(this.DrawContent());
+      this.Container.Menu = this;
+      this.ResetSelection();
+    }
 
-		void HandleInput(InputEvent @event);
+    void HandleInput(InputEvent @event);
 
-		void HighlightSelection();
+    void HighlightSelection();
 
-		void ResetSelection()
-		{
-			Selection = 0;
-			HighlightSelection();
-		}
-	}
+    void ResetSelection()
+    {
+      this.Selection = 0;
+      this.HighlightSelection();
+    }
+  }
 }

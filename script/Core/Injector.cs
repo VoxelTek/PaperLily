@@ -1,152 +1,132 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Core.Injector
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
+using Godot;
+using LacieEngine.API;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Godot;
-using LacieEngine.API;
 
+#nullable disable
 namespace LacieEngine.Core
 {
-	public class Injector
-	{
-		private static Dictionary<Type, List<Type>> _allImpls;
+  public class Injector
+  {
+    private static Dictionary<System.Type, List<System.Type>> _allImpls;
+    private static Dictionary<System.Type, System.Type> _implementations;
+    private static Dictionary<System.Type, object> _instances;
 
-		private static Dictionary<Type, Type> _implementations;
+    public static void Init()
+    {
+      Injector._allImpls = new Dictionary<System.Type, List<System.Type>>();
+      Injector._implementations = new Dictionary<System.Type, System.Type>();
+      Injector._instances = new Dictionary<System.Type, object>();
+      List<System.Type> typeList1 = new List<System.Type>();
+      foreach (System.Type type in DrkieUtil.GetTypesWithAttribute(typeof (Injectable)))
+      {
+        foreach (System.Type key in type.GetInterfaces())
+        {
+          if (key.GetCustomAttributes(typeof (InjectableInterface), true).Length != 0)
+          {
+            if (!Injector._allImpls.ContainsKey(key))
+              Injector._allImpls[key] = new List<System.Type>();
+            Injector._allImpls[key].Add(type);
+          }
+        }
+      }
+      foreach (System.Type key in Injector._allImpls.Keys)
+      {
+        int num = -1;
+        System.Type type1 = (System.Type) null;
+        foreach (System.Type element in Injector._allImpls[key])
+        {
+          int priority = element.GetCustomAttribute<Injectable>().priority;
+          string condition = element.GetCustomAttribute<Injectable>().condition;
+          if (priority > num && (condition.IsNullOrEmpty() || OS.HasFeature(condition)))
+          {
+            num = priority;
+            type1 = element;
+          }
+        }
+        if (type1 != (System.Type) null)
+          Injector._implementations[key] = type1;
+        else
+          Injector._allImpls.Remove(key);
+        if (key.GetCustomAttribute<InjectableInterface>().unique)
+        {
+          foreach (System.Type type2 in Injector._allImpls[key])
+          {
+            if (type2 != type1)
+              typeList1.Add(type2);
+          }
+        }
+      }
+      foreach (System.Type type in typeList1)
+      {
+        System.Type bannedImpl = type;
+        foreach (List<System.Type> typeList2 in Injector._allImpls.Values)
+          typeList2.RemoveAll((Predicate<System.Type>) (j => j == bannedImpl));
+      }
+      foreach (System.Type key in DrkieUtil.GetTypesWithAttribute(typeof (InjectableInterface)))
+      {
+        if (!Injector._implementations.ContainsKey(key))
+          Log.Warn((object) "Interface ", (object) key.Name, (object) " has no implementations!");
+      }
+    }
 
-		private static Dictionary<Type, object> _instances;
+    public static T Get<T>() => (T) Injector.Get(typeof (T));
 
-		public static void Init()
-		{
-			_allImpls = new Dictionary<Type, List<Type>>();
-			_implementations = new Dictionary<Type, Type>();
-			_instances = new Dictionary<Type, object>();
-			List<Type> bannedImplementations = new List<Type>();
-			foreach (Type type in DrkieUtil.GetTypesWithAttribute(typeof(Injectable)))
-			{
-				Type[] interfaces = type.GetInterfaces();
-				foreach (Type interface3 in interfaces)
-				{
-					if (interface3.GetCustomAttributes(typeof(InjectableInterface), inherit: true).Length != 0)
-					{
-						if (!_allImpls.ContainsKey(interface3))
-						{
-							_allImpls[interface3] = new List<Type>();
-						}
-						_allImpls[interface3].Add(type);
-					}
-				}
-			}
-			foreach (Type interface2 in _allImpls.Keys)
-			{
-				int curPriority = -1;
-				Type selectedImpl = null;
-				foreach (Type implementation2 in _allImpls[interface2])
-				{
-					int priority = implementation2.GetCustomAttribute<Injectable>().priority;
-					string condition = implementation2.GetCustomAttribute<Injectable>().condition;
-					if (priority > curPriority && (condition.IsNullOrEmpty() || OS.HasFeature(condition)))
-					{
-						curPriority = priority;
-						selectedImpl = implementation2;
-					}
-				}
-				if (selectedImpl != null)
-				{
-					_implementations[interface2] = selectedImpl;
-				}
-				else
-				{
-					_allImpls.Remove(interface2);
-				}
-				if (!interface2.GetCustomAttribute<InjectableInterface>().unique)
-				{
-					continue;
-				}
-				foreach (Type implementation in _allImpls[interface2])
-				{
-					if (implementation != selectedImpl)
-					{
-						bannedImplementations.Add(implementation);
-					}
-				}
-			}
-			foreach (Type bannedImpl in bannedImplementations)
-			{
-				foreach (List<Type> value in _allImpls.Values)
-				{
-					value.RemoveAll((Type j) => j == bannedImpl);
-				}
-			}
-			foreach (Type @interface in DrkieUtil.GetTypesWithAttribute(typeof(InjectableInterface)))
-			{
-				if (!_implementations.ContainsKey(@interface))
-				{
-					Log.Warn("Interface ", @interface.Name, " has no implementations!");
-				}
-			}
-		}
+    public static List<T> GetAll<T>()
+    {
+      System.Type key = typeof (T);
+      List<T> all = new List<T>();
+      if (!Injector._allImpls.ContainsKey(key))
+      {
+        Log.Error((object) "No implementations found for ", (object) key.Name);
+        return all;
+      }
+      foreach (System.Type @class in Injector._allImpls[key])
+        all.Add((T) Injector.GetInstance(@class));
+      return all;
+    }
 
-		public static T Get<T>()
-		{
-			return (T)Get(typeof(T));
-		}
+    public static void Resolve(object obj)
+    {
+      foreach (FieldInfo field in obj.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic))
+      {
+        if (Attribute.IsDefined((MemberInfo) field, typeof (Inject)))
+        {
+          object obj1 = Injector.Get(field.FieldType);
+          if (obj1 != null)
+            field.SetValue(obj, obj1);
+        }
+      }
+    }
 
-		public static List<T> GetAll<T>()
-		{
-			Type @interface = typeof(T);
-			List<T> implementations = new List<T>();
-			if (!_allImpls.ContainsKey(@interface))
-			{
-				Log.Error("No implementations found for ", @interface.Name);
-				return implementations;
-			}
-			foreach (Type implType in _allImpls[@interface])
-			{
-				implementations.Add((T)GetInstance(implType));
-			}
-			return implementations;
-		}
+    private static object Get(System.Type @interface)
+    {
+      if (@interface.GetCustomAttributes(typeof (InjectableInterface), true).Length == 0)
+      {
+        Log.Error((object) "Interface ", (object) @interface.Name, (object) " is not an injectable target!");
+        return (object) null;
+      }
+      if (Injector._implementations.ContainsKey(@interface))
+        return Injector.GetInstance(Injector._implementations[@interface]);
+      Log.Error((object) "No implementations found for ", (object) @interface.Name);
+      return (object) null;
+    }
 
-		public static void Resolve(object obj)
-		{
-			FieldInfo[] fields = obj.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
-			foreach (FieldInfo field in fields)
-			{
-				if (Attribute.IsDefined(field, typeof(Inject)))
-				{
-					object impl = Get(field.FieldType);
-					if (impl != null)
-					{
-						field.SetValue(obj, impl);
-					}
-				}
-			}
-		}
-
-		private static object Get(Type @interface)
-		{
-			if (@interface.GetCustomAttributes(typeof(InjectableInterface), inherit: true).Length == 0)
-			{
-				Log.Error("Interface ", @interface.Name, " is not an injectable target!");
-				return null;
-			}
-			if (!_implementations.ContainsKey(@interface))
-			{
-				Log.Error("No implementations found for ", @interface.Name);
-				return null;
-			}
-			return GetInstance(_implementations[@interface]);
-		}
-
-		private static object GetInstance(Type @class)
-		{
-			if (_instances.ContainsKey(@class))
-			{
-				return _instances[@class];
-			}
-			object instance = Activator.CreateInstance(@class);
-			Resolve(instance);
-			_instances[@class] = instance;
-			return instance;
-		}
-	}
+    private static object GetInstance(System.Type @class)
+    {
+      if (Injector._instances.ContainsKey(@class))
+        return Injector._instances[@class];
+      object instance = Activator.CreateInstance(@class);
+      Injector.Resolve(instance);
+      Injector._instances[@class] = instance;
+      return instance;
+    }
+  }
 }

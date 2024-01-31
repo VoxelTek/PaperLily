@@ -1,139 +1,123 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.TitledMenuFrame
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Core;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public class TitledMenuFrame : Frame
-	{
-		private const string PatchTexture = "res://assets/img/ui/frame_menu_2.png";
+  public class TitledMenuFrame : Frame
+  {
+    private const string PatchTexture = "res://assets/img/ui/frame_menu_2.png";
+    private const string BgMaskTexture = "res://assets/img/ui/frame_menu_2_mask.png";
+    private const int PatchMargin = 50;
+    private const int DefaultContentMarginX = 25;
+    private const int DefaultContentMarginY = 15;
+    private const int TitleSpace = 25;
+    private const float ScaleFactor = 0.25f;
+    private static readonly Color BgModulate = UIUtil.MenuBgColor;
+    private string _titleText = "Title";
+    private bool _titleVisible = true;
+    private Control nTitle;
+    private Label nTitleLabel;
 
-		private const string BgMaskTexture = "res://assets/img/ui/frame_menu_2_mask.png";
+    public string TitleText
+    {
+      get => this._titleText;
+      set
+      {
+        this._titleText = value;
+        if (this.nTitleLabel == null)
+          return;
+        this.nTitleLabel.Text = value;
+      }
+    }
 
-		private const int PatchMargin = 50;
+    public bool TitleVisible
+    {
+      get => this._titleVisible;
+      set
+      {
+        this._titleVisible = value;
+        if (this.nTitle != null)
+          this.nTitle.Visible = value;
+        this.UpdateMargins();
+      }
+    }
 
-		private const int DefaultContentMarginX = 25;
+    public string DividerTexture { get; set; } = "res://assets/img/ui/divider_sm.png";
 
-		private const int DefaultContentMarginY = 15;
+    public TitledMenuFrame()
+    {
+      this.Name = nameof (TitledMenuFrame);
+      this.ContentMarginLeft = 25;
+      this.ContentMarginTop = 15;
+      this.ContentMarginRight = 25;
+      this.ContentMarginBottom = 15;
+    }
 
-		private const int TitleSpace = 25;
+    public override void _EnterTree()
+    {
+      SpecialNinePatch specialNinePatch = GDUtil.MakeNode<SpecialNinePatch>("FrameTexture");
+      specialNinePatch.Texture = GD.Load<Texture>("res://assets/img/ui/frame_menu_2.png");
+      specialNinePatch.BgTexture = GD.Load<Texture>("res://assets/sprite/common/white.png");
+      specialNinePatch.BgMaskTexture = GD.Load<Texture>("res://assets/img/ui/frame_menu_2_mask.png");
+      specialNinePatch.PatchMarginLeft = 50;
+      specialNinePatch.PatchMarginTop = 50;
+      specialNinePatch.PatchMarginRight = 50;
+      specialNinePatch.PatchMarginBottom = 50;
+      specialNinePatch.ScaleFactor = 0.25f;
+      specialNinePatch.RectMinSize = this.MinimumSize;
+      specialNinePatch.BgModulate = TitledMenuFrame.BgModulate;
+      if (this.DecorBgTexture != null)
+        specialNinePatch.DecorBgTexture = GD.Load<Texture>(this.DecorBgTexture);
+      specialNinePatch.DecorBgAlignment = this.DecorBgAlignment;
+      this.AddChild((Node) specialNinePatch);
+      this.AddChild((Node) this.CreateTitle(this._titleText, this.DividerTexture));
+      this.UpdateMargins();
+      this.AddChild((Node) this.Container);
+    }
 
-		private const float ScaleFactor = 0.25f;
+    private Control CreateTitle(string titleText, string dividerTexture)
+    {
+      MarginContainer container = GDUtil.MakeNode<MarginContainer>("TitleContainer");
+      container.SetContainerMarginTop(10);
+      container.SizeFlagsVertical = 0;
+      container.Visible = this._titleVisible;
+      CenterContainer centerContainer1 = GDUtil.MakeNode<CenterContainer>("TitleCenterer");
+      VBoxContainer box = GDUtil.MakeNode<VBoxContainer>("TitleVBox");
+      box.SetSeparation(-5);
+      box.Alignment = BoxContainer.AlignMode.Center;
+      Label label = GDUtil.MakeNode<Label>("Title");
+      label.SetDefaultFontAndColor();
+      label.SetFont("res://resources/font/default_title.tres");
+      label.Text = titleText;
+      label.Align = Label.AlignEnum.Center;
+      this.nTitleLabel = label;
+      TextureRect textureRect = GDUtil.MakeNode<TextureRect>("Divider");
+      textureRect.Texture = GD.Load<Texture>(dividerTexture);
+      textureRect.RectMinSize = textureRect.Texture.GetSize() / 3f;
+      textureRect.Expand = true;
+      CenterContainer centerContainer2 = GDUtil.MakeNode<CenterContainer>("DividerContainer");
+      centerContainer2.AddChild((Node) textureRect);
+      box.AddChild((Node) label);
+      box.AddChild((Node) centerContainer2);
+      centerContainer1.AddChild((Node) box);
+      container.AddChild((Node) centerContainer1);
+      this.nTitle = (Control) container;
+      return (Control) container;
+    }
 
-		private static readonly Color BgModulate = UIUtil.MenuBgColor;
-
-		private string _titleText = "Title";
-
-		private bool _titleVisible = true;
-
-		private Control nTitle;
-
-		private Label nTitleLabel;
-
-		public string TitleText
-		{
-			get
-			{
-				return _titleText;
-			}
-			set
-			{
-				_titleText = value;
-				if (nTitleLabel != null)
-				{
-					nTitleLabel.Text = value;
-				}
-			}
-		}
-
-		public bool TitleVisible
-		{
-			get
-			{
-				return _titleVisible;
-			}
-			set
-			{
-				_titleVisible = value;
-				if (nTitle != null)
-				{
-					nTitle.Visible = value;
-				}
-				UpdateMargins();
-			}
-		}
-
-		public string DividerTexture { get; set; } = "res://assets/img/ui/divider_sm.png";
-
-
-		public TitledMenuFrame()
-		{
-			base.Name = "TitledMenuFrame";
-			base.ContentMarginLeft = 25;
-			base.ContentMarginTop = 15;
-			base.ContentMarginRight = 25;
-			base.ContentMarginBottom = 15;
-		}
-
-		public override void _EnterTree()
-		{
-			SpecialNinePatch frame = GDUtil.MakeNode<SpecialNinePatch>("FrameTexture");
-			frame.Texture = GD.Load<Texture>("res://assets/img/ui/frame_menu_2.png");
-			frame.BgTexture = GD.Load<Texture>("res://assets/sprite/common/white.png");
-			frame.BgMaskTexture = GD.Load<Texture>("res://assets/img/ui/frame_menu_2_mask.png");
-			frame.PatchMarginLeft = 50;
-			frame.PatchMarginTop = 50;
-			frame.PatchMarginRight = 50;
-			frame.PatchMarginBottom = 50;
-			frame.ScaleFactor = 0.25f;
-			frame.RectMinSize = base.MinimumSize;
-			frame.BgModulate = BgModulate;
-			if (base.DecorBgTexture != null)
-			{
-				frame.DecorBgTexture = GD.Load<Texture>(base.DecorBgTexture);
-			}
-			frame.DecorBgAlignment = base.DecorBgAlignment;
-			AddChild(frame);
-			AddChild(CreateTitle(_titleText, DividerTexture));
-			UpdateMargins();
-			AddChild(base.Container);
-		}
-
-		private Control CreateTitle(string titleText, string dividerTexture)
-		{
-			MarginContainer titleContainer = GDUtil.MakeNode<MarginContainer>("TitleContainer");
-			titleContainer.SetContainerMarginTop(10);
-			titleContainer.SizeFlagsVertical = 0;
-			titleContainer.Visible = _titleVisible;
-			CenterContainer titleCenterer = GDUtil.MakeNode<CenterContainer>("TitleCenterer");
-			VBoxContainer titleVBox = GDUtil.MakeNode<VBoxContainer>("TitleVBox");
-			titleVBox.SetSeparation(-5);
-			titleVBox.Alignment = BoxContainer.AlignMode.Center;
-			Label title = GDUtil.MakeNode<Label>("Title");
-			title.SetDefaultFontAndColor();
-			title.SetFont("res://resources/font/default_title.tres");
-			title.Text = titleText;
-			title.Align = Label.AlignEnum.Center;
-			nTitleLabel = title;
-			TextureRect divider = GDUtil.MakeNode<TextureRect>("Divider");
-			divider.Texture = GD.Load<Texture>(dividerTexture);
-			divider.RectMinSize = divider.Texture.GetSize() / 3f;
-			divider.Expand = true;
-			CenterContainer dividerContainer = GDUtil.MakeNode<CenterContainer>("DividerContainer");
-			dividerContainer.AddChild(divider);
-			titleVBox.AddChild(title);
-			titleVBox.AddChild(dividerContainer);
-			titleCenterer.AddChild(titleVBox);
-			titleContainer.AddChild(titleCenterer);
-			nTitle = titleContainer;
-			return titleContainer;
-		}
-
-		private void UpdateMargins()
-		{
-			base.Container.SetContainerMarginLeft(base.ContentMarginLeft);
-			base.Container.SetContainerMarginTop(base.ContentMarginTop + (_titleVisible ? 25 : 0));
-			base.Container.SetContainerMarginRight(base.ContentMarginRight);
-			base.Container.SetContainerMarginBottom(base.ContentMarginBottom);
-		}
-	}
+    private void UpdateMargins()
+    {
+      this.Container.SetContainerMarginLeft(this.ContentMarginLeft);
+      this.Container.SetContainerMarginTop(this.ContentMarginTop + (this._titleVisible ? 25 : 0));
+      this.Container.SetContainerMarginRight(this.ContentMarginRight);
+      this.Container.SetContainerMarginBottom(this.ContentMarginBottom);
+    }
+  }
 }

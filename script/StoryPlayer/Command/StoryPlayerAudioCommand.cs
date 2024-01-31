@@ -1,125 +1,106 @@
-using System;
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.StoryPlayer.StoryPlayerAudioCommand
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Core;
+using System;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.StoryPlayer
 {
-	[Serializable]
-	public class StoryPlayerAudioCommand : StoryPlayerCommand
-	{
-		public enum AudioType
-		{
-			Bgm,
-			Sfx,
-			Ambiance
-		}
+  [Serializable]
+  public class StoryPlayerAudioCommand : StoryPlayerCommand
+  {
+    public StoryPlayerAudioCommand.AudioType Type { get; set; }
 
-		public enum AudioOperation
-		{
-			Play,
-			Stop,
-			Volume,
-			Override,
-			RemoveOverride
-		}
+    public StoryPlayerAudioCommand.AudioOperation Operation { get; set; }
 
-		public AudioType Type { get; set; }
+    public string Track { get; set; }
 
-		public AudioOperation Operation { get; set; }
+    public float? Time { get; set; }
 
-		public string Track { get; set; }
+    public float Volume { get; set; } = 1f;
 
-		public float? Time { get; set; }
+    public bool CrossFade { get; set; }
 
-		public float Volume { get; set; } = 1f;
+    public override void Execute(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
+    {
+      if (this.Type == StoryPlayerAudioCommand.AudioType.Bgm)
+      {
+        if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Play)
+          Game.Audio.PlayBgm(GD.Load<AudioStream>(this.Track), this.Volume, this.CrossFade);
+        else if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Stop)
+        {
+          if (this.Time.HasValue)
+            Game.Audio.StopBgm(this.Time.Value);
+          else
+            Game.Audio.StopBgm();
+        }
+        else if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Volume)
+        {
+          if (this.Time.HasValue)
+            Game.Audio.ChangeBgmVolume(this.Volume, this.Time.Value);
+          else
+            Game.Audio.ChangeBgmVolume(this.Volume);
+        }
+        else if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Override)
+          Game.State.OverrideBgm = this.Track;
+        else if (this.Operation == StoryPlayerAudioCommand.AudioOperation.RemoveOverride)
+          Game.State.OverrideBgm = (string) null;
+      }
+      else if (this.Type == StoryPlayerAudioCommand.AudioType.Ambiance)
+      {
+        if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Play)
+          Game.Audio.PlayAmbiance(GD.Load<AudioStream>(this.Track), this.Volume);
+        else if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Stop)
+        {
+          if (this.Time.HasValue)
+            Game.Audio.StopAmbiance(this.Time.Value);
+          else
+            Game.Audio.StopAmbiance();
+        }
+        else if (this.Operation == StoryPlayerAudioCommand.AudioOperation.Volume)
+        {
+          if (this.Time.HasValue)
+            Game.Audio.ChangeAmbianceVolume(this.Volume, this.Time.Value);
+          else
+            Game.Audio.ChangeAmbianceVolume(this.Volume);
+        }
+      }
+      else if (this.Type == StoryPlayerAudioCommand.AudioType.Sfx)
+        Game.Audio.PlaySfx(this.Track, this.Volume);
+      storyPlayer.SetNextBlockContinue();
+      storyPlayer.Next();
+    }
 
+    public override IList<string> GetDependencies()
+    {
+      if (this.Track.IsNullOrEmpty() || !(this.Track != "res://assets/bgm/silent.ogg"))
+        return (IList<string>) Array.Empty<string>();
+      return (IList<string>) new List<string>(1)
+      {
+        this.Track
+      };
+    }
 
-		public bool CrossFade { get; set; }
+    public enum AudioType
+    {
+      Bgm,
+      Sfx,
+      Ambiance,
+    }
 
-		public override void Execute(StoryPlayer storyPlayer)
-		{
-			if (Type == AudioType.Bgm)
-			{
-				if (Operation == AudioOperation.Play)
-				{
-					Game.Audio.PlayBgm(GD.Load<AudioStream>(Track), Volume, CrossFade);
-				}
-				else if (Operation == AudioOperation.Stop)
-				{
-					if (Time.HasValue)
-					{
-						Game.Audio.StopBgm(Time.Value);
-					}
-					else
-					{
-						Game.Audio.StopBgm();
-					}
-				}
-				else if (Operation == AudioOperation.Volume)
-				{
-					if (Time.HasValue)
-					{
-						Game.Audio.ChangeBgmVolume(Volume, Time.Value);
-					}
-					else
-					{
-						Game.Audio.ChangeBgmVolume(Volume);
-					}
-				}
-				else if (Operation == AudioOperation.Override)
-				{
-					Game.State.OverrideBgm = Track;
-				}
-				else if (Operation == AudioOperation.RemoveOverride)
-				{
-					Game.State.OverrideBgm = null;
-				}
-			}
-			else if (Type == AudioType.Ambiance)
-			{
-				if (Operation == AudioOperation.Play)
-				{
-					Game.Audio.PlayAmbiance(GD.Load<AudioStream>(Track), Volume);
-				}
-				else if (Operation == AudioOperation.Stop)
-				{
-					if (Time.HasValue)
-					{
-						Game.Audio.StopAmbiance(Time.Value);
-					}
-					else
-					{
-						Game.Audio.StopAmbiance();
-					}
-				}
-				else if (Operation == AudioOperation.Volume)
-				{
-					if (Time.HasValue)
-					{
-						Game.Audio.ChangeAmbianceVolume(Volume, Time.Value);
-					}
-					else
-					{
-						Game.Audio.ChangeAmbianceVolume(Volume);
-					}
-				}
-			}
-			else if (Type == AudioType.Sfx)
-			{
-				Game.Audio.PlaySfx(Track, Volume);
-			}
-			storyPlayer.SetNextBlockContinue();
-			storyPlayer.Next();
-		}
-
-		public override IList<string> GetDependencies()
-		{
-			if (!Track.IsNullOrEmpty() && Track != "res://assets/bgm/silent.ogg")
-			{
-				return new List<string>(1) { Track };
-			}
-			return Array.Empty<string>();
-		}
-	}
+    public enum AudioOperation
+    {
+      Play,
+      Stop,
+      Volume,
+      Override,
+      RemoveOverride,
+    }
+  }
 }

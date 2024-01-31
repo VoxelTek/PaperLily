@@ -1,81 +1,76 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.FullScreenMenuEntry
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.Core;
 using LacieEngine.Settings;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public class FullScreenMenuEntry : IMenuEntry
-	{
-		public class FullScreenLabel : Label
-		{
-			private FullScreenSetting setting;
+  public class FullScreenMenuEntry : IMenuEntry
+  {
+    private FullScreenSetting setting;
+    private Label captionLabel;
+    private Label valueLabel;
 
-			public FullScreenLabel(FullScreenSetting setting)
-			{
-				this.setting = setting;
-			}
+    public IMenuEntryList Parent { get; set; }
 
-			public override void _Process(float delta)
-			{
-				base.Text = setting.ValueLabel();
-			}
-		}
+    public FullScreenMenuEntry(IMenuEntryList menu)
+    {
+      this.setting = new FullScreenSetting();
+      this.Parent = menu;
+    }
 
-		private FullScreenSetting setting;
+    public void Left()
+    {
+      if (!this.setting.OwnSound)
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
+      this.setting.Decrement();
+      this.setting.Apply();
+      this.Parent.Update();
+    }
 
-		private Label captionLabel;
+    public void Right()
+    {
+      if (!this.setting.OwnSound)
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
+      this.setting.Increment();
+      this.setting.Apply();
+      this.Parent.Update();
+    }
 
-		private Label valueLabel;
+    public Control DrawEntry()
+    {
+      MarginContainer container = new MarginContainer();
+      container.SetContainerMarginLeft(10);
+      container.SetContainerMarginRight(10);
+      this.captionLabel = new Label();
+      this.captionLabel.Name = "Label";
+      this.captionLabel.Text = this.setting.CaptionLabel();
+      this.captionLabel.Align = Label.AlignEnum.Left;
+      this.captionLabel.SetAnchorsPreset(Control.LayoutPreset.LeftWide);
+      this.captionLabel.SetDefaultFontAndColor();
+      this.valueLabel = (Label) new FullScreenMenuEntry.FullScreenLabel(this.setting);
+      this.valueLabel.Name = "Value";
+      this.valueLabel.Text = this.setting.ValueLabel();
+      this.valueLabel.Align = Label.AlignEnum.Right;
+      this.valueLabel.SetDefaultFontAndColor();
+      container.AddChild((Node) this.captionLabel);
+      container.AddChild((Node) this.valueLabel);
+      return (Control) container;
+    }
 
-		public IMenuEntryList Parent { get; set; }
+    public class FullScreenLabel : Label
+    {
+      private FullScreenSetting setting;
 
-		public FullScreenMenuEntry(IMenuEntryList menu)
-		{
-			setting = new FullScreenSetting();
-			Parent = menu;
-		}
+      public FullScreenLabel(FullScreenSetting setting) => this.setting = setting;
 
-		public void Left()
-		{
-			if (!setting.OwnSound)
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
-			}
-			setting.Decrement();
-			setting.Apply();
-			Parent.Update();
-		}
-
-		public void Right()
-		{
-			if (!setting.OwnSound)
-			{
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_navigation.ogg");
-			}
-			setting.Increment();
-			setting.Apply();
-			Parent.Update();
-		}
-
-		public Control DrawEntry()
-		{
-			MarginContainer marginContainer = new MarginContainer();
-			marginContainer.SetContainerMarginLeft(10);
-			marginContainer.SetContainerMarginRight(10);
-			captionLabel = new Label();
-			captionLabel.Name = "Label";
-			captionLabel.Text = setting.CaptionLabel();
-			captionLabel.Align = Label.AlignEnum.Left;
-			captionLabel.SetAnchorsPreset(Control.LayoutPreset.LeftWide);
-			captionLabel.SetDefaultFontAndColor();
-			valueLabel = new FullScreenLabel(setting);
-			valueLabel.Name = "Value";
-			valueLabel.Text = setting.ValueLabel();
-			valueLabel.Align = Label.AlignEnum.Right;
-			valueLabel.SetDefaultFontAndColor();
-			marginContainer.AddChild(captionLabel);
-			marginContainer.AddChild(valueLabel);
-			return marginContainer;
-		}
-	}
+      public override void _Process(float delta) => this.Text = this.setting.ValueLabel();
+    }
+  }
 }

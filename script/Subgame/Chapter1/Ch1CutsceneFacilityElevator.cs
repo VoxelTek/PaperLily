@@ -1,83 +1,74 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Rooms.Ch1CutsceneFacilityElevator
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
-using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Nodes;
 
+#nullable disable
 namespace LacieEngine.Rooms
 {
-	[Tool]
-	public class Ch1CutsceneFacilityElevator : GameRoomNested
-	{
-		[GetNode("Room/Background/Flood1")]
-		private Node2D nFlood1;
+  [Tool]
+  public class Ch1CutsceneFacilityElevator : GameRoomNested
+  {
+    [LacieEngine.API.GetNode("Room/Background/Flood1")]
+    private Node2D nFlood1;
+    [LacieEngine.API.GetNode("Room/Background/Flood2")]
+    private Node2D nFlood2;
+    [LacieEngine.API.GetNode("Room/Background/Flood3")]
+    private Node2D nFlood3;
+    [LacieEngine.API.GetNode("Room/Background/Flood4")]
+    private Node2D nFlood4;
+    [LacieEngine.API.GetNode("Room/Background/Flood5")]
+    private Node2D nFlood5;
+    [LacieEngine.API.GetNode("Room/Background/Flood6")]
+    private Node2D nFlood6;
+    [LacieEngine.API.GetNode("Lighting/dark")]
+    private RoomLighting nLightDark;
 
-		[GetNode("Room/Background/Flood2")]
-		private Node2D nFlood2;
+    public override void _BeforeFadeIn() => ((Ch1FacilityElevator) this.nRoom).Riding = true;
 
-		[GetNode("Room/Background/Flood3")]
-		private Node2D nFlood3;
+    public void Flood0()
+    {
+      ((Ch1FacilityElevator) this.nRoom).Riding = false;
+      Game.Camera.Shake(0.3f, 10f);
+    }
 
-		[GetNode("Room/Background/Flood4")]
-		private Node2D nFlood4;
+    public void PowerDown() => this.nLightDark.Apply();
 
-		[GetNode("Room/Background/Flood5")]
-		private Node2D nFlood5;
+    public void Flood1() => this.nFlood1.Visible = true;
 
-		[GetNode("Room/Background/Flood6")]
-		private Node2D nFlood6;
+    public void Flood2()
+    {
+      this.nFlood1.Visible = false;
+      this.nFlood2.Visible = true;
+    }
 
-		[GetNode("Lighting/dark")]
-		private RoomLighting nLightDark;
+    public void Flood3()
+    {
+      this.nFlood2.Visible = false;
+      this.nFlood3.Visible = true;
+    }
 
-		public override void _BeforeFadeIn()
-		{
-			((Ch1FacilityElevator)nRoom).Riding = true;
-		}
+    public void Flood4()
+    {
+      this.nFlood3.Visible = false;
+      this.nFlood4.Visible = true;
+    }
 
-		public void Flood0()
-		{
-			((Ch1FacilityElevator)nRoom).Riding = false;
-			Game.Camera.Shake(0.3f, 10f);
-		}
+    public void Flood5()
+    {
+      this.nFlood4.Visible = false;
+      this.nFlood5.Visible = true;
+    }
 
-		public void PowerDown()
-		{
-			nLightDark.Apply();
-		}
-
-		public void Flood1()
-		{
-			nFlood1.Visible = true;
-		}
-
-		public void Flood2()
-		{
-			nFlood1.Visible = false;
-			nFlood2.Visible = true;
-		}
-
-		public void Flood3()
-		{
-			nFlood2.Visible = false;
-			nFlood3.Visible = true;
-		}
-
-		public void Flood4()
-		{
-			nFlood3.Visible = false;
-			nFlood4.Visible = true;
-		}
-
-		public void Flood5()
-		{
-			nFlood4.Visible = false;
-			nFlood5.Visible = true;
-		}
-
-		public void Flood6()
-		{
-			nFlood5.Visible = false;
-			nFlood6.Visible = true;
-		}
-	}
+    public void Flood6()
+    {
+      this.nFlood5.Visible = false;
+      this.nFlood6.Visible = true;
+    }
+  }
 }

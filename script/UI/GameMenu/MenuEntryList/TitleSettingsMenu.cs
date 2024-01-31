@@ -1,104 +1,109 @@
-using System.Collections.Generic;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.UI.TitleSettingsMenu
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
+using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
 using LacieEngine.Settings;
+using System;
+using System.Collections.Generic;
 
+#nullable disable
 namespace LacieEngine.UI
 {
-	public class TitleSettingsMenu : SimpleVerticalMenu
-	{
-		public TitleSettingsMenu(IMenuEntryList parentMenu, IMenuEntryContainer container)
-		{
-			base.Parent = parentMenu;
-			base.Container = container;
-			base.Entries = new List<IMenuEntry>();
-			if (Game.Language.GetAvailableLanguages().Count > 1)
-			{
-				SimpleMenuEntry languageOptions = new SimpleMenuEntry("system.settings.game.language", ShowLanguageSelection, this);
-				base.Entries.Add(languageOptions);
-			}
-			SubMenuEntry gameOptions = new SubMenuEntry("system.settings.game", this, container);
-			gameOptions.AddEntry(new SettingMenuEntry<SkipEnabledSetting, bool>(gameOptions));
-			gameOptions.AddEntry(new SettingMenuEntry<ShowObjectivesNotificationsSetting, bool>(gameOptions));
-			gameOptions.AddEntry(new BackMenuEntry("system.common.back", gameOptions));
-			base.Entries.Add(gameOptions);
-			SubMenuEntry audioOptions = new SubMenuEntry("system.settings.audio", this, container);
-			audioOptions.AddEntry(new SettingMenuEntry<VolumeMasterSetting, decimal>(audioOptions));
-			audioOptions.AddEntry(new SettingMenuEntry<VolumeBgmSetting, decimal>(audioOptions));
-			audioOptions.AddEntry(new SettingMenuEntry<VolumeSfxSetting, decimal>(audioOptions));
-			audioOptions.AddEntry(new SettingMenuEntry<VolumeSystemSetting, decimal>(audioOptions));
-			audioOptions.AddEntry(new SettingMenuEntry<VolumeTextSetting, decimal>(audioOptions));
-			audioOptions.AddEntry(new SettingMenuEntry<MuteAudioSetting, bool>(audioOptions));
-			audioOptions.AddEntry(new BackMenuEntry("system.common.back", audioOptions));
-			base.Entries.Add(audioOptions);
-			SubMenuEntry videoOptions = new SubMenuEntry("system.settings.video", this, container);
-			videoOptions.AddEntry(new FullScreenMenuEntry(videoOptions));
-			videoOptions.AddEntry(new ResolutionMenuEntry(videoOptions));
-			videoOptions.AddEntry(new SettingMenuEntry2<ResolutionScaleSetting, int>(videoOptions));
-			videoOptions.AddEntry(new SettingMenuEntry2<FpsLimitSetting, string>(videoOptions));
-			videoOptions.AddEntry(new SettingMenuEntry<BrightnessSetting, decimal>(videoOptions));
-			videoOptions.AddEntry(new SettingMenuEntry<ContrastSetting, decimal>(videoOptions));
-			videoOptions.AddEntry(new SettingMenuEntry<GammaSetting, decimal>(videoOptions));
-			videoOptions.AddEntry(new SettingMenuEntry<HideCursorSetting, bool>(videoOptions));
-			videoOptions.AddEntry(new BackMenuEntry("system.common.back", videoOptions));
-			base.Entries.Add(videoOptions);
-			SubMenuEntry inputOptions = new SubMenuEntry("system.settings.input", this, container);
-			inputOptions.AddEntry(new SettingMenuEntry<InputTypeSetting, string>(inputOptions));
-			inputOptions.AddEntry(new SettingMenuEntry2<DeadzoneSetting, float>(inputOptions));
-			inputOptions.AddEntry(new SettingMenuEntry<InputAutoSwitchSetting, bool>(inputOptions));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.up", "input_up"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.down", "input_down"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.left", "input_left"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.right", "input_right"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.action", "input_action"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.cancel", "input_cancel"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.run", "input_run"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.special", "input_special"));
-			inputOptions.AddEntry(new InputBindingMenuEntry(inputOptions, "system.actions.menu", "input_menu"));
-			inputOptions.AddEntry(new BackMenuEntry("system.common.back", inputOptions));
-			base.Entries.Add(inputOptions);
-		}
+  public class TitleSettingsMenu : SimpleVerticalMenu
+  {
+    public TitleSettingsMenu(IMenuEntryList parentMenu, IMenuEntryContainer container)
+    {
+      this.Parent = parentMenu;
+      this.Container = container;
+      this.Entries = new List<IMenuEntry>();
+      if (Game.Language.GetAvailableLanguages().Count > 1)
+        this.Entries.Add((IMenuEntry) new SimpleMenuEntry("system.settings.game.language", new Action(this.ShowLanguageSelection), (IMenuEntryList) this));
+      SubMenuEntry subMenuEntry1 = new SubMenuEntry("system.settings.game", (IMenuEntryList) this, container);
+      subMenuEntry1.AddEntry((IMenuEntry) new SettingMenuEntry<SkipEnabledSetting, bool>((IMenuEntryList) subMenuEntry1));
+      subMenuEntry1.AddEntry((IMenuEntry) new SettingMenuEntry<ShowObjectivesNotificationsSetting, bool>((IMenuEntryList) subMenuEntry1));
+      subMenuEntry1.AddEntry((IMenuEntry) new BackMenuEntry("system.common.back", (IMenuEntryList) subMenuEntry1));
+      this.Entries.Add((IMenuEntry) subMenuEntry1);
+      SubMenuEntry subMenuEntry2 = new SubMenuEntry("system.settings.audio", (IMenuEntryList) this, container);
+      subMenuEntry2.AddEntry((IMenuEntry) new SettingMenuEntry<VolumeMasterSetting, Decimal>((IMenuEntryList) subMenuEntry2));
+      subMenuEntry2.AddEntry((IMenuEntry) new SettingMenuEntry<VolumeBgmSetting, Decimal>((IMenuEntryList) subMenuEntry2));
+      subMenuEntry2.AddEntry((IMenuEntry) new SettingMenuEntry<VolumeSfxSetting, Decimal>((IMenuEntryList) subMenuEntry2));
+      subMenuEntry2.AddEntry((IMenuEntry) new SettingMenuEntry<VolumeSystemSetting, Decimal>((IMenuEntryList) subMenuEntry2));
+      subMenuEntry2.AddEntry((IMenuEntry) new SettingMenuEntry<VolumeTextSetting, Decimal>((IMenuEntryList) subMenuEntry2));
+      subMenuEntry2.AddEntry((IMenuEntry) new SettingMenuEntry<MuteAudioSetting, bool>((IMenuEntryList) subMenuEntry2));
+      subMenuEntry2.AddEntry((IMenuEntry) new BackMenuEntry("system.common.back", (IMenuEntryList) subMenuEntry2));
+      this.Entries.Add((IMenuEntry) subMenuEntry2);
+      SubMenuEntry subMenuEntry3 = new SubMenuEntry("system.settings.video", (IMenuEntryList) this, container);
+      subMenuEntry3.AddEntry((IMenuEntry) new FullScreenMenuEntry((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new ResolutionMenuEntry((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new SettingMenuEntry2<ResolutionScaleSetting, int>((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new SettingMenuEntry2<FpsLimitSetting, string>((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new SettingMenuEntry<BrightnessSetting, Decimal>((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new SettingMenuEntry<ContrastSetting, Decimal>((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new SettingMenuEntry<GammaSetting, Decimal>((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new SettingMenuEntry<HideCursorSetting, bool>((IMenuEntryList) subMenuEntry3));
+      subMenuEntry3.AddEntry((IMenuEntry) new BackMenuEntry("system.common.back", (IMenuEntryList) subMenuEntry3));
+      this.Entries.Add((IMenuEntry) subMenuEntry3);
+      SubMenuEntry subMenuEntry4 = new SubMenuEntry("system.settings.input", (IMenuEntryList) this, container);
+      subMenuEntry4.AddEntry((IMenuEntry) new SettingMenuEntry<InputTypeSetting, string>((IMenuEntryList) subMenuEntry4));
+      subMenuEntry4.AddEntry((IMenuEntry) new SettingMenuEntry2<DeadzoneSetting, float>((IMenuEntryList) subMenuEntry4));
+      subMenuEntry4.AddEntry((IMenuEntry) new SettingMenuEntry<InputAutoSwitchSetting, bool>((IMenuEntryList) subMenuEntry4));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.up", "input_up"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.down", "input_down"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.left", "input_left"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.right", "input_right"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.action", "input_action"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.cancel", "input_cancel"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.run", "input_run"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.special", "input_special"));
+      subMenuEntry4.AddEntry((IMenuEntry) new InputBindingMenuEntry((IMenuEntryList) subMenuEntry4, "system.actions.menu", "input_menu"));
+      subMenuEntry4.AddEntry((IMenuEntry) new BackMenuEntry("system.common.back", (IMenuEntryList) subMenuEntry4));
+      this.Entries.Add((IMenuEntry) subMenuEntry4);
+    }
 
-		public override void Back()
-		{
-			if (Game.Settings.InputProfileCustom && !Inputs.Profiles["custom"].IsComplete())
-			{
-				Log.Info("Input profile not complete!");
-				Game.Audio.PlaySystemSound("res://assets/sfx/ui_bad.ogg");
-				MessageContainer errorMsg = new MessageContainer();
-				errorMsg.OnClose = delegate
-				{
-					errorMsg.Delete();
-				};
-				errorMsg.Text = "system.settings.input.error";
-				Game.Screen.AddToLayer(IScreenManager.Layer.Screen, errorMsg);
-			}
-			else
-			{
-				Game.Settings.SaveSettings();
-				Game.Settings.RevertSettings();
-				if (base.OnBack != null)
-				{
-					base.OnBack();
-				}
-				else if (base.Parent != null)
-				{
-					base.Parent.Root();
-				}
-			}
-		}
+    public override void Back()
+    {
+      if (Game.Settings.InputProfileCustom && !Inputs.Profiles["custom"].IsComplete())
+      {
+        Log.Info((object) "Input profile not complete!");
+        Game.Audio.PlaySystemSound("res://assets/sfx/ui_bad.ogg");
+        MessageContainer errorMsg = new MessageContainer();
+        errorMsg.OnClose = (Action) (() => errorMsg.Delete());
+        errorMsg.Text = "system.settings.input.error";
+        Game.Screen.AddToLayer(IScreenManager.Layer.Screen, (Node) errorMsg);
+      }
+      else
+      {
+        Game.Settings.SaveSettings();
+        Game.Settings.RevertSettings();
+        if (this.OnBack != null)
+        {
+          this.OnBack();
+        }
+        else
+        {
+          if (this.Parent == null)
+            return;
+          this.Parent.Root();
+        }
+      }
+    }
 
-		private void ShowLanguageSelection()
-		{
-			Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-			TitleLanguageMenuContainer languageSelector = GDUtil.MakeNode<TitleLanguageMenuContainer>("LanguageSelector");
-			languageSelector.OnClose = delegate
-			{
-				languageSelector.Delete();
-				Root();
-			};
-			Game.Screen.AddToLayer(IScreenManager.Layer.Screen, languageSelector);
-			languageSelector.Menu.ResetSelection();
-		}
-	}
+    private void ShowLanguageSelection()
+    {
+      Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
+      TitleLanguageMenuContainer languageSelector = GDUtil.MakeNode<TitleLanguageMenuContainer>("LanguageSelector");
+      languageSelector.OnClose = (Action) (() =>
+      {
+        languageSelector.Delete();
+        this.Root();
+      });
+      Game.Screen.AddToLayer(IScreenManager.Layer.Screen, (Node) languageSelector);
+      languageSelector.Menu.ResetSelection();
+    }
+  }
 }

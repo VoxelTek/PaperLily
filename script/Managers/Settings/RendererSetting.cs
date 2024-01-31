@@ -1,75 +1,82 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Settings.RendererSetting
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
+using LacieEngine.API;
 using LacieEngine.Core;
 
+#nullable disable
 namespace LacieEngine.Settings
 {
-	internal class RendererSetting : Setting<string>
-	{
-		private static readonly string[] Options = new string[2] { "GLES2", "GLES3" };
+  internal class RendererSetting : Setting<string>
+  {
+    private static readonly string[] Options = new string[2]
+    {
+      "GLES2",
+      "GLES3"
+    };
+    private string value;
+    private bool changed;
+    private int selection;
 
-		private string value;
+    public override string CaptionLabel()
+    {
+      OS.VideoDriver currentVideoDriver;
+      if (this.changed)
+      {
+        string str = this.value;
+        currentVideoDriver = OS.GetCurrentVideoDriver();
+        string upper = currentVideoDriver.ToString().ToUpper();
+        if (str != upper)
+          return "system.settings.renderer";
+      }
+      string caption = Game.Language.GetCaption("system.settings.renderer");
+      ILanguageManager language = Game.Language;
+      string[] strArray = new string[1];
+      currentVideoDriver = OS.GetCurrentVideoDriver();
+      strArray[0] = currentVideoDriver.ToString().ToUpper();
+      string formattedCaption = language.GetFormattedCaption("system.settings.current", strArray);
+      return caption + " (" + formattedCaption + ")";
+    }
 
-		private bool changed;
+    public RendererSetting()
+    {
+      this.changed = false;
+      this.value = Game.Settings.Renderer;
+      for (int index = 0; index < RendererSetting.Options.Length; ++index)
+      {
+        if (RendererSetting.Options[index] == this.value)
+          this.selection = index;
+      }
+    }
 
-		private int selection;
+    public override string ValueLabel()
+    {
+      string key = !(this.value == "GLES2") ? "system.settings.renderer.gles3" : "system.settings.renderer.gles2";
+      return this.changed && this.value != OS.GetCurrentVideoDriver().ToString().ToUpper() ? Game.Language.GetCaption(key) + " (" + Game.Language.GetCaption("system.settings.restartrequired") + ")" : key;
+    }
 
-		public override string CaptionLabel()
-		{
-			if (changed && value != OS.GetCurrentVideoDriver().ToString().ToUpper())
-			{
-				return "system.settings.renderer";
-			}
-			return Game.Language.GetCaption("system.settings.renderer") + " (" + Game.Language.GetFormattedCaption("system.settings.current", OS.GetCurrentVideoDriver().ToString().ToUpper()) + ")";
-		}
+    public override void Decrement()
+    {
+      this.changed = true;
+      --this.selection;
+      if (this.selection < 0)
+        this.selection = RendererSetting.Options.Length - 1;
+      this.value = RendererSetting.Options[this.selection];
+    }
 
-		public RendererSetting()
-		{
-			changed = false;
-			value = Game.Settings.Renderer;
-			for (int i = 0; i < Options.Length; i++)
-			{
-				if (Options[i] == value)
-				{
-					selection = i;
-				}
-			}
-		}
+    public override void Increment()
+    {
+      this.changed = true;
+      ++this.selection;
+      if (this.selection >= RendererSetting.Options.Length)
+        this.selection = 0;
+      this.value = RendererSetting.Options[this.selection];
+    }
 
-		public override string ValueLabel()
-		{
-			string rendererText = ((!(value == "GLES2")) ? "system.settings.renderer.gles3" : "system.settings.renderer.gles2");
-			if (changed && value != OS.GetCurrentVideoDriver().ToString().ToUpper())
-			{
-				return Game.Language.GetCaption(rendererText) + " (" + Game.Language.GetCaption("system.settings.restartrequired") + ")";
-			}
-			return rendererText;
-		}
-
-		public override void Decrement()
-		{
-			changed = true;
-			selection--;
-			if (selection < 0)
-			{
-				selection = Options.Length - 1;
-			}
-			value = Options[selection];
-		}
-
-		public override void Increment()
-		{
-			changed = true;
-			selection++;
-			if (selection >= Options.Length)
-			{
-				selection = 0;
-			}
-			value = Options[selection];
-		}
-
-		public override void Apply()
-		{
-			Game.Settings.SetRenderer(value);
-		}
-	}
+    public override void Apply() => Game.Settings.SetRenderer(this.value);
+  }
 }

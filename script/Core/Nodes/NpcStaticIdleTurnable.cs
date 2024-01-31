@@ -1,102 +1,83 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Core.NpcStaticIdleTurnable
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 
+#nullable disable
 namespace LacieEngine.Core
 {
-	[Tool]
-	[ExportType(icon = "person")]
-	public class NpcStaticIdleTurnable : Node2D, ITurnable, IIdle, ICharaWithStates
-	{
-		private CharacterSprite nSprite;
+  [Tool]
+  [ExportType(icon = "person")]
+  public class NpcStaticIdleTurnable : Node2D, ITurnable, IIdle, ICharaWithStates
+  {
+    private CharacterSprite nSprite;
 
-		[Export(PropertyHint.None, "")]
-		public string CharacterId { get; set; }
+    [Export(PropertyHint.None, "")]
+    public string CharacterId { get; set; }
 
-		[Export(PropertyHint.None, "")]
-		public Direction.Enum DefaultDirection { get; set; } = LacieEngine.Core.Direction.Down;
+    [Export(PropertyHint.None, "")]
+    public LacieEngine.Core.Direction.Enum DefaultDirection { get; set; } = (LacieEngine.Core.Direction.Enum) LacieEngine.Core.Direction.Down;
 
+    [Export(PropertyHint.None, "")]
+    public bool TurningEnabled { get; set; } = true;
 
-		[Export(PropertyHint.None, "")]
-		public bool TurningEnabled { get; set; } = true;
+    [Export(PropertyHint.None, "")]
+    public string TurnSpriteState { get; set; } = "stand";
 
+    [Export(PropertyHint.None, "")]
+    public string IdleSpriteState { get; set; } = "idle";
 
-		[Export(PropertyHint.None, "")]
-		public string TurnSpriteState { get; set; } = "stand";
+    public LacieEngine.Core.Direction.Enum Direction
+    {
+      get => this.nSprite.Direction;
+      set => this.Turn((LacieEngine.Core.Direction) value);
+    }
 
+    public string SpriteState
+    {
+      get => this.nSprite.State;
+      set => this.nSprite.State = value;
+    }
 
-		[Export(PropertyHint.None, "")]
-		public string IdleSpriteState { get; set; } = "idle";
+    public override void _EnterTree()
+    {
+      if (Engine.EditorHint || !this.Validate())
+        return;
+      this.nSprite = this.EnsureNode<CharacterSprite>("Sprite");
+      this.nSprite.CharacterId = this.CharacterId;
+      this.nSprite.State = this.IdleSpriteState;
+      this.nSprite.Direction = this.DefaultDirection;
+      Game.Room.RegisteredNPCs[this.CharacterId] = (Node2D) this;
+    }
 
+    public void Turn(LacieEngine.Core.Direction direction)
+    {
+      if (!this.TurningEnabled)
+        return;
+      this.nSprite.State = this.TurnSpriteState;
+      this.nSprite.Direction = (LacieEngine.Core.Direction.Enum) direction;
+    }
 
-		public Direction.Enum Direction
-		{
-			get
-			{
-				return nSprite.Direction;
-			}
-			set
-			{
-				Turn(value);
-			}
-		}
+    public void TurnToDefault() => this.StartIdleAnimation();
 
-		public string SpriteState
-		{
-			get
-			{
-				return nSprite.State;
-			}
-			set
-			{
-				nSprite.State = value;
-			}
-		}
+    public void StartIdleAnimation() => this.nSprite.State = this.IdleSpriteState;
 
-		public override void _EnterTree()
-		{
-			if (!Engine.EditorHint && Validate())
-			{
-				nSprite = this.EnsureNode<CharacterSprite>("Sprite");
-				nSprite.CharacterId = CharacterId;
-				nSprite.State = IdleSpriteState;
-				nSprite.Direction = DefaultDirection;
-				Game.Room.RegisteredNPCs[CharacterId] = this;
-			}
-		}
+    public void StopIdleAnimation()
+    {
+      this.nSprite.State = this.TurnSpriteState;
+      this.nSprite.Direction = this.DefaultDirection;
+    }
 
-		public void Turn(Direction direction)
-		{
-			if (TurningEnabled)
-			{
-				nSprite.State = TurnSpriteState;
-				nSprite.Direction = direction;
-			}
-		}
-
-		public void TurnToDefault()
-		{
-			StartIdleAnimation();
-		}
-
-		public void StartIdleAnimation()
-		{
-			nSprite.State = IdleSpriteState;
-		}
-
-		public void StopIdleAnimation()
-		{
-			nSprite.State = TurnSpriteState;
-			nSprite.Direction = DefaultDirection;
-		}
-
-		private bool Validate()
-		{
-			if (CharacterId.IsNullOrEmpty())
-			{
-				Log.Error("Character ID not specified!");
-				return false;
-			}
-			return true;
-		}
-	}
+    private bool Validate()
+    {
+      if (!this.CharacterId.IsNullOrEmpty())
+        return true;
+      Log.Error((object) "Character ID not specified!");
+      return false;
+    }
+  }
 }

@@ -1,193 +1,166 @@
-using System;
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Audio.AudioManager
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
+using System;
 
+#nullable disable
 namespace LacieEngine.Audio
 {
-	[Injectable]
-	public class AudioManager : Node, IAudioManager, IModule
-	{
-		public const float DEFAULT_PLAYBACK_VOLUME = 1f;
+  [Injectable]
+  public class AudioManager : Node, IAudioManager, IModule
+  {
+    public const float DEFAULT_PLAYBACK_VOLUME = 1f;
+    public const float DEFAULT_FADEOUT_TIME = 1.5f;
+    public const float DEFAULT_VOLUMECHANGE_TIME = 0.5f;
+    public const Decimal MAX_VOLUME = 0.90M;
+    private const float TEXT_BEEP_FREQUENCY = 0.06f;
+    private AudioPlayer _bgmPlayer;
+    private AudioPlayer _ambiancePlayer;
+    private SamplePlayer _sfxPlayer;
+    private FixedSamplePlayer _textBeepPlayer;
+    private SamplePlayer _systemSfxPlayer;
 
-		public const float DEFAULT_FADEOUT_TIME = 1.5f;
+    public event Action VolumeChanged;
 
-		public const float DEFAULT_VOLUMECHANGE_TIME = 0.5f;
+    public event Action BgmStopped;
 
-		public const decimal MAX_VOLUME = 0.90m;
+    public AudioStream CurrentBgm => this._bgmPlayer.CurrentTrack;
 
-		private const float TEXT_BEEP_FREQUENCY = 0.06f;
+    public AudioManager() => this.Name = nameof (AudioManager);
 
-		private AudioPlayer _bgmPlayer;
+    public void Init()
+    {
+      AudioStreamPlayer player1_1 = GDUtil.MakeNode<AudioStreamPlayer>("BGM");
+      AudioStreamPlayer player2_1 = GDUtil.MakeNode<AudioStreamPlayer>("BGM2");
+      AudioStreamPlayer player1_2 = GDUtil.MakeNode<AudioStreamPlayer>("AmbianceSFX");
+      AudioStreamPlayer player2_2 = GDUtil.MakeNode<AudioStreamPlayer>("AmbianceSFX2");
+      AudioStreamPlayer audioStreamPlayer1 = GDUtil.MakeNode<AudioStreamPlayer>("SFX1");
+      AudioStreamPlayer audioStreamPlayer2 = GDUtil.MakeNode<AudioStreamPlayer>("SFX2");
+      AudioStreamPlayer audioStreamPlayer3 = GDUtil.MakeNode<AudioStreamPlayer>("SFX3");
+      AudioStreamPlayer player = GDUtil.MakeNode<AudioStreamPlayer>("TextBeepSFX");
+      AudioStreamPlayer audioStreamPlayer4 = GDUtil.MakeNode<AudioStreamPlayer>("SystemSFX");
+      this._bgmPlayer = new AudioPlayer(player1_1, player2_1);
+      this._ambiancePlayer = new AudioPlayer(player1_2, player2_2);
+      this._sfxPlayer = new SamplePlayer(new AudioStreamPlayer[3]
+      {
+        audioStreamPlayer1,
+        audioStreamPlayer2,
+        audioStreamPlayer3
+      });
+      this._textBeepPlayer = new FixedSamplePlayer(player, GD.Load<AudioStream>("res://assets/sfx/ui_text.ogg"));
+      this._textBeepPlayer.Frequency = 0.06f;
+      this._systemSfxPlayer = new SamplePlayer(new AudioStreamPlayer[1]
+      {
+        audioStreamPlayer4
+      });
+      this.AddChild((Node) player1_1);
+      this.AddChild((Node) player2_1);
+      this.AddChild((Node) player1_2);
+      this.AddChild((Node) player2_2);
+      this.AddChild((Node) audioStreamPlayer1);
+      this.AddChild((Node) audioStreamPlayer2);
+      this.AddChild((Node) audioStreamPlayer3);
+      this.AddChild((Node) player);
+      this.AddChild((Node) audioStreamPlayer4);
+      Game.Root.AddChild((Node) this);
+    }
 
-		private AudioPlayer _ambiancePlayer;
+    public void PlayBgm(AudioStream track, float volume, bool crossFade)
+    {
+      this._bgmPlayer.Play(track, volume, crossFade);
+    }
 
-		private SamplePlayer _sfxPlayer;
+    public void PlayBgm(AudioStream track, float volume) => this.PlayBgm(track, volume, false);
 
-		private FixedSamplePlayer _textBeepPlayer;
+    public void PlayBgm(AudioStream track) => this.PlayBgm(track, 1f);
 
-		private SamplePlayer _systemSfxPlayer;
+    public void ChangeBgmVolume(float volume, float time)
+    {
+      this._bgmPlayer.ChangeVolume(volume, time);
+    }
 
-		public AudioStream CurrentBgm => _bgmPlayer.CurrentTrack;
+    public void ChangeBgmVolume(float volume) => this.ChangeBgmVolume(volume, 0.5f);
 
-		public event Action VolumeChanged;
+    public void StopBgm()
+    {
+      this._bgmPlayer.Stop();
+      Action bgmStopped = this.BgmStopped;
+      if (bgmStopped == null)
+        return;
+      bgmStopped();
+    }
 
-		public event Action BgmStopped;
+    public void StopBgm(float time)
+    {
+      this._bgmPlayer.Stop(time);
+      Action bgmStopped = this.BgmStopped;
+      if (bgmStopped == null)
+        return;
+      bgmStopped();
+    }
 
-		public AudioManager()
-		{
-			base.Name = "AudioManager";
-		}
+    public void PlayAmbiance(AudioStream track, float volume)
+    {
+      this._ambiancePlayer.Play(track, volume);
+    }
 
-		public void Init()
-		{
-			AudioStreamPlayer nBGM = GDUtil.MakeNode<AudioStreamPlayer>("BGM");
-			AudioStreamPlayer nBGM2 = GDUtil.MakeNode<AudioStreamPlayer>("BGM2");
-			AudioStreamPlayer nAmbianceSFX = GDUtil.MakeNode<AudioStreamPlayer>("AmbianceSFX");
-			AudioStreamPlayer nAmbianceSFX2 = GDUtil.MakeNode<AudioStreamPlayer>("AmbianceSFX2");
-			AudioStreamPlayer nSFX1 = GDUtil.MakeNode<AudioStreamPlayer>("SFX1");
-			AudioStreamPlayer nSFX2 = GDUtil.MakeNode<AudioStreamPlayer>("SFX2");
-			AudioStreamPlayer nSFX3 = GDUtil.MakeNode<AudioStreamPlayer>("SFX3");
-			AudioStreamPlayer nTextBeepSFX = GDUtil.MakeNode<AudioStreamPlayer>("TextBeepSFX");
-			AudioStreamPlayer nSystemSfx = GDUtil.MakeNode<AudioStreamPlayer>("SystemSFX");
-			_bgmPlayer = new AudioPlayer(nBGM, nBGM2);
-			_ambiancePlayer = new AudioPlayer(nAmbianceSFX, nAmbianceSFX2);
-			_sfxPlayer = new SamplePlayer(new AudioStreamPlayer[3] { nSFX1, nSFX2, nSFX3 });
-			_textBeepPlayer = new FixedSamplePlayer(nTextBeepSFX, GD.Load<AudioStream>("res://assets/sfx/ui_text.ogg"));
-			_textBeepPlayer.Frequency = 0.06f;
-			_systemSfxPlayer = new SamplePlayer(new AudioStreamPlayer[1] { nSystemSfx });
-			AddChild(nBGM);
-			AddChild(nBGM2);
-			AddChild(nAmbianceSFX);
-			AddChild(nAmbianceSFX2);
-			AddChild(nSFX1);
-			AddChild(nSFX2);
-			AddChild(nSFX3);
-			AddChild(nTextBeepSFX);
-			AddChild(nSystemSfx);
-			Game.Root.AddChild(this);
-		}
+    public void PlayAmbiance(AudioStream track) => this.PlayAmbiance(track, 1f);
 
-		public void PlayBgm(AudioStream track, float volume, bool crossFade)
-		{
-			_bgmPlayer.Play(track, volume, crossFade);
-		}
+    public void PlayAmbiance(string path) => this.PlayAmbiance(GD.Load<AudioStream>(path));
 
-		public void PlayBgm(AudioStream track, float volume)
-		{
-			PlayBgm(track, volume, crossFade: false);
-		}
+    public void ChangeAmbianceVolume(float volume, float time)
+    {
+      this._ambiancePlayer.ChangeVolume(volume, time);
+    }
 
-		public void PlayBgm(AudioStream track)
-		{
-			PlayBgm(track, 1f);
-		}
+    public void ChangeAmbianceVolume(float volume) => this.ChangeAmbianceVolume(volume, 0.5f);
 
-		public void ChangeBgmVolume(float volume, float time)
-		{
-			_bgmPlayer.ChangeVolume(volume, time);
-		}
+    public void StopAmbiance() => this._ambiancePlayer.Stop();
 
-		public void ChangeBgmVolume(float volume)
-		{
-			ChangeBgmVolume(volume, 0.5f);
-		}
+    public void StopAmbiance(float time) => this._ambiancePlayer.Stop(time);
 
-		public void StopBgm()
-		{
-			_bgmPlayer.Stop();
-			this.BgmStopped?.Invoke();
-		}
+    public void PlaySfx(AudioStream track, float volume) => this._sfxPlayer.Play(track, volume);
 
-		public void StopBgm(float time)
-		{
-			_bgmPlayer.Stop(time);
-			this.BgmStopped?.Invoke();
-		}
+    public void PlaySfx(AudioStream track) => this.PlaySfx(track, 1f);
 
-		public void PlayAmbiance(AudioStream track, float volume)
-		{
-			_ambiancePlayer.Play(track, volume);
-		}
+    public void PlaySfx(string path, float volume)
+    {
+      this.PlaySfx(GD.Load<AudioStream>(path), volume);
+    }
 
-		public void PlayAmbiance(AudioStream track)
-		{
-			PlayAmbiance(track, 1f);
-		}
+    public void PlaySfx(string path) => this.PlaySfx(path, 1f);
 
-		public void PlayAmbiance(string path)
-		{
-			PlayAmbiance(GD.Load<AudioStream>(path));
-		}
+    public void StopSfx() => this._sfxPlayer.Stop();
 
-		public void ChangeAmbianceVolume(float volume, float time)
-		{
-			_ambiancePlayer.ChangeVolume(volume, time);
-		}
+    public void PlayTextBeepSound() => this._textBeepPlayer.Play();
 
-		public void ChangeAmbianceVolume(float volume)
-		{
-			ChangeAmbianceVolume(volume, 0.5f);
-		}
+    public void PlaySystemSound(string path)
+    {
+      this._systemSfxPlayer.Play(GD.Load<AudioStream>(path));
+    }
 
-		public void StopAmbiance()
-		{
-			_ambiancePlayer.Stop();
-		}
+    public void UpdateVolume()
+    {
+      this._bgmPlayer.MaxVolume = this.CalculateMaxVolume(Game.Settings.VolumeBgm);
+      this._ambiancePlayer.MaxVolume = this.CalculateMaxVolume(Game.Settings.VolumeSfx);
+      this._sfxPlayer.MaxVolume = this.CalculateMaxVolume(Game.Settings.VolumeSfx);
+      this._textBeepPlayer.MaxVolume = this.CalculateMaxVolume(Game.Settings.VolumeText);
+      this._systemSfxPlayer.MaxVolume = this.CalculateMaxVolume(Game.Settings.VolumeSystem);
+      Action volumeChanged = this.VolumeChanged;
+      if (volumeChanged == null)
+        return;
+      volumeChanged();
+    }
 
-		public void StopAmbiance(float time)
-		{
-			_ambiancePlayer.Stop(time);
-		}
-
-		public void PlaySfx(AudioStream track, float volume)
-		{
-			_sfxPlayer.Play(track, volume);
-		}
-
-		public void PlaySfx(AudioStream track)
-		{
-			PlaySfx(track, 1f);
-		}
-
-		public void PlaySfx(string path, float volume)
-		{
-			PlaySfx(GD.Load<AudioStream>(path), volume);
-		}
-
-		public void PlaySfx(string path)
-		{
-			PlaySfx(path, 1f);
-		}
-
-		public void StopSfx()
-		{
-			_sfxPlayer.Stop();
-		}
-
-		public void PlayTextBeepSound()
-		{
-			_textBeepPlayer.Play();
-		}
-
-		public void PlaySystemSound(string path)
-		{
-			_systemSfxPlayer.Play(GD.Load<AudioStream>(path));
-		}
-
-		public void UpdateVolume()
-		{
-			_bgmPlayer.MaxVolume = CalculateMaxVolume(Game.Settings.VolumeBgm);
-			_ambiancePlayer.MaxVolume = CalculateMaxVolume(Game.Settings.VolumeSfx);
-			_sfxPlayer.MaxVolume = CalculateMaxVolume(Game.Settings.VolumeSfx);
-			_textBeepPlayer.MaxVolume = CalculateMaxVolume(Game.Settings.VolumeText);
-			_systemSfxPlayer.MaxVolume = CalculateMaxVolume(Game.Settings.VolumeSystem);
-			this.VolumeChanged?.Invoke();
-		}
-
-		private float CalculateMaxVolume(decimal value)
-		{
-			return (float)((decimal)((!Game.Settings.MuteAudio) ? 1 : 0) * Game.Settings.VolumeMaster * 0.90m * value);
-		}
-	}
+    private float CalculateMaxVolume(Decimal value)
+    {
+      return (float) ((Decimal) (!Game.Settings.MuteAudio ? 1 : 0) * Game.Settings.VolumeMaster * 0.90M * value);
+    }
+  }
 }

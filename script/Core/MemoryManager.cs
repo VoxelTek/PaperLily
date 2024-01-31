@@ -1,94 +1,89 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Core.MemoryManager
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
+using Godot;
+using LacieEngine.API;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Godot;
-using LacieEngine.API;
 
+#nullable disable
 namespace LacieEngine.Core
 {
-	[Injectable]
-	public class MemoryManager : Node, IMemoryManager, IModule
-	{
-		private Dictionary<string, Resource> systemCache;
+  [Injectable]
+  public class MemoryManager : Node, IMemoryManager, IModule
+  {
+    private Dictionary<string, Resource> systemCache;
+    private Dictionary<string, Resource> userCache;
+    private Queue<string> _loadQueue;
+    private Task _task;
 
-		private Dictionary<string, Resource> userCache;
+    public void Init()
+    {
+      if (this.IsInsideTree())
+        return;
+      this.Name = "CacheAgent";
+      this.systemCache = new Dictionary<string, Resource>();
+      this.userCache = new Dictionary<string, Resource>();
+      this._loadQueue = new Queue<string>();
+      Game.Root.AddChild((Node) this);
+    }
 
-		private Queue<string> _loadQueue;
+    public void Cache(string path)
+    {
+      if (this.userCache.ContainsKey(path))
+        return;
+      this._loadQueue.Enqueue(path);
+    }
 
-		private Task _task;
+    public void SystemCache(string path)
+    {
+      if (this.systemCache.ContainsKey(path))
+        return;
+      this.systemCache[path] = ResourceLoader.Load(path);
+    }
 
-		public void Init()
-		{
-			if (!IsInsideTree())
-			{
-				base.Name = "CacheAgent";
-				systemCache = new Dictionary<string, Resource>();
-				userCache = new Dictionary<string, Resource>();
-				_loadQueue = new Queue<string>();
-				Game.Root.AddChild(this);
-			}
-		}
+    public void Clean()
+    {
+      this.userCache.Clear();
+      this.ForceGC();
+    }
 
-		public void Cache(string path)
-		{
-			if (!userCache.ContainsKey(path))
-			{
-				_loadQueue.Enqueue(path);
-			}
-		}
+    public async Task WaitForCompletion()
+    {
+      this.StartBackgroundLoading();
+      while (!this._loadQueue.IsEmpty<string>())
+        await GDUtil.DelayOneFrame();
+    }
 
-		public void SystemCache(string path)
-		{
-			if (!systemCache.ContainsKey(path))
-			{
-				systemCache[path] = ResourceLoader.Load(path);
-			}
-		}
+    private void ForceGC()
+    {
+      GC.Collect();
+      GC.WaitForPendingFinalizers();
+      GC.Collect();
+    }
 
-		public void Clean()
-		{
-			userCache.Clear();
-			ForceGC();
-		}
+    private void StartBackgroundLoading()
+    {
+      if (this._task != null && !this._task.IsCompleted)
+        return;
+      this._task = Task.Run((Action) (() => this.BackgroundLoadingProc()));
+    }
 
-		public async Task WaitForCompletion()
-		{
-			StartBackgroundLoading();
-			while (!_loadQueue.IsEmpty())
-			{
-				await GDUtil.DelayOneFrame();
-			}
-		}
-
-		private void ForceGC()
-		{
-			GC.Collect();
-			GC.WaitForPendingFinalizers();
-			GC.Collect();
-		}
-
-		private void StartBackgroundLoading()
-		{
-			if (_task == null || _task.IsCompleted)
-			{
-				_task = Task.Run(delegate
-				{
-					BackgroundLoadingProc();
-				});
-			}
-		}
-
-		private void BackgroundLoadingProc()
-		{
-			while (!_loadQueue.IsEmpty())
-			{
-				if (!_loadQueue.IsEmpty())
-				{
-					string path = _loadQueue.Peek();
-					userCache[path] = ResourceLoader.Load(path);
-					_loadQueue.Dequeue();
-				}
-			}
-		}
-	}
+    private void BackgroundLoadingProc()
+    {
+      while (!this._loadQueue.IsEmpty<string>())
+      {
+        if (!this._loadQueue.IsEmpty<string>())
+        {
+          string str = this._loadQueue.Peek();
+          this.userCache[str] = ResourceLoader.Load(str);
+          this._loadQueue.Dequeue();
+        }
+      }
+    }
+  }
 }

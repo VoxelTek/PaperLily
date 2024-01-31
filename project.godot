@@ -14,12 +14,222 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Lacie Packer"
+config/name="Lacie Engine"
+run/main_scene="res://Initializer.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Paper Lily"
+config/project_settings_override="user://engine.cfg"
+boot_splash/image="res://splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
+config/custom_user_dir_name.tamajump="Tamaghost Jump"
+
+[debug]
+
+shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=1920
+window/size/test_height=1005
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [editor]
 
+script_templates_search_path="res://addons/lacie_engine/script_templates"
 convert_text_resources_to_binary_on_export=true
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_select={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_focus_next={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_focus_prev={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_page_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_page_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_home={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_end={
+"deadzone": 0.5,
+"events": [  ]
+}
+
+[lacie_engine]
+
+core/game_name="Paper Lily Chapter 1"
+core/game_version="1.1.0"
+core/game_copyright="Leef 6010 2024"
+core/engine_version="1.5.0"
+core/translation_base_locale="en"
+core/translation_base_name="English"
+core/translation_selected=""
+core/translation_selected.tamajump="en"
+core/translation_extra_enabled=false
+core/website_enabled=true
+core/website_enabled.steam=false
+core/website_link=""
+core/website_link.steam=""
+core/website_link.projectkat="https://leef6010.itch.io/projectkat"
+core/website_link.paperlilydemo="https://leef6010.itch.io/paper-lily-chapter-1"
+core/website_caption="system.menu.website.itchio"
+core/website_caption.steam=""
+core/save_key="54c35c94b65d837d9e8f77ddc6376439"
+core/lsb_key="orcu7zqciydwhf3psei8zm3wgc9frsz2"
+core/new_game_event="ch1_intro"
+core/new_game_event.projectkat="prologue_tutorial"
+core/new_game_event.paperlilydemo="ch1_intro"
+core/new_game_event.tamajump="tamajump_init"
+core/scene_provider="res://resources/resourceprovider/paperlilydemo_scenes.tres"
+core/scene_provider.projectkat="res://resources/resourceprovider/projectkat_scenes.tres"
+core/scene_provider.paperlilydemo="res://resources/resourceprovider/paperlilydemo_scenes.tres"
+core/scene_provider.tamajump="res://resources/resourceprovider/tamajump_scenes.tres"
+core/ui_provider="res://resources/resourceprovider/paperlily_ui.tres"
+core/ui_provider.tamajump="res://resources/resourceprovider/tamajump_ui.tres"
+core/default_character="lacie"
+core/default_character.projectkat="kat"
+game/skip_enabled=false
+game/objective_notifications=true
+audio/volume_master=0.8
+audio/volume_bgm=0.8
+audio/volume_sfx=0.8
+audio/volume_system=0.8
+audio/volume_text=0.8
+audio/mute=false
+video/brightness=1.0
+video/contrast=1.0
+video/saturation=1.0
+video/gamma=0.0
+video/resolution_scale_pixel=2
+video/base_resolution=Vector2( 640, 360 )
+video/fps_limit="vsync"
+input/hide_cursor=true
+input/profile="classic"
+input/default_profile="classic"
+input/default_profile_kb="classic"
+input/default_profile_pad="xbox"
+input/profile_custom=false
+input/auto_switch=true
+input/joystick_deadzone=0.2
+platform/steam=false
+platform/steam.steam=true
+platform/steam_app_id=1698960
+platform/steam_app_id.projectkat=1698960
+platform/steam_app_id.paperlilydemo=2220360
+debug/debug_room="Debug_Room"
+debug/quickstart/enabled=false
+debug/quickstart/room=""
+debug/quickstart/point=""
+core/translation_locale="en"
+
+[layer_names]
+
+2d_render/layer_1="Environment"
+2d_render/layer_2="Player"
+2d_render/layer_3="Mirrors"
+2d_render/layer_20="GuiTransparency"
+2d_physics/layer_1="Interactables"
+2d_physics/layer_2="Walls"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Passthrough"
+2d_physics/layer_5="Pushables"
+
+[locale]
+
+translation_remaps={
+}
+
+[logging]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/game.log"
 
 [mono]
 
+runtime/unhandled_exception_policy=1
 project/assembly_name="Lacie Packer"
+unhandled_exception_policy=1
+
+[physics]
+
+common/physics_jitter_fix=0.0
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+batching/precision/uv_contract=true
+quality/2d/use_pixel_snap=false

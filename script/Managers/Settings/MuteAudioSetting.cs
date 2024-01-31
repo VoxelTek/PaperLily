@@ -1,39 +1,30 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: LacieEngine.Settings.MuteAudioSetting
+// Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
+// Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
+
 using LacieEngine.Core;
 
+#nullable disable
 namespace LacieEngine.Settings
 {
-	internal class MuteAudioSetting : Setting<bool>
-	{
-		private bool value;
+  internal class MuteAudioSetting : Setting<bool>
+  {
+    private bool value;
 
-		public MuteAudioSetting()
-		{
-			base.Name = "system.settings.volume.mute";
-			value = Game.Settings.MuteAudio;
-		}
+    public MuteAudioSetting()
+    {
+      this.Name = "system.settings.volume.mute";
+      this.value = Game.Settings.MuteAudio;
+    }
 
-		public override string ValueLabel()
-		{
-			if (!value)
-			{
-				return "system.common.no";
-			}
-			return "system.common.yes";
-		}
+    public override string ValueLabel() => !this.value ? "system.common.no" : "system.common.yes";
 
-		public override void Decrement()
-		{
-			value = !value;
-		}
+    public override void Decrement() => this.value = !this.value;
 
-		public override void Increment()
-		{
-			value = !value;
-		}
+    public override void Increment() => this.value = !this.value;
 
-		public override void Apply()
-		{
-			Game.Settings.SetMuteAudio(value);
-		}
-	}
+    public override void Apply() => Game.Settings.SetMuteAudio(this.value);
+  }
 }
