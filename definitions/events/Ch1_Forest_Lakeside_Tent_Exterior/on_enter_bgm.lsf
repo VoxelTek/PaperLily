@@ -1,7 +1,7 @@
 label START
-    if not var ch1.forest_moths_seen
-        audio bgm stop
-        end
-    if var ch1.forest_moths_killed_caterpillar
-        audio bgm play ch1_lakeside_2
-    end
+	if not var ch1.forest_moths_seen
+		audio bgm stop
+		end
+	if var ch1.forest_moths_killed_caterpillar
+		audio bgm play ch1_lakeside_2
+	end

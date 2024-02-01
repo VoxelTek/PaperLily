@@ -1,13 +1,13 @@
 label START
-    "Scrolls containing technical drawings of different locations."
-    if repeat end
-    if character sai
-        chara set lacie at left
-        chara set sai at right
-        sai "What's that?" mood thinking4
-        lacie "I don't know." mood reflective4
-    lacie "It looks like it's just hallways."
-    lacie "But it's laid out like a labyrinth, and some rooms overlap each other." mood reflective6
-    if character sai
-        lacie "This map doesn't make any sense." mood confused2
-    end
+	"Scrolls containing technical drawings of different locations."
+	if repeat end
+	if character sai
+		chara set lacie at left
+		chara set sai at right
+		sai "What's that?" mood thinking4
+		lacie "I don't know." mood reflective4
+	lacie "It looks like it's just hallways."
+	lacie "But it's laid out like a labyrinth, and some rooms overlap each other." mood reflective6
+	if character sai
+		lacie "This map doesn't make any sense." mood confused2
+	end

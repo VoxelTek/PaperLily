@@ -1,11 +1,11 @@
 label START
-    if var ch1.facility_bathroom_took_coin end
-    "Something shiny can be seen at the bottom of the toilet bowl."
-    choice "Fish it out?"
-        "Yes"
-            continue
-        "No"
-            end
-    set ch1.facility_bathroom_took_coin = true
-    event call ch1_item_coin_get
-    end
+	if var ch1.facility_bathroom_took_coin end
+	"Something shiny can be seen at the bottom of the toilet bowl."
+	choice "Fish it out?"
+		"Yes"
+			continue
+		"No"
+			end
+	set ch1.facility_bathroom_took_coin = true
+	event call ch1_item_coin_get
+	end

@@ -1,6 +1,6 @@
 label START
-    if var general.serious
-        "A tall plant."
-        end
-    "A tall, pretty plant."
-    end
+	if var general.serious
+		"A tall plant."
+		end
+	"A tall, pretty plant."
+	end

@@ -1,4 +1,4 @@
 label START
-    if var ch1.mk_rescued_sai end
-    if var general.serious end
-    "The key does not fit."
+	if var ch1.mk_rescued_sai end
+	if var general.serious end
+	"The key does not fit."

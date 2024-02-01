@@ -1,6 +1,6 @@
 label START
-    if var general.serious
-        "A gaming console."
-        end
-    "There's no time for games right now."
-    end
+	if var general.serious
+		"A gaming console."
+		end
+	"There's no time for games right now."
+	end

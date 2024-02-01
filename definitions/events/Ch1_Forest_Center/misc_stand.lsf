@@ -1,33 +1,33 @@
 label START
-    if not repeat
-        "The sign says \"Alba's Shop\""
-        chara rename alba off
-    if var ch1.forest_center_alba_bought_all jump OUT_OF_STOCK
-    if var ch1.forest_center_campfire_on jump SHOP_OPEN
-    "A curtain covers the stand."
-    if repeat end
-    choice "Peek behind curtain?"
-        "Yes"
-            jump PEEK
-        "No"
-            jump DONT_PEEK
-    end
+	if not repeat
+		"The sign says \"Alba's Shop\""
+		chara rename alba off
+	if var ch1.forest_center_alba_bought_all jump OUT_OF_STOCK
+	if var ch1.forest_center_campfire_on jump SHOP_OPEN
+	"A curtain covers the stand."
+	if repeat end
+	choice "Peek behind curtain?"
+		"Yes"
+			jump PEEK
+		"No"
+			jump DONT_PEEK
+	end
 
 label PEEK
-    hide ui
-    system call PeekBehindCurtain
-    pause 1
-    "There's some trays aligned for display, but there's nothing on them."
-    end
+	hide ui
+	system call PeekBehindCurtain
+	pause 1
+	"There's some trays aligned for display, but there's nothing on them."
+	end
 
 label DONT_PEEK
-    "You decided to save your curiosity for later."
-    end
+	"You decided to save your curiosity for later."
+	end
 
 label SHOP_OPEN
-    "A stand lined up with fish of various sizes."
-    end
+	"A stand lined up with fish of various sizes."
+	end
 
 label OUT_OF_STOCK
-    "The shop is closed for today."
-    end
+	"The shop is closed for today."
+	end

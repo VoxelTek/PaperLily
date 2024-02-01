@@ -1,9 +1,9 @@
 label START
-    if var ch1.mk_clear
-        move to Ch1_Facility_B3F_East point entrance
-        end
-    audio bgm stop time 6
-    move to Ch1_Facility_B3F_MK point entrance
-    set ch1.facility_rune_gone = true
-    system call RemoveInventory
-    end
+	if var ch1.mk_clear
+		move to Ch1_Facility_B3F_East point entrance
+		end
+	audio bgm stop time 6
+	move to Ch1_Facility_B3F_MK point entrance
+	set ch1.facility_rune_gone = true
+	system call RemoveInventory
+	end

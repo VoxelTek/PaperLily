@@ -1,9 +1,9 @@
 label START
-    audio sfx play ch1_strangle
-    audio bgm stop time 0
-    audio ambiance stop time 0
-    fade flash color "#850000" continue
-    cg show ch1/death_pain_2a time 0
-    pause 2
-    fade out time 4
-    event queue ch1_death_finally
+	audio sfx play ch1_strangle
+	audio bgm stop time 0
+	audio ambiance stop time 0
+	fade flash color "#850000" continue
+	cg show ch1/death_pain_2a time 0
+	pause 2
+	fade out time 4
+	event queue ch1_death_finally

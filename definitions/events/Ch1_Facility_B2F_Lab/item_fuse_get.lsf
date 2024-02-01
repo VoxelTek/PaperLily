@@ -1,6 +1,6 @@
 label START
-    if var ch1.facility_lab_took_fuse_floor end
-    set ch1.facility_lab_took_fuse_floor = true
-    system refresh
-    item add ch1.facility_fuse_20
-    end
+	if var ch1.facility_lab_took_fuse_floor end
+	set ch1.facility_lab_took_fuse_floor = true
+	system refresh
+	item add ch1.facility_fuse_20
+	end

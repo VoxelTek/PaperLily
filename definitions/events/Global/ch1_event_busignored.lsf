@@ -1,29 +1,29 @@
 label START
-    if repeat end
-    if not objective ch1.take_bus inprogress end
-    if var ch1.bus_not_there
-        lacie "I think... I messed up. The bus wasn't there..." mood hide3
-        lacie "Did I take too long? Or was my it the phone call?"
-        hide ui
-        pause 1
-        lacie "I guess I'll try again, some other day." mood sigh
-    if not var ch1.bus_not_there
-        audio ambiance volume 0.4
-        audio sfx play bus_leave volume 0.4
-        pause 2
-        audio ambiance stop
-        audio ambiance volume 1
-        pause 2
-        "(You hear the bus take off.)"
-        hide ui
-        pause 1
-        lacie "I couldn't do it." mood concerned10
-        lacie "The bus was right there but..." mood concerned11
-        lacie "Getting on a strange bus that takes me to my death isn't as easy as it seems." mood reflective6
-        hide ui
-        pause 1
-        lacie "I'll... prepare myself mentally and try again, some other day." mood sigh
-    set ch1.bus_not_there = true
-    set ch1.home_ritualbuswaiting = false
-    event call ch1_event_busfail
-    end
+	if repeat end
+	if not objective ch1.take_bus inprogress end
+	if var ch1.bus_not_there
+		lacie "I think... I messed up. The bus wasn't there..." mood hide3
+		lacie "Did I take too long? Or was my it the phone call?"
+		hide ui
+		pause 1
+		lacie "I guess I'll try again, some other day." mood sigh
+	if not var ch1.bus_not_there
+		audio ambiance volume 0.4
+		audio sfx play bus_leave volume 0.4
+		pause 2
+		audio ambiance stop
+		audio ambiance volume 1
+		pause 2
+		"(You hear the bus take off.)"
+		hide ui
+		pause 1
+		lacie "I couldn't do it." mood concerned10
+		lacie "The bus was right there but..." mood concerned11
+		lacie "Getting on a strange bus that takes me to my death isn't as easy as it seems." mood reflective6
+		hide ui
+		pause 1
+		lacie "I'll... prepare myself mentally and try again, some other day." mood sigh
+	set ch1.bus_not_there = true
+	set ch1.home_ritualbuswaiting = false
+	event call ch1_event_busfail
+	end

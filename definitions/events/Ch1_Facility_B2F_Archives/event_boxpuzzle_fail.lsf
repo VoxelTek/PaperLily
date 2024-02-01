@@ -1,4 +1,4 @@
 label START
-    move to Ch1_Facility_B2F_Hallway_West point from_archive
-    event call event_react_fail_puzzle
-    end
+	move to Ch1_Facility_B2F_Hallway_West point from_archive
+	event call event_react_fail_puzzle
+	end

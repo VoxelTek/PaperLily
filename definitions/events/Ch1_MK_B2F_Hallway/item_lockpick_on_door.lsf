@@ -1,8 +1,8 @@
 label START
-    if var ch1.mk_unlocked_bedroom end
-    if not character sai
-        "You don't know how to use it..."
-        end
-    event call ch1_event_lockpick_sai_first
-    system minigame ch1_lockpick_sai
-    end
+	if var ch1.mk_unlocked_bedroom end
+	if not character sai
+		"You don't know how to use it..."
+		end
+	event call ch1_event_lockpick_sai_first
+	system minigame ch1_lockpick_sai
+	end

@@ -1,7 +1,7 @@
 label START
-    if var ch1.forest_lakeside_removed_mermaid end
-    if var ch1.temp_lakeside_merm_outside end
-    set ch1.temp_lakeside_merm_outside = true
-    audio sfx play water3
-    audio sfx play water_splash_3
-    action call merm_grab
+	if var ch1.forest_lakeside_removed_mermaid end
+	if var ch1.temp_lakeside_merm_outside end
+	set ch1.temp_lakeside_merm_outside = true
+	audio sfx play water3
+	audio sfx play water_splash_3
+	action call merm_grab

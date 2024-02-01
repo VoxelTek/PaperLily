@@ -1,23 +1,23 @@
 label START
-    if var ch1.temp_ending_1_12_sai_dead jump DEAD
-    if repeat 3 jump AGAIN_2
-    if repeat jump AGAIN
-    lacie "Are you sure you'll be okay?" mood concerned2
-    sai "Yeah for sure!" mood hurt6
-    sai "Tip top shape." mood hurt7
-    lacie "..."
-    end
+	if var ch1.temp_ending_1_12_sai_dead jump DEAD
+	if repeat 3 jump AGAIN_2
+	if repeat jump AGAIN
+	lacie "Are you sure you'll be okay?" mood concerned2
+	sai "Yeah for sure!" mood hurt6
+	sai "Tip top shape." mood hurt7
+	lacie "..."
+	end
 
 label AGAIN
-    chara set lacie at left
-    chara set sai at right
-    sai "Take your time." mood hurt1
-    sai "I mean... it's not like I'm bleeding out or anything." mood hurt2
-    end
+	chara set lacie at left
+	chara set sai at right
+	sai "Take your time." mood hurt1
+	sai "I mean... it's not like I'm bleeding out or anything." mood hurt2
+	end
 
 label AGAIN_2
-    lacie "(I need to find an exit fast.)" mood concerned
-    end
+	lacie "(I need to find an exit fast.)" mood concerned
+	end
 
 label DEAD
-    "Sai is not moving."
+	"Sai is not moving."

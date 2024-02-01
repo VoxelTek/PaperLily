@@ -1,6 +1,6 @@
 label START
-    item remove ch1.rainbow_potion
-    set general.maxhp.lacie ++
-    set general.hp.lacie ++
-    pause 1
-    "You feel somewhat stronger now."
+	item remove ch1.rainbow_potion
+	set general.maxhp.lacie ++
+	set general.hp.lacie ++
+	pause 1
+	"You feel somewhat stronger now."

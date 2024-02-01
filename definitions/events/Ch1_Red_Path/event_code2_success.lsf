@@ -1,9 +1,9 @@
 label START
-    fade out
-    set ch1.forest_red_passage_gate_2_open = true
-    system refresh
-    system retry-save
-    pause 0.5
-    audio sfx play gate
-    pause 1
-    fade in
+	fade out
+	set ch1.forest_red_passage_gate_2_open = true
+	system refresh
+	system retry-save
+	pause 0.5
+	audio sfx play gate
+	pause 1
+	fade in

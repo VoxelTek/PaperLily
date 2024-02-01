@@ -1,4 +1,4 @@
 label START
-    pause 0.5
-    "Nothing happened."
-    end
+	pause 0.5
+	"Nothing happened."
+	end

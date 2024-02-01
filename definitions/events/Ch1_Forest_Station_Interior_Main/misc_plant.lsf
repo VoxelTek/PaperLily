@@ -1,5 +1,5 @@
 label START
-    if not var ch1.forest_station_cut_interior
-        "A half-withered plant."
-    else
-        "A dead plant."
+	if not var ch1.forest_station_cut_interior
+		"A half-withered plant."
+	else
+		"A dead plant."

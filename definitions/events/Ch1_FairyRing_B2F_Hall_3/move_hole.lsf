@@ -1,18 +1,18 @@
 label START
-    "There's another large hole on the floor."
-    choice "Jump down?"
-        "Yes"
-            continue
-        "No"
-            end
-    lacie "..." mood reflective7
-    lacie "It's not like there's anywhere else to go." mood reflective8
-    aoi "Wanna turn back?" mood embarassed
-    lacie "No, the further away from those heads we go, the better." mood reflective2
-    aoi "Okay." mood pout5
-    fade out
-    move to Ch1_FairyRing_B3F_Bath point entrance
-    pause 1
-    fade in time 2
-    pause 1.5
-    lacie "I'm starting to doubt there's an exit, with how deep we've gone..." mood reflective3
+	"There's another large hole on the floor."
+	choice "Jump down?"
+		"Yes"
+			continue
+		"No"
+			end
+	lacie "..." mood reflective7
+	lacie "It's not like there's anywhere else to go." mood reflective8
+	aoi "Wanna turn back?" mood embarassed
+	lacie "No, the further away from those heads we go, the better." mood reflective2
+	aoi "Okay." mood pout5
+	fade out
+	move to Ch1_FairyRing_B3F_Bath point entrance
+	pause 1
+	fade in time 2
+	pause 1.5
+	lacie "I'm starting to doubt there's an exit, with how deep we've gone..." mood reflective3

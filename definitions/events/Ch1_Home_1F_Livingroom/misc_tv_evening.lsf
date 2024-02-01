@@ -1,4 +1,4 @@
 label START
-    if repeat end
-    lacie "Just animal videos, I guess." mood blank1
-    lacie "\"Give them bread and cats and they will never revolt.\"" mood blank2
+	if repeat end
+	lacie "Just animal videos, I guess." mood blank1
+	lacie "\"Give them bread and cats and they will never revolt.\"" mood blank2

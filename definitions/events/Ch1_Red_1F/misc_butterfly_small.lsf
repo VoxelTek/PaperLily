@@ -1,5 +1,5 @@
 label START
-    "A small blue butterfly on display."
-    if var ch1.forest_red_seen_large_butterfly
-        "It's not as mesmerizing."
-    end
+	"A small blue butterfly on display."
+	if var ch1.forest_red_seen_large_butterfly
+		"It's not as mesmerizing."
+	end

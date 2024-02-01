@@ -1,11 +1,11 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set ch1_moth_girl at right
-    chara set ch1_moth_boy at right
-    ch1_moth_girl "What in the world are you doing!?" mood annoyed2
-    ch1_moth_boy "Maybe she's deranged." mood annoyed3
-    lacie "You said to kill it." mood blank8
-    ch1_moth_girl "Yeah, so do it already!" mood annoyed2
-    lacie "(Hmmm...)" mood blank4
-    lacie "(I guess salt doesn't work on moths.)" mood confused2
+	if repeat end
+	chara set lacie at left
+	chara set ch1_moth_girl at right
+	chara set ch1_moth_boy at right
+	ch1_moth_girl "What in the world are you doing!?" mood annoyed2
+	ch1_moth_boy "Maybe she's deranged." mood annoyed3
+	lacie "You said to kill it." mood blank8
+	ch1_moth_girl "Yeah, so do it already!" mood annoyed2
+	lacie "(Hmmm...)" mood blank4
+	lacie "(I guess salt doesn't work on moths.)" mood confused2

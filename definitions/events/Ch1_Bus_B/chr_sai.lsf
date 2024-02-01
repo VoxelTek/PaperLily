@@ -1,10 +1,10 @@
 label START
-    "A hooded young man is lying down here."
-    if repeat end
-    lacie "Pardon me..." mood hide2
-    unknown "..."
-    lacie "I need some help." mood concerned2
-    unknown "..."
-    lacie "..." mood concerned
-    lacie "Yeah, I wouldn't talk to me either." mood sad
-    lacie "Sigh..." mood sigh
+	"A hooded young man is lying down here."
+	if repeat end
+	lacie "Pardon me..." mood hide2
+	unknown "..."
+	lacie "I need some help." mood concerned2
+	unknown "..."
+	lacie "..." mood concerned
+	lacie "Yeah, I wouldn't talk to me either." mood sad
+	lacie "Sigh..." mood sigh

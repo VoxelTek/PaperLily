@@ -1,7 +1,7 @@
 label START
-    "A trash can. It's full of train tickets, pamphlets and such."
-    if repeat end
-    "Sadly, the tickets seem to be used."
-    "There's a coin, though."
-    event call ch1_item_coin_get
-    end
+	"A trash can. It's full of train tickets, pamphlets and such."
+	if repeat end
+	"Sadly, the tickets seem to be used."
+	"There's a coin, though."
+	event call ch1_item_coin_get
+	end

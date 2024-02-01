@@ -1,84 +1,84 @@
 label START
-    if not var general.chapter == 1 end
-    if var ch1.seen_event_brothertalk end
-    if repeat end
+	if not var general.chapter == 1 end
+	if var ch1.seen_event_brothertalk end
+	if repeat end
 
-    fade out
-    move to Ch1_Cutscene_Home_2F_Hallway point camera
-    chara spawn lacie point lacie
-    camera track node lacie
-    fade in
-    audio bgm stop time 3
-    pause 0.1
-    lacie "I think I'll go straight to my room..." mood reflective8
-    hide ui
-    action walk up 95 node Lacie speed slow
-    action walk right 17 node Lacie speed slow
-    audio sfx play door
-    pause 0.1
-    chara spawn hiro point hiro
-    pause 0.15
-    chara set lacie at left
-    chara set hiro at right
-    action walk down 16 node Lacie backwards
-    bubble exclamation on lacie
-    hiro "Lacie!!!" mood smile
-    hide ui
-    audio bgm play ch1_hiro
-    pause 0.2
-    lacie "Hiro...!" mood surprised4
-    lacie "You scared me..." mood surprised
-    hiro "..." mood surprised2
-    lacie "What?" mood blank5
-    hiro "Did you go out?" mood surprised
-    lacie "I did... Just for a little bit." mood sigh
-    hiro "Seriously?" mood shocked2
-    lacie "Yeah, I grabbed-" mood reflective6
-    hide ui
-    chara lock
-    cg show ch1/hiro_intro
-    hiro "Woooaah you went OUTSIDE!?"
-    hiro "Into the world??"
-    hiro "That's incredible! I'm so proud!"
-    hiro "A week ago you weren't even opening the front door!"
-    hiro "She finally went outside! The tides are shifting! History is being made!"
-    hiro "Next you'll be going to the market, then back to school..."
-    hiro "You'll make so many friends, it's gonna be amazing!!"
-    cg show ch1/hiro_intro2
-    lacie "I really... think you're exaggerating..."
-    hiro "No waaay! You've been cooped up for so long!"
-    lacie "It hasn't been that long..."
-    cg hide
-    chara unlock
-    hiro "Now that you've mastered that, we can go for an ice cream." mood default
-    hiro "Together!" mood smile2
-    lacie "No way... It didn't actually go that well today..." mood reflective6
-    lacie "I messed up my order... and... I left really fast." mood reflective4
-    hiro "Then I'll order for you!" mood worried5
-    hiro "I'll do it until you can order on your own. It will get better!" mood worried7
-    lacie "It won't... unless I fix the root cause of the problem." mood reflective6
-    hiro "You mean... you're still doing the ritual?" mood blank
-    lacie "Yes." mood reflective
-    hiro "..." mood worried3
-    hiro "I see..." mood pout3
-    hiro "Well, I won't object anymore, just be wise." mood blank3
-    hiro "I'll be outside if you need me." mood default
-    audio bgm stop time 6
-    hide ui
-    action walk left 29 node Hiro speed slow
-    action walk down 41 node Hiro speed slow
-    action turn right node Hiro
-    action turn left node Lacie
-    system call Ruffle
-    pause 2.5
-    system call PostRuffle
-    action walk down 95 node Hiro speed slow continue
-    action turn down node Lacie
-    pause 0.9
-    chara despawn hiro
-    pause 1
-    system call FixHair
-    pause 2.5
-    set ch1.seen_event_brothertalk = true
-    move to Ch1_Home_2F_Hallway point ch1_event_brothertalk
-    audio bgm play ch1_home
+	fade out
+	move to Ch1_Cutscene_Home_2F_Hallway point camera
+	chara spawn lacie point lacie
+	camera track node lacie
+	fade in
+	audio bgm stop time 3
+	pause 0.1
+	lacie "I think I'll go straight to my room..." mood reflective8
+	hide ui
+	action walk up 95 node Lacie speed slow
+	action walk right 17 node Lacie speed slow
+	audio sfx play door
+	pause 0.1
+	chara spawn hiro point hiro
+	pause 0.15
+	chara set lacie at left
+	chara set hiro at right
+	action walk down 16 node Lacie backwards
+	bubble exclamation on lacie
+	hiro "Lacie!!!" mood smile
+	hide ui
+	audio bgm play ch1_hiro
+	pause 0.2
+	lacie "Hiro...!" mood surprised4
+	lacie "You scared me..." mood surprised
+	hiro "..." mood surprised2
+	lacie "What?" mood blank5
+	hiro "Did you go out?" mood surprised
+	lacie "I did... Just for a little bit." mood sigh
+	hiro "Seriously?" mood shocked2
+	lacie "Yeah, I grabbed-" mood reflective6
+	hide ui
+	chara lock
+	cg show ch1/hiro_intro
+	hiro "Woooaah you went OUTSIDE!?"
+	hiro "Into the world??"
+	hiro "That's incredible! I'm so proud!"
+	hiro "A week ago you weren't even opening the front door!"
+	hiro "She finally went outside! The tides are shifting! History is being made!"
+	hiro "Next you'll be going to the market, then back to school..."
+	hiro "You'll make so many friends, it's gonna be amazing!!"
+	cg show ch1/hiro_intro2
+	lacie "I really... think you're exaggerating..."
+	hiro "No waaay! You've been cooped up for so long!"
+	lacie "It hasn't been that long..."
+	cg hide
+	chara unlock
+	hiro "Now that you've mastered that, we can go for an ice cream." mood default
+	hiro "Together!" mood smile2
+	lacie "No way... It didn't actually go that well today..." mood reflective6
+	lacie "I messed up my order... and... I left really fast." mood reflective4
+	hiro "Then I'll order for you!" mood worried5
+	hiro "I'll do it until you can order on your own. It will get better!" mood worried7
+	lacie "It won't... unless I fix the root cause of the problem." mood reflective6
+	hiro "You mean... you're still doing the ritual?" mood blank
+	lacie "Yes." mood reflective
+	hiro "..." mood worried3
+	hiro "I see..." mood pout3
+	hiro "Well, I won't object anymore, just be wise." mood blank3
+	hiro "I'll be outside if you need me." mood default
+	audio bgm stop time 6
+	hide ui
+	action walk left 29 node Hiro speed slow
+	action walk down 41 node Hiro speed slow
+	action turn right node Hiro
+	action turn left node Lacie
+	system call Ruffle
+	pause 2.5
+	system call PostRuffle
+	action walk down 95 node Hiro speed slow continue
+	action turn down node Lacie
+	pause 0.9
+	chara despawn hiro
+	pause 1
+	system call FixHair
+	pause 2.5
+	set ch1.seen_event_brothertalk = true
+	move to Ch1_Home_2F_Hallway point ch1_event_brothertalk
+	audio bgm play ch1_home

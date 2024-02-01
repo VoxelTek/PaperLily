@@ -1,6 +1,6 @@
 label START
-    "None of this can be used."
-    if repeat end
-    "The surfaces are completely flat, and there are no handles."
-    lacie "It only looks like a kitchen on the surface..." mood blank1
-    end
+	"None of this can be used."
+	if repeat end
+	"The surfaces are completely flat, and there are no handles."
+	lacie "It only looks like a kitchen on the surface..." mood blank1
+	end

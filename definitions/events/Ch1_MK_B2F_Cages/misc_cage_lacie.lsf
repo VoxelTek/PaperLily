@@ -1,9 +1,9 @@
 label START
-    "The cage you were trapped in."
-    if var general.serious end
-    if character sai
-        event call misc_cage_lacie_sai_react
-        end
-    if repeat end
-    "It's closed from all sides, so it's impossible to get inside."
-    lacie "Let's be careful so I don't end up back in there."
+	"The cage you were trapped in."
+	if var general.serious end
+	if character sai
+		event call misc_cage_lacie_sai_react
+		end
+	if repeat end
+	"It's closed from all sides, so it's impossible to get inside."
+	lacie "Let's be careful so I don't end up back in there."

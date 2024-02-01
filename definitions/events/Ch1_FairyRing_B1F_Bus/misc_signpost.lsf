@@ -1,13 +1,13 @@
 label START
-    "A signpost. It's bent."
-    if repeat end
-    lacie "(The schedule seems to show quite a few buses coming every day.)" mood default
-    if var ch1.forest_bus_seen_schedule
-        lacie "Strange... the other schedule I saw was empty." mood blank1
-    aoi "Oh! Back in the day, the bus used to come more often... this is probably an old schedule." mood excited
-    if var ch1.forest_bus_seen_schedule
-        aoi "The other schedule you saw must be the updated one." mood happy2
-    aoi "Nowadays it's very rare..." mood default
-    aoi "So if you're lucky enough to see the bus, you should definitely ride it!" mood excited
-    aoi "That's what everyone does, at least. I never saw it myself..." mood awkward2
-    lacie "(It's just a bus, though...)" mood blank7
+	"A signpost. It's bent."
+	if repeat end
+	lacie "(The schedule seems to show quite a few buses coming every day.)" mood default
+	if var ch1.forest_bus_seen_schedule
+		lacie "Strange... the other schedule I saw was empty." mood blank1
+	aoi "Oh! Back in the day, the bus used to come more often... this is probably an old schedule." mood excited
+	if var ch1.forest_bus_seen_schedule
+		aoi "The other schedule you saw must be the updated one." mood happy2
+	aoi "Nowadays it's very rare..." mood default
+	aoi "So if you're lucky enough to see the bus, you should definitely ride it!" mood excited
+	aoi "That's what everyone does, at least. I never saw it myself..." mood awkward2
+	lacie "(It's just a bus, though...)" mood blank7

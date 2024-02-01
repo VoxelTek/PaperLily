@@ -1,7 +1,7 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set ch1_moth_girl at right
-    ch1_moth_girl "Why're you carrying a bucket?" mood blank2
-    lacie "..." mood blank1
-    lacie "(To be honest, I'm not so sure myself.)" mood reflective
+	if repeat end
+	chara set lacie at left
+	chara set ch1_moth_girl at right
+	ch1_moth_girl "Why're you carrying a bucket?" mood blank2
+	lacie "..." mood blank1
+	lacie "(To be honest, I'm not so sure myself.)" mood reflective

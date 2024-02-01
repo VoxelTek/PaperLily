@@ -786,6 +786,16 @@ script = ExtResource( 39 )
 Items = "ch1.bucket"
 Nodes = "misc_faucet"
 
+[node name="item_ritualitems_on_faucet" type="Node" parent="Other/Events"]
+script = ExtResource( 39 )
+Items = "ch1.lakeside_petals_pink
+ch1.lakeside_petals_purple
+ch1.lakeside_petals_white
+ch1.lakeside_algae_black
+ch1.lakeside_algae_blue
+ch1.lakeside_algae_green"
+Nodes = "misc_faucet"
+
 [node name="item_bucket_already_full" type="Node" parent="Other/Events"]
 script = ExtResource( 39 )
 Items = "ch1.bucket_full

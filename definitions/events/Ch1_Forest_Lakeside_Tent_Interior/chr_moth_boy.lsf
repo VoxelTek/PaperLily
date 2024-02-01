@@ -1,15 +1,15 @@
 label START
-    chara set lacie at left
-    chara set ch1_moth_boy at right
-    if var ch1.forest_moths_took_caterpillar jump TOOK
-    ch1_moth_boy "Please hurry, or my sister will kill us both." mood blank2
-    end
+	chara set lacie at left
+	chara set ch1_moth_boy at right
+	if var ch1.forest_moths_took_caterpillar jump TOOK
+	ch1_moth_boy "Please hurry, or my sister will kill us both." mood blank2
+	end
 
 label TOOK
-    if not item ch1.forest_caterpillar jump GOT_RID_OF
-    ch1_moth_boy "Here or outside is fine." mood annoyed
-    end
+	if not item ch1.forest_caterpillar jump GOT_RID_OF
+	ch1_moth_boy "Here or outside is fine." mood annoyed
+	end
 
 label GOT_RID_OF
-    ch1_moth_boy "We really appreciate it." mood default
-    end
+	ch1_moth_boy "We really appreciate it." mood default
+	end

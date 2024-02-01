@@ -1,68 +1,68 @@
 label START
-    set ch1.forest_moths_seen = true
-    chara set lacie at left
-    fade out time 1
-    move to Ch1_Forest_Lakeside_Tent_Interior point entrance cutscene
-    audio bgm play ch1_moths
-    fade in time 1
-    pause 1.5
-    ch1_moth_girl "MAKE IT STOP." mood annoyed3
-    ch1_moth_girl "SHUT HIM UP."
-    ch1_moth_boy "I can't. I tried everything." mood annoyed4
-    ch1_moth_girl "USELESS!" mood annoyed4
-    ch1_moth_girl "AAH I SWEAR I'M GONNA LOSE IT!" mood annoyed5
-    hide ui
-    pause 0.5
-    chara spawn lacie point entrance
-    pause 0.8
-    ch1_moth_girl "Oh good, someone else came." mood default
-    ch1_moth_girl "Hey blondie, take this stupid piece of shit and throw it in the lake or something." mood blank
-    ch1_moth_girl "Squash it. Strangle it. Eat it. I don't care what you do." mood blank3
-    lacie "Uh... what?" mood concerned2
-    ch1_moth_boy "Our baby brother here has been crying nonstop for the past few days." mood default
-    lacie "Brother?" mood blank7
-    ch1_moth_boy "In the terrarium." mood blank2
-    ch1_terrarium "..."
-    lacie "You're all moths?" mood blank6
-    ch1_moth_girl "We won't be for long because this obnoxious brat is going to make me kill myself." mood annoyed
-    ch1_moth_girl "UGH WILL YOU AT LEAST SHUT THE HELL UP WHILE I'M TALKING!?" mood annoyed3
-    ch1_terrarium "..."
-    lacie "(Is he even saying anything?)" mood blank7
-    ch1_moth_boy "Would you be so kind as to kill it for us?" mood blank
-    lacie "Me? Kill the caterpillar?" mood surprised3
-    ch1_moth_boy "Yes-" mood default
-    ch1_moth_girl "YES." mood annoyed3
-    lacie "Why don't you do it?" mood surprised
-    ch1_moth_boy "If we kill one of our kind, a curse is planted on us." mood annoyed6
-    ch1_moth_boy "Please kill him for us. We're willing to reward you with this doorknob." mood annoyed3
-    objective remove ch1.forest_find_lighthouse
-    objective add ch1.forest_lakeside_caterpillar
-    lacie "(A doorknob...)" mood blank2
-    ch1_moth_girl "Why won't he just stop, I'm exhausted." mood annoyed4
-    lacie "Um..." mood blank3
-    choice "(Should I kill the caterpillar?)"
-        "I'll take care of it."
-            jump WILL_DO
-        "I'm leaving."
-            jump LEAVING
+	set ch1.forest_moths_seen = true
+	chara set lacie at left
+	fade out time 1
+	move to Ch1_Forest_Lakeside_Tent_Interior point entrance cutscene
+	audio bgm play ch1_moths
+	fade in time 1
+	pause 1.5
+	ch1_moth_girl "MAKE IT STOP." mood annoyed3
+	ch1_moth_girl "SHUT HIM UP."
+	ch1_moth_boy "I can't. I tried everything." mood annoyed4
+	ch1_moth_girl "USELESS!" mood annoyed4
+	ch1_moth_girl "AAH I SWEAR I'M GONNA LOSE IT!" mood annoyed5
+	hide ui
+	pause 0.5
+	chara spawn lacie point entrance
+	pause 0.8
+	ch1_moth_girl "Oh good, someone else came." mood default
+	ch1_moth_girl "Hey blondie, take this stupid piece of shit and throw it in the lake or something." mood blank
+	ch1_moth_girl "Squash it. Strangle it. Eat it. I don't care what you do." mood blank3
+	lacie "Uh... what?" mood concerned2
+	ch1_moth_boy "Our baby brother here has been crying nonstop for the past few days." mood default
+	lacie "Brother?" mood blank7
+	ch1_moth_boy "In the terrarium." mood blank2
+	ch1_terrarium "..."
+	lacie "You're all moths?" mood blank6
+	ch1_moth_girl "We won't be for long because this obnoxious brat is going to make me kill myself." mood annoyed
+	ch1_moth_girl "UGH WILL YOU AT LEAST SHUT THE HELL UP WHILE I'M TALKING!?" mood annoyed3
+	ch1_terrarium "..."
+	lacie "(Is he even saying anything?)" mood blank7
+	ch1_moth_boy "Would you be so kind as to kill it for us?" mood blank
+	lacie "Me? Kill the caterpillar?" mood surprised3
+	ch1_moth_boy "Yes-" mood default
+	ch1_moth_girl "YES." mood annoyed3
+	lacie "Why don't you do it?" mood surprised
+	ch1_moth_boy "If we kill one of our kind, a curse is planted on us." mood annoyed6
+	ch1_moth_boy "Please kill him for us. We're willing to reward you with this doorknob." mood annoyed3
+	objective remove ch1.forest_find_lighthouse
+	objective add ch1.forest_lakeside_caterpillar
+	lacie "(A doorknob...)" mood blank2
+	ch1_moth_girl "Why won't he just stop, I'm exhausted." mood annoyed4
+	lacie "Um..." mood blank3
+	choice "(Should I kill the caterpillar?)"
+		"I'll take care of it."
+			jump WILL_DO
+		"I'm leaving."
+			jump LEAVING
 
 label LEAVING
-    lacie "I'm going to... be somewhere else." mood blank3
-    ch1_moth_girl "You're LEAVING?!" mood annoyed2
-    lacie "I-" mood blank5
-    ch1_moth_boy "Useless." mood annoyed4
-    ch1_moth_girl "I can dispose of her." mood confused2
-    lacie "Wait." mood concerned2
-    lacie "I'm just going to grab something." mood concerned7
-    lacie "...Then I'll be back." mood concerned2
-    lacie "(I might still need that doorknob...)" mood concerned4
-    ch1_moth_girl "Oh. Getting a tool for killing this bugger? I'll allow it." mood confused
-    ch1_moth_boy "Go on." mood annoyed
-    move to Ch1_Forest_Lakeside_Tent_Interior point entrance
-    end
+	lacie "I'm going to... be somewhere else." mood blank3
+	ch1_moth_girl "You're LEAVING?!" mood annoyed2
+	lacie "I-" mood blank5
+	ch1_moth_boy "Useless." mood annoyed4
+	ch1_moth_girl "I can dispose of her." mood confused2
+	lacie "Wait." mood concerned2
+	lacie "I'm just going to grab something." mood concerned7
+	lacie "...Then I'll be back." mood concerned2
+	lacie "(I might still need that doorknob...)" mood concerned4
+	ch1_moth_girl "Oh. Getting a tool for killing this bugger? I'll allow it." mood confused
+	ch1_moth_boy "Go on." mood annoyed
+	move to Ch1_Forest_Lakeside_Tent_Interior point entrance
+	end
 
 label WILL_DO
-    lacie "Okay." mood blank5
-    event call event_take_caterpillar
-    move to Ch1_Forest_Lakeside_Tent_Interior point entrance
-    end
+	lacie "Okay." mood blank5
+	event call event_take_caterpillar
+	move to Ch1_Forest_Lakeside_Tent_Interior point entrance
+	end

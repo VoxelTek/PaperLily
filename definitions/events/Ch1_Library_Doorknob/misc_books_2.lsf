@@ -1,13 +1,13 @@
 label START
-    choice "An untitled book stands out. Read a passage?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    audio sfx play paper
-    pause 0.5
-    "Average recorded survival time of humans following ritual rules: 15 minutes."
-    "Average survival time ________ breaching ritual rules: 140 minutes."
-    "Average rate of adherence to the ritual rules: 98.31%"
+	choice "An untitled book stands out. Read a passage?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	audio sfx play paper
+	pause 0.5
+	"Average recorded survival time of humans following ritual rules: 15 minutes."
+	"Average survival time ________ breaching ritual rules: 140 minutes."
+	"Average rate of adherence to the ritual rules: 98.31%"

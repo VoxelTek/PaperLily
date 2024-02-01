@@ -1,15 +1,15 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set rune at right
-    action turn left
-    action idle stop node rune
-    action turn right node rune
-    rune "Almost there!" mood default
-    rune "Be careful not to die." mood tilt
-    lacie "How much longer is this path?" mood blank1
-    rune "Only 'till you get here!" mood default
-    lacie "..." mood disappointed
-    action turn down node rune
-    action idle start node rune
-    system retry-save
+	if repeat end
+	chara set lacie at left
+	chara set rune at right
+	action turn left
+	action idle stop node rune
+	action turn right node rune
+	rune "Almost there!" mood default
+	rune "Be careful not to die." mood tilt
+	lacie "How much longer is this path?" mood blank1
+	rune "Only 'till you get here!" mood default
+	lacie "..." mood disappointed
+	action turn down node rune
+	action idle start node rune
+	system retry-save

@@ -1,5 +1,5 @@
 label START
-    "A lamppost."
-    if repeat end
-    lacie "I'm not confident in my ability to climb this and jump to the other side." mood blank7
-    end
+	"A lamppost."
+	if repeat end
+	lacie "I'm not confident in my ability to climb this and jump to the other side." mood blank7
+	end

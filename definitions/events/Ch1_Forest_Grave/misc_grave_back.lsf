@@ -1,27 +1,27 @@
 label START
-    "There's a neatly written note taped to the back of the gravestone."
-    choice "Read it?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    fade out time 0.5
-    pause 1
-    "It's been 5 years since your passing." background none
-    "I often wonder if things would have been different, had I been with you." background none
-    "Would I have been able to protect you?" background none
-    "Would I have died in your place?" background none
-    "I would have gladly accepted that resolution." background none
-    "I wish I was strong and brave enough to fight for you." background none
-    "But vengeance won't bring you back." background none
-    "I can only continue to warn everyone, and hope the locked site doesn't take another victim." background none
-    "It's been quiet in the forest for the past few years." background none
-    "But I know you always hated quiet." background none
-    "Please rest well." background none
-    "I'll visit you again soon." background none
-    "- Marzie" background none
-    hide ui
-    pause 1
-    fade in time 0.5
+	"There's a neatly written note taped to the back of the gravestone."
+	choice "Read it?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	fade out time 0.5
+	pause 1
+	"It's been 5 years since your passing." background none
+	"I often wonder if things would have been different, had I been with you." background none
+	"Would I have been able to protect you?" background none
+	"Would I have died in your place?" background none
+	"I would have gladly accepted that resolution." background none
+	"I wish I was strong and brave enough to fight for you." background none
+	"But vengeance won't bring you back." background none
+	"I can only continue to warn everyone, and hope the locked site doesn't take another victim." background none
+	"It's been quiet in the forest for the past few years." background none
+	"But I know you always hated quiet." background none
+	"Please rest well." background none
+	"I'll visit you again soon." background none
+	"- Marzie" background none
+	hide ui
+	pause 1
+	fade in time 0.5

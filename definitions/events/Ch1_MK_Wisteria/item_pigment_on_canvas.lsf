@@ -1,4 +1,4 @@
 label START
-    if not var ch1.mk_revealed_canvas end
-    "The pigment doesn't stick on its own..."
-    end
+	if not var ch1.mk_revealed_canvas end
+	"The pigment doesn't stick on its own..."
+	end

@@ -1,32 +1,32 @@
 label START
-    system call ComputerSit
-    pause 1
-    set ch1.home_lacie_pc_on = true
-    system refresh
-    pause 1.5
-    lacie "As I thought... the internet is not working." mood sigh
-    lacie "Thankfully, I saved that post as a PDF." mood default
-    hide ui
-    pause 0.5
-    cg show darken background
-    pause 1
-    "\"What to do if you mess up bus ritual\""
-    "[color=green]spikyTrap2, 1 year ago[/color]\ni was about to do the bus ritual, and saw that there are no clues about what to do if the bus doesnt come or something"
-    "someone here said that leaving a ritual half-done can be rly bad, so i'm just asking to be safe"
-    "[color=green]miko_baby, 1 year ago[/color]\nI don't guarantee this will work, as I haven't personally tried the bus ritual. But! My family works at a shrine so I have some experience with banishing spirits. The steps should be:"
-    "1) Untie the red string or thread or whatever you used from the phone.\n2) Take a whole bunch of salt, any salt, and pour it in front of any exit doors of your home (indoors)."
-    "Make sure to pour salt on EVERY exit (windows aren't necessary though).\nThat's all! Hope this helps!"
-    "[color=green]spikyTrap2, 1 year ago[/color]\nthanks!"
-    "[User marked this thread as solved]"
-    cg hide
-    hide ui
-    pause 1
-    lacie "In other words, remove the red string from the phone and scatter salt in front of the front door, the back door and the garage door." mood default
-    lacie "It sounds a little weak for a ritual but... it's better than nothing." mood blank2
-    hide ui
-    pause 1
-    objective complete ch1.revert_ritual_instructions
-    set ch1.home_lacie_pc_on = false
-    system refresh
-    pause 0.5
-    system call ComputerGetUp
+	system call ComputerSit
+	pause 1
+	set ch1.home_lacie_pc_on = true
+	system refresh
+	pause 1.5
+	lacie "As I thought... the internet is not working." mood sigh
+	lacie "Thankfully, I saved that post as a PDF." mood default
+	hide ui
+	pause 0.5
+	cg show darken background
+	pause 1
+	"\"What to do if you mess up bus ritual\""
+	"[color=green]spikyTrap2, 1 year ago[/color]\ni was about to do the bus ritual, and saw that there are no clues about what to do if the bus doesnt come or something"
+	"someone here said that leaving a ritual half-done can be rly bad, so i'm just asking to be safe"
+	"[color=green]miko_baby, 1 year ago[/color]\nI don't guarantee this will work, as I haven't personally tried the bus ritual. But! My family works at a shrine so I have some experience with banishing spirits. The steps should be:"
+	"1) Untie the red string or thread or whatever you used from the phone.\n2) Take a whole bunch of salt, any salt, and pour it in front of any exit doors of your home (indoors)."
+	"Make sure to pour salt on EVERY exit (windows aren't necessary though).\nThat's all! Hope this helps!"
+	"[color=green]spikyTrap2, 1 year ago[/color]\nthanks!"
+	"[User marked this thread as solved]"
+	cg hide
+	hide ui
+	pause 1
+	lacie "In other words, remove the red string from the phone and scatter salt in front of the front door, the back door and the garage door." mood default
+	lacie "It sounds a little weak for a ritual but... it's better than nothing." mood blank2
+	hide ui
+	pause 1
+	objective complete ch1.revert_ritual_instructions
+	set ch1.home_lacie_pc_on = false
+	system refresh
+	pause 0.5
+	system call ComputerGetUp

@@ -1,11 +1,11 @@
 label START
-    if not item ch1.red_jar end
-    lacie "I'm not carrying this thing around..."
-    hide ui
-    fade out
-    set ch1.forest_red_took_jar = false
-    system refresh
-    item remove ch1.red_jar
-    pause 1
-    fade in
-    end
+	if not item ch1.red_jar end
+	lacie "I'm not carrying this thing around..."
+	hide ui
+	fade out
+	set ch1.forest_red_took_jar = false
+	system refresh
+	item remove ch1.red_jar
+	pause 1
+	fade in
+	end

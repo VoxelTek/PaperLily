@@ -1,4 +1,4 @@
 label START
-    if var ch1.forest_lakeside_removed_mermaid end
-    if var ch1.temp_lakeside_merm_outside end
-    action call merm_peek
+	if var ch1.forest_lakeside_removed_mermaid end
+	if var ch1.temp_lakeside_merm_outside end
+	action call merm_peek

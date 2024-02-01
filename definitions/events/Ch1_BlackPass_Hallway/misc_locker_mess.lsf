@@ -1,5 +1,5 @@
 label START
-    "Trash fills your locker."
-    if repeat end
-    lacie "What a mess." mood hide3
-    end
+	"Trash fills your locker."
+	if repeat end
+	lacie "What a mess." mood hide3
+	end

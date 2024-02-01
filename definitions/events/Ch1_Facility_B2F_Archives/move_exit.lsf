@@ -1,4 +1,4 @@
 label START
-    audio sfx play door
-    move to Ch1_Facility_B2F_Hallway_West point from_archive
-    end
+	audio sfx play door
+	move to Ch1_Facility_B2F_Hallway_West point from_archive
+	end

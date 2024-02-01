@@ -1,117 +1,117 @@
 label START
-    pause 0.5
-    set ch1.mk_wisteria_item = 5
-    system refresh
-    pause 1
-    cg show black
-    audio bgm play ch1_heart
-    pause 2
-    chara rename mk to "misc.characters.lk"
-    chara rename chara1 to "misc.characters.iris"
-    chara rename chara2 to "misc.characters.father"
+	pause 0.5
+	set ch1.mk_wisteria_item = 5
+	system refresh
+	pause 1
+	cg show black
+	audio bgm play ch1_heart
+	pause 2
+	chara rename mk to "misc.characters.lk"
+	chara rename chara1 to "misc.characters.iris"
+	chara rename chara2 to "misc.characters.father"
 
-    "After the incident with that boy's leg, the authorities knocked at our door again." format center position center background none
-    "\"Your daughter is a witch\" they said to my father." format center position center background none
-    "They talked about how I hurt that boy, how my mother healed from a fatal illness, how my eyesight came back." format center position center background none
-    "They told us both me and my father are accused of witchcraft." format center position center background none
-    hide ui
-    pause 1
-    cg show ch1/mk_backstory_peek
-    hide ui
-    pause 1
-    chara2 "T-That's nonsense! What are you talking about??"
-    unknown "The whole family needs to be cleansed."
-    unknown "Your daughter will be tried for witchcraft, and due to your ties to her, you will be as well."
-    chara2 "H-Hold on... Wait... You've got it all wrong. She's not my daughter"
-    mk "..."
-    chara2 "I merely found her on the streets, she does not share my blood."
-    mk "(...Father...)"
-    unknown "Take him."
-    chara2 "N-NO NO! PLEASE! I HAVE NOTHING TO DO WITH THIS!"
-    cg show black
-    hide ui
-    pause 1
-    "When the men walked in the house, my father ran towards the back door." format center position center background none
-    "He was frantically bumping into the furniture to reach it." format center position center background none
-    hide ui
-    pause 1
-    audio sfx play gunshot
-    pause 2
-    unknown "Find the girl."
-    unknown "And burn his body."
-    unknown "Burn the whole house, it's cursed."
-    hide ui
-    pause 1
-    "My father's blood ran down the hallway like a small river stream." format center position center background none
-    "It seeped into the cracks of the broken floorboards." format center position center background none
-    "This is all that boy's fault." format center position center background none
-    hide ui
-    pause 2
-    "The prison cell was cold, and dark." format center position center background none
-    "There was nobody else there with me, except for the occasional rat." format center position center background none
-    "People always said rats are dirty and dangerous." format center position center background none
-    "But at that moment, I appreciated the company." format center position center background none
-    "The adults told me my execution will be the following morning." format center position center background none
-    "They said I will be burned in order to purify the village." format center position center background none
-    "What does that even mean? Purify the village..." format center position center background none
-    "I was alone with my thoughts for what felt like hours before someone came by." format center position center background none
-    hide ui
-    pause 1
-    chara1 "Hey..."
-    mk "Iris...?"
-    mk "(Will I get out of here...??)"
-    hide ui
-    pause 1
-    cg show ch1/mk_backstory_iris3
-    hide ui
-    pause 1
-    chara1 "Um... listen... I'm so sorry...!"
-    mk "...?"
-    chara1 "I-... I told my dad about everything..."
-    mk "What...?"
-    mk "(...No way...)"
-    chara1 "I... I thought if you might really be a witch, he could protect you...."
-    chara1 "B-Because he knew we were friends!"
-    mk "..."
-    chara1 "I'm sorry... I did this...!"
-    chara1 "I didn't know he would kill your dad... and... and you..."
-    chara1 "Please..."
-    chara1 "Please take this knife..."
-    mk "...?"
-    chara1 "P-please... please use it... before they kill you."
-    chara1 "You'll be better off if you end it this way...!"
-    mk "............"
-    cg show black
-    hide ui
-    pause 1
-    "What's happening?"
-    "Why would she tell me something like this?"
-    "What's going on?"
-    hide ui
-    pause 1
-    cg show ch1/mk_backstory_iris3
-    hide ui
-    pause 1
-    chara1 "I-I love you and... father said burning is slow and painful...!!"
-    chara1 "You're better off doing it this way..!"
-    mk "....."
-    mk "You're asking me to kill myself..?"
-    chara1 "Y-Yes... because... I still care about you...!"
-    mk "....."
-    mk "Is this what you call... care?"
-    cg show black
-    hide ui
-    pause 1
-    "I didn't know that my vision would get blurry if I cry." format center position center background none
-    hide ui
-    pause 2
-    chara rename mk off
-    chara rename chara1 off
-    chara rename chara2 off
-    audio bgm stop time 4
-    cg hide
-    pause 1
-    set ch1.mk_wisteria_item = 0
-    system refresh
-    pause 0.5
-    end
+	"After the incident with that boy's leg, the authorities knocked at our door again." format center position center background none
+	"\"Your daughter is a witch\" they said to my father." format center position center background none
+	"They talked about how I hurt that boy, how my mother healed from a fatal illness, how my eyesight came back." format center position center background none
+	"They told us both me and my father are accused of witchcraft." format center position center background none
+	hide ui
+	pause 1
+	cg show ch1/mk_backstory_peek
+	hide ui
+	pause 1
+	chara2 "T-That's nonsense! What are you talking about??"
+	unknown "The whole family needs to be cleansed."
+	unknown "Your daughter will be tried for witchcraft, and due to your ties to her, you will be as well."
+	chara2 "H-Hold on... Wait... You've got it all wrong. She's not my daughter"
+	mk "..."
+	chara2 "I merely found her on the streets, she does not share my blood."
+	mk "(...Father...)"
+	unknown "Take him."
+	chara2 "N-NO NO! PLEASE! I HAVE NOTHING TO DO WITH THIS!"
+	cg show black
+	hide ui
+	pause 1
+	"When the men walked in the house, my father ran towards the back door." format center position center background none
+	"He was frantically bumping into the furniture to reach it." format center position center background none
+	hide ui
+	pause 1
+	audio sfx play gunshot
+	pause 2
+	unknown "Find the girl."
+	unknown "And burn his body."
+	unknown "Burn the whole house, it's cursed."
+	hide ui
+	pause 1
+	"My father's blood ran down the hallway like a small river stream." format center position center background none
+	"It seeped into the cracks of the broken floorboards." format center position center background none
+	"This is all that boy's fault." format center position center background none
+	hide ui
+	pause 2
+	"The prison cell was cold, and dark." format center position center background none
+	"There was nobody else there with me, except for the occasional rat." format center position center background none
+	"People always said rats are dirty and dangerous." format center position center background none
+	"But at that moment, I appreciated the company." format center position center background none
+	"The adults told me my execution will be the following morning." format center position center background none
+	"They said I will be burned in order to purify the village." format center position center background none
+	"What does that even mean? Purify the village..." format center position center background none
+	"I was alone with my thoughts for what felt like hours before someone came by." format center position center background none
+	hide ui
+	pause 1
+	chara1 "Hey..."
+	mk "Iris...?"
+	mk "(Will I get out of here...??)"
+	hide ui
+	pause 1
+	cg show ch1/mk_backstory_iris3
+	hide ui
+	pause 1
+	chara1 "Um... listen... I'm so sorry...!"
+	mk "...?"
+	chara1 "I-... I told my dad about everything..."
+	mk "What...?"
+	mk "(...No way...)"
+	chara1 "I... I thought if you might really be a witch, he could protect you...."
+	chara1 "B-Because he knew we were friends!"
+	mk "..."
+	chara1 "I'm sorry... I did this...!"
+	chara1 "I didn't know he would kill your dad... and... and you..."
+	chara1 "Please..."
+	chara1 "Please take this knife..."
+	mk "...?"
+	chara1 "P-please... please use it... before they kill you."
+	chara1 "You'll be better off if you end it this way...!"
+	mk "............"
+	cg show black
+	hide ui
+	pause 1
+	"What's happening?"
+	"Why would she tell me something like this?"
+	"What's going on?"
+	hide ui
+	pause 1
+	cg show ch1/mk_backstory_iris3
+	hide ui
+	pause 1
+	chara1 "I-I love you and... father said burning is slow and painful...!!"
+	chara1 "You're better off doing it this way..!"
+	mk "....."
+	mk "You're asking me to kill myself..?"
+	chara1 "Y-Yes... because... I still care about you...!"
+	mk "....."
+	mk "Is this what you call... care?"
+	cg show black
+	hide ui
+	pause 1
+	"I didn't know that my vision would get blurry if I cry." format center position center background none
+	hide ui
+	pause 2
+	chara rename mk off
+	chara rename chara1 off
+	chara rename chara2 off
+	audio bgm stop time 4
+	cg hide
+	pause 1
+	set ch1.mk_wisteria_item = 0
+	system refresh
+	pause 0.5
+	end

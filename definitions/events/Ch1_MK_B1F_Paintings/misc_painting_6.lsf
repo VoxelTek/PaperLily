@@ -1,9 +1,9 @@
 label START
-    if var ch1.mk_tool_clear
-        if var ch1.mk_took_lighter
-            "The hands are charred."
-        else
-            "The hands are on fire."
-        end
-    audio sfx play button
-    system call RotatePainting6
+	if var ch1.mk_tool_clear
+		if var ch1.mk_took_lighter
+			"The hands are charred."
+		else
+			"The hands are on fire."
+		end
+	audio sfx play button
+	system call RotatePainting6

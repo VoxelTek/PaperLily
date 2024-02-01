@@ -1,8 +1,8 @@
 label START
-    "A heavy-looking metal gate."
-    if repeat end
-    lacie "Is this the Daylight Gate?" mood blank4
-    lacie "What does it have to do with daylight?" mood blank6
-    "There's a plaque next to it that reads:"
-    event call misc_fence_sign
-    end
+	"A heavy-looking metal gate."
+	if repeat end
+	lacie "Is this the Daylight Gate?" mood blank4
+	lacie "What does it have to do with daylight?" mood blank6
+	"There's a plaque next to it that reads:"
+	event call misc_fence_sign
+	end

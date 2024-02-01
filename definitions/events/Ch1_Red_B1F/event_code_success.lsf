@@ -1,4 +1,4 @@
 label START
-    "..."
-    "The door opens!"
-    set ch1.forest_red_opened_passage = true
+	"..."
+	"The door opens!"
+	set ch1.forest_red_opened_passage = true

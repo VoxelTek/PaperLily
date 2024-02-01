@@ -1,7 +1,7 @@
 label START
-    if var general.serious
-        event call misc_painting_generic
-        end
-    "A portrait of a person with a butterfly on their face."
-    if repeat end
-    lacie "Is the butterfly a part of their face? Or just resting on it?" mood blank8
+	if var general.serious
+		event call misc_painting_generic
+		end
+	"A portrait of a person with a butterfly on their face."
+	if repeat end
+	lacie "Is the butterfly a part of their face? Or just resting on it?" mood blank8

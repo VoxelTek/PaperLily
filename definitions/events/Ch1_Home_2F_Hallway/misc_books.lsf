@@ -1,6 +1,6 @@
 label START
-    if var general.serious
-        "Some books and magazines."
-        end
-    "No reading space would be complete without decorative books."
-    end
+	if var general.serious
+		"Some books and magazines."
+		end
+	"No reading space would be complete without decorative books."
+	end

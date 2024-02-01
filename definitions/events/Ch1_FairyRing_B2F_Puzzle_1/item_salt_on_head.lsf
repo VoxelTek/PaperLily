@@ -1,10 +1,10 @@
 label START
-    if repeat
-        "There's no point in seasoning them."
-        end
-    chara set lacie at left
-    chara set aoi at right
-    pause 1
-    aoi "Whacha doing?" mood default
-    lacie "Uh... Nothing." mood blank3
-    lacie "(Does salt not work on all demons...?)" mood default
+	if repeat
+		"There's no point in seasoning them."
+		end
+	chara set lacie at left
+	chara set aoi at right
+	pause 1
+	aoi "Whacha doing?" mood default
+	lacie "Uh... Nothing." mood blank3
+	lacie "(Does salt not work on all demons...?)" mood default

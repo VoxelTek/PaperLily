@@ -1,12 +1,12 @@
 label START
-    "A red doll. Both eyes are colored in."
-    if repeat end
-    lacie "I know this." mood blank1
-    lacie "It's a doll that helps you reach your wishes." mood default
-    lacie "You color in one eye when you make a wish, and the doll will help grant it." mood blank2
-    lacie "In return, once you've reached your goal, you color in the other eye..."
-    lacie "...essentially giving the doll his sight back as gratitude." mood blank8
-    lacie "..." mood blank7
-    lacie "Hiro reads a lot about this kind of stuff." mood blank6
-    lacie "I wonder what this person's wish was." mood blank5
-    end
+	"A red doll. Both eyes are colored in."
+	if repeat end
+	lacie "I know this." mood blank1
+	lacie "It's a doll that helps you reach your wishes." mood default
+	lacie "You color in one eye when you make a wish, and the doll will help grant it." mood blank2
+	lacie "In return, once you've reached your goal, you color in the other eye..."
+	lacie "...essentially giving the doll his sight back as gratitude." mood blank8
+	lacie "..." mood blank7
+	lacie "Hiro reads a lot about this kind of stuff." mood blank6
+	lacie "I wonder what this person's wish was." mood blank5
+	end

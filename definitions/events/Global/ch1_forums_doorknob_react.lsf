@@ -1,9 +1,9 @@
 label START
-    if repeat end
-    if item ch1.doorknob_return
-        lacie "That's where I ordered my ${item:ch1.doorknob_return}." mood default
-    else
-        lacie "That's where I ordered the ${item:ch1.doorknob_return} which I left by the window." mood default
-    lacie "Supposedly I can use it to return home after doing the ritual." mood blank2
-    lacie "It's most likely a scam but..." mood reflective2
-    lacie "...if it's to placate Hiro, even a scam will do." mood bothered
+	if repeat end
+	if item ch1.doorknob_return
+		lacie "That's where I ordered my ${item:ch1.doorknob_return}." mood default
+	else
+		lacie "That's where I ordered the ${item:ch1.doorknob_return} which I left by the window." mood default
+	lacie "Supposedly I can use it to return home after doing the ritual." mood blank2
+	lacie "It's most likely a scam but..." mood reflective2
+	lacie "...if it's to placate Hiro, even a scam will do." mood bothered

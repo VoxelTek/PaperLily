@@ -1,4 +1,4 @@
 label START
-    "What seems like a trash bag."
-    if repeat end
-    "It has dust all over."
+	"What seems like a trash bag."
+	if repeat end
+	"It has dust all over."

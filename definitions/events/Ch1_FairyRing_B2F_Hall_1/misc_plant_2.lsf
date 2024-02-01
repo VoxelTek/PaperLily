@@ -1,5 +1,5 @@
 label START
-    if repeat
-        "A small plant. It seems to block the fairy's view."
-        end
-    lacie "As long as these black plant things are there, it should be possible to go around."
+	if repeat
+		"A small plant. It seems to block the fairy's view."
+		end
+	lacie "As long as these black plant things are there, it should be possible to go around."

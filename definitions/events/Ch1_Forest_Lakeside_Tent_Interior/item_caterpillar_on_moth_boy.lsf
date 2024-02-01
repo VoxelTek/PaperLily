@@ -1,6 +1,6 @@
 label START
-    if var ch1.forest_moths_upset end
-    chara set lacie at left
-    ch1_moth_boy "No take backs!" mood annoyed2
-    lacie "Dang." mood sigh
-    end
+	if var ch1.forest_moths_upset end
+	chara set lacie at left
+	ch1_moth_boy "No take backs!" mood annoyed2
+	lacie "Dang." mood sigh
+	end

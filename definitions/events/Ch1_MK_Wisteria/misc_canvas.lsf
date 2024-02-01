@@ -1,25 +1,25 @@
 label START
-    if var ch1.mk_revealed_canvas jump REVEALED
-    "There's something covered with a drape."
-    choice "Remove the drape?"
-        "Yes"
-            hide ui
-            set ch1.mk_revealed_canvas = true
-            system refresh
-            event call ch1_event_mk_blessing_2
-            end
-        "No"
-            end
-    end
+	if var ch1.mk_revealed_canvas jump REVEALED
+	"There's something covered with a drape."
+	choice "Remove the drape?"
+		"Yes"
+			hide ui
+			set ch1.mk_revealed_canvas = true
+			system refresh
+			event call ch1_event_mk_blessing_2
+			end
+		"No"
+			end
+	end
 
 label REVEALED
-    "Looks like a flat, black square."
-    choice "Take it with you?"
-        "Yes"
-            hide ui
-            pause 1
-            "...It's too large and heavy to carry around."
-            end
-        "No"
-            end
-    end
+	"Looks like a flat, black square."
+	choice "Take it with you?"
+		"Yes"
+			hide ui
+			pause 1
+			"...It's too large and heavy to carry around."
+			end
+		"No"
+			end
+	end

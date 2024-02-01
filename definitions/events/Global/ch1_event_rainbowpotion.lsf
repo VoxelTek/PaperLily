@@ -1,4 +1,4 @@
 label START
-    if repeat end
-    "[color=#90EE90]Rainbow potions will increase your endurance permanently.[/color]"
-    "[color=#90EE90]It is recommended to drink them as soon as possible.[/color]"
+	if repeat end
+	"[color=#90EE90]Rainbow potions will increase your endurance permanently.[/color]"
+	"[color=#90EE90]It is recommended to drink them as soon as possible.[/color]"

@@ -1,8 +1,8 @@
 label START
-    if var general.part_of_day == "night" jump NIGHT
-    "These lamps turn on automatically at night."
-    end
+	if var general.part_of_day == "night" jump NIGHT
+	"These lamps turn on automatically at night."
+	end
 
 label NIGHT
-    "These lamps turn off automatically during the day."
-    end
+	"These lamps turn off automatically during the day."
+	end

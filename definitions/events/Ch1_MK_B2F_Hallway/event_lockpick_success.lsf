@@ -1,8 +1,8 @@
 label START
-    pause 0.8
-    audio sfx play unlock
-    pause 0.5
-    set ch1.mk_unlocked_bedroom = true
-    audio sfx play door
-    move to Ch1_MK_Bedroom point entrance
-    end
+	pause 0.8
+	audio sfx play unlock
+	pause 0.5
+	set ch1.mk_unlocked_bedroom = true
+	audio sfx play door
+	move to Ch1_MK_Bedroom point entrance
+	end

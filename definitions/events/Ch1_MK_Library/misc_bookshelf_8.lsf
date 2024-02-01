@@ -1,21 +1,21 @@
 label START
-    event call misc_bookshelf
-    if var general.serious end
-    "One of them stands out."
-    choice "Read a passage?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    audio sfx play paper
-    pause 0.5
-    "Are you upset?\" color \"#FFF59D"
-    "No, of course not.\" color \"#B0BEC5"
-    "You look like you're deep in thought.\" color \"#FFF59D"
-    "You are the one who did this to her, after all.\" color \"#FFF59D"
-    "Glen, back off.\" color \"#B0BEC5"
-    "Heh.\" color \"#FFF59D"
-    "If I'm correct, you're getting yourself into a messy situation.\" color \"#FFF59D"
-    "I'll be fine.\" color \"#B0BEC5"
+	event call misc_bookshelf
+	if var general.serious end
+	"One of them stands out."
+	choice "Read a passage?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	audio sfx play paper
+	pause 0.5
+	"Are you upset?\" color \"#FFF59D"
+	"No, of course not.\" color \"#B0BEC5"
+	"You look like you're deep in thought.\" color \"#FFF59D"
+	"You are the one who did this to her, after all.\" color \"#FFF59D"
+	"Glen, back off.\" color \"#B0BEC5"
+	"Heh.\" color \"#FFF59D"
+	"If I'm correct, you're getting yourself into a messy situation.\" color \"#FFF59D"
+	"I'll be fine.\" color \"#B0BEC5"

@@ -1,3 +1,3 @@
 label START
-    move to Ch1_Facility_B2F_Dungeon_1 point from_cell_2
-    end
+	move to Ch1_Facility_B2F_Dungeon_1 point from_cell_2
+	end

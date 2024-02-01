@@ -1,9 +1,9 @@
 label START
-    if repeat jump AGAIN
-    chara set lacie at left
-    chara set alba at right
-    alba "No. You're not my type." mood annoyed
-    end
+	if repeat jump AGAIN
+	chara set lacie at left
+	chara set alba at right
+	alba "No. You're not my type." mood annoyed
+	end
 
 label AGAIN
-    "(You're not her type.)"
+	"(You're not her type.)"

@@ -1,15 +1,15 @@
 label START
-    if not var ch1.forest_red_hatch_exposed end
-    if var ch1.forest_red_hatch_open end
-    fade out
-    set ch1.forest_red_hatch_open = true
-    system refresh
-    pause 0.5
-    audio sfx play snap
-    pause 1
-    audio sfx play hatch_open
-    pause 2.5
-    move to move to Ch1_Red_1F point from_downstairs time 0
-    action turn left
-    fade in
-    end
+	if not var ch1.forest_red_hatch_exposed end
+	if var ch1.forest_red_hatch_open end
+	fade out
+	set ch1.forest_red_hatch_open = true
+	system refresh
+	pause 0.5
+	audio sfx play snap
+	pause 1
+	audio sfx play hatch_open
+	pause 2.5
+	move to move to Ch1_Red_1F point from_downstairs time 0
+	action turn left
+	fade in
+	end

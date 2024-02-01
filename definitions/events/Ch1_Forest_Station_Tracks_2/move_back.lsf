@@ -1,5 +1,5 @@
 label START
-    if var ch1.forest_station_took_sign
-        move to Ch1_Forest_Station_Platform_On_Tracks point from_tracks_right
-    else
-        move to Ch1_Forest_Station_Tracks_2 point from_right
+	if var ch1.forest_station_took_sign
+		move to Ch1_Forest_Station_Platform_On_Tracks point from_tracks_right
+	else
+		move to Ch1_Forest_Station_Tracks_2 point from_right

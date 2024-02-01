@@ -1,21 +1,21 @@
 label START
-    chara set lacie at left
-    chara set rune at right
-    action turn left node rune
-    pause 0.5
-    rune "I gotta say, you have terrible manners!"
-    hide ui
-    action turn right
-    camera move (64,0) time 1
-    pause 0.5
-    lacie "Uhm... I'm sorry." mood blank5
-    rune "Ignoring me like that, after I cheered for you to get here and everything!" mood tilt
-    lacie "(You didn't exactly help though...)" mood blank7
-    fade out
-    move to Ch1_Forest_Red point rune_talk time 0
-    action turn left node rune
-    fade in
-    lacie "I was just curious about the house here." mood blank3
-    lacie "Let's start over. What's your name?" mood blank1
-    event call chr_rune
-    end
+	chara set lacie at left
+	chara set rune at right
+	action turn left node rune
+	pause 0.5
+	rune "I gotta say, you have terrible manners!"
+	hide ui
+	action turn right
+	camera move (64,0) time 1
+	pause 0.5
+	lacie "Uhm... I'm sorry." mood blank5
+	rune "Ignoring me like that, after I cheered for you to get here and everything!" mood tilt
+	lacie "(You didn't exactly help though...)" mood blank7
+	fade out
+	move to Ch1_Forest_Red point rune_talk time 0
+	action turn left node rune
+	fade in
+	lacie "I was just curious about the house here." mood blank3
+	lacie "Let's start over. What's your name?" mood blank1
+	event call chr_rune
+	end

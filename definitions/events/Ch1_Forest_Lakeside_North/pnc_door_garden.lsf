@@ -1,8 +1,8 @@
 label START
-    if var ch1.forest_lakeside_placed_return_doorknob
-        lacie "I placed my return doorknob. I shouldn't go anywhere else." mood reflective2
-        end
-    system minigame end
-    audio sfx play door
-    move to Ch1_Garden_Doorknob point entrance
-    end
+	if var ch1.forest_lakeside_placed_return_doorknob
+		lacie "I placed my return doorknob. I shouldn't go anywhere else." mood reflective2
+		end
+	system minigame end
+	audio sfx play door
+	move to Ch1_Garden_Doorknob point entrance
+	end

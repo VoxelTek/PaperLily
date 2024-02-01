@@ -1,5 +1,5 @@
 label START
-    "A trash can."
-    if repeat end
-    if var general.serious end
-    "Empty, as it should be."
+	"A trash can."
+	if repeat end
+	if var general.serious end
+	"Empty, as it should be."

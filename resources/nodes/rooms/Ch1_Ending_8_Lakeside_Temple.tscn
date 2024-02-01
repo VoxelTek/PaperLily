@@ -41,6 +41,27 @@ script = ExtResource( 7 )
 Items = "ch1.lakeside_deadfish"
 Nodes = "misc_shrine"
 
+[node name="item_fish_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="1"]
+Event = "Global.ch1_null"
+
+[node name="item_petals_1_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="2"]
+Event = "Global.ch1_null"
+
+[node name="item_petals_2_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="3"]
+Event = "Global.ch1_null"
+
+[node name="item_petals_3_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="4"]
+Event = "Global.ch1_null"
+
+[node name="item_algae_1_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="5"]
+Event = "Global.ch1_null"
+
+[node name="item_algae_2_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="6"]
+Event = "Global.ch1_null"
+
+[node name="item_algae_3_on_bowl" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="7"]
+Event = "Global.ch1_null"
+
 [node name="misc_boards" parent="Ch1_Forest_Lakeside_Temple/Other/Events" index="9"]
 Event = "Ch1_Forest_Lakeside_Temple.misc_boards"
 

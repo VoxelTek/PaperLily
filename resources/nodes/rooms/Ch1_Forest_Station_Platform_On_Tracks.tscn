@@ -103,11 +103,11 @@ Trigger = 1
 Area = Vector2( 32, 128 )
 
 [node name="move_tracks_right" type="Node2D" parent="Ch1_Forest_Station_Platform/Other/Events" index="22"]
-position = Vector2( 512, 432 )
+position = Vector2( 512, 448 )
 script = ExtResource( 3 )
 Solid = false
 Trigger = 1
-Area = Vector2( 32, 128 )
+Area = Vector2( 32, 160 )
 
 [node name="move_exit" parent="Ch1_Forest_Station_Platform/Other/Events" index="23"]
 Event = "ch1_null"

@@ -1,20 +1,20 @@
 label START
-    if var ch1.forest_red_hatch_open end
-    if var ch1.forest_red_hatch_exposed jump HATCH_OPEN
-    "The carpet here seems suspicious."
-    choice "Take a closer look?"
-        "Yes"
-            fade out
-            set ch1.forest_red_hatch_exposed = true
-            system refresh
-            pause 0.5
-            audio sfx play shuffling
-            pause 2
-            fade in
-            end
-        "No"
-            end
-    end
+	if var ch1.forest_red_hatch_open end
+	if var ch1.forest_red_hatch_exposed jump HATCH_OPEN
+	"The carpet here seems suspicious."
+	choice "Take a closer look?"
+		"Yes"
+			fade out
+			set ch1.forest_red_hatch_exposed = true
+			system refresh
+			pause 0.5
+			audio sfx play shuffling
+			pause 2
+			fade in
+			end
+		"No"
+			end
+	end
 
 label HATCH_OPEN
-    "There's a ladder, but the entrance is locked with a padlock."
+	"There's a ladder, but the entrance is locked with a padlock."

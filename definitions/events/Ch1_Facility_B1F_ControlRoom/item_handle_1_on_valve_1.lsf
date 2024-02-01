@@ -1,10 +1,10 @@
 label START
-    if var ch1.facility_valve_1_set
-        event queue event_handle_already_full
-        end
-    if repeat jump AGAIN
-    "You place the handle in the slot."
+	if var ch1.facility_valve_1_set
+		event queue event_handle_already_full
+		end
+	if repeat jump AGAIN
+	"You place the handle in the slot."
 label AGAIN
-    item remove ch1.facility_handle_square
-    set ch1.facility_valve_1_set = "square"
-    event queue misc_valve_1
+	item remove ch1.facility_handle_square
+	set ch1.facility_valve_1_set = "square"
+	event queue misc_valve_1

@@ -1,9 +1,9 @@
 label START
-    fade out color white time 2
-    audio bgm override off
-    audio bgm stop time 3
-    audio bgm override on silent
-    pause 6
-    move to Ch1_BlackPass_Hub point wake_up time 0
-    system call RestoreInventory
-    audio bgm override off
+	fade out color white time 2
+	audio bgm override off
+	audio bgm stop time 3
+	audio bgm override on silent
+	pause 6
+	move to Ch1_BlackPass_Hub point wake_up time 0
+	system call RestoreInventory
+	audio bgm override off

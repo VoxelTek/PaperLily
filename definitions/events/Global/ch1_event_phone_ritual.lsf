@@ -1,37 +1,37 @@
 label START
-    if repeat jump NO_ANSWER
-    event call ch1_phone_dialing_good
-    "You hear some strange noises on the other side of the line..."
-    choice "What will you say?"
-        "\"Where is my bus?\""
-            jump BAD_ANSWER
-        "\"I need a bus.\""
-            jump BAD_ANSWER
-        "\"My bus is late.\""
-            continue
-        "Don't say anything"
-            jump BAD_ANSWER
-    hide ui
-    pause 1.5
-    "..........already there.........."
-    event call ch1_phone_hangup
-    set ch1.home_ritualbuswaiting = true
-    objective complete ch1.dial_number
-    system menu off
-    system tutorial timer
-    system call Ch1StartTimer
-    end
+	if repeat jump NO_ANSWER
+	event call ch1_phone_dialing_good
+	"You hear some strange noises on the other side of the line..."
+	choice "What will you say?"
+		"\"Where is my bus?\""
+			jump BAD_ANSWER
+		"\"I need a bus.\""
+			jump BAD_ANSWER
+		"\"My bus is late.\""
+			continue
+		"Don't say anything"
+			jump BAD_ANSWER
+	hide ui
+	pause 1.5
+	"..........already there.........."
+	event call ch1_phone_hangup
+	set ch1.home_ritualbuswaiting = true
+	objective complete ch1.dial_number
+	system menu off
+	system tutorial timer
+	system call Ch1StartTimer
+	end
 
 label BAD_ANSWER
-    hide ui
-    pause 2
-    "....."
-    event call ch1_phone_hangup
-    objective complete ch1.dial_number
-    set ch1.bus_not_there = true
-    end
+	hide ui
+	pause 2
+	"....."
+	event call ch1_phone_hangup
+	objective complete ch1.dial_number
+	set ch1.bus_not_there = true
+	end
 
 label NO_ANSWER
-    event call ch1_phone_dialing_bad
-    "There is no response."
-    end
+	event call ch1_phone_dialing_bad
+	"There is no response."
+	end

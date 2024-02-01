@@ -1,13 +1,13 @@
 label START
-    audio sfx play toilet_seat
-    if var general.home_1f_bathroom_toilet_down jump LIFT
+	audio sfx play toilet_seat
+	if var general.home_1f_bathroom_toilet_down jump LIFT
 
 label PUT_DOWN
-    set general.home_1f_bathroom_toilet_down = true
-    end
+	set general.home_1f_bathroom_toilet_down = true
+	end
 
 
 label LIFT
-    set general.home_1f_bathroom_toilet_down = false
-    end
+	set general.home_1f_bathroom_toilet_down = false
+	end
 

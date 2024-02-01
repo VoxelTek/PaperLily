@@ -1,5 +1,5 @@
 label START
-    "A puddle of what looks like blood."
-    if repeat end
-    lacie "Did this thing just turn into blood...?" mood surprised
-    end
+	"A puddle of what looks like blood."
+	if repeat end
+	lacie "Did this thing just turn into blood...?" mood surprised
+	end

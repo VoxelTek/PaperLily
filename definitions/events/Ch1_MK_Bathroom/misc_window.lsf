@@ -1,4 +1,4 @@
 label START
-    "A beautiful night sky."
-    if repeat end
-    lacie "Three moons... ?" mood blank5
+	"A beautiful night sky."
+	if repeat end
+	lacie "Three moons... ?" mood blank5

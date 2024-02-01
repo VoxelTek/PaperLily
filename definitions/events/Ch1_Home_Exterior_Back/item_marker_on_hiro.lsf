@@ -1,12 +1,12 @@
 label START
-    chara set lacie at left
-    chara set hiro at right
-    if repeat jump AGAIN
-    hiro "You do know that you're supposed to do that while the person is asleep, right?" mood pout3
-    lacie "You seemed so concentrated, I thought I could pull it off." mood concerned6
-    hiro "I think I'll be locking my room tonight..." mood pout3
-    end
+	chara set lacie at left
+	chara set hiro at right
+	if repeat jump AGAIN
+	hiro "You do know that you're supposed to do that while the person is asleep, right?" mood pout3
+	lacie "You seemed so concentrated, I thought I could pull it off." mood concerned6
+	hiro "I think I'll be locking my room tonight..." mood pout3
+	end
 
 label AGAIN
-    "Drawing on Hiro's face will have to wait."
-    end
+	"Drawing on Hiro's face will have to wait."
+	end

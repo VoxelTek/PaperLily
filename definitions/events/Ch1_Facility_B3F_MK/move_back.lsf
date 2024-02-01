@@ -1,6 +1,6 @@
 label START
-    "A solid wall has appeared where the hallway was."
-    if repeat end
-    lacie "Huh...? What?" mood concerned2
-    lacie "We're getting trapped deeper and deeper... I really hope we find that door soon." mood concerned9
-    end
+	"A solid wall has appeared where the hallway was."
+	if repeat end
+	lacie "Huh...? What?" mood concerned2
+	lacie "We're getting trapped deeper and deeper... I really hope we find that door soon." mood concerned9
+	end

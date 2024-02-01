@@ -1,5 +1,5 @@
 label START
-    if var general.serious
-        event call misc_painting_generic
-        end
-    "A portrait of a person with a goat for a head."
+	if var general.serious
+		event call misc_painting_generic
+		end
+	"A portrait of a person with a goat for a head."

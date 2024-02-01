@@ -1,4 +1,4 @@
 label START
-    if not var ch1.forest_lockedsite_clear
-        audio bgm play ch1_forest_lockedsite
-    end
+	if not var ch1.forest_lockedsite_clear
+		audio bgm play ch1_forest_lockedsite
+	end

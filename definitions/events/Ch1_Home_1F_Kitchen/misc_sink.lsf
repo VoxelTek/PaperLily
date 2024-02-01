@@ -1,23 +1,23 @@
 label START
-    "A very clean sink."
-    if var general.home1f_kitchen_tap jump TURN_OFF else jump TURN_ON
+	"A very clean sink."
+	if var general.home1f_kitchen_tap jump TURN_OFF else jump TURN_ON
 
 label TURN_ON
-    choice "Turn on the tap?"
-        "Yes"
-            continue
-        "No"
-            end
-    set general.home1f_kitchen_tap = true
-    end
+	choice "Turn on the tap?"
+		"Yes"
+			continue
+		"No"
+			end
+	set general.home1f_kitchen_tap = true
+	end
 
 
 label TURN_OFF
-    choice "Turn off the tap?"
-        "Yes"
-            continue
-        "No"
-            end
-    set general.home1f_kitchen_tap = false
-    end
+	choice "Turn off the tap?"
+		"Yes"
+			continue
+		"No"
+			end
+	set general.home1f_kitchen_tap = false
+	end
 

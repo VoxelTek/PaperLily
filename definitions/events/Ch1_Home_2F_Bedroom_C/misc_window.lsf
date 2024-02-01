@@ -1,2 +1,2 @@
 label START
-    event call ch1_misc_window_back
+	event call ch1_misc_window_back

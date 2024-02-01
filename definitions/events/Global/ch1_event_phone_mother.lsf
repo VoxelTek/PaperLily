@@ -1,22 +1,22 @@
 label START
-    pause 2
-    if repeat
-        event call ch1_phone_dialing_bad
-        "(They're not picking up...)"
-        end
-    event call ch1_phone_dialing_good
-    chara set lacie at left
-    chara rename unknown to "misc.characters.mother"
-    unknown "Hi hi, who's this?"
-    lacie "Hello mom." mood blank1
-    unknown "Ah... Lacie, what is it?"
-    lacie "I was just calling to check on you." mood blank3
-    unknown "We're very busy. Do you need anything?"
-    lacie "..." mood blank7
-    lacie "No." mood blank8
-    unknown "Then, I'll call you some other time."
-    lacie "Okay." mood concerned6
-    hide ui
-    chara rename unknown off
-    event call ch1_phone_hangup
-    end
+	pause 2
+	if repeat
+		event call ch1_phone_dialing_bad
+		"(They're not picking up...)"
+		end
+	event call ch1_phone_dialing_good
+	chara set lacie at left
+	chara rename unknown to "misc.characters.mother"
+	unknown "Hi hi, who's this?"
+	lacie "Hello mom." mood blank1
+	unknown "Ah... Lacie, what is it?"
+	lacie "I was just calling to check on you." mood blank3
+	unknown "We're very busy. Do you need anything?"
+	lacie "..." mood blank7
+	lacie "No." mood blank8
+	unknown "Then, I'll call you some other time."
+	lacie "Okay." mood concerned6
+	hide ui
+	chara rename unknown off
+	event call ch1_phone_hangup
+	end

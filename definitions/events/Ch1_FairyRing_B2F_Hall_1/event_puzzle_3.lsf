@@ -1,26 +1,26 @@
 label START
-    if repeat end
-    action turn right
-    action turn right node aoi
-    camera move (100,0) time 1.5
-    pause 1
-    lacie "Now there's a bunch of them..." mood shadow2
-    lacie "This is going to be a thing, isn't it." mood shadow4
-    aoi "Wanna turn back?" mood embarassed
-    lacie "Wait, I can try to visualize a solution..." mood reflective2
-    choice "Visualize solution?"
-        "Yes, please"
-            fade out
-            pause 1
-            set ch1.forest_fairyring_visualize_solution = true
-            system refresh
-            fade in
-            pause 1
-            lacie "It's probably something like that." mood reflective2
-            aoi "Wow! Amazing!" mood confident2
-        "I don't need it"
-            aoi "Okay..." mood pout5
-    hide ui
-    camera move (-100,0) time 0.5
-    camera reset
-    system retry-save
+	if repeat end
+	action turn right
+	action turn right node aoi
+	camera move (100,0) time 1.5
+	pause 1
+	lacie "Now there's a bunch of them..." mood shadow2
+	lacie "This is going to be a thing, isn't it." mood shadow4
+	aoi "Wanna turn back?" mood embarassed
+	lacie "Wait, I can try to visualize a solution..." mood reflective2
+	choice "Visualize solution?"
+		"Yes, please"
+			fade out
+			pause 1
+			set ch1.forest_fairyring_visualize_solution = true
+			system refresh
+			fade in
+			pause 1
+			lacie "It's probably something like that." mood reflective2
+			aoi "Wow! Amazing!" mood confident2
+		"I don't need it"
+			aoi "Okay..." mood pout5
+	hide ui
+	camera move (-100,0) time 0.5
+	camera reset
+	system retry-save

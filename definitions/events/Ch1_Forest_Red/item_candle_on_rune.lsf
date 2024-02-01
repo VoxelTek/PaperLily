@@ -1,5 +1,5 @@
 label START
-    if not var ch1.forest_seen_rune end
-    rune "This candle... is from the lighthouse!" mood tilt
-    lacie "What? Really?" mood surprised
-    lacie "(Did I just miss my chance to get to the lighthouse faster...?)" mood thinking
+	if not var ch1.forest_seen_rune end
+	rune "This candle... is from the lighthouse!" mood tilt
+	lacie "What? Really?" mood surprised
+	lacie "(Did I just miss my chance to get to the lighthouse faster...?)" mood thinking

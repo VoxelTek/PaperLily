@@ -1,23 +1,23 @@
 label START
-    audio bgm stop time 0
-    audio ambiance stop time 0
-    cg show ch1/death_blood_3 time 0
-    pause 2
-    fade out time 2
-    move to Void point (0,0) time 0 cutscene
-    cg hide time 0
-    fade in time 0
-    set persistent.lacie_deaths ++
-    set persistent.lacie_mk_deaths ++
-    choice "Try Again?"
-        "Retry"
-            set general.hp.lacie = general.maxhp.lacie
-            set ch1.mk_boss_blessings_stage = 0
-            move to Ch1_MK_Blessings point entrance
-            end
-        "Skip" if var persistent.lacie_mk_deaths >= 3
-            set general.hp.lacie = general.maxhp.lacie
-            system minigame ch1_battle_missknives_pt2
-            end
-        "Give Up"
-            system title-screen
+	audio bgm stop time 0
+	audio ambiance stop time 0
+	cg show ch1/death_blood_3 time 0
+	pause 2
+	fade out time 2
+	move to Void point (0,0) time 0 cutscene
+	cg hide time 0
+	fade in time 0
+	set persistent.lacie_deaths ++
+	set persistent.lacie_mk_deaths ++
+	choice "Try Again?"
+		"Retry"
+			set general.hp.lacie = general.maxhp.lacie
+			set ch1.mk_boss_blessings_stage = 0
+			move to Ch1_MK_Blessings point entrance
+			end
+		"Skip" if var persistent.lacie_mk_deaths >= 3
+			set general.hp.lacie = general.maxhp.lacie
+			system minigame ch1_battle_missknives_pt2
+			end
+		"Give Up"
+			system title-screen

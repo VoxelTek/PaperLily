@@ -1,9 +1,9 @@
 label START
-    system minigame end
-    audio sfx play door
-    if not var ch1.garden_seen_cutscene
-        audio bgm stop time 4
-        event call ch1_event_sai_todolist_2
-        end
-    audio bgm stop time 4
-    move to Ch1_Garden_ExitRitual point entrance
+	system minigame end
+	audio sfx play door
+	if not var ch1.garden_seen_cutscene
+		audio bgm stop time 4
+		event call ch1_event_sai_todolist_2
+		end
+	audio bgm stop time 4
+	move to Ch1_Garden_ExitRitual point entrance

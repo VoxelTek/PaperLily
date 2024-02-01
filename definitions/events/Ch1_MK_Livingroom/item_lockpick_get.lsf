@@ -1,9 +1,9 @@
 label START
-    choice "Take ${item:ch1.lockpick}?"
-        "Yes"
-            continue
-        "No"
-            end
-    set ch1.mk_plants_reward_visible = false
-    system refresh
-    item add ch1.lockpick
+	choice "Take ${item:ch1.lockpick}?"
+		"Yes"
+			continue
+		"No"
+			end
+	set ch1.mk_plants_reward_visible = false
+	system refresh
+	item add ch1.lockpick

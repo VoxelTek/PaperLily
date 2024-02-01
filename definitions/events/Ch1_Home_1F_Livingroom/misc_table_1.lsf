@@ -1,10 +1,10 @@
 label START
-    if var general.chapter == 1
-        if var general.inbetween
-            "The footprints come from under the table..."
-            "But there's nothing there."
-            end
-    "The family dining table."
-    if repeat end
-    if var general.serious end
-    lacie "We don't eat here as much anymore." mood blank2
+	if var general.chapter == 1
+		if var general.inbetween
+			"The footprints come from under the table..."
+			"But there's nothing there."
+			end
+	"The family dining table."
+	if repeat end
+	if var general.serious end
+	lacie "We don't eat here as much anymore." mood blank2

@@ -1,11 +1,11 @@
 label START
-    "A book on the occult."
-    if var general.serious end
-    choice "Read a passage?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.6
-    "\"Salt is important when dealing with demons. For best results, a handful must be thrown at the target.\""
+	"A book on the occult."
+	if var general.serious end
+	choice "Read a passage?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.6
+	"\"Salt is important when dealing with demons. For best results, a handful must be thrown at the target.\""

@@ -1,4 +1,4 @@
 label START
-    if not repeat
-        bubble exclamation
-    "A dead primal."
+	if not repeat
+		bubble exclamation
+	"A dead primal."

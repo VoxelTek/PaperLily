@@ -1,9 +1,9 @@
 label START
-    if repeat end
-    audio ambiance play fireplace_loop
-    pause 0.5
-    lacie "It's... the living room." mood sigh
-    if var ch1.mk_rescued_sai
-        lacie "This is where we fell from... right?" mood sigh2
-    else
-        lacie "This is where I fell from... isn't it?" mood sigh2
+	if repeat end
+	audio ambiance play fireplace_loop
+	pause 0.5
+	lacie "It's... the living room." mood sigh
+	if var ch1.mk_rescued_sai
+		lacie "This is where we fell from... right?" mood sigh2
+	else
+		lacie "This is where I fell from... isn't it?" mood sigh2

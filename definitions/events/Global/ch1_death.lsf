@@ -1,8 +1,8 @@
 label START
-    audio bgm stop time 0
-    audio ambiance stop time 0
-    fade out color "#FF0000" time 0
-    pause 1
-    set persistent.lacie_deaths ++
-    system death
-    end
+	audio bgm stop time 0
+	audio ambiance stop time 0
+	fade out color "#FF0000" time 0
+	pause 1
+	set persistent.lacie_deaths ++
+	system death
+	end

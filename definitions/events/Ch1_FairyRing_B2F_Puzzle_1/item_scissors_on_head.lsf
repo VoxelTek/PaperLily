@@ -1,13 +1,13 @@
 label START
-    if repeat
-        "Better not to."
-        end
-    chara set lacie at left
-    chara set aoi at right
-    aoi "Don't do that!" mood worried
-    lacie "..." mood surprised3
-    aoi "Sorry... Uh..." mood worried6
-    aoi "What if its body comes here... if you stab it?" mood worried7
-    lacie "Why would that happen?" mood confused2
-    aoi "I don't know... I don't want to risk it." mood worried3
-    lacie "...Fair enough." mood sigh2
+	if repeat
+		"Better not to."
+		end
+	chara set lacie at left
+	chara set aoi at right
+	aoi "Don't do that!" mood worried
+	lacie "..." mood surprised3
+	aoi "Sorry... Uh..." mood worried6
+	aoi "What if its body comes here... if you stab it?" mood worried7
+	lacie "Why would that happen?" mood confused2
+	aoi "I don't know... I don't want to risk it." mood worried3
+	lacie "...Fair enough." mood sigh2

@@ -1,6 +1,6 @@
 label START
-    "A red tree."
-    if repeat end
-    lacie "It stands out..."
-    lacie "Is there anything special about it?" mood thinking
-    end
+	"A red tree."
+	if repeat end
+	lacie "It stands out..."
+	lacie "Is there anything special about it?" mood thinking
+	end

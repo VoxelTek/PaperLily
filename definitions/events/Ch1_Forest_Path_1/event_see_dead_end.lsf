@@ -1,3 +1,3 @@
 label START
-    if var ch1.forest_path_1_seen_dead_end end
-    set ch1.forest_path_1_seen_dead_end = true
+	if var ch1.forest_path_1_seen_dead_end end
+	set ch1.forest_path_1_seen_dead_end = true

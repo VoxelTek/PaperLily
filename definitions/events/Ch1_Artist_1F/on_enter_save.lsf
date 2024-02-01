@@ -1,7 +1,7 @@
 label START
-    if var ch1.forest_kett_calm_down end
-    if var ch1.forest_kett_chase end
-    if objective ch1.kozmo_find_head inprogress end
-    if objective ch1.kozmo_give_head inprogress end
-    audio bgm stop
-    system retry-save
+	if var ch1.forest_kett_calm_down end
+	if var ch1.forest_kett_chase end
+	if objective ch1.kozmo_find_head inprogress end
+	if objective ch1.kozmo_give_head inprogress end
+	audio bgm stop
+	system retry-save

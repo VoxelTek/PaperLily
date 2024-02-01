@@ -1,9 +1,9 @@
 label START
-    fade out
-    set ch1.facility_b2f_hallway_e_gate_unlocked = true
-    system refresh
-    pause 1
-    audio sfx play gate
-    pause 1
-    fade in
-    end
+	fade out
+	set ch1.facility_b2f_hallway_e_gate_unlocked = true
+	system refresh
+	pause 1
+	audio sfx play gate
+	pause 1
+	fade in
+	end

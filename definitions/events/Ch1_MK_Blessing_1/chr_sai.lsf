@@ -1,19 +1,19 @@
 label START
-    if repeat 3 jump AGAIN_2
-    if repeat jump AGAIN
-    lacie "Are you sure you'll be okay?"
-    sai "Yeah for sure!"
-    sai "Tip top shape."
-    lacie "..."
-    end
+	if repeat 3 jump AGAIN_2
+	if repeat jump AGAIN
+	lacie "Are you sure you'll be okay?"
+	sai "Yeah for sure!"
+	sai "Tip top shape."
+	lacie "..."
+	end
 
 label AGAIN
-    chara set lacie at left
-    chara set sai at right
-    sai "Take your time."
-    sai "I mean... it's not like I'm bleeding out or anything."
-    lacie "..."
-    end
+	chara set lacie at left
+	chara set sai at right
+	sai "Take your time."
+	sai "I mean... it's not like I'm bleeding out or anything."
+	lacie "..."
+	end
 
 label AGAIN_2
-    lacie "(I need to find an exit fast.)"
+	lacie "(I need to find an exit fast.)"

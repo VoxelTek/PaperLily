@@ -1,17 +1,17 @@
 label START
-    audio sfx play switch
-    if var general.inbetween jump INBETWEEN
-    if var general.lights_home_2f_bedroom_a jump TURN_ON
+	audio sfx play switch
+	if var general.inbetween jump INBETWEEN
+	if var general.lights_home_2f_bedroom_a jump TURN_ON
 
 label TURN_OFF
-    set general.lights_home_2f_bedroom_a = true
-    end
+	set general.lights_home_2f_bedroom_a = true
+	end
 
 
 label TURN_ON
-    set general.lights_home_2f_bedroom_a = false
-    end
+	set general.lights_home_2f_bedroom_a = false
+	end
 
 label INBETWEEN
-    event call ch1_misc_lightswitch_inbetween
-    end
+	event call ch1_misc_lightswitch_inbetween
+	end

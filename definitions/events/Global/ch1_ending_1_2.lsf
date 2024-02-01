@@ -1,78 +1,78 @@
 label START
-    audio bgm stop time 4
-    audio bgm override off
-    lacie "I hope the reversal works..." mood blank4
-    hide ui
-    chara lock
-    pause 1
-    audio sfx play ch1_bed
-    system call HidePlayer
-    action call lacie_bed_show
-    fade out time 2 continue
-    pause 0.5
-    action call lacie_bed_closeeyes
-    pause 3
-    lacie "Please work... please work..."
-    lacie "Please work..."
-    hide ui
-    pause 3
-    pause 0.5
-    cg show ch1/busfail_1 time 0
-    fade in time 0
-    transition in blink time 2
-    pause 1
-    lacie "..."
-    hide ui
-    pause 1
-    transition out blink time 1
-    pause 2
-    transition in blink time 0.8
-    pause 1
-    transition out blink time 0.8
-    pause 3
-    audio sfx play shuffling
-    pause 0.5
-    transition in blink time 0.2
-    pause 1
-    lacie "...!?"
-    hide ui
-    pause 1
-    lacie "I feel like I'm hearing things..."
-    hide ui
-    pause 2.5
-    transition out blink time 2
-    pause 3
-    cg show ch1/busfail_2 time 0
-    transition in blink time 0.3
-    transition out blink time 0.1
-    transition in blink time 0.1
-    transition out blink time 0.1
-    transition in blink time 0.1
-    pause 0.5
-    lacie "...! H-Hiro...?!" time 1.2
-    hide ui
-    pause 0.5
-    transition out blink time 0.05
-    audio sfx play ch1_bed_atk
-    pause 0.5
-    cg show ch1/busfail_3 time 0
-    transition in blink time 0.05
-    pause 0.35
-    transition out blink time 0.05
-    pause 0.1
-    cg show ch1/busfail_4 time 0
-    transition in blink time 0.05
-    pause 0.35
-    audio sfx play gore7
-    audio bgm stop time 0
-    audio ambiance stop time 0
-    cg show ch1/death_blood_3 time 0
-    fade in time 0
-    pause 2
-    fade out time 4
-    set persistent.lacie_deaths ++
-    pause 1
-    "Dead End 1-2 - Salt is for Cooking" background none
-    system achievement CH1_BAD_END
-    set persistent.ending.1.2 = true
-    system title-screen
+	audio bgm stop time 4
+	audio bgm override off
+	lacie "I hope the reversal works..." mood blank4
+	hide ui
+	chara lock
+	pause 1
+	audio sfx play ch1_bed
+	system call HidePlayer
+	action call lacie_bed_show
+	fade out time 2 continue
+	pause 0.5
+	action call lacie_bed_closeeyes
+	pause 3
+	lacie "Please work... please work..."
+	lacie "Please work..."
+	hide ui
+	pause 3
+	pause 0.5
+	cg show ch1/busfail_1 time 0
+	fade in time 0
+	transition in blink time 2
+	pause 1
+	lacie "..."
+	hide ui
+	pause 1
+	transition out blink time 1
+	pause 2
+	transition in blink time 0.8
+	pause 1
+	transition out blink time 0.8
+	pause 3
+	audio sfx play shuffling
+	pause 0.5
+	transition in blink time 0.2
+	pause 1
+	lacie "...!?"
+	hide ui
+	pause 1
+	lacie "I feel like I'm hearing things..."
+	hide ui
+	pause 2.5
+	transition out blink time 2
+	pause 3
+	cg show ch1/busfail_2 time 0
+	transition in blink time 0.3
+	transition out blink time 0.1
+	transition in blink time 0.1
+	transition out blink time 0.1
+	transition in blink time 0.1
+	pause 0.5
+	lacie "...! H-Hiro...?!" time 1.2
+	hide ui
+	pause 0.5
+	transition out blink time 0.05
+	audio sfx play ch1_bed_atk
+	pause 0.5
+	cg show ch1/busfail_3 time 0
+	transition in blink time 0.05
+	pause 0.35
+	transition out blink time 0.05
+	pause 0.1
+	cg show ch1/busfail_4 time 0
+	transition in blink time 0.05
+	pause 0.35
+	audio sfx play gore7
+	audio bgm stop time 0
+	audio ambiance stop time 0
+	cg show ch1/death_blood_3 time 0
+	fade in time 0
+	pause 2
+	fade out time 4
+	set persistent.lacie_deaths ++
+	pause 1
+	"Dead End 1-2 - Salt is for Cooking" background none
+	system achievement CH1_BAD_END
+	set persistent.ending.1.2 = true
+	system title-screen

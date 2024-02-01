@@ -1,5 +1,5 @@
 label START
-    if not var ch1.home_missed_bus end
-    "Something is written here:"
-    "\"When was the last time you ate here? Have you forgotten?\""
-    end
+	if not var ch1.home_missed_bus end
+	"Something is written here:"
+	"\"When was the last time you ate here? Have you forgotten?\""
+	end

@@ -1,4 +1,4 @@
 label START
-    "A classic alarm clock."
-    if var general.serious end
-    "Father doesn't trust the alarm app."
+	"A classic alarm clock."
+	if var general.serious end
+	"Father doesn't trust the alarm app."

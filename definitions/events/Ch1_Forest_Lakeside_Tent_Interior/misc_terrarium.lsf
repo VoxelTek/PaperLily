@@ -1,7 +1,7 @@
 label START
-    choice "Take ${item:ch1.forest_caterpillar}?"
-        "Yes"
-            event call event_take_caterpillar
-            end
-        "No"
-            end
+	choice "Take ${item:ch1.forest_caterpillar}?"
+		"Yes"
+			event call event_take_caterpillar
+			end
+		"No"
+			end

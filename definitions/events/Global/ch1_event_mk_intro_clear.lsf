@@ -1,9 +1,9 @@
 label START
-    chara set mk at right
-    mk "How... Why can't you just go away..." mood default time 2.5
-    mk "Every time I try to be at peace..." mood upset time 2.5
-    chara despawn mk
-    action call show_mk
-    action call animate_mk
-    mk "YOU RUIN EVERYTHING!!!" mood distressed time 2
-    system minigame ch1_battle_missknives_qs
+	chara set mk at right
+	mk "How... Why can't you just go away..." mood default time 2.5
+	mk "Every time I try to be at peace..." mood upset time 2.5
+	chara despawn mk
+	action call show_mk
+	action call animate_mk
+	mk "YOU RUIN EVERYTHING!!!" mood distressed time 2
+	system minigame ch1_battle_missknives_qs

@@ -1,12 +1,12 @@
 label START
-    if not objective ch1.revert_ritual_execution inprogress end
-    if objective ch1.revert_ritual_execution.salt_front done
-        "It's already done."
-        end
-    fade out
-    pause 1
-    objective complete ch1.revert_ritual_execution.salt_front
-    system refresh
-    fade in
-    pause 0.5
-    "(You scattered salt on the entrance.)"
+	if not objective ch1.revert_ritual_execution inprogress end
+	if objective ch1.revert_ritual_execution.salt_front done
+		"It's already done."
+		end
+	fade out
+	pause 1
+	objective complete ch1.revert_ritual_execution.salt_front
+	system refresh
+	fade in
+	pause 0.5
+	"(You scattered salt on the entrance.)"

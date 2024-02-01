@@ -1,10 +1,10 @@
 label START
-    if var general.serious
-        event call misc_painting_generic
-        end
-    "A portrait of a person with a gaping mouth."
-    if repeat end
-    lacie "...I don't like this one." mood hide2
-    if character sai
-        sai "His head looks like a spoon." mood thinking6
-        lacie "..." mood confused2
+	if var general.serious
+		event call misc_painting_generic
+		end
+	"A portrait of a person with a gaping mouth."
+	if repeat end
+	lacie "...I don't like this one." mood hide2
+	if character sai
+		sai "His head looks like a spoon." mood thinking6
+		lacie "..." mood confused2

@@ -1,85 +1,85 @@
 label START
-    set ch1.mk_clear = true
-    set ch1.facility_flood_engaged = true
-    set ch1.facility_lights_off = false
-    set ch1.facility_elevator_on = false
-    set ch1.facility_elevator_location = -1
-    set general.serious = false
-    system menu on
-    if var ch1.mk_clear_noskip_pt1
-        if var ch1.mk_clear_noskip_pt2
-            if var ch1.mk_clear_noskip_pt3
-                system achievement CH1_MK_CLEAR
-    if var ch1.mk_potion_temp_took
-        set general.maxhp.lacie = ch1.mk_potion_temp_og_hp
-    set general.hp.lacie = general.maxhp.lacie
-    objective clear
-    objective add ch1.facility_find_door
-    chara set lacie at left
-    chara set sai at right
-    move to Ch1_Cutscene_Facility_AfterBattle point from_mk time 0
-    fade in time 4
-    pause 1
-    action call lacie_open_eyes
-    pause 1.5
-    sai "Welcome back." mood blank5
-    lacie "..." mood reflective5
-    fade out
-    action call lacie_floor_hide
-    chara spawn lacie point from_mk
-    action turn up node lacie
-    pause 1.5
-    fade in
-    pause 0.5
-    lacie "How long have I been out?" mood concerned9
-    sai "14 minutes." mood smile6
-    lacie "That's creepy, you shouldn't watch people sleep." mood confused3
-    sai "I actually looked around first! I swear!" mood chillplz2
-    sai "The door is right down this hall, see?" mood chillplz2
-    lacie "...I see." mood disappointed2
-    hide ui
-    pause 1
-    if var ch1.mk_rescued_sai
-        sai "You were pretty crazy back there, y'know?" mood blank11
-        sai "You must be really good at dodging knives." mood blank10
-        lacie "Thanks." mood blank1
-        sai "You sure you're not a demon yourself?" mood confused11
-        lacie "..." mood thinking4
-        lacie "No." mood blank5
-        bubble ellipsis on sai
-        sai "It was just a joke, you know...?" mood chillplz
-    if not var ch1.mk_rescued_sai
-        sai "I dunno what just happened..." mood confused9
-        sai "...but you basically got rid of that demon and freed us right?" mood confused11
-        lacie "Yes." mood blank1
-        sai "How?" mood confused4
-        lacie "It wasn't that hard. Maybe she had bad aim." mood reflective8
-        sai "Huh... so humble..." mood lazy2
-        sai "But next time don't leave me locked in a cage." mood annoyed4
-        sai "I could've died, you know!?" mood annoyed
-        lacie "..." mood blank5
-        lacie "My bad." mood blank7
-    hide ui
-    pause 1
-    action turn right node lacie
-    pause 0.5
-    lacie "So, is it a dead end?" mood blank2
-    sai "Yep." mood default
-    lacie "I see." mood reflective7
-    lacie "Just as Rune said..." mood reflective4
-    sai "You sound disappointed." mood blank10
-    sai "Don't tell me you're up for more near death experiences." mood smile2
-    lacie "I just... haven't solved anything yet." mood sad8
-    lacie "I didn't find Red, I didn't even find the lighthouse."
-    lacie "All of the things I set out to do..."
-    sai "..." mood blank12
-    sai "You've got time." mood smile2
-    sai "You're not dead yet." mood smile3
-    sai "That has to count for something, right?" mood smile5
-    lacie "..." mood reflective3
-    lacie "I guess there's no helping it." mood reflective2
-    audio bgm override on silent
-    move to Ch1_Facility_B3F_East point from_mk
-    audio bgm override off
-    system call RestoreInventory
-    system retry-save
+	set ch1.mk_clear = true
+	set ch1.facility_flood_engaged = true
+	set ch1.facility_lights_off = false
+	set ch1.facility_elevator_on = false
+	set ch1.facility_elevator_location = -1
+	set general.serious = false
+	system menu on
+	if var ch1.mk_clear_noskip_pt1
+		if var ch1.mk_clear_noskip_pt2
+			if var ch1.mk_clear_noskip_pt3
+				system achievement CH1_MK_CLEAR
+	if var ch1.mk_potion_temp_took
+		set general.maxhp.lacie = ch1.mk_potion_temp_og_hp
+	set general.hp.lacie = general.maxhp.lacie
+	objective clear
+	objective add ch1.facility_find_door
+	chara set lacie at left
+	chara set sai at right
+	move to Ch1_Cutscene_Facility_AfterBattle point from_mk time 0
+	fade in time 4
+	pause 1
+	action call lacie_open_eyes
+	pause 1.5
+	sai "Welcome back." mood blank5
+	lacie "..." mood reflective5
+	fade out
+	action call lacie_floor_hide
+	chara spawn lacie point from_mk
+	action turn up node lacie
+	pause 1.5
+	fade in
+	pause 0.5
+	lacie "How long have I been out?" mood concerned9
+	sai "14 minutes." mood smile6
+	lacie "That's creepy, you shouldn't watch people sleep." mood confused3
+	sai "I actually looked around first! I swear!" mood chillplz2
+	sai "The door is right down this hall, see?" mood chillplz2
+	lacie "...I see." mood disappointed2
+	hide ui
+	pause 1
+	if var ch1.mk_rescued_sai
+		sai "You were pretty crazy back there, y'know?" mood blank11
+		sai "You must be really good at dodging knives." mood blank10
+		lacie "Thanks." mood blank1
+		sai "You sure you're not a demon yourself?" mood confused11
+		lacie "..." mood thinking4
+		lacie "No." mood blank5
+		bubble ellipsis on sai
+		sai "It was just a joke, you know...?" mood chillplz
+	if not var ch1.mk_rescued_sai
+		sai "I dunno what just happened..." mood confused9
+		sai "...but you basically got rid of that demon and freed us right?" mood confused11
+		lacie "Yes." mood blank1
+		sai "How?" mood confused4
+		lacie "It wasn't that hard. Maybe she had bad aim." mood reflective8
+		sai "Huh... so humble..." mood lazy2
+		sai "But next time don't leave me locked in a cage." mood annoyed4
+		sai "I could've died, you know!?" mood annoyed
+		lacie "..." mood blank5
+		lacie "My bad." mood blank7
+	hide ui
+	pause 1
+	action turn right node lacie
+	pause 0.5
+	lacie "So, is it a dead end?" mood blank2
+	sai "Yep." mood default
+	lacie "I see." mood reflective7
+	lacie "Just as Rune said..." mood reflective4
+	sai "You sound disappointed." mood blank10
+	sai "Don't tell me you're up for more near death experiences." mood smile2
+	lacie "I just... haven't solved anything yet." mood sad8
+	lacie "I didn't find Red, I didn't even find the lighthouse."
+	lacie "All of the things I set out to do..."
+	sai "..." mood blank12
+	sai "You've got time." mood smile2
+	sai "You're not dead yet." mood smile3
+	sai "That has to count for something, right?" mood smile5
+	lacie "..." mood reflective3
+	lacie "I guess there's no helping it." mood reflective2
+	audio bgm override on silent
+	move to Ch1_Facility_B3F_East point from_mk
+	audio bgm override off
+	system call RestoreInventory
+	system retry-save

@@ -1,11 +1,11 @@
 label START
-    "A painting of a window."
-    if repeat end
-    if var general.serious end
-    if character sai jump SAI_IN_PARTY
-    end
+	"A painting of a window."
+	if repeat end
+	if var general.serious end
+	if character sai jump SAI_IN_PARTY
+	end
 
 label SAI_IN_PARTY
-    chara set lacie at left
-    chara set sai at right
-    sai "Must be stuffy in here without any actual windows." mood blank9
+	chara set lacie at left
+	chara set sai at right
+	sai "Must be stuffy in here without any actual windows." mood blank9

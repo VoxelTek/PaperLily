@@ -1,37 +1,37 @@
 label START
-    fade out
-    pause 2
-    audio bgm override on silent
-    move to Ch1_MK_B2F_Cages point lacie_escape time 0 cutscene
-    action call lacie_on_floor
-    fade in time 4
-    bubble ellipsis point lacie_escape_bubble
-    pause 1
-    audio bgm override off
-    move to Ch1_MK_B2F_Cages point lacie_escape
-    chara set lacie at left
-    chara set sai at right
-    pause 1
-    lacie "I'm out of my cage...?" mood concerned11
-    hide ui
-    pause 0.5
-    action walk left 64 speed slow
-    action turn up
-    camera move (0,-100) time 1.0
-    lacie "(He's still trapped though...)" mood blank8
-    camera move (0,100) time 1.0 continue
-    hide ui
-    action turn down
-    audio bgm override off
-    audio bgm play ch1_mk_q
-    pause 1.0
-    camera reset
-    pause 0.5
-    lacie "...Oh? All my items are gone...?" mood surprised3
-    lacie "Without that doorknob... I can't go back home!" mood surprised
-    set ch1.mk_trapped = true
-    set ch1.mk_unlocked_bathroom = true
-    objective clear
-    objective add ch1.mk_find_exit
-    objective add ch1.mk_find_own_items
-    system achievement CH1_MK_HOME
+	fade out
+	pause 2
+	audio bgm override on silent
+	move to Ch1_MK_B2F_Cages point lacie_escape time 0 cutscene
+	action call lacie_on_floor
+	fade in time 4
+	bubble ellipsis point lacie_escape_bubble
+	pause 1
+	audio bgm override off
+	move to Ch1_MK_B2F_Cages point lacie_escape
+	chara set lacie at left
+	chara set sai at right
+	pause 1
+	lacie "I'm out of my cage...?" mood concerned11
+	hide ui
+	pause 0.5
+	action walk left 64 speed slow
+	action turn up
+	camera move (0,-100) time 1.0
+	lacie "(He's still trapped though...)" mood blank8
+	camera move (0,100) time 1.0 continue
+	hide ui
+	action turn down
+	audio bgm override off
+	audio bgm play ch1_mk_q
+	pause 1.0
+	camera reset
+	pause 0.5
+	lacie "...Oh? All my items are gone...?" mood surprised3
+	lacie "Without that doorknob... I can't go back home!" mood surprised
+	set ch1.mk_trapped = true
+	set ch1.mk_unlocked_bathroom = true
+	objective clear
+	objective add ch1.mk_find_exit
+	objective add ch1.mk_find_own_items
+	system achievement CH1_MK_HOME

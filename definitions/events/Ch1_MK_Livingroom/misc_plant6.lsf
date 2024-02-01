@@ -1,11 +1,11 @@
 label START
-    if var ch1.mk_plants_dead
-        "It's dead."
-        end
-    "A plant with a tag attached. It says:"
-    if objective ch1.mk_plant_flowers done
-        "\"Thank you.\""
-        end
-    "\"Requires dim light."
-    "For enrichment, give it a flower crown once a month.\""
-    objective add ch1.mk_plant_flowers
+	if var ch1.mk_plants_dead
+		"It's dead."
+		end
+	"A plant with a tag attached. It says:"
+	if objective ch1.mk_plant_flowers done
+		"\"Thank you.\""
+		end
+	"\"Requires dim light."
+	"For enrichment, give it a flower crown once a month.\""
+	objective add ch1.mk_plant_flowers

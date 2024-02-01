@@ -1,6 +1,6 @@
 label START
-    if var general.serious
-        "A window."
-        end
-    "A cozy gaming space by the window."
-    end
+	if var general.serious
+		"A window."
+		end
+	"A cozy gaming space by the window."
+	end

@@ -1,3 +1,3 @@
 label START
-    if var ch1.mk_seen_event_first_enter end
-    event call ch1_event_mk_first_enter
+	if var ch1.mk_seen_event_first_enter end
+	event call ch1_event_mk_first_enter

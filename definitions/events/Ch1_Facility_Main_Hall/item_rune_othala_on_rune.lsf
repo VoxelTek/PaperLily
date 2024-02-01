@@ -1,4 +1,4 @@
 label START
-    item remove ch1.rune_othala
-    event call event_rune_give_rune
-    end
+	item remove ch1.rune_othala
+	event call event_rune_give_rune
+	end

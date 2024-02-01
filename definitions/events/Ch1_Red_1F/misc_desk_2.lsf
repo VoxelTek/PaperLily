@@ -1,15 +1,15 @@
 label START
-    if not var ch1.forest_red_took_notes
-        "Some notes on curse removal rituals."
-        choice "Take ${item:ch1.red_notes}?"
-            "Yes"
-                set ch1.forest_red_took_notes = true
-                system refresh
-                item add ch1.red_notes
-                lacie "(Can I even use this for anything...?)" mood thinking
-            "No"
-                end
-        end
+	if not var ch1.forest_red_took_notes
+		"Some notes on curse removal rituals."
+		choice "Take ${item:ch1.red_notes}?"
+			"Yes"
+				set ch1.forest_red_took_notes = true
+				system refresh
+				item add ch1.red_notes
+				lacie "(Can I even use this for anything...?)" mood thinking
+			"No"
+				end
+		end
 
-    "An empty desk that you stole some notes from."
-    end
+	"An empty desk that you stole some notes from."
+	end

@@ -1,5 +1,5 @@
 label START
-    if var ch1.forest_entrance_south_seen_station_stairs_missing end
-    if var ch1.forest_entrance_south_opened_station end
-    if repeat end
-    set ch1.forest_entrance_south_seen_station_stairs_missing = true
+	if var ch1.forest_entrance_south_seen_station_stairs_missing end
+	if var ch1.forest_entrance_south_opened_station end
+	if repeat end
+	set ch1.forest_entrance_south_seen_station_stairs_missing = true

@@ -1,4 +1,4 @@
 label START
-    lacie "Do you know where this leads?" mood blank1
-    ch1_moth_boy "No. We found that lying around when we were setting up camp." mood annoyed2
-    lacie "I see..." mood default
+	lacie "Do you know where this leads?" mood blank1
+	ch1_moth_boy "No. We found that lying around when we were setting up camp." mood annoyed2
+	lacie "I see..." mood default

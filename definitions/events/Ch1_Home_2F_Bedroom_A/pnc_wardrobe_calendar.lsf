@@ -1,6 +1,6 @@
 label START
-    "A calendar. It's still stuck in March, 6 months ago."
-    if repeat end
-    if var general.serious end
-    lacie "Is there even a point in turning the pages?"
-    lacie "The year is more or less over anyways."
+	"A calendar. It's still stuck in March, 6 months ago."
+	if repeat end
+	if var general.serious end
+	lacie "Is there even a point in turning the pages?"
+	lacie "The year is more or less over anyways."

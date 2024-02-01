@@ -1,7 +1,7 @@
 label START
-    if repeat end
-    if var ch1.forest_entrance_gate_open end
-    hide ui
-    pause 0.5
-    lacie "Ah... I see how it is." mood annoyed
-    lacie "I really dislike this kind of puzzle though..." mood annoyed3
+	if repeat end
+	if var ch1.forest_entrance_gate_open end
+	hide ui
+	pause 0.5
+	lacie "Ah... I see how it is." mood annoyed
+	lacie "I really dislike this kind of puzzle though..." mood annoyed3

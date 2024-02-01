@@ -1,7 +1,7 @@
 label START
-    if var general.serious jump SERIOUS
-    "Thankfully, there's plenty of toilet paper."
-    end
+	if var general.serious jump SERIOUS
+	"Thankfully, there's plenty of toilet paper."
+	end
 
 label SERIOUS
-    "Toilet paper."
+	"Toilet paper."

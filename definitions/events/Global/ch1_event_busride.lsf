@@ -1,104 +1,104 @@
 label START
-    hide ui
-    pause 0.5
-    action turn up
-    pause 1
-    lacie "I'll be back soon... I hope." mood concerned5
-    hide ui
-    pause 0.5
-    action turn down
-    audio bgm stop
-    audio bgm override off
-    action call open_front_gate
-    audio sfx play gate
-    fade out
-    move to Void point (0,0) cutscene time 0
-    pause 2
-    audio ambiance volume 1
-    cg show ch1/bus_lacie
-    fade in
-    chara lock
-    pause 2
-    lacie "(Once I get in... there will be no turning back.)"
-    hide ui
-    chara unlock
-    fade out
-    cg hide
-    move to Ch1_Cutscene_Bus_A point (384,244)
-    fade in
-    pause 0.5
-    action walk path walk node Lacie
-    action turn up node Lacie
-    pause 0.5
-    lacie "I'll just... drop the rune into this box?" mood blank6
-    item remove ch1.rune_jara
-    hide ui
-    pause 0.6
-    action walk path walk2 speed slow node Lacie continue
-    pause 0.25
-    system call PlayTicketAnimation
-    pause 2.5
-    lacie "Looks like there's no one here..." mood blank3
-    hide ui
-    action turn down node Lacie
-    pause 0.6
-    action turn up node Lacie
-    pause 0.6
-    lacie "This spot is good." mood blank4
-    hide ui
-    pause 0.5
-    action walk path walk3 node Lacie
-    hide ui
-    pause 0.5
-    system call LacieScoochIn
-    pause 1
-    audio sfx play bus_leave
-    pause 2
-    audio ambiance stop
-    pause 3
-    system call PlayBusAnimation
-    pause 3
-    fade out
-    pause 4
-    audio ambiance play bus_drive_loop
-    fade in
-    pause 3
-    lacie "And so, we're off... to who knows where." mood concerned4
-    hide ui
-    pause 1
-    lacie "What would my parents think right now?" mood reflective5
-    lacie "Their daughter is on a bus headed straight towards certain death." mood reflective6
-    lacie "..." mood reflective7
-    lacie "It's hard to say this but... they would be happier without me." mood sad
-    lacie "...Even if I die on this trip, life will be better for them... and Hiro." mood sad8
-    lacie "..."
-    lacie "Doing this ritual was the right choice." mood reflective7
-    lacie "Whether I make it or fail... whether the Lacie everyone knows disappears or a different Lacie makes it home..." mood reflective3
-    lacie "...everyone wins." mood reflective8
-    hide ui
-    pause 1.2
-    system call LacieCloseEyes
-    chara lock
-    pause 0.8
-    fade out time 3
-    pause 0.8
-    lacie "In my mind, I went through everything I knew about this ritual."
-    lacie "Then, I remembered the words from a forum post."
-    hide ui
-    pause 0.5
-    "\"You must get off the bus before the end of the line.\"" format center position center background none
-    lacie "The letter said that the bus would simply take me to my destination - but that person was very insistent on not letting that happen."
-    "\"Seriously, you have to get off no matter what!\"" format center position center background none
-    lacie "The user that posted it has a big reputation in that forum, so their words probably had some merit to them."
-    lacie "But... won't I be breaking the rules if I do that...?"
-    lacie "Also, what if the bus never stops? I can't just jump out the window, right?"
-    hide ui
-    pause 1
-    lacie "As I played with my thoughts, my consciousness started to fade away, and soon I was fully asleep."
-    hide ui
-    pause 3
-    chara unlock
-    audio ambiance stop time 4
-    event queue ch1_event_blackpass_2
-    pause 8
-    end
+	hide ui
+	pause 0.5
+	action turn up
+	pause 1
+	lacie "I'll be back soon... I hope." mood concerned5
+	hide ui
+	pause 0.5
+	action turn down
+	audio bgm stop
+	audio bgm override off
+	action call open_front_gate
+	audio sfx play gate
+	fade out
+	move to Void point (0,0) cutscene time 0
+	pause 2
+	audio ambiance volume 1
+	cg show ch1/bus_lacie
+	fade in
+	chara lock
+	pause 2
+	lacie "(Once I get in... there will be no turning back.)"
+	hide ui
+	chara unlock
+	fade out
+	cg hide
+	move to Ch1_Cutscene_Bus_A point (384,244)
+	fade in
+	pause 0.5
+	action walk path walk node Lacie
+	action turn up node Lacie
+	pause 0.5
+	lacie "I'll just... drop the rune into this box?" mood blank6
+	item remove ch1.rune_jara
+	hide ui
+	pause 0.6
+	action walk path walk2 speed slow node Lacie continue
+	pause 0.25
+	system call PlayTicketAnimation
+	pause 2.5
+	lacie "Looks like there's no one here..." mood blank3
+	hide ui
+	action turn down node Lacie
+	pause 0.6
+	action turn up node Lacie
+	pause 0.6
+	lacie "This spot is good." mood blank4
+	hide ui
+	pause 0.5
+	action walk path walk3 node Lacie
+	hide ui
+	pause 0.5
+	system call LacieScoochIn
+	pause 1
+	audio sfx play bus_leave
+	pause 2
+	audio ambiance stop
+	pause 3
+	system call PlayBusAnimation
+	pause 3
+	fade out
+	pause 4
+	audio ambiance play bus_drive_loop
+	fade in
+	pause 3
+	lacie "And so, we're off... to who knows where." mood concerned4
+	hide ui
+	pause 1
+	lacie "What would my parents think right now?" mood reflective5
+	lacie "Their daughter is on a bus headed straight towards certain death." mood reflective6
+	lacie "..." mood reflective7
+	lacie "It's hard to say this but... they would be happier without me." mood sad
+	lacie "...Even if I die on this trip, life will be better for them... and Hiro." mood sad8
+	lacie "..."
+	lacie "Doing this ritual was the right choice." mood reflective7
+	lacie "Whether I make it or fail... whether the Lacie everyone knows disappears or a different Lacie makes it home..." mood reflective3
+	lacie "...everyone wins." mood reflective8
+	hide ui
+	pause 1.2
+	system call LacieCloseEyes
+	chara lock
+	pause 0.8
+	fade out time 3
+	pause 0.8
+	lacie "In my mind, I went through everything I knew about this ritual."
+	lacie "Then, I remembered the words from a forum post."
+	hide ui
+	pause 0.5
+	"\"You must get off the bus before the end of the line.\"" format center position center background none
+	lacie "The letter said that the bus would simply take me to my destination - but that person was very insistent on not letting that happen."
+	"\"Seriously, you have to get off no matter what!\"" format center position center background none
+	lacie "The user that posted it has a big reputation in that forum, so their words probably had some merit to them."
+	lacie "But... won't I be breaking the rules if I do that...?"
+	lacie "Also, what if the bus never stops? I can't just jump out the window, right?"
+	hide ui
+	pause 1
+	lacie "As I played with my thoughts, my consciousness started to fade away, and soon I was fully asleep."
+	hide ui
+	pause 3
+	chara unlock
+	audio ambiance stop time 4
+	event queue ch1_event_blackpass_2
+	pause 8
+	end

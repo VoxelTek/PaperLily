@@ -1,13 +1,13 @@
 label START
-    set general.lights_home1f_livingroom = true
-    set general.lights_home1f_lamp = false
-    set general.lights_home_1f_garage = true
-    set general.lights_home_1f_kitchen = true
-    set general.lights_home_1f_bathroom = true
-    set general.lights_home_2f_hallway = true
-    set general.lights_home_2f_hallway_lamp = false
-    set general.lights_home_2f_bathroom = true
-    set general.lights_home_2f_bedroom_a = true
-    set general.lights_home_2f_bedroom_b = true
-    set general.lights_home_2f_bedroom_c = true
-    set general.lights_home_2f_bedroom_c_lamp = false
+	set general.lights_home1f_livingroom = true
+	set general.lights_home1f_lamp = false
+	set general.lights_home_1f_garage = true
+	set general.lights_home_1f_kitchen = true
+	set general.lights_home_1f_bathroom = true
+	set general.lights_home_2f_hallway = true
+	set general.lights_home_2f_hallway_lamp = false
+	set general.lights_home_2f_bathroom = true
+	set general.lights_home_2f_bedroom_a = true
+	set general.lights_home_2f_bedroom_b = true
+	set general.lights_home_2f_bedroom_c = true
+	set general.lights_home_2f_bedroom_c_lamp = false

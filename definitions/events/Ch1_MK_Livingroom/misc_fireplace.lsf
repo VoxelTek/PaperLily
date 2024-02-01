@@ -1,15 +1,15 @@
 label START
-    if var general.serious
-        "A fireplace."
-        end
-    if repeat jump JOKE
-    "A fireplace."
-    lacie "There's no fire, so it's just... a place." mood blank1
-    if character sai
-        sai "Haha, good one!" mood happy2
-        lacie "..." mood blank2
-    end
+	if var general.serious
+		"A fireplace."
+		end
+	if repeat jump JOKE
+	"A fireplace."
+	lacie "There's no fire, so it's just... a place." mood blank1
+	if character sai
+		sai "Haha, good one!" mood happy2
+		lacie "..." mood blank2
+	end
 
 label JOKE
-    "A place."
-    end
+	"A place."
+	end

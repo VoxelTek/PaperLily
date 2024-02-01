@@ -1,17 +1,17 @@
 label START
-    lacie "Hello?"
-    unknown "..."
-    lacie "...Hello?" mood blank5
-    chara rename unknown to "misc.characters.neighbor"
-    unknown "Oh... it's you."
-    unknown "...Is your mother around?"
-    lacie "She isn't. Would you like to leave a message?" mood blank1
-    unknown "Uh... no. That's alright. Bye."
-    event call ch1_phone_hangup
-    pause 1
-    lacie "...Bye." mood disappointed2
-    lacie "(The neighbors still have a hard time talking to me...)" mood disappointed
-    hide ui
-    set ch1.home_phone_call_answered = true
-    chara rename unknown off
-    end
+	lacie "Hello?"
+	unknown "..."
+	lacie "...Hello?" mood blank5
+	chara rename unknown to "misc.characters.neighbor"
+	unknown "Oh... it's you."
+	unknown "...Is your mother around?"
+	lacie "She isn't. Would you like to leave a message?" mood blank1
+	unknown "Uh... no. That's alright. Bye."
+	event call ch1_phone_hangup
+	pause 1
+	lacie "...Bye." mood disappointed2
+	lacie "(The neighbors still have a hard time talking to me...)" mood disappointed
+	hide ui
+	set ch1.home_phone_call_answered = true
+	chara rename unknown off
+	end

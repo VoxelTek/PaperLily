@@ -1,16 +1,16 @@
 label START
-    if var ch1.forest_station_took_sign
-        "There's no need to go back down."
-        end
-    if not var ch1.forest_station_sign_gone
-        "It's not a good idea to go down there."
-        end
-    choice "Descend onto the train tracks?"
-        "Yes"
-            fade out
-            set ch1.forest_station_show_eyecu = false
-            move to Ch1_Forest_Station_Platform_On_Tracks point tracks_descend_2 time 0
-            pause 2
-            fade in
-        "No"
-            end
+	if var ch1.forest_station_took_sign
+		"There's no need to go back down."
+		end
+	if not var ch1.forest_station_sign_gone
+		"It's not a good idea to go down there."
+		end
+	choice "Descend onto the train tracks?"
+		"Yes"
+			fade out
+			set ch1.forest_station_show_eyecu = false
+			move to Ch1_Forest_Station_Platform_On_Tracks point tracks_descend_2 time 0
+			pause 2
+			fade in
+		"No"
+			end

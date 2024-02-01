@@ -1,8 +1,8 @@
 label START
-    if repeat
-        lacie "I'm sorry for disturbing you." mood concerned11
-        end
-    lacie "(She's crying...)" mood sad6
-    sai "How long has she been locked up in here?" mood confused7
-    lacie "I don't know." mood reflective4
+	if repeat
+		lacie "I'm sorry for disturbing you." mood concerned11
+		end
+	lacie "(She's crying...)" mood sad6
+	sai "How long has she been locked up in here?" mood confused7
+	lacie "I don't know." mood reflective4
 

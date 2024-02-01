@@ -1,20 +1,20 @@
 label START
-    if var ch1.mk_took_flowers_bathroom
-        "An empty flower vase."
-        end
-    "Pink flowers in a vase."
-    if objective ch1.mk_plant_flowers inprogress jump GIVE_PLANT_FLOWERS
-    end
+	if var ch1.mk_took_flowers_bathroom
+		"An empty flower vase."
+		end
+	"Pink flowers in a vase."
+	if objective ch1.mk_plant_flowers inprogress jump GIVE_PLANT_FLOWERS
+	end
 
 label GIVE_PLANT_FLOWERS
-    lacie "I could use these flowers..."
-    choice "Bring the flowers to the plant?"
-        "Yes"
-            set ch1.mk_took_flowers_bathroom = true
-            move to Ch1_MK_Livingroom point flowers_plant
-            "\"Thank you.\""
-            objective complete ch1.mk_plant_flowers
-            event call ch1_event_mk_check_plant_objectives
-            end
-        "No"
-            end
+	lacie "I could use these flowers..."
+	choice "Bring the flowers to the plant?"
+		"Yes"
+			set ch1.mk_took_flowers_bathroom = true
+			move to Ch1_MK_Livingroom point flowers_plant
+			"\"Thank you.\""
+			objective complete ch1.mk_plant_flowers
+			event call ch1_event_mk_check_plant_objectives
+			end
+		"No"
+			end

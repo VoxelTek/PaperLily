@@ -1,19 +1,19 @@
 label START
-    if var general.chapter == 1 jump CH1 else jump MOVE
+	if var general.chapter == 1 jump CH1 else jump MOVE
 
 label CH1
-    if var ch1.home_ritualstarted
-        if var general.part_of_day == "evening"
-            audio bgm stop time 3
-            audio bgm override on ch1_home_investigation_d
-            audio bgm play ch1_home_investigation_d
-    jump MOVE
+	if var ch1.home_ritualstarted
+		if var general.part_of_day == "evening"
+			audio bgm stop time 3
+			audio bgm override on ch1_home_investigation_d
+			audio bgm play ch1_home_investigation_d
+	jump MOVE
 
 label MOVE
-    fade out time 0.5
-    move to Ch1_Home_Exterior_Front point backyard_gate time 0
-    if objective ch1.take_bus inprogress
-        system call Ch1StopTimer
-        set ch1.seen_bus = true
-    fade in time 0.5
-    end
+	fade out time 0.5
+	move to Ch1_Home_Exterior_Front point backyard_gate time 0
+	if objective ch1.take_bus inprogress
+		system call Ch1StopTimer
+		set ch1.seen_bus = true
+	fade in time 0.5
+	end

@@ -1,17 +1,17 @@
 label START
-    "A furnace."
-    if var ch1.forest_red_took_pot end
-    "Inside is a... thing."
-    if repeat skip
-    lacie "Is this... art? It looks like the carcass of a sculpture of some sort." mood thinking2
-    if objective ch1.kozmo_find_head inprogress
-        lacie "Maybe it could work for Kozmo, but he might hate me for it." mood thinking3
-        choice "Take ${item:ch1.red_pot}?"
-            "Yes"
-                item add ch1.red_pot
-                set ch1.forest_red_took_pot = true
-                objective complete ch1.kozmo_find_head
-                end
-            "No"
-                end
-    end
+	"A furnace."
+	if var ch1.forest_red_took_pot end
+	"Inside is a... thing."
+	if repeat skip
+	lacie "Is this... art? It looks like the carcass of a sculpture of some sort." mood thinking2
+	if objective ch1.kozmo_find_head inprogress
+		lacie "Maybe it could work for Kozmo, but he might hate me for it." mood thinking3
+		choice "Take ${item:ch1.red_pot}?"
+			"Yes"
+				item add ch1.red_pot
+				set ch1.forest_red_took_pot = true
+				objective complete ch1.kozmo_find_head
+				end
+			"No"
+				end
+	end

@@ -1,16 +1,16 @@
 label START
-    if var ch1.facility_seen_flood
-        if not var ch1.facility_rune_asked_about_flood
-            jump ABOUT_FLOOD
-    "Rune bounces up and down."
-    end
+	if var ch1.facility_seen_flood
+		if not var ch1.facility_rune_asked_about_flood
+			jump ABOUT_FLOOD
+	"Rune bounces up and down."
+	end
 
 label ABOUT_FLOOD
-    set ch1.facility_rune_asked_about_flood = true
-    lacie "By the way..." mood blank8
-    lacie "The way to go \"deeper\" seems to be flooded." mood concerned9
-    rune "Indeed!" mood default
-    lacie "Do I have to swim...?" mood confused
-    rune "Do you? I wonder!" mood sparkle
-    lacie "Sigh..." mood sigh
-    end
+	set ch1.facility_rune_asked_about_flood = true
+	lacie "By the way..." mood blank8
+	lacie "The way to go \"deeper\" seems to be flooded." mood concerned9
+	rune "Indeed!" mood default
+	lacie "Do I have to swim...?" mood confused
+	rune "Do you? I wonder!" mood sparkle
+	lacie "Sigh..." mood sigh
+	end

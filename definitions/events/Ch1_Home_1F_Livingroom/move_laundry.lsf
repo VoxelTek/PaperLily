@@ -1,13 +1,13 @@
 label START
-    if repeat jump AGAIN
-    "It's locked."
-    if var general.serious end
-    lacie "This is the laundry room." mood blank1
-    lacie "I'll never understand why doors around the house need to be locked." mood annoyed
-    lacie "Maybe Hiro has the key..." mood blank2
-    lacie "...but I don't need anything from there." mood default
-    end
+	if repeat jump AGAIN
+	"It's locked."
+	if var general.serious end
+	lacie "This is the laundry room." mood blank1
+	lacie "I'll never understand why doors around the house need to be locked." mood annoyed
+	lacie "Maybe Hiro has the key..." mood blank2
+	lacie "...but I don't need anything from there." mood default
+	end
 
 label AGAIN
-    "The laundry room. It's locked."
-    end
+	"The laundry room. It's locked."
+	end

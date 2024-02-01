@@ -1,189 +1,189 @@
 label START
-    hide ui
-    audio sfx play ch1_elevator
-    pause 1.5
-    fade out
-    set ch1.facility_elevator_location = -1
-    move to Ch1_Cutscene_Facility_Elevator point center time 0
-    chara spawn lacie point lacie
-    chara spawn sai point sai
-    pause 1.5
-    fade in
-    pause 3
-    chara set lacie at left
-    chara set sai at right
-    audio sfx play water_splash
-    pause 0.1
-    system call Flood0
-    audio bgm stop time 0
-    pause 2.5
-    audio sfx play water3
-    pause 1
-    audio sfx play ch1_powerdown
-    system call PowerDown
-    pause 4
+	hide ui
+	audio sfx play ch1_elevator
+	pause 1.5
+	fade out
+	set ch1.facility_elevator_location = -1
+	move to Ch1_Cutscene_Facility_Elevator point center time 0
+	chara spawn lacie point lacie
+	chara spawn sai point sai
+	pause 1.5
+	fade in
+	pause 3
+	chara set lacie at left
+	chara set sai at right
+	audio sfx play water_splash
+	pause 0.1
+	system call Flood0
+	audio bgm stop time 0
+	pause 2.5
+	audio sfx play water3
+	pause 1
+	audio sfx play ch1_powerdown
+	system call PowerDown
+	pause 4
 
-    action turn right node sai
-    sai "Um... What was that?" mood confused4
-    lacie "It sounded like splashing water..." mood blank3
-    if var ch1.facility_flood_engaged
-        lacie "But that's impossible... I thought we drained the water?" mood thinking3
-        action turn left node lacie
-        lacie "Could it be that the lower levels are still flooded?" mood thinking4
-    else
-        action turn left node lacie
-        lacie "Could the B4F be flooded?" mood thinking4
-    sai "Hey, you don't think we could just press the button and go back up, right?" mood blank11
-    hide ui
-    pause 0.5
-    action walk to point panel node lacie
-    pause 0.5
-    audio sfx play button
-    pause 1
-    audio sfx play button
-    pause 0.4
-    audio sfx play button
-    pause 0.2
-    audio sfx play button
-    pause 0.2
-    audio sfx play button
-    pause 2
-    action turn left node lacie
-    lacie "No." mood blank1
-    hide ui
+	action turn right node sai
+	sai "Um... What was that?" mood confused4
+	lacie "It sounded like splashing water..." mood blank3
+	if var ch1.facility_flood_engaged
+		lacie "But that's impossible... I thought we drained the water?" mood thinking3
+		action turn left node lacie
+		lacie "Could it be that the lower levels are still flooded?" mood thinking4
+	else
+		action turn left node lacie
+		lacie "Could the B4F be flooded?" mood thinking4
+	sai "Hey, you don't think we could just press the button and go back up, right?" mood blank11
+	hide ui
+	pause 0.5
+	action walk to point panel node lacie
+	pause 0.5
+	audio sfx play button
+	pause 1
+	audio sfx play button
+	pause 0.4
+	audio sfx play button
+	pause 0.2
+	audio sfx play button
+	pause 0.2
+	audio sfx play button
+	pause 2
+	action turn left node lacie
+	lacie "No." mood blank1
+	hide ui
 
-    system call Flood1
-    audio ambiance play waterfall
-    pause 1
-    sai "Sooo..." mood confused4
-    action turn down node lacie
-    lacie "This doesn't bode well." mood reflective8
-    sai "No shit, it doesn't bode at all!" mood annoyed2
-    hide ui
-    action walk to point lacie node lacie
-    action turn left node lacie
-    lacie "It's fine, elevators always have an emergency exit." mood blank8
-    hide ui
-    pause 0.8
-    action turn down node lacie
-    pause 0.4
-    action turn right node lacie
-    pause 0.4
-    action turn up node lacie
-    pause 1
-    action turn down node lacie
-    lacie "Somewhere." mood concerned9
-    hide ui
+	system call Flood1
+	audio ambiance play waterfall
+	pause 1
+	sai "Sooo..." mood confused4
+	action turn down node lacie
+	lacie "This doesn't bode well." mood reflective8
+	sai "No shit, it doesn't bode at all!" mood annoyed2
+	hide ui
+	action walk to point lacie node lacie
+	action turn left node lacie
+	lacie "It's fine, elevators always have an emergency exit." mood blank8
+	hide ui
+	pause 0.8
+	action turn down node lacie
+	pause 0.4
+	action turn right node lacie
+	pause 0.4
+	action turn up node lacie
+	pause 1
+	action turn down node lacie
+	lacie "Somewhere." mood concerned9
+	hide ui
 
-    fade out
-    chara despawn lacie
-    chara despawn sai
-    system call Flood2
-    fade in
-    pause 1
-    sai "What now?" mood worried
-    lacie "I'm not sure... do you see anything?" mood thinking2
-    sai "Like what?" mood surprised2
-    lacie "Like... an exit? Something that could be opened?" mood thinking
-    sai "Hmmm..." mood thinking4
-    hide ui
-    pause 1
-    sai "I don't know." mood thinking2
-    lacie "Then... we might actually die here." mood reflective6
-    sai "Hey... don't say things like that..." mood chillplz2
-    hide ui
-    pause 1
+	fade out
+	chara despawn lacie
+	chara despawn sai
+	system call Flood2
+	fade in
+	pause 1
+	sai "What now?" mood worried
+	lacie "I'm not sure... do you see anything?" mood thinking2
+	sai "Like what?" mood surprised2
+	lacie "Like... an exit? Something that could be opened?" mood thinking
+	sai "Hmmm..." mood thinking4
+	hide ui
+	pause 1
+	sai "I don't know." mood thinking2
+	lacie "Then... we might actually die here." mood reflective6
+	sai "Hey... don't say things like that..." mood chillplz2
+	hide ui
+	pause 1
 
-    fade out
-    system call Flood3
-    fade in
-    pause 2
-    sai "Sooo..." mood confused4
-    lacie "Let me think for a second." mood reflective2
-    sai "Okay." mood worried4
-    hide ui
-    pause 1
+	fade out
+	system call Flood3
+	fade in
+	pause 2
+	sai "Sooo..." mood confused4
+	lacie "Let me think for a second." mood reflective2
+	sai "Okay." mood worried4
+	hide ui
+	pause 1
 
-    fade out
-    system call Flood4
-    fade in
-    pause 2
-    sai "Any ideas yet?" mood worried3
-    lacie "It's possible that there's an exit on the ceiling." mood thinking3
-    lacie "But we can't reach it yet..." mood thinking4
-    lacie "If we wait until the elevator fills up with water, maybe we can float up and open it." mood thinking3
-    sai "That's smart!" mood smile6
-    sai "..." mood smile3
-    sai "So we just wait?" mood smile4
-    lacie "That's the idea." mood reflective4
-    hide ui
-    pause 1
+	fade out
+	system call Flood4
+	fade in
+	pause 2
+	sai "Any ideas yet?" mood worried3
+	lacie "It's possible that there's an exit on the ceiling." mood thinking3
+	lacie "But we can't reach it yet..." mood thinking4
+	lacie "If we wait until the elevator fills up with water, maybe we can float up and open it." mood thinking3
+	sai "That's smart!" mood smile6
+	sai "..." mood smile3
+	sai "So we just wait?" mood smile4
+	lacie "That's the idea." mood reflective4
+	hide ui
+	pause 1
 
-    fade out
-    system call Flood5
-    fade in
-    pause 1
-    sai "Man... it's cold..." mood annoyed3
-    lacie "..." mood bothered
-    hide ui
-    pause 1
+	fade out
+	system call Flood5
+	fade in
+	pause 1
+	sai "Man... it's cold..." mood annoyed3
+	lacie "..." mood bothered
+	hide ui
+	pause 1
 
-    fade out
-    pause 2
-    system call Flood6
-    fade in time 2
-    pause 1
-    lacie "Can you check the ceiling now?" mood blank1
-    lacie "Some of the panels should come off." mood blank3
-    sai "Roger." mood smile5
-    hide ui
-    fade out
-    pause 1
-    audio sfx play thud
-    pause 0.6
-    audio sfx play thud
-    pause 1.5
-    audio sfx play thud
-    pause 0.5
-    audio sfx play thud
-    pause 1.5
-    audio sfx play thud
-    pause 0.7
-    audio sfx play thud
-    pause 2
-    fade in
-    pause 0.5
-    sai "No dice." mood confused7
-    lacie "..." mood blank4
-    lacie "...What?" mood blank5
-    sai "They won't even budge." mood confused4
-    lacie "..." mood concerned
-    lacie "...Are you sure?" mood concerned2
-    sai "Yeah, I punched them as hard as I could." mood confused4
-    lacie "....." mood shadow2
-    hide ui
-    pause 2
-    sai "So... what's next?" mood blank5
-    lacie "....."
-    hide ui
-    pause 2.5
-    sai "...There's nothing next, is there..." mood blank9
-    hide ui
-    audio bgm stop time 4
-    audio ambiance stop time 4
-    fade out time 4
-    pause 1
-    chara lock
-    lacie "At that point, my mind went blank."
-    lacie "The fear of actually dying suddenly took over me."
-    lacie "And drowning... was probably the worst way to go."
-    hide ui
-    pause 1
-    "What happened after that..."
-    "It's best forgotten."
-    hide ui
-    pause 1
-    "Dead End 1-11 - Deep Sea Misadventure" background none
-    system achievement CH1_BAD_END
-    set persistent.ending.1.11 = true
-    system title-screen
+	fade out
+	pause 2
+	system call Flood6
+	fade in time 2
+	pause 1
+	lacie "Can you check the ceiling now?" mood blank1
+	lacie "Some of the panels should come off." mood blank3
+	sai "Roger." mood smile5
+	hide ui
+	fade out
+	pause 1
+	audio sfx play thud
+	pause 0.6
+	audio sfx play thud
+	pause 1.5
+	audio sfx play thud
+	pause 0.5
+	audio sfx play thud
+	pause 1.5
+	audio sfx play thud
+	pause 0.7
+	audio sfx play thud
+	pause 2
+	fade in
+	pause 0.5
+	sai "No dice." mood confused7
+	lacie "..." mood blank4
+	lacie "...What?" mood blank5
+	sai "They won't even budge." mood confused4
+	lacie "..." mood concerned
+	lacie "...Are you sure?" mood concerned2
+	sai "Yeah, I punched them as hard as I could." mood confused4
+	lacie "....." mood shadow2
+	hide ui
+	pause 2
+	sai "So... what's next?" mood blank5
+	lacie "....."
+	hide ui
+	pause 2.5
+	sai "...There's nothing next, is there..." mood blank9
+	hide ui
+	audio bgm stop time 4
+	audio ambiance stop time 4
+	fade out time 4
+	pause 1
+	chara lock
+	lacie "At that point, my mind went blank."
+	lacie "The fear of actually dying suddenly took over me."
+	lacie "And drowning... was probably the worst way to go."
+	hide ui
+	pause 1
+	"What happened after that..."
+	"It's best forgotten."
+	hide ui
+	pause 1
+	"Dead End 1-11 - Deep Sea Misadventure" background none
+	system achievement CH1_BAD_END
+	set persistent.ending.1.11 = true
+	system title-screen

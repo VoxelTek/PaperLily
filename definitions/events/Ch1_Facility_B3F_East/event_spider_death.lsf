@@ -1,11 +1,11 @@
 label START
-    audio sfx play gore7
-    audio bgm stop time 0
-    audio ambiance stop time 0
-    cg show ch1/death_blood_3 time 0
-    fade in time 0
-    pause 2
-    ch1_spider "No hard feelings."
-    ch1_spider "You're food, after all."
-    fade out time 4
-    event queue ch1_death_finally
+	audio sfx play gore7
+	audio bgm stop time 0
+	audio ambiance stop time 0
+	cg show ch1/death_blood_3 time 0
+	fade in time 0
+	pause 2
+	ch1_spider "No hard feelings."
+	ch1_spider "You're food, after all."
+	fade out time 4
+	event queue ch1_death_finally

@@ -1,3 +1,3 @@
 label START
-    move to Ch1_MK_B1F_Hallway point living_left direction up
-    end
+	move to Ch1_MK_B1F_Hallway point living_left direction up
+	end

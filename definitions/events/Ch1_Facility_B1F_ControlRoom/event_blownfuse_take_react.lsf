@@ -1,13 +1,13 @@
 label START
-    if repeat end
-    hide ui
-    pause 0.5
-    lacie "Let's throw this damaged fuse away."
-    sai "Why? Just use it as a zero or something." mood annoyed5
-    lacie "No... that's really not how fuses work." mood reflective2
-    lacie "A broken fuse won't complete the circuit." mood blank3
-    sai "I see... so it's zero if you remove it?" mood surprised3
-    lacie "No... that's just... it also won't complete the circuit. You can't make a zero." mood disappointed2
-    lacie "Just... leave this to me, okay?" mood sigh
-    sai "Roger!" mood smile5
-    end
+	if repeat end
+	hide ui
+	pause 0.5
+	lacie "Let's throw this damaged fuse away."
+	sai "Why? Just use it as a zero or something." mood annoyed5
+	lacie "No... that's really not how fuses work." mood reflective2
+	lacie "A broken fuse won't complete the circuit." mood blank3
+	sai "I see... so it's zero if you remove it?" mood surprised3
+	lacie "No... that's just... it also won't complete the circuit. You can't make a zero." mood disappointed2
+	lacie "Just... leave this to me, okay?" mood sigh
+	sai "Roger!" mood smile5
+	end

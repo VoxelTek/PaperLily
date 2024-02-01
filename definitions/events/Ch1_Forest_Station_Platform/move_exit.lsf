@@ -1,7 +1,7 @@
 label START
-    if var general.serious
-        if not var ch1.forest_station_sign_gone
-            set general.serious = false
-            set ch1.forest_station_seen_glass_crack = false
-            audio bgm override off
-    move to Ch1_Forest_Station_Path point from_station
+	if var general.serious
+		if not var ch1.forest_station_sign_gone
+			set general.serious = false
+			set ch1.forest_station_seen_glass_crack = false
+			audio bgm override off
+	move to Ch1_Forest_Station_Path point from_station

@@ -1,41 +1,41 @@
 label START
-    chara set lacie at left
-    chara set sai at right
-    if repeat 3 jump THIRD_TIME
-    if repeat jump SECOND_TIME
-    sai "Didn't catch your name earlier." mood surprised2
-    lacie "..." mood blank7
-    sai "Yeah... I see." mood thinking9
-    end
+	chara set lacie at left
+	chara set sai at right
+	if repeat 3 jump THIRD_TIME
+	if repeat jump SECOND_TIME
+	sai "Didn't catch your name earlier." mood surprised2
+	lacie "..." mood blank7
+	sai "Yeah... I see." mood thinking9
+	end
 
 label SECOND_TIME
-    lacie "..." mood blank4
-    sai "What's up?" mood surprised3
-    lacie "What... what was that thing?" mood blank5
-    sai "Huh, you can talk." mood smile12
-    lacie "..." mood disappointed2
-    sai "I dunno. They call it a primal demon." mood thinking4
-    lacie "Primal?" mood blank1
-    sai "Well, if you consider all these lively fellows you encountered \"demons\"..." mood thinking5
-    sai "...then that would make those shadowy ones \"primal demons\"." mood thinking2
-    lacie "(Hm...)" mood thinking4
-    lacie "What else do you know?" mood default
-    sai "I know lots of stuff." mood smile11
-    lacie "About primal demons?" mood disappointed2
-    sai "Ahh, about that..." mood smile10
-    sai "Not much." mood confused12
-    sai "I know they'll kill whatever crosses their path." mood confused13
-    lacie "..." mood blank5
-    sai "Contrary to other demons, which will mostly only kill you if you're human." mood thinking9
-    lacie "Hm..." mood blank7
-    set ch1.facility_lab_sai_talks = true
-    end
+	lacie "..." mood blank4
+	sai "What's up?" mood surprised3
+	lacie "What... what was that thing?" mood blank5
+	sai "Huh, you can talk." mood smile12
+	lacie "..." mood disappointed2
+	sai "I dunno. They call it a primal demon." mood thinking4
+	lacie "Primal?" mood blank1
+	sai "Well, if you consider all these lively fellows you encountered \"demons\"..." mood thinking5
+	sai "...then that would make those shadowy ones \"primal demons\"." mood thinking2
+	lacie "(Hm...)" mood thinking4
+	lacie "What else do you know?" mood default
+	sai "I know lots of stuff." mood smile11
+	lacie "About primal demons?" mood disappointed2
+	sai "Ahh, about that..." mood smile10
+	sai "Not much." mood confused12
+	sai "I know they'll kill whatever crosses their path." mood confused13
+	lacie "..." mood blank5
+	sai "Contrary to other demons, which will mostly only kill you if you're human." mood thinking9
+	lacie "Hm..." mood blank7
+	set ch1.facility_lab_sai_talks = true
+	end
 
 label THIRD_TIME
-    if var ch1.facility_lab_gate_seen jump CAN_LEAVE
-    sai "Let's wait here a bit longer." mood blank9
-    end
+	if var ch1.facility_lab_gate_seen jump CAN_LEAVE
+	sai "Let's wait here a bit longer." mood blank9
+	end
 
 label CAN_LEAVE
-    event call event_leave_lab
-    end
+	event call event_leave_lab
+	end

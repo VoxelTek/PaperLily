@@ -1,19 +1,19 @@
 label START
-    if not var ch1.blackpass_opened_locker
-        lacie "It's the exit."
-        lacie "It doesn't open until I check the locker..." mood reflective6
-        end
-    audio sfx play wardrobe_open
-    pause 0.1
-    system call OpenWardrobe
-    if var general.blackpass_visits == 1
-        event call ch1_blackpass_leave
-        objective complete ch1.blackpass_1_leave
-        event queue ch1_event_ritualwakeup
-        end
-    if var general.blackpass_visits == 2
-        event call ch1_blackpass_leave
-        objective complete ch1.blackpass_2_leave
-        event queue ch1_event_buswakeup
-        end
-    end
+	if not var ch1.blackpass_opened_locker
+		lacie "It's the exit."
+		lacie "It doesn't open until I check the locker..." mood reflective6
+		end
+	audio sfx play wardrobe_open
+	pause 0.1
+	system call OpenWardrobe
+	if var general.blackpass_visits == 1
+		event call ch1_blackpass_leave
+		objective complete ch1.blackpass_1_leave
+		event queue ch1_event_ritualwakeup
+		end
+	if var general.blackpass_visits == 2
+		event call ch1_blackpass_leave
+		objective complete ch1.blackpass_2_leave
+		event queue ch1_event_buswakeup
+		end
+	end

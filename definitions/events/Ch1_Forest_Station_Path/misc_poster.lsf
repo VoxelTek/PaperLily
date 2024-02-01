@@ -1,5 +1,5 @@
 label START
-    if not var general.serious
-        "A poster with an eye crossed off."
-    else
-        "A poster with an eye."
+	if not var general.serious
+		"Some posters with an eye crossed off."
+	else
+		"A poster with an eye."

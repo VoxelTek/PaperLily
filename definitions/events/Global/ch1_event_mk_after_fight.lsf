@@ -1,72 +1,72 @@
 label START
-    fade out color white time 0
-    move to Ch1_Cutscene_MK_AfterFight point lacie time 0
-    chara spawn lacie point lacie
-    action call hide_bg
-    fade in color white time 2
-    pause 0.5
-    lacie "..." mood concerned4
-    lacie "Where am I...?" mood concerned5
-    hide ui
-    pause 0.5
-    action turn left node lacie
-    pause 0.5
-    action turn right node lacie
-    pause 0.5
-    action turn up node lacie
-    pause 1
-    action call fade_in_bg
-    audio ambiance play fireplace_loop time 1.5
-    pause 1.5
-    camera move (0,-128) time 2
-    pause 2
-    action walk up 52 node lacie speed slow
-    pause 0.5
-    "There's a piece of paper on the floor."
-    hide ui
-    pause 0.5
-    audio sfx play paper
-    pause 1
-    "It's titled [color=#CD5C5C]SIXTH BLESSING[/color]."
-    choice "Do you want to read it?"
-        "Yes"
-            continue
-        "No"
-            jump AFTER_READ
-    hide ui
-    audio ambiance stop
-    pause 1
-    event call ch1_event_mk_blessing_6
-    pause 1
+	fade out color white time 0
+	move to Ch1_Cutscene_MK_AfterFight point lacie time 0
+	chara spawn lacie point lacie
+	action call hide_bg
+	fade in color white time 2
+	pause 0.5
+	lacie "..." mood concerned4
+	lacie "Where am I...?" mood concerned5
+	hide ui
+	pause 0.5
+	action turn left node lacie
+	pause 0.5
+	action turn right node lacie
+	pause 0.5
+	action turn up node lacie
+	pause 1
+	action call fade_in_bg
+	audio ambiance play fireplace_loop time 1.5
+	pause 1.5
+	camera move (0,-128) time 2
+	pause 2
+	action walk up 52 node lacie speed slow
+	pause 0.5
+	"There's a piece of paper on the floor."
+	hide ui
+	pause 0.5
+	audio sfx play paper
+	pause 1
+	"It's titled [color=#CD5C5C]SIXTH BLESSING[/color]."
+	choice "Do you want to read it?"
+		"Yes"
+			continue
+		"No"
+			jump AFTER_READ
+	hide ui
+	audio ambiance stop
+	pause 1
+	event call ch1_event_mk_blessing_6
+	pause 1
 label AFTER_READ
-    audio ambiance stop
-    hide ui
-    pause 2
-    audio bgm play ch1_musicbox_b
-    camera move (0,-48) time 2
-    pause 2
-    action call crossfade_chars
-    pause 6
-    action call mk_stand
-    pause 3.2
-    action call hide_mk
-    chara spawn mk point mk
-    pause 0.5
-    action walk up 52 node mk speed veryslow
-    pause 1
-    chara despawn mk
-    action call show_mk_fire
-    pause 0.7
-    action call play_mk_fire
-    pause 0.3
-    audio sfx play burn
-    action call hide_fire
-    pause 1.5
-    action call fade_out_bg
-    pause 5
-    camera move (0,118) time 2
-    pause 2
-    fade out time 2
-    audio bgm stop
-    pause 2
-    event call ch1_event_mk_victory
+	audio ambiance stop
+	hide ui
+	pause 2
+	audio bgm play ch1_musicbox_b
+	camera move (0,-48) time 2
+	pause 2
+	action call crossfade_chars
+	pause 6
+	action call mk_stand
+	pause 3.2
+	action call hide_mk
+	chara spawn mk point mk
+	pause 0.5
+	action walk up 52 node mk speed veryslow
+	pause 1
+	chara despawn mk
+	action call show_mk_fire
+	pause 0.7
+	action call play_mk_fire
+	pause 0.3
+	audio sfx play burn
+	action call hide_fire
+	pause 1.5
+	action call fade_out_bg
+	pause 5
+	camera move (0,118) time 2
+	pause 2
+	fade out time 2
+	audio bgm stop
+	pause 2
+	event call ch1_event_mk_victory

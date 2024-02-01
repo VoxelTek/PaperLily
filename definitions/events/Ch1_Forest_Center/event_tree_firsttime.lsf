@@ -1,15 +1,15 @@
 label START
-    if var ch1.forest_center_tree_seen end
-    audio bgm stop time 4
-    action walk up 128
-    camera move (0,-640) time 6
-    pause 1
-    lacie "That tree... is massive..." mood blank1
-    lacie "This probably marks the center of this place. Which means..." mood blank8
-    hide ui
-    camera move (0,640) time 1
-    camera reset
-    lacie "This is where the search really begins." mood frustrated2
-    audio bgm play ch1_forest_d
-    set ch1.forest_center_tree_seen = true
-    end
+	if var ch1.forest_center_tree_seen end
+	audio bgm stop time 4
+	action walk up 128
+	camera move (0,-640) time 6
+	pause 1
+	lacie "That tree... is massive..." mood blank1
+	lacie "This probably marks the center of this place. Which means..." mood blank8
+	hide ui
+	camera move (0,640) time 1
+	camera reset
+	lacie "This is where the search really begins." mood frustrated2
+	audio bgm play ch1_forest_d
+	set ch1.forest_center_tree_seen = true
+	end

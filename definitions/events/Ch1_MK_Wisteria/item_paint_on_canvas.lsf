@@ -1,50 +1,50 @@
 label START
-    if not var ch1.mk_revealed_canvas end
-    fade out
-    if item ch1.mk_jar_paint_red
-        if item ch1.mk_jar_paint_yellow
-            if item ch1.mk_jar_paint_blue
-                set ch1.mk_canvas_color = "all"
-                jump FINALLY
-            set ch1.mk_canvas_color = "orange"
-            jump FINALLY
-        if item ch1.mk_jar_paint_blue
-            set ch1.mk_canvas_color = "purple"
-            jump FINALLY
-        set ch1.mk_canvas_color = "red"
-        jump FINALLY
-    if item ch1.mk_jar_paint_yellow
-        if item ch1.mk_jar_paint_blue
-            set ch1.mk_canvas_color = "green"
-            jump FINALLY
-        set ch1.mk_canvas_color = "yellow"
-        jump FINALLY
-    if item ch1.mk_jar_paint_blue
-        set ch1.mk_canvas_color = "blue"
-        jump FINALLY
-    end
+	if not var ch1.mk_revealed_canvas end
+	fade out
+	if item ch1.mk_jar_paint_red
+		if item ch1.mk_jar_paint_yellow
+			if item ch1.mk_jar_paint_blue
+				set ch1.mk_canvas_color = "all"
+				jump FINALLY
+			set ch1.mk_canvas_color = "orange"
+			jump FINALLY
+		if item ch1.mk_jar_paint_blue
+			set ch1.mk_canvas_color = "purple"
+			jump FINALLY
+		set ch1.mk_canvas_color = "red"
+		jump FINALLY
+	if item ch1.mk_jar_paint_yellow
+		if item ch1.mk_jar_paint_blue
+			set ch1.mk_canvas_color = "green"
+			jump FINALLY
+		set ch1.mk_canvas_color = "yellow"
+		jump FINALLY
+	if item ch1.mk_jar_paint_blue
+		set ch1.mk_canvas_color = "blue"
+		jump FINALLY
+	end
 
 label FINALLY
-    pause 1
-    hide ui
-    system refresh
-    fade in
-    item remove ch1.mk_jar_paint_red amount 3
-    item remove ch1.mk_jar_paint_yellow amount 3
-    item remove ch1.mk_jar_paint_blue amount 3
-    item remove ch1.mk_jar_pigment_red amount 3
-    item remove ch1.mk_jar_pigment_yellow amount 3
-    item remove ch1.mk_jar_pigment_blue amount 3
-    pause 0.5
-    action walk down 32 speed slow backwards
-    pause 2
-    audio sfx play swish
-    pause 0.2
-    fade flash color white continue
-    set ch1.mk_took_canvas = true
-    system refresh
-    pause 1
-    "With your masterpiece complete, the canvas turns into a sketchbook."
-    item add ch1.mk_canvas_activated
-    event call ch1_event_mk_check_items
-    end
+	pause 1
+	hide ui
+	system refresh
+	fade in
+	item remove ch1.mk_jar_paint_red amount 3
+	item remove ch1.mk_jar_paint_yellow amount 3
+	item remove ch1.mk_jar_paint_blue amount 3
+	item remove ch1.mk_jar_pigment_red amount 3
+	item remove ch1.mk_jar_pigment_yellow amount 3
+	item remove ch1.mk_jar_pigment_blue amount 3
+	pause 0.5
+	action walk down 32 speed slow backwards
+	pause 2
+	audio sfx play swish
+	pause 0.2
+	fade flash color white continue
+	set ch1.mk_took_canvas = true
+	system refresh
+	pause 1
+	"With your masterpiece complete, the canvas turns into a sketchbook."
+	item add ch1.mk_canvas_activated
+	event call ch1_event_mk_check_items
+	end

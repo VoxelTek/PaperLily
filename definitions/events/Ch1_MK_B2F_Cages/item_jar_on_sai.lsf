@@ -1,14 +1,14 @@
 label START
-    if var ch1.mk_rescued_sai end
-    if var general.serious end
-    if repeat end
-    chara set lacie at left
-    chara set sai at right
-    sai "It's a jar." mood confused11
-    lacie "Yes." mood blank5
-    sai "It's empty." mood confused10
-    lacie "...Yes." mood blank5
-    sai "Why are you showing it to me?" mood confused9
-    lacie "Just wanted to see if you had any wise comments to make." mood blank6
-    lacie "It seems you don't." mood blank3
-    sai "H-Hey!" mood thinking11
+	if var ch1.mk_rescued_sai end
+	if var general.serious end
+	if repeat end
+	chara set lacie at left
+	chara set sai at right
+	sai "It's a jar." mood confused11
+	lacie "Yes." mood blank5
+	sai "It's empty." mood confused10
+	lacie "...Yes." mood blank5
+	sai "Why are you showing it to me?" mood confused9
+	lacie "Just wanted to see if you had any wise comments to make." mood blank6
+	lacie "It seems you don't." mood blank3
+	sai "H-Hey!" mood thinking11

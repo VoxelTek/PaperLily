@@ -1,11 +1,11 @@
 label START
-    fade out continue
-    audio sfx play footstep_ladder_1
-    pause 0.6
-    audio sfx play footstep_ladder_2
-    pause 0.6
-    audio sfx play footstep_ladder_1
-    pause 0.6
-    audio sfx play footstep_ladder_2
-    move to Ch1_Red_1F point from_downstairs time 0
-    fade in
+	fade out continue
+	audio sfx play footstep_ladder_1
+	pause 0.6
+	audio sfx play footstep_ladder_2
+	pause 0.6
+	audio sfx play footstep_ladder_1
+	pause 0.6
+	audio sfx play footstep_ladder_2
+	move to Ch1_Red_1F point from_downstairs time 0
+	fade in

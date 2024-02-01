@@ -1,22 +1,22 @@
 label START
-    choice "Take ${item:ch1.bucket}?"
-        "Yes"
-            continue
-        "No"
-            end
-    set ch1.facility_took_bucket = true
-    system refresh
-    item add ch1.bucket
-    if not character sai end
-    chara set lacie at left
-    chara set sai at right
-    sai "Cool, a bucket." mood surprised2
-    sai "You can do lots of things with that." mood blank7
-    lacie "Like...?" mood blank3
-    sai "Hmmm..." mood thinking10
-    if var ch1.facility_seen_flood
-        sai "We could try removing all the water with it." mood smile11
-        lacie "..." mood disappointed2
-    else
-        sai "You could wear it as a hat...?" mood thinking12
-        lacie "..." mood disappointed2
+	choice "Take ${item:ch1.bucket}?"
+		"Yes"
+			continue
+		"No"
+			end
+	set ch1.facility_took_bucket = true
+	system refresh
+	item add ch1.bucket
+	if not character sai end
+	chara set lacie at left
+	chara set sai at right
+	sai "Cool, a bucket." mood surprised2
+	sai "You can do lots of things with that." mood blank7
+	lacie "Like...?" mood blank3
+	sai "Hmmm..." mood thinking10
+	if var ch1.facility_seen_flood
+		sai "We could try removing all the water with it." mood smile11
+		lacie "..." mood disappointed2
+	else
+		sai "You could wear it as a hat...?" mood thinking12
+		lacie "..." mood disappointed2

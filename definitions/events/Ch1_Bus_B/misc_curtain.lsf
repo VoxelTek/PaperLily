@@ -1,24 +1,24 @@
 label START
-    "The bus driver must be behind these curtains."
-    choice "Take a look behind the curtains?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    system call StopGetOffTimer
-    fade out
-    move to Ch1_Cutscene_Bus_B_Death point entrance time 0
-    pause 1
-    fade in time 1
-    pause 1
-    action call play_death
-    pause 0.2
-    audio sfx play curtains
-    audio bgm stop time 0
-    audio ambiance stop time 0
-    pause 1.2
-    audio sfx play shuffling
-    pause 2.8
-    event queue ch1_death_fadeout
+	"The bus driver must be behind these curtains."
+	choice "Take a look behind the curtains?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	system call StopGetOffTimer
+	fade out
+	move to Ch1_Cutscene_Bus_B_Death point entrance time 0
+	pause 1
+	fade in time 1
+	pause 1
+	action call play_death
+	pause 0.2
+	audio sfx play curtains
+	audio bgm stop time 0
+	audio ambiance stop time 0
+	pause 1.2
+	audio sfx play shuffling
+	pause 2.8
+	event queue ch1_death_fadeout

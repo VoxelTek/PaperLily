@@ -1,10 +1,10 @@
 label START
-    "Worn art supplies are gathering dust here."
-    if not var ch1.forest_artist_2f_took_jar
-        choice "Take ${item:ch1.forest_jar_empty}?"
-            "Yes"
-                set ch1.forest_artist_2f_took_jar = true
-                item add ch1.forest_jar_empty
-            "No"
-                end
-    end
+	"Worn art supplies are gathering dust here."
+	if not var ch1.forest_artist_2f_took_jar
+		choice "Take ${item:ch1.forest_jar_empty}?"
+			"Yes"
+				set ch1.forest_artist_2f_took_jar = true
+				item add ch1.forest_jar_empty
+			"No"
+				end
+	end

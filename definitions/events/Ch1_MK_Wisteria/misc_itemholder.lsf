@@ -1,4 +1,4 @@
 label START
-    "A painting with two protuding hands expecting something."
-    lacie "Looks like I can place something on these hands..." mood blank1
-    end
+	"A painting with two protuding hands expecting something."
+	lacie "Looks like I can place something on these hands..." mood blank1
+	end

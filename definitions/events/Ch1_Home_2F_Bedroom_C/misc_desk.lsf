@@ -1,4 +1,4 @@
 label START
-    "An older computer."
-    if var general.serious end
-    "It's mostly for spreadsheets, so you can't game on it."
+	"An older computer."
+	if var general.serious end
+	"It's mostly for spreadsheets, so you can't game on it."

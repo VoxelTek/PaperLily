@@ -1,7 +1,7 @@
 label START
-    if repeat end
-    if var ch1.forest_entrance_gate_open end
-    hide ui
-    pause 0.5
-    lacie "Hm..."
-    lacie "Is that a button behind the lamppost?" mood blank2
+	if repeat end
+	if var ch1.forest_entrance_gate_open end
+	hide ui
+	pause 0.5
+	lacie "Hm..."
+	lacie "Is that a button behind the lamppost?" mood blank2

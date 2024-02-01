@@ -1,14 +1,14 @@
 label START
-    if var ch1.blackpass_classroom_killed_bird end
-    if var ch1.blackpass_classroom_cutscene_stage < 4
-        event call misc_desk
-        end
-    fade out
-    pause 1
-    audio sfx play squash
-    set ch1.blackpass_classroom_killed_bird = true
-    set general.blackpass_red_item_3_spawned = true
-    pause 1
-    system refresh
-    fade in
-    end
+	if var ch1.blackpass_classroom_killed_bird end
+	if var ch1.blackpass_classroom_cutscene_stage < 4
+		event call misc_desk
+		end
+	fade out
+	pause 1
+	audio sfx play squash
+	set ch1.blackpass_classroom_killed_bird = true
+	set general.blackpass_red_item_3_spawned = true
+	pause 1
+	system refresh
+	fade in
+	end

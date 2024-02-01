@@ -1,6 +1,6 @@
 label START
-    "A sign warning passengers not to jump onto the train tracks."
-    if var general.serious end
-    if repeat end
-    lacie "Nah, that ship has already sailed." mood reflective2
-    lacie "Or should I say... that train has left the station?" mood hide3
+	"A sign warning passengers not to jump onto the train tracks."
+	if var general.serious end
+	if repeat end
+	lacie "Nah, that ship has already sailed." mood reflective2
+	lacie "Or should I say... that train has left the station?" mood hide3

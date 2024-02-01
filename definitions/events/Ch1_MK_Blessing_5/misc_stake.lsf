@@ -1,41 +1,41 @@
 label START
-    "Someone's tied to the stake. A knife pierces their heart."
-    choice "Remove it?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    fade out
-    pause 0.5
-    audio sfx play slice
-    pause 1.5
-    item add ch1.mk_knife_activated
-    action call hide_knife
-    fade in
-    pause 1
-    action call show_hiro
-    pause 0.25
-    action call hide_hiro
-    pause 0.5
-    lacie "....." mood spooked2
-    lacie "...H-Hiro...?" mood surprised
-    lacie "...Why..."
-    hide ui
-    bubble ellipsis
-    pause 0.5
-    lacie "This isn't real." mood shadow3
-    hide ui
+	"Someone's tied to the stake. A knife pierces their heart."
+	choice "Remove it?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	fade out
+	pause 0.5
+	audio sfx play slice
+	pause 1.5
+	item add ch1.mk_knife_activated
+	action call hide_knife
+	fade in
+	pause 1
+	action call show_hiro
+	pause 0.25
+	action call hide_hiro
+	pause 0.5
+	lacie "....." mood spooked2
+	lacie "...H-Hiro...?" mood surprised
+	lacie "...Why..."
+	hide ui
+	bubble ellipsis
+	pause 0.5
+	lacie "This isn't real." mood shadow3
+	hide ui
 
-    action call hide_bg
-    pause 3
-    action call show_path
-    pause 1
-    action turn up
-    pause 2
-    fade out
-    move to Ch1_MK_Blessing_6 point entrance time 0
-    action call lacie_limp
-    system running off
-    fade in
+	action call hide_bg
+	pause 3
+	action call show_path
+	pause 1
+	action turn up
+	pause 2
+	fade out
+	move to Ch1_MK_Blessing_6 point entrance time 0
+	action call lacie_limp
+	system running off
+	fade in

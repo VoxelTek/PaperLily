@@ -1,7 +1,7 @@
 label START
-    if var general.inbetween jump INBETWEEN
-    "A painting of a sleeping cat."
-    end
+	if var general.inbetween jump INBETWEEN
+	"A painting of a sleeping cat."
+	end
 
 label INBETWEEN
-    event call misc_painting_inbetween
+	event call misc_painting_inbetween

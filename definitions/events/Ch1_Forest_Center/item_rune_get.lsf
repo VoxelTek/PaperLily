@@ -1,6 +1,6 @@
 label START
-    if var ch1.forest_center_took_rune end
-    set ch1.forest_center_took_rune = true
-    item add ch1.rune_ansuz
-    set ch1.runes_found ++
-    end
+	if var ch1.forest_center_took_rune end
+	set ch1.forest_center_took_rune = true
+	item add ch1.rune_ansuz
+	set ch1.runes_found ++
+	end

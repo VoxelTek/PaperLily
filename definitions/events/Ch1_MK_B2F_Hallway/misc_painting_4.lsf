@@ -1,7 +1,7 @@
 label START
-    if var general.serious
-        event call misc_painting_generic
-        end
-    "A portrait of a grandma."
-    if repeat end
-    lacie "She looks nice... Maybe." mood blank2
+	if var general.serious
+		event call misc_painting_generic
+		end
+	"A portrait of a grandma."
+	if repeat end
+	lacie "She looks nice... Maybe." mood blank2

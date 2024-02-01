@@ -1,5 +1,5 @@
 label START
-    "A huge hole."
-    if repeat end
-    lacie "I hope the floor is stable..." mood concerned7
-    end
+	"A huge hole."
+	if repeat end
+	lacie "I hope the floor is stable..." mood concerned7
+	end

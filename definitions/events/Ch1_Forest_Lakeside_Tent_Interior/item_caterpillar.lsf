@@ -1,9 +1,9 @@
 label START
-    chara set lacie at left
-    choice "(Um...)"
-        "Kill it here"
-            event call event_kill_caterpillar
-        "Do not"
-            ch1_moth_girl "What's taking so long?!"
-            end
-    end
+	chara set lacie at left
+	choice "(Um...)"
+		"Kill it here"
+			event call event_kill_caterpillar
+		"Do not"
+			ch1_moth_girl "What's taking so long?!"
+			end
+	end

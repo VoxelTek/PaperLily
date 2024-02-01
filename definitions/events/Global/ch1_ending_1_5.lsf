@@ -1,112 +1,112 @@
 label START
-    hide ui
-    pause 2
-    lacie "Hm..." mood thinking
-    lacie "Should I really eat this?" mood thinking3
-    if var ch1.favorite_dessert == "flan"
-        lacie "I didn't get to have my flan earlier today..." mood blank1
-    if var ch1.favorite_dessert == "macarons"
-        lacie "I didn't get to have my macarons earlier today..." mood blank1
-    if var ch1.favorite_dessert == "eclair"
-        lacie "I didn't get to have my eclair earlier today..." mood blank1
-    if var ch1.todolist_task2_done
-        lacie "And mom's leftovers were kind of stale..." mood blank3
-    lacie "So I'm not that hungry, but... maybe I should make sure to keep my energy up." mood blank5
-    lacie "Okay." mood blank4
-    fade out
-    pause 0.5
-    audio sfx play ch1_chips_1
-    pause 3
-    audio sfx play ch1_chips_2
-    pause 3.5
-    move to Ch1_Cutscene_Ending_1_5 point cutscene_lacie time 0
-    chara spawn lacie point cutscene_lacie
-    camera track node lacie
-    fade in
-    pause 1.5
-    lacie "As I thought, these are just classic potato chips." mood reflective2
-    lacie "That's good, I guess." mood reflective4
-    hide ui
-    pause 1
-    lacie "..." mood default
-    audio bgm stop time 4
-    lacie "Hm?" mood concerned12
-    lacie "The list of ingredients is nonsense." mood thinking2
-    lacie "What did I just eat?" mood thinking4
-    fade out
-    pause 0.5
-    "\"Attention: Will promptly put you to sleep. May occasionally cause hallucinations and headache.\"" background none
-    pause 0.5
-    fade in
-    pause 0.5
-    lacie "(...This is bad!)" mood surprised2
-    lacie "(If I'm going to fall asleep, I need to find somewhere safe!)" mood surprised
-    hide ui
-    action walk left 150 speed fast node lacie
-    action walk down 80 node lacie
-    action walk down 30 speed slow node lacie
-    lacie "(Uhm...)" mood sigh
-    lacie "(Oh no...)"
-    action state idle node lacie
-    lacie "(I feel really dizzy...)" mood sigh2
-    lacie "(This isn't good...)"
-    hide ui
-    pause 0.5
-    action state collapse node lacie
-    pause 1
-    audio sfx play thud2
-    pause 1
-    fade out time 3
-    pause 3
-    chara lock
-    lacie "That was the most peaceful sleep I had ever had."
-    lacie "For the longest time, I've been having nightmares where I wake up in that dark place filled with bad memories."
-    lacie "Even though I'm used to it by now, it gets really tiring."
-    lacie "I often wake up feeling like I didn't get much sleep at all."
-    lacie "But this time, I didn't dream of anything."
-    hide ui
-    pause 0.8
-    audio sfx play gore5
-    pause 2.5
-    lacie "Hm?"
-    lacie "What's that sound?"
-    hide ui
-    audio sfx play gore4
-    pause 0.75
-    fade flash color red
-    pause 0.5
-    lacie "!?"
-    lacie "It hurts..."
-    lacie "What's happening!?"
-    move to Ch1_Cutscene_Ending_1_5 point cutscene_eat time 0
-    action call hide_eyecu
-    action call show_eat
-    fade in time 4 continue
-    audio ambiance play gore5_loop
-    pause 4
-    lacie "(N-no...)"
-    lacie "(Is this a hallucination?!)"
-    lacie "*Pant...pant*"
-    lacie "(No... the pain... is too much...)"
-    lacie "(This is... real...)"
-    lacie "(I....can't...move...)"
-    lacie "H-h...."
-    lacie "H-...H-hel..p...."
-    lacie "*Cough*"
-    lacie "(I can't... breathe...)"
-    lacie "(It hurts.....)"
-    lacie "(Please.....)"
-    lacie "(I don't..... want... to be awake...)"
-    lacie "(It..... hurts.....)"
-    hide ui
-    pause 1
-    fade out time 4 continue
-    pause 0.5
-    audio ambiance stop
-    action call hide_eat
-    action call show_lift
-    pause 6
-    "Dead End 1-5 - Become Snack" background none
-    system achievement CH1_BAD_END
-    set persistent.ending.1.5 = true
-    system title-screen
+	hide ui
+	pause 2
+	lacie "Hm..." mood thinking
+	lacie "Should I really eat this?" mood thinking3
+	if var ch1.favorite_dessert == "flan"
+		lacie "I didn't get to have my flan earlier today..." mood blank1
+	if var ch1.favorite_dessert == "macarons"
+		lacie "I didn't get to have my macarons earlier today..." mood blank1
+	if var ch1.favorite_dessert == "eclair"
+		lacie "I didn't get to have my eclair earlier today..." mood blank1
+	if var ch1.todolist_task2_done
+		lacie "And mom's leftovers were kind of stale..." mood blank3
+	lacie "So I'm not that hungry, but... maybe I should make sure to keep my energy up." mood blank5
+	lacie "Okay." mood blank4
+	fade out
+	pause 0.5
+	audio sfx play ch1_chips_1
+	pause 3
+	audio sfx play ch1_chips_2
+	pause 3.5
+	move to Ch1_Cutscene_Ending_1_5 point cutscene_lacie time 0
+	chara spawn lacie point cutscene_lacie
+	camera track node lacie
+	fade in
+	pause 1.5
+	lacie "As I thought, these are just classic potato chips." mood reflective2
+	lacie "That's good, I guess." mood reflective4
+	hide ui
+	pause 1
+	lacie "..." mood default
+	audio bgm stop time 4
+	lacie "Hm?" mood concerned12
+	lacie "The list of ingredients is nonsense." mood thinking2
+	lacie "What did I just eat?" mood thinking4
+	fade out
+	pause 0.5
+	"\"Attention: Will promptly put you to sleep. May occasionally cause hallucinations and headache.\"" background none
+	pause 0.5
+	fade in
+	pause 0.5
+	lacie "(...This is bad!)" mood surprised2
+	lacie "(If I'm going to fall asleep, I need to find somewhere safe!)" mood surprised
+	hide ui
+	action walk left 150 speed fast node lacie
+	action walk down 80 node lacie
+	action walk down 30 speed slow node lacie
+	lacie "(Uhm...)" mood sigh
+	lacie "(Oh no...)"
+	action state idle node lacie
+	lacie "(I feel really dizzy...)" mood sigh2
+	lacie "(This isn't good...)"
+	hide ui
+	pause 0.5
+	action state collapse node lacie
+	pause 1
+	audio sfx play thud2
+	pause 1
+	fade out time 3
+	pause 3
+	chara lock
+	lacie "That was the most peaceful sleep I had ever had."
+	lacie "For the longest time, I've been having nightmares where I wake up in that dark place filled with bad memories."
+	lacie "Even though I'm used to it by now, it gets really tiring."
+	lacie "I often wake up feeling like I didn't get much sleep at all."
+	lacie "But this time, I didn't dream of anything."
+	hide ui
+	pause 0.8
+	audio sfx play gore5
+	pause 2.5
+	lacie "Hm?"
+	lacie "What's that sound?"
+	hide ui
+	audio sfx play gore4
+	pause 0.75
+	fade flash color red
+	pause 0.5
+	lacie "!?"
+	lacie "It hurts..."
+	lacie "What's happening!?"
+	move to Ch1_Cutscene_Ending_1_5 point cutscene_eat time 0
+	action call hide_eyecu
+	action call show_eat
+	fade in time 4 continue
+	audio ambiance play gore5_loop
+	pause 4
+	lacie "(N-no...)"
+	lacie "(Is this a hallucination?!)"
+	lacie "*Pant...pant*"
+	lacie "(No... the pain... is too much...)"
+	lacie "(This is... real...)"
+	lacie "(I....can't...move...)"
+	lacie "H-h...."
+	lacie "H-...H-hel..p...."
+	lacie "*Cough*"
+	lacie "(I can't... breathe...)"
+	lacie "(It hurts.....)"
+	lacie "(Please.....)"
+	lacie "(I don't..... want... to be awake...)"
+	lacie "(It..... hurts.....)"
+	hide ui
+	pause 1
+	fade out time 4 continue
+	pause 0.5
+	audio ambiance stop
+	action call hide_eat
+	action call show_lift
+	pause 6
+	"Dead End 1-5 - Become Snack" background none
+	system achievement CH1_BAD_END
+	set persistent.ending.1.5 = true
+	system title-screen

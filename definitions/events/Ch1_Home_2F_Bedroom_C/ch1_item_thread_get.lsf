@@ -1,15 +1,15 @@
 label START
-    if not objective ch1.ritual_items.ribbon inprogress end
-    if repeat jump TAKE_RED
-    "There are colored thread rolls inside."
+	if not objective ch1.ritual_items.ribbon inprogress end
+	if repeat jump TAKE_RED
+	"There are colored thread rolls inside."
 
 label TAKE_RED
-    "The red thread may be useful."
-    choice "Take ${item:ch1.thread}?"
-        "Yes"
-            continue
-        "No"
-            end
-    objective complete ch1.ritual_items.ribbon
-    item add ch1.thread
-    end
+	"The red thread may be useful."
+	choice "Take ${item:ch1.thread}?"
+		"Yes"
+			continue
+		"No"
+			end
+	objective complete ch1.ritual_items.ribbon
+	item add ch1.thread
+	end

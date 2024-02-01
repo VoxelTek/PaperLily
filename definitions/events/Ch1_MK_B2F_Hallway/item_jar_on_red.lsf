@@ -1,4 +1,4 @@
 label START
-    item remove ch1.mk_jar
-    item add ch1.mk_jar_pigment_red
-    end
+	item remove ch1.mk_jar
+	item add ch1.mk_jar_pigment_red
+	end

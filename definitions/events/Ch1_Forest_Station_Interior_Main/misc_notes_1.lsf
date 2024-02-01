@@ -1,4 +1,4 @@
 label START
-    if repeat end
-    if var general.serious end
-    "Ads. Don't acknowledge them."
+	if repeat end
+	if var general.serious end
+	"Ads. Don't acknowledge them."

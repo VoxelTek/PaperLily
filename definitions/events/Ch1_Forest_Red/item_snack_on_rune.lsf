@@ -1,4 +1,4 @@
 label START
-    if not var ch1.forest_seen_rune end
-    chara set rune at right
-    rune "No thank you, I don't need to sleep!" mood default
+	if not var ch1.forest_seen_rune end
+	chara set rune at right
+	rune "No thank you, I don't need to sleep!" mood default

@@ -1,12 +1,12 @@
 label START
-    "A bookshelf full of books about painting."
-    choice "One of them stands out. Read a passage?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    audio sfx play paper
-    pause 0.5
-    "\"Should a merchant not be available in your region, it is always possible to create your own paint by mixing pigments with water.\""
+	"A bookshelf full of books about painting."
+	choice "One of them stands out. Read a passage?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	audio sfx play paper
+	pause 0.5
+	"\"Should a merchant not be available in your region, it is always possible to create your own paint by mixing pigments with water.\""

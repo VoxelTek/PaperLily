@@ -1,7 +1,8 @@
 label START
-    fade out
-    item remove ch1.forest_station_sign
-    set ch1.forest_station_sign_gone = false
-    system refresh
-    pause 1
-    fade in
+	fade out
+	item remove ch1.forest_station_sign
+	set ch1.forest_station_sign_gone = false
+	objective complete ch1.forest_station_sign_2
+	system refresh
+	pause 1
+	fade in

@@ -776,7 +776,7 @@
 		},
 		{
 			"id": "ch1.rainbow_potion_tmp",
-			"name": "Temp.Rainbow Potion",
+			"name": "Temp. Rainbow Potion",
 			"description": "A strange potion that Spider directed me to. It has a shorter duration than the original one.",
 			"icon": "rainbow_potion",
 			"event": "ch1_rainbow_potion_tmp"

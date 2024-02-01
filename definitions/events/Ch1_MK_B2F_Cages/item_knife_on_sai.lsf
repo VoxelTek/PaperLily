@@ -1,6 +1,6 @@
 label START
-    if var ch1.mk_rescued_sai end
-    if var general.serious end
-    chara set lacie at left
-    chara set sai at right
-    sai "That's not gonna cut through this cage." mood blank3
+	if var ch1.mk_rescued_sai end
+	if var general.serious end
+	chara set lacie at left
+	chara set sai at right
+	sai "That's not gonna cut through this cage." mood blank3

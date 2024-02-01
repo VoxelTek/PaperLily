@@ -1,6 +1,6 @@
 label START
-    if not var ch1.mk_took_knife end
-    if repeat end
-    audio sfx play gore1
-    set ch1.mk_head_tilt = true
-    end
+	if not var ch1.mk_took_knife end
+	if repeat end
+	audio sfx play gore1
+	set ch1.mk_head_tilt = true
+	end

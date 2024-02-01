@@ -1,8 +1,8 @@
 label START
-    if var general.blackpass_visits == 1
-        lacie "Well, here we go." mood blank5
-    move to Ch1_BlackPass_Hallway point entrance
-    if var general.blackpass_visits == 1
-        pause 0.3
-        lacie "Once I cross this area, this dream will be over." mood blank4
-    end
+	if var general.blackpass_visits == 1
+		lacie "Well, here we go." mood blank5
+	move to Ch1_BlackPass_Hallway point entrance
+	if var general.blackpass_visits == 1
+		pause 0.3
+		lacie "Once I cross this area, this dream will be over." mood blank4
+	end

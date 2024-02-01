@@ -1,25 +1,25 @@
 label START
-    if var ch1.forest_lockedsite_unlocked
-        "It's a little too late for that."
-        end
-    if not item ch1.forest_lockedsite_key amount 3
-        lacie "I don't have all 3 keys yet..." mood blank2
-        end
-    fade out
-    item remove ch1.forest_lockedsite_key amount 3
-    set ch1.forest_lockedsite_unlocked = true
-    pause 1
-    audio sfx play unlock_2
-    pause 0.6
-    audio sfx play unlock_2
-    pause 0.6
-    audio sfx play unlock_2
-    pause 0.6
-    audio sfx play chainlink
-    pause 1.5
-    set ch1.forest_lockedsite_open = true
-    system refresh
-    audio sfx play gate
-    pause 1
-    fade in
-    end
+	if var ch1.forest_lockedsite_unlocked
+		"It's a little too late for that."
+		end
+	if not item ch1.forest_lockedsite_key amount 3
+		lacie "I don't have all 3 keys yet..." mood blank2
+		end
+	fade out
+	item remove ch1.forest_lockedsite_key amount 3
+	set ch1.forest_lockedsite_unlocked = true
+	pause 1
+	audio sfx play unlock_2
+	pause 0.6
+	audio sfx play unlock_2
+	pause 0.6
+	audio sfx play unlock_2
+	pause 0.6
+	audio sfx play chainlink
+	pause 1.5
+	set ch1.forest_lockedsite_open = true
+	system refresh
+	audio sfx play gate
+	pause 1
+	fade in
+	end

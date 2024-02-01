@@ -1,22 +1,22 @@
 label START
-    if var ch1.forest_center_caught_firefly
-        lacie "That's enough, I think."
-        end
-    if not item ch1.forest_lamp_empty
-        if not item ch1.forest_jar_empty
-            lacie "Hmmm... even if I catch one, I don't have anywhere to put it."
-            end
-    if item ch1.forest_lamp_empty
-        item remove ch1.forest_lamp_empty
-        item add ch1.forest_lamp_full
-        jump DONE
-    if item ch1.forest_jar_empty
-        item remove ch1.forest_jar_empty
-        item add ch1.forest_jar_full
-        jump DONE
+	if var ch1.forest_center_caught_firefly
+		lacie "That's enough, I think."
+		end
+	if not item ch1.forest_lamp_empty
+		if not item ch1.forest_jar_empty
+			lacie "Hmmm... even if I catch one, I don't have anywhere to put it."
+			end
+	if item ch1.forest_lamp_empty
+		item remove ch1.forest_lamp_empty
+		item add ch1.forest_lamp_full
+		jump DONE
+	if item ch1.forest_jar_empty
+		item remove ch1.forest_jar_empty
+		item add ch1.forest_jar_full
+		jump DONE
 
 label DONE
-    objective complete ch1.locked_site_light
-    lacie "That should do it."
-    set ch1.forest_center_caught_firefly = true
-    end
+	objective complete ch1.locked_site_light
+	lacie "That should do it."
+	set ch1.forest_center_caught_firefly = true
+	end

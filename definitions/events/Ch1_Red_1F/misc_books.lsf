@@ -1,8 +1,8 @@
 label START
-    "Some books about cursed trees."
-    choice "Read a passage?"
-        "Yes"
-            "\"Despite their usually small size, cursed trees have a distinctive habit of extending their roots to a distance of up to 60 meters."
-            "Their roots extend even deeper underground. It is unknown how far they are able to reach before stopping.\""
-        "No"
-            end
+	"Some books about cursed trees."
+	choice "Read a passage?"
+		"Yes"
+			"\"Despite their usually small size, cursed trees have a distinctive habit of extending their roots to a distance of up to 60 meters."
+			"Their roots extend even deeper underground. It is unknown how far they are able to reach before stopping.\""
+		"No"
+			end

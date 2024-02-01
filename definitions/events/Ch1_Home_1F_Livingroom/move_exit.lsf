@@ -1,17 +1,17 @@
 label START
-    if var general.chapter == 1 jump CH1 else jump MOVE
+	if var general.chapter == 1 jump CH1 else jump MOVE
 
 label CH1
-    if var ch1.home_ritualstarted jump MOVE
-    if item ch1.bird_food jump MOVE
-    lacie "I've been outside enough for now." mood disappointed2
-    end
+	if var ch1.home_ritualstarted jump MOVE
+	if item ch1.bird_food jump MOVE
+	lacie "I've been outside enough for now." mood disappointed2
+	end
 
 label MOVE
-    audio sfx play door
-    fade out time 0.5
-    move to Ch1_Home_Exterior_Front point front_door direction down time 0
-    if objective ch1.take_bus inprogress
-        system call Ch1StopTimer
-        set ch1.seen_bus = true
-    fade in time 0.5
+	audio sfx play door
+	fade out time 0.5
+	move to Ch1_Home_Exterior_Front point front_door direction down time 0
+	if objective ch1.take_bus inprogress
+		system call Ch1StopTimer
+		set ch1.seen_bus = true
+	fade in time 0.5

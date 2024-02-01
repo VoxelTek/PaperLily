@@ -1,14 +1,14 @@
 label START
-    if var ch1.facility_elevator_location == 1
-        move to Ch1_Facility_B1F_Elevator point from_elevator
-        end
-    if var ch1.facility_elevator_location == 2
-        move to Ch1_Facility_B2F_Hallway_West point from_elevator
-        end
-    if var ch1.facility_elevator_location == 3
-        move to Ch1_Facility_B3F_Hallway point from_elevator
-        end
-    if var ch1.facility_elevator_location == 4
-        "The doors are stuck..."
-        end
-    end
+	if var ch1.facility_elevator_location == 1
+		move to Ch1_Facility_B1F_Elevator point from_elevator
+		end
+	if var ch1.facility_elevator_location == 2
+		move to Ch1_Facility_B2F_Hallway_West point from_elevator
+		end
+	if var ch1.facility_elevator_location == 3
+		move to Ch1_Facility_B3F_Hallway point from_elevator
+		end
+	if var ch1.facility_elevator_location == 4
+		"The doors are stuck..."
+		end
+	end

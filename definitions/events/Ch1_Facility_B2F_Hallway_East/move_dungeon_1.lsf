@@ -1,6 +1,6 @@
 label START
-    event call ch1_event_facility_dungeon_sai
-    audio sfx play door
-    move to Ch1_Facility_B2F_Dungeon_1 point entrance
-    set ch1.facility_seen_ventman = true
-    "[color=#90EE90](Sai left the party.)[/color]"
+	event call ch1_event_facility_dungeon_sai
+	audio sfx play door
+	move to Ch1_Facility_B2F_Dungeon_1 point entrance
+	set ch1.facility_seen_ventman = true
+	"[color=#90EE90](Sai left the party.)[/color]"

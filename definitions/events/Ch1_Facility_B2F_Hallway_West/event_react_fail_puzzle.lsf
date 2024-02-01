@@ -1,36 +1,36 @@
 label START
-    if var ch1.facility_took_valve_star end
-    if not character sai end
-    chara set lacie at left
-    chara set sai at right
-    if repeat jump AGAIN
-    lacie "I don't have the brain power for this right now." mood confused3
-    if not character sai end
-    sai "You know... I could just jump over those boxes and get you the thingy." mood thinking9
-    jump OFFER
+	if var ch1.facility_took_valve_star end
+	if not character sai end
+	chara set lacie at left
+	chara set sai at right
+	if repeat jump AGAIN
+	lacie "I don't have the brain power for this right now." mood confused3
+	if not character sai end
+	sai "You know... I could just jump over those boxes and get you the thingy." mood thinking9
+	jump OFFER
 
 label AGAIN
-    if not character sai end
-    sai "Still not interested?" mood confused11
+	if not character sai end
+	sai "Still not interested?" mood confused11
 label OFFER
-    choice "Ask Sai to get the shiny?"
-        "Yes"
-            lacie "Alright... knock yourself out." mood disappointed
-            sai "Be right back!" mood smile6
-            hide ui
-            fade out
-            pause 1
-            "Moments later..." format center position center background none
-            set ch1.facility_asked_sai_for_puzzle = true
-            set ch1.facility_took_valve_star = true
-            pause 0.5
-            fade in
-            sai "Easy peasy." mood smile11
-            item add ch1.facility_handle_star
-            end
-        "No"
-            if repeat
-                lacie "Still not interested." mood blank1
-                end
-            lacie "No, I want to do it myself." mood bothered
-            end
+	choice "Ask Sai to get the shiny?"
+		"Yes"
+			lacie "Alright... knock yourself out." mood disappointed
+			sai "Be right back!" mood smile6
+			hide ui
+			fade out
+			pause 1
+			"Moments later..." format center position center background none
+			set ch1.facility_asked_sai_for_puzzle = true
+			set ch1.facility_took_valve_star = true
+			pause 0.5
+			fade in
+			sai "Easy peasy." mood smile11
+			item add ch1.facility_handle_star
+			end
+		"No"
+			if repeat
+				lacie "Still not interested." mood blank1
+				end
+			lacie "No, I want to do it myself." mood bothered
+			end

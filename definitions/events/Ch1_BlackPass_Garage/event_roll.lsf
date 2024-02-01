@@ -1,23 +1,23 @@
 label START
-    if not var ch1.temp_blackpass_closetsearch_inprogress jump ALREADY_DONE
-    system call TryCloset
-    if var ch1.temp_blackpass_closetsearch_success
-        system call StopSwirl
-        lacie "It's here!" mood surprised
-        hide ui
-        set ch1.temp_blackpass_closetsearch_inprogress = false
-        set ch1.blackpass_finished_closet_search = true
-        item add ch1.blackpass_knife
-        fade out
-        pause 1
-        audio sfx play door
-        move to Ch1_BlackPass_Kitchen point from_garage time 0
-        pause 1
-        fade in
-        lacie "What was that...?" mood concerned9
-        end
-    "It's not here."
-    end
+	if not var ch1.temp_blackpass_closetsearch_inprogress jump ALREADY_DONE
+	system call TryCloset
+	if var ch1.temp_blackpass_closetsearch_success
+		system call StopSwirl
+		lacie "It's here!" mood surprised
+		hide ui
+		set ch1.temp_blackpass_closetsearch_inprogress = false
+		set ch1.blackpass_finished_closet_search = true
+		item add ch1.blackpass_knife
+		fade out
+		pause 1
+		audio sfx play door
+		move to Ch1_BlackPass_Kitchen point from_garage time 0
+		pause 1
+		fade in
+		lacie "What was that...?" mood concerned9
+		end
+	"It's not here."
+	end
 
 label ALREADY_DONE
-    "Nothing else of interest."
+	"Nothing else of interest."

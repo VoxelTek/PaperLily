@@ -1,7 +1,7 @@
 label START
-    if var general.serious jump SERIOUS
-    "The microwave emanates an aura of familiarity."
-    end
+	if var general.serious jump SERIOUS
+	"The microwave emanates an aura of familiarity."
+	end
 
 label SERIOUS
-    "A microwave oven."
+	"A microwave oven."

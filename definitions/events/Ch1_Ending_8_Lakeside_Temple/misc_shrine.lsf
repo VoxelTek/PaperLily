@@ -1,6 +1,6 @@
 label START
-    "A shrine of some sorts."
-    if var ch1.forest_lakeside_goldfish_gone
-        "There's no longer a goldfish inside the bowl."
-    else
-        "The goldfish sits unmoving at the bottom of the bowl."
+	"A shrine of some sorts."
+	if var ch1.forest_lakeside_goldfish_gone
+		"There's no longer a goldfish inside the bowl."
+	else
+		"The goldfish sits unmoving at the bottom of the bowl."

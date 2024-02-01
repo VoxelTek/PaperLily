@@ -1,5 +1,5 @@
 label START
-    set ch1.forest_red_took_jar = false
-    system refresh
-    item remove ch1.red_jar
-    end
+	set ch1.forest_red_took_jar = false
+	system refresh
+	item remove ch1.red_jar
+	end

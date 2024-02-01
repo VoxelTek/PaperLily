@@ -1,61 +1,61 @@
 label START
-    fade out
-    set persistent.ending.1.1 = true
-    move to Ch1_Garden_ExitRitual point exiting_lacie cutscene time 0
-    chara spawn lacie point exiting_lacie
-    chara spawn sai point exiting_sai
-    chara set lacie at left
-    chara set sai at right
-    camera track node lacie
-    fade in time 4
-    pause 1
-    lacie "Well... this is it." mood reflective6
-    hide ui
-    pause 1.5
-    action turn left node lacie
-    pause 0.5
-    lacie "So uh... see you on the other side?" mood blank5
-    action turn right node sai
-    sai "Yeah." mood happy2
-    hide ui
-    pause 1
-    action turn up node lacie
-    pause 0.5
-    action walk up 24 node lacie speed veryslow
-    pause 0.1
-    action turn up node sai
-    pause 0.3
-    camera unlock
-    chara despawn lacie
-    pause 2
-    camera move (0,24) time 0.5
-    camera move (-32,0) time 0.5
-    camera track node sai
-    pause 1.5
-    sai "..." mood blank8 time 1.5
-    hide ui
-    action walk right 32 node sai speed veryslow
-    action walk up 16 node sai speed veryslow
-    pause 0.5
-    camera unlock
-    audio bgm play ch1_ending
-    pause 2
-    action walk right 32 node sai speed veryslow
-    action turn up node sai
-    pause 1.5
-    sai "See ya." mood blank9 time 2
-    hide ui
-    pause 2.2
-    set ch1.garden_placed_flower = false
-    system refresh
-    pause 2
-    action walk down 256 node sai speed slow
-    pause 2.5
-    system call CameraPanUp
-    pause 0.5
-    fade out color "#F0EBDB" time 1
-    pause 1.5
-    system screen ch1_credits_1
-    fade in color "#F0EBDB" time 0.5
-    system achievement CH1_GOOD_END
-    end
+	fade out
+	set persistent.ending.1.1 = true
+	move to Ch1_Garden_ExitRitual point exiting_lacie cutscene time 0
+	chara spawn lacie point exiting_lacie
+	chara spawn sai point exiting_sai
+	chara set lacie at left
+	chara set sai at right
+	camera track node lacie
+	fade in time 4
+	pause 1
+	lacie "Well... this is it." mood reflective6
+	hide ui
+	pause 1.5
+	action turn left node lacie
+	pause 0.5
+	lacie "So uh... see you on the other side?" mood blank5
+	action turn right node sai
+	sai "Yeah." mood happy2
+	hide ui
+	pause 1
+	action turn up node lacie
+	pause 0.5
+	action walk up 24 node lacie speed veryslow
+	pause 0.1
+	action turn up node sai
+	pause 0.3
+	camera unlock
+	chara despawn lacie
+	pause 2
+	camera move (0,24) time 0.5
+	camera move (-32,0) time 0.5
+	camera track node sai
+	pause 1.5
+	sai "..." mood blank8 time 1.5
+	hide ui
+	action walk right 32 node sai speed veryslow
+	action walk up 16 node sai speed veryslow
+	pause 0.5
+	camera unlock
+	audio bgm play ch1_ending
+	pause 2
+	action walk right 32 node sai speed veryslow
+	action turn up node sai
+	pause 1.5
+	sai "See ya." mood blank9 time 2
+	hide ui
+	pause 2.2
+	set ch1.garden_placed_flower = false
+	system refresh
+	pause 2
+	action walk down 256 node sai speed slow
+	pause 2.5
+	system call CameraPanUp
+	pause 0.5
+	fade out color "#F0EBDB" time 1
+	pause 1.5
+	system screen ch1_credits_1
+	fade in color "#F0EBDB" time 0.5
+	system achievement CH1_GOOD_END
+	end

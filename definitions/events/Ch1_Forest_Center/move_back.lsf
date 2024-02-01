@@ -1,21 +1,21 @@
 label START
-    if objective ch1.kozmo_find_head inprogress
-        lacie "I don't think there's anything this way that will help Kozmo..." mood blank2
-        jump KILL_KOZMO
-    if objective ch1.kozmo_give_head inprogress
-        lacie "I need to get this to Kozmo as soon as possible..." mood blank2
-        jump KILL_KOZMO
+	if objective ch1.kozmo_find_head inprogress
+		lacie "I don't think there's anything this way that will help Kozmo..." mood blank2
+		jump KILL_KOZMO
+	if objective ch1.kozmo_give_head inprogress
+		lacie "I need to get this to Kozmo as soon as possible..." mood blank2
+		jump KILL_KOZMO
 label GO
-    move to Ch1_Forest_Entrance point coming_out
-    end
+	move to Ch1_Forest_Entrance point coming_out
+	end
 
 label KILL_KOZMO
-    choice "Continue down this path?"
-        "Yes"
-            system call StopTimer
-            event call ch1_event_kozmotimeout
-            jump GO
-        "No"
-            hide ui
-            action walk up 32
-            end
+	choice "Continue down this path?"
+		"Yes"
+			system call StopTimer
+			event call ch1_event_kozmotimeout
+			jump GO
+		"No"
+			hide ui
+			action walk up 32
+			end

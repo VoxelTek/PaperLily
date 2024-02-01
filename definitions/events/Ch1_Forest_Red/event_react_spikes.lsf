@@ -1,9 +1,9 @@
 label START
-    if var ch1.forest_red_entrance_stage end
-    pause 0.5
-    chara set lacie at left
-    lacie "What the... a trap?" mood surprised
-    lacie "That was dangerous... why are there traps here?" mood surprised2
-    fade out time 0.5
-    action call hide_spikes
-    fade in time 0.5
+	if var ch1.forest_red_entrance_stage end
+	pause 0.5
+	chara set lacie at left
+	lacie "What the... a trap?" mood surprised
+	lacie "That was dangerous... why are there traps here?" mood surprised2
+	fade out time 0.5
+	action call hide_spikes
+	fade in time 0.5

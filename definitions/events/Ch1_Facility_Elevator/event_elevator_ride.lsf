@@ -1,19 +1,19 @@
 label START
-    hide ui
-    audio sfx play ch1_elevator
-    pause 1.5
-    fade out
-    set ch1.facility_elevator_location = -1
-    move to Ch1_Cutscene_Facility_Elevator point center time 0
-    chara spawn lacie point lacie
-    chara spawn sai point sai
-    pause 1.5
-    fade in
-    pause 3
-    fade out
-    pause 1
-    set ch1.temp_facility_primals_b1f_hallway_spawn = false
-    set ch1.temp_facility_primals_b1f_elevator_spawn = false
-    set ch1.temp_facility_primals_b2f_east_spawn = false
-    set ch1.temp_facility_primals_b2f_west_spawn = false
-    move to Ch1_Facility_Elevator point center time 0
+	hide ui
+	audio sfx play ch1_elevator
+	pause 1.5
+	fade out
+	set ch1.facility_elevator_location = -1
+	move to Ch1_Cutscene_Facility_Elevator point center time 0
+	chara spawn lacie point lacie
+	chara spawn sai point sai
+	pause 1.5
+	fade in
+	pause 3
+	fade out
+	pause 1
+	set ch1.temp_facility_primals_b1f_hallway_spawn = false
+	set ch1.temp_facility_primals_b1f_elevator_spawn = false
+	set ch1.temp_facility_primals_b2f_east_spawn = false
+	set ch1.temp_facility_primals_b2f_west_spawn = false
+	move to Ch1_Facility_Elevator point center time 0

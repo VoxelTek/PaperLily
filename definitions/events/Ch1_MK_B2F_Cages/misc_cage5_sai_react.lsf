@@ -1,9 +1,9 @@
 label START
-    if repeat end
-    if var ch1.mk_sai_talks_crow end
-    set ch1.mk_sai_talks_crow = true
-    chara set lacie at left
-    chara set sai at right
-    sai "Aw crap. The knives lady must have been in here." mood thinking15
-    lacie "How do you know?" mood concerned5
-    sai "Well, in my experience, birds don't just combust." mood thinking3
+	if repeat end
+	if var ch1.mk_sai_talks_crow end
+	set ch1.mk_sai_talks_crow = true
+	chara set lacie at left
+	chara set sai at right
+	sai "Aw crap. The knives lady must have been in here." mood thinking15
+	lacie "How do you know?" mood concerned5
+	sai "Well, in my experience, birds don't just combust." mood thinking3

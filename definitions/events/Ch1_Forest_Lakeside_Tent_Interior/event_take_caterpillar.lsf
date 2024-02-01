@@ -1,18 +1,18 @@
 label START
-    chara set lacie at left
-    set ch1.forest_moths_took_caterpillar = true
-    system refresh
-    item add ch1.forest_caterpillar
-    ch1_moth_girl "You'll kill him???" mood blank4
-    lacie "I guess so." mood blank7
-    ch1_moth_girl "THANK THE HEAVENS." mood blank3
-    ch1_terrarium "..."
-    ch1_moth_girl "You shut the hell up. You're dead meat, jerk." mood annoyed
-    ch1_moth_boy "Farewell, little brother. It has been a displeasure." mood annoyed2
-    lacie "..." mood blank7
-    choice "(What now...?)"
-        "Kill it here"
-            event call event_kill_caterpillar
-        "Do not"
-            end
-    end
+	chara set lacie at left
+	set ch1.forest_moths_took_caterpillar = true
+	system refresh
+	item add ch1.forest_caterpillar
+	ch1_moth_girl "You'll kill him???" mood blank4
+	lacie "I guess so." mood blank7
+	ch1_moth_girl "THANK THE HEAVENS." mood blank3
+	ch1_terrarium "..."
+	ch1_moth_girl "You shut the hell up. You're dead meat, jerk." mood annoyed
+	ch1_moth_boy "Farewell, little brother. It has been a displeasure." mood annoyed2
+	lacie "..." mood blank7
+	choice "(What now...?)"
+		"Kill it here"
+			event call event_kill_caterpillar
+		"Do not"
+			end
+	end

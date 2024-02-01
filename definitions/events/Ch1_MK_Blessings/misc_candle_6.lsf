@@ -1,16 +1,16 @@
 label START
-    if not var ch1.mk_boss_blessings_stage == 5 end
-    system call StopChasers
-    set ch1.mk_boss_blessings_stage = 6
-    set ch1.mk_clear_noskip_pt2 = true
-    pause 0.3
-    system call CenterCameraOnMk
-    pause 0.5
-    audio sfx play ch1_scream
-    pause 0.6
-    action call mk_scream
-    system call ClearChasers
-    camera shake time 1 continue
-    pause 0.9
-    system call EndMinigame
-    system minigame ch1_battle_missknives_pt2
+	if not var ch1.mk_boss_blessings_stage == 5 end
+	system call StopChasers
+	set ch1.mk_boss_blessings_stage = 6
+	set ch1.mk_clear_noskip_pt2 = true
+	pause 0.3
+	system call CenterCameraOnMk
+	pause 0.5
+	audio sfx play ch1_scream
+	pause 0.6
+	action call mk_scream
+	system call ClearChasers
+	camera shake time 1 continue
+	pause 0.9
+	system call EndMinigame
+	system minigame ch1_battle_missknives_pt2

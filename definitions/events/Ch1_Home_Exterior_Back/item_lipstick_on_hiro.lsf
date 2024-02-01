@@ -1,16 +1,16 @@
 label START
-    chara set lacie at left
-    chara set hiro at right
-    if repeat jump AGAIN
-    hiro "Are you going to try on makeup?" mood surprised3
-    hiro "Or maybe..." mood surprised
-    hiro "You want to put it on me???" mood shocked
-    lacie "...I was just showing you..." mood concerned7
-    hiro "Oh..." mood pout
-    lacie "You sound almost... disappointed?" mood surprised3
-    end
+	chara set lacie at left
+	chara set hiro at right
+	if repeat jump AGAIN
+	hiro "Are you going to try on makeup?" mood surprised3
+	hiro "Or maybe..." mood surprised
+	hiro "You want to put it on me???" mood shocked
+	lacie "...I was just showing you..." mood concerned7
+	hiro "Oh..." mood pout
+	lacie "You sound almost... disappointed?" mood surprised3
+	end
 
 label AGAIN
-    hiro "Do you need help putting lipstick on?" mood default
-    lacie "I-I'm not using it!" mood embarassed
-    end
+	hiro "Do you need help putting lipstick on?" mood default
+	lacie "I-I'm not using it!" mood embarassed
+	end

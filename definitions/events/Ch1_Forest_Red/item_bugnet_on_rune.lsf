@@ -1,5 +1,5 @@
 label START
-    if not var ch1.forest_seen_rune end
-    chara set rune at right
-    rune "Isn't it nice? It's a bug net. For catching bugs." mood default
-    rune "There are other kinds of nets, but this one is for catching bugs."
+	if not var ch1.forest_seen_rune end
+	chara set rune at right
+	rune "Isn't it nice? It's a bug net. For catching bugs." mood default
+	rune "There are other kinds of nets, but this one is for catching bugs."

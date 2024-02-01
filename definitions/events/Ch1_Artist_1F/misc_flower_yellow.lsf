@@ -1,9 +1,9 @@
 label START
-    choice "Pick up ${item:ch1.kett_flower}?"
-        "Yes"
-            item add ch1.kett_flower
-            set ch1.forest_kett_spawned_flower_yellow = false
-            system call RemoveFlowerYellow
-        "No"
-            end
-    end
+	choice "Pick up ${item:ch1.kett_flower}?"
+		"Yes"
+			item add ch1.kett_flower
+			set ch1.forest_kett_spawned_flower_yellow = false
+			system call RemoveFlowerYellow
+		"No"
+			end
+	end

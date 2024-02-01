@@ -1,6 +1,6 @@
 label START
-    if repeat
-        "Better not to."
-        end
-    lacie "(Better not do that.)" mood default
-    lacie "(This little plant is the only thing standing between us and those fairy heads...)" mood blank2
+	if repeat
+		"Better not to."
+		end
+	lacie "(Better not do that.)" mood default
+	lacie "(This little plant is the only thing standing between us and those fairy heads...)" mood blank2

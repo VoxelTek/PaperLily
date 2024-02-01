@@ -1,32 +1,32 @@
 label START
-    party switch lacie
-    system clear-inventory
-    set general.maxhp.lacie = 1
-    set general.hp.lacie = 1
-    set general.chapter = 1
-    set general.part_of_day = "evening"
-    set ch1.forest_entrance_light_1_switch_on = true
-    set ch1.forest_entrance_light_2_switch_on = true
-    set ch1.forest_entrance_light_3_switch_on = true
-    set ch1.forest_entrance_light_4_switch_on = true
-    set ch1.forest_entrance_light_5_switch_on = true
-    set ch1.forest_entrance_light_6_switch_on = true
-    set ch1.forest_lakeside_doorknob_3 = "shop"
-    set ch1.forest_lakeside_doorknob_5 = "moths"
-    set ch1.facility_fusebox_slot_1 = -101
-    set ch1.facility_fusebox_slot_2 = -1
-    set ch1.facility_fusebox_slot_3 = 40
-    set ch1.facility_fusebox_slot_4 = -100
-    set ch1.facility_fusebox_slot_5 = -1
-    set ch1.facility_fusebox_slot_6 = 15
-    set ch1.facility_fusebox_slot_7 = -1
-    set ch1.facility_fusebox_slot_8 = 25
-    chara rename milion to "misc.characters.unknown"
-    chara rename kozmo to "misc.characters.unknown"
-    chara rename alba to "misc.characters.unknown"
-    chara rename kett to "misc.characters.unknown"
-    chara rename rune to "misc.characters.unknown"
-    chara rename sai to "misc.characters.unknown"
-    chara rename mk to "misc.characters.unknown"
-    chara rename ch1_spider to "misc.characters.unknown"
-    chara rename aoi to "misc.characters.unknown"
+	party switch lacie
+	system clear-inventory
+	set general.maxhp.lacie = 1
+	set general.hp.lacie = 1
+	set general.chapter = 1
+	set general.part_of_day = "evening"
+	set ch1.forest_entrance_light_1_switch_on = true
+	set ch1.forest_entrance_light_2_switch_on = true
+	set ch1.forest_entrance_light_3_switch_on = true
+	set ch1.forest_entrance_light_4_switch_on = true
+	set ch1.forest_entrance_light_5_switch_on = true
+	set ch1.forest_entrance_light_6_switch_on = true
+	set ch1.forest_lakeside_doorknob_3 = "shop"
+	set ch1.forest_lakeside_doorknob_5 = "moths"
+	set ch1.facility_fusebox_slot_1 = -101
+	set ch1.facility_fusebox_slot_2 = -1
+	set ch1.facility_fusebox_slot_3 = 40
+	set ch1.facility_fusebox_slot_4 = -100
+	set ch1.facility_fusebox_slot_5 = -1
+	set ch1.facility_fusebox_slot_6 = 15
+	set ch1.facility_fusebox_slot_7 = -1
+	set ch1.facility_fusebox_slot_8 = 25
+	chara rename milion to "misc.characters.unknown"
+	chara rename kozmo to "misc.characters.unknown"
+	chara rename alba to "misc.characters.unknown"
+	chara rename kett to "misc.characters.unknown"
+	chara rename rune to "misc.characters.unknown"
+	chara rename sai to "misc.characters.unknown"
+	chara rename mk to "misc.characters.unknown"
+	chara rename ch1_spider to "misc.characters.unknown"
+	chara rename aoi to "misc.characters.unknown"

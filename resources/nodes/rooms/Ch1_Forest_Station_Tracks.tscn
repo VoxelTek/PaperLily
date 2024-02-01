@@ -1718,11 +1718,11 @@ script = ExtResource( 8 )
 Area = Vector2( 27, 16 )
 
 [node name="move_back" type="Node2D" parent="Other/Events"]
-position = Vector2( 624, 816 )
+position = Vector2( 624, 832 )
 script = ExtResource( 8 )
 Solid = false
 Trigger = 1
-Area = Vector2( 32, 160 )
+Area = Vector2( 32, 192 )
 
 [node name="move_next" type="Node2D" parent="Other/Events"]
 position = Vector2( 2896, 832 )

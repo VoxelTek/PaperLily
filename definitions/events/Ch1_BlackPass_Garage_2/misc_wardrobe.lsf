@@ -1,16 +1,16 @@
 label START
-    if not var ch1.blackpass_retrieved_knife
-        "It doesn't seem to open."
-        end
-    fade out color white time 2 continue
-    audio bgm stop time 3
-    audio sfx play wardrobe_open
-    pause 0.1
-    action call wardrobe_open_1
-    pause 0.5
-    action call wardrobe_open_2
-    pause 4
-    objective complete ch1.blackpass_3_leave
-    system clear-inventory
-    event queue ch1_event_facility_wakeup
-    end
+	if not var ch1.blackpass_retrieved_knife
+		"It doesn't seem to open."
+		end
+	fade out color white time 2 continue
+	audio bgm stop time 3
+	audio sfx play wardrobe_open
+	pause 0.1
+	action call wardrobe_open_1
+	pause 0.5
+	action call wardrobe_open_2
+	pause 4
+	objective complete ch1.blackpass_3_leave
+	system clear-inventory
+	event queue ch1_event_facility_wakeup
+	end

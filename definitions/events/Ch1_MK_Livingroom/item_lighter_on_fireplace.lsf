@@ -1,154 +1,154 @@
 label START
-    choice "Light the fireplace?"
-        "Yes"
-            continue
-        "No"
-            end
-    if not item ch1.mk_knife_activated jump NOT_ENOUGH_ITEMS
-    if not item ch1.mk_foot_activated jump NOT_ENOUGH_ITEMS
-    if not item ch1.mk_canvas_activated jump NOT_ENOUGH_ITEMS
-    if not item ch1.mk_hand_mirror_activated jump NOT_ENOUGH_ITEMS
-    if not item ch1.mk_compress_activated jump NOT_ENOUGH_ITEMS
+	choice "Light the fireplace?"
+		"Yes"
+			continue
+		"No"
+			end
+	if not item ch1.mk_knife_activated jump NOT_ENOUGH_ITEMS
+	if not item ch1.mk_foot_activated jump NOT_ENOUGH_ITEMS
+	if not item ch1.mk_canvas_activated jump NOT_ENOUGH_ITEMS
+	if not item ch1.mk_hand_mirror_activated jump NOT_ENOUGH_ITEMS
+	if not item ch1.mk_compress_activated jump NOT_ENOUGH_ITEMS
 
-    hide ui
-    pause 1
-    system retry-save
-    audio sfx play fire
-    audio ambiance play fireplace_loop
-    pause 0.1
-    set ch1.mk_fireplace_on = true
-    system refresh
-    pause 1
-    jump CHOOSE_ITEM_FIRST
+	hide ui
+	pause 1
+	system retry-save
+	audio sfx play fire
+	audio ambiance play fireplace_loop
+	pause 0.1
+	set ch1.mk_fireplace_on = true
+	system refresh
+	pause 1
+	jump CHOOSE_ITEM_FIRST
 
 label NOT_ENOUGH_ITEMS
-    lacie "I don't have all 5 items ready to burn yet..." mood bothered
-    lacie "If I light this on, I'll just lure that lady here for no reason." mood thinking2
-    end
+	lacie "I don't have all 5 items ready to burn yet..." mood bothered
+	lacie "If I light this on, I'll just lure that lady here for no reason." mood thinking2
+	end
 
 label CHOOSE_ITEM_FIRST
-    set ch1.temp_mk_burn_item_no = 1
-    choice "(What should I burn first?)"
-        "The knife" if item ch1.mk_knife_activated
-            item remove ch1.mk_knife_activated
-            set ch1.temp_mk_burn_item_1 = "knife"
-        "The foot" if item ch1.mk_foot_activated
-            item remove ch1.mk_foot_activated
-            set ch1.temp_mk_burn_item_1 = "foot"
-        "The sketchbook" if item ch1.mk_canvas_activated
-            item remove ch1.mk_canvas_activated
-            set ch1.temp_mk_burn_item_1 = "canvas"
-        "The mirror" if item ch1.mk_hand_mirror_activated
-            item remove ch1.mk_hand_mirror_activated
-            set ch1.temp_mk_burn_item_1 = "mirror"
-        "The cold compress" if item ch1.mk_compress_activated
-            item remove ch1.mk_compress_activated
-            set ch1.temp_mk_burn_item_1 = "compress"
-    hide ui
-    pause 0.5
-    audio sfx play fire
-    pause 1
-    jump CHOOSE_ITEM_NEXT
+	set ch1.temp_mk_burn_item_no = 1
+	choice "(What should I burn first?)"
+		"The knife" if item ch1.mk_knife_activated
+			item remove ch1.mk_knife_activated
+			set ch1.temp_mk_burn_item_1 = "knife"
+		"The foot" if item ch1.mk_foot_activated
+			item remove ch1.mk_foot_activated
+			set ch1.temp_mk_burn_item_1 = "foot"
+		"The sketchbook" if item ch1.mk_canvas_activated
+			item remove ch1.mk_canvas_activated
+			set ch1.temp_mk_burn_item_1 = "canvas"
+		"The mirror" if item ch1.mk_hand_mirror_activated
+			item remove ch1.mk_hand_mirror_activated
+			set ch1.temp_mk_burn_item_1 = "mirror"
+		"The cold compress" if item ch1.mk_compress_activated
+			item remove ch1.mk_compress_activated
+			set ch1.temp_mk_burn_item_1 = "compress"
+	hide ui
+	pause 0.5
+	audio sfx play fire
+	pause 1
+	jump CHOOSE_ITEM_NEXT
 
 label CHOOSE_ITEM_NEXT
-    set ch1.temp_mk_burn_item_no ++
-    choice "(What should I burn next?)"
-        "The knife" if item ch1.mk_knife_activated
-            item remove ch1.mk_knife_activated
-            if var ch1.temp_mk_burn_item_no == 2
-                set ch1.temp_mk_burn_item_2 = "knife"
-            if var ch1.temp_mk_burn_item_no == 3
-                set ch1.temp_mk_burn_item_3 = "knife"
-            if var ch1.temp_mk_burn_item_no == 4
-                set ch1.temp_mk_burn_item_4 = "knife"
-        "The foot" if item ch1.mk_foot_activated
-            item remove ch1.mk_foot_activated
-            if var ch1.temp_mk_burn_item_no == 2
-                set ch1.temp_mk_burn_item_2 = "foot"
-            if var ch1.temp_mk_burn_item_no == 3
-                set ch1.temp_mk_burn_item_3 = "foot"
-            if var ch1.temp_mk_burn_item_no == 4
-                set ch1.temp_mk_burn_item_4 = "foot"
-        "The sketchbook" if item ch1.mk_canvas_activated
-            item remove ch1.mk_canvas_activated
-            if var ch1.temp_mk_burn_item_no == 2
-                set ch1.temp_mk_burn_item_2 = "canvas"
-            if var ch1.temp_mk_burn_item_no == 3
-                set ch1.temp_mk_burn_item_3 = "canvas"
-            if var ch1.temp_mk_burn_item_no == 4
-                set ch1.temp_mk_burn_item_4 = "canvas"
-        "The mirror" if item ch1.mk_hand_mirror_activated
-            item remove ch1.mk_hand_mirror_activated
-            if var ch1.temp_mk_burn_item_no == 2
-                set ch1.temp_mk_burn_item_2 = "mirror"
-            if var ch1.temp_mk_burn_item_no == 3
-                set ch1.temp_mk_burn_item_3 = "mirror"
-            if var ch1.temp_mk_burn_item_no == 4
-                set ch1.temp_mk_burn_item_4 = "mirror"
-        "The cold compress" if item ch1.mk_compress_activated
-            item remove ch1.mk_compress_activated
-            if var ch1.temp_mk_burn_item_no == 2
-                set ch1.temp_mk_burn_item_2 = "compress"
-            if var ch1.temp_mk_burn_item_no == 3
-                set ch1.temp_mk_burn_item_3 = "compress"
-            if var ch1.temp_mk_burn_item_no == 4
-                set ch1.temp_mk_burn_item_4 = "compress"
-    hide ui
-    pause 0.5
-    audio sfx play fire
-    pause 1
-    if var ch1.temp_mk_burn_item_no == 4
-        jump FINAL_ITEM
-    jump CHOOSE_ITEM_NEXT
+	set ch1.temp_mk_burn_item_no ++
+	choice "(What should I burn next?)"
+		"The knife" if item ch1.mk_knife_activated
+			item remove ch1.mk_knife_activated
+			if var ch1.temp_mk_burn_item_no == 2
+				set ch1.temp_mk_burn_item_2 = "knife"
+			if var ch1.temp_mk_burn_item_no == 3
+				set ch1.temp_mk_burn_item_3 = "knife"
+			if var ch1.temp_mk_burn_item_no == 4
+				set ch1.temp_mk_burn_item_4 = "knife"
+		"The foot" if item ch1.mk_foot_activated
+			item remove ch1.mk_foot_activated
+			if var ch1.temp_mk_burn_item_no == 2
+				set ch1.temp_mk_burn_item_2 = "foot"
+			if var ch1.temp_mk_burn_item_no == 3
+				set ch1.temp_mk_burn_item_3 = "foot"
+			if var ch1.temp_mk_burn_item_no == 4
+				set ch1.temp_mk_burn_item_4 = "foot"
+		"The sketchbook" if item ch1.mk_canvas_activated
+			item remove ch1.mk_canvas_activated
+			if var ch1.temp_mk_burn_item_no == 2
+				set ch1.temp_mk_burn_item_2 = "canvas"
+			if var ch1.temp_mk_burn_item_no == 3
+				set ch1.temp_mk_burn_item_3 = "canvas"
+			if var ch1.temp_mk_burn_item_no == 4
+				set ch1.temp_mk_burn_item_4 = "canvas"
+		"The mirror" if item ch1.mk_hand_mirror_activated
+			item remove ch1.mk_hand_mirror_activated
+			if var ch1.temp_mk_burn_item_no == 2
+				set ch1.temp_mk_burn_item_2 = "mirror"
+			if var ch1.temp_mk_burn_item_no == 3
+				set ch1.temp_mk_burn_item_3 = "mirror"
+			if var ch1.temp_mk_burn_item_no == 4
+				set ch1.temp_mk_burn_item_4 = "mirror"
+		"The cold compress" if item ch1.mk_compress_activated
+			item remove ch1.mk_compress_activated
+			if var ch1.temp_mk_burn_item_no == 2
+				set ch1.temp_mk_burn_item_2 = "compress"
+			if var ch1.temp_mk_burn_item_no == 3
+				set ch1.temp_mk_burn_item_3 = "compress"
+			if var ch1.temp_mk_burn_item_no == 4
+				set ch1.temp_mk_burn_item_4 = "compress"
+	hide ui
+	pause 0.5
+	audio sfx play fire
+	pause 1
+	if var ch1.temp_mk_burn_item_no == 4
+		jump FINAL_ITEM
+	jump CHOOSE_ITEM_NEXT
 
 label FINAL_ITEM
-    set ch1.temp_mk_burn_item_no = 5
-    if item ch1.mk_knife_activated
-        lacie "And finally... the knife." mood blank5
-        item remove ch1.mk_knife_activated
-        set ch1.temp_mk_burn_item_5 = "knife"
-        jump AFTER_BURN
-    if item ch1.mk_foot_activated
-        lacie "And finally... the foot." mood blank5
-        item remove ch1.mk_foot_activated
-        set ch1.temp_mk_burn_item_5 = "foot"
-        jump AFTER_BURN
-    if item ch1.mk_canvas_activated
-        lacie "And finally... the sketchbook." mood blank5
-        item remove ch1.mk_canvas_activated
-        set ch1.temp_mk_burn_item_5 = "canvas"
-        jump AFTER_BURN
-    if item ch1.mk_hand_mirror_activated
-        lacie "And finally... the mirror." mood blank5
-        item remove ch1.mk_hand_mirror_activated
-        set ch1.temp_mk_burn_item_5 = "mirror"
-        jump AFTER_BURN
-    if item ch1.mk_compress_activated
-        lacie "And finally... the cold compress." mood blank5
-        item remove ch1.mk_compress_activated
-        set ch1.temp_mk_burn_item_5 = "compress"
-        jump AFTER_BURN
-    end
+	set ch1.temp_mk_burn_item_no = 5
+	if item ch1.mk_knife_activated
+		lacie "And finally... the knife." mood blank5
+		item remove ch1.mk_knife_activated
+		set ch1.temp_mk_burn_item_5 = "knife"
+		jump AFTER_BURN
+	if item ch1.mk_foot_activated
+		lacie "And finally... the foot." mood blank5
+		item remove ch1.mk_foot_activated
+		set ch1.temp_mk_burn_item_5 = "foot"
+		jump AFTER_BURN
+	if item ch1.mk_canvas_activated
+		lacie "And finally... the sketchbook." mood blank5
+		item remove ch1.mk_canvas_activated
+		set ch1.temp_mk_burn_item_5 = "canvas"
+		jump AFTER_BURN
+	if item ch1.mk_hand_mirror_activated
+		lacie "And finally... the mirror." mood blank5
+		item remove ch1.mk_hand_mirror_activated
+		set ch1.temp_mk_burn_item_5 = "mirror"
+		jump AFTER_BURN
+	if item ch1.mk_compress_activated
+		lacie "And finally... the cold compress." mood blank5
+		item remove ch1.mk_compress_activated
+		set ch1.temp_mk_burn_item_5 = "compress"
+		jump AFTER_BURN
+	end
 
 label AFTER_BURN
-    hide ui
-    pause 0.5
-    audio sfx play fire
-    pause 1
-    if var ch1.temp_mk_burn_item_1 == "mirror"
-        if var ch1.temp_mk_burn_item_2 == "canvas"
-            if var ch1.temp_mk_burn_item_3 == "compress"
-                if var ch1.temp_mk_burn_item_4 == "foot"
-                    if var ch1.temp_mk_burn_item_5 == "knife"
-                        jump CORRECT_ORDER
-    jump INCORRECT_ORDER
+	hide ui
+	pause 0.5
+	audio sfx play fire
+	pause 1
+	if var ch1.temp_mk_burn_item_1 == "mirror"
+		if var ch1.temp_mk_burn_item_2 == "canvas"
+			if var ch1.temp_mk_burn_item_3 == "compress"
+				if var ch1.temp_mk_burn_item_4 == "foot"
+					if var ch1.temp_mk_burn_item_5 == "knife"
+						jump CORRECT_ORDER
+	jump INCORRECT_ORDER
 
 label INCORRECT_ORDER
-    event queue event_ending_12
-    end
+	event queue event_ending_12
+	end
 
 label CORRECT_ORDER
-    objective complete ch1.mk_burn_items
-    objective silence
-    event call ch1_event_mk_fight
-    end
+	objective complete ch1.mk_burn_items
+	objective silence
+	event call ch1_event_mk_fight
+	end

@@ -1,17 +1,17 @@
 label START
-    action call open_curtains
-    audio sfx play curtains
-    pause 1.5
-    "A painting of a gravestone."
-    lacie "...What is this..?" mood shadow2
-    lacie "..." mood shadow3
-    hide ui
-    action call hide_bg
-    pause 3
-    action call show_path
-    pause 1
-    action turn up
-    pause 2
-    fade out
-    move to Ch1_MK_Blessing_3 point entrance time 0
-    fade in
+	action call open_curtains
+	audio sfx play curtains
+	pause 1.5
+	"A painting of a gravestone."
+	lacie "...What is this..?" mood shadow2
+	lacie "..." mood shadow3
+	hide ui
+	action call hide_bg
+	pause 3
+	action call show_path
+	pause 1
+	action turn up
+	pause 2
+	fade out
+	move to Ch1_MK_Blessing_3 point entrance time 0
+	fade in

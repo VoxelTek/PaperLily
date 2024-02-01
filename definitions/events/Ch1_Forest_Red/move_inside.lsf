@@ -1,16 +1,16 @@
 label START
-    if repeat jump GO
-    audio sfx play door
-    audio bgm override on silent
-    move to Ch1_Red_1F point entrance
-    set ch1.forest_red_entrance_stage = 4
-    pause 0.5
-    bubble ellipsis_silent
-    lacie "(Seems like there's nobody here...)" mood blank2
-    audio bgm override off
-    audio bgm play ch1_mistery
-    end
+	if repeat jump GO
+	audio sfx play door
+	audio bgm override on silent
+	move to Ch1_Red_1F point entrance
+	set ch1.forest_red_entrance_stage = 4
+	pause 0.5
+	bubble ellipsis_silent
+	lacie "(Seems like there's nobody here...)" mood blank2
+	audio bgm override off
+	audio bgm play ch1_mistery
+	end
 
 label GO
-    audio sfx play door
-    move to Ch1_Red_1F point entrance
+	audio sfx play door
+	move to Ch1_Red_1F point entrance

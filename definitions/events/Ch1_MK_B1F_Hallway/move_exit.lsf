@@ -1,4 +1,4 @@
 label START
-    audio sfx play door
-    move to Ch1_Facility_B3F_MK point from_inside
-    end
+	audio sfx play door
+	move to Ch1_Facility_B3F_MK point from_inside
+	end

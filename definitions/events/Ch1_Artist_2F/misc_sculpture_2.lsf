@@ -1,5 +1,5 @@
 label START
-    "A strange sculpture."
-    if repeat end
-    lacie "This one looks kind of cute." mood blank4
-    end
+	"A strange sculpture."
+	if repeat end
+	lacie "This one looks kind of cute." mood blank4
+	end

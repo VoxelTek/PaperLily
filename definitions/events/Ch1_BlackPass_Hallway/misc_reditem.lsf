@@ -1,11 +1,11 @@
 label START
-    choice "Pick up ${item:global.reditem_1}?"
-        "Yes"
-            continue
-        "No"
-            end
-    item add global.reditem_1
-    set general.blackpass_red_item_1_spawned = false
-    set general.blackpass_red_item_1_took = true
-    set general.blackpass_red_items ++
-    end
+	choice "Pick up ${item:global.reditem_1}?"
+		"Yes"
+			continue
+		"No"
+			end
+	item add global.reditem_1
+	set general.blackpass_red_item_1_spawned = false
+	set general.blackpass_red_item_1_took = true
+	set general.blackpass_red_items ++
+	end

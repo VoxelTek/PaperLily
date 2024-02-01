@@ -1,17 +1,17 @@
 label START
-    if var ch1.forest_red_entrance_stage < 4 jump CANT_GO_BACK_YET
-    if not var ch1.forest_rune_asked_about_red jump ASK_RUNE
-    move to Ch1_Forest_Path_3 point from_reds
-    end
+	if var ch1.forest_red_entrance_stage < 4 jump CANT_GO_BACK_YET
+	if not var ch1.forest_rune_asked_about_red jump ASK_RUNE
+	move to Ch1_Forest_Path_3 point from_reds
+	end
 
 label CANT_GO_BACK_YET
-    lacie "I just got this far, let's take a look around." mood blank3
-    hide ui
-    action walk right 32
-    end
+	lacie "I just got this far, let's take a look around." mood blank3
+	hide ui
+	action walk right 32
+	end
 
 label ASK_RUNE
-    lacie "I haven't finished talking to Rune..." mood blank3
-    hide ui
-    action walk right 32
-    end
+	lacie "I haven't finished talking to Rune..." mood blank3
+	hide ui
+	action walk right 32
+	end

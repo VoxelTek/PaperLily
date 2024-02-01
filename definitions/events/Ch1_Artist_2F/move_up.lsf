@@ -1,4 +1,4 @@
 label START
-    system call PauseChaser
-    move to Ch1_Artist_3F point from_downstairs
-    end
+	system call PauseChaser
+	move to Ch1_Artist_3F point from_downstairs
+	end

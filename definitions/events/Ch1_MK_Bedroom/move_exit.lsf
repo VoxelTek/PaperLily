@@ -1,4 +1,4 @@
 label START
-    audio sfx play door
-    move to Ch1_MK_B2F_Hallway point bedroom
-    end
+	audio sfx play door
+	move to Ch1_MK_B2F_Hallway point bedroom
+	end

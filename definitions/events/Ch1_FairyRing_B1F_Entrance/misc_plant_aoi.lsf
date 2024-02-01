@@ -1,8 +1,8 @@
 label START
-    if var ch1.forest_fairyring_rescued_aoi jump OPEN
-    "Various plants, similar to the one that caught you."
-    "This one seems to be digesting something..."
-    end
+	if var ch1.forest_fairyring_rescued_aoi jump OPEN
+	"Various plants, similar to the one that caught you."
+	"This one seems to be digesting something..."
+	end
 
 label OPEN
-    "The thing that almost ate Aoi. It's wide open."
+	"The thing that almost ate Aoi. It's wide open."

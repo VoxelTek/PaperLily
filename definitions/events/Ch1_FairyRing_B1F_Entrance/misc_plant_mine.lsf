@@ -1,9 +1,9 @@
 label START
-    if character aoi jump WITH_AOI
-    "The plant I was trapped in."
-    if repeat end
-    lacie "It's not nice in there." mood concerned8
-    end
+	if character aoi jump WITH_AOI
+	"The plant I was trapped in."
+	if repeat end
+	lacie "It's not nice in there." mood concerned8
+	end
 
 label WITH_AOI
-    event call misc_plant_mine_aoi
+	event call misc_plant_mine_aoi

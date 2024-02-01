@@ -1,7 +1,7 @@
 label START
-    if not var ch1.forest_seen_rune end
-    chara set lacie at left
-    chara set rune at right
-    lacie "What should I do with this?" mood blank1
-    rune "I'm not sure!" mood tilt
-    rune "Maybe you could cut things that need cutting." mood gasp
+	if not var ch1.forest_seen_rune end
+	chara set lacie at left
+	chara set rune at right
+	lacie "What should I do with this?" mood blank1
+	rune "I'm not sure!" mood tilt
+	rune "Maybe you could cut things that need cutting." mood gasp

@@ -1,15 +1,15 @@
 label START
-    if repeat end
-    system refresh
-    hide ui
-    audio bgm stop time 2
-    pause 2.5
-    audio ambiance play earthquake_loop
-    camera shake time 2
-    audio ambiance stop
-    pause 2.5
-    chara set lacie at left
-    chara set sai at right
-    sai "That sounded pretty big." mood surprised2
-    lacie "Let's check the water level." mood blank3
-    audio bgm play ch1_facility
+	if repeat end
+	system refresh
+	hide ui
+	audio bgm stop time 2
+	pause 2.5
+	audio ambiance play earthquake_loop
+	camera shake time 2
+	audio ambiance stop
+	pause 2.5
+	chara set lacie at left
+	chara set sai at right
+	sai "That sounded pretty big." mood surprised2
+	lacie "Let's check the water level." mood blank3
+	audio bgm play ch1_facility

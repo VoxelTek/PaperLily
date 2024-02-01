@@ -1,11 +1,11 @@
 label START
-    move to Ch1_Cutscene_Ending_12_Stress point cutscene_camera time 0
-    pause 2
-    fade in time 4
-    pause 2
-    fade out time 4
-    pause 1
-    "Dead End 1-12 - What's At Stake" background none
-    system achievement CH1_BAD_END
-    set persistent.ending.1.12 = true
-    system title-screen
+	move to Ch1_Cutscene_Ending_12_Stress point cutscene_camera time 0
+	pause 2
+	fade in time 4
+	pause 2
+	fade out time 4
+	pause 1
+	"Dead End 1-12 - What's At Stake" background none
+	system achievement CH1_BAD_END
+	set persistent.ending.1.12 = true
+	system title-screen

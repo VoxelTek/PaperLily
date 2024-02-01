@@ -1,12 +1,12 @@
 label START
-    if var ch1.forest_artist_forest_took_coin
-        "There's nothing else of interest."
-        end
-    "Seems like someone has dug here recently."
-    choice "Check it out?"
-        "Yes"
-            continue
-        "No"
-            end
-    set ch1.forest_artist_forest_took_coin = true
-    event call ch1_item_coin_get
+	if var ch1.forest_artist_forest_took_coin
+		"There's nothing else of interest."
+		end
+	"Seems like someone has dug here recently."
+	choice "Check it out?"
+		"Yes"
+			continue
+		"No"
+			end
+	set ch1.forest_artist_forest_took_coin = true
+	event call ch1_item_coin_get

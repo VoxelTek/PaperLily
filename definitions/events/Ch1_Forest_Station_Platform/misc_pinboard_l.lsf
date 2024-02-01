@@ -1,6 +1,6 @@
 label START
-    "The train schedule is posted here. It seems the train is currently out of service."
-    if repeat end
-    lacie "I don't quite understand these locations..." mood blank4
-    lacie "...but it seems this train loops around a really large area." mood blank1
-    end
+	"The train schedule is posted here. It seems the train is currently out of service."
+	if repeat end
+	lacie "I don't quite understand these locations..." mood blank4
+	lacie "...but it seems this train loops around a really large area." mood blank1
+	end

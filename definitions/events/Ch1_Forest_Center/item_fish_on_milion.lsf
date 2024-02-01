@@ -1,12 +1,12 @@
 label START
-    if repeat end
-    chara set lacie at left
-    milion "Ah, you bought that from Alba's shop?" mood blank4
-    lacie "Yes." mood blank7
-    milion "Alba's merchandise is always top tier." mood satisfied3
-    chara rename alba off
-    milion "Lovely gal." mood satisfied
-    alba "Flattery isn't going to get you anything, Milion." mood happy
-    chara rename milion off
-    milion "What a shame." mood satisfied2
-    lacie "(I seem to be interrupting something...)" mood surprised2
+	if repeat end
+	chara set lacie at left
+	milion "Ah, you bought that from Alba's shop?" mood blank4
+	lacie "Yes." mood blank7
+	milion "Alba's merchandise is always top tier." mood satisfied3
+	chara rename alba off
+	milion "Lovely gal." mood satisfied
+	alba "Flattery isn't going to get you anything, Milion." mood happy
+	chara rename milion off
+	milion "What a shame." mood satisfied2
+	lacie "(I seem to be interrupting something...)" mood surprised2

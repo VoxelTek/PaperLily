@@ -1,8 +1,8 @@
 label START
-    if var ch1.facility_archive_door_open end
-    pause 0.8
-    audio sfx play unlock
-    "The key fits!"
-    set ch1.facility_archive_door_open = true
-    item remove ch1.facility_key_archives
-    event queue move_archive
+	if var ch1.facility_archive_door_open end
+	pause 0.8
+	audio sfx play unlock
+	"The key fits!"
+	set ch1.facility_archive_door_open = true
+	item remove ch1.facility_key_archives
+	event queue move_archive

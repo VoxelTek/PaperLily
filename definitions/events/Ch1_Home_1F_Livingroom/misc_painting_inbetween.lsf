@@ -1,8 +1,8 @@
 label START
-    if repeat jump 2ND
-    "A painting of..."
-    lacie "Huh? Wasn't this cat sleeping...?" mood blank8
-    end
+	if repeat jump 2ND
+	"A painting of..."
+	lacie "Huh? Wasn't this cat sleeping...?" mood blank8
+	end
 
 label 2ND
-    "A painting of a cat stares you down."
+	"A painting of a cat stares you down."

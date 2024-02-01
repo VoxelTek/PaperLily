@@ -1,7 +1,7 @@
 label START
-    fade out
-    action call hide_lacie_ladder
-    action teleport to point from_ladder
-    action turn up
-    pause 1
-    fade in
+	fade out
+	action call hide_lacie_ladder
+	action teleport to point from_ladder
+	action turn up
+	pause 1
+	fade in

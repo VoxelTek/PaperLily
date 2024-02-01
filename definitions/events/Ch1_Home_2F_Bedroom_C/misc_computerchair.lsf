@@ -1,5 +1,5 @@
 label START
-    if var general.serious
-        "A computer chair."
-        end
-    "A computer chair. Yours is better."
+	if var general.serious
+		"A computer chair."
+		end
+	"A computer chair. Yours is better."

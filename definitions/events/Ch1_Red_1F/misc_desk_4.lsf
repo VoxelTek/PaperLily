@@ -1,9 +1,9 @@
 label START
-    "Some books about butterflies."
-    choice "Read a passage?"
-        "Yes"
-            "\"A blue butterfly appears for each curse lifted."
-            "They are attracted to cursed trees and will burrow into the trunk, rendering it completely hollow with time."
-            "It is unknown why this behavior happens.\""
-        "No"
-            end
+	"Some books about butterflies."
+	choice "Read a passage?"
+		"Yes"
+			"\"A blue butterfly appears for each curse lifted."
+			"They are attracted to cursed trees and will burrow into the trunk, rendering it completely hollow with time."
+			"It is unknown why this behavior happens.\""
+		"No"
+			end

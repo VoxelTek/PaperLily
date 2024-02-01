@@ -1,4 +1,4 @@
 label START
-    system call MoveBoxOutOfDoor2
-    event call move_exit_cell_2
-    end
+	system call MoveBoxOutOfDoor2
+	event call move_exit_cell_2
+	end

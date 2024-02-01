@@ -1,40 +1,40 @@
 label START
-    party switch lacie
-    party add sai
-    audio sfx play door
-    fade out time 0.5
-    move to Ch1_Facility_B2F_Hallway_West point from_bathroom time 0
-    chara spawn sai point from_bathroom_sai
-    chara set lacie at left
-    chara set sai at right
-    fade in time 0.5
-    pause 0.5
-    action turn left node sai
-    if var ch1.facility_hiro_called
-        sai "That took a million years." mood blank5
-        sai "Were you talking to someone in there?" mood blank11
-        action turn right
-        lacie "..." mood default
-        lacie "No." mood blank3
-        bubble sweatdrop continue
-        lacie "(Did he overhear anything...?)" mood blank2
-        sai "It kinda sounded like it." mood thinking2
-        lacie "I wasn't." mood reflective7
-        sai "Oh." mood thinking5
-        sai "It's cool, I talk to myself sometimes too." mood blank10
-        lacie "..." mood annoyed
-        sai "Like having a little narrator, right?" mood smile6
-        lacie "....." mood disappointed3
-    else
-        sai "Find anything cool?" mood lollipop2
-        action turn right
-        lacie "Nope." mood blank8
-        lacie "..."
-        lacie "...Where did you get that?" mood blank1
-        sai "The lollipop? I had 'em with me." mood lollipop3
-        sai "Want some?" mood lollipop2
-        lacie "I don't accept candy from strangers." mood reflective7
-    hide ui
-    action walk left 32 node sai speed slow
-    chara despawn sai
-    "(Sai joined your party.)\" color \"#90EE90"
+	party switch lacie
+	party add sai
+	audio sfx play door
+	fade out time 0.5
+	move to Ch1_Facility_B2F_Hallway_West point from_bathroom time 0
+	chara spawn sai point from_bathroom_sai
+	chara set lacie at left
+	chara set sai at right
+	fade in time 0.5
+	pause 0.5
+	action turn left node sai
+	if var ch1.facility_hiro_called
+		sai "That took a million years." mood blank5
+		sai "Were you talking to someone in there?" mood blank11
+		action turn right
+		lacie "..." mood default
+		lacie "No." mood blank3
+		bubble sweatdrop continue
+		lacie "(Did he overhear anything...?)" mood blank2
+		sai "It kinda sounded like it." mood thinking2
+		lacie "I wasn't." mood reflective7
+		sai "Oh." mood thinking5
+		sai "It's cool, I talk to myself sometimes too." mood blank10
+		lacie "..." mood annoyed
+		sai "Like having a little narrator, right?" mood smile6
+		lacie "....." mood disappointed3
+	else
+		sai "Find anything cool?" mood lollipop2
+		action turn right
+		lacie "Nope." mood blank8
+		lacie "..."
+		lacie "...Where did you get that?" mood blank1
+		sai "The lollipop? I had 'em with me." mood lollipop3
+		sai "Want some?" mood lollipop2
+		lacie "I don't accept candy from strangers." mood reflective7
+	hide ui
+	action walk left 32 node sai speed slow
+	chara despawn sai
+	"(Sai joined your party.)\" color \"#90EE90"

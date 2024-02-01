@@ -1,17 +1,17 @@
 label START
-    "A painting that's mostly just blue."
-    if var general.serious end
-    choice "Touch it?"
-        "Yes"
-            hide ui
-            pause 1
-            "A bunch of blue powder sticks to your finger."
-            if var ch1.mk_revealed_canvas
-                if not var ch1.mk_took_canvas
-                    "It should be easy to scrap off and collect more, as long as you have something to carry it with."
-            else
-                "(You wipe it off.)"
-            end
-        "No"
-            end
-    end
+	"A painting that's mostly just blue."
+	if var general.serious end
+	choice "Touch it?"
+		"Yes"
+			hide ui
+			pause 1
+			"A bunch of blue powder sticks to your finger."
+			if var ch1.mk_revealed_canvas
+				if not var ch1.mk_took_canvas
+					"It should be easy to scrap off and collect more, as long as you have something to carry it with."
+			else
+				"(You wipe it off.)"
+			end
+		"No"
+			end
+	end

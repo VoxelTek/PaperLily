@@ -1,20 +1,20 @@
 label START
-    if repeat jump SECOND_TIME
-    "The front door."
-    lacie "I need to paint a red symbol here..." mood blank3
-    jump GO_IN_CHOICE
+	if repeat jump SECOND_TIME
+	"The front door."
+	lacie "I need to paint a red symbol here..." mood blank3
+	jump GO_IN_CHOICE
 
 label SECOND_TIME
-    "The front door. There's still no red symbol painted on it."
-    jump GO_IN_CHOICE
+	"The front door. There's still no red symbol painted on it."
+	jump GO_IN_CHOICE
 
 label GO_IN_CHOICE
-    choice "Go inside?"
-        "Yes"
-            jump GO_IN
-        "No"
-            end
+	choice "Go inside?"
+		"Yes"
+			jump GO_IN
+		"No"
+			end
 
 label GO_IN
-    move to Ch1_Home_1F_Livingroom point front_door direction up
-    end
+	move to Ch1_Home_1F_Livingroom point front_door direction up
+	end

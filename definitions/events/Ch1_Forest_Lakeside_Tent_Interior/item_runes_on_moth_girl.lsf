@@ -1,8 +1,8 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set ch1_moth_girl at right
-    ch1_moth_girl "The heck would I need that for?" mood blank
-    lacie "I don't know." mood blank1
-    lacie "To give to Rune..?" mood blank2
-    ch1_moth_girl "Who the heck is Rune?" mood blank3
+	if repeat end
+	chara set lacie at left
+	chara set ch1_moth_girl at right
+	ch1_moth_girl "The heck would I need that for?" mood blank
+	lacie "I don't know." mood blank1
+	lacie "To give to Rune..?" mood blank2
+	ch1_moth_girl "Who the heck is Rune?" mood blank3

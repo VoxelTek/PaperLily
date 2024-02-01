@@ -1,5 +1,5 @@
 label START
-    "A fireplace."
-    if repeat end
-    lacie "(There's no smoke...?)" mood thinking
-    end
+	"A fireplace."
+	if repeat end
+	lacie "(There's no smoke...?)" mood thinking
+	end

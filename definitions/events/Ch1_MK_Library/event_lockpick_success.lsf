@@ -1,8 +1,8 @@
 label START
-    pause 0.8
-    audio sfx play unlock
-    pause 0.5
-    audio sfx play door
-    set ch1.mk_unlocked_wisteria = true
-    move to Ch1_MK_Wisteria point entrance
-    end
+	pause 0.8
+	audio sfx play unlock
+	pause 0.5
+	audio sfx play door
+	set ch1.mk_unlocked_wisteria = true
+	move to Ch1_MK_Wisteria point entrance
+	end

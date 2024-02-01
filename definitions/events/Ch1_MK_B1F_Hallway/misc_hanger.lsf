@@ -1,5 +1,5 @@
 label START
-    "A coat hanger."
-    if repeat end
-    if var general.serious end
-    lacie "I'm keeping mine on." mood blank2
+	"A coat hanger."
+	if repeat end
+	if var general.serious end
+	lacie "I'm keeping mine on." mood blank2

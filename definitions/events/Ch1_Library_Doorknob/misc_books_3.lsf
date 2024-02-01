@@ -1,13 +1,13 @@
 label START
-    choice "An untitled book stands out. Read a passage?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    audio sfx play paper
-    pause 0.5
-    "Demons can pick up on a human's soul from at least five meters away."
-    "Exceptions exist ___________ as well as the elderly or the sick; they are less perceivable and less satiating."
-    "Due to these factors, their value is considered to be negligeable."
+	choice "An untitled book stands out. Read a passage?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	audio sfx play paper
+	pause 0.5
+	"Demons can pick up on a human's soul from at least five meters away."
+	"Exceptions exist ___________ as well as the elderly or the sick; they are less perceivable and less satiating."
+	"Due to these factors, their value is considered to be negligeable."

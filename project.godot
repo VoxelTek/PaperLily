@@ -8,6 +8,8 @@
 
 config_version=4
 
+_custom_features="paperlilydemo,steam"
+
 _global_script_classes=[  ]
 _global_script_class_icons={
 }
@@ -35,6 +37,7 @@ shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 window/size/width=640
 window/size/height=360
+window/size/fullscreen=false
 window/size/test_width=1280
 window/size/test_height=720
 window/dpi/allow_hidpi=true
@@ -131,9 +134,9 @@ ui_end={
 [lacie_engine]
 
 core/game_name="Paper Lily Chapter 1"
-core/game_version="1.1.1-STEAM"
+core/game_version="1.1.2-STEAM"
 core/game_copyright="Leef 6010 2024"
-core/engine_version="1.5.1"
+core/engine_version="1.5.2"
 core/translation_base_locale="en"
 core/translation_base_name="English"
 core/translation_selected=""
@@ -193,7 +196,6 @@ debug/debug_room="Debug_Room"
 debug/quickstart/enabled=false
 debug/quickstart/room=""
 debug/quickstart/point=""
-core/translation_locale="en"
 
 [layer_names]
 
@@ -210,6 +212,7 @@ core/translation_locale="en"
 [locale]
 
 translation_remaps={
+
 }
 
 [logging]

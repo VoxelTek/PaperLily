@@ -1,4 +1,4 @@
 label START
-    if repeat end
-    lacie "It's just a flipped version of the other one..." mood disappointed
-    end
+	if repeat end
+	lacie "It's just a flipped version of the other one..." mood disappointed
+	end

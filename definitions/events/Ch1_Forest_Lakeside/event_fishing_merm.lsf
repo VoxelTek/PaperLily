@@ -1,7 +1,7 @@
 label START
-    if repeat end
-    if var ch1.forest_lakeside_removed_mermaid end
-    pause 0.5
-    action call merm_peek_up
-    pause 3.5
-    lacie "....." mood shadow3
+	if repeat end
+	if var ch1.forest_lakeside_removed_mermaid end
+	pause 0.5
+	action call merm_peek_up
+	pause 3.5
+	lacie "....." mood shadow3

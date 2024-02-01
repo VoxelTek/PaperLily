@@ -1,25 +1,25 @@
 label START
-    audio bgm stop time 4
-    audio bgm override off
-    lacie "I'm too nervous to do anything else anyways..." mood blank4
-    lacie "Then again, I'm not sure I can actually fall asleep." mood blank7
-    lacie "I'll just lie down and close my eyes..." mood sigh
-    hide ui
-    pause 0.5
-    audio sfx play ch1_bed
-    system call HidePlayer
-    action call lacie_bed_show
-    fade out time 4 continue
-    pause 1
-    action call lacie_bed_closeeyes
-    pause 3
-    objective complete ch1.go_to_sleep
-    pause 4
-    item remove ch1.paint
-    item remove ch1.marker
-    item remove ch1.lipstick
-    item remove ch1.bird_food
-    item remove ch1.ribbon
-    item remove ch1.thread
-    item remove ch1.shoelaces
-    event call ch1_event_blackpass_1
+	audio bgm stop time 4
+	audio bgm override off
+	lacie "I'm too nervous to do anything else anyways..." mood blank4
+	lacie "Then again, I'm not sure I can actually fall asleep." mood blank7
+	lacie "I'll just lie down and close my eyes..." mood sigh
+	hide ui
+	pause 0.5
+	audio sfx play ch1_bed
+	system call HidePlayer
+	action call lacie_bed_show
+	fade out time 4 continue
+	pause 1
+	action call lacie_bed_closeeyes
+	pause 3
+	objective complete ch1.go_to_sleep
+	pause 4
+	item remove ch1.paint
+	item remove ch1.marker
+	item remove ch1.lipstick
+	item remove ch1.bird_food
+	item remove ch1.ribbon
+	item remove ch1.thread
+	item remove ch1.shoelaces
+	event call ch1_event_blackpass_1

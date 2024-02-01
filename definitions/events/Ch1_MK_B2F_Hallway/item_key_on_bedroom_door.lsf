@@ -1,11 +1,11 @@
 label START
-    if var ch1.mk_unlocked_bedroom end
-    pause 0.8
-    audio sfx play unlock
-    pause 0.5
-    "The key fits!"
-    set ch1.mk_unlocked_bedroom = true
-    item remove ch1.mk_bedroom_key
-    audio sfx play door
-    move to Ch1_MK_Bedroom point entrance
-    end
+	if var ch1.mk_unlocked_bedroom end
+	pause 0.8
+	audio sfx play unlock
+	pause 0.5
+	"The key fits!"
+	set ch1.mk_unlocked_bedroom = true
+	item remove ch1.mk_bedroom_key
+	audio sfx play door
+	move to Ch1_MK_Bedroom point entrance
+	end

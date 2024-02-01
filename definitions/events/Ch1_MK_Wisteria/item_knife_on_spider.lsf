@@ -1,36 +1,36 @@
 label START
-    if repeat 3 jump GIVE_UP
-    if repeat jump STAB
-    lacie "I need help with this." mood blank7
-    ch1_spider "Ah, this is a knife."
-    ch1_spider "You might have to draw some blood to unseal it."
-    ch1_spider "Are you brave enough to cut yourself?"
-    lacie "Why should I cut myself?" mood default
-    ch1_spider "I don't see who else you could cut."
-    lacie "I could cut you instead." mood thinking
-    ch1_spider "You'll never aim properly."
-    end
+	if repeat 3 jump GIVE_UP
+	if repeat jump STAB
+	lacie "I need help with this." mood blank7
+	ch1_spider "Ah, this is a knife."
+	ch1_spider "You might have to draw some blood to unseal it."
+	ch1_spider "Are you brave enough to cut yourself?"
+	lacie "Why should I cut myself?" mood default
+	ch1_spider "I don't see who else you could cut."
+	lacie "I could cut you instead." mood thinking
+	ch1_spider "You'll never aim properly."
+	end
 
 label STAB
-    fade out
-    pause 1
-    audio sfx play ch1_stab
-    pause 1.1
-    audio sfx play ch1_stab
-    pause 1.5
-    audio sfx play ch1_stab
-    pause 0.5
-    audio sfx play ch1_stab
-    pause 0.5
-    audio sfx play ch1_stab
-    pause 2
-    fade in
-    pause 0.5
-    chara set lacie at left
-    ch1_spider "Your aim is terrible."
-    ch1_spider "Perhaps there are advantages to being small after all."
-    lacie "..." mood embarassed2
-    end
+	fade out
+	pause 1
+	audio sfx play ch1_stab
+	pause 1.1
+	audio sfx play ch1_stab
+	pause 1.5
+	audio sfx play ch1_stab
+	pause 0.5
+	audio sfx play ch1_stab
+	pause 0.5
+	audio sfx play ch1_stab
+	pause 2
+	fade in
+	pause 0.5
+	chara set lacie at left
+	ch1_spider "Your aim is terrible."
+	ch1_spider "Perhaps there are advantages to being small after all."
+	lacie "..." mood embarassed2
+	end
 
 label GIVE_UP
-    "You're not skilled enough for that."
+	"You're not skilled enough for that."

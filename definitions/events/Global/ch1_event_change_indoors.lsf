@@ -1,15 +1,15 @@
 label START
-    move to Ch1_Cutscene_Change_Clothes point changed_costume
-    pause 1
-    if repeat
-        "(There's no point in changing right now.)"
-    if not repeat
-        lacie "Ah... it feels good to change into lighter clothes." mood indoors1
-        lacie "Sadly, I can't stay like this. It makes me feel lazy and I have things to do." mood indoors2
-    hide ui
-    pause 0.5
-    fade out time 0.5
-    move to Ch1_Home_2F_Bedroom_A point changed_costume
-    pause 0.5
-    fade in time 0.5
-    end
+	move to Ch1_Cutscene_Change_Clothes point changed_costume
+	pause 1
+	if repeat
+		"(There's no point in changing right now.)"
+	if not repeat
+		lacie "Ah... it feels good to change into lighter clothes." mood indoors1
+		lacie "Sadly, I can't stay like this. It makes me feel lazy and I have things to do." mood indoors2
+	hide ui
+	pause 0.5
+	fade out time 0.5
+	move to Ch1_Home_2F_Bedroom_A point changed_costume
+	pause 0.5
+	fade in time 0.5
+	end

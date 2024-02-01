@@ -1,16 +1,16 @@
 label START
-    if not var ch1.forest_lakeside_cage_in_water end
-    "The cage is in the water."
-    if var ch1.forest_lakeside_removed_mermaid
-        "No need to mess with it anymore."
-        end
-    choice "(Pull it back up?)"
-        "Yes"
-            fade out
-            set ch1.forest_lakeside_cage_in_water = false
-            system refresh
-            pause 1
-            fade in
-        "No"
-            continue
-    end
+	if not var ch1.forest_lakeside_cage_in_water end
+	"The cage is in the water."
+	if var ch1.forest_lakeside_removed_mermaid
+		"No need to mess with it anymore."
+		end
+	choice "(Pull it back up?)"
+		"Yes"
+			fade out
+			set ch1.forest_lakeside_cage_in_water = false
+			system refresh
+			pause 1
+			fade in
+		"No"
+			continue
+	end

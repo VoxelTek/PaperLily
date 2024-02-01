@@ -1,14 +1,14 @@
 label START
-    pause 0.5
-    lacie "Here... maybe this will help." mood concerned5
-    hide ui
-    item remove ch1.mk_compress_activated
-    audio sfx play fire
-    audio ambiance play fireplace_loop
-    fade flash color red continue
-    set ch1.temp_ending_1_12_sai_cooking = true
-    system refresh
-    pause 0.5
-    lacie "What?!" mood spooked2
-    lacie "(He's going to die!!)" mood spooked
-    lacie "(I need to put out the flames...!)"
+	pause 0.5
+	lacie "Here... maybe this will help." mood concerned5
+	hide ui
+	item remove ch1.mk_compress_activated
+	audio sfx play fire
+	audio ambiance play fireplace_loop
+	fade flash color red continue
+	set ch1.temp_ending_1_12_sai_cooking = true
+	system refresh
+	pause 0.5
+	lacie "What?!" mood spooked2
+	lacie "(He's going to die!!)" mood spooked
+	lacie "(I need to put out the flames...!)"

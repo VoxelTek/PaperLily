@@ -1,10 +1,10 @@
 label START
-    if not var ch1.mk_unlocked_wisteria jump LOCKED
-    audio sfx play door
-    if var general.serious
-        audio bgm override off
-    move to Ch1_MK_Wisteria point entrance
-    end
+	if not var ch1.mk_unlocked_wisteria jump LOCKED
+	audio sfx play door
+	if var general.serious
+		audio bgm override off
+	move to Ch1_MK_Wisteria point entrance
+	end
 
 label LOCKED
-    event call ch1_locked
+	event call ch1_locked

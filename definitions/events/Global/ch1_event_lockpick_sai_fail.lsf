@@ -1,3 +1,3 @@
 label START
-    sai "Sorry, give me a second..."
-    system minigame ch1_lockpick_sai
+	sai "Sorry, give me a second..."
+	system minigame ch1_lockpick_sai

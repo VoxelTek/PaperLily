@@ -1,9 +1,9 @@
 label START
-    if var ch1.facility_archive_door_open jump GO
-    "It's locked."
-    end
+	if var ch1.facility_archive_door_open jump GO
+	"It's locked."
+	end
 
 label GO
-    audio sfx play door
-    move to Ch1_Facility_B2F_Archives point entrance
-    end
+	audio sfx play door
+	move to Ch1_Facility_B2F_Archives point entrance
+	end

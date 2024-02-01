@@ -1,10 +1,10 @@
 label START
-    item remove ch1.lakeside_algae_blue
-    pause 0.5
-    audio sfx play water_splash_3
-    if not var ch1.forest_lakeside_correct_algae == "blue"
-        action call kill_fish
-        event queue event_bad_end
-        end
-    set ch1.forest_lakeside_placed_algae = true
-    event queue check_fish_items
+	item remove ch1.lakeside_algae_blue
+	pause 0.5
+	audio sfx play water_splash_3
+	if not var ch1.forest_lakeside_correct_algae == "blue"
+		action call kill_fish
+		event queue event_bad_end
+		end
+	set ch1.forest_lakeside_placed_algae = true
+	event queue check_fish_items

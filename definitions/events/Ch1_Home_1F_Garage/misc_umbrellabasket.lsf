@@ -1,5 +1,5 @@
 label START
-    "An umbrella basket."
-    if repeat end
-    if var general.serious end
-    "There was a discount for buying two of them."
+	"An umbrella basket."
+	if repeat end
+	if var general.serious end
+	"There was a discount for buying two of them."

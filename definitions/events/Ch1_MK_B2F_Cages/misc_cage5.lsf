@@ -1,20 +1,20 @@
 label START
-    if var ch1.mk_crow_dead jump DEAD
-    if repeat jump 2ND
-    "A small cage housing a crow."
-    lacie "How cruel, locking up a bird like this." mood blank1
-    lacie "...Or is it just a regular pet?" mood thinking
-    jump SAVE
-    end
+	if var ch1.mk_crow_dead jump DEAD
+	if repeat jump 2ND
+	"A small cage housing a crow."
+	lacie "How cruel, locking up a bird like this." mood blank1
+	lacie "...Or is it just a regular pet?" mood thinking
+	jump SAVE
+	end
 
 label 2ND
-    if repeat 3 jump SAVE
-    "(There doesn't seem to be any way to free the bird.)"
+	if repeat 3 jump SAVE
+	"(There doesn't seem to be any way to free the bird.)"
 label SAVE
-    system save
-    end
+	system save
+	end
 
 label DEAD
-    "The crow is dead."
-    if character sai
-        event call misc_cage5_sai_react
+	"The crow is dead."
+	if character sai
+		event call misc_cage5_sai_react

@@ -1,8 +1,8 @@
 label START
-    choice "Take out the fuse?"
-        "Yes"
-            system call TakeFuse
-            audio sfx play ui_item
-        "No"
-            end
-    end
+	choice "Take out the fuse?"
+		"Yes"
+			system call TakeFuse
+			audio sfx play ui_item
+		"No"
+			end
+	end

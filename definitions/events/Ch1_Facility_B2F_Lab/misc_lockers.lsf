@@ -1,6 +1,6 @@
 label START
-    "A closet for medical supplies."
-    if repeat end
-    "It's empty, save for some dirty rags."
-    lacie "(It smells...really bad.)" mood concerned4
-    end
+	"A closet for medical supplies."
+	if repeat end
+	"It's empty, save for some dirty rags."
+	lacie "(It smells...really bad.)" mood concerned4
+	end

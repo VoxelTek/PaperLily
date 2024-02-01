@@ -1,12 +1,12 @@
 label START
-    choice "Fill up the ${item:ch1.bucket}?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    audio sfx play water_splash_3
-    pause 1
-    item remove ch1.bucket
-    item add ch1.bucket_full
+	choice "Fill up the ${item:ch1.bucket}?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	audio sfx play water_splash_3
+	pause 1
+	item remove ch1.bucket
+	item add ch1.bucket_full

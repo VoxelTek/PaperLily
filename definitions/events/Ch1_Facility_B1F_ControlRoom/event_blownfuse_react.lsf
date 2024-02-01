@@ -1,8 +1,8 @@
 label START
-    if repeat end
-    hide ui
-    pause 1
-    lacie "Hm...? Not working...?" mood blank5
-    sai "Those two thingies look burnt." mood blank5
-    lacie "Ah, there's two blown fuses. No wonder." mood reflective6
-    end
+	if repeat end
+	hide ui
+	pause 1
+	lacie "Hm...? Not working...?" mood blank5
+	sai "Those two thingies look burnt." mood blank5
+	lacie "Ah, there's two blown fuses. No wonder." mood reflective6
+	end

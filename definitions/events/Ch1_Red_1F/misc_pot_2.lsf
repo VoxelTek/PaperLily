@@ -1,7 +1,7 @@
 label START
-    "Some black mushrooms are growing here."
-    if not var persistent.ch1_read_curse_notes_stone end
-    if item ch1.mushrooms end
-    if item ch1.forest_stone_cure end
-    item add ch1.mushrooms
-    end
+	"Some black mushrooms are growing here."
+	if not var persistent.ch1_read_curse_notes_stone end
+	if item ch1.mushrooms end
+	if item ch1.forest_stone_cure end
+	item add ch1.mushrooms
+	end

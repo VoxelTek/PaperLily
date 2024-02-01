@@ -1,22 +1,22 @@
 label START
-    lacie "I should take all of this with me."
-    hide ui
-    system minigame end
-    set ch1.home_took_wardrobe_items = true
-    item add ch1.notebook
-    item remove ch1.todolist
-    item add ch1.todolist_hidden silent
-    item remove ch1.ritual_instructions
-    item add ch1.ritual_instructions_hidden silent
-    item remove ch1.cellphone
-    item add ch1.cellphone silent
-    lacie "My notebook, to organize my thoughts..." mood blank1
-    item add ch1.rune_jara
-    lacie "...the rune for the ritual..." mood blank5
-    item add ch1.salt
-    lacie "...salt, for self defense..." mood blank2
-    item add ch1.doorknob_return
-    lacie "...and finally, this thing." mood blank1
-    lacie "If the information I got is accurate, then this is my ticket back home." mood blank3
-    "(You placed the letter and to-do list into the notebook.)"
-    system tutorial documents
+	lacie "I should take all of this with me."
+	hide ui
+	system minigame end
+	set ch1.home_took_wardrobe_items = true
+	item add ch1.notebook
+	item remove ch1.todolist
+	item add ch1.todolist_hidden silent
+	item remove ch1.ritual_instructions
+	item add ch1.ritual_instructions_hidden silent
+	item remove ch1.cellphone
+	item add ch1.cellphone silent
+	lacie "My notebook, to organize my thoughts..." mood blank1
+	item add ch1.rune_jara
+	lacie "...the rune for the ritual..." mood blank5
+	item add ch1.salt
+	lacie "...salt, for self defense..." mood blank2
+	item add ch1.doorknob_return
+	lacie "...and finally, this thing." mood blank1
+	lacie "If the information I got is accurate, then this is my ticket back home." mood blank3
+	"(You placed the letter and to-do list into the notebook.)"
+	system tutorial documents

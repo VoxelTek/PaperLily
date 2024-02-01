@@ -1,5 +1,5 @@
 label START
-    chara set lacie at left
-    chara set aoi at right
-    aoi "Ah... those rocks..." mood default
-    aoi "Sorry, I don't know what those do... You can keep it." mood awkward
+	chara set lacie at left
+	chara set aoi at right
+	aoi "Ah... those rocks..." mood default
+	aoi "Sorry, I don't know what those do... You can keep it." mood awkward

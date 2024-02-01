@@ -1,18 +1,18 @@
 label START
-    hide ui
-    pause 0.5
-    system call KettMadTurn
-    pause 0.4
-    chara set lacie at left
-    chara set kett at right
-    kett "!!!" mood angry
-    hide ui
-    pause 0.4
-    audio sfx play ch1_chips_2
-    system call KettChomp
-    pause 2
-    item remove ch1.forest_harmless_snack
-    lacie "(He ate it!?)" mood surprised
-    set ch1.forest_kett_calm_down = true
-    move to Ch1_Artist_1F point kett_chase
-    end
+	hide ui
+	pause 0.5
+	system call KettMadTurn
+	pause 0.4
+	chara set lacie at left
+	chara set kett at right
+	kett "!!!" mood angry
+	hide ui
+	pause 0.4
+	audio sfx play ch1_chips_2
+	system call KettChomp
+	pause 2
+	item remove ch1.forest_harmless_snack
+	lacie "(He ate it!?)" mood surprised
+	set ch1.forest_kett_calm_down = true
+	move to Ch1_Artist_1F point kett_chase
+	end

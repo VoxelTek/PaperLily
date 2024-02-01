@@ -1,13 +1,13 @@
 label START
-    if objective ch1.revert_ritual_execution.remove_ribbon done end
-    choice "Remove the red string?"
-        "Yes"
-            fade out
-            pause 1
-            set ch1.set_phoneribbon = false
-            system refresh
-            fade in
-            objective complete ch1.revert_ritual_execution.remove_ribbon
-            end
-        "No"
-            end
+	if objective ch1.revert_ritual_execution.remove_ribbon done end
+	choice "Remove the red string?"
+		"Yes"
+			fade out
+			pause 1
+			set ch1.set_phoneribbon = false
+			system refresh
+			fade in
+			objective complete ch1.revert_ritual_execution.remove_ribbon
+			end
+		"No"
+			end

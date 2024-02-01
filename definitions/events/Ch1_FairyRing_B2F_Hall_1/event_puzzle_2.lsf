@@ -1,21 +1,21 @@
 label START
-    if repeat end
-    action turn right
-    lacie "There's another one..." mood blank3
-    hide ui
-    camera move (50,0) time 1.5
-    pause 1
-    lacie "But... this one definitely has eyes, doesn't it?" mood concerned5
-    aoi "Maybe they're nostrils." font small mood pout5
-    lacie "Wha- nostrils?" mood concerned9
-    choice "Could that be?"
-        "They're eyes"
-            lacie "(That's ridiculous.)" mood confused2
-        "They're nostrils"
-            lacie "I suppose I hadn't thought of it that way..." mood thinking3
-            set ch1.forest_fairyring_nostrils = true
-            set general.aoi_love ++
-    lacie "(Anyways... how will we pass without it seeing us?)" mood thinking2
-    hide ui
-    camera move (-50,0) time 0.5
-    camera reset
+	if repeat end
+	action turn right
+	lacie "There's another one..." mood blank3
+	hide ui
+	camera move (50,0) time 1.5
+	pause 1
+	lacie "But... this one definitely has eyes, doesn't it?" mood concerned5
+	aoi "Maybe they're nostrils." font small mood pout5
+	lacie "Wha- nostrils?" mood concerned9
+	choice "Could that be?"
+		"They're eyes"
+			lacie "(That's ridiculous.)" mood confused2
+		"They're nostrils"
+			lacie "I suppose I hadn't thought of it that way..." mood thinking3
+			set ch1.forest_fairyring_nostrils = true
+			set general.aoi_love ++
+	lacie "(Anyways... how will we pass without it seeing us?)" mood thinking2
+	hide ui
+	camera move (-50,0) time 0.5
+	camera reset

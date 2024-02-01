@@ -1,24 +1,24 @@
 label START
-    if var ch1.mk_took_knife jump ALREADY_TOOK
-    "Someone is tied to the stake, with black knives all over their body."
-    hide ui
-    event call ch1_event_mk_blessing_5
-    choice "Pull out ${item:ch1.mk_knife}?"
-        "Yes"
-            fade out
-            pause 1
-            audio sfx play slice
-            pause 1
-            "When you pulled out a knife, the rest of them crumbled apart."
-            hide ui
-            item add ch1.mk_knife
-            set ch1.mk_took_knife = true
-            system refresh
-            fade in
-            end
-        "No"
-            end
-    end
+	if var ch1.mk_took_knife jump ALREADY_TOOK
+	"Someone is tied to the stake, with black knives all over their body."
+	hide ui
+	event call ch1_event_mk_blessing_5
+	choice "Pull out ${item:ch1.mk_knife}?"
+		"Yes"
+			fade out
+			pause 1
+			audio sfx play slice
+			pause 1
+			"When you pulled out a knife, the rest of them crumbled apart."
+			hide ui
+			item add ch1.mk_knife
+			set ch1.mk_took_knife = true
+			system refresh
+			fade in
+			end
+		"No"
+			end
+	end
 
 label ALREADY_TOOK
-    "Someone is tied to the stake."
+	"Someone is tied to the stake."

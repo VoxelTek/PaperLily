@@ -1,6 +1,6 @@
 label START
-    if not var ch1.forest_entrance_south_seen_station_stairs_missing end
-    if not var ch1.forest_entrance_south_opened_station end
-    if repeat end
-    lacie "That entrance... wasn't there before." mood blank6
-    lacie "Is it underground?" mood blank5
+	if not var ch1.forest_entrance_south_seen_station_stairs_missing end
+	if not var ch1.forest_entrance_south_opened_station end
+	if repeat end
+	lacie "That entrance... wasn't there before." mood blank6
+	lacie "Is it underground?" mood blank5

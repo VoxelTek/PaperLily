@@ -1,19 +1,19 @@
 label START
-    pause 0.5
-    system call FishingReward
-    if var ch1.temp_lakeside_fishing_result == "green"
-        item add ch1.lakeside_algae_green
-        jump FINALLY
-    if var ch1.temp_lakeside_fishing_result == "blue"
-        item add ch1.lakeside_algae_blue
-        jump FINALLY
-    if var ch1.temp_lakeside_fishing_result == "black"
-        item add ch1.lakeside_algae_black
-        jump FINALLY
-    if var ch1.temp_lakeside_fishing_result == "coin"
-        set ch1.forest_lakeside_took_fishing_coin = true
-        event call ch1_item_coin_get
-        jump FINALLY
+	pause 0.5
+	system call FishingReward
+	if var ch1.temp_lakeside_fishing_result == "green"
+		item add ch1.lakeside_algae_green
+		jump FINALLY
+	if var ch1.temp_lakeside_fishing_result == "blue"
+		item add ch1.lakeside_algae_blue
+		jump FINALLY
+	if var ch1.temp_lakeside_fishing_result == "black"
+		item add ch1.lakeside_algae_black
+		jump FINALLY
+	if var ch1.temp_lakeside_fishing_result == "coin"
+		set ch1.forest_lakeside_took_fishing_coin = true
+		event call ch1_item_coin_get
+		jump FINALLY
 label FINALLY
-    set ch1.temp_lakeside_fishing_result = null
-    event call event_fishing_merm
+	set ch1.temp_lakeside_fishing_result = null
+	event call event_fishing_merm

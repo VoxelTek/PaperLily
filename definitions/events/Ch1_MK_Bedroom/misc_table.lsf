@@ -1,5 +1,5 @@
 label START
-    "A small bedside table."
-    if repeat end
-    if var general.serious end
-    lacie "(It's clearly too small, especially for this bed.)"
+	"A small bedside table."
+	if repeat end
+	if var general.serious end
+	lacie "(It's clearly too small, especially for this bed.)"

@@ -1,4 +1,4 @@
 label START
-    party switch lacie
-    audio sfx play door
-    move to Ch1_Facility_B1F_PrivateRoom_C point entrance
+	party switch lacie
+	audio sfx play door
+	move to Ch1_Facility_B1F_PrivateRoom_C point entrance

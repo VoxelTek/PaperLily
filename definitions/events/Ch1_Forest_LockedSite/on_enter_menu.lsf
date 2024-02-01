@@ -1,6 +1,6 @@
 label START
-    if not var ch1.forest_lockedsite_clear
-        system menu off
-        end
-    system menu on
-    end
+	if not var ch1.forest_lockedsite_clear
+		system menu off
+		end
+	system menu on
+	end

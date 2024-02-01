@@ -1,7 +1,7 @@
 label START
-    if var ch1.mk_clear
-        event call ch1_event_facility_block_after_mk
-        action walk down 32
-        end
-    move to Ch1_Facility_Elevator point entrance
-    end
+	if var ch1.mk_clear
+		event call ch1_event_facility_block_after_mk
+		action walk down 32
+		end
+	move to Ch1_Facility_Elevator point entrance
+	end

@@ -1,16 +1,16 @@
 label START
-    if var ch1.forest_entrance_south_took_fragment jump STILL
-    "A swingset moves eerily, though there's no wind."
-    "There's something underneath..."
-    choice "Take ${item:ch1.doorknob_library_fragment}?"
-        "Yes"
-            continue
-        "No"
-            end
-    set ch1.forest_entrance_south_took_fragment = true
-    system refresh
-    item add ch1.doorknob_library_fragment
-    end
+	if var ch1.forest_entrance_south_took_fragment jump STILL
+	"A swingset moves eerily, though there's no wind."
+	"There's something underneath..."
+	choice "Take ${item:ch1.doorknob_library_fragment}?"
+		"Yes"
+			continue
+		"No"
+			end
+	set ch1.forest_entrance_south_took_fragment = true
+	system refresh
+	item add ch1.doorknob_library_fragment
+	end
 
 label STILL
-    "It stopped moving."
+	"It stopped moving."

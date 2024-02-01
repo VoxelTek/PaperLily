@@ -1,6 +1,6 @@
 label START
-    if var ch1.forest_entrance_light_2_cable_cut
-        event call misc_cable_cut
-        end
-    event call misc_cable_uncut
-    end
+	if var ch1.forest_entrance_light_2_cable_cut
+		event call misc_cable_cut
+		end
+	event call misc_cable_uncut
+	end

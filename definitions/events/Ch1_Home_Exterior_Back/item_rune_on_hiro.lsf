@@ -1,14 +1,14 @@
 label START
-    chara set lacie at left
-    chara set hiro at right
-    if repeat jump AGAIN
-    hiro "...This is...?"
-    lacie "A rune, for the ritual." mood blank1
-    hiro "Oh... It's just a rock with a greek letter?" mood blank
-    lacie "It's not greek, but yeah, more or less." mood blank3
-    hiro "Interesting." mood pout
-    end
+	chara set lacie at left
+	chara set hiro at right
+	if repeat jump AGAIN
+	hiro "...This is...?"
+	lacie "A rune, for the ritual." mood blank1
+	hiro "Oh... It's just a rock with a greek letter?" mood blank
+	lacie "It's not greek, but yeah, more or less." mood blank3
+	hiro "Interesting." mood pout
+	end
 
 label AGAIN
-    "No reason to show him again."
-    end
+	"No reason to show him again."
+	end

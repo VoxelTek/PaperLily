@@ -1,5 +1,5 @@
 label START
-    if var general.serious
-        "A trash can."
-        end
-    "Nothing but air fills this trash can."
+	if var general.serious
+		"A trash can."
+		end
+	"Nothing but air fills this trash can."

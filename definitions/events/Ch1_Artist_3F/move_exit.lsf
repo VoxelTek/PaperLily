@@ -1,29 +1,29 @@
 label START
-    system call PauseChaser
-    if var ch1.forest_kett_chase jump KETT_CHASE_END
-    move to Ch1_Forest_Artist point front_door
-    if not var ch1.forest_kett_awake
-        if var ch1.forest_kett_calm_down
-            if var ch1.forest_seen_rune
-                set ch1.forest_kett_awake = true
-    end
+	system call PauseChaser
+	if var ch1.forest_kett_chase jump KETT_CHASE_END
+	move to Ch1_Forest_Artist point front_door
+	if not var ch1.forest_kett_awake
+		if var ch1.forest_kett_calm_down
+			if var ch1.forest_seen_rune
+				set ch1.forest_kett_awake = true
+	end
 
 label KETT_CHASE_END
-    set ch1.forest_kett_chase = false
-    set ch1.forest_kett_escaped = true
-    move to Ch1_Forest_Artist point front_door cutscene
-    audio bgm stop time 4
-    pause 0.5
-    chara spawn kett point front_door
-    chara set kett at right
-    pause 0.5
-    kett "..." mood tired
-    kett "...tired..."
-    kett "...so....tired...."
-    hide ui
-    action walk up 16 node kett speed veryslow
-    chara despawn kett
-    pause 0.5
-    audio bgm override off
-    move to Ch1_Forest_Artist point after_chase
-    end
+	set ch1.forest_kett_chase = false
+	set ch1.forest_kett_escaped = true
+	move to Ch1_Forest_Artist point front_door cutscene
+	audio bgm stop time 4
+	pause 0.5
+	chara spawn kett point front_door
+	chara set kett at right
+	pause 0.5
+	kett "..." mood tired
+	kett "...tired..."
+	kett "...so....tired...."
+	hide ui
+	action walk up 16 node kett speed veryslow
+	chara despawn kett
+	pause 0.5
+	audio bgm override off
+	move to Ch1_Forest_Artist point after_chase
+	end

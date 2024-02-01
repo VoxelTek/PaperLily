@@ -1,4 +1,4 @@
 label START
-    "A scary-looking monster."
-    if repeat end
-    lacie "It's looking at me..." mood surprised4
+	"A scary-looking monster."
+	if repeat end
+	lacie "It's looking at me..." mood surprised4

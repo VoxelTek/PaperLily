@@ -1,3 +1,3 @@
 label START
-    if var ch1.forest_bus_loop_a end
-    set ch1.forest_bus_loop_a = true
+	if var ch1.forest_bus_loop_a end
+	set ch1.forest_bus_loop_a = true

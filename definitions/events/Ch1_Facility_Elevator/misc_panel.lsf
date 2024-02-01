@@ -1,45 +1,45 @@
 label START
-    choice "Where to?"
-        "B1F" if not var ch1.facility_elevator_location == 1
-            audio sfx play button
-            if not var ch1.facility_elevator_on jump NO_POWER
-            event call event_elevator_ride
-            set ch1.facility_elevator_location = 1
-            system refresh
-            fade in
-            end
-        "B2F" if not var ch1.facility_elevator_location == 2
-            audio sfx play button
-            if not var ch1.facility_elevator_on jump NO_POWER
-            event call event_elevator_ride
-            set ch1.facility_elevator_location = 2
-            system refresh
-            fade in
-            end
-        "B3F" if not var ch1.facility_elevator_location == 3
-            audio sfx play button
-            if not var ch1.facility_elevator_on jump NO_POWER
-            event call ch1_event_sai_elevator
-            set ch1.facility_elevator_location = 3
-            system refresh
-            fade in
-            end
-        "B4F" if not var ch1.facility_elevator_location == 4
-            audio sfx play button
-            if not var ch1.facility_elevator_on jump NO_POWER
-            event call ch1_ending_1_11
-            end
-        "Never mind"
-            end
+	choice "Where to?"
+		"B1F" if not var ch1.facility_elevator_location == 1
+			audio sfx play button
+			if not var ch1.facility_elevator_on jump NO_POWER
+			event call event_elevator_ride
+			set ch1.facility_elevator_location = 1
+			system refresh
+			fade in
+			end
+		"B2F" if not var ch1.facility_elevator_location == 2
+			audio sfx play button
+			if not var ch1.facility_elevator_on jump NO_POWER
+			event call event_elevator_ride
+			set ch1.facility_elevator_location = 2
+			system refresh
+			fade in
+			end
+		"B3F" if not var ch1.facility_elevator_location == 3
+			audio sfx play button
+			if not var ch1.facility_elevator_on jump NO_POWER
+			event call ch1_event_sai_elevator
+			set ch1.facility_elevator_location = 3
+			system refresh
+			fade in
+			end
+		"B4F" if not var ch1.facility_elevator_location == 4
+			audio sfx play button
+			if not var ch1.facility_elevator_on jump NO_POWER
+			event call ch1_ending_1_11
+			end
+		"Never mind"
+			end
 
 label NO_POWER
-    hide ui
-    pause 1
-    "Nothing happens."
-    end
+	hide ui
+	pause 1
+	"Nothing happens."
+	end
 
 label NO_WORK
-    hide ui
-    pause 1
-    "The button is not responding."
-    end
+	hide ui
+	pause 1
+	"The button is not responding."
+	end

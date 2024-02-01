@@ -1,6 +1,6 @@
 label START
-    "The plant I was trapped in."
-    if repeat end
-    lacie "Does this even classify as a plant?" mood thinking4
-    aoi "Not sure..." mood default
-    aoi "It kinda looks like one." mood awkward
+	"The plant I was trapped in."
+	if repeat end
+	lacie "Does this even classify as a plant?" mood thinking4
+	aoi "Not sure..." mood default
+	aoi "It kinda looks like one." mood awkward

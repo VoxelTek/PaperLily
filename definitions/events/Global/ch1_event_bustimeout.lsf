@@ -1,10 +1,10 @@
 label START
-    if var ch1.bus_got_off end
-    lacie "E-eh...? The bus is starting to move...!" mood surprised
-    lacie "I should have gotten off..." mood hide
-    hide ui
-    audio bgm stop time 2
-    fade out time 2
-    pause 1
-    lacie "With no way to stop the bus, I just sat back down in my spot."
-    event call ch1_event_bustimeout2
+	if var ch1.bus_got_off end
+	lacie "E-eh...? The bus is starting to move...!" mood surprised
+	lacie "I should have gotten off..." mood hide
+	hide ui
+	audio bgm stop time 2
+	fade out time 2
+	pause 1
+	lacie "With no way to stop the bus, I just sat back down in my spot."
+	event call ch1_event_bustimeout2

@@ -1,11 +1,11 @@
 label START
-    if var ch1.forest_lakeside_seen_door jump EXAMINE
-    "A door with two doorknobs."
-    choice "Take a closer look?"
-        "Yes"
-            set ch1.forest_lakeside_seen_door = true
-            continue
-        "No"
-            end
+	if var ch1.forest_lakeside_seen_door jump EXAMINE
+	"A door with two doorknobs."
+	choice "Take a closer look?"
+		"Yes"
+			set ch1.forest_lakeside_seen_door = true
+			continue
+		"No"
+			end
 label EXAMINE
-    system minigame ch1_pnc_lakeside_door
+	system minigame ch1_pnc_lakeside_door

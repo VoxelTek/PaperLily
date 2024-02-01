@@ -1,48 +1,48 @@
 label START
-    if not item ch1.mk_knife_activated jump GENERIC
-    if not item ch1.mk_foot_activated jump GENERIC
-    if not item ch1.mk_canvas_activated jump GENERIC
-    if not item ch1.mk_hand_mirror_activated jump GENERIC
-    if not item ch1.mk_compress_activated jump GENERIC
-    if var ch1.mk_spidey_talks >= 4 jump GENERIC
-    if var ch1.mk_spidey_talks == 3 jump HP_HELP
-    set ch1.mk_spidey_talks = 3
-    chara set lacie at left
-    ch1_spider "You're done."
-    ch1_spider "Good work."
-    lacie "What now?" mood blank8
-    ch1_spider "Now, all of these objects need to be burned in the correct order."
-    lacie "What's the order?" mood confused
-    ch1_spider "That's for you to figure out. The hands over there might provide a clue."
-    lacie "I see..." mood blank2
-    if not var ch1.mk_took_lighter
-        ch1_spider "Make sure you have a way to light the fireplace as well."
-        lacie "Oh, that's true..." mood thinking
-        lacie "(Are there any places I haven't checked yet...?)" mood thinking4
-        objective add ch1.mk_find_lighter
-    ch1_spider "Lastly... this whole thing tends culminate with candles going out."
-    ch1_spider "Therefore, if you see any candles, put them out."
-    lacie "Understood." mood reflective8
-    hide ui
-    objective complete ch1.mk_ask_spider
-    objective fail ch1.mk_plant_drink
-    objective fail ch1.mk_plant_eat
-    objective fail ch1.mk_plant_music
-    objective fail ch1.mk_plant_flowers
-    set general.serious = true
-    set ch1.mk_plants_dead = true
-    set ch1.mk_head_tilt = false
-    end
+	if not item ch1.mk_knife_activated jump GENERIC
+	if not item ch1.mk_foot_activated jump GENERIC
+	if not item ch1.mk_canvas_activated jump GENERIC
+	if not item ch1.mk_hand_mirror_activated jump GENERIC
+	if not item ch1.mk_compress_activated jump GENERIC
+	if var ch1.mk_spidey_talks >= 4 jump GENERIC
+	if var ch1.mk_spidey_talks == 3 jump HP_HELP
+	set ch1.mk_spidey_talks = 3
+	chara set lacie at left
+	ch1_spider "You're done."
+	ch1_spider "Good work."
+	lacie "What now?" mood blank8
+	ch1_spider "Now, all of these objects need to be burned in the correct order."
+	lacie "What's the order?" mood confused
+	ch1_spider "That's for you to figure out. The hands over there might provide a clue."
+	lacie "I see..." mood blank2
+	if not var ch1.mk_took_lighter
+		ch1_spider "Make sure you have a way to light the fireplace as well."
+		lacie "Oh, that's true..." mood thinking
+		lacie "(Are there any places I haven't checked yet...?)" mood thinking4
+		objective add ch1.mk_find_lighter
+	ch1_spider "Lastly... this whole thing tends to culminate with candles going out."
+	ch1_spider "Therefore, if you see any candles, put them out."
+	lacie "Understood." mood reflective8
+	hide ui
+	objective complete ch1.mk_ask_spider
+	objective fail ch1.mk_plant_drink
+	objective fail ch1.mk_plant_eat
+	objective fail ch1.mk_plant_music
+	objective fail ch1.mk_plant_flowers
+	set general.serious = true
+	set ch1.mk_plants_dead = true
+	set ch1.mk_head_tilt = false
+	end
 
 label HP_HELP
-    set ch1.mk_spidey_talks = 4
-    chara set lacie at left
-    ch1_spider "One more thing."
-    ch1_spider "I couldn't help but notice how weak you look."
-    ch1_spider "The challenges ahead might be beyond your capabilities."
-    ch1_spider "There's an object inside my old hiding spot that can help with that."
-    set ch1.mk_potion_temp_heard = true
-    end
+	set ch1.mk_spidey_talks = 4
+	chara set lacie at left
+	ch1_spider "One more thing."
+	ch1_spider "I couldn't help but notice how weak you look."
+	ch1_spider "The challenges ahead might be beyond your capabilities."
+	ch1_spider "There's an object inside my old hiding spot that can help with that."
+	set ch1.mk_potion_temp_heard = true
+	end
 
 label GENERIC
-    "Spider is just dangling there."
+	"Spider is just dangling there."

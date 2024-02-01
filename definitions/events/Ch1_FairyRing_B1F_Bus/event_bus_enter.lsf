@@ -1,21 +1,21 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set aoi at right
-    lacie "Hm?" mood default
-    hide ui
-    action walk to point cutscene_walk
-    action walk to point after_cutscene
-    pause 1
-    action turn up
-    lacie "Is that...the bus stop?" mood concerned
-    action turn up node aoi
-    aoi "Not the current one." mood default
-    action turn right node aoi
-    aoi "But we must be right under the current one." mood happy
-    aoi "Wow, we sure walked a long way!" mood excited
-    lacie "(Did I walk all the way back to where I started...!?)" mood concerned7
-    party switch lacie
-    set ch1.forest_fairyring_aoi_sitting = true
-    set ch1.forest_fairyring_seen_bus_area = true
-    move to Ch1_FairyRing_B1F_Bus point after_cutscene
+	if repeat end
+	chara set lacie at left
+	chara set aoi at right
+	lacie "Hm?" mood default
+	hide ui
+	action walk to point cutscene_walk
+	action walk to point after_cutscene
+	pause 1
+	action turn up
+	lacie "Is that...the bus stop?" mood concerned
+	action turn up node aoi
+	aoi "Not the current one." mood default
+	action turn right node aoi
+	aoi "But we must be right under the current one." mood happy
+	aoi "Wow, we sure walked a long way!" mood excited
+	lacie "(Did I walk all the way back to where I started...!?)" mood concerned7
+	party switch lacie
+	set ch1.forest_fairyring_aoi_sitting = true
+	set ch1.forest_fairyring_seen_bus_area = true
+	move to Ch1_FairyRing_B1F_Bus point after_cutscene

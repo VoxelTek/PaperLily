@@ -1,35 +1,35 @@
 label START
-    if var ch1.facility_chartroom_placed_plank jump PLANK
-    if var ch1.facility_dungeon_2_placed_plank jump PLANK_GONE
-    "There's a massive gap on the floor. You can't reach the door."
-    end
+	if var ch1.facility_chartroom_placed_plank jump PLANK
+	if var ch1.facility_dungeon_2_placed_plank jump PLANK_GONE
+	"There's a massive gap on the floor. You can't reach the door."
+	end
 
 label PLANK
-    "The plank allows you to cross freely."
-    if var ch1.facility_dungeon_2_seen_door
-        if var ch1.facility_dungeon_2_doors_open
-            lacie "I've seen another hole that could use a plank like this..." mood thinking
-            choice "Move the plank to the other hole?"
-                "Yes"
-                    hide ui
-                    cg show black background
-                    pause 0.5
-                    set ch1.facility_chartroom_placed_plank = false
-                    set ch1.facility_dungeon_2_placed_plank = true
-                    move to Ch1_Facility_B2F_Dungeon_2 point from_cell_1 time 0
-                    action turn up
-                    pause 2
-                    lacie "Uugh... This is really heavy..." mood hurt
-                    if character sai
-                        sai "Hey, let me carry that." mood blank3
-                    hide ui
-                    pause 2
-                    audio sfx play wood_place
-                    pause 1
-                    cg hide
-                "No"
-                    end
-    end
+	"The plank allows you to cross freely."
+	if var ch1.facility_dungeon_2_seen_door
+		if var ch1.facility_dungeon_2_doors_open
+			lacie "I've seen another hole that could use a plank like this..." mood thinking
+			choice "Move the plank to the other hole?"
+				"Yes"
+					hide ui
+					cg show black background
+					pause 0.5
+					set ch1.facility_chartroom_placed_plank = false
+					set ch1.facility_dungeon_2_placed_plank = true
+					move to Ch1_Facility_B2F_Dungeon_2 point from_cell_1 time 0
+					action turn up
+					pause 2
+					lacie "Uugh... This is really heavy..." mood hurt
+					if character sai
+						sai "Hey, let me carry that." mood blank3
+					hide ui
+					pause 2
+					audio sfx play wood_place
+					pause 1
+					cg hide
+				"No"
+					end
+	end
 
 label PLANK_GONE
-    "Since you removed the plank, you can't cross anymore."
+	"Since you removed the plank, you can't cross anymore."

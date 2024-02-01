@@ -1,20 +1,20 @@
 label START
-    if var ch1.home_drew_markings jump ALREADY_DONE
-    lacie "Let's try it..."
-    fade out
-    pause 2
-    chara lock
-    lacie "Oh... oh no... lipstick on wood doesn't work at all."
-    lacie "This thing is also completely ruined."
-    hide ui
-    pause 0.5
-    fade in
-    chara unlock
-    lacie "I hope mother won't get angry..."
-    lacie "...Nah. I'll get rid of it and pretend it never existed."
-    item remove ch1.lipstick
-    end
+	if var ch1.home_drew_markings jump ALREADY_DONE
+	lacie "Let's try it..."
+	fade out
+	pause 2
+	chara lock
+	lacie "Oh... oh no... lipstick on wood doesn't work at all."
+	lacie "This thing is also completely ruined."
+	hide ui
+	pause 0.5
+	fade in
+	chara unlock
+	lacie "I hope mother won't get angry..."
+	lacie "...Nah. I'll get rid of it and pretend it never existed."
+	item remove ch1.lipstick
+	end
 
 
 label ALREADY_DONE
-    "It's already done."
+	"It's already done."

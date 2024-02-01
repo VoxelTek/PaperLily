@@ -1,8 +1,8 @@
 label START
-    if var ch1.home_seen_spook_door end
-    if not var general.inbetween end
-    if var ch1.home_missed_bus end
-    set ch1.home_seen_spook_door = true
-    system refresh
-    audio sfx play thud
-    end
+	if var ch1.home_seen_spook_door end
+	if not var general.inbetween end
+	if var ch1.home_missed_bus end
+	set ch1.home_seen_spook_door = true
+	system refresh
+	audio sfx play thud
+	end

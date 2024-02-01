@@ -1,29 +1,29 @@
 label START
-    chara set lacie at left
-    chara set sai at right
-    if repeat 3 jump AGAIN_AGAIN
-    if repeat jump AGAIN
-    sai "It's a spider!" mood thinking7
-    lacie "I see that." mood default
-    sai "Are you scared of spiders?" mood blank5
-    lacie "Not really." mood blank8
-    sai "So, what, if you see a spider in your house you just LEAVE it there?!" mood confused9
-    sai "That's crazy." mood confused11
-    lacie "What else should I be doing?" mood confused2
-    sai "I don't know, most people kill it with a shoe or something." mood thinking12
-    lacie "Why?" mood confused
-    sai "I dunno, they crawl and stuff. They're creepy." mood thinking13
-    lacie "Why should it die for something that isn't its fault?" mood blank4
-    sai "..." mood thinking6
-    sai "That's fair." mood thinking5
-    end
+	chara set lacie at left
+	chara set sai at right
+	if repeat 3 jump AGAIN_AGAIN
+	if repeat jump AGAIN
+	sai "It's a spider!" mood thinking7
+	lacie "I see that." mood default
+	sai "Are you scared of spiders?" mood blank5
+	lacie "Not really." mood blank8
+	sai "So, what, if you see a spider in your house you just LEAVE it there?!" mood confused9
+	sai "That's crazy." mood confused11
+	lacie "What else should I be doing?" mood confused2
+	sai "I don't know, most people kill it with a shoe or something." mood thinking12
+	lacie "Why?" mood confused
+	sai "I dunno, they crawl and stuff. They're creepy." mood thinking13
+	lacie "Why should it die for something that isn't its fault?" mood blank4
+	sai "..." mood thinking6
+	sai "That's fair." mood thinking5
+	end
 
 label AGAIN
-    sai "Just so you know, I don't kill spiders." mood smile5
-    lacie "I see." mood blank7
-    sai "I used to, but now I just put them outside." mood smile9
-    lacie "Great." mood blank8
-    end
+	sai "Just so you know, I don't kill spiders." mood smile5
+	lacie "I see." mood blank7
+	sai "I used to, but now I just put them outside." mood smile9
+	lacie "Great." mood blank8
+	end
 
 label AGAIN_AGAIN
-    "A spider hangs from here."
+	"A spider hangs from here."

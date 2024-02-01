@@ -1,14 +1,14 @@
 label START
-    "Lavender flowers are growing all over this place."
-    if repeat jump TAKE
-    lacie "Pretty..." mood blank5
+	"Lavender flowers are growing all over this place."
+	if repeat jump TAKE
+	lacie "Pretty..." mood blank5
 
 label TAKE
-    if var ch1.forest_lakeside_took_lavender end
-    choice "Take ${item:ch1.forest_lavender}?"
-        "Yes"
-            item add ch1.forest_lavender
-            set ch1.forest_lakeside_took_lavender = true
-        "No"
-            end
-    end
+	if var ch1.forest_lakeside_took_lavender end
+	choice "Take ${item:ch1.forest_lavender}?"
+		"Yes"
+			item add ch1.forest_lavender
+			set ch1.forest_lakeside_took_lavender = true
+		"No"
+			end
+	end

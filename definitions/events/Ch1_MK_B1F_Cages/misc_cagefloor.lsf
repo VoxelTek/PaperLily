@@ -1,6 +1,6 @@
 label START
-    "The room where you were locked in is directly under you."
-    if character sai end
-    if var general.serious end
-    "You can see Sai from here. He doesn't seem to be doing anything."
-    end
+	"The room where you were locked in is directly under you."
+	if character sai end
+	if var general.serious end
+	"You can see Sai from here. He doesn't seem to be doing anything."
+	end

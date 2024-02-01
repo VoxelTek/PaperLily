@@ -1,3 +1,3 @@
 label START
-    "A keypad."
-    event call misc_keypad_touch
+	"A keypad."
+	event call misc_keypad_touch

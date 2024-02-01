@@ -1,35 +1,35 @@
 label START
-    lacie "I finished setting up the ritual." mood blank3
-    hiro "I see." mood blank
-    hiro "Um..." mood blank2
-    lacie "...?" mood blank4
-    hiro "Is there really nothing I can do to make you change your mind about doing this ritual?" mood worried
-    lacie "Hiro..." mood sad8
-    hiro "I know! I know. I know I said I'd stop but..."
-    lacie "..." mood sad
-    hiro "I'm just worried." mood worried2
-    lacie "I'll be fine, and..." mood reflective2
-    lacie "...I'll see you tomorrow." mood blank1
-    hiro "..." mood worried2
-    hiro "...Alright." mood worried3
-    lacie "..." mood blank2
-    lacie "So... I wanted to ask again." mood blank4
-    lacie "Just in case, would you mind not being in the house tonight?" mood blank5
-    hiro "Understood." mood pout
-    lacie "I don't think anything bad would happen, but just in case?" mood concerned8
-    hiro "Got it. Don't worry, I made some plans so I'll be out late tonight." mood other
-    lacie "Okay. Just don't be here before 12:30." mood blank5
-    hiro "Don't worry so much! 12:31, on the dot." mood default
-    lacie "..." mood concerned
-    hiro "Really though. Take care of yourself, make sure you get back in one piece." mood blank
-    hiro "I mean it, be safe." mood blank2
-    lacie "..." mood blank3
-    lacie "Okay." mood bothered
-    action turn up node hiro
-    hide ui
-    pause 0.5
-    bubble ellipsis_silent
-    lacie "(Ah... it figures. I can't say goodbye to him properly after that. Oh well...)" mood reflective5
-    lacie "(Why did I have to say I'll see him tomorrow...)" mood sad6
-    objective complete ch1.talk_to_brother
-    end
+	lacie "I finished setting up the ritual." mood blank3
+	hiro "I see." mood blank
+	hiro "Um..." mood blank2
+	lacie "...?" mood blank4
+	hiro "Is there really nothing I can do to make you change your mind about doing this ritual?" mood worried
+	lacie "Hiro..." mood sad8
+	hiro "I know! I know. I know I said I'd stop but..."
+	lacie "..." mood sad
+	hiro "I'm just worried." mood worried2
+	lacie "I'll be fine, and..." mood reflective2
+	lacie "...I'll see you tomorrow." mood blank1
+	hiro "..." mood worried2
+	hiro "...Alright." mood worried3
+	lacie "..." mood blank2
+	lacie "So... I wanted to ask again." mood blank4
+	lacie "Just in case, would you mind not being in the house tonight?" mood blank5
+	hiro "Understood." mood pout
+	lacie "I don't think anything bad would happen, but just in case?" mood concerned8
+	hiro "Got it. Don't worry, I made some plans so I'll be out late tonight." mood other
+	lacie "Okay. Just don't be here before 12:30." mood blank5
+	hiro "Don't worry so much! 12:31, on the dot." mood default
+	lacie "..." mood concerned
+	hiro "Really though. Take care of yourself, make sure you get back in one piece." mood blank
+	hiro "I mean it, be safe." mood blank2
+	lacie "..." mood blank3
+	lacie "Okay." mood bothered
+	action turn up node hiro
+	hide ui
+	pause 0.5
+	bubble ellipsis_silent
+	lacie "(Ah... it figures. I can't say goodbye to him properly after that. Oh well...)" mood reflective5
+	lacie "(Why did I have to say I'll see him tomorrow...)" mood sad6
+	objective complete ch1.talk_to_brother
+	end

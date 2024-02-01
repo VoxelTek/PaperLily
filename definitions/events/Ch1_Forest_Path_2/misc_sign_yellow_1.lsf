@@ -1,14 +1,14 @@
 label START
-    event call event_sign_explanation
-    system call RotateYellow1
-    choice "This sign says [color=#FFFF80]\"Train Station Access\"[/color]. Rotate it?"
-        "North"
-            system call RotateUp
-        "South"
-            system call RotateDown
-        "West"
-            system call RotateLeft
-        "East"
-            system call RotateRight
-        "Don't Rotate"
-            end
+	event call event_sign_explanation
+	system call RotateYellow1
+	choice "This sign says [color=#FFFF80]\"Train Station Access\"[/color]. Rotate it?"
+		"North"
+			system call RotateUp
+		"South"
+			system call RotateDown
+		"West"
+			system call RotateLeft
+		"East"
+			system call RotateRight
+		"Don't Rotate"
+			end

@@ -1,11 +1,11 @@
 label START
-    "A large cauldron."
-    if repeat end
-    if var general.serious end
-    if character sai jump SAI_IN_PARTY
-    end
+	"A large cauldron."
+	if repeat end
+	if var general.serious end
+	if character sai jump SAI_IN_PARTY
+	end
 
 label SAI_IN_PARTY
-    sai "Is this where she cooks children?" mood blank10
-    lacie "It wouldn't surprise me, after the day I've had." mood reflective2
-    end
+	sai "Is this where she cooks children?" mood blank10
+	lacie "It wouldn't surprise me, after the day I've had." mood reflective2
+	end

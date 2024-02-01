@@ -1,3 +1,3 @@
 label START
-    audio sfx play door
-    move to Ch1_Home_1F_Garage point kitchen_door
+	audio sfx play door
+	move to Ch1_Home_1F_Garage point kitchen_door

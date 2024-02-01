@@ -1,11 +1,11 @@
 label START
-    if not var ch1.forest_lockedsite_unlocked
-        set ch1.forest_lockedsite_seen = true
-        "A gate locked with 3 padlocks."
-        "The warning sign reads:"
-        "\"NO TRESPASSING. RISK OF SERIOUS INJURY OR DEATH\"."
-    if var ch1.forest_lockedsite_unlocked
-        system call AdjustPlayerPosForGate
-        set ch1.forest_lockedsite_open = true
-        audio sfx play gate
-    end
+	if not var ch1.forest_lockedsite_unlocked
+		set ch1.forest_lockedsite_seen = true
+		"A gate locked with 3 padlocks."
+		"The warning sign reads:"
+		"\"NO TRESPASSING. RISK OF SERIOUS INJURY OR DEATH\"."
+	if var ch1.forest_lockedsite_unlocked
+		system call AdjustPlayerPosForGate
+		set ch1.forest_lockedsite_open = true
+		audio sfx play gate
+	end

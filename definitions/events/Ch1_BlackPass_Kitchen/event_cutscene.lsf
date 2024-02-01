@@ -1,34 +1,34 @@
 label START
-    if repeat end
-    if var general.blackpass_visits > 3 end
-    fade out
-    move to Ch1_BlackPass_Kitchen point ch1_cutscene cutscene time 0
-    chara spawn lacie point ch1_cutscene_walk_in
-    camera track node lacie
-    action turn right node ch1_blackpass_mom
-    fade in
-    chara set lacie at left
-    chara set ch1_blackpass_mom at right
-    lacie "Hm...?"
-    hide ui
-    action walk right 192 node lacie
-    action turn up node lacie
-    camera track off
-    camera unlock
-    camera move (0,-64) time 1
-    pause 0.3
-    action turn down node ch1_blackpass_mom
-    pause 0.3
-    ch1_blackpass_mom "Lacie, there you are."
-    ch1_blackpass_mom "I called you several times, didn't you hear me?"
-    lacie "..." mood blank1
-    ch1_blackpass_mom "I need you to go get me a _____."
-    lacie "...?" mood surprised3
-    lacie "A... what?" mood surprised
-    ch1_blackpass_mom "A knife, Lacie."
-    lacie "Oh." mood concerned
-    ch1_blackpass_mom "It shouldn't be too hard to find. It's in the closet in the garage."
-    lacie "...Okay." mood sigh
-    objective add ch1.blackpass_mom_quest
-    move to Ch1_BlackPass_Kitchen point ch1_cutscene
-    end
+	if repeat end
+	if var general.blackpass_visits > 3 end
+	fade out
+	move to Ch1_BlackPass_Kitchen point ch1_cutscene cutscene time 0
+	chara spawn lacie point ch1_cutscene_walk_in
+	camera track node lacie
+	action turn right node ch1_blackpass_mom
+	fade in
+	chara set lacie at left
+	chara set ch1_blackpass_mom at right
+	lacie "Hm...?"
+	hide ui
+	action walk right 192 node lacie
+	action turn up node lacie
+	camera track off
+	camera unlock
+	camera move (0,-64) time 1
+	pause 0.3
+	action turn down node ch1_blackpass_mom
+	pause 0.3
+	ch1_blackpass_mom "Lacie, there you are."
+	ch1_blackpass_mom "I called you several times, didn't you hear me?"
+	lacie "..." mood blank1
+	ch1_blackpass_mom "I need you to go get me a _____."
+	lacie "...?" mood surprised3
+	lacie "A... what?" mood surprised
+	ch1_blackpass_mom "A knife, Lacie."
+	lacie "Oh." mood concerned
+	ch1_blackpass_mom "It shouldn't be too hard to find. It's in the closet in the garage."
+	lacie "...Okay." mood sigh
+	objective add ch1.blackpass_mom_quest
+	move to Ch1_BlackPass_Kitchen point ch1_cutscene
+	end

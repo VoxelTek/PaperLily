@@ -1,47 +1,47 @@
 label START
-    if not var ch1.facility_sai_attempting_leave end
+	if not var ch1.facility_sai_attempting_leave end
 
-    lacie "(That guy might still be waiting for me...)" mood blank2
-    choice "(Should I just return to where he is?)"
-        "Yes"
-            continue
-        "No"
-            hide ui
-            action walk left 32
-            end
+	lacie "(That guy might still be waiting for me...)" mood blank2
+	choice "(Should I just return to where he is?)"
+		"Yes"
+			continue
+		"No"
+			hide ui
+			action walk left 32
+			end
 
-    lacie "*Sigh*" mood sigh
-    hide ui
-    action walk right 64 continue
-    fade out
-    if var ch1.temp_ending_1_9 jump ENDING
-    audio bgm stop time 2
-    move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_return_camera cutscene
-    chara spawn lacie point ch1_cutscene_return_lacie
-    chara spawn sai point ch1_cutscene_return_sai
-    action walk down 200 node lacie continue
-    fade in time 2
-    action turn left node lacie
-    pause 0.2
-    lacie "Uhm..." mood blank6
-    action turn right node sai
-    sai "Huh? Oh... what's up?" mood confused4
-    lacie "There was nothing important in there, let's go." mood blank8
-    sai "Wait, how did you-" mood blank7
-    action walk up 200 node lacie continue
-    lacie "Hurry up." mood bothered
-    hide ui
-    pause 1
-    bubble ellipsis on sai
-    action walk right 150 node sai continue
-    pause 0.3
-    fade out
-    party add sai
-    set ch1.facility_sai_attempting_leave = false
-    move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_return_lacie
-    action turn up
-    fade in
-    end
+	lacie "*Sigh*" mood sigh
+	hide ui
+	action walk right 64 continue
+	fade out
+	if var ch1.temp_ending_1_9 jump ENDING
+	audio bgm stop time 2
+	move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_return_camera cutscene
+	chara spawn lacie point ch1_cutscene_return_lacie
+	chara spawn sai point ch1_cutscene_return_sai
+	action walk down 200 node lacie continue
+	fade in time 2
+	action turn left node lacie
+	pause 0.2
+	lacie "Uhm..." mood blank6
+	action turn right node sai
+	sai "Huh? Oh... what's up?" mood confused4
+	lacie "There was nothing important in there, let's go." mood blank8
+	sai "Wait, how did you-" mood blank7
+	action walk up 200 node lacie continue
+	lacie "Hurry up." mood bothered
+	hide ui
+	pause 1
+	bubble ellipsis on sai
+	action walk right 150 node sai continue
+	pause 0.3
+	fade out
+	party add sai
+	set ch1.facility_sai_attempting_leave = false
+	move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_return_lacie
+	action turn up
+	fade in
+	end
 
 label ENDING
-    event queue ch1_ending_1_9
+	event queue ch1_ending_1_9

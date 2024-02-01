@@ -1,8 +1,8 @@
 label START
-    if repeat jump AGAIN
-    lacie "No... no way."
-    end
+	if repeat jump AGAIN
+	lacie "No... no way."
+	end
 
 label AGAIN
-    "You're not doing that."
-    end
+	"You're not doing that."
+	end

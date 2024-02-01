@@ -1,10 +1,10 @@
 label START
-    if not var general.chapter == 1 end
-    if objective ch1.talk_to_brother inprogress jump CH1_BEFORESLEEP_EVENT
-    if not var general.part_of_day == "evening" end
-    event call ch1_event_brotherbench
-    end
+	if not var general.chapter == 1 end
+	if objective ch1.talk_to_brother inprogress jump CH1_BEFORESLEEP_EVENT
+	if not var general.part_of_day == "evening" end
+	event call ch1_event_brotherbench
+	end
 
 label CH1_BEFORESLEEP_EVENT
-    event call ch1_event_brotherbeforesleep
-    end
+	event call ch1_event_brotherbeforesleep
+	end

@@ -1,3 +1,3 @@
 label START
-    if repeat end
-    event call ch1_event_lakeside_removeitems
+	if repeat end
+	event call ch1_event_lakeside_removeitems

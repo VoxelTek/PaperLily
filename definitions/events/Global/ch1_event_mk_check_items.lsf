@@ -1,8 +1,8 @@
 label START
-    if not item ch1.mk_knife_activated end
-    if not item ch1.mk_foot_activated end
-    if not item ch1.mk_canvas_activated end
-    if not item ch1.mk_hand_mirror_activated end
-    if not item ch1.mk_compress_activated end
-    objective complete ch1.mk_find_items
-    end
+	if not item ch1.mk_knife_activated end
+	if not item ch1.mk_foot_activated end
+	if not item ch1.mk_canvas_activated end
+	if not item ch1.mk_hand_mirror_activated end
+	if not item ch1.mk_compress_activated end
+	objective complete ch1.mk_find_items
+	end

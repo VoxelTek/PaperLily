@@ -1,6 +1,6 @@
 label START
-    chara set lacie at left
-    chara set aoi at right
-    aoi "Oh oh, are we cooking something?" mood default
-    lacie "No, this is for self-defense." mood blank3
-    aoi "?????" mood awkward2
+	chara set lacie at left
+	chara set aoi at right
+	aoi "Oh oh, are we cooking something?" mood default
+	lacie "No, this is for self-defense." mood blank3
+	aoi "?????" mood awkward2

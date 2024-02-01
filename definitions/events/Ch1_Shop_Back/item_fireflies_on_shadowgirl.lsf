@@ -1,9 +1,9 @@
 label START
-    item remove ch1.forest_lamp_full
-    item remove ch1.forest_jar_full
-    set ch1.shop_gave_fireflies = true
-    chara set shadowgirl at right
-    shadowgirl "...!" mood sparkle
-    "(The shadow girl happily accepts the fireflies.)"
-    system achievement CH1_GIFT_GIVER
-    end
+	item remove ch1.forest_lamp_full
+	item remove ch1.forest_jar_full
+	set ch1.shop_gave_fireflies = true
+	chara set shadowgirl at right
+	shadowgirl "...!" mood sparkle
+	"(The shadow girl happily accepts the fireflies.)"
+	system achievement CH1_GIFT_GIVER
+	end

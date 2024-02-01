@@ -1,13 +1,13 @@
 label START
-    if var ch1.forest_lakeside_took_paddle_vista end
-    "There's a paddle here."
-    choice "Take ${item:ch1.forest_paddles}?"
-        "Yes"
-            set ch1.forest_lakeside_took_paddle_vista = true
-            system refresh
-            item add ch1.forest_paddles
-            if item ch1.forest_paddles amount 2
-                objective complete ch1.forest_lakeside_paddles
-        "No"
-            continue
-    end
+	if var ch1.forest_lakeside_took_paddle_vista end
+	"There's a paddle here."
+	choice "Take ${item:ch1.forest_paddles}?"
+		"Yes"
+			set ch1.forest_lakeside_took_paddle_vista = true
+			system refresh
+			item add ch1.forest_paddles
+			if item ch1.forest_paddles amount 2
+				objective complete ch1.forest_lakeside_paddles
+		"No"
+			continue
+	end

@@ -1,8 +1,8 @@
 label START
-    item remove ch1.forest_bunny
-    set ch1.shop_gave_bunny = true
-    chara set shadowgirl at right
-    shadowgirl "...!" mood sparkle
-    "(The shadow girl happily takes the bunny off your hands.)"
-    system achievement CH1_GIFT_GIVER
-    end
+	item remove ch1.forest_bunny
+	set ch1.shop_gave_bunny = true
+	chara set shadowgirl at right
+	shadowgirl "...!" mood sparkle
+	"(The shadow girl happily takes the bunny off your hands.)"
+	system achievement CH1_GIFT_GIVER
+	end

@@ -1,79 +1,79 @@
 label START
-    fade out
-    move to Ch1_Cutscene_Home_2F_Bedroom_A point hallway_door time 0
-    chara spawn lacie point hallway_door
-    fade in
-    audio bgm stop time 3
-    lacie "Aahh... finally!" mood sigh
-    hide ui
-    action walk path event_get_in_bed node lacie speed slow
-    pause 0.5
-    audio sfx play thud2
-    system call LacieLieDown
-    pause 1
-    lacie "Ughh... why is life on such a high difficulty setting..." mood sigh
-    hide ui
-    pause 1
-    system call LacieBedOpenEyes
-    lacie "Maybe I'll just nap this day away." mood blank2
-    hide ui
-    pause 0.5
-    system call LacieBedCloseEyes
-    pause 0.5
-    audio bgm play intermission2
-    fade out time 4
-    pause 2
-    system call LacieBedOpenEyes
-    fade in time 0.2 continue
-    lacie "Nonono what am I saying? I have things to do." mood frustrated
-    lacie "...Especially after today's experience..." mood disappointed
-    lacie "It's clear that there's no other way to move forward."
-    hide ui
-    pause 0.5
-    system call LacieGetUp
-    action turn down node lacie
-    pause 1
-    lacie "Sigh..." mood reflective2
-    lacie "Alright, let's not waste time." mood blank1
-    hide ui
-    action walk path event_ritualstart node lacie speed slow
-    action turn down node lacie
-    pause 1.5
-    audio sfx play paper
-    system call PickUpLetter
-    system refresh
-    pause 1
-    lacie "This letter... is the real deal isn't it?" mood reflective4
-    lacie "Just holding it makes me nervous." mood concerned5
-    hide ui
-    pause 0.5
-    system call PutAwayLetter
-    item add ch1.ritual_instructions
-    pause 0.5
-    lacie "I still can't believe it actually arrived..." mood blank8
-    lacie "On the forums, some people waited for months and it never came." mood blank7
-    lacie "But for me, it only took a day..." mood concerned9
-    hide ui
-    pause 1
-    lacie "This isn't my first ritual but..." mood reflective5
-    lacie "It's my first time getting intentionally spirited away." mood reflective8
-    hide ui
-    pause 1
-    lacie "Anyways... I need to tie a red thing to the phone, paint some symbol at the front door, then go to sleep." mood default
-    lacie "Sounds simple enough." mood blank1
-    lacie "For the phone, I could use a ribbon, or a thread, or anything similar that's red." mood blank3
-    lacie "For the front door... a marker? Or do I need to use real paint?" mood thinking3
-    lacie "And... I need to finish it all before the sun sets." mood thinking2
-    hide ui
-    audio bgm override on ch1_home_investigation_d
-    audio bgm play ch1_home_investigation_d
-    pause 1
-    lacie "Maybe it won't be that simple after all." mood sigh
-    set ch1.home_ritualstarted = true
-    move to Ch1_Home_2F_Bedroom_A point ch1_after_letter
-    objective complete ch1.go_to_room
-    objective add ch1.ritual_items.ribbon
-    objective add ch1.ritual_items.paint
-    objective add ch1.prepare_ritual.paint_front
-    objective add ch1.prepare_ritual.tie_ribbon
-    objective add ch1.prepare_ritual.set_alarm_clock
+	fade out
+	move to Ch1_Cutscene_Home_2F_Bedroom_A point hallway_door time 0
+	chara spawn lacie point hallway_door
+	fade in
+	audio bgm stop time 3
+	lacie "Aahh... finally!" mood sigh
+	hide ui
+	action walk path event_get_in_bed node lacie speed slow
+	pause 0.5
+	audio sfx play thud2
+	system call LacieLieDown
+	pause 1
+	lacie "Ughh... why is life on such a high difficulty setting..." mood sigh
+	hide ui
+	pause 1
+	system call LacieBedOpenEyes
+	lacie "Maybe I'll just nap this day away." mood blank2
+	hide ui
+	pause 0.5
+	system call LacieBedCloseEyes
+	pause 0.5
+	audio bgm play intermission2
+	fade out time 4
+	pause 2
+	system call LacieBedOpenEyes
+	fade in time 0.2 continue
+	lacie "Nonono what am I saying? I have things to do." mood frustrated
+	lacie "...Especially after today's experience..." mood disappointed
+	lacie "It's clear that there's no other way to move forward."
+	hide ui
+	pause 0.5
+	system call LacieGetUp
+	action turn down node lacie
+	pause 1
+	lacie "Sigh..." mood reflective2
+	lacie "Alright, let's not waste time." mood blank1
+	hide ui
+	action walk path event_ritualstart node lacie speed slow
+	action turn down node lacie
+	pause 1.5
+	audio sfx play paper
+	system call PickUpLetter
+	system refresh
+	pause 1
+	lacie "This letter... is the real deal isn't it?" mood reflective4
+	lacie "Just holding it makes me nervous." mood concerned5
+	hide ui
+	pause 0.5
+	system call PutAwayLetter
+	item add ch1.ritual_instructions
+	pause 0.5
+	lacie "I still can't believe it actually arrived..." mood blank8
+	lacie "On the forums, some people waited for months and it never came." mood blank7
+	lacie "But for me, it only took a day..." mood concerned9
+	hide ui
+	pause 1
+	lacie "This isn't my first ritual but..." mood reflective5
+	lacie "It's my first time getting intentionally spirited away." mood reflective8
+	hide ui
+	pause 1
+	lacie "Anyways... I need to tie a red thing to the phone, paint some symbol at the front door, then go to sleep." mood default
+	lacie "Sounds simple enough." mood blank1
+	lacie "For the phone, I could use a ribbon, or a thread, or anything similar that's red." mood blank3
+	lacie "For the front door... a marker? Or do I need to use real paint?" mood thinking3
+	lacie "And... I need to finish it all before the sun sets." mood thinking2
+	hide ui
+	audio bgm override on ch1_home_investigation_d
+	audio bgm play ch1_home_investigation_d
+	pause 1
+	lacie "Maybe it won't be that simple after all." mood sigh
+	set ch1.home_ritualstarted = true
+	move to Ch1_Home_2F_Bedroom_A point ch1_after_letter
+	objective complete ch1.go_to_room
+	objective add ch1.ritual_items.ribbon
+	objective add ch1.ritual_items.paint
+	objective add ch1.prepare_ritual.paint_front
+	objective add ch1.prepare_ritual.tie_ribbon
+	objective add ch1.prepare_ritual.set_alarm_clock

@@ -1,28 +1,28 @@
 label START
-    audio bgm stop time 4
-    audio bgm override on silent
-    hide ui
-    fade out
-    pause 2
-    "I'm so sick of this dream." format center position center background none
-    hide ui
-    pause 1
-    set general.part_of_day = "night"
-    set general.serious = true
-    set general.inbetween = true
-    set ch1.home_ritualcomplete = true
-    event call ch1_home_lights_off
-    move to Ch1_Home_2F_Bedroom_A point wake_up cutscene
-    action call lacie_bed_show
-    action call lacie_bed_closeeyes
-    fade in time 3.5
-    pause 0.5
-    action call lacie_bed_openeyes
-    pause 1
-    lacie "It's time, right?" mood concerned5
-    hide ui
-    pause 0.5
-    move to Ch1_Home_2F_Bedroom_A point wake_up
-    lacie "Anyways... Once I'm ready to go, I just need to call that number." mood concerned4
-    objective add ch1.dial_number
-    system retry-save
+	audio bgm stop time 4
+	audio bgm override on silent
+	hide ui
+	fade out
+	pause 2
+	"I'm so sick of this dream." format center position center background none
+	hide ui
+	pause 1
+	set general.part_of_day = "night"
+	set general.serious = true
+	set general.inbetween = true
+	set ch1.home_ritualcomplete = true
+	event call ch1_home_lights_off
+	move to Ch1_Home_2F_Bedroom_A point wake_up cutscene
+	action call lacie_bed_show
+	action call lacie_bed_closeeyes
+	fade in time 3.5
+	pause 0.5
+	action call lacie_bed_openeyes
+	pause 1
+	lacie "It's time, right?" mood concerned5
+	hide ui
+	pause 0.5
+	move to Ch1_Home_2F_Bedroom_A point wake_up
+	lacie "Anyways... Once I'm ready to go, I just need to call that number." mood concerned4
+	objective add ch1.dial_number
+	system retry-save

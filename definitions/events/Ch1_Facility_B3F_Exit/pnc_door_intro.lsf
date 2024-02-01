@@ -1,14 +1,14 @@
 label START
-    if repeat end
-    pause 0.5
-    lacie "Ah... here it is." mood blank1
-    lacie "I suppose these cursed doors must be fairly common." mood blank5
-    sai "Not that common. And they kinda suck." mood annoyed2
-    sai "Sometimes you get stuck with no way to go back." mood annoyed3
-    lacie "I see." mood blank3
-    hide ui
-    pause 1
-    lacie "So it's a dead end after all." mood blank8
-    lacie "Since there's no doorknobs here..." mood blank8
-    sai "Looks like it." mood blank5
-    end
+	if repeat end
+	pause 0.5
+	lacie "Ah... here it is." mood blank1
+	lacie "I suppose these cursed doors must be fairly common." mood blank5
+	sai "Not that common. And they kinda suck." mood annoyed2
+	sai "Sometimes you get stuck with no way to go back." mood annoyed3
+	lacie "I see." mood blank3
+	hide ui
+	pause 1
+	lacie "So it's a dead end after all." mood blank8
+	lacie "Since there's no doorknobs here..." mood blank8
+	sai "Looks like it." mood blank5
+	end

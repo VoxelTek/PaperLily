@@ -1,19 +1,19 @@
 label START
-    if var ch1.mk_took_eye_lamp end
-    if var ch1.mk_stressroom_eyes == 2 jump DONT_NEED
-    "There's something inside the lamp."
-    choice "Reach for it?"
-        "Yes"
-            fade out
-            pause 1
-            set ch1.mk_took_eye_lamp = true
-            system refresh
-            item add ch1.mk_eyeball
-            pause 1
-            fade in
-        "No"
-            end
-    end
+	if var ch1.mk_took_eye_lamp end
+	if var ch1.mk_stressroom_eyes == 2 jump DONT_NEED
+	"There's something inside the lamp."
+	choice "Reach for it?"
+		"Yes"
+			fade out
+			pause 1
+			set ch1.mk_took_eye_lamp = true
+			system refresh
+			item add ch1.mk_eyeball
+			pause 1
+			fade in
+		"No"
+			end
+	end
 
 label DONT_NEED
-    "There's a eyeball inside the lamp, but you no longer need it."
+	"There's a eyeball inside the lamp, but you no longer need it."

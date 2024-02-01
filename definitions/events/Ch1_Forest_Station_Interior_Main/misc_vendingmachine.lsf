@@ -1,47 +1,47 @@
 label START
-    if not var ch1.forest_station_ate_coin_step
-        "A coin-operated vending machine. It says \"OUT OF ORDER\"."
-        if var general.serious end
-        if var general.currency_demon > 0
-            choice "Insert a coin anyways?"
-                "Yes"
-                    set general.currency_demon --
-                    set ch1.forest_station_ate_coin_step = 1
-                    hide ui
-                    pause 1
-                    "The machine took the coin, but nothing's happening."
-                    end
-                "No"
-                    end
-        end
-    if var ch1.forest_station_ate_coin_step == 1
-        "A coin-eating, evil vending machine."
-        lacie "What should I do, put another coin?" mood embarassed
-        lacie "This upsets me..." mood embarassed3
-        set ch1.forest_station_ate_coin_step = 2
-        end
-    if var ch1.forest_station_ate_coin_step == 2
-        "A coin-swallowing, useless vending machine."
-        choice "Kick it?"
-            "Yes"
-                hide ui
-                fade out
-                pause 0.5
-                audio sfx play thud
-                pause 1.5
-                set ch1.forest_station_ate_coin_step = 3
-                event call ch1_item_coin_get
-                item add ch1.rune_uruz
-                set ch1.runes_found ++
-                fade in
-                pause 0.5
-                lacie "Today, violence was the answer." mood annoyed
-                end
-            "No"
-                end
-        end
-    if var ch1.forest_station_ate_coin_step == 3
-        if var general.serious
-            "A broken vending machine."
-        else
-            "A coin-spitting vending machine that got what it deserved."
+	if not var ch1.forest_station_ate_coin_step
+		"A coin-operated vending machine. It says \"OUT OF ORDER\"."
+		if var general.serious end
+		if var general.currency_demon > 0
+			choice "Insert a coin anyways?"
+				"Yes"
+					set general.currency_demon --
+					set ch1.forest_station_ate_coin_step = 1
+					hide ui
+					pause 1
+					"The machine took the coin, but nothing's happening."
+					end
+				"No"
+					end
+		end
+	if var ch1.forest_station_ate_coin_step == 1
+		"A coin-eating, evil vending machine."
+		lacie "What should I do, put another coin?" mood embarassed
+		lacie "This upsets me..." mood embarassed3
+		set ch1.forest_station_ate_coin_step = 2
+		end
+	if var ch1.forest_station_ate_coin_step == 2
+		"A coin-swallowing, useless vending machine."
+		choice "Kick it?"
+			"Yes"
+				hide ui
+				fade out
+				pause 0.5
+				audio sfx play thud
+				pause 1.5
+				set ch1.forest_station_ate_coin_step = 3
+				event call ch1_item_coin_get
+				item add ch1.rune_uruz
+				set ch1.runes_found ++
+				fade in
+				pause 0.5
+				lacie "Today, violence was the answer." mood annoyed
+				end
+			"No"
+				end
+		end
+	if var ch1.forest_station_ate_coin_step == 3
+		if var general.serious
+			"A broken vending machine."
+		else
+			"A coin-spitting vending machine that got what it deserved."

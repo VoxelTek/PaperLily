@@ -1,5 +1,5 @@
 label START
-    if not var ch1.forest_fairyring_seen_walk_1
-        event queue event_walk_1
-    else
-        move to Ch1_FairyRing_B1F_Bus point entrance
+	if not var ch1.forest_fairyring_seen_walk_1
+		event queue event_walk_1
+	else
+		move to Ch1_FairyRing_B1F_Bus point entrance

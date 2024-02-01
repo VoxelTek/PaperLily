@@ -1,36 +1,36 @@
 label START
-    if repeat jump CHECK_FUSES
-    "An empty slot where a fuse may fit."
-    lacie "(Looks like I have to rearrange the fuses to match the display.)" mood thinking
+	if repeat jump CHECK_FUSES
+	"An empty slot where a fuse may fit."
+	lacie "(Looks like I have to rearrange the fuses to match the display.)" mood thinking
 label CHECK_FUSES
-    system call CheckHasFuses
-    if var ch1.temp_player_has_fuses jump HAS_FUSES
-    if not repeat end
-    "An empty fuse slot."
-    end
+	system call CheckHasFuses
+	if var ch1.temp_player_has_fuses jump HAS_FUSES
+	if not repeat end
+	"An empty fuse slot."
+	end
 
 label HAS_FUSES
-    choice "Place a fuse?"
-        "Place fuse no.5" if item ch1.facility_fuse_5
-            set ch1.temp_fuse_to_place = 5
-            item remove ch1.facility_fuse_5
-        "Place fuse no.10" if item ch1.facility_fuse_10
-            set ch1.temp_fuse_to_place = 10
-            item remove ch1.facility_fuse_10
-        "Place fuse no.15" if item ch1.facility_fuse_15
-            set ch1.temp_fuse_to_place = 15
-            item remove ch1.facility_fuse_15
-        "Place fuse no.20" if item ch1.facility_fuse_20
-            set ch1.temp_fuse_to_place = 20
-            item remove ch1.facility_fuse_20
-        "Place fuse no.25" if item ch1.facility_fuse_25
-            set ch1.temp_fuse_to_place = 25
-            item remove ch1.facility_fuse_25
-        "Place fuse no.40" if item ch1.facility_fuse_40
-            set ch1.temp_fuse_to_place = 40
-            item remove ch1.facility_fuse_40
-        "Do not"
-            end
+	choice "Place a fuse?"
+		"Place fuse no.5" if item ch1.facility_fuse_5
+			set ch1.temp_fuse_to_place = 5
+			item remove ch1.facility_fuse_5
+		"Place fuse no.10" if item ch1.facility_fuse_10
+			set ch1.temp_fuse_to_place = 10
+			item remove ch1.facility_fuse_10
+		"Place fuse no.15" if item ch1.facility_fuse_15
+			set ch1.temp_fuse_to_place = 15
+			item remove ch1.facility_fuse_15
+		"Place fuse no.20" if item ch1.facility_fuse_20
+			set ch1.temp_fuse_to_place = 20
+			item remove ch1.facility_fuse_20
+		"Place fuse no.25" if item ch1.facility_fuse_25
+			set ch1.temp_fuse_to_place = 25
+			item remove ch1.facility_fuse_25
+		"Place fuse no.40" if item ch1.facility_fuse_40
+			set ch1.temp_fuse_to_place = 40
+			item remove ch1.facility_fuse_40
+		"Do not"
+			end
 label PLACE_FUSE
-    system call PlaceFuse
-    end
+	system call PlaceFuse
+	end

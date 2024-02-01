@@ -1,13 +1,13 @@
 label START
-    "A crack in the wall."
-    if var ch1.forest_red_passage_took_fragment
-        "There's nothing else in there."
-        end
-    "There seems to be something inside..."
-    choice "Take ${item:ch1.doorknob_library_fragment}?"
-        "Yes"
-            continue
-        "No"
-            end
-    set ch1.forest_red_passage_took_fragment = true
-    item add ch1.doorknob_library_fragment
+	"A crack in the wall."
+	if var ch1.forest_red_passage_took_fragment
+		"There's nothing else in there."
+		end
+	"There seems to be something inside..."
+	choice "Take ${item:ch1.doorknob_library_fragment}?"
+		"Yes"
+			continue
+		"No"
+			end
+	set ch1.forest_red_passage_took_fragment = true
+	item add ch1.doorknob_library_fragment

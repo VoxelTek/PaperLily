@@ -1,17 +1,17 @@
 label START
-    if var ch1.blackpass_hallway_curtains_closed jump AGAIN
-    audio sfx play curtains
-    set ch1.blackpass_hallway_curtains_closed = true
-    system refresh
-    pause 1
-    if var general.blackpass_visits >= 2 jump 2ND_VISIT_REACTION
-    lacie "Peace and quiet." mood blank2
-    end
+	if var ch1.blackpass_hallway_curtains_closed jump AGAIN
+	audio sfx play curtains
+	set ch1.blackpass_hallway_curtains_closed = true
+	system refresh
+	pause 1
+	if var general.blackpass_visits >= 2 jump 2ND_VISIT_REACTION
+	lacie "Peace and quiet." mood blank2
+	end
 
 label AGAIN
-    lacie "Nah, it's better like this." mood blank3
-    end
+	lacie "Nah, it's better like this." mood blank3
+	end
 
 label 2ND_VISIT_REACTION
-    lacie "...Heh... never gets old." mood content
-    end
+	lacie "...Heh... never gets old." mood content
+	end

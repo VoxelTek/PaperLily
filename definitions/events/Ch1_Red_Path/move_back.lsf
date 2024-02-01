@@ -1,4 +1,4 @@
 label START
-    audio sfx play door
-    move to Ch1_Red_B1F point secret
-    end
+	audio sfx play door
+	move to Ch1_Red_B1F point secret
+	end

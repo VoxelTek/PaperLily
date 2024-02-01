@@ -1,12 +1,12 @@
 label START
-    if repeat end
-    if var ch1.forest_kozmo_gone end
-    if var ch1.forest_kozmo_changed_head end
-    if var ch1.forest_kozmo_leaking end
-    if var ch1.forest_kozmo_head end
-    chara set lacie at left
-    chara set kozmo at right
-    kozmo "I-i-is that for me...?!" mood default
-    lacie "..." mood blank4
-    lacie "...No." mood blank6
-    kozmo "O-oh." mood sweat
+	if repeat end
+	if var ch1.forest_kozmo_gone end
+	if var ch1.forest_kozmo_changed_head end
+	if var ch1.forest_kozmo_leaking end
+	if var ch1.forest_kozmo_head end
+	chara set lacie at left
+	chara set kozmo at right
+	kozmo "I-i-is that for me...?!" mood default
+	lacie "..." mood blank4
+	lacie "...No." mood blank6
+	kozmo "O-oh." mood sweat

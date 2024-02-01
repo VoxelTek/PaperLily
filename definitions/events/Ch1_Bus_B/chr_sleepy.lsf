@@ -1,11 +1,11 @@
 label START
-    "An odd green man."
-    if repeat jump AGAIN
-    lacie "..." mood blank4
-    unknown "zzzzz"
-    lacie "Uh... excuse me?" mood blank5
-    unknown "zzzzzZZZZZ"
-    end
+	"An odd green man."
+	if repeat jump AGAIN
+	lacie "..." mood blank4
+	unknown "zzzzz"
+	lacie "Uh... excuse me?" mood blank5
+	unknown "zzzzzZZZZZ"
+	end
 
 label AGAIN
-    lacie "Looks like he's trying to sleep..." mood concerned4
+	lacie "Looks like he's trying to sleep..." mood concerned4

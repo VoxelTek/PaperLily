@@ -1,4 +1,4 @@
 label START
-    if not var ch1.forest_kett_introduced end
-    chara set kett at right
-    kett "You may keep that. It is little more than garbage to me."
+	if not var ch1.forest_kett_introduced end
+	chara set kett at right
+	kett "You may keep that. It is little more than garbage to me."

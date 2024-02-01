@@ -1,5 +1,5 @@
 label START
-    "A bag filled with... garbage, probably."
-    if repeat end
-    lacie "It's tied too hard to check the contents." mood blank2
-    end
+	"A bag filled with... garbage, probably."
+	if repeat end
+	lacie "It's tied too hard to check the contents." mood blank2
+	end

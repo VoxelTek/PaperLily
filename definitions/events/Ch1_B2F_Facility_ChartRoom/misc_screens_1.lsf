@@ -1,15 +1,15 @@
 label START
-    if var ch1.facility_chart_screen_on jump CAMERAS
-    "A large screen composed of smaller screens."
-    end
+	if var ch1.facility_chart_screen_on jump CAMERAS
+	"A large screen composed of smaller screens."
+	end
 
 label CAMERAS
-    "The screens seem to display the feed from security cameras somewhere."
-    if repeat end
-    if not character sai end
-    chara set lacie at left
-    chara set sai at right
-    sai "Looks like... hallways? With lots of doors." mood thinking
-    sai "Who comes up with this shit?" mood thinking3
-    lacie "There's blood too..." mood concerned
-    end
+	"The screens seem to display the feed from security cameras somewhere."
+	if repeat end
+	if not character sai end
+	chara set lacie at left
+	chara set sai at right
+	sai "Looks like... hallways? With lots of doors." mood thinking
+	sai "Who comes up with this shit?" mood thinking3
+	lacie "There's blood too..." mood concerned
+	end

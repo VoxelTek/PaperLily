@@ -1,23 +1,23 @@
 label START
-    set general.blackpass_visits = 3
-    audio bgm override on silent
-    move to Ch1_BlackPass_Hub point cutscene_camera cutscene
-    event call ch1_blackpass_init
-    action call lacie_bed_show
-    fade in time 4
-    audio bgm override off
-    audio bgm play ch1_blackpass
-    pause 1
-    action call lacie_bed_eyes
-    pause 2
-    lacie "...Huh? Did I pass out?" mood confused
-    lacie "That's not good..." mood confused2
-    hide ui
-    pause 0.5
-    move to Ch1_BlackPass_Hub point wake_up
-    lacie "My head hurts..." mood hurt
-    lacie "Wasn't I going down some stairs? I hope I didn't fall and break my neck." mood confused
-    lacie "That would be a terrible ending..." mood confused2
-    objective clear
-    objective add ch1.blackpass_3_leave
-    system retry-save
+	set general.blackpass_visits = 3
+	audio bgm override on silent
+	move to Ch1_BlackPass_Hub point cutscene_camera cutscene
+	event call ch1_blackpass_init
+	action call lacie_bed_show
+	fade in time 4
+	audio bgm override off
+	audio bgm play ch1_blackpass
+	pause 1
+	action call lacie_bed_eyes
+	pause 2
+	lacie "...Huh? Did I pass out?" mood confused
+	lacie "That's not good..." mood confused2
+	hide ui
+	pause 0.5
+	move to Ch1_BlackPass_Hub point wake_up
+	lacie "My head hurts..." mood hurt
+	lacie "Wasn't I going down some stairs? I hope I didn't fall and break my neck." mood confused
+	lacie "That would be a terrible ending..." mood confused2
+	objective clear
+	objective add ch1.blackpass_3_leave
+	system retry-save

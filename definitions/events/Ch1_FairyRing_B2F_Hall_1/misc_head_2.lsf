@@ -1,8 +1,8 @@
 label START
-    if repeat
-        if var ch1.forest_fairyring_nostrils
-            "A fairy head. It only has nostrils."
-        else
-            "A fairy head. It only has eyes."
-        end
-    lacie "It seems like this one can only see to the sides..." mood thinking3
+	if repeat
+		if var ch1.forest_fairyring_nostrils
+			"A fairy head. It only has nostrils."
+		else
+			"A fairy head. It only has eyes."
+		end
+	lacie "It seems like this one can only see to the sides..." mood thinking3

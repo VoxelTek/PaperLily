@@ -1,4 +1,4 @@
 label START
-    if var ch1.forest_kett_chase end
-    move to Ch1_Artist_1F point from_upstairs
-    end
+	if var ch1.forest_kett_chase end
+	move to Ch1_Artist_1F point from_upstairs
+	end

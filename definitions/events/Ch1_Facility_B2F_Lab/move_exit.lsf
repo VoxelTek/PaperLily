@@ -1,13 +1,13 @@
 label START
-    if var ch1.facility_lab_locked jump CANT_LEAVE
-    audio sfx play door
-    move to Ch1_Facility_B2F_Hallway_East point from_lab
-    end
+	if var ch1.facility_lab_locked jump CANT_LEAVE
+	audio sfx play door
+	move to Ch1_Facility_B2F_Hallway_East point from_lab
+	end
 
 label CANT_LEAVE
-    if var ch1.facility_lab_gate_seen
-        if var ch1.facility_lab_sai_talks
-            event call event_leave_lab
-            end
-    chara set sai at right
-    sai "Don't go out, it's still there."
+	if var ch1.facility_lab_gate_seen
+		if var ch1.facility_lab_sai_talks
+			event call event_leave_lab
+			end
+	chara set sai at right
+	sai "Don't go out, it's still there."

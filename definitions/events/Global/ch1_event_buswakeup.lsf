@@ -1,23 +1,23 @@
 label START
-    set general.serious = false
-    set general.inbetween = false
-    move to Ch1_Cutscene_Bus_B point (384,244) time 0
-    chara unlock
-    audio bgm play ch1_bus
-    fade in time 0
-    pause 1
-    bubble exclamation on seats_b5 offset (5,-55)
-    pause 0.5
-    lacie "...!" mood scared
-    lacie "(What is this thing...?)"
-    hide ui
-    audio ambiance play bus_idle_loop
-    pause 1
-    lacie "(Wait... the bus stopped... I need to to get off!)" mood surprised6
-    hide ui
-    system call LacieScoochOut
-    pause 3
-    move to Ch1_Bus_B point start direction down
-    system call StartGetOffTimer
-    system menu off
-    end
+	set general.serious = false
+	set general.inbetween = false
+	move to Ch1_Cutscene_Bus_B point (384,244) time 0
+	chara unlock
+	audio bgm play ch1_bus
+	fade in time 0
+	pause 1
+	bubble exclamation on seats_b5 offset (5,-55)
+	pause 0.5
+	lacie "...!" mood scared
+	lacie "(What is this thing...?)"
+	hide ui
+	audio ambiance play bus_idle_loop
+	pause 1
+	lacie "(Wait... the bus stopped... I need to to get off!)" mood surprised6
+	hide ui
+	system call LacieScoochOut
+	pause 3
+	move to Ch1_Bus_B point start direction down
+	system call StartGetOffTimer
+	system menu off
+	end

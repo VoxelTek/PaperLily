@@ -1,5 +1,5 @@
 label START
-    if repeat
-        "A fairy head. It only has a mouth."
-        end
-    lacie "It only has a mouth... is that why it can't see me even though I'm this close?" mood thinking
+	if repeat
+		"A fairy head. It only has a mouth."
+		end
+	lacie "It only has a mouth... is that why it can't see me even though I'm this close?" mood thinking

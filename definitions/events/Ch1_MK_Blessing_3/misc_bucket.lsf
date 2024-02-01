@@ -1,18 +1,18 @@
 label START
-    "A bucket full of water."
-    if var ch1.temp_ending_1_12_sai_cooking
-        choice "Use this to put out the fire?"
-            "Yes"
-                fade out
-                pause 2
-                audio sfx play water_splash
-                pause 0.5
-                audio sfx play burn
-                audio ambiance stop
-                set ch1.temp_ending_1_12_sai_cooking = false
-                set ch1.temp_ending_1_12_sai_well_done = true
-                system refresh
-                pause 2
-                fade in
-            "No"
-                end
+	"A bucket full of water."
+	if var ch1.temp_ending_1_12_sai_cooking
+		choice "Use this to put out the fire?"
+			"Yes"
+				fade out
+				pause 2
+				audio sfx play water_splash
+				pause 0.5
+				audio sfx play burn
+				audio ambiance stop
+				set ch1.temp_ending_1_12_sai_cooking = false
+				set ch1.temp_ending_1_12_sai_well_done = true
+				system refresh
+				pause 2
+				fade in
+			"No"
+				end

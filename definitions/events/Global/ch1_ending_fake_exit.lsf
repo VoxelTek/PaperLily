@@ -1,34 +1,34 @@
 label START
-    hide ui
-    fade out
-    move to Ch1_Garden_ExitRitual point exiting_lacie cutscene time 0
-    chara spawn lacie point exiting_lacie
-    camera track node lacie
-    fade in time 4
-    pause 1
-    lacie "I feel like I didn't accomplish anything..." mood reflective6
-    lacie "I hope that this door actually takes me home, at the very least." mood reflective8
-    hide ui
-    pause 1
-    action turn up node lacie
-    pause 0.5
-    action walk up 24 node lacie speed veryslow
-    pause 0.4
-    camera unlock
-    chara despawn lacie
-    if item ch1.forest_bunny
-        system achievement CH1_OMOCHIKAERI
+	hide ui
+	fade out
+	move to Ch1_Garden_ExitRitual point exiting_lacie cutscene time 0
+	chara spawn lacie point exiting_lacie
+	camera track node lacie
+	fade in time 4
+	pause 1
+	lacie "I feel like I didn't accomplish anything..." mood reflective6
+	lacie "I hope that this door actually takes me home, at the very least." mood reflective8
+	hide ui
+	pause 1
+	action turn up node lacie
+	pause 0.5
+	action walk up 24 node lacie speed veryslow
+	pause 0.4
+	camera unlock
+	chara despawn lacie
+	if item ch1.forest_bunny
+		system achievement CH1_OMOCHIKAERI
 label FINALLY
-    pause 2
-    fade out time 4
-    pause 1
-    chara lock
-    "As I was crossing the door, I couldn't help but feel like something was wrong." format center position center background none
-    "Am I making the right choice?" format center position center background none
-    hide ui
-    pause 2
-    "No..." format center position center background none
-    "It's not time yet." format center position center background none
-    hide ui
-    pause 0.5
-    system title-screen
+	pause 2
+	fade out time 4
+	pause 1
+	chara lock
+	"As I was crossing the door, I couldn't help but feel like something was wrong." format center position center background none
+	"Am I making the right choice?" format center position center background none
+	hide ui
+	pause 2
+	"No..." format center position center background none
+	"It's not time yet." format center position center background none
+	hide ui
+	pause 0.5
+	system title-screen

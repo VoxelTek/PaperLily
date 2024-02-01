@@ -1,8 +1,8 @@
 label START
-    fade out
-    audio bgm stop time 2
-    move to Ch1_Cutscene_Sai_Todolist_Alt point cutscene_lacie time 0
-    pause 1
-    event call ch1_event_sai_todolist_1
-    set ch1.facility_seen_cutscene_todolist = true
-    move to Ch1_Facility_B3F_MK point after_cutscene
+	fade out
+	audio bgm stop time 2
+	move to Ch1_Cutscene_Sai_Todolist_Alt point cutscene_lacie time 0
+	pause 1
+	event call ch1_event_sai_todolist_1
+	set ch1.facility_seen_cutscene_todolist = true
+	move to Ch1_Facility_B3F_MK point after_cutscene

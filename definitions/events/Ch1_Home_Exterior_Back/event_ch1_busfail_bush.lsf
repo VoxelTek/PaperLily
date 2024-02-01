@@ -1,5 +1,5 @@
 label START
-    if not objective ch1.revert_ritual_execution inprogress end
-    if repeat end
-    audio sfx play bush
-    end
+	if not objective ch1.revert_ritual_execution inprogress end
+	if repeat end
+	audio sfx play bush
+	end

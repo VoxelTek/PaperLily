@@ -1,9 +1,9 @@
 label START
-    set ch1.forest_red_seen_sign = true
-    "\"Red's Treehouse\""
-    if var ch1.forest_rune_asked_about_treehouse jump COMMENT
-    end
+	set ch1.forest_red_seen_sign = true
+	"\"Red's Treehouse\""
+	if var ch1.forest_rune_asked_about_treehouse jump COMMENT
+	end
 
 label COMMENT
-    lacie "\"Treeehouse\"... sheesh!" mood disappointed3
-    end
+	lacie "\"Treeehouse\"... sheesh!" mood disappointed3
+	end

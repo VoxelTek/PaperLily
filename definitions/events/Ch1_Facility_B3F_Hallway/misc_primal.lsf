@@ -1,5 +1,5 @@
 label START
-    event call ch1_event_ending_13_primals_prereact
-    if repeat end
-    set ch1.temp_ending_1_13_demons_examined ++
-    event queue Ch1_Facility_Main_Hall.event_ending_13_primals
+	event call ch1_event_ending_13_primals_prereact
+	if repeat end
+	set ch1.temp_ending_1_13_demons_examined ++
+	event queue Ch1_Facility_Main_Hall.event_ending_13_primals

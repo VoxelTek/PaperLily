@@ -1,4 +1,4 @@
 label START
-    "A note is attached to the tree. It says:"
-    "\"THE MONSTER\nLOVES MEAT\nHATES WATER\""
-    set ch1.forest_lakeside_seen_mermaid_note = true
+	"A note is attached to the tree. It says:"
+	"\"THE MONSTER\nLOVES MEAT\nHATES WATER\""
+	set ch1.forest_lakeside_seen_mermaid_note = true

@@ -1,50 +1,50 @@
 label START
-    if repeat end
-    chara rename unknown to "misc.characters.prisoner"
-    chara set lacie at left
-    unknown "Pssst."
-    unknown "Hey girlie."
-    action turn up
-    lacie "...?"
-    move to Ch1_Red_B1F point cutscene_1
-    unknown "Been a while since I've seen anybody come down here."
-    unknown "Even that smug asshole hasn't been around."
-    lacie "Who do you mean?" mood blank1
-    unknown "You know who I mean, or you wouldn't be snooping around here, would ya?"
-    lacie "...Red?" mood blank5
-    unknown "Ding ding diiiing!"
-    lacie "Did Red lock you in here?" mood blank7
-    unknown "Correct."
-    lacie "Why?" mood blank5
-    unknown "My, aren't you asking lots of questions..."
-    unknown "Maybe I'll tell you if you come a bit closer."
+	if repeat end
+	chara rename unknown to "misc.characters.prisoner"
+	chara set lacie at left
+	unknown "Pssst."
+	unknown "Hey girlie."
+	action turn up
+	lacie "...?"
+	move to Ch1_Red_B1F point cutscene_1
+	unknown "Been a while since I've seen anybody come down here."
+	unknown "Even that smug asshole hasn't been around."
+	lacie "Who do you mean?" mood blank1
+	unknown "You know who I mean, or you wouldn't be snooping around here, would ya?"
+	lacie "...Red?" mood blank5
+	unknown "Ding ding diiiing!"
+	lacie "Did Red lock you in here?" mood blank7
+	unknown "Correct."
+	lacie "Why?" mood blank5
+	unknown "My, aren't you asking lots of questions..."
+	unknown "Maybe I'll tell you if you come a bit closer."
 
-    choice "Get closer?"
-        "Yes"
-            hide ui
-            action walk up 32
-            pause 0.5
-            jump CONT_CONVERSATION
-        "No"
-            unknown "Aww... What a shame."
-            unknown "No more chit chat then."
-            lacie "(Better safe than sorry.)" mood blank2
-            set ch1.forest_red_prisoner_stage = 1
-            chara rename unknown off
-            end
+	choice "Get closer?"
+		"Yes"
+			hide ui
+			action walk up 32
+			pause 0.5
+			jump CONT_CONVERSATION
+		"No"
+			unknown "Aww... What a shame."
+			unknown "No more chit chat then."
+			lacie "(Better safe than sorry.)" mood blank2
+			set ch1.forest_red_prisoner_stage = 1
+			chara rename unknown off
+			end
 
 label CONT_CONVERSATION
-    unknown "That's the spirit."
-    unknown "Red locked me in here because I can be a bit of a nuisance."
-    unknown "I'm the only one who can cast curses."
-    lacie "Curses...?" mood blank1
-    lacie "You're the only one? Then, did you have something to do with my curse?" mood blank5
-    unknown "If you come a bit closer, maybe I'll tell you."
-    choice "Get closer?"
-        "Yes"
-            hide ui
-            action walk up 32
-            pause 0.5
-            event call event_prisoner_strangle
-        "No"
-            event call event_prisoner_3
+	unknown "That's the spirit."
+	unknown "Red locked me in here because I can be a bit of a nuisance."
+	unknown "I'm the only one who can cast curses."
+	lacie "Curses...?" mood blank1
+	lacie "You're the only one? Then, did you have something to do with my curse?" mood blank5
+	unknown "If you come a bit closer, maybe I'll tell you."
+	choice "Get closer?"
+		"Yes"
+			hide ui
+			action walk up 32
+			pause 0.5
+			event call event_prisoner_strangle
+		"No"
+			event call event_prisoner_3

@@ -1,20 +1,28 @@
 label START
-    if var ch1.forest_station_took_number
-        "The other tickets contain the same image."
-    else
-        "You take a number from the ticket dispenser."
-    hide ui
-    pause 0.2
-    audio sfx play paper
-    if var ch1.forest_station_tracks_stage == 1
-        cg show ch1/forest_ticket_1
-        jump FINALLY
-    if var ch1.forest_station_tracks_stage == 2
-        cg show ch1/forest_ticket_2
-        jump FINALLY
-    if var ch1.forest_station_tracks_stage == 3
-        cg show ch1/forest_ticket_3
+	if var ch1.forest_station_took_number
+		"The other tickets contain the same image."
+	else
+		"You take a number from the ticket dispenser."
+	hide ui
+	pause 0.2
+	audio sfx play paper
+	if var ch1.forest_station_tracks_stage == 1
+		cg show ch1/forest_ticket_1
+		jump FINALLY
+	if var ch1.forest_station_tracks_stage == 2
+		cg show ch1/forest_ticket_2
+		jump FINALLY
+	if var ch1.forest_station_tracks_stage == 3
+		cg show ch1/forest_ticket_3
 label FINALLY
-    set ch1.forest_station_took_number = true
-    wait
-    cg hide
+	objective add ch1.forest_station_paths
+	set ch1.forest_station_took_number = true
+	set ch1.forest_station_seen_top = false
+	set ch1.forest_station_seen_mid = false
+	set ch1.forest_station_seen_bottom = false
+	set ch1.forest_station_heard_top = false
+	set ch1.forest_station_heard_mid = false
+	set ch1.forest_station_heard_bottom = false
+	set persistent.station_tracks_locked = true
+	wait
+	cg hide

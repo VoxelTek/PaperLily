@@ -1,86 +1,86 @@
 label START
-    pause 0.5
-    set ch1.mk_wisteria_item = 1
-    system refresh
-    pause 1
-    cg show black
-    audio bgm play ch1_heart
-    pause 2
-    chara rename mk to "misc.characters.lk"
+	pause 0.5
+	set ch1.mk_wisteria_item = 1
+	system refresh
+	pause 1
+	cg show black
+	audio bgm play ch1_heart
+	pause 2
+	chara rename mk to "misc.characters.lk"
 
-    "My life is below average." format center position center background none
-    "I've been blind since I was a baby, so my parents thought of abandoning me." format center position center background none
-    "\"A blind child cannot help the family\" they said. \"Especially not a girl.\"" format center position center background none
-    "But my mother says they loved me so much that they wanted to give me a chance." format center position center background none
-    hide ui
-    pause 1
-    "Right now, I manage just fine." format center position center background none
-    "I do my chores, I go to the market, I help with the vegetable garden." format center position center background none
-    "Mother is sick, so she's always in bed." format center position center background none
-    "The doctor says she might be like this for the rest of her life." format center position center background none
-    hide ui
-    pause 1
-    "Every day, I go meet my friend at the riverbank." format center position center background none
-    "Iris is always talking excitedly about everything you could find outside of the village." format center position center background none
-    "She makes the world sound so bright." format center position center background none
-    "We made a deal, that when we turn 14, we'll run away together, and travel to mountains and seas." format center position center background none
-    "But I was actually fine with a simple life. The bare minimum was enough, as long as I had Iris." format center position center background none
-    "If there's one thing I wanted..." format center position center background none
-    "It was just to be able to see her." format center position center background none
-    hide ui
-    pause 1
-    "The [color=#90EE90]first blessing[/color] changed the course of my life." format center position center background none
-    hide ui
-    pause 1
-    cg show ch1/mk_backstory_mirror
-    hide ui
-    pause 1
-    mk "..."
-    mk "........."
-    cg show black
-    hide ui
-    pause 1
-    "I couldn't calm my breathing." format center position center background none
-    "I woke up one morning and I could see." format center position center background none
-    "I saw shapes, and colors, and my parents." format center position center background none
-    "I saw the broken dining table." format center position center background none
-    "I saw the weeds in the vegetable garden." format center position center background none
-    "I saw the chipped cup that I drank from." format center position center background none
-    "I saw my wrinkled clothes." format center position center background none
-    "Despite not having much, they were the most beautiful things I laid my eyes on." format center position center background none
-    hide ui
-    pause 1
-    "I couldn't say the same about my reflection." format center position center background none
-    hide ui
-    pause 1
-    cg show ch1/mk_backstory_mirror
-    hide ui
-    pause 1
-    mk "(Have I always looked like this?)"
-    mk "(Were my eyes always so... bland?)"
-    mk "(Was my hair always so... dull?)"
-    hide ui
-    pause 1
-    cg show black
-    hide ui
-    pause 1
-    "My parents gradually grew distant." format center position center background none
-    "People in the village stared at me, and whispered behind my back." format center position center background none
-    "Why did they seem scared of me?" format center position center background none
-    "Iris said she's a little nervous around me, but she was really happy that I got my eyesight." format center position center background none
-    "She called it a miracle." format center position center background none
-    hide ui
-    pause 1
-    "My parents started avoiding me." format center position center background none
-    "When I spoke to them, they always tried to brush me away." format center position center background none
-    "The only times their tired eyes met mine, I only saw hatred in them." format center position center background none
-    "Did they always look at me this way?" format center position center background none
-    hide ui
-    pause 2
-    chara rename mk off
-    cg hide
-    pause 1
-    set ch1.mk_wisteria_item = 0
-    system refresh
-    pause 0.5
-    end
+	"My life is below average." format center position center background none
+	"I've been blind since I was a baby, so my parents thought of abandoning me." format center position center background none
+	"\"A blind child cannot help the family\" they said. \"Especially not a girl.\"" format center position center background none
+	"But my mother says they loved me so much that they wanted to give me a chance." format center position center background none
+	hide ui
+	pause 1
+	"Right now, I manage just fine." format center position center background none
+	"I do my chores, I go to the market, I help with the vegetable garden." format center position center background none
+	"Mother is sick, so she's always in bed." format center position center background none
+	"The doctor says she might be like this for the rest of her life." format center position center background none
+	hide ui
+	pause 1
+	"Every day, I go meet my friend at the riverbank." format center position center background none
+	"Iris is always talking excitedly about everything you could find outside of the village." format center position center background none
+	"She makes the world sound so bright." format center position center background none
+	"We made a deal, that when we turn 14, we'll run away together, and travel to mountains and seas." format center position center background none
+	"But I was actually fine with a simple life. The bare minimum was enough, as long as I had Iris." format center position center background none
+	"If there's one thing I wanted..." format center position center background none
+	"It was just to be able to see her." format center position center background none
+	hide ui
+	pause 1
+	"The [color=#90EE90]first blessing[/color] changed the course of my life." format center position center background none
+	hide ui
+	pause 1
+	cg show ch1/mk_backstory_mirror
+	hide ui
+	pause 1
+	mk "..."
+	mk "........."
+	cg show black
+	hide ui
+	pause 1
+	"I couldn't calm my breathing." format center position center background none
+	"I woke up one morning and I could see." format center position center background none
+	"I saw shapes, and colors, and my parents." format center position center background none
+	"I saw the broken dining table." format center position center background none
+	"I saw the weeds in the vegetable garden." format center position center background none
+	"I saw the chipped cup that I drank from." format center position center background none
+	"I saw my wrinkled clothes." format center position center background none
+	"Despite not having much, they were the most beautiful things I laid my eyes on." format center position center background none
+	hide ui
+	pause 1
+	"I couldn't say the same about my reflection." format center position center background none
+	hide ui
+	pause 1
+	cg show ch1/mk_backstory_mirror
+	hide ui
+	pause 1
+	mk "(Have I always looked like this?)"
+	mk "(Were my eyes always so... bland?)"
+	mk "(Was my hair always so... dull?)"
+	hide ui
+	pause 1
+	cg show black
+	hide ui
+	pause 1
+	"My parents gradually grew distant." format center position center background none
+	"People in the village stared at me, and whispered behind my back." format center position center background none
+	"Why did they seem scared of me?" format center position center background none
+	"Iris said she's a little nervous around me, but she was really happy that I got my eyesight." format center position center background none
+	"She called it a miracle." format center position center background none
+	hide ui
+	pause 1
+	"My parents started avoiding me." format center position center background none
+	"When I spoke to them, they always tried to brush me away." format center position center background none
+	"The only times their tired eyes met mine, I only saw hatred in them." format center position center background none
+	"Did they always look at me this way?" format center position center background none
+	hide ui
+	pause 2
+	chara rename mk off
+	cg hide
+	pause 1
+	set ch1.mk_wisteria_item = 0
+	system refresh
+	pause 0.5
+	end

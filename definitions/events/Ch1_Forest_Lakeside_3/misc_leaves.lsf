@@ -1,11 +1,11 @@
 label START
-    "Fallen white leaves suround the tree."
-    if not var persistent.ch1_read_lakeside_temple_note end
-    if var ch1.forest_lakeside_placed_petals end
-    if item ch1.lakeside_petals_white end
-    if objective ch1.forest_lakeside_remove_mermaid done end
-    choice "Take some ${item:ch1.lakeside_petals_white}?"
-        "Yes"
-            item add ch1.lakeside_petals_white
-        "No"
-            end
+	"Fallen white leaves suround the tree."
+	if not var persistent.ch1_read_lakeside_temple_note end
+	if var ch1.forest_lakeside_placed_petals end
+	if item ch1.lakeside_petals_white end
+	if objective ch1.forest_lakeside_remove_mermaid done end
+	choice "Take some ${item:ch1.lakeside_petals_white}?"
+		"Yes"
+			item add ch1.lakeside_petals_white
+		"No"
+			end

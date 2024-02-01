@@ -1,17 +1,17 @@
 label START
-    if not var ch1.forest_red_prisoner_stage == 1 end
-    chara rename unknown to "misc.characters.prisoner"
-    chara set lacie at left
-    unknown "Hey wait wait!"
-    unknown "Won't you do something for me? Pretty please little girl?"
-    lacie "No thank you." mood reflective2
-    unknown "Come oooonnn, I've been stuck here for years, help me out!"
-    lacie "..." mood reflective3
-    lacie "No thank you." mood blank8
-    unknown "Tch."
-    unknown "When I get out of here..."
-    unknown "I'll make you suffer."
-    unknown "It's a promise."
-    set ch1.forest_red_prisoner_stage = 2
-    chara rename unknown off
-    end
+	if not var ch1.forest_red_prisoner_stage == 1 end
+	chara rename unknown to "misc.characters.prisoner"
+	chara set lacie at left
+	unknown "Hey wait wait!"
+	unknown "Won't you do something for me? Pretty please little girl?"
+	lacie "No thank you." mood reflective2
+	unknown "Come oooonnn, I've been stuck here for years, help me out!"
+	lacie "..." mood reflective3
+	lacie "No thank you." mood blank8
+	unknown "Tch."
+	unknown "When I get out of here..."
+	unknown "I'll make you suffer."
+	unknown "It's a promise."
+	set ch1.forest_red_prisoner_stage = 2
+	chara rename unknown off
+	end

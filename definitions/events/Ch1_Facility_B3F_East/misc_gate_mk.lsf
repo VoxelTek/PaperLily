@@ -1,28 +1,28 @@
 label START
-    if repeat jump OPEN
-    camera move (0,-150) time 2
-    pause 1
-    lacie "..." mood confused
-    lacie "Is that... Miss Knives?" mood concerned12
-    lacie "Is this what she actually looks like..?"
-    sai "Whoa." mood surprised2
-    sai "She looks like a used napkin." mood blank12
-    lacie "..." mood sad
-    hide ui
-    set ch1.facility_deep_seen_mk = true
-    camera move (0,150) time 0.5
-    camera reset
-    end
+	if repeat jump OPEN
+	camera move (0,-150) time 2
+	pause 1
+	lacie "..." mood confused
+	lacie "Is that... Miss Knives?" mood concerned12
+	lacie "Is this what she actually looks like..?"
+	sai "Whoa." mood surprised2
+	sai "She looks like a used napkin." mood blank12
+	lacie "..." mood sad
+	hide ui
+	set ch1.facility_deep_seen_mk = true
+	camera move (0,150) time 0.5
+	camera reset
+	end
 
 label OPEN
-    choice "It looks like this gate could be opened. Open it?"
-        "Yes"
-            fade out
-            set ch1.facility_deep_opened_mk = true
-            system refresh
-            pause 1
-            audio sfx play gate
-            pause 1
-            fade in
-        "No"
-            end
+	choice "It looks like this gate could be opened. Open it?"
+		"Yes"
+			fade out
+			set ch1.facility_deep_opened_mk = true
+			system refresh
+			pause 1
+			audio sfx play gate
+			pause 1
+			fade in
+		"No"
+			end

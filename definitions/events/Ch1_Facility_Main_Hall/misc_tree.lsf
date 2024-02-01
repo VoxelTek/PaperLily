@@ -1,5 +1,5 @@
 label START
-    "A tree that seems to be growing out of the concrete floor."
-    if repeat end
-    lacie "(Unusual place for a tree.)" mood blank4
-    end
+	"A tree that seems to be growing out of the concrete floor."
+	if repeat end
+	lacie "(Unusual place for a tree.)" mood blank4
+	end

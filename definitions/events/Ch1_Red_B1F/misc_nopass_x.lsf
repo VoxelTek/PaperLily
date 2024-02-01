@@ -1,6 +1,6 @@
 label START
-    action turn left
-    action walk right 16 backwards
-    pause 0.5
-    bubble ellipsis_silent
-    end
+	action turn left
+	action walk right 16 backwards
+	pause 0.5
+	bubble ellipsis_silent
+	end

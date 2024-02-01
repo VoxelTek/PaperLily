@@ -1,29 +1,29 @@
 label START
-    if var ch1.temp_ending_1_12_on_fire
-        "Everything else is on fire now."
-        end
-    "A fireplace."
-    choice "Put out the fire?"
-        "Yes"
-            continue
-        "No"
-            end
-    hide ui
-    pause 0.5
-    fade out
-    pause 1
-    audio ambiance stop
-    audio sfx play burn
-    pause 3
-    audio sfx play fire
-    audio ambiance play fireplace_loop
-    fade flash color red
-    set ch1.temp_ending_1_12_on_fire = true
-    system refresh
-    pause 0.5
-    lacie "Wha...!?" mood spooked2
-    hide ui
-    pause 0.5
-    action turn down
-    fade in time 2
-    lacie "(This is bad!)" mood spooked
+	if var ch1.temp_ending_1_12_on_fire
+		"Everything else is on fire now."
+		end
+	"A fireplace."
+	choice "Put out the fire?"
+		"Yes"
+			continue
+		"No"
+			end
+	hide ui
+	pause 0.5
+	fade out
+	pause 1
+	audio ambiance stop
+	audio sfx play burn
+	pause 3
+	audio sfx play fire
+	audio ambiance play fireplace_loop
+	fade flash color red
+	set ch1.temp_ending_1_12_on_fire = true
+	system refresh
+	pause 0.5
+	lacie "Wha...!?" mood spooked2
+	hide ui
+	pause 0.5
+	action turn down
+	fade in time 2
+	lacie "(This is bad!)" mood spooked

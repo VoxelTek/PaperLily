@@ -1,11 +1,11 @@
 label START
-    if item ch1.cursed_wood jump CLEAN
-    if item ch1.mushrooms jump CLEAN
-    end
+	if item ch1.cursed_wood jump CLEAN
+	if item ch1.mushrooms jump CLEAN
+	end
 
 label CLEAN
-    lacie "I don't want to carry these around..." mood blank3
-    "(Discarded ingredients)."
-    item remove ch1.cursed_wood
-    item remove ch1.mushrooms
-    end
+	lacie "I don't want to carry these around..." mood blank3
+	"(Discarded ingredients)."
+	item remove ch1.cursed_wood
+	item remove ch1.mushrooms
+	end

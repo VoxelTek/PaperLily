@@ -1,19 +1,19 @@
 label START
-    "A cactus among a set of colorful flowers."
-    if var ch1.forest_lockedsite_took_key_2 end
-    lacie "There seems to be something hidden inside the pot." mood blank1
-    choice "Take ${item:ch1.forest_lockedsite_key}?"
-        "Yes"
-            continue
-        "No"
-            end
-    if var ch1.forest_lockedsite_unlocked
-        "(You don't need that key, so it was discarded.)"
-    if not var ch1.forest_lockedsite_unlocked
-        item add ch1.forest_lockedsite_key
-    set ch1.forest_lockedsite_took_key_2 = true
-    "There's also a note under the pot."
-    item add ch1.hunter_note_2
-    event call ch1_item_forest_lockedsite_note_2
-    objective complete ch1.locked_site_keys.key_2
-    end
+	"A cactus among a set of colorful flowers."
+	if var ch1.forest_lockedsite_took_key_2 end
+	lacie "There seems to be something hidden inside the pot." mood blank1
+	choice "Take ${item:ch1.forest_lockedsite_key}?"
+		"Yes"
+			continue
+		"No"
+			end
+	if var ch1.forest_lockedsite_unlocked
+		"(You don't need that key, so it was discarded.)"
+	if not var ch1.forest_lockedsite_unlocked
+		item add ch1.forest_lockedsite_key
+	set ch1.forest_lockedsite_took_key_2 = true
+	"There's also a note under the pot."
+	item add ch1.hunter_note_2
+	event call ch1_item_forest_lockedsite_note_2
+	objective complete ch1.locked_site_keys.key_2
+	end

@@ -1,5 +1,5 @@
 label START
-    "It says \"No cutting in line.\""
-    if repeat end
-    if var general.serious end
-    lacie "Cutting in front of who? There's nobody here!" mood annoyed3
+	"It says \"No cutting in line.\""
+	if repeat end
+	if var general.serious end
+	lacie "Cutting in front of who? There's nobody here!" mood annoyed3

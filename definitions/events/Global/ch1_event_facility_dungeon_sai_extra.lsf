@@ -1,7 +1,7 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set sai at right
-    sai "You're not gonna try to leave me again, are you?" mood confused12
-    lacie "No... I give up on that." mood embarassed2
-    sai "Great!" mood smile9
+	if repeat end
+	chara set lacie at left
+	chara set sai at right
+	sai "You're not gonna try to leave me again, are you?" mood confused12
+	lacie "No... I give up on that." mood embarassed2
+	sai "Great!" mood smile9

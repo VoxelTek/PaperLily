@@ -1,6 +1,6 @@
 label START
-    if var general.serious
-        "A pile of books."
-        end
-    "A massive pile of books. If they fell on you, it would hurt."
-    end
+	if var general.serious
+		"A pile of books."
+		end
+	"A massive pile of books. If they fell on you, it would hurt."
+	end

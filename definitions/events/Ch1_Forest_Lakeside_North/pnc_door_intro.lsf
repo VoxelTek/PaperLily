@@ -1,7 +1,7 @@
 label START
-    if repeat end
-    pause 0.5
-    lacie "Hmm..." mood thinking
-    lacie "A strange door with two doorknobs... and empty slots to place more." mood thinking3
-    lacie "Amazing... my ${item:ch1.doorknob_return} fits right in. It wasn't a scam after all..." mood blank5
-    lacie "Still... I'm not ready to go home yet, but I'm glad to have found this door." mood blank6
+	if repeat end
+	pause 0.5
+	lacie "Hmm..." mood thinking
+	lacie "A strange door with two doorknobs... and empty slots to place more." mood thinking3
+	lacie "Amazing... my ${item:ch1.doorknob_return} fits right in. It wasn't a scam after all..." mood blank5
+	lacie "Still... I'm not ready to go home yet, but I'm glad to have found this door." mood blank6

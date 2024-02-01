@@ -1,24 +1,24 @@
 label START
-    "A bathtub filled with a black liquid."
-    if repeat jump GET_ITEM
-    lacie "It's so big... you could fit like... four of me in there." mood blank1
+	"A bathtub filled with a black liquid."
+	if repeat jump GET_ITEM
+	lacie "It's so big... you could fit like... four of me in there." mood blank1
 
 label GET_ITEM
-    if var ch1.mk_got_bathtub_item end
-    choice "Check if there's anything useful inside?"
-        "Yes"
-            continue
-        "No"
-            end
-    fade out
-    audio bgm volume 0
-    pause 1.5
-    audio sfx play water_splash_3
-    pause 1
-    audio sfx play water_splash_5
-    pause 4
-    set ch1.mk_got_bathtub_item = true
-    item add ch1.mk_bedroom_key
-    pause 0.5
-    audio bgm volume 1
-    fade in
+	if var ch1.mk_got_bathtub_item end
+	choice "Check if there's anything useful inside?"
+		"Yes"
+			continue
+		"No"
+			end
+	fade out
+	audio bgm volume 0
+	pause 1.5
+	audio sfx play water_splash_3
+	pause 1
+	audio sfx play water_splash_5
+	pause 4
+	set ch1.mk_got_bathtub_item = true
+	item add ch1.mk_bedroom_key
+	pause 0.5
+	audio bgm volume 1
+	fade in

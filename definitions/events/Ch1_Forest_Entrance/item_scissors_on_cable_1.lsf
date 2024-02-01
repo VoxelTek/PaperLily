@@ -1,12 +1,12 @@
 label START
-    if var ch1.forest_entrance_light_1_cable_cut jump ALREADY_CUT
-    set ch1.forest_entrance_light_1_cable_cut = true
-    pause 0.5
-    audio sfx play scissors
-    system refresh
-    pause 0.5
-    end
+	if var ch1.forest_entrance_light_1_cable_cut jump ALREADY_CUT
+	set ch1.forest_entrance_light_1_cable_cut = true
+	pause 0.5
+	audio sfx play scissors
+	system refresh
+	pause 0.5
+	end
 
 label ALREADY_CUT
-    event call misc_cable_already_cut
-    end
+	event call misc_cable_already_cut
+	end

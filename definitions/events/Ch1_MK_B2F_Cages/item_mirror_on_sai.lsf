@@ -1,7 +1,7 @@
 label START
-    if var ch1.mk_rescued_sai end
-    if var general.serious end
-    chara set lacie at left
-    chara set sai at right
-    sai "I still look pretty good, all things considered." mood thinking5
-    lacie "..."
+	if var ch1.mk_rescued_sai end
+	if var general.serious end
+	chara set lacie at left
+	chara set sai at right
+	sai "I still look pretty good, all things considered." mood thinking5
+	lacie "..."

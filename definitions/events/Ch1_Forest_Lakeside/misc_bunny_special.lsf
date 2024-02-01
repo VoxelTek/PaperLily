@@ -1,5 +1,5 @@
 label START
-    set ch1.forest_lakeside_took_bunny = true
-    system refresh
-    item add ch1.forest_bunny
-    end
+	set ch1.forest_lakeside_took_bunny = true
+	system refresh
+	item add ch1.forest_bunny
+	end

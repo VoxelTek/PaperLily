@@ -1,12 +1,12 @@
 label START
-    if repeat end
-    chara set lacie at left
-    chara set sai at right
-    sai "Wait." mood blank
-    lacie "...?" mood blank2
-    sai "Taking that one out might be a really bad idea." mood blank3
-    sai "I saw some doors like that before. I don't think we wanna open them." mood blank9
-    lacie "I see..." mood blank3
-    lacie "(Maybe there's a better way?)" mood thinking3
-    set ch1.facility_fusebox_tried_slot_8 = true
-    end
+	if repeat end
+	chara set lacie at left
+	chara set sai at right
+	sai "Wait." mood blank
+	lacie "...?" mood blank2
+	sai "Taking that one out might be a really bad idea." mood blank3
+	sai "I saw some doors like that before. I don't think we wanna open them." mood blank9
+	lacie "I see..." mood blank3
+	lacie "(Maybe there's a better way?)" mood thinking3
+	set ch1.facility_fusebox_tried_slot_8 = true
+	end

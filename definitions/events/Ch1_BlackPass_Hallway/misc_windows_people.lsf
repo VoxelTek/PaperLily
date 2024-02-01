@@ -1,6 +1,6 @@
 label START
-    if var ch1.blackpass_hallway_curtains_closed end
-    "Students, laughing at you."
-    if repeat end
-    lacie "...I hate them." mood bothered
-    end
+	if var ch1.blackpass_hallway_curtains_closed end
+	"Students, laughing at you."
+	if repeat end
+	lacie "...I hate them." mood bothered
+	end

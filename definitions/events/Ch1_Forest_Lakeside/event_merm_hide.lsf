@@ -1,4 +1,4 @@
 label START
-    if var ch1.forest_lakeside_removed_mermaid end
-    set ch1.temp_lakeside_merm_outside = false
-    action call merm_hide
+	if var ch1.forest_lakeside_removed_mermaid end
+	set ch1.temp_lakeside_merm_outside = false
+	action call merm_hide
