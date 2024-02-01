@@ -1,8 +1,8 @@
 label START
-	if repeat jump AGAIN
-	lacie "I don't know if I can feed it directly... Let's fill the bird feeder instead." mood blank2
-	end
+    if repeat jump AGAIN
+    lacie "I don't know if I can feed it directly... Let's fill the bird feeder instead." mood blank2
+    end
 
 label AGAIN
-	"The bird food goes in the bird house."
-	end
+    "The bird food goes in the bird house."
+    end

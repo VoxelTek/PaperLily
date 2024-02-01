@@ -1,8 +1,8 @@
 label START
-	if var ch1.mk_plants_dead end
-	item remove ch1.mk_jar_water
-	item add ch1.mk_jar silent
-	audio sfx play water_splash_3
-	pause 1
-	"(You pour water into the empty pot...)"
-	"(...but nothing happens.)"
+    if var ch1.mk_plants_dead end
+    item remove ch1.mk_jar_water
+    item add ch1.mk_jar silent
+    audio sfx play water_splash_3
+    pause 1
+    "(You pour water into the empty pot...)"
+    "(...but nothing happens.)"

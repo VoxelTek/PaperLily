@@ -1,4 +1,4 @@
 label START
-	"It reads: \"STOP! Do not walk inside the fairy ring.\""
-	"\"But if you do, please ask them to take their business elsewhere.\"" font small
-	end
+    "It reads: \"STOP! Do not walk inside the fairy ring.\""
+    "\"But if you do, please ask them to take their business elsewhere.\"" font small
+    end

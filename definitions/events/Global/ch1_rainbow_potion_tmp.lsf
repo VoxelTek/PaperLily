@@ -1,8 +1,8 @@
 label START
-	item remove ch1.rainbow_potion_tmp
-	set ch1.mk_potion_temp_og_hp = general.maxhp.lacie
-	set general.maxhp.lacie = 3
-	set general.hp.lacie = 3
-	set ch1.mk_potion_temp_took = true
-	pause 1
-	"You feel quite a bit stronger now."
+    item remove ch1.rainbow_potion_tmp
+    set ch1.mk_potion_temp_og_hp = general.maxhp.lacie
+    set general.maxhp.lacie = 3
+    set general.hp.lacie = 3
+    set ch1.mk_potion_temp_took = true
+    pause 1
+    "You feel quite a bit stronger now."

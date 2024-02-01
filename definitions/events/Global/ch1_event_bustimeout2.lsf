@@ -1,56 +1,56 @@
 label START
-	hide ui
-	chara lock
-	audio ambiance stop time 2
-	pause 3
-	lacie "After a while, I fell back asleep."
-	lacie "Was there something about this bus that made people sleepy?"
-	hide ui
-	fade out
-	move to Ch1_BlackPass_Hub point cutscene_camera cutscene time 0
-	action call lacie_bed_show
-	pause 1
-	fade in
-	audio bgm play ch1_blackpass
-	pause 1
-	action call lacie_bed_eyes
-	pause 2
-	lacie "A few minutes later, I woke up at the black place again..."
-	hide ui
-	pause 1
-	fade out
-	pause 1
-	lacie "So I went through the whole thing one more time..."
-	hide ui
-	pause 1
-	move to Ch1_BlackPass_Hallway point cutscene cutscene time 0
-	set ch1.blackpass_opened_locker = false
-	chara spawn lacie point cutscene
-	action call hide_student
-	fade in
-	pause 1
-	lacie "And through the closet at last."
-	hide ui
-	pause 1
-	audio sfx play wardrobe_open
-	pause 0.1
-	system call OpenWardrobe
-	audio bgm stop time 2
-	fade out time 2
-	pause 2
-	lacie "Finally, I was ready to wake up again."
-	set ch1.temp_ending_1_4 = true
-	move to Ch1_Bus_C point start time 0 cutscene
-	action call show_sitting_lacie
-	fade in time 4
-	pause 1
-	bubble ellipsis on seats_b5 offset (5,-55)
-	pause 0.5
-	chara unlock
-	lacie "There's no one here anymore..." mood blank2
-	hide ui
-	pause 1
-	fade out
-	move to Ch1_Bus_C point start time 0
-	objective clear
-	fade in
+    hide ui
+    chara lock
+    audio ambiance stop time 2
+    pause 3
+    lacie "After a while, I fell back asleep."
+    lacie "Was there something about this bus that made people sleepy?"
+    hide ui
+    fade out
+    move to Ch1_BlackPass_Hub point cutscene_camera cutscene time 0
+    action call lacie_bed_show
+    pause 1
+    fade in
+    audio bgm play ch1_blackpass
+    pause 1
+    action call lacie_bed_eyes
+    pause 2
+    lacie "A few minutes later, I woke up at the black place again..."
+    hide ui
+    pause 1
+    fade out
+    pause 1
+    lacie "So I went through the whole thing one more time..."
+    hide ui
+    pause 1
+    move to Ch1_BlackPass_Hallway point cutscene cutscene time 0
+    set ch1.blackpass_opened_locker = false
+    chara spawn lacie point cutscene
+    action call hide_student
+    fade in
+    pause 1
+    lacie "And through the closet at last."
+    hide ui
+    pause 1
+    audio sfx play wardrobe_open
+    pause 0.1
+    system call OpenWardrobe
+    audio bgm stop time 2
+    fade out time 2
+    pause 2
+    lacie "Finally, I was ready to wake up again."
+    set ch1.temp_ending_1_4 = true
+    move to Ch1_Bus_C point start time 0 cutscene
+    action call show_sitting_lacie
+    fade in time 4
+    pause 1
+    bubble ellipsis on seats_b5 offset (5,-55)
+    pause 0.5
+    chara unlock
+    lacie "There's no one here anymore..." mood blank2
+    hide ui
+    pause 1
+    fade out
+    move to Ch1_Bus_C point start time 0
+    objective clear
+    fade in

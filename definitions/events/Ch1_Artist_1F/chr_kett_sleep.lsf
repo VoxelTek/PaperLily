@@ -1,38 +1,38 @@
 label START
-	if not var ch1.forest_kett_calm_down jump MAD
-	jump ASLEEP
-	end
+    if not var ch1.forest_kett_calm_down jump MAD
+    jump ASLEEP
+    end
 
 label MAD
-	if var ch1.forest_kett_escaped jump RATHER_NOT
-	choice "There's someone there. Grab their attention?"
-		"Yes"
-			continue
-		"No"
-			end
-	if objective ch1.kozmo_find_head inprogress jump KOZMO_NOPE
-	if objective ch1.kozmo_give_head inprogress jump KOZMO_NOPE
-	audio bgm stop time 2
-	audio bgm override on ch1_danger
-	hide ui
-	pause 0.5
-	set ch1.forest_kett_chase = true
-	audio sfx play scare
-	pause 0.25
-	system call KettMadTurn
-	pause 0.4
-	chara set kett at right
-	kett "!!!" mood angry
-	hide ui
-	pause 0.5
-	move to Ch1_Artist_1F point kett_chase
-	end
+    if var ch1.forest_kett_escaped jump RATHER_NOT
+    choice "There's someone there. Grab their attention?"
+        "Yes"
+            continue
+        "No"
+            end
+    if objective ch1.kozmo_find_head inprogress jump KOZMO_NOPE
+    if objective ch1.kozmo_give_head inprogress jump KOZMO_NOPE
+    audio bgm stop time 2
+    audio bgm override on ch1_danger
+    hide ui
+    pause 0.5
+    set ch1.forest_kett_chase = true
+    audio sfx play scare
+    pause 0.25
+    system call KettMadTurn
+    pause 0.4
+    chara set kett at right
+    kett "!!!" mood angry
+    hide ui
+    pause 0.5
+    move to Ch1_Artist_1F point kett_chase
+    end
 
 label ASLEEP
-	"He seem to be asleep."
+    "He seem to be asleep."
 label RATHER_NOT
-	lacie "I'd really rather not bother him..." mood hide3
-	end
+    lacie "I'd really rather not bother him..." mood hide3
+    end
 
 label KOZMO_NOPE
-	"This isn't the time for that."
+    "This isn't the time for that."

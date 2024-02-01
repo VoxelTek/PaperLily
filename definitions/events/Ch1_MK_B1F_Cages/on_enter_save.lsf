@@ -1,4 +1,4 @@
 label START
-	if var ch1.mk_painting_chase_clear end
-	system retry-save
-	end
+    if var ch1.mk_painting_chase_clear end
+    system retry-save
+    end

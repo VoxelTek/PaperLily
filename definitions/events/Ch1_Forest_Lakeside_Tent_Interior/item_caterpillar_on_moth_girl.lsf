@@ -1,14 +1,14 @@
 label START
-	if var ch1.forest_moths_upset end
-	chara set lacie at left
-	if repeat jump AGAIN
-	ch1_moth_girl "Huh... he's a lot quieter when he's with you." mood blank2
-	ch1_moth_girl "Maybe he's anticipating his demise!?" mood blank
-	ch1_moth_girl "Oh man, can't wait!!!" mood happy
-	lacie "..." mood blank2
-	end
+    if var ch1.forest_moths_upset end
+    chara set lacie at left
+    if repeat jump AGAIN
+    ch1_moth_girl "Huh... he's a lot quieter when he's with you." mood blank2
+    ch1_moth_girl "Maybe he's anticipating his demise!?" mood blank
+    ch1_moth_girl "Oh man, can't wait!!!" mood happy
+    lacie "..." mood blank2
+    end
 
 label AGAIN
-	ch1_moth_girl "I don't need to see him anymore." mood blank
-	ch1_moth_girl "Not ALIVE, at least." mood annoyed
-	end
+    ch1_moth_girl "I don't need to see him anymore." mood blank
+    ch1_moth_girl "Not ALIVE, at least." mood annoyed
+    end

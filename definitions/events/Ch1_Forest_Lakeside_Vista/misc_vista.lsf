@@ -1,9 +1,9 @@
 label START
-	"A large structure looms over the lake in the distance."
-	if repeat end
-	lacie "What is that place..?" mood blank1
-	lacie "..." mood default
-	lacie "Hmm... I can't see the lighthouse from here." mood concerned4
-	lacie "It might be beyond those trees." mood blank4
-	lacie "Oh well." mood blank3
-	end
+    "A large structure looms over the lake in the distance."
+    if repeat end
+    lacie "What is that place..?" mood blank1
+    lacie "..." mood default
+    lacie "Hmm... I can't see the lighthouse from here." mood concerned4
+    lacie "It might be beyond those trees." mood blank4
+    lacie "Oh well." mood blank3
+    end

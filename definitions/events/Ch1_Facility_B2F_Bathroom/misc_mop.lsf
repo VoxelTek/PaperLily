@@ -1,5 +1,5 @@
 label START
-	"A mop. It looks like it's never been used."
-	if repeat end
-	lacie "Everything here has been gathering dust for a really long time." mood blank2
-	end
+    "A mop. It looks like it's never been used."
+    if repeat end
+    lacie "Everything here has been gathering dust for a really long time." mood blank2
+    end

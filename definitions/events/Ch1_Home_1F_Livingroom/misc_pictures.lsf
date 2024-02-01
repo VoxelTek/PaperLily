@@ -1,6 +1,6 @@
 label START
-	"Some pictures of places around the world."
-	if repeat end
-	if var general.serious end
-	lacie "Mother and father go on trips a lot..." mood blank3
-	lacie "I don't even know where they are right now." mood blank2
+    "Some pictures of places around the world."
+    if repeat end
+    if var general.serious end
+    lacie "Mother and father go on trips a lot..." mood blank3
+    lacie "I don't even know where they are right now." mood blank2

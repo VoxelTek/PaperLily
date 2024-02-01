@@ -1,4 +1,4 @@
 label START
-	move to Ch1_Forest_Station_Interior_Hallway point from_upstairs
-	end
+    move to Ch1_Forest_Station_Interior_Hallway point from_upstairs
+    end
 

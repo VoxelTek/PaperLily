@@ -1,67 +1,67 @@
 label START
-	chara set lacie at left
-	chara set aoi at right
-	if repeat jump AGAIN
-	lacie "Aoi." mood blank1
-	aoi "Lacie!! Thank you!" mood excited
-	lacie "..." mood blank4
-	lacie "(I was going to say that...)" mood blank2
-	aoi "Thanks to your idea, we managed to get out!!" mood excited
-	lacie "Ah, No... thank you." mood blank5
-	lacie "Um... also... with the fish lady..." mood blank8
-	lacie "I mean... um..." mood concerned9
-	aoi "..." mood happy2
-	lacie "..." mood concerned7
-	lacie "You're nice." mood concerned9
-	aoi "...!" mood excited
-	aoi "Heheh I'm glad I met you Lacie!"
-	aoi "And I'm glad you had those amazing scissors!" mood surprised
-	aoi "They really saved us both." mood happy
-	aoi "I hope I'll be able to have such cool scissors some day too!" mood excited
-	lacie "Oh... yeah." mood blank4
-	lacie "You can keep them." mood blank3
-	aoi "WHAAAT?!" mood panic
-	aoi "But Lacie, what if you need them!" mood panic2
-	lacie "I'll be fine." mood blank4
-	item remove ch1.scissors
-	aoi "Wow!!" mood surprised3
-	aoi "Thank you so much!" mood excited
-	aoi "This is the best gift anyone's ever given me!" mood happy2
-	lacie "..." mood blank1
-	end
+    chara set lacie at left
+    chara set aoi at right
+    if repeat jump AGAIN
+    lacie "Aoi." mood blank1
+    aoi "Lacie!! Thank you!" mood excited
+    lacie "..." mood blank4
+    lacie "(I was going to say that...)" mood blank2
+    aoi "Thanks to your idea, we managed to get out!!" mood excited
+    lacie "Ah, No... thank you." mood blank5
+    lacie "Um... also... with the fish lady..." mood blank8
+    lacie "I mean... um..." mood concerned9
+    aoi "..." mood happy2
+    lacie "..." mood concerned7
+    lacie "You're nice." mood concerned9
+    aoi "...!" mood excited
+    aoi "Heheh I'm glad I met you Lacie!"
+    aoi "And I'm glad you had those amazing scissors!" mood surprised
+    aoi "They really saved us both." mood happy
+    aoi "I hope I'll be able to have such cool scissors some day too!" mood excited
+    lacie "Oh... yeah." mood blank4
+    lacie "You can keep them." mood blank3
+    aoi "WHAAAT?!" mood panic
+    aoi "But Lacie, what if you need them!" mood panic2
+    lacie "I'll be fine." mood blank4
+    item remove ch1.scissors
+    aoi "Wow!!" mood surprised3
+    aoi "Thank you so much!" mood excited
+    aoi "This is the best gift anyone's ever given me!" mood happy2
+    lacie "..." mood blank1
+    end
 
 label AGAIN
-	aoi "What will you do now?" mood happy
-	lacie "Well... I'm... looking for something. Some answers, I guess." mood reflective2
-	lacie "For now, I need to go through the locked site." mood reflective8
-	aoi "Ohh!" mood surprised2
+    aoi "What will you do now?" mood happy
+    lacie "Well... I'm... looking for something. Some answers, I guess." mood reflective2
+    lacie "For now, I need to go through the locked site." mood reflective8
+    aoi "Ohh!" mood surprised2
 
 
-	aoi "Be careful in there."
-	aoi "I have a tip! Always hide in the bushes!" mood confident2
-	lacie "Thank you." mood blank2
-	lacie "Are you leaving?" mood blank1
-	aoi "Oh, yeah, back to work for me heheh." mood confident
-	aoi "I've had enough adventures..." mood sweat2
-	lacie "Is that good?" mood blank6
-	aoi "I'm not looking forward to it..." mood sweat2
-	aoi "But.. it's where I live, so..." mood sad5
-	aoi "Maybe we'll meet again?" mood sad2
-	lacie "..." mood default
-	lacie "Yeah." mood blank1
-	lacie "(That would be nice.)" mood hide3
-	aoi "..." mood happy2
-	aoi "This isn't goodbye, okay!?" mood excited
-	lacie "Oh, okay." mood surprised2
-	lacie "Then..." mood blank3
-	aoi "See you later!" mood happy
-	lacie "See you." mood blank1
-	fade out
-	set ch1.forest_center_aoi_left = true
-	system refresh
-	pause 1
-	action turn down
-	fade in
-	pause 0.5
-	lacie "(I feel like I should have said more... Why am I so bad with words?)" mood hide3
-	lacie "(Sigh... I just have to make sure to say it next time we meet.)"
+    aoi "Be careful in there."
+    aoi "I have a tip! Always hide in the bushes!" mood confident2
+    lacie "Thank you." mood blank2
+    lacie "Are you leaving?" mood blank1
+    aoi "Oh, yeah, back to work for me heheh." mood confident
+    aoi "I've had enough adventures..." mood sweat2
+    lacie "Is that good?" mood blank6
+    aoi "I'm not looking forward to it..." mood sweat2
+    aoi "But.. it's where I live, so..." mood sad5
+    aoi "Maybe we'll meet again?" mood sad2
+    lacie "..." mood default
+    lacie "Yeah." mood blank1
+    lacie "(That would be nice.)" mood hide3
+    aoi "..." mood happy2
+    aoi "This isn't goodbye, okay!?" mood excited
+    lacie "Oh, okay." mood surprised2
+    lacie "Then..." mood blank3
+    aoi "See you later!" mood happy
+    lacie "See you." mood blank1
+    fade out
+    set ch1.forest_center_aoi_left = true
+    system refresh
+    pause 1
+    action turn down
+    fade in
+    pause 0.5
+    lacie "(I feel like I should have said more... Why am I so bad with words?)" mood hide3
+    lacie "(Sigh... I just have to make sure to say it next time we meet.)"

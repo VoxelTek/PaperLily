@@ -1,23 +1,23 @@
 label START
-	event call misc_bookshelf
-	if var general.serious end
-	"One of them stands out."
-	choice "Read a passage?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	pause 0.5
-	audio sfx play paper
-	pause 0.5
-	"...\" color \"#B0BEC5"
-	"I don't know why I've decided to talk to you.\" color \"#B0BEC5"
-	"Maybe it's because you look really pitiful.\" color \"#B0BEC5"
-	"You're so worthless that no matter what tests they put you through, you fail them all.\" color \"#B0BEC5"
-	"...\" color \"#B0BEC5"
-	"If I had just left you alone that day. You wouldn't be wasting all of our time.\" color \"#B0BEC5"
-	"You wouldn't be wasting your own time here.\" color \"#B0BEC5"
-	"Tomorrow, Glen will discontinue your tests.\" color \"#B0BEC5"
-	"You better thank me. I'm the one who told him to.\" color \"#B0BEC5"
-	"I'm just sick of seeing you.\" color \"#B0BEC5"
+    event call misc_bookshelf
+    if var general.serious end
+    "One of them stands out."
+    choice "Read a passage?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    pause 0.5
+    "...\" color \"#B0BEC5"
+    "I don't know why I've decided to talk to you.\" color \"#B0BEC5"
+    "Maybe it's because you look really pitiful.\" color \"#B0BEC5"
+    "You're so worthless that no matter what tests they put you through, you fail them all.\" color \"#B0BEC5"
+    "...\" color \"#B0BEC5"
+    "If I had just left you alone that day. You wouldn't be wasting all of our time.\" color \"#B0BEC5"
+    "You wouldn't be wasting your own time here.\" color \"#B0BEC5"
+    "Tomorrow, Glen will discontinue your tests.\" color \"#B0BEC5"
+    "You better thank me. I'm the one who told him to.\" color \"#B0BEC5"
+    "I'm just sick of seeing you.\" color \"#B0BEC5"

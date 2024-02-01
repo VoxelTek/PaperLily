@@ -1,10 +1,10 @@
 label START
-	"A tall vase."
-	if var ch1.forest_artist_3f_took_coin end
-	choice "Reach inside?"
-		"Yes"
-			event call ch1_item_coin_get
-			set ch1.forest_artist_3f_took_coin = true
-		"No"
-			end
-	end
+    "A tall vase."
+    if var ch1.forest_artist_3f_took_coin end
+    choice "Reach inside?"
+        "Yes"
+            event call ch1_item_coin_get
+            set ch1.forest_artist_3f_took_coin = true
+        "No"
+            end
+    end

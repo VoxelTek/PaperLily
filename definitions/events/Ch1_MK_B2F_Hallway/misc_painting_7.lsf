@@ -1,7 +1,7 @@
 label START
-	if var general.serious
-		event call misc_painting_generic
-		end
-	"A portrait of a person with a crow for a head."
-	if repeat end
-	lacie "It looks nothing like those cute crows I've been seeing around." mood concerned
+    if var general.serious
+        event call misc_painting_generic
+        end
+    "A portrait of a person with a crow for a head."
+    if repeat end
+    lacie "It looks nothing like those cute crows I've been seeing around." mood concerned

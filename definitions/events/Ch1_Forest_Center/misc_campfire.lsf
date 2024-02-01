@@ -1,15 +1,15 @@
 label START
-	set ch1.forest_center_campfire_seen = true
-	if var ch1.forest_center_campfire_on jump CAMPFIRE_ON
-	if repeat jump CAMP
-	"A campfire."
-	lacie "There's no fire, so right now it's just a camp." mood blank2
-	end
+    set ch1.forest_center_campfire_seen = true
+    if var ch1.forest_center_campfire_on jump CAMPFIRE_ON
+    if repeat jump CAMP
+    "A campfire."
+    lacie "There's no fire, so right now it's just a camp." mood blank2
+    end
 
 label CAMP
-	"A camp."
-	end
+    "A camp."
+    end
 
 label CAMPFIRE_ON
-	"The fire is on. It seems to produce heat too."
-	end
+    "The fire is on. It seems to produce heat too."
+    end

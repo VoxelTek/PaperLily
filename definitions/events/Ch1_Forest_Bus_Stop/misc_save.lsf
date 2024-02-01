@@ -1,7 +1,7 @@
 label START
-	if repeat jump SAVE
-	"A crow standing on a rock."
-	lacie "It doesn't seem bothered by my presence."
+    if repeat jump SAVE
+    "A crow standing on a rock."
+    lacie "It doesn't seem bothered by my presence."
 label SAVE
-	system save
-	end
+    system save
+    end

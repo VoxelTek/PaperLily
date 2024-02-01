@@ -1,4 +1,4 @@
 label START
-	system minigame end
-	audio sfx play door
-	move to Ch1_Library_Doorknob point entrance
+    system minigame end
+    audio sfx play door
+    move to Ch1_Library_Doorknob point entrance

@@ -1,8 +1,8 @@
 label START
-	if var general.part_of_day == "night"
-		if not var general.lights_home_2f_bedroom_a
-			"It's too dark to see right now."
-			end
-	system minigame ch1_pnc_wardrobe
-	end
+    if var general.part_of_day == "night"
+        if not var general.lights_home_2f_bedroom_a
+            "It's too dark to see right now."
+            end
+    system minigame ch1_pnc_wardrobe
+    end
 

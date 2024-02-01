@@ -1,21 +1,21 @@
 label START
-	if var ch1.facility_archive_read_book jump ALREADY_CHECKED
-	"A purple book."
-	choice "Read a passage?"
-		"Yes"
-			set ch1.facility_archive_read_book = true
-			hide ui
-			pause 0.5
-			"All of its pages are blank, but you can see a faint outline of some letters."
-			lacie "(Have all of these books been erased... somehow?)"
-			if character sai
-				sai "Someone didn't want to leave any traces here."
-				lacie "I agree."
-			end
-		"No"
-			end
-	end
+    if var ch1.facility_archive_read_book jump ALREADY_CHECKED
+    "A purple book."
+    choice "Read a passage?"
+        "Yes"
+            set ch1.facility_archive_read_book = true
+            hide ui
+            pause 0.5
+            "All of its pages are blank, but you can see a faint outline of some letters."
+            lacie "(Have all of these books been erased... somehow?)"
+            if character sai
+                sai "Someone didn't want to leave any traces here."
+                lacie "I agree."
+            end
+        "No"
+            end
+    end
 
 label ALREADY_CHECKED
-	event call misc_bookcase_empty
-	end
+    event call misc_bookcase_empty
+    end

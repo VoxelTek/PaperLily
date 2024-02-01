@@ -1,6 +1,6 @@
 label START
-	system minigame end
-	audio sfx play door
-	audio bgm stop time 4
-	move to Ch1_Garden_ExitRitual point entrance
-	objective add ch1.return_complete_ritual
+    system minigame end
+    audio sfx play door
+    audio bgm stop time 4
+    move to Ch1_Garden_ExitRitual point entrance
+    objective add ch1.return_complete_ritual

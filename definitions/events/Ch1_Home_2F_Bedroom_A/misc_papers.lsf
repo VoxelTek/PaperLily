@@ -1,4 +1,4 @@
 label START
-	"Some blank paper."
-	if repeat end
-	lacie "I doodle sometimes." mood blank2
+    "Some blank paper."
+    if repeat end
+    lacie "I doodle sometimes." mood blank2

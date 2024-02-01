@@ -1,8 +1,8 @@
 label START
-	if var ch1.blackpass_opened_locker jump ALREADY_FOUND
-	"This isn't your locker."
-	end
+    if var ch1.blackpass_opened_locker jump ALREADY_FOUND
+    "This isn't your locker."
+    end
 
 label ALREADY_FOUND
-	"A locker."
-	end
+    "A locker."
+    end

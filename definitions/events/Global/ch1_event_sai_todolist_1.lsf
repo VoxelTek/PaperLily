@@ -1,40 +1,40 @@
 label START
-	chara set lacie at left
-	chara set sai at right
-	chara spawn lacie point cutscene_lacie
-	chara spawn sai point cutscene_sai
-	action walk right 160 node lacie speed veryslow continue
-	action walk right 96 node sai speed veryslow continue
-	camera track node lacie
-	fade in
-	pause 1.6
-	action call show_paper
-	pause 1
-	sai "You dropped something." mood blank3
-	hide ui
-	pause 0.5
-	audio sfx play paper
-	action call hide_paper
-	cg show ch1/ch1_todolist scene
-	wait
-	action turn left node lacie
-	cg hide
-	pause 1
-	lacie "..." mood bothered
-	sai "To-do list before you... die?" mood surprised2
-	lacie "Please give it back." mood reflective2
-	hide ui
-	action walk left 64 node lacie speed slow
-	pause 0.5
-	item add ch1.todolist
-	item remove ch1.todolist
-	pause 0.5
-	sai "You didn't complete it." mood surprised3
-	lacie "I know."
-	sai "Why do you... erm..." mood thinking2
-	sai "I mean, that list looks pretty depressing." mood thinking5
-	lacie "I'm aware." mood reflective4
-	sai "Do you wanna talk about it?" mood confused4
-	action turn right node lacie
-	lacie "No." mood reflective2
-	sai "Got it." mood blank11
+    chara set lacie at left
+    chara set sai at right
+    chara spawn lacie point cutscene_lacie
+    chara spawn sai point cutscene_sai
+    action walk right 160 node lacie speed veryslow continue
+    action walk right 96 node sai speed veryslow continue
+    camera track node lacie
+    fade in
+    pause 1.6
+    action call show_paper
+    pause 1
+    sai "You dropped something." mood blank3
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    action call hide_paper
+    cg show ch1/ch1_todolist scene
+    wait
+    action turn left node lacie
+    cg hide
+    pause 1
+    lacie "..." mood bothered
+    sai "To-do list before you... die?" mood surprised2
+    lacie "Please give it back." mood reflective2
+    hide ui
+    action walk left 64 node lacie speed slow
+    pause 0.5
+    item add ch1.todolist
+    item remove ch1.todolist
+    pause 0.5
+    sai "You didn't complete it." mood surprised3
+    lacie "I know."
+    sai "Why do you... erm..." mood thinking2
+    sai "I mean, that list looks pretty depressing." mood thinking5
+    lacie "I'm aware." mood reflective4
+    sai "Do you wanna talk about it?" mood confused4
+    action turn right node lacie
+    lacie "No." mood reflective2
+    sai "Got it." mood blank11

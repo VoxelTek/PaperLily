@@ -1,6 +1,6 @@
 label START
-	"A creature with a huge mouth."
-	if repeat end
-	chara set lacie at left
-	unknown "hhhhaaaaaa....."
-	lacie "(It might be best to keep my distance...)" mood surprised6
+    "A creature with a huge mouth."
+    if repeat end
+    chara set lacie at left
+    unknown "hhhhaaaaaa....."
+    lacie "(It might be best to keep my distance...)" mood surprised6

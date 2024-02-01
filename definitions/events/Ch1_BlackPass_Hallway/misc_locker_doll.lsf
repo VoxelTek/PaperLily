@@ -1,11 +1,11 @@
 label START
-	audio sfx play locker_open
-	action call open_locker_doll
-	action walk down 26 backwards
-	pause 1
-	if not repeat
-		lacie "..." mood bothered
-	hide ui
-	pause 0.5
-	audio sfx play locker_close
-	action call close_locker_doll
+    audio sfx play locker_open
+    action call open_locker_doll
+    action walk down 26 backwards
+    pause 1
+    if not repeat
+        lacie "..." mood bothered
+    hide ui
+    pause 0.5
+    audio sfx play locker_close
+    action call close_locker_doll

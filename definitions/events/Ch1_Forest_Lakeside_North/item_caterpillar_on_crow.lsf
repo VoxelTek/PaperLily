@@ -1,7 +1,7 @@
 label START
-	if var ch1.forest_moths_upset
-		event call ch1_event_no_kill_caterpillar
-		end
-	"The crow shows no interest in it."
-	lacie "Nobody seems to want you, little one." mood sigh
-	end
+    if var ch1.forest_moths_upset
+        event call ch1_event_no_kill_caterpillar
+        end
+    "The crow shows no interest in it."
+    lacie "Nobody seems to want you, little one." mood sigh
+    end

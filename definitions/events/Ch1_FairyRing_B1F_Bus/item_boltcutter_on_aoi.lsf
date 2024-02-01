@@ -1,5 +1,5 @@
 label START
-	chara set lacie at left
-	chara set aoi at right
-	aoi "That looks heavy..." mood surprised2
-	aoi "You're prepared for anything, aren't you?" mood surprised3
+    chara set lacie at left
+    chara set aoi at right
+    aoi "That looks heavy..." mood surprised2
+    aoi "You're prepared for anything, aren't you?" mood surprised3

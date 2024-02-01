@@ -1,17 +1,17 @@
 label START
-	if var ch1.forest_entrance_south_took_coin jump EMPTY
-	"It's a donation box. The label reads:"
-	"\"All proceeds go towards the construction of a bridge somewhere. We appreciate your donation!\""
-	"The lid is loose, and there's a single coin inside."
-	choice "Take the ${item:ch1.coin}?"
-		"Yes"
-			continue
-		"No"
-			end
-	set ch1.forest_entrance_south_took_coin = true
-	system refresh
-	event call ch1_item_coin_get
-	end
+    if var ch1.forest_entrance_south_took_coin jump EMPTY
+    "It's a donation box. The label reads:"
+    "\"All proceeds go towards the construction of a bridge somewhere. We appreciate your donation!\""
+    "The lid is loose, and there's a single coin inside."
+    choice "Take the ${item:ch1.coin}?"
+        "Yes"
+            continue
+        "No"
+            end
+    set ch1.forest_entrance_south_took_coin = true
+    system refresh
+    event call ch1_item_coin_get
+    end
 
 label EMPTY
-	"The box is now empty."
+    "The box is now empty."

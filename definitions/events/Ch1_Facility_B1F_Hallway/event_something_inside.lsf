@@ -1,14 +1,14 @@
 label START
-	if repeat jump AGAIN
-	bubble ellipsis
-	action walk right 64 speed slow
-	action turn up
-	pause 0.7
-	action walk left 48 speed fast
-	action turn down
-	pause 0.5
-	lacie "There's something in there...!" mood spooked
-	end
+    if repeat jump AGAIN
+    bubble ellipsis
+    action walk right 64 speed slow
+    action turn up
+    pause 0.7
+    action walk left 48 speed fast
+    action turn down
+    pause 0.5
+    lacie "There's something in there...!" mood spooked
+    end
 
 label AGAIN
-	"Now is probably not a good time to go inside."
+    "Now is probably not a good time to go inside."

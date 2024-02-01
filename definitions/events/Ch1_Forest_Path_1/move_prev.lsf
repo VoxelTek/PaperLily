@@ -1,2 +1,2 @@
 label START
-	move to Ch1_Forest_Bus_Stop point exit_north direction down
+    move to Ch1_Forest_Bus_Stop point exit_north direction down

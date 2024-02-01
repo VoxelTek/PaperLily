@@ -1,4 +1,4 @@
 label START
-	if repeat end
-	objective complete ch1.facility_go_deeper
-	end
+    if repeat end
+    objective complete ch1.facility_go_deeper
+    end

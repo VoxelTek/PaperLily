@@ -1,4 +1,4 @@
 label START
-	audio sfx play door
-	move to Ch1_Forest_Lakeside_North point from_door
-	end
+    audio sfx play door
+    move to Ch1_Forest_Lakeside_North point from_door
+    end

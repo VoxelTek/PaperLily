@@ -1,8 +1,8 @@
 label START
-	"You can see the neighbor's house from here."
-	if var general.inbetween
-		event call ch1_misc_window_back_inbetween
-		end
-	if repeat end
-	if var general.serious end
-	lacie "Let's try to avoid eye contact with them if possible." mood blank8
+    "You can see the neighbor's house from here."
+    if var general.inbetween
+        event call ch1_misc_window_back_inbetween
+        end
+    if repeat end
+    if var general.serious end
+    lacie "Let's try to avoid eye contact with them if possible." mood blank8

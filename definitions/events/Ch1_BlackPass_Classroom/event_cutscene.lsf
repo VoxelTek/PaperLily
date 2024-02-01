@@ -1,31 +1,31 @@
 label START
-	if var ch1.blackpass_classroom_cutscene_stage > 2 end
-	if var ch1.blackpass_classroom_cutscene_stage == 2 jump BOUNCER
-	camera unlock
-	camera move (0,-128) time 3
-	pause 0.5
-	lacie "..." mood concerned2
-	chara rename unknown to "misc.characters.student"
-	unknown "There she is."
-	unknown "That's her?"
-	unknown "She's so cursed that the bird dropped dead."
-	unknown "If she can make a bird die, I wonder what she could do to people."
-	unknown "What a freak."
-	hide ui
-	action walk up 64 speed slow
-	pause 0.5
-	chara rename unknown to "misc.characters.student_bully"
-	unknown "Hey, you killed that poor bird."
-	lacie "...N-no..." mood surprised
-	unknown "It flew into the window next to YOUR seat."
-	lacie "...but.. I didn't..." mood sad6
-	unknown "It died because of you."
-	unknown "This is your fault."
-	chara rename unknown off
-	set ch1.blackpass_classroom_cutscene_stage = 2
-	move to Ch1_BlackPass_Classroom point cutscene_stage_2
-	end
+    if var ch1.blackpass_classroom_cutscene_stage > 2 end
+    if var ch1.blackpass_classroom_cutscene_stage == 2 jump BOUNCER
+    camera unlock
+    camera move (0,-128) time 3
+    pause 0.5
+    lacie "..." mood concerned2
+    chara rename unknown to "misc.characters.student"
+    unknown "There she is."
+    unknown "That's her?"
+    unknown "She's so cursed that the bird dropped dead."
+    unknown "If she can make a bird die, I wonder what she could do to people."
+    unknown "What a freak."
+    hide ui
+    action walk up 64 speed slow
+    pause 0.5
+    chara rename unknown to "misc.characters.student_bully"
+    unknown "Hey, you killed that poor bird."
+    lacie "...N-no..." mood surprised
+    unknown "It flew into the window next to YOUR seat."
+    lacie "...but.. I didn't..." mood sad6
+    unknown "It died because of you."
+    unknown "This is your fault."
+    chara rename unknown off
+    set ch1.blackpass_classroom_cutscene_stage = 2
+    move to Ch1_BlackPass_Classroom point cutscene_stage_2
+    end
 
 label BOUNCER
-	event call event_bouncer
-	end
+    event call event_bouncer
+    end

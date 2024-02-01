@@ -1,20 +1,20 @@
 label START
-	if not var ch1.forest_red_took_jar
-		"A jar filled with slugs."
-	if not repeat
-		lacie "(They're alive in there..)" mood blank5
-	if var ch1.forest_red_prisoner_stage == 3
-		if not var ch1.forest_red_took_jar
-			choice "Take ${item:ch1.red_jar}?"
-				"Yes"
-					set ch1.forest_red_took_jar = true
-					system refresh
-					item add ch1.red_jar
-					end
-				"No"
-					end
-	if not var ch1.forest_red_took_jar
-		"The drawers underneath are empty."
-	if var ch1.forest_red_took_jar
-		"The drawers are empty."
-	end
+    if not var ch1.forest_red_took_jar
+        "A jar filled with slugs."
+    if not repeat
+        lacie "(They're alive in there..)" mood blank5
+    if var ch1.forest_red_prisoner_stage == 3
+        if not var ch1.forest_red_took_jar
+            choice "Take ${item:ch1.red_jar}?"
+                "Yes"
+                    set ch1.forest_red_took_jar = true
+                    system refresh
+                    item add ch1.red_jar
+                    end
+                "No"
+                    end
+    if not var ch1.forest_red_took_jar
+        "The drawers underneath are empty."
+    if var ch1.forest_red_took_jar
+        "The drawers are empty."
+    end

@@ -1,5 +1,5 @@
 label START
-	if var ch1.forest_station_cut_interior end
-	set ch1.forest_station_cut_interior = true
-	pause 0.5
-	audio sfx play scissors
+    if var ch1.forest_station_cut_interior end
+    set ch1.forest_station_cut_interior = true
+    pause 0.5
+    audio sfx play scissors

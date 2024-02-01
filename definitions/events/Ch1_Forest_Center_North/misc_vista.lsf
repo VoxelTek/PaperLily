@@ -1,8 +1,8 @@
 label START
-	action turn up
-	camera move (0,-116) time 3
-	pause 1
-	wait
-	camera move (0,116) time 0.5
-	camera reset
-	end
+    action turn up
+    camera move (0,-116) time 3
+    pause 1
+    wait
+    camera move (0,116) time 0.5
+    camera reset
+    end

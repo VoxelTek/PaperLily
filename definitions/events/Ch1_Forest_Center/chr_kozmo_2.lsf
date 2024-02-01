@@ -1,24 +1,24 @@
 label START
-	chara set lacie at left
-	chara set kozmo at right
-	kozmo "P-p-p-p-p-please... give me a moment..." mood sweat2
-	if not repeat end
-	choice "Apologize?"
-		"Yes"
-			lacie "I'm sorry if I was rude." mood hide2
-			lacie "I'm not very good at... interacting with people either." mood sad8
-			lacie "I don't get much practice." mood reflective6
-			hide ui
-			pause 0.8
-			set ch1.forest_kozmo_upset_stutter = false
-			system refresh
-			pause 0.5
-			kozmo "R-r-really?" mood tilt
-			lacie "Mhm..." mood hide3
-			lacie "I think it's okay that you stutter." mood hide2
-			lacie "At least you're still able to convey your feelings." mood hide3
-			kozmo "Thank you for reassuring me!" mood sparkle
-			lacie "(Phew...)" mood blank7
-		"No"
-			end
-	end
+    chara set lacie at left
+    chara set kozmo at right
+    kozmo "P-p-p-p-p-please... give me a moment..." mood sweat2
+    if not repeat end
+    choice "Apologize?"
+        "Yes"
+            lacie "I'm sorry if I was rude." mood hide2
+            lacie "I'm not very good at... interacting with people either." mood sad8
+            lacie "I don't get much practice." mood reflective6
+            hide ui
+            pause 0.8
+            set ch1.forest_kozmo_upset_stutter = false
+            system refresh
+            pause 0.5
+            kozmo "R-r-really?" mood tilt
+            lacie "Mhm..." mood hide3
+            lacie "I think it's okay that you stutter." mood hide2
+            lacie "At least you're still able to convey your feelings." mood hide3
+            kozmo "Thank you for reassuring me!" mood sparkle
+            lacie "(Phew...)" mood blank7
+        "No"
+            end
+    end

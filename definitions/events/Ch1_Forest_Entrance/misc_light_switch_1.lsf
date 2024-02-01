@@ -1,13 +1,13 @@
 label START
-	if var ch1.forest_entrance_gate_open jump ALREADY_OPEN
-	if repeat continue
-	audio sfx play button
-	if var ch1.forest_entrance_light_1_broken end
-	if var ch1.forest_entrance_light_1_cable_cut end
-	system call LightSwitch1
-	system refresh
-	system call CheckEvents
-	end
+    if var ch1.forest_entrance_gate_open jump ALREADY_OPEN
+    if repeat continue
+    audio sfx play button
+    if var ch1.forest_entrance_light_1_broken end
+    if var ch1.forest_entrance_light_1_cable_cut end
+    system call LightSwitch1
+    system refresh
+    system call CheckEvents
+    end
 
 label ALREADY_OPEN
-	event call event_already_open
+    event call event_already_open

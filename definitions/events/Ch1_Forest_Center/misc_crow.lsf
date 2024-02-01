@@ -1,12 +1,12 @@
 label START
-	if repeat jump SAVE
-	"A crow standing on a stump."
-	lacie "They're everywhere, huh?" mood blank1
+    if repeat jump SAVE
+    "A crow standing on a stump."
+    lacie "They're everywhere, huh?" mood blank1
 label SAVE
-	if objective ch1.kozmo_find_head inprogress jump KOZMO_NOPE
-	if objective ch1.kozmo_give_head inprogress jump KOZMO_NOPE
-	system save
-	end
+    if objective ch1.kozmo_find_head inprogress jump KOZMO_NOPE
+    if objective ch1.kozmo_give_head inprogress jump KOZMO_NOPE
+    system save
+    end
 
 label KOZMO_NOPE
-	"Now is not the time for that."
+    "Now is not the time for that."

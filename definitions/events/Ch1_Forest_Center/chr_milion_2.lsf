@@ -1,17 +1,17 @@
 label START
-	chara set lacie at left
-	chara set milion at right
-	if repeat 3 jump 3RD
-	if repeat jump 2ND
-	lacie "So after I find 8 more moths I'll get rewarded?" mood blank1
-	milion "As I stated, it's nothing but a myth." mood reflective6
-	end
+    chara set lacie at left
+    chara set milion at right
+    if repeat 3 jump 3RD
+    if repeat jump 2ND
+    lacie "So after I find 8 more moths I'll get rewarded?" mood blank1
+    milion "As I stated, it's nothing but a myth." mood reflective6
+    end
 
 label 2ND
-	lacie "So... What kind of reward would it be?" mood blank6
-	milion "I'll discuss no further with you." mood annoyed3
-	end
+    lacie "So... What kind of reward would it be?" mood blank6
+    milion "I'll discuss no further with you." mood annoyed3
+    end
 
 label 3RD
-	"Milion is ignoring you."
-	end
+    "Milion is ignoring you."
+    end

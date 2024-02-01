@@ -1,32 +1,32 @@
 label START
-	if var ch1.blackpass_classroom_opened_wardrobe jump PUSH
-	audio sfx play wardrobe_open
-	pause 0.1
-	system call OpenWardrobe
-	pause 2
-	set ch1.blackpass_classroom_opened_wardrobe = true
-	jump PUSH
+    if var ch1.blackpass_classroom_opened_wardrobe jump PUSH
+    audio sfx play wardrobe_open
+    pause 0.1
+    system call OpenWardrobe
+    pause 2
+    set ch1.blackpass_classroom_opened_wardrobe = true
+    jump PUSH
 
 label PUSH
-	"(A strong force prevents you from entering the wardrobe.)"
-	choice "(Push through?)"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	audio bgm stop time 4
-	fade out
-	pause 3
-	chara lock
-	lacie "Out... of my way...!"
-	hide ui
-	chara unlock
-	pause 2
-	fade flash color white
-	pause 1.5
-	audio sfx play thud2
-	objective complete ch1.blackpass_4_leave
-	system clear-inventory
-	event queue ch1_event_mk_cage_escape
-	end
+    "(A strong force prevents you from entering the wardrobe.)"
+    choice "(Push through?)"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    audio bgm stop time 4
+    fade out
+    pause 3
+    chara lock
+    lacie "Out... of my way...!"
+    hide ui
+    chara unlock
+    pause 2
+    fade flash color white
+    pause 1.5
+    audio sfx play thud2
+    objective complete ch1.blackpass_4_leave
+    system clear-inventory
+    event queue ch1_event_mk_cage_escape
+    end

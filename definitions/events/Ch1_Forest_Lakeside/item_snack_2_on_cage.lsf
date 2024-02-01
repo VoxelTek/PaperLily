@@ -1,8 +1,8 @@
 label START
-	fade out
-	item remove ch1.forest_harmless_snack_2
-	set ch1.forest_lakeside_cage_content = "snack2"
-	system refresh
-	pause 1
-	fade in
-	end
+    fade out
+    item remove ch1.forest_harmless_snack_2
+    set ch1.forest_lakeside_cage_content = "snack2"
+    system refresh
+    pause 1
+    fade in
+    end

@@ -1,4 +1,4 @@
 label START
-	lacie "What should I be doing with these?" mood blank1
-	ch1_spider "They're probably related to that canvas over there."
-	ch1_spider "Maybe you use them to make paint."
+    lacie "What should I be doing with these?" mood blank1
+    ch1_spider "They're probably related to that canvas over there."
+    ch1_spider "Maybe you use them to make paint."

@@ -1,6 +1,6 @@
 label START
-	"A fairy head, or something."
-	if var ch1.forest_fairyring_nostrils
-		"Its nostrils are weird."
-	else
-		"Its eyes look creepy..."
+    "A fairy head, or something."
+    if var ch1.forest_fairyring_nostrils
+        "Its nostrils are weird."
+    else
+        "Its eyes look creepy..."

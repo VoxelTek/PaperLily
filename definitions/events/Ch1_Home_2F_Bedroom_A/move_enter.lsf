@@ -1,6 +1,6 @@
 label START
-	if not var general.chapter == 1 end
-	if var ch1.home_ritualstarted end
-	event call ch1_event_ritualstart
-	end
+    if not var general.chapter == 1 end
+    if var ch1.home_ritualstarted end
+    event call ch1_event_ritualstart
+    end
 

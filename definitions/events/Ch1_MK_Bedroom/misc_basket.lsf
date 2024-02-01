@@ -1,10 +1,10 @@
 label START
-	"A large basket filled with toys."
-	if repeat end
-	if var general.serious end
-	lacie "What is all of this..?" mood blank5
-	if character sai
-		sai "Any remote-controlled cars or stuff in there?" mood surprised2
-		lacie "Mmm... no." mood blank4
-		lacie "That's oddly specific." mood blank8
-		sai "They're fun." mood happy2
+    "A large basket filled with toys."
+    if repeat end
+    if var general.serious end
+    lacie "What is all of this..?" mood blank5
+    if character sai
+        sai "Any remote-controlled cars or stuff in there?" mood surprised2
+        lacie "Mmm... no." mood blank4
+        lacie "That's oddly specific." mood blank8
+        sai "They're fun." mood happy2

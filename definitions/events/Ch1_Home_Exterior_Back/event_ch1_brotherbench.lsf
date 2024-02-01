@@ -1,5 +1,5 @@
 label START
-	if repeat end
-	if not var general.chapter == 1 end
-	if not var general.part_of_day == "evening" end
-	event call ch1_event_brotherbench
+    if repeat end
+    if not var general.chapter == 1 end
+    if not var general.part_of_day == "evening" end
+    event call ch1_event_brotherbench

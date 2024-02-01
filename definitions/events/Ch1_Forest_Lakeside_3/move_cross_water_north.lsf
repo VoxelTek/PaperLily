@@ -1,6 +1,6 @@
 label START
-	if not var ch1.forest_lakeside_pushed_log
-		"It's too far to jump."
-		end
-	move to Ch1_Forest_Lakeside_3 point cross_log_south
-	end
+    if not var ch1.forest_lakeside_pushed_log
+        "It's too far to jump."
+        end
+    move to Ch1_Forest_Lakeside_3 point cross_log_south
+    end

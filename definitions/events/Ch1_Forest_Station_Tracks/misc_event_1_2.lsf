@@ -1,6 +1,6 @@
 label START
-	if not var ch1.forest_station_tracks_stage == 1 end
-	if not var ch1.forest_station_correct_path == 2 end
-	if var ch1.forest_station_seen_mid end
-	set ch1.forest_station_seen_mid = true
-	action call play_event_1_mid
+    if not var ch1.forest_station_tracks_stage == 1 end
+    if not var ch1.forest_station_correct_path == 2 end
+    if var ch1.forest_station_seen_mid end
+    set ch1.forest_station_seen_mid = true
+    action call play_event_1_mid

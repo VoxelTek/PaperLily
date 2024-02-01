@@ -1,3 +1,3 @@
 label START
-	chara set alba at right
-	alba "You don't need that. My fish already taste great without it." mood huh
+    chara set alba at right
+    alba "You don't need that. My fish already taste great without it." mood huh

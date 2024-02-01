@@ -1,24 +1,24 @@
 label START
-	"My digital alarm clock."
-	if not var general.chapter == 1 end
-	if not objective ch1.prepare_ritual inprogress end
-	if objective ch1.prepare_ritual.set_alarm_clock done jump CH1_ALREADY_SET
-	if not objective ch1.prepare_ritual.set_alarm_clock inprogress end
-	lacie "I'm so used to pushing snooze on this thing-" mood blank2
-	lacie "I hope I don't do it again out of reflex and ruin the ritual." mood blank8
-	choice "Set it for midnight?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	pause 1
-	"It's done."
-	objective complete ch1.prepare_ritual.set_alarm_clock
-	end
+    "My digital alarm clock."
+    if not var general.chapter == 1 end
+    if not objective ch1.prepare_ritual inprogress end
+    if objective ch1.prepare_ritual.set_alarm_clock done jump CH1_ALREADY_SET
+    if not objective ch1.prepare_ritual.set_alarm_clock inprogress end
+    lacie "I'm so used to pushing snooze on this thing-" mood blank2
+    lacie "I hope I don't do it again out of reflex and ruin the ritual." mood blank8
+    choice "Set it for midnight?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 1
+    "It's done."
+    objective complete ch1.prepare_ritual.set_alarm_clock
+    end
 
 
 label CH1_ALREADY_SET
-	"It's set to ring at midnight."
-	end
+    "It's set to ring at midnight."
+    end
 

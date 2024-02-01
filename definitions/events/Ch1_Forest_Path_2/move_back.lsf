@@ -1,4 +1,4 @@
 label START
-	set ch1.forest_path_1_opened_exit = true
-	move to Ch1_Forest_Path_1 point exit_north
-	end
+    set ch1.forest_path_1_opened_exit = true
+    move to Ch1_Forest_Path_1 point exit_north
+    end

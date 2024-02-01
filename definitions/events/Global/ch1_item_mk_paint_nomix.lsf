@@ -1,9 +1,9 @@
 label START
-	if repeat
-		"You don't want to mix them."
-		end
-	lacie "I don't want to mix them..." mood default
-	if character sai
-		sai "You can make even more colors if you mix them." mood blank11
-		lacie "I know that." mood blank1
-	end
+    if repeat
+        "You don't want to mix them."
+        end
+    lacie "I don't want to mix them..." mood default
+    if character sai
+        sai "You can make even more colors if you mix them." mood blank11
+        lacie "I know that." mood blank1
+    end

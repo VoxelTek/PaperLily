@@ -1,17 +1,17 @@
 label START
-	system achievement CH1_SECRET_PASSAGE
-	set ch1.forest_red_took_passage = true
-	set ch1.forest_lockedsite_clear = true
-	fade out
-	objective clear
-	objective add ch1.forest_find_lighthouse
-	objective silence
-	audio bgm stop
-	audio bgm override on silent
-	move to Ch1_Forest_Lakeside_3 point from_passage time 0
-	system call OpenHiddenDoor1
-	fade in
-	system call OpenHiddenDoor2
-	pause 6
-	audio bgm override off
-	end
+    system achievement CH1_SECRET_PASSAGE
+    set ch1.forest_red_took_passage = true
+    set ch1.forest_lockedsite_clear = true
+    fade out
+    objective clear
+    objective add ch1.forest_find_lighthouse
+    objective silence
+    audio bgm stop
+    audio bgm override on silent
+    move to Ch1_Forest_Lakeside_3 point from_passage time 0
+    system call OpenHiddenDoor1
+    fade in
+    system call OpenHiddenDoor2
+    pause 6
+    audio bgm override off
+    end

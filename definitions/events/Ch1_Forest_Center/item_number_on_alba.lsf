@@ -1,5 +1,5 @@
 label START
-	chara set lacie at left
-	chara set alba at right
-	alba "You cannot exchange that for a fish, if that's what you're thinking." mood annoyed2
-	lacie "Alright." mood default
+    chara set lacie at left
+    chara set alba at right
+    alba "You cannot exchange that for a fish, if that's what you're thinking." mood annoyed2
+    lacie "Alright." mood default

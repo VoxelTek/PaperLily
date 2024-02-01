@@ -1,4 +1,4 @@
 label START
-	set ch1.forest_red_entrance_stage = 1
-	move to Ch1_Forest_Red point path2_back
-	end
+    set ch1.forest_red_entrance_stage = 1
+    move to Ch1_Forest_Red point path2_back
+    end

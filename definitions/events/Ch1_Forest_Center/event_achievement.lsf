@@ -1,4 +1,4 @@
 label START
-	if not var ch1.forest_center_campfire_on end
-	if repeat end
-	system achievement CH1_TRIO
+    if not var ch1.forest_center_campfire_on end
+    if repeat end
+    system achievement CH1_TRIO

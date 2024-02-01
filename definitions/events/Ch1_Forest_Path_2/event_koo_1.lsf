@@ -1,3 +1,3 @@
 label START
-	if repeat end
-	audio sfx play ch1_bells
+    if repeat end
+    audio sfx play ch1_bells

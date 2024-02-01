@@ -1,29 +1,29 @@
 label START
-	if not var persistent.ch1_read_curse_notes_stone jump DONT_KNOW
-	if not item ch1.mushrooms jump MISSING_ITEMS
-	if not item ch1.cursed_wood jump MISSING_ITEMS
-	if not item ch1.kett_flower jump MISSING_FLOWER
-	fade out
-	pause 1
-	item remove ch1.mushrooms
-	item remove ch1.cursed_wood
-	item remove ch1.kett_flower
-	item add ch1.forest_stone_cure
-	fade in
-	end
+    if not var persistent.ch1_read_curse_notes_stone jump DONT_KNOW
+    if not item ch1.mushrooms jump MISSING_ITEMS
+    if not item ch1.cursed_wood jump MISSING_ITEMS
+    if not item ch1.kett_flower jump MISSING_FLOWER
+    fade out
+    pause 1
+    item remove ch1.mushrooms
+    item remove ch1.cursed_wood
+    item remove ch1.kett_flower
+    item add ch1.forest_stone_cure
+    fade in
+    end
 
 label MISSING_ITEMS
-	lacie "I still don't have all the ingredients to make this..." mood blank3
-	end
+    lacie "I still don't have all the ingredients to make this..." mood blank3
+    end
 
 label MISSING_FLOWER
-	lacie "I'm missing \"Artist's Inspiration\"..." mood confused
-	if var ch1.forest_kett_asked_about_flowers
-		lacie "Could it be Kett's flowers?" mood thinking3
-		end
-	lacie "What in the world is that?" mood confused3
-	end
+    lacie "I'm missing \"Artist's Inspiration\"..." mood confused
+    if var ch1.forest_kett_asked_about_flowers
+        lacie "Could it be Kett's flowers?" mood thinking3
+        end
+    lacie "What in the world is that?" mood confused3
+    end
 
 label DONT_KNOW
-	"(You don't know what to do with this...)"
-	end
+    "(You don't know what to do with this...)"
+    end

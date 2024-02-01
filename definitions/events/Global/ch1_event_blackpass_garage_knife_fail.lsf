@@ -1,23 +1,23 @@
 label START
-	if not item ch1.blackpass_knife
-		system call StopSwirl
-		audio bgm stop time 4
-		action turn down
-		lacie "I- I don't feel so good..." mood reflective6
-		hide ui
-		system call LacieCollapse
-		pause 1
-		audio sfx play thud2
-		pause 3
-		fade out
-		set ch1.blackpass_finished_closet_search = true
-		item add ch1.blackpass_knife silent
-		move to Ch1_BlackPass_Kitchen point from_garage time 0
-		pause 4
-		fade in
-		pause 0.5
-		lacie "...What happened?" mood concerned
-		hide ui
-		pause 1
-		lacie "Ah... looks like I got the knife somehow." mood blank4
-		audio bgm play ch1_blackpass
+    if not item ch1.blackpass_knife
+        system call StopSwirl
+        audio bgm stop time 4
+        action turn down
+        lacie "I- I don't feel so good..." mood reflective6
+        hide ui
+        system call LacieCollapse
+        pause 1
+        audio sfx play thud2
+        pause 3
+        fade out
+        set ch1.blackpass_finished_closet_search = true
+        item add ch1.blackpass_knife silent
+        move to Ch1_BlackPass_Kitchen point from_garage time 0
+        pause 4
+        fade in
+        pause 0.5
+        lacie "...What happened?" mood concerned
+        hide ui
+        pause 1
+        lacie "Ah... looks like I got the knife somehow." mood blank4
+        audio bgm play ch1_blackpass

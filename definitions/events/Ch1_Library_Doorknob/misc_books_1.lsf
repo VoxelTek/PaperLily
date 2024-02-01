@@ -1,13 +1,13 @@
 label START
-	choice "An untitled book stands out. Read a passage?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	pause 0.5
-	audio sfx play paper
-	pause 0.5
-	"Variations of rituals ______carefully documented ______ recipient."
-	"Any human that enters ______ by way of a ritual is carefully tracked."
-	"No accounts of humans infiltrating by their own means exist, _________ easily detected."
+    choice "An untitled book stands out. Read a passage?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    pause 0.5
+    "Variations of rituals ______carefully documented ______ recipient."
+    "Any human that enters ______ by way of a ritual is carefully tracked."
+    "No accounts of humans infiltrating by their own means exist, _________ easily detected."

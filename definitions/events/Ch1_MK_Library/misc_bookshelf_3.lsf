@@ -1,17 +1,17 @@
 label START
-	event call misc_bookshelf
-	if var general.serious end
-	"One of them stands out."
-	choice "Read a passage?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	pause 0.5
-	audio sfx play paper
-	pause 0.5
-	"I don't think you should be testing on her anymore.\" color \"#B0BEC5"
-	"Her powers hold potential, I wish to entertain this idea a little longer.\" color \"#80DEEA"
-	"She's incapable of any sort of coherent thought.\" color \"#B0BEC5"
-	"We're just wasting souls on her.\" color \"#B0BEC5"
+    event call misc_bookshelf
+    if var general.serious end
+    "One of them stands out."
+    choice "Read a passage?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    pause 0.5
+    "I don't think you should be testing on her anymore.\" color \"#B0BEC5"
+    "Her powers hold potential, I wish to entertain this idea a little longer.\" color \"#80DEEA"
+    "She's incapable of any sort of coherent thought.\" color \"#B0BEC5"
+    "We're just wasting souls on her.\" color \"#B0BEC5"

@@ -1,4 +1,4 @@
 label START
-	audio sfx play door_2
-	set ch1.facility_bathroom_stall_1_open = true
-	end
+    audio sfx play door_2
+    set ch1.facility_bathroom_stall_1_open = true
+    end

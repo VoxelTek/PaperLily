@@ -1,134 +1,134 @@
 label START
-	if var ch1.blackpass_classroom_cutscene_stage == 4 jump DONE
-	if var ch1.blackpass_classroom_cutscene_stage == 3 jump ADVANCED_BULLYING
-	lacie "..." mood sad4
-	lacie "This isn't my fault..." mood sad5
-	chara rename unknown to "misc.characters.student_bully"
-	unknown "Can't believe you're still acting innocent."
-	unknown "You disgust me."
-	unknown "You cause nothing but ruin everywhere you go!"
-	lacie "I-I'm sorry... I'm really sorry... I don't do it on purpose... I didn't do anything..." mood scared
-	unknown "Maybe you SHOULD do something..."
-	lacie "...Huh?" mood scared3
-	unknown "...To make it up to us. Why don't you take responsibility for messing up everything?"
-	lacie "....." mood sad4
-	lacie "...H-How...?" mood sad5
-	unknown "Hmmm."
-	chara rename unknown to "misc.characters.student"
-	unknown "Make her eat it!"
-	unknown "Yeah! Eat the bird!"
-	lacie "...What..?!" mood superscared
-	chara rename unknown to "misc.characters.student_bully"
-	unknown "You heard them."
-	unknown "Eat it, witch."
-	lacie "....." mood superscared4
-	chara rename unknown to "misc.characters.student"
-	unknown "If you eat it, maybe we'll forgive you."
-	set ch1.blackpass_classroom_cutscene_stage = 3
-	move to Ch1_BlackPass_Classroom point cutscene_stage_3
-	chara rename unknown to "misc.characters.student_bully"
-	unknown "Eat the bird, murderer."
-	end
+    if var ch1.blackpass_classroom_cutscene_stage == 4 jump DONE
+    if var ch1.blackpass_classroom_cutscene_stage == 3 jump ADVANCED_BULLYING
+    lacie "..." mood sad4
+    lacie "This isn't my fault..." mood sad5
+    chara rename unknown to "misc.characters.student_bully"
+    unknown "Can't believe you're still acting innocent."
+    unknown "You disgust me."
+    unknown "You cause nothing but ruin everywhere you go!"
+    lacie "I-I'm sorry... I'm really sorry... I don't do it on purpose... I didn't do anything..." mood scared
+    unknown "Maybe you SHOULD do something..."
+    lacie "...Huh?" mood scared3
+    unknown "...To make it up to us. Why don't you take responsibility for messing up everything?"
+    lacie "....." mood sad4
+    lacie "...H-How...?" mood sad5
+    unknown "Hmmm."
+    chara rename unknown to "misc.characters.student"
+    unknown "Make her eat it!"
+    unknown "Yeah! Eat the bird!"
+    lacie "...What..?!" mood superscared
+    chara rename unknown to "misc.characters.student_bully"
+    unknown "You heard them."
+    unknown "Eat it, witch."
+    lacie "....." mood superscared4
+    chara rename unknown to "misc.characters.student"
+    unknown "If you eat it, maybe we'll forgive you."
+    set ch1.blackpass_classroom_cutscene_stage = 3
+    move to Ch1_BlackPass_Classroom point cutscene_stage_3
+    chara rename unknown to "misc.characters.student_bully"
+    unknown "Eat the bird, murderer."
+    end
 
 label ADVANCED_BULLYING
-	if item ch1.blackpass_knife jump WITH_KNIFE
-	lacie "(This isn't real...)" mood shadow2
-	choice "(Do I really have to do this...?)"
-		"Eat the bird"
-			jump EAT_IT
-		"Do not"
-			set ch1.blackpass_classroom_can_take_knife = true
-		"Take the _____" if var ch1.blackpass_classroom_can_take_knife
-			jump TAKE_KNIFE
-	end
+    if item ch1.blackpass_knife jump WITH_KNIFE
+    lacie "(This isn't real...)" mood shadow2
+    choice "(Do I really have to do this...?)"
+        "Eat the bird"
+            jump EAT_IT
+        "Do not"
+            set ch1.blackpass_classroom_can_take_knife = true
+        "Take the _____" if var ch1.blackpass_classroom_can_take_knife
+            jump TAKE_KNIFE
+    end
 
 label EAT_IT
-	set ch1.blackpass_classroom_killed_bird = true
-	set general.blackpass_red_item_3_spawned = true
-	lacie "(Will this get them to stop...?)" mood shadow
-	fade out
-	pause 1
-	audio sfx play ch1_cut_bird
-	pause 4
-	audio sfx play ch1_munch_2
-	pause 2
-	chara rename unknown to "misc.characters.student"
-	lacie "(Ugh... I feel sick...)" mood sick
-	unknown "She actually did it! She's insane!"
-	unknown "She's such a freak! HAHAHAHA!"
-	unknown "HAHAHAHA It's all bloody now!"
-	unknown "HAHAHAHAHA"
-	chara rename unknown to "misc.characters.student_all"
-	unknown "HAHAHAHAHAHAHAHAHAHAHA"
-	hide ui
-	chara rename unknown off
-	set ch1.blackpass_classroom_cutscene_stage = 4
-	move to Ch1_BlackPass_Classroom point cutscene_stage_3 time 0
-	system running off
-	system call SetLacieShadow
-	pause 1.5
-	fade in
-	end
+    set ch1.blackpass_classroom_killed_bird = true
+    set general.blackpass_red_item_3_spawned = true
+    lacie "(Will this get them to stop...?)" mood shadow
+    fade out
+    pause 1
+    audio sfx play ch1_cut_bird
+    pause 4
+    audio sfx play ch1_munch_2
+    pause 2
+    chara rename unknown to "misc.characters.student"
+    lacie "(Ugh... I feel sick...)" mood sick
+    unknown "She actually did it! She's insane!"
+    unknown "She's such a freak! HAHAHAHA!"
+    unknown "HAHAHAHA It's all bloody now!"
+    unknown "HAHAHAHAHA"
+    chara rename unknown to "misc.characters.student_all"
+    unknown "HAHAHAHAHAHAHAHAHAHAHA"
+    hide ui
+    chara rename unknown off
+    set ch1.blackpass_classroom_cutscene_stage = 4
+    move to Ch1_BlackPass_Classroom point cutscene_stage_3 time 0
+    system running off
+    system call SetLacieShadow
+    pause 1.5
+    fade in
+    end
 
 label TAKE_KNIFE
-	item add ch1.blackpass_knife
-	set ch1.blackpass_classroom_took_knife = true
-	system refresh
-	lacie "..." mood shadow4
-	choice "..."
-		"Stab self"
-			jump STAB_SELF
-		"Do not"
-			end
-	end
+    item add ch1.blackpass_knife
+    set ch1.blackpass_classroom_took_knife = true
+    system refresh
+    lacie "..." mood shadow4
+    choice "..."
+        "Stab self"
+            jump STAB_SELF
+        "Do not"
+            end
+    end
 
 label STAB_SELF
-	lacie "(This dream...)" mood reflective3
-	lacie "(The easiest way to get out...)"
-	audio bgm stop time 4
-	lacie "(It's obvious, isn't it?)"
-	hide ui
-	chara lock
-	cg show black time 1
-	pause 2
-	audio sfx play hit
-	fade flash color "#850000"
-	pause 1
-	lacie "...Ah! It hurts! ...it hurts..."
-	hide ui
-	pause 2
-	audio sfx play heartbeat_3
-	fade flash color "#850000"
-	pause 2
-	lacie "...When am I waking up..."
-	lacie "...Let this stupid... nightmare... end..."
-	hide ui
-	pause 2
-	audio sfx play heartbeat_3
-	fade flash color "#850000"
-	pause 2
-	lacie "...Why..."
-	lacie "...It's just a dream... so why..."
-	hide ui
-	pause 2
-	lacie "...It hurts..."
-	hide ui
-	chara unlock
-	chara rename unknown off
-	system achievement CH1_PRESS_STAB_TO_WAKE
-	event queue ch1_death_bleed
-	end
+    lacie "(This dream...)" mood reflective3
+    lacie "(The easiest way to get out...)"
+    audio bgm stop time 4
+    lacie "(It's obvious, isn't it?)"
+    hide ui
+    chara lock
+    cg show black time 1
+    pause 2
+    audio sfx play hit
+    fade flash color "#850000"
+    pause 1
+    lacie "...Ah! It hurts! ...it hurts..."
+    hide ui
+    pause 2
+    audio sfx play heartbeat_3
+    fade flash color "#850000"
+    pause 2
+    lacie "...When am I waking up..."
+    lacie "...Let this stupid... nightmare... end..."
+    hide ui
+    pause 2
+    audio sfx play heartbeat_3
+    fade flash color "#850000"
+    pause 2
+    lacie "...Why..."
+    lacie "...It's just a dream... so why..."
+    hide ui
+    pause 2
+    lacie "...It hurts..."
+    hide ui
+    chara unlock
+    chara rename unknown off
+    system achievement CH1_PRESS_STAB_TO_WAKE
+    event queue ch1_death_bleed
+    end
 
 label WITH_KNIFE
-	choice "..."
-		"Eat the bird"
-			jump EAT_IT
-		"Stab self"
-			jump STAB_SELF
-		"Do nothing"
-			end
-	end
+    choice "..."
+        "Eat the bird"
+            jump EAT_IT
+        "Stab self"
+            jump STAB_SELF
+        "Do nothing"
+            end
+    end
 
 label DONE
-	"There's nothing else to do here."
-	end
+    "There's nothing else to do here."
+    end

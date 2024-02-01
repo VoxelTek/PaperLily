@@ -1,11 +1,11 @@
 label START
-	if var ch1.forest_lakeside_took_bucket end
-	"There's a bucket here."
-	choice "Take ${item:ch1.bucket}?"
-		"Yes"
-			set ch1.forest_lakeside_took_bucket = true
-			system refresh
-			item add ch1.bucket
-		"No"
-			continue
-	end
+    if var ch1.forest_lakeside_took_bucket end
+    "There's a bucket here."
+    choice "Take ${item:ch1.bucket}?"
+        "Yes"
+            set ch1.forest_lakeside_took_bucket = true
+            system refresh
+            item add ch1.bucket
+        "No"
+            continue
+    end

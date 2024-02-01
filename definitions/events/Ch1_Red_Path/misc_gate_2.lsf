@@ -1,9 +1,9 @@
 label START
-	set ch1.forest_red_passage_gate_2_seen = false
-	"The gate is locked. A keypad is attached to it."
-	choice "Input a code?"
-		"Yes"
-			system minigame ch1_input_red_gate_2
-		"No"
-			continue
-	end
+    set ch1.forest_red_passage_gate_2_seen = false
+    "The gate is locked. A keypad is attached to it."
+    choice "Input a code?"
+        "Yes"
+            system minigame ch1_input_red_gate_2
+        "No"
+            continue
+    end

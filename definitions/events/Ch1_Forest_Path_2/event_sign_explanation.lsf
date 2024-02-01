@@ -1,5 +1,5 @@
 label START
-	if repeat end
-	"There's another signpost here. It's loose, so it can be rotated."
-	lacie "Alright, I think I understand." mood thinking
-	objective add ch1.rotate_signs
+    if repeat end
+    "There's another signpost here. It's loose, so it can be rotated."
+    lacie "Alright, I think I understand." mood thinking
+    objective add ch1.rotate_signs

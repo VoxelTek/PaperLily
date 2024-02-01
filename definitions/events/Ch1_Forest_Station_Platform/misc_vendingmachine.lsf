@@ -1,25 +1,25 @@
 label START
-	"A coin-operated vending machine. It's filled with normal-looking snacks."
-	choice "Buy something?"
-		"Potato chips (1 coin)"
-			if var general.currency_demon >= 1
-				system retry-save
-				set general.currency_demon --
-				item add ch1.forest_harmless_snack
-				jump TRY_SNACK
-			jump NOT_ENOUGH_MONEY
-		"Do not buy"
-			end
-	end
+    "A coin-operated vending machine. It's filled with normal-looking snacks."
+    choice "Buy something?"
+        "Potato chips (1 coin)"
+            if var general.currency_demon >= 1
+                system retry-save
+                set general.currency_demon --
+                item add ch1.forest_harmless_snack
+                jump TRY_SNACK
+            jump NOT_ENOUGH_MONEY
+        "Do not buy"
+            end
+    end
 
 label NOT_ENOUGH_MONEY
-	"You don't have enough coins..."
-	end
+    "You don't have enough coins..."
+    end
 
 label TRY_SNACK
-	lacie "This... looks like a regular pack of chips." mood blank5
-	choice "Eat the ${item:ch1.forest_harmless_snack}?"
-		"Yes"
-			event call ch1_ending_1_5
-		"No"
-			end
+    lacie "This... looks like a regular pack of chips." mood blank5
+    choice "Eat the ${item:ch1.forest_harmless_snack}?"
+        "Yes"
+            event call ch1_ending_1_5
+        "No"
+            end

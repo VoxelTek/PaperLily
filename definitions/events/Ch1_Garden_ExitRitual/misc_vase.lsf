@@ -1,37 +1,37 @@
 label START
-	if var ch1.garden_placed_flower jump ALREADY_DONE
-	lacie "Alright then..."
-	lacie "First, to take the real lily from the vase..." mood blank1
-	hide ui
-	pause 0.5
-	set ch1.garden_took_flower = true
-	system refresh
-	item add ch1.lily
-	pause 0.5
-	lacie "Now... to make a paper lily from my letter..." mood blank3
-	fade out
-	pause 0.5
-	audio sfx play paper
-	pause 2
-	fade in
-	lacie "And finally, to place it where the lily was." mood reflective4
-	hide ui
-	pause 0.5
-	audio sfx play door
-	set ch1.garden_placed_flower = true
-	system refresh
-	pause 2
-	lacie "It seems like it worked." mood blank5
-	if character sai
-		sai "You don't seem very impressed." mood blank5
-		lacie "I suppose with everything that's happened so far, this is just another puzzle." mood reflective8
-		sai "A puzzle, huh..." mood confused7
-	else
-		lacie "I guess it's time to go home..." mood reflective4
-	objective complete ch1.return_complete_ritual
-	objective silence
-	end
+    if var ch1.garden_placed_flower jump ALREADY_DONE
+    lacie "Alright then..."
+    lacie "First, to take the real lily from the vase..." mood blank1
+    hide ui
+    pause 0.5
+    set ch1.garden_took_flower = true
+    system refresh
+    item add ch1.lily
+    pause 0.5
+    lacie "Now... to make a paper lily from my letter..." mood blank3
+    fade out
+    pause 0.5
+    audio sfx play paper
+    pause 2
+    fade in
+    lacie "And finally, to place it where the lily was." mood reflective4
+    hide ui
+    pause 0.5
+    audio sfx play door
+    set ch1.garden_placed_flower = true
+    system refresh
+    pause 2
+    lacie "It seems like it worked." mood blank5
+    if character sai
+        sai "You don't seem very impressed." mood blank5
+        lacie "I suppose with everything that's happened so far, this is just another puzzle." mood reflective8
+        sai "A puzzle, huh..." mood confused7
+    else
+        lacie "I guess it's time to go home..." mood reflective4
+    objective complete ch1.return_complete_ritual
+    objective silence
+    end
 
 label ALREADY_DONE
-	"The paper lily is in place."
-	end
+    "The paper lily is in place."
+    end

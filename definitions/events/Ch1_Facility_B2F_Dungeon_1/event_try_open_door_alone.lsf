@@ -1,17 +1,17 @@
 label START
-	if repeat jump AGAIN
-	lacie "...This door doesn't seem to open." mood blank7
-	lacie "So I AM trapped here after all, just not in that tiny cell." mood concerned4
-	lacie "I suppose that's less bad..." mood sigh
-	if var ch1.facility_dungeon_seen_vent
-		lacie "Alright, vent it is." mood blank5
-	if not var ch1.facility_dungeon_seen_vent
-		lacie "Let's hope there's another way out." mood concerned4
-	hide ui
-	set ch1.facility_dungeon_1_checked_exit = true
-	end
+    if repeat jump AGAIN
+    lacie "...This door doesn't seem to open." mood blank7
+    lacie "So I AM trapped here after all, just not in that tiny cell." mood concerned4
+    lacie "I suppose that's less bad..." mood sigh
+    if var ch1.facility_dungeon_seen_vent
+        lacie "Alright, vent it is." mood blank5
+    if not var ch1.facility_dungeon_seen_vent
+        lacie "Let's hope there's another way out." mood concerned4
+    hide ui
+    set ch1.facility_dungeon_1_checked_exit = true
+    end
 
 label AGAIN
-	"The door won't open."
-	hide ui
-	end
+    "The door won't open."
+    hide ui
+    end

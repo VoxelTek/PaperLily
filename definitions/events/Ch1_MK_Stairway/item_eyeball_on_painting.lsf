@@ -1,27 +1,27 @@
 label START
-	if item ch1.mk_eyeball amount 2 jump PLACE_BOTH
-	item remove ch1.mk_eyeball
-	pause 0.5
-	audio sfx play squash
-	set ch1.mk_stressroom_eyes ++
-	if var ch1.mk_stressroom_eyes == 2 jump PLACED_BOTH
-	end
+    if item ch1.mk_eyeball amount 2 jump PLACE_BOTH
+    item remove ch1.mk_eyeball
+    pause 0.5
+    audio sfx play squash
+    set ch1.mk_stressroom_eyes ++
+    if var ch1.mk_stressroom_eyes == 2 jump PLACED_BOTH
+    end
 
 label PLACE_BOTH
-	item remove ch1.mk_eyeball amount 2
-	pause 0.5
-	audio sfx play squash
-	set ch1.mk_stressroom_eyes = 2
+    item remove ch1.mk_eyeball amount 2
+    pause 0.5
+    audio sfx play squash
+    set ch1.mk_stressroom_eyes = 2
 label PLACED_BOTH
-	system call ShowBothEyes
-	pause 1
-	fade out
-	pause 1
-	audio sfx play wall
-	system refresh
-	pause 1
-	fade in
-	if item ch1.mk_eyeball
-		pause 0.5
-		item remove ch1.mk_eyeball
-		"(You discarded the extra eye.)"
+    system call ShowBothEyes
+    pause 1
+    fade out
+    pause 1
+    audio sfx play wall
+    system refresh
+    pause 1
+    fade in
+    if item ch1.mk_eyeball
+        pause 0.5
+        item remove ch1.mk_eyeball
+        "(You discarded the extra eye.)"

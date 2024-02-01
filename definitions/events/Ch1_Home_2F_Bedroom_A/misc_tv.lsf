@@ -1,5 +1,5 @@
 label START
-	if var general.serious
-		"A TV."
-		end
-	"This TV is solely used to dock the game console."
+    if var general.serious
+        "A TV."
+        end
+    "This TV is solely used to dock the game console."

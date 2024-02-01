@@ -1,7 +1,7 @@
 label START
-	if var ch1.temp_blackpass_closetsearch_inprogress jump TRAPPED
-	move to Ch1_BlackPass_Kitchen point from_garage
-	end
+    if var ch1.temp_blackpass_closetsearch_inprogress jump TRAPPED
+    move to Ch1_BlackPass_Kitchen point from_garage
+    end
 
 label TRAPPED
-	"It won't open!"
+    "It won't open!"

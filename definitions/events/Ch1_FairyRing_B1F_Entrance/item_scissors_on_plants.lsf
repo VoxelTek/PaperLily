@@ -1,7 +1,7 @@
 label START
-	if repeat jump 2ND
-	lacie "There's probably no point, this one didn't even do anything." mood blank7
-	end
+    if repeat jump 2ND
+    lacie "There's probably no point, this one didn't even do anything." mood blank7
+    end
 
 label 2ND
-	"Nothing good can come out of stabbing every single plant you see."
+    "Nothing good can come out of stabbing every single plant you see."

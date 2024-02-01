@@ -1,5 +1,5 @@
 label START
-	"Some incomplete notes on removing curses."
-	if repeat end
-	lacie "I don't really understand any of this." mood blank4
-	end
+    "Some incomplete notes on removing curses."
+    if repeat end
+    lacie "I don't really understand any of this." mood blank4
+    end

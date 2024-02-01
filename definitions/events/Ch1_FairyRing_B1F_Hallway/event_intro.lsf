@@ -1,78 +1,78 @@
 label START
-	if repeat end
-	if not var ch1.forest_fairyring_rescued_aoi end
-	chara set lacie at left
-	chara set aoi at right
-	if var ch1.forest_fairyring_seen_blockade
-		lacie "(Huh... the path is open now.)" mood blank1
-	aoi "We need to walk slowly... and uh... keep an eye out." mood worried4
-	action turn right
-	lacie "Keep an eye out for what?" mood blank1
-	aoi "For... fairies." mood scared2
-	if var ch1.forest_seen_rune
-		aoi "Don't you know what this place is!?" mood sad7
-	else
-		aoi "Lacie, don't you know what this place is!?" mood sad7
-	lacie "...No, not really." mood blank6
-	aoi "...!" mood panic
-	if var ch1.forest_seen_rune
-		aoi "This is the inside of a fairy ring!" mood sad9
-	else
-		aoi "Lacie, this is the inside of a fairy ring!" mood sad9
-	lacie "Um..." mood blank7
-	lacie "...The mushroom circle from outside?" mood blank3
-	aoi "Yep. That's a fairy ring." mood scared11
-	lacie "So this place is..." mood confused
-	lacie "Underneath that circle?" mood blank6
-	aoi "Yeah." mood scared11
-	lacie "Oh." mood blank7
-	lacie "Can you tell me more?" mood blank4
-	aoi "Let's see... I only know the things everyone talks about." mood worried5
-	aoi "For one, fairies live in fairy rings, and they're really nasty." mood worried6
-	lacie "(Fairies...)" mood thinking3
-	aoi "They look nasty too, they have this egg-shaped head that's seperated from their body, and they're white, and they have big teeth! And some don't have eyes!" mood sad9
-	lacie "..." mood thinking4
-	aoi "But even without the fairies, winding up inside of a fairy ring is..." mood scared4
-	aoi "Well, they say you get stuck here for 7 years." mood scared6
-	aoi "But nobody has ever escaped because they usually just die before that." mood scared5
-	aoi "Oh god this is horrible, we're not gonna escape!" mood panic6
-	aoi "Even if we somehow make it 7 years, that's only a myth!" mood panic8
-	aoi "Maybe it's meant to instill hope in the poor souls that end up here!" mood melt12
-	aoi "LIKE US! THIS IS A DEAD END!!!" mood melt10
-	lacie "Aoi." mood default
-	aoi "...?" mood melt5
-	hide ui
-	cg show ch1/aoi_scissors
-	pause 0.5
-	lacie "Cut it off."
-	aoi "..."
-	aoi "Sorry."
-	hide ui
-	pause 0.5
-	cg hide
-	pause 1
-	lacie "Are the fairies dangerous?" mood blank8
-	aoi "Yeah..." mood worried7
-	aoi "...But everything is dangerous." mood worried9
-	aoi "The floor here is also slowly digesting us." mood worried2
-	aoi "I guess you don't feel it because you have shoes, hehe..." mood awkward4
-	aoi "I only have socks, so it's already eating away at them..." mood scared4
-	lacie "Oh." mood concerned4
-	choice "(Should I offer Aoi my shoes?)"
-		"Yes"
-			set general.aoi_love ++
-			lacie "Would you like my shoes?" mood blank2
-			aoi "Whaaat? You're offering me your own shoes?!?" mood panic
-			if var ch1.forest_seen_rune
-				aoi "That's so nice of you!" mood awkward2
-			else
-				aoi "That's so nice, Lacie!" mood awkward2
-			aoi "But no, I'll be alright. I'll just remake my feet if they start being unusable."
-			aoi "It just burns but that's okay, I'm used to burns." mood awkward3
-			aoi "...I'm used to burns..." font small mood scared7
-			lacie "Um... okay." mood confused2
-		"No"
-			lacie "(Best not...)" mood concerned5
-			lacie "(Who knows what this floor will do to my feet...)" mood concerned8
-			lacie "(This person is not human, so they will probably be fine.)"
-	end
+    if repeat end
+    if not var ch1.forest_fairyring_rescued_aoi end
+    chara set lacie at left
+    chara set aoi at right
+    if var ch1.forest_fairyring_seen_blockade
+        lacie "(Huh... the path is open now.)" mood blank1
+    aoi "We need to walk slowly... and uh... keep an eye out." mood worried4
+    action turn right
+    lacie "Keep an eye out for what?" mood blank1
+    aoi "For... fairies." mood scared2
+    if var ch1.forest_seen_rune
+        aoi "Don't you know what this place is!?" mood sad7
+    else
+        aoi "Lacie, don't you know what this place is!?" mood sad7
+    lacie "...No, not really." mood blank6
+    aoi "...!" mood panic
+    if var ch1.forest_seen_rune
+        aoi "This is the inside of a fairy ring!" mood sad9
+    else
+        aoi "Lacie, this is the inside of a fairy ring!" mood sad9
+    lacie "Um..." mood blank7
+    lacie "...The mushroom circle from outside?" mood blank3
+    aoi "Yep. That's a fairy ring." mood scared11
+    lacie "So this place is..." mood confused
+    lacie "Underneath that circle?" mood blank6
+    aoi "Yeah." mood scared11
+    lacie "Oh." mood blank7
+    lacie "Can you tell me more?" mood blank4
+    aoi "Let's see... I only know the things everyone talks about." mood worried5
+    aoi "For one, fairies live in fairy rings, and they're really nasty." mood worried6
+    lacie "(Fairies...)" mood thinking3
+    aoi "They look nasty too, they have this egg-shaped head that's seperated from their body, and they're white, and they have big teeth! And some don't have eyes!" mood sad9
+    lacie "..." mood thinking4
+    aoi "But even without the fairies, winding up inside of a fairy ring is..." mood scared4
+    aoi "Well, they say you get stuck here for 7 years." mood scared6
+    aoi "But nobody has ever escaped because they usually just die before that." mood scared5
+    aoi "Oh god this is horrible, we're not gonna escape!" mood panic6
+    aoi "Even if we somehow make it 7 years, that's only a myth!" mood panic8
+    aoi "Maybe it's meant to instill hope in the poor souls that end up here!" mood melt12
+    aoi "LIKE US! THIS IS A DEAD END!!!" mood melt10
+    lacie "Aoi." mood default
+    aoi "...?" mood melt5
+    hide ui
+    cg show ch1/aoi_scissors
+    pause 0.5
+    lacie "Cut it off."
+    aoi "..."
+    aoi "Sorry."
+    hide ui
+    pause 0.5
+    cg hide
+    pause 1
+    lacie "Are the fairies dangerous?" mood blank8
+    aoi "Yeah..." mood worried7
+    aoi "...But everything is dangerous." mood worried9
+    aoi "The floor here is also slowly digesting us." mood worried2
+    aoi "I guess you don't feel it because you have shoes, hehe..." mood awkward4
+    aoi "I only have socks, so it's already eating away at them..." mood scared4
+    lacie "Oh." mood concerned4
+    choice "(Should I offer Aoi my shoes?)"
+        "Yes"
+            set general.aoi_love ++
+            lacie "Would you like my shoes?" mood blank2
+            aoi "Whaaat? You're offering me your own shoes?!?" mood panic
+            if var ch1.forest_seen_rune
+                aoi "That's so nice of you!" mood awkward2
+            else
+                aoi "That's so nice, Lacie!" mood awkward2
+            aoi "But no, I'll be alright. I'll just remake my feet if they start being unusable."
+            aoi "It just burns but that's okay, I'm used to burns." mood awkward3
+            aoi "...I'm used to burns..." font small mood scared7
+            lacie "Um... okay." mood confused2
+        "No"
+            lacie "(Best not...)" mood concerned5
+            lacie "(Who knows what this floor will do to my feet...)" mood concerned8
+            lacie "(This person is not human, so they will probably be fine.)"
+    end

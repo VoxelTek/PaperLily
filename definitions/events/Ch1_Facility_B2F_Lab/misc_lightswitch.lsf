@@ -1,27 +1,27 @@
 label START
-	if var ch1.facility_lights_off jump NO_POWER
-	if repeat jump DONT
-	audio sfx play switch
-	audio bgm volume 0 time 0
-	set ch1.facility_lab_lights_out = true
-	system refresh
-	pause 1.2
-	audio sfx play switch
-	audio bgm volume 1 time 0
-	set ch1.facility_lab_lights_out = false
-	system refresh
-	pause 0.5
-	lacie "...Indeed, the expected outcome of a light switch." mood hide3
-	end
+    if var ch1.facility_lights_off jump NO_POWER
+    if repeat jump DONT
+    audio sfx play switch
+    audio bgm volume 0 time 0
+    set ch1.facility_lab_lights_out = true
+    system refresh
+    pause 1.2
+    audio sfx play switch
+    audio bgm volume 1 time 0
+    set ch1.facility_lab_lights_out = false
+    system refresh
+    pause 0.5
+    lacie "...Indeed, the expected outcome of a light switch." mood hide3
+    end
 
 label NO_POWER
-	audio sfx play switch
-	pause 0.5
-	audio sfx play switch
-	pause 0.5
-	"The lights aren't working right now."
-	end
+    audio sfx play switch
+    pause 0.5
+    audio sfx play switch
+    pause 0.5
+    "The lights aren't working right now."
+    end
 
 label DONT
-	"Let's not do that."
-	end
+    "Let's not do that."
+    end

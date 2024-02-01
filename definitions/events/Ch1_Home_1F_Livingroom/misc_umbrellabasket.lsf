@@ -1,12 +1,12 @@
 label START
-	if var general.serious jump SERIOUS else jump NON_SERIOUS
+    if var general.serious jump SERIOUS else jump NON_SERIOUS
 
 label SERIOUS
-	"An umbrella basket."
-	end
+    "An umbrella basket."
+    end
 
 
 label NON_SERIOUS
-	"An umbrella basket. It often gets kicked around by accident."
-	end
+    "An umbrella basket. It often gets kicked around by accident."
+    end
 

@@ -1,5 +1,5 @@
 label START
-	if var ch1.mk_rescued_sai end
-	if var general.serious end
-	chara set sai at right
-	sai "You about to start cleaning in here?" mood blank2
+    if var ch1.mk_rescued_sai end
+    if var general.serious end
+    chara set sai at right
+    sai "You about to start cleaning in here?" mood blank2

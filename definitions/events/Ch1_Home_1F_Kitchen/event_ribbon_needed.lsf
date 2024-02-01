@@ -1,8 +1,8 @@
 label START
-	if repeat jump SECOND_TIME
-	lacie "This is the cable I need to tie a red string to." mood blank1
-	end
+    if repeat jump SECOND_TIME
+    lacie "This is the cable I need to tie a red string to." mood blank1
+    end
 
 label SECOND_TIME
-	"This is the cable you should tie a red string to."
-	end
+    "This is the cable you should tie a red string to."
+    end

@@ -1,33 +1,33 @@
 label START
-	if repeat jump CHOICE
-	lacie "Now that I think about it, this is a strange location for such a large mirror." mood blank1
-	lacie "Maybe there's something behind it?" mood blank7
+    if repeat jump CHOICE
+    lacie "Now that I think about it, this is a strange location for such a large mirror." mood blank1
+    lacie "Maybe there's something behind it?" mood blank7
 label CHOICE
-	choice "Kick the mirror?"
-		"Yes"
-			hide ui
-			fade out
-			pause 1
-			audio sfx play glass_explode
-			set ch1.forest_red_cracked_mirror = true
-			system refresh
-			pause 1.5
-			fade in
-			pause 0.5
-			lacie "A door... and a keypad... for a code, I think." mood default
-			if var ch1.forest_red_prisoner_awaiting_code jump SKIP_AHEAD
-			hide ui
-			set ch1.forest_red_found_passage = true
-			move to Ch1_Red_B1F point cutscene_2
-			lacie "Is it the door behind the mirror?" mood blank8
-			event call event_prisoner_door
-			end
-		"No"
-			lacie "(Maybe there's a better way?)" mood blank4
-			end
+    choice "Kick the mirror?"
+        "Yes"
+            hide ui
+            fade out
+            pause 1
+            audio sfx play glass_explode
+            set ch1.forest_red_cracked_mirror = true
+            system refresh
+            pause 1.5
+            fade in
+            pause 0.5
+            lacie "A door... and a keypad... for a code, I think." mood default
+            if var ch1.forest_red_prisoner_awaiting_code jump SKIP_AHEAD
+            hide ui
+            set ch1.forest_red_found_passage = true
+            move to Ch1_Red_B1F point cutscene_2
+            lacie "Is it the door behind the mirror?" mood blank8
+            event call event_prisoner_door
+            end
+        "No"
+            lacie "(Maybe there's a better way?)" mood blank4
+            end
 
 label SKIP_AHEAD
-	unknown "Here you go."
-	item add ch1.red_passage_code
-	lacie "...Huh. Thanks." mood blank1
-	end
+    unknown "Here you go."
+    item add ch1.red_passage_code
+    lacie "...Huh. Thanks." mood blank1
+    end

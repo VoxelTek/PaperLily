@@ -1,5 +1,5 @@
 label START
-	"There are stairs that go further down, but it's completely flooded."
-	hide ui
-	action walk down 16
-	end
+    "There are stairs that go further down, but it's completely flooded."
+    hide ui
+    action walk down 16
+    end

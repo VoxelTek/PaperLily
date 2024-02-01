@@ -1,19 +1,19 @@
 label START
-	if not var ch1.facility_primals_can_spawn
-		if var ch1.facility_seen_cutscene_todolist
-			fade out
-			move to Ch1_Facility_B1F_Elevator point entrance time 0
-			system call SpawnTutorialEnemy
-			if var ch1.facility_lights_off
-				action call lights_on
-			fade in
-			pause 0.5
-			camera move (0,-320) time 3
-			pause 1
-			system tutorial sneaking
-			if var ch1.facility_lights_off
-				action call lights_off
-			camera reset
-			end
-	move to Ch1_Facility_B1F_Elevator point entrance
-	end
+    if not var ch1.facility_primals_can_spawn
+        if var ch1.facility_seen_cutscene_todolist
+            fade out
+            move to Ch1_Facility_B1F_Elevator point entrance time 0
+            system call SpawnTutorialEnemy
+            if var ch1.facility_lights_off
+                action call lights_on
+            fade in
+            pause 0.5
+            camera move (0,-320) time 3
+            pause 1
+            system tutorial sneaking
+            if var ch1.facility_lights_off
+                action call lights_off
+            camera reset
+            end
+    move to Ch1_Facility_B1F_Elevator point entrance
+    end

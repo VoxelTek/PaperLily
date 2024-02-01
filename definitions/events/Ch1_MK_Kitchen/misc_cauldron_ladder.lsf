@@ -1,40 +1,40 @@
 label START
-	if var ch1.mk_took_foot jump NOTHING_ELSE
-	event call event_cauldron_climb_up
-	if var ch1.mk_stirred_pot jump STIRRED
-	"It looks like some sort of stew."
-	"It's cold and it doesn't seem to have been looked after in a long time."
-	jump STIR
+    if var ch1.mk_took_foot jump NOTHING_ELSE
+    event call event_cauldron_climb_up
+    if var ch1.mk_stirred_pot jump STIRRED
+    "It looks like some sort of stew."
+    "It's cold and it doesn't seem to have been looked after in a long time."
+    jump STIR
 
 label STIRRED
-	event call ch1_event_mk_blessing_4
-	"There's a black thing sticking out from the stew."
-	choice "Take it with you?"
-		"Yes"
-			hide ui
-			pause 1.5
-			"...It seems to be part of something bigger."
-			"You can't take all of it."
-		"No"
-			continue
-	event queue event_cauldron_climb_down
-	end
+    event call ch1_event_mk_blessing_4
+    "There's a black thing sticking out from the stew."
+    choice "Take it with you?"
+        "Yes"
+            hide ui
+            pause 1.5
+            "...It seems to be part of something bigger."
+            "You can't take all of it."
+        "No"
+            continue
+    event queue event_cauldron_climb_down
+    end
 
 label NOTHING_ELSE
-	"There's nothing else of interest."
-	end
+    "There's nothing else of interest."
+    end
 
 label STIR
-	choice "Stir it up?"
-		"Yes"
-			fade out
-			pause 0.5
-			audio sfx play ch1_stir
-			set ch1.mk_stirred_pot = true
-			system refresh
-			pause 5.5
-			fade in
-			jump STIRRED
-		"No"
-			continue
-	event queue event_cauldron_climb_down
+    choice "Stir it up?"
+        "Yes"
+            fade out
+            pause 0.5
+            audio sfx play ch1_stir
+            set ch1.mk_stirred_pot = true
+            system refresh
+            pause 5.5
+            fade in
+            jump STIRRED
+        "No"
+            continue
+    event queue event_cauldron_climb_down

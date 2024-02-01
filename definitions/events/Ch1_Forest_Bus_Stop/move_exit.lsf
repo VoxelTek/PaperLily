@@ -1,16 +1,16 @@
 label START
-	if repeat jump MOVE_DIRECTLY
-	fade out
-	move to Ch1_Forest_Path_1 point enter_south direction up
-	camera unlock
-	camera move (0,-400) time 0
-	audio bgm override off
-	audio bgm play ch1_forest_q
-	fade in time 4 continue
-	camera move (0,400) time 6
-	camera reset
-	end
+    if repeat jump MOVE_DIRECTLY
+    fade out
+    move to Ch1_Forest_Path_1 point enter_south direction up
+    camera unlock
+    camera move (0,-400) time 0
+    audio bgm override off
+    audio bgm play ch1_forest_q
+    fade in time 4 continue
+    camera move (0,400) time 6
+    camera reset
+    end
 
 
 label MOVE_DIRECTLY
-	move to Ch1_Forest_Path_1 point enter_south direction up
+    move to Ch1_Forest_Path_1 point enter_south direction up

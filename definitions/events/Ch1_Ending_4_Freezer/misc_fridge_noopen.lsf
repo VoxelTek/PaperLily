@@ -1,9 +1,9 @@
 label START
-	if var ch1.temp_ending_1_4_fridge jump SEEN_ARMS
-	if repeat skip
-	"A large door with a metallic handle."
-	"It won't open."
-	end
+    if var ch1.temp_ending_1_4_fridge jump SEEN_ARMS
+    if repeat skip
+    "A large door with a metallic handle."
+    "It won't open."
+    end
 
 label SEEN_ARMS
-	"Better not to open it."
+    "Better not to open it."

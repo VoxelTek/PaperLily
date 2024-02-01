@@ -1,2 +1,2 @@
 label START
-	move to Ch1_Ending_4_ParkingLot point from_hallway
+    move to Ch1_Ending_4_ParkingLot point from_hallway

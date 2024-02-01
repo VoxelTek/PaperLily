@@ -1,13 +1,13 @@
 label START
-	item remove ch1.bird_food
-	pause 1
-	"(You filled up the bird food bowl inside.)"
-	hide ui
-	pause 0.5
-	audio sfx play paper
-	cg show ch1/ch1_todolist scene
-	pause 1
-	set ch1.todolist_task3_done = true
-	cg show ch1/ch1_todolist scene
-	pause 1
-	cg hide
+    item remove ch1.bird_food
+    pause 1
+    "(You filled up the bird food bowl inside.)"
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    cg show ch1/ch1_todolist scene
+    pause 1
+    set ch1.todolist_task3_done = true
+    cg show ch1/ch1_todolist scene
+    pause 1
+    cg hide

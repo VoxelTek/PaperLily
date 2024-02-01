@@ -1,40 +1,40 @@
 label START
-	chara set lacie at left
-	chara set alba at right
-	if var ch1.forest_center_alba_bought_all
-		event queue chr_alba_3
-		end
-	alba "Welcome."
-	alba "5 coins each."
-	choice "Buy a fish?"
-		"Buy"
-			jump BUY
-		"Buy all" if var ch1.forest_center_alba_know_offer
-			jump BUY_ALL
-		"Talk"
-			jump TALK
-		"Never mind"
-			end
-	end
+    chara set lacie at left
+    chara set alba at right
+    if var ch1.forest_center_alba_bought_all
+        event queue chr_alba_3
+        end
+    alba "Welcome."
+    alba "5 coins each."
+    choice "Buy a fish?"
+        "Buy"
+            jump BUY
+        "Buy all" if var ch1.forest_center_alba_know_offer
+            jump BUY_ALL
+        "Talk"
+            jump TALK
+        "Never mind"
+            end
+    end
 
 label BUY
-	if var general.currency_demon < 5
-		"You don't have enough coins."
-		end
-	item add ch1.forest_fish
-	set general.currency_demon -= 5
-	end
+    if var general.currency_demon < 5
+        "You don't have enough coins."
+        end
+    item add ch1.forest_fish
+    set general.currency_demon -= 5
+    end
 
 label BUY_ALL
-	if var general.currency_demon < 10
-		"You don't have enough coins."
-		end
-	item remove ch1.forest_fish amount 99
-	item add ch1.forest_fish amount 99
-	set general.currency_demon -= 10
-	set ch1.forest_center_alba_bought_all = true
-	end
+    if var general.currency_demon < 10
+        "You don't have enough coins."
+        end
+    item remove ch1.forest_fish amount 99
+    item add ch1.forest_fish amount 99
+    set general.currency_demon -= 10
+    set ch1.forest_center_alba_bought_all = true
+    end
 
 label TALK
-	event queue chr_alba_2
-	end
+    event queue chr_alba_2
+    end

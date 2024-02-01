@@ -1,7 +1,7 @@
 label START
-	if not objective ch1.revert_ritual_execution inprogress end
-	if objective ch1.revert_ritual_execution.salt_back done
-		lacie "I already salted the other door, that should be good enough." mood blank1
-		end
-	lacie "The salt probably goes on the inner door, not here." mood blank3
-	end
+    if not objective ch1.revert_ritual_execution inprogress end
+    if objective ch1.revert_ritual_execution.salt_back done
+        lacie "I already salted the other door, that should be good enough." mood blank1
+        end
+    lacie "The salt probably goes on the inner door, not here." mood blank3
+    end

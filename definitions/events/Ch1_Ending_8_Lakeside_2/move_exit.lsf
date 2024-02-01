@@ -1,8 +1,8 @@
 label START
-	if repeat
-		move to Ch1_Ending_8_Lakeside point entrance_east
-		end
-	audio ambiance stop
-	move to Ch1_Ending_8_Lakeside point entrance_east
-	audio bgm override on prologue_mistery_2
-	audio bgm play prologue_mistery_2
+    if repeat
+        move to Ch1_Ending_8_Lakeside point entrance_east
+        end
+    audio ambiance stop
+    move to Ch1_Ending_8_Lakeside point entrance_east
+    audio bgm override on prologue_mistery_2
+    audio bgm play prologue_mistery_2

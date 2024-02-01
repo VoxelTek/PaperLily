@@ -1,23 +1,23 @@
 label START
-	if var ch1.mk_painting_chase_clear
-		"The painting lady is gone."
-		end
-	"A painting of a lady."
-	"Her golden eye stands out..."
-	choice "Pull it out?"
-		"Yes"
-			fade out
-			pause 1
-			audio sfx play squash
-			pause 1
-			set ch1.mk_took_eye_lady = true
-			item add ch1.mk_eyeball
-			if var ch1.mk_stressroom_eyes == 2
-				hide ui
-				pause 0.5
-				"(You don't need an extra eye, so you discarded it.)"
-				hide ui
-			event call ch1_event_mk_painting_chase
-		"No"
-			end
-	end
+    if var ch1.mk_painting_chase_clear
+        "The painting lady is gone."
+        end
+    "A painting of a lady."
+    "Her golden eye stands out..."
+    choice "Pull it out?"
+        "Yes"
+            fade out
+            pause 1
+            audio sfx play squash
+            pause 1
+            set ch1.mk_took_eye_lady = true
+            item add ch1.mk_eyeball
+            if var ch1.mk_stressroom_eyes == 2
+                hide ui
+                pause 0.5
+                "(You don't need an extra eye, so you discarded it.)"
+                hide ui
+            event call ch1_event_mk_painting_chase
+        "No"
+            end
+    end

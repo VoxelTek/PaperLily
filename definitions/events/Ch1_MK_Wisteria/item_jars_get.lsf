@@ -1,9 +1,9 @@
 label START
-	if var ch1.mk_took_jars end
-	choice "Take ${item:ch1.mk_jar} x3?"
-		"Yes"
-			set ch1.mk_took_jars = true
-			system refresh
-			item add ch1.mk_jar amount 3
-		"No"
-			end
+    if var ch1.mk_took_jars end
+    choice "Take ${item:ch1.mk_jar} x3?"
+        "Yes"
+            set ch1.mk_took_jars = true
+            system refresh
+            item add ch1.mk_jar amount 3
+        "No"
+            end

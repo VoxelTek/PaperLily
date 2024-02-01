@@ -1,16 +1,16 @@
 label START
-	if var ch1.forest_red_took_passage
-		"That doesn't seem like a good idea."
-		end
-	if var ch1.forest_lockedsite_clear jump NO_GOING_BACK
-	system call PauseChaser
-	fade out
-	system call ChaseClear
-	audio sfx play gate
-	move to Ch1_Forest_LockedSite point after_escape time 0
-	event queue event_just_escaped
-	end
+    if var ch1.forest_red_took_passage
+        "That doesn't seem like a good idea."
+        end
+    if var ch1.forest_lockedsite_clear jump NO_GOING_BACK
+    system call PauseChaser
+    fade out
+    system call ChaseClear
+    audio sfx play gate
+    move to Ch1_Forest_LockedSite point after_escape time 0
+    event queue event_just_escaped
+    end
 
 label NO_GOING_BACK
-	lacie "There's no way I'm going back in there." mood shadow4
-	end
+    lacie "There's no way I'm going back in there." mood shadow4
+    end

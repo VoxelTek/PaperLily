@@ -1,8 +1,8 @@
 label START
-	if repeat end
-	hide ui
-	pause 1
-	system refresh
-	pause 1
-	lacie "The lights... ah... not nice." mood concerned8
-	end
+    if repeat end
+    hide ui
+    pause 1
+    system refresh
+    pause 1
+    lacie "The lights... ah... not nice." mood concerned8
+    end

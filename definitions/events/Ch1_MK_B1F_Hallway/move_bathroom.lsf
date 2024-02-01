@@ -1,11 +1,11 @@
 label START
-	if not var ch1.mk_unlocked_bathroom jump LOCKED
-	if var general.serious jump LOCKED
-	audio sfx play door
-	move to Ch1_MK_Bathroom point entrance
-	end
+    if not var ch1.mk_unlocked_bathroom jump LOCKED
+    if var general.serious jump LOCKED
+    audio sfx play door
+    move to Ch1_MK_Bathroom point entrance
+    end
 
 label LOCKED
-	event call ch1_locked
-	if var general.serious
-		"You can hear someone crying inside."
+    event call ch1_locked
+    if var general.serious
+        "You can hear someone crying inside."

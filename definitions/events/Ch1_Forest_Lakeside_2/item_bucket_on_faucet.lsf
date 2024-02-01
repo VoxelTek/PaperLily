@@ -1,9 +1,9 @@
 label START
-	if not var ch1.forest_lakeside_unclogging_done
-		"The faucet isn't working."
-		end
-	fade out
-	pause 1
-	item remove ch1.bucket
-	item add ch1.bucket_full_holy
-	fade in
+    if not var ch1.forest_lakeside_unclogging_done
+        "The faucet isn't working."
+        end
+    fade out
+    pause 1
+    item remove ch1.bucket
+    item add ch1.bucket_full_holy
+    fade in

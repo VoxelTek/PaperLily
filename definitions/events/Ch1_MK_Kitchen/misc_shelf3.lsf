@@ -1,41 +1,41 @@
 label START
-	if var ch1.mk_frog_gone jump NOTHING
-	"A green frog."
-	if objective ch1.mk_plant_eat inprogress jump FEED_PLANT
-	if repeat end
-	if character sai jump SAI_IN_PARTY
-	end
+    if var ch1.mk_frog_gone jump NOTHING
+    "A green frog."
+    if objective ch1.mk_plant_eat inprogress jump FEED_PLANT
+    if repeat end
+    if character sai jump SAI_IN_PARTY
+    end
 
 label SAI_IN_PARTY
-	chara set lacie at left
-	chara set sai at right
-	sai "Is that a frog?" mood confused4
-	sai "Is it alive?" mood confused5
-	lacie "Yes." mood blank8
-	sai "Maybe the knives lady will cook it." mood blank9
-	lacie "..." mood concerned4
-	end
+    chara set lacie at left
+    chara set sai at right
+    sai "Is that a frog?" mood confused4
+    sai "Is it alive?" mood confused5
+    lacie "Yes." mood blank8
+    sai "Maybe the knives lady will cook it." mood blank9
+    lacie "..." mood concerned4
+    end
 
 label NOTHING
-	"An empty, frog-less spot on the shelf."
-	end
+    "An empty, frog-less spot on the shelf."
+    end
 
 label FEED_PLANT
-	lacie "Maybe I could feed this to the plant..." mood concerned7
-	choice "Bring the frog to the plant?"
-		"Yes"
-			set ch1.mk_frog_gone = true
-			move to Ch1_MK_Livingroom point feed_plant
-			pause 0.5
-			fade out
-			pause 0.5
-			audio sfx play ch1_munch_1
-			pause 1
-			fade in
-			pause 1
-			"\"Thank you.\""
-			objective complete ch1.mk_plant_eat
-			event call ch1_event_mk_check_plant_objectives
-			end
-		"No"
-			end
+    lacie "Maybe I could feed this to the plant..." mood concerned7
+    choice "Bring the frog to the plant?"
+        "Yes"
+            set ch1.mk_frog_gone = true
+            move to Ch1_MK_Livingroom point feed_plant
+            pause 0.5
+            fade out
+            pause 0.5
+            audio sfx play ch1_munch_1
+            pause 1
+            fade in
+            pause 1
+            "\"Thank you.\""
+            objective complete ch1.mk_plant_eat
+            event call ch1_event_mk_check_plant_objectives
+            end
+        "No"
+            end

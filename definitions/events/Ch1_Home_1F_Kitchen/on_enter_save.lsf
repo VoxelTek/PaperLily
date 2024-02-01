@@ -1,4 +1,4 @@
 label START
-	if not objective ch1.dial_number inprogress end
-	system retry-save
-	end
+    if not objective ch1.dial_number inprogress end
+    system retry-save
+    end

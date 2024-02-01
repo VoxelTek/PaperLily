@@ -1,4 +1,4 @@
 label START
-	"There's a gate here, but it's locked."
-	set ch1.facility_lab_gate_seen = true
-	end
+    "There's a gate here, but it's locked."
+    set ch1.facility_lab_gate_seen = true
+    end

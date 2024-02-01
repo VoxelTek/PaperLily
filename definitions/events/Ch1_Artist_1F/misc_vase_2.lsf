@@ -1,9 +1,9 @@
 label START
-	if not repeat
-		"A small art piece."
-	if repeat
-		"A weird thing."
-		end
-	lacie "..." mood default
-	lacie "What... is this?" mood blank6
-	end
+    if not repeat
+        "A small art piece."
+    if repeat
+        "A weird thing."
+        end
+    lacie "..." mood default
+    lacie "What... is this?" mood blank6
+    end

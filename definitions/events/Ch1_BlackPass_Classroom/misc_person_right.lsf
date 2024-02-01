@@ -1,9 +1,9 @@
 label START
-	chara rename unknown to "misc.characters.student"
-	chara set lacie at left
-	if not repeat
-		unknown "Sorry, I can't let you pass."
-		lacie "Please?" mood concerned2
-	unknown "Just do what they say."
-	chara rename unknown off
-	end
+    chara rename unknown to "misc.characters.student"
+    chara set lacie at left
+    if not repeat
+        unknown "Sorry, I can't let you pass."
+        lacie "Please?" mood concerned2
+    unknown "Just do what they say."
+    chara rename unknown off
+    end

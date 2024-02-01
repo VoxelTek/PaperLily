@@ -1,6 +1,6 @@
 label START
-	"The box opens!"
-	"There's a key inside."
-	set ch1.mk_unlocked_box_bedroom = true
-	item add ch1.mk_key_wisteria
-	end
+    "The box opens!"
+    "There's a key inside."
+    set ch1.mk_unlocked_box_bedroom = true
+    item add ch1.mk_key_wisteria
+    end

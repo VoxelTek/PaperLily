@@ -1,14 +1,14 @@
 label START
-	if repeat end
-	action turn up
-	camera move (0,-116) time 3
-	pause 1.5
-	lacie "Wow..." mood blank1
-	lacie "It almost feels peaceful being here." mood reflective2
-	lacie "..." mood reflective
-	lacie "I wonder what that place in the distance is..." mood default
-	hide ui
-	wait
-	camera move (0,116) time 0.5
-	camera reset
-	end
+    if repeat end
+    action turn up
+    camera move (0,-116) time 3
+    pause 1.5
+    lacie "Wow..." mood blank1
+    lacie "It almost feels peaceful being here." mood reflective2
+    lacie "..." mood reflective
+    lacie "I wonder what that place in the distance is..." mood default
+    hide ui
+    wait
+    camera move (0,116) time 0.5
+    camera reset
+    end

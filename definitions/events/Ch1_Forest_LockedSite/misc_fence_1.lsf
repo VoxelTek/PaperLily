@@ -1,18 +1,18 @@
 label START
-	if not var ch1.forest_lockedsite_clear jump FENCE
-	if var ch1.forest_red_took_passage jump FENCE
-	if var ch1.forest_lockedsite_cut_fence_1
-		lacie "I'd rather not go back in there." mood concerned7
-		end
-	lacie "The grass is definitely greener on this side." mood blank8
-	end
+    if not var ch1.forest_lockedsite_clear jump FENCE
+    if var ch1.forest_red_took_passage jump FENCE
+    if var ch1.forest_lockedsite_cut_fence_1
+        lacie "I'd rather not go back in there." mood concerned7
+        end
+    lacie "The grass is definitely greener on this side." mood blank8
+    end
 
 label FENCE
-	"A fence blocks your path."
-	if item ch1.forest_bolt_cutter
-		choice "Use ${item:ch1.forest_bolt_cutter}?"
-			"Yes"
-				event call item_boltcutter_on_fence_1
-			"No"
-				end
-	end
+    "A fence blocks your path."
+    if item ch1.forest_bolt_cutter
+        choice "Use ${item:ch1.forest_bolt_cutter}?"
+            "Yes"
+                event call item_boltcutter_on_fence_1
+            "No"
+                end
+    end

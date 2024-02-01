@@ -1,16 +1,16 @@
 label START
-	audio bgm stop time 0
-	audio ambiance stop time 0
-	cg show black time 0
-	pause 1
-	audio sfx play water_drop07
-	cg show ch1/death_blood_1 time 0
-	pause 0.8
-	audio sfx play water_drop03
-	cg show ch1/death_blood_2 time 0
-	pause 0.5
-	audio sfx play water_drop01
-	cg show ch1/death_blood_3 time 0
-	pause 2
-	fade out time 4
-	event queue ch1_death_finally
+    audio bgm stop time 0
+    audio ambiance stop time 0
+    cg show black time 0
+    pause 1
+    audio sfx play water_drop07
+    cg show ch1/death_blood_1 time 0
+    pause 0.8
+    audio sfx play water_drop03
+    cg show ch1/death_blood_2 time 0
+    pause 0.5
+    audio sfx play water_drop01
+    cg show ch1/death_blood_3 time 0
+    pause 2
+    fade out time 4
+    event queue ch1_death_finally

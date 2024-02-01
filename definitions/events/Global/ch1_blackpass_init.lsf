@@ -1,5 +1,5 @@
 label START
-	set ch1.blackpass_opened_locker = false
-	set ch1.blackpass_hallway_curtains_closed = false
-	system call RemoveInventory
-	system call GetRedItems
+    set ch1.blackpass_opened_locker = false
+    set ch1.blackpass_hallway_curtains_closed = false
+    system call RemoveInventory
+    system call GetRedItems

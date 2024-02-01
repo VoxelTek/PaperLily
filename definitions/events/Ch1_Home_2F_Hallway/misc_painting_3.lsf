@@ -1,7 +1,7 @@
 label START
-	if var general.serious jump SERIOUS
-	"It's a painting, identical to the one on the right."
-	end
+    if var general.serious jump SERIOUS
+    "It's a painting, identical to the one on the right."
+    end
 
 label SERIOUS
-	"A painting."
+    "A painting."

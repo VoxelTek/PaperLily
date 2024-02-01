@@ -1,15 +1,15 @@
 label START
-	if var ch1.forest_lakeside_removed_mermaid end
-	item remove ch1.bucket_full_holy
-	item add ch1.bucket silent
-	fade out
-	pause 0.5
-	audio sfx play water_splash_4
-	pause 2
-	audio sfx play water3
-	pause 2
-	set ch1.forest_lakeside_removed_mermaid = true
-	action call merm_hide
-	system refresh
-	fade in
-	"The monster swims away after being splashed."
+    if var ch1.forest_lakeside_removed_mermaid end
+    item remove ch1.bucket_full_holy
+    item add ch1.bucket silent
+    fade out
+    pause 0.5
+    audio sfx play water_splash_4
+    pause 2
+    audio sfx play water3
+    pause 2
+    set ch1.forest_lakeside_removed_mermaid = true
+    action call merm_hide
+    system refresh
+    fade in
+    "The monster swims away after being splashed."

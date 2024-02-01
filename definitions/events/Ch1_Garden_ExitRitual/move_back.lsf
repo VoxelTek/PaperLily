@@ -1,11 +1,11 @@
 label START
-	if item ch1.lily
-		lacie "(If I leave through here, the door might close...)" mood blank5
-		hide ui
-		action walk up 32
-		end
-	audio sfx play door
-	if var ch1.forest_lakeside_placed_return_doorknob
-		move to Ch1_Forest_Lakeside_North point from_door
-	else
-		move to Ch1_Facility_B3F_Exit point from_door
+    if item ch1.lily
+        lacie "(If I leave through here, the door might close...)" mood blank5
+        hide ui
+        action walk up 32
+        end
+    audio sfx play door
+    if var ch1.forest_lakeside_placed_return_doorknob
+        move to Ch1_Forest_Lakeside_North point from_door
+    else
+        move to Ch1_Facility_B3F_Exit point from_door

@@ -1,8 +1,8 @@
 label START
-	"The note reads:"
-	"\"Marzie! One last thing: This place is a maze."
-	"I left some flower petals on the ground to mark the way."
-	"I stole them from the sculptor man hehehe"
-	"Anyway, follow them and you'll reach the exit in no time!"
-	"P.S.: Walk slowly and listen in to your surroundings!\""
-	system tutorial hiding
+    "The note reads:"
+    "\"Marzie! One last thing: This place is a maze."
+    "I left some flower petals on the ground to mark the way."
+    "I stole them from the sculptor man hehehe"
+    "Anyway, follow them and you'll reach the exit in no time!"
+    "P.S.: Walk slowly and listen in to your surroundings!\""
+    system tutorial hiding

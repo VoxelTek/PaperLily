@@ -1,24 +1,24 @@
 label START
-	if not var ch1.mk_stressroom_eyes jump LOCKED_1
-	if var ch1.mk_stressroom_eyes == 1 jump LOCKED_2
-	choice "Enter the painting?"
-		"Yes"
-			continue
-		"No"
-			end
-	move to Ch1_MK_StressRoom point entrance
-	end
+    if not var ch1.mk_stressroom_eyes jump LOCKED_1
+    if var ch1.mk_stressroom_eyes == 1 jump LOCKED_2
+    choice "Enter the painting?"
+        "Yes"
+            continue
+        "No"
+            end
+    move to Ch1_MK_StressRoom point entrance
+    end
 
 label LOCKED_1
-	"A large painting. It seems to be missing both eyes."
-	end
+    "A large painting. It seems to be missing both eyes."
+    end
 
 label LOCKED_2
-	"A spooky painting. It seems to be missing an eye."
-	if repeat end
-	if not character sai end
-	chara set lacie at left
-	chara set sai at right
-	sai "One eye is plenty." mood blank6
-	lacie "..." mood confused2
-	end
+    "A spooky painting. It seems to be missing an eye."
+    if repeat end
+    if not character sai end
+    chara set lacie at left
+    chara set sai at right
+    sai "One eye is plenty." mood blank6
+    lacie "..." mood confused2
+    end

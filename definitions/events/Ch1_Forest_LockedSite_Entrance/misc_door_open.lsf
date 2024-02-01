@@ -1,4 +1,4 @@
 label START
-	set ch1.forest_lockedsite_open = false
-	audio sfx play gate
-	end
+    set ch1.forest_lockedsite_open = false
+    audio sfx play gate
+    end

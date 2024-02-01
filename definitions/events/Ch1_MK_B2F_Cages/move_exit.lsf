@@ -1,78 +1,78 @@
 label START
-	if not var ch1.mk_talked_to_sai_cage jump SAI_CALL
-	if not var ch1.mk_left_cage_room jump FIRST_LEAVE
-	audio sfx play door
-	move to Ch1_MK_B2F_Hallway point cage_room
-	end
+    if not var ch1.mk_talked_to_sai_cage jump SAI_CALL
+    if not var ch1.mk_left_cage_room jump FIRST_LEAVE
+    audio sfx play door
+    move to Ch1_MK_B2F_Hallway point cage_room
+    end
 
 label SAI_CALL
-	chara set sai at right
-	sai "Hey hey... are you just gonna leave...?" mood surprised2
-	hide ui
-	action walk up 32
-	end
+    chara set sai at right
+    sai "Hey hey... are you just gonna leave...?" mood surprised2
+    hide ui
+    action walk up 32
+    end
 
 label FIRST_LEAVE
-	chara set lacie at left
-	chara set sai at right
-	sai "Wait." mood blank
-	hide ui
-	action turn up
-	camera move (0,-132) time 1
-	lacie "Hm?" mood blank4
-	sai "What did you try to buy?" mood thinking5
-	lacie "...What?" mood blank8
-	sai "You said you tried to buy something at the store today." mood thinking8
-	lacie "...Why are you asking this now, of all times?" mood confused3
-	sai "Just curious." mood smile7
-	hide ui
-	pause 1
-	if var ch1.favorite_dessert == "flan"
-		lacie "...It was just a flan." mood blank5
-	if var ch1.favorite_dessert == "macarons"
-		lacie "...It was just some macarons." mood blank5
-	if var ch1.favorite_dessert == "eclair"
-		lacie "...It was just a chocolate eclair." mood blank5
-	sai "Huh." mood thinking6
-	if var ch1.favorite_dessert == "flan"
-		sai "So you like flan?" mood surprised3
-	if var ch1.favorite_dessert == "macarons"
-		sai "So you like macarons?" mood surprised3
-	if var ch1.favorite_dessert == "eclair"
-		sai "Do you like eclairs? Chocolate only?" mood surprised3
-	lacie "Is this really the time to have this discussion?" mood disappointed3
-	sai "When else? I'm bored now, not later." mood worried4
-	sai "It's not like I have much to think about in this cage." mood thinking14
-	lacie "...I'm leaving." mood disappointed2
-	sai "Wait, at least tell me your name, and I'll leave you in peace!" mood blank7
-	lacie "...Sigh." mood sigh
-	lacie "It's Lacie." mood reflective2
-	sai "Huh." mood smile12
-	lacie "Will that be all?" mood reflective8
-	sai "Yeah!" mood smile6
-	hide ui
-	pause 1
-	set ch1.mk_left_cage_room = true
-	audio bgm stop time 4
-	audio bgm override on silent
-	action turn down
-	camera move (0,132) time 0.5
-	camera reset
-	lacie "I'll be going then." mood reflective8
-	sai "Good luck, try not to get killed." mood lazy2
-	lacie "...Mhm." mood reflective7
-	audio sfx play door
-	move to Ch1_MK_B2F_Hallway point cage_room
-	action walk down 32 speed slow
-	pause 0.6
-	action turn left
-	pause 0.6
-	action turn right
-	pause 0.6
-	action turn down
-	lacie "..." mood default
-	lacie "I'm not sure where I am right now..." mood blank3
-	lacie "But, all I have to do is find the exit without running into that monster." mood thinking
-	lacie "...Or should I help that guy first?" mood thinking3
-	audio bgm override off
-	audio bgm play ch1_mk_d
+    chara set lacie at left
+    chara set sai at right
+    sai "Wait." mood blank
+    hide ui
+    action turn up
+    camera move (0,-132) time 1
+    lacie "Hm?" mood blank4
+    sai "What did you try to buy?" mood thinking5
+    lacie "...What?" mood blank8
+    sai "You said you tried to buy something at the store today." mood thinking8
+    lacie "...Why are you asking this now, of all times?" mood confused3
+    sai "Just curious." mood smile7
+    hide ui
+    pause 1
+    if var ch1.favorite_dessert == "flan"
+        lacie "...It was just a flan." mood blank5
+    if var ch1.favorite_dessert == "macarons"
+        lacie "...It was just some macarons." mood blank5
+    if var ch1.favorite_dessert == "eclair"
+        lacie "...It was just a chocolate eclair." mood blank5
+    sai "Huh." mood thinking6
+    if var ch1.favorite_dessert == "flan"
+        sai "So you like flan?" mood surprised3
+    if var ch1.favorite_dessert == "macarons"
+        sai "So you like macarons?" mood surprised3
+    if var ch1.favorite_dessert == "eclair"
+        sai "Do you like eclairs? Chocolate only?" mood surprised3
+    lacie "Is this really the time to have this discussion?" mood disappointed3
+    sai "When else? I'm bored now, not later." mood worried4
+    sai "It's not like I have much to think about in this cage." mood thinking14
+    lacie "...I'm leaving." mood disappointed2
+    sai "Wait, at least tell me your name, and I'll leave you in peace!" mood blank7
+    lacie "...Sigh." mood sigh
+    lacie "It's Lacie." mood reflective2
+    sai "Huh." mood smile12
+    lacie "Will that be all?" mood reflective8
+    sai "Yeah!" mood smile6
+    hide ui
+    pause 1
+    set ch1.mk_left_cage_room = true
+    audio bgm stop time 4
+    audio bgm override on silent
+    action turn down
+    camera move (0,132) time 0.5
+    camera reset
+    lacie "I'll be going then." mood reflective8
+    sai "Good luck, try not to get killed." mood lazy2
+    lacie "...Mhm." mood reflective7
+    audio sfx play door
+    move to Ch1_MK_B2F_Hallway point cage_room
+    action walk down 32 speed slow
+    pause 0.6
+    action turn left
+    pause 0.6
+    action turn right
+    pause 0.6
+    action turn down
+    lacie "..." mood default
+    lacie "I'm not sure where I am right now..." mood blank3
+    lacie "But, all I have to do is find the exit without running into that monster." mood thinking
+    lacie "...Or should I help that guy first?" mood thinking3
+    audio bgm override off
+    audio bgm play ch1_mk_d

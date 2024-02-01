@@ -1,7 +1,7 @@
 label START
-	if repeat jump SAVE
-	"A crow standing on a rock."
-	lacie "Is it waiting to take the boat?" mood blank6
+    if repeat jump SAVE
+    "A crow standing on a rock."
+    lacie "Is it waiting to take the boat?" mood blank6
 label SAVE
-	system save
-	end
+    system save
+    end

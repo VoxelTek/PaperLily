@@ -1,37 +1,37 @@
 label START
-	if repeat end
-	fade out
-	move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_lacie cutscene
-	chara spawn lacie point ch1_cutscene_lacie
-	chara spawn sai point ch1_cutscene_sai
-	fade in
-	bubble question on lacie
-	pause 0.5
-	lacie "(Um...)"
-	lacie "(Did I adopt a stray?)" mood disappointed2
-	hide ui
-	pause 0.5
-	action turn right node lacie
-	pause 0.5
-	lacie "Are you following me?" mood annoyed5
-	sai "Yep." mood happy2
-	sai "We stand a better chance together, right?" mood smile7
-	sai "Don't worry, I won't be dead weight." mood confused11
-	sai "Well, unless I'm actually dead..." mood thinking5
-	sai "But then you can just leave me there." mood thinking4
-	lacie "..." mood bothered
-	sai "Look, you can just pretend I'm not here if you want." mood smile9
-	hide ui
-	pause 0.3
-	action walk left 32 node sai speed slow
-	chara despawn sai
-	pause 0.8
-	sai "See?" mood smile6
-	hide ui
-	pause 0.5
-	bubble ellipsis_silent on lacie
-	pause 0.3
-	action turn left node lacie
-	set ch1.facility_sai_hidden = true
-	move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_lacie
-	end
+    if repeat end
+    fade out
+    move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_lacie cutscene
+    chara spawn lacie point ch1_cutscene_lacie
+    chara spawn sai point ch1_cutscene_sai
+    fade in
+    bubble question on lacie
+    pause 0.5
+    lacie "(Um...)"
+    lacie "(Did I adopt a stray?)" mood disappointed2
+    hide ui
+    pause 0.5
+    action turn right node lacie
+    pause 0.5
+    lacie "Are you following me?" mood annoyed5
+    sai "Yep." mood happy2
+    sai "We stand a better chance together, right?" mood smile7
+    sai "Don't worry, I won't be dead weight." mood confused11
+    sai "Well, unless I'm actually dead..." mood thinking5
+    sai "But then you can just leave me there." mood thinking4
+    lacie "..." mood bothered
+    sai "Look, you can just pretend I'm not here if you want." mood smile9
+    hide ui
+    pause 0.3
+    action walk left 32 node sai speed slow
+    chara despawn sai
+    pause 0.8
+    sai "See?" mood smile6
+    hide ui
+    pause 0.5
+    bubble ellipsis_silent on lacie
+    pause 0.3
+    action turn left node lacie
+    set ch1.facility_sai_hidden = true
+    move to Ch1_Facility_B2F_Hallway_East point ch1_cutscene_lacie
+    end

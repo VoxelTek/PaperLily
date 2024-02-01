@@ -1,12 +1,12 @@
 label START
-	hide ui
-	if not objective ch1.mk_plant_drink done end
-	if not objective ch1.mk_plant_eat done end
-	if not objective ch1.mk_plant_music done end
-	if not objective ch1.mk_plant_flowers done end
-	pause 0.8
-	audio sfx play drop
-	set ch1.mk_plants_solved = true
-	set ch1.mk_plants_reward_visible = true
-	system refresh
-	pause 0.5
+    hide ui
+    if not objective ch1.mk_plant_drink done end
+    if not objective ch1.mk_plant_eat done end
+    if not objective ch1.mk_plant_music done end
+    if not objective ch1.mk_plant_flowers done end
+    pause 0.8
+    audio sfx play drop
+    set ch1.mk_plants_solved = true
+    set ch1.mk_plants_reward_visible = true
+    system refresh
+    pause 0.5

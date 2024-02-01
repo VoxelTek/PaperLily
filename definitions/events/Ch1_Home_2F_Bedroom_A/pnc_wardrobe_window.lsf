@@ -1,4 +1,4 @@
 label START
-	"It's nice outside."
-	if var general.serious end
-	lacie "But not nice enough to want to go back out."
+    "It's nice outside."
+    if var general.serious end
+    lacie "But not nice enough to want to go back out."

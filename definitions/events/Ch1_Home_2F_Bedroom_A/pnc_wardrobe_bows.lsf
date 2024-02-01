@@ -1,14 +1,14 @@
 label START
-	"Various bows and hair decorations."
-	if not var general.chapter == 1 end
-	if not objective ch1.ritual_items.ribbon inprogress end
-	"There's some red ribbon here."
-	choice "Take ${item:ch1.ribbon}?"
-		"Yes"
-			continue
-		"No"
-			end
-	objective complete ch1.ritual_items.ribbon
-	item add ch1.ribbon
-	end
+    "Various bows and hair decorations."
+    if not var general.chapter == 1 end
+    if not objective ch1.ritual_items.ribbon inprogress end
+    "There's some red ribbon here."
+    choice "Take ${item:ch1.ribbon}?"
+        "Yes"
+            continue
+        "No"
+            end
+    objective complete ch1.ritual_items.ribbon
+    item add ch1.ribbon
+    end
 

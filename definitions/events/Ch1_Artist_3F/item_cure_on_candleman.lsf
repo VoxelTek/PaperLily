@@ -1,21 +1,21 @@
 label START
-	if var ch1.forest_candleman_dead end
-	if var ch1.forest_candleman_saved end
-	set ch1.forest_candleman_saved = true
-	fade out
-	pause 0.5
-	audio sfx play water_splash_3
-	pause 1.5
-	move to Ch1_Cutscene_Candleman point cutscene_lacie time 0
-	chara spawn lacie point cutscene_lacie
-	fade in time 2
-	pause 1
-	item remove ch1.forest_stone_cure
-	item add ch1.candleman_candle_blue
-	pause 1
-	fade out
-	move to Ch1_Artist_3F point cutscene_lacie
-	fade in
-	pause 1
-	lacie "Um... okay..." mood confused3
-	end
+    if var ch1.forest_candleman_dead end
+    if var ch1.forest_candleman_saved end
+    set ch1.forest_candleman_saved = true
+    fade out
+    pause 0.5
+    audio sfx play water_splash_3
+    pause 1.5
+    move to Ch1_Cutscene_Candleman point cutscene_lacie time 0
+    chara spawn lacie point cutscene_lacie
+    fade in time 2
+    pause 1
+    item remove ch1.forest_stone_cure
+    item add ch1.candleman_candle_blue
+    pause 1
+    fade out
+    move to Ch1_Artist_3F point cutscene_lacie
+    fade in
+    pause 1
+    lacie "Um... okay..." mood confused3
+    end

@@ -1,26 +1,26 @@
 label START
-	if repeat jump REPEAT
-	"The TV remote."
+    if repeat jump REPEAT
+    "The TV remote."
 
 label REPEAT
-	if var general.tv_home1f jump TURN_OFF else jump TURN_ON
+    if var general.tv_home1f jump TURN_OFF else jump TURN_ON
 
 label TURN_ON
-	choice "Turn the TV on?"
-		"Yes"
-			continue
-		"No"
-			end
-	set general.tv_home1f = true
-	end
+    choice "Turn the TV on?"
+        "Yes"
+            continue
+        "No"
+            end
+    set general.tv_home1f = true
+    end
 
 
 label TURN_OFF
-	choice "Turn the TV off?"
-		"Yes"
-			continue
-		"No"
-			end
-	set general.tv_home1f = false
-	end
+    choice "Turn the TV off?"
+        "Yes"
+            continue
+        "No"
+            end
+    set general.tv_home1f = false
+    end
 

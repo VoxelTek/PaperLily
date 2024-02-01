@@ -1,25 +1,25 @@
 label START
-	"A foot sticks out from the floor."
-	if not var ch1.temp_ending_1_12_leg_ready end
-	choice "Pull it out?"
-		"Yes"
-			continue
-		"No"
-			end
-	fade out
-	pause 2
-	audio sfx play gore1
-	fade flash color red continue
-	pause 1
-	chara lock
-	lacie "AAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHH" time 4
-	hide ui
-	pause 6
-	move to Ch1_MK_Blessing_5 point entrance time 0
-	action call lacie_limp
-	system running off
-	lacie "I... I have to try to keep going..."
-	hide ui
-	pause 2
-	chara unlock
-	fade in time 4
+    "A foot sticks out from the floor."
+    if not var ch1.temp_ending_1_12_leg_ready end
+    choice "Pull it out?"
+        "Yes"
+            continue
+        "No"
+            end
+    fade out
+    pause 2
+    audio sfx play gore1
+    fade flash color red continue
+    pause 1
+    chara lock
+    lacie "AAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHH" time 4
+    hide ui
+    pause 6
+    move to Ch1_MK_Blessing_5 point entrance time 0
+    action call lacie_limp
+    system running off
+    lacie "I... I have to try to keep going..."
+    hide ui
+    pause 2
+    chara unlock
+    fade in time 4

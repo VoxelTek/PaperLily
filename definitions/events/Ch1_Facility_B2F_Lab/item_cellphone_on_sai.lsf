@@ -1,7 +1,7 @@
 label START
-	chara set lacie at left
-	chara set sai at right
-	sai "You still use a flip phone?!" mood thinking13
-	sai "Why??" mood thinking12
-	lacie "..." mood blank2
-	lacie "(It's just fun to flip it open...)" mood blank7
+    chara set lacie at left
+    chara set sai at right
+    sai "You still use a flip phone?!" mood thinking13
+    sai "Why??" mood thinking12
+    lacie "..." mood blank2
+    lacie "(It's just fun to flip it open...)" mood blank7

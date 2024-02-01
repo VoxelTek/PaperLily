@@ -1,56 +1,56 @@
 label START
-	if repeat 4 jump DIALOGUE_4
-	if repeat 3 jump DIALOGUE_3
-	if repeat 2 jump DIALOGUE_2
-	jump DIALOGUE_1
+    if repeat 4 jump DIALOGUE_4
+    if repeat 3 jump DIALOGUE_3
+    if repeat 2 jump DIALOGUE_2
+    jump DIALOGUE_1
 
 label DIALOGUE_1
-	lacie "(She looks intimidating...)" mood concerned
-	alba "What're you staring at?" mood annoyed4
-	alba "You heard me. 5 coins each, no haggling." mood blank2
-	alba "Or, you could buy all my fish for 10 coins. It's a pretty good deal and I get to take the rest of the day off." mood blank3
-	set ch1.forest_center_alba_know_offer = true
-	choice "(What kind of deal is that...?)"
-		"I'll take one." if var general.currency_demon >= 5
-			item add ch1.forest_fish
-			set general.currency_demon -= 5
-			end
-		"I'll take all of them." if var general.currency_demon >= 10
-			item remove ch1.forest_fish amount 99
-			item add ch1.forest_fish amount 99
-			set general.currency_demon -= 10
-			set ch1.forest_center_alba_bought_all = true
-			end
-		"I don't even have 5 coins." if var general.currency_demon < 5
-			alba "Does that sound like my problem? 5 coins each, no exceptions." mood pissed
-			end
-		"No thanks"
-			end
-	end
+    lacie "(She looks intimidating...)" mood concerned
+    alba "What're you staring at?" mood annoyed4
+    alba "You heard me. 5 coins each, no haggling." mood blank2
+    alba "Or, you could buy all my fish for 10 coins. It's a pretty good deal and I get to take the rest of the day off." mood blank3
+    set ch1.forest_center_alba_know_offer = true
+    choice "(What kind of deal is that...?)"
+        "I'll take one." if var general.currency_demon >= 5
+            item add ch1.forest_fish
+            set general.currency_demon -= 5
+            end
+        "I'll take all of them." if var general.currency_demon >= 10
+            item remove ch1.forest_fish amount 99
+            item add ch1.forest_fish amount 99
+            set general.currency_demon -= 10
+            set ch1.forest_center_alba_bought_all = true
+            end
+        "I don't even have 5 coins." if var general.currency_demon < 5
+            alba "Does that sound like my problem? 5 coins each, no exceptions." mood pissed
+            end
+        "No thanks"
+            end
+    end
 
 label DIALOGUE_2
-	alba "Ready to buy?" mood huh2
-	lacie "What will I use the fish for?" mood blank2
-	alba "What do I care?" mood blank3
-	lacie "Will you at least grill it?" mood concerned12
-	alba "Do I look like a buffet?! Scram." mood pissed
-	end
+    alba "Ready to buy?" mood huh2
+    lacie "What will I use the fish for?" mood blank2
+    alba "What do I care?" mood blank3
+    lacie "Will you at least grill it?" mood concerned12
+    alba "Do I look like a buffet?! Scram." mood pissed
+    end
 
 label DIALOGUE_3
-	lacie "Where can I find more coins?" mood hide2
-	hide ui
-	pause 0.5
-	system call AlbaHiss
-	pause 0.6
-	audio sfx play ch1_scream
-	pause 0.6
-	camera shake time 1 continue
-	action walk down 32 backwards
-	pause 2.5
-	lacie "Sorry...! Please forget about it." mood hide
-	system call AlbaReset
-	end
+    lacie "Where can I find more coins?" mood hide2
+    hide ui
+    pause 0.5
+    system call AlbaHiss
+    pause 0.6
+    audio sfx play ch1_scream
+    pause 0.6
+    camera shake time 1 continue
+    action walk down 32 backwards
+    pause 2.5
+    lacie "Sorry...! Please forget about it." mood hide
+    system call AlbaReset
+    end
 
 label DIALOGUE_4
-	"She doesn't seem like she wants to talk."
-	end
+    "She doesn't seem like she wants to talk."
+    end

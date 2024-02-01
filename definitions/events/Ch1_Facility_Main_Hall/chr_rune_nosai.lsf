@@ -1,67 +1,67 @@
 label START
-	chara set lacie at left
-	chara set rune at right
-	if repeat jump TALK_MORE
-	rune "Miss Lacie!" mood default
-	rune "Have you misplaced Mr. Sai?" mood tilt
-	lacie "Uh..." mood blank8
-	lacie "Something like that." mood reflective2
-	rune "How come?" mood tilt
-	lacie "..." mood concerned4
-	lacie "I'm just more comfortable being alone." mood concerned5
-	rune "Ooh! I feel the same!" mood happy
+    chara set lacie at left
+    chara set rune at right
+    if repeat jump TALK_MORE
+    rune "Miss Lacie!" mood default
+    rune "Have you misplaced Mr. Sai?" mood tilt
+    lacie "Uh..." mood blank8
+    lacie "Something like that." mood reflective2
+    rune "How come?" mood tilt
+    lacie "..." mood concerned4
+    lacie "I'm just more comfortable being alone." mood concerned5
+    rune "Ooh! I feel the same!" mood happy
 
 label TALK_MORE
-	choice "Anyway..."
-		"How did I miss the lighthouse?" if not var ch1.facility_rune_asked_about_lighthouse
-			set ch1.facility_rune_asked_about_lighthouse = true
-			lacie "So... I went north, but somehow I didn't come across the lighthouse." mood blank5
-			lacie "Where did I go wrong?" mood blank6
-			rune "Hmm..." mood default
-			rune "Did you reach the lake?" mood tilt
-			lacie "Yes." mood blank1
-			rune "Did you cross the lake?" mood default
-			lacie "Yes, I took a boat." mood blank1
-			rune "You should have been able to spot it from there!" mood gasp
-			lacie "Oh, I couldn't see much because of the fog, so I just tried to keep rowing in the same direction." mood concerned4
-			lacie "I must have taken a wrong turn somewhere..." mood concerned5
-			rune "That's too bad." mood sad
-			end
-		"How will you get out of here?" if not var ch1.facility_rune_asked_about_rune_escape
-			set ch1.facility_rune_asked_about_rune_escape = true
-			lacie "If this place is a dead end, how do you intend to leave?" mood blank1
-			rune "I will stick around here for a bit longer!" mood default
-			lacie "But after that?" mood blank6
-			rune "After that what?" mood tilt
-			lacie "How do you plan to get out?" mood confused
-			rune "I don't plan to get out for the moment! I will stick around for a bit longer!" mood tilt
-			lacie "But..." mood concerned7
-			rune "Miss Lacie, I will stick around here for a bit longer!" mood sparkle
-			lacie "I see..." mood sigh2
-			end
-		"Tell me more about Sai." if not var ch1.facility_rune_asked_about_sai_more
-			set ch1.facility_rune_asked_about_sai_more = true
-			set ch1.temp_ending_1_9 = true
-			lacie "Do you know anything else about Sai? What kind of person is he?" mood blank1
-			rune "Hmmm..." mood tilt
-			rune "I don't know." mood default
-			rune "He never talks about himself."
-			rune "And he never gives me runes." mood sad
-			lacie "I see..." mood blank7
-			lacie "Is he a demon?" mood blank8
-			rune "He's not!" mood default
-			lacie "Oh... really?" mood surprised3
-			rune "Although there is something different about him." mood tilt
-			rune "Much like you, Miss Lacie, I couldn't tell right away that he's human."
-			rune "Normally I can smell it from quite far!" mood sparkle
-			lacie "Oh." mood thinking2
-			lacie "Strange." mood thinking4
-			end
-		"Never mind"
-			jump EXTRA
+    choice "Anyway..."
+        "How did I miss the lighthouse?" if not var ch1.facility_rune_asked_about_lighthouse
+            set ch1.facility_rune_asked_about_lighthouse = true
+            lacie "So... I went north, but somehow I didn't come across the lighthouse." mood blank5
+            lacie "Where did I go wrong?" mood blank6
+            rune "Hmm..." mood default
+            rune "Did you reach the lake?" mood tilt
+            lacie "Yes." mood blank1
+            rune "Did you cross the lake?" mood default
+            lacie "Yes, I took a boat." mood blank1
+            rune "You should have been able to spot it from there!" mood gasp
+            lacie "Oh, I couldn't see much because of the fog, so I just tried to keep rowing in the same direction." mood concerned4
+            lacie "I must have taken a wrong turn somewhere..." mood concerned5
+            rune "That's too bad." mood sad
+            end
+        "How will you get out of here?" if not var ch1.facility_rune_asked_about_rune_escape
+            set ch1.facility_rune_asked_about_rune_escape = true
+            lacie "If this place is a dead end, how do you intend to leave?" mood blank1
+            rune "I will stick around here for a bit longer!" mood default
+            lacie "But after that?" mood blank6
+            rune "After that what?" mood tilt
+            lacie "How do you plan to get out?" mood confused
+            rune "I don't plan to get out for the moment! I will stick around for a bit longer!" mood tilt
+            lacie "But..." mood concerned7
+            rune "Miss Lacie, I will stick around here for a bit longer!" mood sparkle
+            lacie "I see..." mood sigh2
+            end
+        "Tell me more about Sai." if not var ch1.facility_rune_asked_about_sai_more
+            set ch1.facility_rune_asked_about_sai_more = true
+            set ch1.temp_ending_1_9 = true
+            lacie "Do you know anything else about Sai? What kind of person is he?" mood blank1
+            rune "Hmmm..." mood tilt
+            rune "I don't know." mood default
+            rune "He never talks about himself."
+            rune "And he never gives me runes." mood sad
+            lacie "I see..." mood blank7
+            lacie "Is he a demon?" mood blank8
+            rune "He's not!" mood default
+            lacie "Oh... really?" mood surprised3
+            rune "Although there is something different about him." mood tilt
+            rune "Much like you, Miss Lacie, I couldn't tell right away that he's human."
+            rune "Normally I can smell it from quite far!" mood sparkle
+            lacie "Oh." mood thinking2
+            lacie "Strange." mood thinking4
+            end
+        "Never mind"
+            jump EXTRA
 
 label EXTRA
-	if not var ch1.facility_rune_asked_about_lighthouse end
-	if not var ch1.facility_rune_asked_about_rune_escape end
-	if not var ch1.facility_rune_asked_about_sai_more end
-	event call chr_rune_extra
+    if not var ch1.facility_rune_asked_about_lighthouse end
+    if not var ch1.facility_rune_asked_about_rune_escape end
+    if not var ch1.facility_rune_asked_about_sai_more end
+    event call chr_rune_extra

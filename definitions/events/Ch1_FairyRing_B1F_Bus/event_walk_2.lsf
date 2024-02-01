@@ -1,64 +1,64 @@
 label START
-	fade out
-	audio bgm override off
-	audio bgm stop time 4
-	move to Ch1_Cutscene_FairyRing_Walk_2 point cutscene_camera time 0
-	pause 1
-	fade in time 1
-	pause 3
-	chara set lacie at left
-	chara set aoi at right
-	aoi "So... what brings you here?" mood surprised
-	lacie "What brings me... down here?" mood confused2
-	lacie "I stepped into the fairy ring." mood annoyed3
-	aoi "Ah. Right." mood happy2
-	aoi "Classic." mood awkward3
-	hide ui
-	pause 2
-	aoi "I also stepped into it." mood pout4
-	lacie "Yes, of course." mood blank7
-	hide ui
-	pause 2
-	aoi "So what brings you to these parts of the forest?" mood pout2
-	lacie "Um..." mood blank2
-	if var ch1.forest_seen_rune
-		lacie "(Actually, I wonder if they can they tell I'm human?)" mood concerned7
-		lacie "(It's best not to say anything about that...)" mood concerned4
-		lacie "I'm looking for a lighthouse." mood blank3
-		aoi "Ooh." mood surprised
-		aoi "What for?" mood pout2
-		lacie "Meeting... someone..?" mood blank5
-	else
-		lacie "(Aoi definitely can't help me with my problem... this is basically a child we're talking about.)" mood blank2
-		lacie "(So there's no point in elaborating much, I think.)" mood blank7
-		lacie "I'm just looking for someone to help me with a problem." mood blank8
-		aoi "Someone like a doctor? Or like an assassin?" mood pout2
-		lacie "....." mood confused2
-		lacie "...Probably more like a doctor, I guess." mood confused
-		aoi "Oh... are you sick, Lacie?" mood sad5
-		lacie "No, It's nothing serious, probably." mood blank3
-		lacie "I guess I'll be able to tell once I meet them." mood blank5
-	aoi "Ooh!" mood surprised
-	aoi "I had a friend I used to meet all the time!"
-	if var ch1.forest_seen_rune
-		aoi "But it wasn't at a lighthouse, it was..."
-	else
-		aoi "But..."
-	aoi "...It was in the supply closet..." mood worried8
-	aoi "...in secret..." mood worried5
-	lacie "???" mood confused2
-	aoi "...But then they died." mood scared5
-	lacie "..." mood concerned5
-	hide ui
-	pause 2
-	aoi "And now I'll die too....." mood melt5
-	lacie "....." mood concerned7
-	lacie "W-what brings YOU to the forest?" mood concerned2
-	aoi "Oh, I'm on vacation!" mood happy2
-	lacie "Oh, that's nice." mood concerned7
-	lacie "(Phew...)" mood concerned6
-	hide ui
-	pause 2
-	set ch1.forest_fairyring_seen_walk_2 = true
-	audio bgm override on prologue_nightmare
-	move to Ch1_FairyRing_B1F_Hallway point from_south
+    fade out
+    audio bgm override off
+    audio bgm stop time 4
+    move to Ch1_Cutscene_FairyRing_Walk_2 point cutscene_camera time 0
+    pause 1
+    fade in time 1
+    pause 3
+    chara set lacie at left
+    chara set aoi at right
+    aoi "So... what brings you here?" mood surprised
+    lacie "What brings me... down here?" mood confused2
+    lacie "I stepped into the fairy ring." mood annoyed3
+    aoi "Ah. Right." mood happy2
+    aoi "Classic." mood awkward3
+    hide ui
+    pause 2
+    aoi "I also stepped into it." mood pout4
+    lacie "Yes, of course." mood blank7
+    hide ui
+    pause 2
+    aoi "So what brings you to these parts of the forest?" mood pout2
+    lacie "Um..." mood blank2
+    if var ch1.forest_seen_rune
+        lacie "(Actually, I wonder if they can they tell I'm human?)" mood concerned7
+        lacie "(It's best not to say anything about that...)" mood concerned4
+        lacie "I'm looking for a lighthouse." mood blank3
+        aoi "Ooh." mood surprised
+        aoi "What for?" mood pout2
+        lacie "Meeting... someone..?" mood blank5
+    else
+        lacie "(Aoi definitely can't help me with my problem... this is basically a child we're talking about.)" mood blank2
+        lacie "(So there's no point in elaborating much, I think.)" mood blank7
+        lacie "I'm just looking for someone to help me with a problem." mood blank8
+        aoi "Someone like a doctor? Or like an assassin?" mood pout2
+        lacie "....." mood confused2
+        lacie "...Probably more like a doctor, I guess." mood confused
+        aoi "Oh... are you sick, Lacie?" mood sad5
+        lacie "No, It's nothing serious, probably." mood blank3
+        lacie "I guess I'll be able to tell once I meet them." mood blank5
+    aoi "Ooh!" mood surprised
+    aoi "I had a friend I used to meet all the time!"
+    if var ch1.forest_seen_rune
+        aoi "But it wasn't at a lighthouse, it was..."
+    else
+        aoi "But..."
+    aoi "...It was in the supply closet..." mood worried8
+    aoi "...in secret..." mood worried5
+    lacie "???" mood confused2
+    aoi "...But then they died." mood scared5
+    lacie "..." mood concerned5
+    hide ui
+    pause 2
+    aoi "And now I'll die too....." mood melt5
+    lacie "....." mood concerned7
+    lacie "W-what brings YOU to the forest?" mood concerned2
+    aoi "Oh, I'm on vacation!" mood happy2
+    lacie "Oh, that's nice." mood concerned7
+    lacie "(Phew...)" mood concerned6
+    hide ui
+    pause 2
+    set ch1.forest_fairyring_seen_walk_2 = true
+    audio bgm override on prologue_nightmare
+    move to Ch1_FairyRing_B1F_Hallway point from_south

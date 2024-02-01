@@ -1,139 +1,139 @@
 label START
-	hide ui
-	audio bgm stop time 4
-	fade out time 4
-	chara lock
+    hide ui
+    audio bgm stop time 4
+    fade out time 4
+    chara lock
 
-	move to Ch1_Cutscene_Ending_3 point (0,0) time 0
-	fade in time 2
-	pause 1
-	lacie "I kept walking endlessly through the black space in my mind."
-	lacie "I wasn't worried. I've been here dozens of times."
-	lacie "This is just a dream. I always wake up."
-	lacie "So I kept walking."
-	hide ui
-	cg show black
-	pause 1.5
+    move to Ch1_Cutscene_Ending_3 point (0,0) time 0
+    fade in time 2
+    pause 1
+    lacie "I kept walking endlessly through the black space in my mind."
+    lacie "I wasn't worried. I've been here dozens of times."
+    lacie "This is just a dream. I always wake up."
+    lacie "So I kept walking."
+    hide ui
+    cg show black
+    pause 1.5
 
-	audio bgm play prologue_mistery_4
-	pause 3.5
-	chara unlock
-	cg hide
-	pause 1
-	lacie "(It's been a while since I started walking.)" mood blank7
-	lacie "(I have no way of keeping track of time though...)" mood disappointed2
-	lacie "(But even if I don't manage to find the way back...)" mood reflective3
-	lacie "Something in the real world will wake me up, right?" mood concerned9
-	chara unlock
-	hide ui
-	chara lock
-	pause 0.5
-	action state stand node lacie
-	pause 0.5
-	cg show black
-	pause 1.5
-	lacie "I looked down at my hands. But I couldn't see them. I couldn't see anything in any direction."
-	cg hide
-	action state walk node lacie
-	lacie "So I kept walking."
-	hide ui
-	cg show black
-	pause 4
+    audio bgm play prologue_mistery_4
+    pause 3.5
+    chara unlock
+    cg hide
+    pause 1
+    lacie "(It's been a while since I started walking.)" mood blank7
+    lacie "(I have no way of keeping track of time though...)" mood disappointed2
+    lacie "(But even if I don't manage to find the way back...)" mood reflective3
+    lacie "Something in the real world will wake me up, right?" mood concerned9
+    chara unlock
+    hide ui
+    chara lock
+    pause 0.5
+    action state stand node lacie
+    pause 0.5
+    cg show black
+    pause 1.5
+    lacie "I looked down at my hands. But I couldn't see them. I couldn't see anything in any direction."
+    cg hide
+    action state walk node lacie
+    lacie "So I kept walking."
+    hide ui
+    cg show black
+    pause 4
 
-	cg hide
-	chara unlock
-	lacie "..." mood concerned4
-	lacie "(How long has it been?)" mood concerned5
-	lacie "I've been walking for such a long time..."
-	lacie "(I haven't gotten hungry or thirsty. I'm not sleepy and my legs aren't even tired.)" mood concerned10
-	lacie "But the sensory deprivation... is really starting to get to me." mood concerned11
-	hide ui
-	chara lock
-	pause 1
-	lacie "But I wasn't going to get anywhere unless I moved."
-	lacie "So I kept walking."
-	hide ui
-	cg show black
-	pause 4
+    cg hide
+    chara unlock
+    lacie "..." mood concerned4
+    lacie "(How long has it been?)" mood concerned5
+    lacie "I've been walking for such a long time..."
+    lacie "(I haven't gotten hungry or thirsty. I'm not sleepy and my legs aren't even tired.)" mood concerned10
+    lacie "But the sensory deprivation... is really starting to get to me." mood concerned11
+    hide ui
+    chara lock
+    pause 1
+    lacie "But I wasn't going to get anywhere unless I moved."
+    lacie "So I kept walking."
+    hide ui
+    cg show black
+    pause 4
 
-	action state stand node lacie
-	cg hide
-	lacie "I decided to stop walking for a while."
-	lacie "It just seemed pointless."
-	lacie "It was like an invisible treadmill, as far as the eye could see."
-	lacie "Except that the eye couldn't see anything."
-	hide ui
-	pause 2
-	chara unlock
-	lacie "Ahh... will someone wake me up already?" mood concerned12
-	lacie "This is pointless..." mood concerned11
-	hide ui
-	chara lock
-	pause 2
-	lacie "But standing still was even more pointless."
-	action state walk node lacie
-	lacie "So I kept walking."
-	hide ui
-	cg show black
-	pause 4
+    action state stand node lacie
+    cg hide
+    lacie "I decided to stop walking for a while."
+    lacie "It just seemed pointless."
+    lacie "It was like an invisible treadmill, as far as the eye could see."
+    lacie "Except that the eye couldn't see anything."
+    hide ui
+    pause 2
+    chara unlock
+    lacie "Ahh... will someone wake me up already?" mood concerned12
+    lacie "This is pointless..." mood concerned11
+    hide ui
+    chara lock
+    pause 2
+    lacie "But standing still was even more pointless."
+    action state walk node lacie
+    lacie "So I kept walking."
+    hide ui
+    cg show black
+    pause 4
 
-	cg hide
-	pause 2
-	chara unlock
-	action state stand node lacie
-	pause 2
-	action state shadow_stand node lacie
-	lacie "..." mood shadow3
-	lacie "...This... I can't deal with this anymore... I want to wake up!" mood superscared
-	lacie "What kind of torture is this? There's no sounds, no colors, no smell...!" mood superscared10
-	hide ui
-	pause 2
+    cg hide
+    pause 2
+    chara unlock
+    action state stand node lacie
+    pause 2
+    action state shadow_stand node lacie
+    lacie "..." mood shadow3
+    lacie "...This... I can't deal with this anymore... I want to wake up!" mood superscared
+    lacie "What kind of torture is this? There's no sounds, no colors, no smell...!" mood superscared10
+    hide ui
+    pause 2
 
-	lacie "..." mood shadow
-	lacie "Even if I pinch myself... I can't feel pain either..." mood shadow2
-	cg show black
-	lacie "I'm going"
-	lacie "\n\t\tto go"
-	lacie "\n\n\t\t\t\tinsane anyways"
-	lacie "...so I kept walking."
-	hide ui
-	chara lock
-	audio bgm stop time 2
-	cg show black
-	pause 4
+    lacie "..." mood shadow
+    lacie "Even if I pinch myself... I can't feel pain either..." mood shadow2
+    cg show black
+    lacie "I'm going"
+    lacie "\n\t\tto go"
+    lacie "\n\n\t\t\t\tinsane anyways"
+    lacie "...so I kept walking."
+    hide ui
+    chara lock
+    audio bgm stop time 2
+    cg show black
+    pause 4
 
-	action call panic
-	cg hide
-	audio ambiance play white_noise volume 0.01
-	pause 2
-	camera shake time 0.5 continue
-	lacie "HELP!!! HEEEELP!!!" background none
-	audio ambiance volume 0.05
-	camera shake time 0.5 continue
-	lacie "SOMEONE GET ME OUT OF HERE! WAKE ME UP!!!" background none
-	audio ambiance volume 0.1
-	camera shake time 0.5 continue
-	lacie "I DON'T WANT TO STAY HERE FOREVER!!!" background none
-	audio ambiance volume 0.2
-	camera shake time 0.5 continue
-	lacie "PLEASE! I'D RATHER DIE!!!" background none
-	audio ambiance volume 0.4
-	lacie "I can't... stand it anymore...!" background none
-	audio ambiance volume 0.6
-	cg show red foreground time 2
-	lacie "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" time 3 background none
+    action call panic
+    cg hide
+    audio ambiance play white_noise volume 0.01
+    pause 2
+    camera shake time 0.5 continue
+    lacie "HELP!!! HEEEELP!!!" background none
+    audio ambiance volume 0.05
+    camera shake time 0.5 continue
+    lacie "SOMEONE GET ME OUT OF HERE! WAKE ME UP!!!" background none
+    audio ambiance volume 0.1
+    camera shake time 0.5 continue
+    lacie "I DON'T WANT TO STAY HERE FOREVER!!!" background none
+    audio ambiance volume 0.2
+    camera shake time 0.5 continue
+    lacie "PLEASE! I'D RATHER DIE!!!" background none
+    audio ambiance volume 0.4
+    lacie "I can't... stand it anymore...!" background none
+    audio ambiance volume 0.6
+    cg show red foreground time 2
+    lacie "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" time 3 background none
 
-	hide ui
-	pause 0.5
+    hide ui
+    pause 0.5
 
-	cg hide time 0
-	cg show black time 0
-	audio bgm stop time 0
-	audio ambiance stop time 0
-	set ch1.temp_ending_1_3 = true
-	audio bgm override on silent
-	move to Ch1_BlackPass_Hub point wake_up time 0
-	system running off
-	system call SetLacieShadow
-	pause 6
-	cg hide time 0
+    cg hide time 0
+    cg show black time 0
+    audio bgm stop time 0
+    audio ambiance stop time 0
+    set ch1.temp_ending_1_3 = true
+    audio bgm override on silent
+    move to Ch1_BlackPass_Hub point wake_up time 0
+    system running off
+    system call SetLacieShadow
+    pause 6
+    cg hide time 0

@@ -1,18 +1,18 @@
 label START
-	fade out
-	pause 1
-	audio sfx play burn
-	fade flash color red
-	pause 3
-	item remove ch1.forest_caterpillar
-	objective complete ch1.forest_lakeside_caterpillar
-	set ch1.forest_moths_clear = true
-	set ch1.forest_moths_killed_caterpillar = true
-	fade in
-	pause 1
-	chara set lacie at left
-	chara set ch1_moth_girl at right
-	chara set ch1_moth_boy at right
-	ch1_moth_girl "...Damn. That was pretty metal." mood blank4
-	ch1_moth_boy "It stinks though." mood blank2
-	end
+    fade out
+    pause 1
+    audio sfx play burn
+    fade flash color red
+    pause 3
+    item remove ch1.forest_caterpillar
+    objective complete ch1.forest_lakeside_caterpillar
+    set ch1.forest_moths_clear = true
+    set ch1.forest_moths_killed_caterpillar = true
+    fade in
+    pause 1
+    chara set lacie at left
+    chara set ch1_moth_girl at right
+    chara set ch1_moth_boy at right
+    ch1_moth_girl "...Damn. That was pretty metal." mood blank4
+    ch1_moth_boy "It stinks though." mood blank2
+    end

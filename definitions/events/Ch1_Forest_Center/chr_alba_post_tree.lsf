@@ -1,10 +1,10 @@
 label START
-	if repeat jump AGAIN
-	chara set lacie at left
-	chara set alba at right
-	alba "You should have rotted down there." mood annoyed3
-	alba "Just like my fish." mood pissed
-	end
+    if repeat jump AGAIN
+    chara set lacie at left
+    chara set alba at right
+    alba "You should have rotted down there." mood annoyed3
+    alba "Just like my fish." mood pissed
+    end
 
 label AGAIN
-	"Alba is counting the money she earned today."
+    "Alba is counting the money she earned today."

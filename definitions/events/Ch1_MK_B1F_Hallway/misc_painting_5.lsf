@@ -1,7 +1,7 @@
 label START
-	if var general.serious
-		event call misc_painting_generic
-		end
-	"A portrait of a person with blood running down their face."
-	if repeat end
-	lacie "Can they see properly?" mood hide2
+    if var general.serious
+        event call misc_painting_generic
+        end
+    "A portrait of a person with blood running down their face."
+    if repeat end
+    lacie "Can they see properly?" mood hide2

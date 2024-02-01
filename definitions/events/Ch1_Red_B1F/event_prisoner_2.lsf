@@ -1,19 +1,19 @@
 label START
-	if not var ch1.forest_red_prisoner_stage == 1 end
-	chara rename unknown to "misc.characters.prisoner"
-	chara set lacie at left
-	unknown "That's the spirit."
-	unknown "Welcome back, what is it you wanted to know again?"
-	lacie "Why are you locked up?"
-	unknown "Red locked me in here because I can be a bit of a nuisance."
-	unknown "I'm the only one who can cast curses."
-	lacie "Curses...?"
-	lacie "You're the only one? Then, did you have something to do with my curse?"
-	unknown "If you come a bit closer, maybe I'll tell you."
-	choice "Get closer?"
-		"Yes"
-			hide ui
-			action walk up 32
-			event call event_prisoner_strangle
-		"No"
-			event call event_prisoner_3
+    if not var ch1.forest_red_prisoner_stage == 1 end
+    chara rename unknown to "misc.characters.prisoner"
+    chara set lacie at left
+    unknown "That's the spirit."
+    unknown "Welcome back, what is it you wanted to know again?"
+    lacie "Why are you locked up?"
+    unknown "Red locked me in here because I can be a bit of a nuisance."
+    unknown "I'm the only one who can cast curses."
+    lacie "Curses...?"
+    lacie "You're the only one? Then, did you have something to do with my curse?"
+    unknown "If you come a bit closer, maybe I'll tell you."
+    choice "Get closer?"
+        "Yes"
+            hide ui
+            action walk up 32
+            event call event_prisoner_strangle
+        "No"
+            event call event_prisoner_3

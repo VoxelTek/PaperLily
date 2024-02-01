@@ -1,31 +1,31 @@
 label START
-	if var ch1.facility_dungeon_2_released jump PRIMAL
-	audio sfx play door_2
-	set ch1.facility_bathroom_stall_6_open = true
-	end
+    if var ch1.facility_dungeon_2_released jump PRIMAL
+    audio sfx play door_2
+    set ch1.facility_bathroom_stall_6_open = true
+    end
 
 label PRIMAL
-	action turn up
-	"A bathroom stall. It's occupied."
-	choice "Try to open it anyways?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	audio bgm stop time 4
-	pause 0.5
-	audio sfx play door_2
-	action call open_stall
-	camera unlock
-	pause 0.8
-	action walk down 32 backwards speed veryslow
-	pause 0.2
-	action call primal_attack_1
-	pause 2.1
-	action walk down 48 speed fast
-	action walk left 90 speed fast continue
-	pause 0.15
-	action call primal_attack_2
-	pause 0.3
-	event queue ch1_death_impact
+    action turn up
+    "A bathroom stall. It's occupied."
+    choice "Try to open it anyways?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    audio bgm stop time 4
+    pause 0.5
+    audio sfx play door_2
+    action call open_stall
+    camera unlock
+    pause 0.8
+    action walk down 32 backwards speed veryslow
+    pause 0.2
+    action call primal_attack_1
+    pause 2.1
+    action walk down 48 speed fast
+    action walk left 90 speed fast continue
+    pause 0.15
+    action call primal_attack_2
+    pause 0.3
+    event queue ch1_death_impact

@@ -1,15 +1,15 @@
 label START
-	"A shrine of some sorts."
-	"There's a bowl with a goldfish in it."
-	choice "Take the fish?"
-		"Yes"
-			hide ui
-			audio sfx play water_splash_3
-			set ch1.forest_lakeside_goldfish_gone = true
-			action call take_fish
-			item add ch1.lakeside_goldfish
-			item remove ch1.lakeside_goldfish
-			item add ch1.lakeside_deadfish silent
-			event queue event_bad_end
-		"No"
-			continue
+    "A shrine of some sorts."
+    "There's a bowl with a goldfish in it."
+    choice "Take the fish?"
+        "Yes"
+            hide ui
+            audio sfx play water_splash_3
+            set ch1.forest_lakeside_goldfish_gone = true
+            action call take_fish
+            item add ch1.lakeside_goldfish
+            item remove ch1.lakeside_goldfish
+            item add ch1.lakeside_deadfish silent
+            event queue event_bad_end
+        "No"
+            continue

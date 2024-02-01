@@ -1,69 +1,69 @@
 label START
-	pause 0.5
-	set ch1.mk_wisteria_item = 2
-	system refresh
-	pause 1
-	cg show black
-	audio bgm play ch1_heart
-	pause 2
-	chara rename mk to "misc.characters.lk"
-	chara rename chara1 to "misc.characters.iris"
+    pause 0.5
+    set ch1.mk_wisteria_item = 2
+    system refresh
+    pause 1
+    cg show black
+    audio bgm play ch1_heart
+    pause 2
+    chara rename mk to "misc.characters.lk"
+    chara rename chara1 to "misc.characters.iris"
 
-	"The [color=#90EE90]second blessing[/color] came as a gift." format center position center background none
-	hide ui
-	pause 1
-	"I always met Iris out by the river, and we sat and talked for hours." format center position center background none
-	"She told me all about the things I couldn't see." format center position center background none
-	"But it was different now." format center position center background none
-	"She spoke with such happiness and excitement." format center position center background none
-	"I couldn't take my eyes off of her." format center position center background none
-	hide ui
-	pause 1
-	cg show ch1/mk_backstory_iris1
-	hide ui
-	pause 1
-	chara1 "So to celebrate this miracle..."
-	chara1 "I got you something!"
-	mk "What?"
-	mk "For me?"
-	chara1 "Of course! Your eyes work now! It's amazing! We have to celebrate!"
-	chara1 "So... I stole this from my family..."
-	chara1 "But shh!"
-	chara1 "Don't tell!"
-	hide ui
-	pause 1
-	cg show ch1/mk_backstory_paints
-	hide ui
-	pause 1
-	mk "Wha-.."
-	mk "Iris! A sketchbook and paints are... so expensive...!"
-	mk "H-How...? Why...?"
-	chara1 "You always said you wanted to paint! I believe in you!"
-	chara1 "I'm so excited to see what you'll come up with!"
-	cg show black
-	hide ui
-	pause 1
-	"I couldn't believe it! My very own sketchbook and watercolors!" format center position center background none
-	"There were so many things I could paint!" format center position center background none
-	"Mother was always bedridden, so I made a habit of showing her my paintings." format center position center background none
-	"I started with trees and objects." format center position center background none
-	"But I took a liking to portraits of people." format center position center background none
-	"They all have such distinct, beautiful faces." format center position center background none
-	hide ui
-	pause 1
-	"After only 2 days, I had already made 8 portraits!" format center position center background none
-	"But when I flipped to the next page... a different kind of portrait filled the brown paper." format center position center background none
-	"It was all painted in black, and it was twisted and scary." format center position center background none
-	"I hadn't painted this..." format center position center background none
-	"I didn't even know who this person- or... creature, was." format center position center background none
-	"Every morning after that, I found new distorted portraits in the pages, but I never remembered painting them." format center position center background none
-	hide ui
-	pause 2
-	chara rename mk off
-	chara rename chara1 off
-	cg hide
-	pause 1
-	set ch1.mk_wisteria_item = 0
-	system refresh
-	pause 0.5
-	end
+    "The [color=#90EE90]second blessing[/color] came as a gift." format center position center background none
+    hide ui
+    pause 1
+    "I always met Iris out by the river, and we sat and talked for hours." format center position center background none
+    "She told me all about the things I couldn't see." format center position center background none
+    "But it was different now." format center position center background none
+    "She spoke with such happiness and excitement." format center position center background none
+    "I couldn't take my eyes off of her." format center position center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_iris1
+    hide ui
+    pause 1
+    chara1 "So to celebrate this miracle..."
+    chara1 "I got you something!"
+    mk "What?"
+    mk "For me?"
+    chara1 "Of course! Your eyes work now! It's amazing! We have to celebrate!"
+    chara1 "So... I stole this from my family..."
+    chara1 "But shh!"
+    chara1 "Don't tell!"
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_paints
+    hide ui
+    pause 1
+    mk "Wha-.."
+    mk "Iris! A sketchbook and paints are... so expensive...!"
+    mk "H-How...? Why...?"
+    chara1 "You always said you wanted to paint! I believe in you!"
+    chara1 "I'm so excited to see what you'll come up with!"
+    cg show black
+    hide ui
+    pause 1
+    "I couldn't believe it! My very own sketchbook and watercolors!" format center position center background none
+    "There were so many things I could paint!" format center position center background none
+    "Mother was always bedridden, so I made a habit of showing her my paintings." format center position center background none
+    "I started with trees and objects." format center position center background none
+    "But I took a liking to portraits of people." format center position center background none
+    "They all have such distinct, beautiful faces." format center position center background none
+    hide ui
+    pause 1
+    "After only 2 days, I had already made 8 portraits!" format center position center background none
+    "But when I flipped to the next page... a different kind of portrait filled the brown paper." format center position center background none
+    "It was all painted in black, and it was twisted and scary." format center position center background none
+    "I hadn't painted this..." format center position center background none
+    "I didn't even know who this person- or... creature, was." format center position center background none
+    "Every morning after that, I found new distorted portraits in the pages, but I never remembered painting them." format center position center background none
+    hide ui
+    pause 2
+    chara rename mk off
+    chara rename chara1 off
+    cg hide
+    pause 1
+    set ch1.mk_wisteria_item = 0
+    system refresh
+    pause 0.5
+    end

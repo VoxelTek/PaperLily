@@ -1,12 +1,12 @@
 label START
-	event call event_check_ingredients
-	fade out continue
-	audio sfx play footstep_ladder_1
-	pause 0.6
-	audio sfx play footstep_ladder_2
-	pause 0.6
-	audio sfx play footstep_ladder_1
-	pause 0.6
-	audio sfx play footstep_ladder_2
-	move to Ch1_Red_B1F point ladder time 0
-	fade in
+    event call event_check_ingredients
+    fade out continue
+    audio sfx play footstep_ladder_1
+    pause 0.6
+    audio sfx play footstep_ladder_2
+    pause 0.6
+    audio sfx play footstep_ladder_1
+    pause 0.6
+    audio sfx play footstep_ladder_2
+    move to Ch1_Red_B1F point ladder time 0
+    fade in

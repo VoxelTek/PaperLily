@@ -1,5 +1,5 @@
 label START
-	"A large tree."
-	if repeat end
-	if var general.serious end
-	"Its leaves look nice in fall."
+    "A large tree."
+    if repeat end
+    if var general.serious end
+    "Its leaves look nice in fall."

@@ -1,3 +1,3 @@
 label START
-	move to Ch1_Forest_Red point path2_forward
-	end
+    move to Ch1_Forest_Red point path2_forward
+    end

@@ -1,9 +1,9 @@
 label START
-	if var ch1.forest_center_campfire_on
-		hide ui
-		pause 0.5
-		item remove ch1.candleman_candle_unlit
-		item add ch1.candleman_candle
-		objective complete ch1.locked_site_light
-		end
-	"There's no fire here."
+    if var ch1.forest_center_campfire_on
+        hide ui
+        pause 0.5
+        item remove ch1.candleman_candle_unlit
+        item add ch1.candleman_candle
+        objective complete ch1.locked_site_light
+        end
+    "There's no fire here."

@@ -1,25 +1,25 @@
 label START
-	if repeat jump PRESS
-	"It's a button. It probably controls the gate."
+    if repeat jump PRESS
+    "It's a button. It probably controls the gate."
 label PRESS
-	choice "Press the button?"
-		"Yes"
-			hide ui
-			audio sfx play button
-			if not var ch1.facility_council_button_on jump BUTTON_BAD
-			fade out
-			pause 0.5
-			audio sfx play gate_2
-			set ch1.facility_council_door_open = !ch1.facility_council_door_open
-			system refresh
-			pause 4
-			fade in
-		"No"
-			end
-	end
+    choice "Press the button?"
+        "Yes"
+            hide ui
+            audio sfx play button
+            if not var ch1.facility_council_button_on jump BUTTON_BAD
+            fade out
+            pause 0.5
+            audio sfx play gate_2
+            set ch1.facility_council_door_open = !ch1.facility_council_door_open
+            system refresh
+            pause 4
+            fade in
+        "No"
+            end
+    end
 
 label BUTTON_BAD
-	pause 0.5
-	if repeat end
-	pause 1.5
-	"Nothing happens."
+    pause 0.5
+    if repeat end
+    pause 1.5
+    "Nothing happens."

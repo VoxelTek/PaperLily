@@ -1,36 +1,36 @@
 label START
-	"There's a large hole on the floor."
-	if not repeat
-		lacie "(It's deep... and dark.)" mood thinking4
-	if not var ch1.forest_fairyring_seen_walk_2 jump CANT_YET
-	if not var ch1.forest_fairyring_seen_skeleton_area jump EXPLORE_MORE
-	if not var ch1.forest_fairyring_seen_artist_area jump EXPLORE_MORE
-	jump GO_DOWN
+    "There's a large hole on the floor."
+    if not repeat
+        lacie "(It's deep... and dark.)" mood thinking4
+    if not var ch1.forest_fairyring_seen_walk_2 jump CANT_YET
+    if not var ch1.forest_fairyring_seen_skeleton_area jump EXPLORE_MORE
+    if not var ch1.forest_fairyring_seen_artist_area jump EXPLORE_MORE
+    jump GO_DOWN
 
 label CANT_YET
-	lacie "It doesn't seem very smart to try going down there." mood thinking2
-	end
+    lacie "It doesn't seem very smart to try going down there." mood thinking2
+    end
 
 label EXPLORE_MORE
-	lacie "I feel like there has to be a better option than going down this hole..." mood thinking4
-	end
+    lacie "I feel like there has to be a better option than going down this hole..." mood thinking4
+    end
 
 label GO_DOWN
-	lacie "(We checked everywhere else but...)" mood thinking
-	lacie "(If I go down there... it will be impossible to come back up...)" mood thinking2
-	choice "Go down the hole?"
-		"Yes"
-			continue
-		"No"
-			end
-	lacie "...Sigh, here we go." mood sigh
-	aoi "Wanna turn back?" mood embarassed
-	lacie "There's nowhere else to go, so we might as well explore whatever's down there." mood reflective2
-	aoi "Okay." mood pout5
-	fade out
-	move to Ch1_FairyRing_B2F_Hall_1 point from_above time 0
-	pause 1
-	fade in time 2
-	pause 1.5
-	lacie "Going deeper down to find an exit... this isn't very smart, is it?" mood reflective3
-	system retry-save
+    lacie "(We checked everywhere else but...)" mood thinking
+    lacie "(If I go down there... it will be impossible to come back up...)" mood thinking2
+    choice "Go down the hole?"
+        "Yes"
+            continue
+        "No"
+            end
+    lacie "...Sigh, here we go." mood sigh
+    aoi "Wanna turn back?" mood embarassed
+    lacie "There's nowhere else to go, so we might as well explore whatever's down there." mood reflective2
+    aoi "Okay." mood pout5
+    fade out
+    move to Ch1_FairyRing_B2F_Hall_1 point from_above time 0
+    pause 1
+    fade in time 2
+    pause 1.5
+    lacie "Going deeper down to find an exit... this isn't very smart, is it?" mood reflective3
+    system retry-save

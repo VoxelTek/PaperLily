@@ -1,12 +1,12 @@
 label START
-	audio sfx play fire
-	pause 0.1
-	set ch1.mk_tool_clear = true
-	system refresh
-	if repeat end
-	pause 1.5
-	audio sfx play drop
-	set ch1.mk_tool_visible = true
-	action turn down
-	system refresh
-	pause 0.5
+    audio sfx play fire
+    pause 0.1
+    set ch1.mk_tool_clear = true
+    system refresh
+    if repeat end
+    pause 1.5
+    audio sfx play drop
+    set ch1.mk_tool_visible = true
+    action turn down
+    system refresh
+    pause 0.5

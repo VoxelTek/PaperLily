@@ -1,3 +1,3 @@
 label START
-	lacie "These flowers seem to belong here... but..." mood blank5
-	lacie "It would serve no purpose to plant them." mood blank2
+    lacie "These flowers seem to belong here... but..." mood blank5
+    lacie "It would serve no purpose to plant them." mood blank2

@@ -1,17 +1,17 @@
 label START
-	"A bookshelf with school related books."
-	if var general.serious end
-	"Manga and other non-academic stuff gets to go in the bottom compartment."
-	if objective ch1.prepare_ritual inprogress jump CHECK_MARKER
-	end
+    "A bookshelf with school related books."
+    if var general.serious end
+    "Manga and other non-academic stuff gets to go in the bottom compartment."
+    if objective ch1.prepare_ritual inprogress jump CHECK_MARKER
+    end
 
 label CHECK_MARKER
-	if not objective ch1.prepare_ritual.paint_front inprogress end
-	if item ch1.marker end
-	set ch1.home_checked_bedroom_a_marker = true
-	lacie "Blue... Pink... Looks like I don't have any red markers." mood blank2
-	if not var ch1.home_checked_bedroom_c_marker
-		lacie "Maybe in my parents' room?" mood thinking
-		end
-	lacie "Maybe downstairs?" mood thinking
-	end
+    if not objective ch1.prepare_ritual.paint_front inprogress end
+    if item ch1.marker end
+    set ch1.home_checked_bedroom_a_marker = true
+    lacie "Blue... Pink... Looks like I don't have any red markers." mood blank2
+    if not var ch1.home_checked_bedroom_c_marker
+        lacie "Maybe in my parents' room?" mood thinking
+        end
+    lacie "Maybe downstairs?" mood thinking
+    end

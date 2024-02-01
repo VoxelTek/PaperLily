@@ -1,9 +1,9 @@
 label START
-	if var ch1.forest_moths_upset end
-	chara set ch1_moth_boy at right
-	if var ch1.forest_moths_clear
-		ch1_moth_boy "Please, we already gave you the doorknob." mood annoyed6
-		ch1_moth_boy "What more do you want?" mood annoyed4
-		end
-	ch1_moth_boy "Oh god..." mood annoyed4
-	ch1_moth_boy "Please stop, I seriously can't stand that." mood annoyed6
+    if var ch1.forest_moths_upset end
+    chara set ch1_moth_boy at right
+    if var ch1.forest_moths_clear
+        ch1_moth_boy "Please, we already gave you the doorknob." mood annoyed6
+        ch1_moth_boy "What more do you want?" mood annoyed4
+        end
+    ch1_moth_boy "Oh god..." mood annoyed4
+    ch1_moth_boy "Please stop, I seriously can't stand that." mood annoyed6

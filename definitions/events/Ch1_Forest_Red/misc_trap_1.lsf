@@ -1,10 +1,10 @@
 label START
-	if repeat end
-	audio sfx play slice2
-	action call show_spikes
-	pause 0.1
-	action walk right 16 backwards
-	bubble exclamation continue
-	pause 0.5
-	system minigame ch1_battle_redbridge_1
-	end
+    if repeat end
+    audio sfx play slice2
+    action call show_spikes
+    pause 0.1
+    action walk right 16 backwards
+    bubble exclamation continue
+    pause 0.5
+    system minigame ch1_battle_redbridge_1
+    end

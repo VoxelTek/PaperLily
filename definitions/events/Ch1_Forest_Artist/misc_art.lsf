@@ -1,5 +1,5 @@
 label START
-	"A large pile of rubble."
-	if repeat end
-	lacie "What is this material? Clay?" mood thinking
-	end
+    "A large pile of rubble."
+    if repeat end
+    lacie "What is this material? Clay?" mood thinking
+    end

@@ -1,6 +1,6 @@
 label START
-	if var ch1.facility_chart_took_fuse end
-	set ch1.facility_chart_took_fuse = true
-	system refresh
-	item add ch1.facility_fuse_15
-	end
+    if var ch1.facility_chart_took_fuse end
+    set ch1.facility_chart_took_fuse = true
+    system refresh
+    item add ch1.facility_fuse_15
+    end

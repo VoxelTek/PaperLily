@@ -1,5 +1,5 @@
 label START
-	audio sfx play button
-	set ch1.facility_chart_screen_on = !ch1.facility_chart_screen_on
-	pause 0.2
-	end
+    audio sfx play button
+    set ch1.facility_chart_screen_on = !ch1.facility_chart_screen_on
+    pause 0.2
+    end

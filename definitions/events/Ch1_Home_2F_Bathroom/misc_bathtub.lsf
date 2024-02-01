@@ -1,5 +1,5 @@
 label START
-	if var general.serious
-		"A bathtub."
-		end
-	"A relaxing bathtub."
+    if var general.serious
+        "A bathtub."
+        end
+    "A relaxing bathtub."

@@ -1,5 +1,5 @@
 label START
-	"A bus stop sign."
-	if var ch1.forest_bus_seen_schedule end
-	"The schedule is empty. It's likely that there's no next bus coming."
-	set ch1.forest_bus_seen_schedule = true
+    "A bus stop sign."
+    if var ch1.forest_bus_seen_schedule end
+    "The schedule is empty. It's likely that there's no next bus coming."
+    set ch1.forest_bus_seen_schedule = true

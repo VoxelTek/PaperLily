@@ -1,8 +1,8 @@
 label START
-	if repeat end
-	chara set lacie at left
-	chara set sai at right
-	sai "So how'd you... get out?" mood blank11
-	lacie "I'm not sure." mood thinking3
-	lacie "You were here, didn't you see it?" mood blank3
-	sai "I wasn't paying attention." mood blank12
+    if repeat end
+    chara set lacie at left
+    chara set sai at right
+    sai "So how'd you... get out?" mood blank11
+    lacie "I'm not sure." mood thinking3
+    lacie "You were here, didn't you see it?" mood blank3
+    sai "I wasn't paying attention." mood blank12

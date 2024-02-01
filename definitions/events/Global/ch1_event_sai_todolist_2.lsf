@@ -1,70 +1,70 @@
 label START
-	fade out
-	move to Ch1_Garden_ExitRitual point entrance cutscene
-	chara spawn lacie point entrance
-	chara spawn sai point entrance_sai
-	chara set lacie at left
-	chara set sai at right
-	camera track node lacie
-	action walk up 192 node lacie speed slow continue
-	pause 0.1
-	action walk up 192 node sai speed slow continue
-	pause 0.1
-	fade in time 2
-	lacie "A garden with a single door in the middle..."
-	hide ui
-	camera move (0,-100) time 2
-	lacie "This is it." mood blank5
-	lacie "I just need to make a lily and place it in the vase, right?" mood blank2
-	hide ui
-	camera move (0,100) time 0.5
-	pause 1
-	action turn right node sai
-	sai "Hey um..." mood blank9
-	sai "Before that..."
-	sai "...I wanted to talk to you about something." mood blank5
-	lacie "..." mood blank7
-	sai "It's about that list." mood blank12
-	action turn left node lacie
-	lacie "What list?" mood default
-	sai "Your to-do list? ...Before you die?" mood blank11
-	lacie "Oh... that." mood sigh2
-	sai "I was thinking about it." mood thinking4
-	sai "..."
-	sai "Why don't you make a new list?" mood thinking2
-	sai "Instead of a list of things to do before you die..." mood blank5
-	sai "Why don't you make a list of things to do once you get fixed?" mood blank5
-	lacie "..." mood blank1
-	if var ch1.favorite_dessert == "flan"
-		sai "Starting with treating me to that flan you like." mood smile5
-	if var ch1.favorite_dessert == "macarons"
-		sai "Starting with treating me to some macarons?" mood smile5
-	if var ch1.favorite_dessert == "eclair"
-		sai "Starting with treating me to an eclair maybe?" mood smile5
-	sai "That way you'll have something to look forward to." mood thinking7
-	lacie "..." mood blank7
-	lacie "I'm not sure what to say in a situation like this." mood blank8
-	sai "You don't need to say anything." mood smile4
-	sai "I just think it would suck if you gave up." mood blank12
-	lacie "..." mood default
-	lacie "Why?" mood blank1
-	sai "Why!?" mood worried
-	sai "Well, because... I don't know." mood confused12
-	sai "Today was fun." mood happy
-	lacie "Fun...?" mood surprised3
-	sai "Yeah! Everything was really exciting, don't you think?" mood smile6
-	lacie "We almost died..." mood confused
-	sai "Yeah!" mood happy2
-	lacie "...A lot." mood confused2
-	sai "Yeah, but, we made it, didn't we?" mood smile3
-	lacie "..." mood blank7
-	hide ui
-	pause 2
-	lacie "I guess that's true." mood blank8
-	hide ui
-	pause 1
-	sai "Anyways, let's hurry. It's not good to stay in this room for too long." mood smile4
-	set ch1.garden_seen_cutscene = true
-	objective complete ch1.facility_find_door
-	objective silence
-	move to Ch1_Garden_ExitRitual point after_cutscene
+    fade out
+    move to Ch1_Garden_ExitRitual point entrance cutscene
+    chara spawn lacie point entrance
+    chara spawn sai point entrance_sai
+    chara set lacie at left
+    chara set sai at right
+    camera track node lacie
+    action walk up 192 node lacie speed slow continue
+    pause 0.1
+    action walk up 192 node sai speed slow continue
+    pause 0.1
+    fade in time 2
+    lacie "A garden with a single door in the middle..."
+    hide ui
+    camera move (0,-100) time 2
+    lacie "This is it." mood blank5
+    lacie "I just need to make a lily and place it in the vase, right?" mood blank2
+    hide ui
+    camera move (0,100) time 0.5
+    pause 1
+    action turn right node sai
+    sai "Hey um..." mood blank9
+    sai "Before that..."
+    sai "...I wanted to talk to you about something." mood blank5
+    lacie "..." mood blank7
+    sai "It's about that list." mood blank12
+    action turn left node lacie
+    lacie "What list?" mood default
+    sai "Your to-do list? ...Before you die?" mood blank11
+    lacie "Oh... that." mood sigh2
+    sai "I was thinking about it." mood thinking4
+    sai "..."
+    sai "Why don't you make a new list?" mood thinking2
+    sai "Instead of a list of things to do before you die..." mood blank5
+    sai "Why don't you make a list of things to do once you get fixed?" mood blank5
+    lacie "..." mood blank1
+    if var ch1.favorite_dessert == "flan"
+        sai "Starting with treating me to that flan you like." mood smile5
+    if var ch1.favorite_dessert == "macarons"
+        sai "Starting with treating me to some macarons?" mood smile5
+    if var ch1.favorite_dessert == "eclair"
+        sai "Starting with treating me to an eclair maybe?" mood smile5
+    sai "That way you'll have something to look forward to." mood thinking7
+    lacie "..." mood blank7
+    lacie "I'm not sure what to say in a situation like this." mood blank8
+    sai "You don't need to say anything." mood smile4
+    sai "I just think it would suck if you gave up." mood blank12
+    lacie "..." mood default
+    lacie "Why?" mood blank1
+    sai "Why!?" mood worried
+    sai "Well, because... I don't know." mood confused12
+    sai "Today was fun." mood happy
+    lacie "Fun...?" mood surprised3
+    sai "Yeah! Everything was really exciting, don't you think?" mood smile6
+    lacie "We almost died..." mood confused
+    sai "Yeah!" mood happy2
+    lacie "...A lot." mood confused2
+    sai "Yeah, but, we made it, didn't we?" mood smile3
+    lacie "..." mood blank7
+    hide ui
+    pause 2
+    lacie "I guess that's true." mood blank8
+    hide ui
+    pause 1
+    sai "Anyways, let's hurry. It's not good to stay in this room for too long." mood smile4
+    set ch1.garden_seen_cutscene = true
+    objective complete ch1.facility_find_door
+    objective silence
+    move to Ch1_Garden_ExitRitual point after_cutscene

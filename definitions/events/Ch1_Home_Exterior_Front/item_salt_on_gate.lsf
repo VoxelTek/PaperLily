@@ -1,4 +1,4 @@
 label START
-	if not objective ch1.revert_ritual_execution inprogress end
-	lacie "The gates probably don't need salt." mood blank2
-	end
+    if not objective ch1.revert_ritual_execution inprogress end
+    lacie "The gates probably don't need salt." mood blank2
+    end

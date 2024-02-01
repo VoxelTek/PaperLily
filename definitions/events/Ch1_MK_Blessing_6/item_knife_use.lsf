@@ -1,41 +1,41 @@
 label START
-	if not var ch1.temp_ending_1_12_on_fire
-		lacie "What do I do with this...?"
-		end
-	pause 0.5
-	action call stab_stage_1
-	pause 1
-	chara lock
-	lacie "Huh...?"
-	lacie "I can't control my arms..."
-	hide ui
+    if not var ch1.temp_ending_1_12_on_fire
+        lacie "What do I do with this...?"
+        end
+    pause 0.5
+    action call stab_stage_1
+    pause 1
+    chara lock
+    lacie "Huh...?"
+    lacie "I can't control my arms..."
+    hide ui
 
-	action call stab_stage_2
-	pause 0.5
-	lacie "N-no..."
-	lacie "No no... no!!!"
-	lacie "What's happening!?"
-	hide ui
-	pause 1
+    action call stab_stage_2
+    pause 0.5
+    lacie "N-no..."
+    lacie "No no... no!!!"
+    lacie "What's happening!?"
+    hide ui
+    pause 1
 
-	lacie "Aaaah!"
-	hide ui
-	pause 1
-	action call stab_stage_3
-	audio sfx play hit
-	pause 0.3
-	fade out time 0
-	fade flash color red
-	pause 0.5
-	lacie "Aaahh!!!"
-	lacie "Stop...!!"
-	lacie "I can't stop it!!!"
-	hide ui
-	pause 1
-	audio sfx play hit
-	pause 1.2
-	audio sfx play hit
-	pause 1.4
-	audio sfx play hit
-	pause 4
-	event queue ch1_ending_1_12
+    lacie "Aaaah!"
+    hide ui
+    pause 1
+    action call stab_stage_3
+    audio sfx play hit
+    pause 0.3
+    fade out time 0
+    fade flash color red
+    pause 0.5
+    lacie "Aaahh!!!"
+    lacie "Stop...!!"
+    lacie "I can't stop it!!!"
+    hide ui
+    pause 1
+    audio sfx play hit
+    pause 1.2
+    audio sfx play hit
+    pause 1.4
+    audio sfx play hit
+    pause 4
+    event queue ch1_ending_1_12

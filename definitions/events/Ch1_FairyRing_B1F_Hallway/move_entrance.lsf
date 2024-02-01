@@ -1,2 +1,2 @@
 label START
-	move to Ch1_FairyRing_B1F_Entrance point from_hallway
+    move to Ch1_FairyRing_B1F_Entrance point from_hallway

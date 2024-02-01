@@ -1,4 +1,4 @@
 label START
-	if not var general.blackpass_visits == 2 end
-	if repeat end
-	action call show_student_peeking
+    if not var general.blackpass_visits == 2 end
+    if repeat end
+    action call show_student_peeking

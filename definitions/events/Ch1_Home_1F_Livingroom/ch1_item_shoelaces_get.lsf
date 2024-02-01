@@ -1,15 +1,15 @@
 label START
-	if not objective ch1.ritual_items.ribbon inprogress end
-	if repeat jump TAKE_RED
-	"There's a pair of white shoes with red shoelaces."
+    if not objective ch1.ritual_items.ribbon inprogress end
+    if repeat jump TAKE_RED
+    "There's a pair of white shoes with red shoelaces."
 
 label TAKE_RED
-	"The shoelaces could be useful."
-	choice "Take ${item:ch1.shoelaces}?"
-		"Yes"
-			continue
-		"No"
-			end
-	objective complete ch1.ritual_items.ribbon
-	item add ch1.shoelaces
-	end
+    "The shoelaces could be useful."
+    choice "Take ${item:ch1.shoelaces}?"
+        "Yes"
+            continue
+        "No"
+            end
+    objective complete ch1.ritual_items.ribbon
+    item add ch1.shoelaces
+    end

@@ -1,7 +1,7 @@
 label START
-	"An oversized bed."
-	if repeat end
-	if var general.serious end
-	lacie "(This bed is too large, even for that demon.)"
-	if character sai
-		sai "Wow, what a luxury." mood confused11
+    "An oversized bed."
+    if repeat end
+    if var general.serious end
+    lacie "(This bed is too large, even for that demon.)"
+    if character sai
+        sai "Wow, what a luxury." mood confused11

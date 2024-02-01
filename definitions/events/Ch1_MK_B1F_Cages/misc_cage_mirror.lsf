@@ -1,36 +1,36 @@
 label START
-	if var ch1.mk_took_mirror jump ALREADY_TOOK
-	event call ch1_event_mk_blessing_1
-	"There seems to be something strange inside the cage."
-	choice "Try to get ${item:ch1.mk_hand_mirror}?"
-		"Yes"
-			hide ui
-			if not var ch1.mk_painting_chase_clear jump DEATH
-			fade out
-			pause 1
-			item add ch1.mk_hand_mirror
-			set ch1.mk_took_mirror = true
-			system refresh
-			fade in
-			end
-		"No"
-			end
-	end
+    if var ch1.mk_took_mirror jump ALREADY_TOOK
+    event call ch1_event_mk_blessing_1
+    "There seems to be something strange inside the cage."
+    choice "Try to get ${item:ch1.mk_hand_mirror}?"
+        "Yes"
+            hide ui
+            if not var ch1.mk_painting_chase_clear jump DEATH
+            fade out
+            pause 1
+            item add ch1.mk_hand_mirror
+            set ch1.mk_took_mirror = true
+            system refresh
+            fade in
+            end
+        "No"
+            end
+    end
 
 label ALREADY_TOOK
-	"There's nothing else in there."
-	end
+    "There's nothing else in there."
+    end
 
 label DEATH
-	fade out
-	audio bgm stop time 2
-	move to Ch1_Cutscene_PaintingLady point cutscene_center time 0
-	fade in time 1
-	pause 2.1
-	audio sfx play thud5
-	pause 0.2
-	camera shake
-	pause 1.4
-	fade out
-	pause 0.5
-	event queue ch1_death_impact
+    fade out
+    audio bgm stop time 2
+    move to Ch1_Cutscene_PaintingLady point cutscene_center time 0
+    fade in time 1
+    pause 2.1
+    audio sfx play thud5
+    pause 0.2
+    camera shake
+    pause 1.4
+    fade out
+    pause 0.5
+    event queue ch1_death_impact

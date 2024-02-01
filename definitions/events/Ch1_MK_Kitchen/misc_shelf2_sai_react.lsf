@@ -1,16 +1,16 @@
 label START
-	if repeat end
-	chara set lacie at left
-	chara set sai at right
-	if var ch1.mk_took_eye_kitchen
-		sai "Whoa neat! Can I have one?" mood blank7
-		lacie "There was an eyeball in there." mood blank7
-		sai "Ah. So, no cookie?" mood thinking4
-	else
-		sai "Whoa neat! Can I have one?" mood blank7
-		lacie "There's an eyeball in there." mood blank7
-		sai "Well, not the eyeball, I meant the cookie." mood smile2
-		lacie "..." mood disappointed3
-	lacie "I don't think you should eat that." mood sigh2
-	sai "Bummer." mood thinking9
-	end
+    if repeat end
+    chara set lacie at left
+    chara set sai at right
+    if var ch1.mk_took_eye_kitchen
+        sai "Whoa neat! Can I have one?" mood blank7
+        lacie "There was an eyeball in there." mood blank7
+        sai "Ah. So, no cookie?" mood thinking4
+    else
+        sai "Whoa neat! Can I have one?" mood blank7
+        lacie "There's an eyeball in there." mood blank7
+        sai "Well, not the eyeball, I meant the cookie." mood smile2
+        lacie "..." mood disappointed3
+    lacie "I don't think you should eat that." mood sigh2
+    sai "Bummer." mood thinking9
+    end

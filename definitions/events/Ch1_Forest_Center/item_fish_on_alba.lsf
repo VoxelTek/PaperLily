@@ -1,6 +1,6 @@
 label START
-	if repeat end
-	chara set lacie at left
-	alba "What do you want?" mood blank3
-	lacie "Can I get a refund?" mood hide2
-	alba "Absolutely not." mood pissed
+    if repeat end
+    chara set lacie at left
+    alba "What do you want?" mood blank3
+    lacie "Can I get a refund?" mood hide2
+    alba "Absolutely not." mood pissed

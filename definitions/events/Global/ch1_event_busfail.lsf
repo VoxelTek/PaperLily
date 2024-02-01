@@ -1,8 +1,8 @@
 label START
-	lacie "In any case... this ritual is a bust. I need to clean up now." mood reflective7
-	lacie "The consequences for leaving things mid-ritual can be pretty dire, or so I read." mood reflective8
-	lacie "I left the instructions to undo the ritual at the PC." mood reflective7
-	system menu on
-	objective clear
-	objective add ch1.revert_ritual_instructions
-	set ch1.home_missed_bus = true
+    lacie "In any case... this ritual is a bust. I need to clean up now." mood reflective7
+    lacie "The consequences for leaving things mid-ritual can be pretty dire, or so I read." mood reflective8
+    lacie "I left the instructions to undo the ritual at the PC." mood reflective7
+    system menu on
+    objective clear
+    objective add ch1.revert_ritual_instructions
+    set ch1.home_missed_bus = true

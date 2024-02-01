@@ -1,22 +1,22 @@
 label START
-	set general.blackpass_visits = 2
-	audio bgm override on silent
-	move to Ch1_BlackPass_Hub point cutscene_camera cutscene
-	event call ch1_blackpass_init
-	action call lacie_bed_show
-	fade in time 4
-	audio bgm override off
-	audio bgm play ch1_blackpass
-	pause 1
-	action call lacie_bed_eyes
-	pause 2
-	lacie "Wha- Again?" mood confused2
-	bubble scribble point cutscene_bubble
-	lacie "This is ridiculous, I was just here a few minutes ago." mood confused3
-	lacie "I need to get this over with quickly, so I can get off the bus." mood frustrated2
-	hide ui
-	pause 0.5
-	move to Ch1_BlackPass_Hub point wake_up
-	objective clear
-	objective add ch1.blackpass_2_leave
-	system retry-save
+    set general.blackpass_visits = 2
+    audio bgm override on silent
+    move to Ch1_BlackPass_Hub point cutscene_camera cutscene
+    event call ch1_blackpass_init
+    action call lacie_bed_show
+    fade in time 4
+    audio bgm override off
+    audio bgm play ch1_blackpass
+    pause 1
+    action call lacie_bed_eyes
+    pause 2
+    lacie "Wha- Again?" mood confused2
+    bubble scribble point cutscene_bubble
+    lacie "This is ridiculous, I was just here a few minutes ago." mood confused3
+    lacie "I need to get this over with quickly, so I can get off the bus." mood frustrated2
+    hide ui
+    pause 0.5
+    move to Ch1_BlackPass_Hub point wake_up
+    objective clear
+    objective add ch1.blackpass_2_leave
+    system retry-save

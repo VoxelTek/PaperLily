@@ -1,11 +1,11 @@
 label START
-	if var ch1.forest_lakeside_placed_return_doorknob jump NO_SAVE
-	if repeat jump SAVE
-	"A crow standing on a log."
-	lacie "It's completely unfazed by the rain..." mood blank6
+    if var ch1.forest_lakeside_placed_return_doorknob jump NO_SAVE
+    if repeat jump SAVE
+    "A crow standing on a log."
+    lacie "It's completely unfazed by the rain..." mood blank6
 label SAVE
-	system save
-	end
+    system save
+    end
 
 label NO_SAVE
-	"A wooden log."
+    "A wooden log."

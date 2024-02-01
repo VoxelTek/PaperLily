@@ -1,18 +1,18 @@
 label START
-	chara set lacie at left
-	chara set hiro at right
-	if repeat jump AGAIN
-	hiro "It makes me happy to see you carry your cellphone around." mood smile
-	lacie "Because you're the one that got it for me?" mood blank1
-	hiro "That, but also..." mood blank
-	hiro "...how to put this..." mood side3
-	hiro "It would be easy to forget it in a drawer if you don't have much use for it." mood surprised
-	lacie "...At the very least, it makes for a good flashlight." mood blank8
-	hiro "Right! What matters is that you carry it with you." mood smile
-	lacie "Yeah." mood default
-	end
+    chara set lacie at left
+    chara set hiro at right
+    if repeat jump AGAIN
+    hiro "It makes me happy to see you carry your cellphone around." mood smile
+    lacie "Because you're the one that got it for me?" mood blank1
+    hiro "That, but also..." mood blank
+    hiro "...how to put this..." mood side3
+    hiro "It would be easy to forget it in a drawer if you don't have much use for it." mood surprised
+    lacie "...At the very least, it makes for a good flashlight." mood blank8
+    hiro "Right! What matters is that you carry it with you." mood smile
+    lacie "Yeah." mood default
+    end
 
 label AGAIN
-	hiro "You already have my number."
-	hiro "Or are you showing me your wallpaper?" mood pout
-	end
+    hiro "You already have my number."
+    hiro "Or are you showing me your wallpaper?" mood pout
+    end

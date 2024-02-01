@@ -1,6 +1,6 @@
 label START
-	"The vent cover."
-	if var ch1.facility_chartroom_seen_exit
-		if not var ch1.facility_chartroom_placed_plank
-			"It's not large enough to cross the hole outside."
-	end
+    "The vent cover."
+    if var ch1.facility_chartroom_seen_exit
+        if not var ch1.facility_chartroom_placed_plank
+            "It's not large enough to cross the hole outside."
+    end

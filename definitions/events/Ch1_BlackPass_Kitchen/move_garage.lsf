@@ -1,16 +1,16 @@
 label START
-	label START
-	if var general.blackpass_visits > 3
-		"It's locked."
-		end
-	if var ch1.blackpass_finished_closet_search
-		audio sfx play door
-		move to Ch1_BlackPass_Garage_2 point entrance
-		end
-	if var ch1.blackpass_retrieved_knife
-		audio sfx play door
-		move to Ch1_BlackPass_Garage_2 point entrance
-		end
-	audio sfx play door
-	move to Ch1_BlackPass_Garage point entrance
-	end
+    label START
+    if var general.blackpass_visits > 3
+        "It's locked."
+        end
+    if var ch1.blackpass_finished_closet_search
+        audio sfx play door
+        move to Ch1_BlackPass_Garage_2 point entrance
+        end
+    if var ch1.blackpass_retrieved_knife
+        audio sfx play door
+        move to Ch1_BlackPass_Garage_2 point entrance
+        end
+    audio sfx play door
+    move to Ch1_BlackPass_Garage point entrance
+    end

@@ -1,12 +1,12 @@
 label START
-	"Some purple flowers."
-	"They're growing abundantly between these rocks."
-	if not var persistent.ch1_read_lakeside_temple_note end
-	if var ch1.forest_lakeside_placed_petals end
-	if item ch1.lakeside_petals_purple end
-	if objective ch1.forest_lakeside_remove_mermaid done end
-	choice "Take some ${item:ch1.lakeside_petals_purple}?"
-		"Yes"
-			item add ch1.lakeside_petals_purple
-		"No"
-			end
+    "Some purple flowers."
+    "They're growing abundantly between these rocks."
+    if not var persistent.ch1_read_lakeside_temple_note end
+    if var ch1.forest_lakeside_placed_petals end
+    if item ch1.lakeside_petals_purple end
+    if objective ch1.forest_lakeside_remove_mermaid done end
+    choice "Take some ${item:ch1.lakeside_petals_purple}?"
+        "Yes"
+            item add ch1.lakeside_petals_purple
+        "No"
+            end

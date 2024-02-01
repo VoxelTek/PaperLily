@@ -1,4 +1,4 @@
 label START
-	if repeat end
-	lacie "There's an anime about magical girls I recently started watching."
-	lacie "People on the net say it gets dark... but I haven't seen anything bad so far."
+    if repeat end
+    lacie "There's an anime about magical girls I recently started watching."
+    lacie "People on the net say it gets dark... but I haven't seen anything bad so far."

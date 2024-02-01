@@ -1,19 +1,19 @@
 label START
-	if var ch1.forest_lakeside_removed_mermaid end
-	if repeat
-		"That won't accomplish anything."
-		end
-	item remove ch1.bucket_full
-	item add ch1.bucket silent
-	fade out
-	pause 0.5
-	audio sfx play water_splash_4
-	pause 3
-	fade in
-	pause 0.5
-	if var ch1.forest_lakeside_seen_mermaid_note
-		lacie "I thought it hated water...?" mood confused3
-		lacie "Well, no... it's clearly swimming in the water just fine." mood confused2
-		lacie "Maybe it's some different kind of water." mood thinking4
-	else
-		"The monster stares at you without moving from its spot."
+    if var ch1.forest_lakeside_removed_mermaid end
+    if repeat
+        "That won't accomplish anything."
+        end
+    item remove ch1.bucket_full
+    item add ch1.bucket silent
+    fade out
+    pause 0.5
+    audio sfx play water_splash_4
+    pause 3
+    fade in
+    pause 0.5
+    if var ch1.forest_lakeside_seen_mermaid_note
+        lacie "I thought it hated water...?" mood confused3
+        lacie "Well, no... it's clearly swimming in the water just fine." mood confused2
+        lacie "Maybe it's some different kind of water." mood thinking4
+    else
+        "The monster stares at you without moving from its spot."

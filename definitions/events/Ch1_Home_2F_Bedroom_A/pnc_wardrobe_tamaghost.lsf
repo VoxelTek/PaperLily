@@ -1,16 +1,16 @@
 label START
-	"Your TamaGhost™."
-	if var ch1.todolist_task4_done
-		lacie "I already fed it today."
-		end
-	"(You fed your TamaGhost™)."
-	hide ui
-	pause 0.5
-	audio sfx play paper
-	cg show ch1/ch1_todolist scene
-	pause 1
-	set ch1.todolist_task4_done = true
-	cg show ch1/ch1_todolist scene
-	pause 1
-	cg hide
-	end
+    "Your TamaGhost™."
+    if var ch1.todolist_task4_done
+        lacie "I already fed it today."
+        end
+    "(You fed your TamaGhost™)."
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    cg show ch1/ch1_todolist scene
+    pause 1
+    set ch1.todolist_task4_done = true
+    cg show ch1/ch1_todolist scene
+    pause 1
+    cg hide
+    end

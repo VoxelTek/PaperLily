@@ -1,122 +1,122 @@
 label START
-	audio sfx play thud4
-	audio bgm stop time 0.2
-	system call StopTimer
-	system call FairyringDeath
-	pause 3
-	audio bgm stop time 4
-	fade out time 4
-	if objective ch1.kozmo_find_head inprogress
-		event call ch1_event_kozmotimeout
-	if objective ch1.kozmo_give_head inprogress
-		event call ch1_event_kozmotimeout
-	pause 2
-	if var ch1.forest_seen_fairyring
-		system achievement CH1_QUEEN_OF_IDIOTS
-		set persistent.lacie_deaths ++
-		system title-screen
-		end
-	chara lock
-	lacie "W-what..."
-	lacie "What happened? It was so sudden..."
-	lacie "Am I trapped inside of something?"
-	hide ui
-	pause 1
-	audio sfx play squash
-	pause 1
-	lacie "I can barely move..."
-	lacie "Ugh... it's all soggy and... squishy..."
-	lacie "..."
-	hide ui
-	pause 1
-	audio ambiance play gore9_loop
-	pause 3
-	lacie "This is suffocating... I don't like closed spaces..."
-	lacie "Aahh... I hate this... I'm going to be sick...!"
-	hide ui
-	pause 2
-	if not item ch1.scissors jump FAILURE
-	lacie "Wait... calm down."
-	lacie "I can move my arms, somewhat."
-	lacie "Think."
-	hide ui
-	pause 2
-	lacie "Let's see... do I have anything that could help me?"
-	lacie "Maybe something sharp..."
-	lacie "Oh, scissors...!"
-	hide ui
-	pause 1
-	audio sfx play shuffling
-	pause 2.5
-	audio ambiance stop
-	lacie "Sorry, but I don't feel like being eaten today."
-	hide ui
-	pause 2
-	audio sfx play hit
-	pause 0.2
-	fade flash color red
-	pause 1.1
-	audio sfx play hit
-	pause 0.2
-	fade flash color red
-	pause 1.1
-	audio sfx play hit
-	pause 0.2
-	fade flash color red
-	pause 2
-	audio sfx play gore8
-	pause 2
-	set ch1.forest_seen_fairyring = true
-	audio bgm override on prologue_nightmare
-	move to Ch1_FairyRing_B1F_Entrance point entrance
-	action call lacie_wiping_0
-	pause 0.1
-	fade in
-	chara unlock
-	hide ui
-	pause 1
-	action call lacie_wiping_1
-	pause 2
-	bubble scribble continue
-	pause 1
-	lacie "I can cross off \"being digested alive\" from my to-do list." mood shadow4
-	lacie "Good thing I had those scissors... ugh..." mood sigh
-	hide ui
-	pause 0.5
-	action call lacie_wiping_2
-	pause 3
-	lacie "Now... where am I?" mood blank8
-	objective add ch1.fairyring_escape
-	action call lacie_wiping_done
-	end
+    audio sfx play thud4
+    audio bgm stop time 0.2
+    system call StopTimer
+    system call FairyringDeath
+    pause 3
+    audio bgm stop time 4
+    fade out time 4
+    if objective ch1.kozmo_find_head inprogress
+        event call ch1_event_kozmotimeout
+    if objective ch1.kozmo_give_head inprogress
+        event call ch1_event_kozmotimeout
+    pause 2
+    if var ch1.forest_seen_fairyring
+        system achievement CH1_QUEEN_OF_IDIOTS
+        set persistent.lacie_deaths ++
+        system title-screen
+        end
+    chara lock
+    lacie "W-what..."
+    lacie "What happened? It was so sudden..."
+    lacie "Am I trapped inside of something?"
+    hide ui
+    pause 1
+    audio sfx play squash
+    pause 1
+    lacie "I can barely move..."
+    lacie "Ugh... it's all soggy and... squishy..."
+    lacie "..."
+    hide ui
+    pause 1
+    audio ambiance play gore9_loop
+    pause 3
+    lacie "This is suffocating... I don't like closed spaces..."
+    lacie "Aahh... I hate this... I'm going to be sick...!"
+    hide ui
+    pause 2
+    if not item ch1.scissors jump FAILURE
+    lacie "Wait... calm down."
+    lacie "I can move my arms, somewhat."
+    lacie "Think."
+    hide ui
+    pause 2
+    lacie "Let's see... do I have anything that could help me?"
+    lacie "Maybe something sharp..."
+    lacie "Oh, scissors...!"
+    hide ui
+    pause 1
+    audio sfx play shuffling
+    pause 2.5
+    audio ambiance stop
+    lacie "Sorry, but I don't feel like being eaten today."
+    hide ui
+    pause 2
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 1.1
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 1.1
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 2
+    audio sfx play gore8
+    pause 2
+    set ch1.forest_seen_fairyring = true
+    audio bgm override on prologue_nightmare
+    move to Ch1_FairyRing_B1F_Entrance point entrance
+    action call lacie_wiping_0
+    pause 0.1
+    fade in
+    chara unlock
+    hide ui
+    pause 1
+    action call lacie_wiping_1
+    pause 2
+    bubble scribble continue
+    pause 1
+    lacie "I can cross off \"being digested alive\" from my to-do list." mood shadow4
+    lacie "Good thing I had those scissors... ugh..." mood sigh
+    hide ui
+    pause 0.5
+    action call lacie_wiping_2
+    pause 3
+    lacie "Now... where am I?" mood blank8
+    objective add ch1.fairyring_escape
+    action call lacie_wiping_done
+    end
 
 label FAILURE
-	pause 2
-	lacie "..."
-	lacie "It's no good... I can't do anything..."
-	hide ui
-	pause 2
-	lacie "..."
-	lacie "Am I going to die... inside this thing?"
-	lacie "Nobody will even find my body..."
-	lacie "Sigh... what a pointless way to go."
-	hide ui
-	pause 4
-	lacie "What is this smell... it's making me want to puke..."
-	hide ui
-	pause 2
-	lacie "My legs... are also itching..."
-	hide ui
-	pause 2
-	lacie "Wait, could it be...?"
-	lacie "Oh god... is this thing digesting me!?"
-	lacie "Nononono.... I don't want to die like that!!!"
-	hide ui
-	audio ambiance stop time 4
-	pause 6
-	lacie "I tried kicking around and fighitng it as much as I could." background none
-	lacie "But soon enough, my skin started burning, confirming my fears." background none
-	lacie "The more I squirmed, the more the digestive juices got all over me." background none
-	lacie "The more I screamed, the more the gas burned my nose and throat from inside." background none
-	lacie "It seems that the moment I stepped into that circle, my fate had been sealed." background none
-	event call ch1_ending_1_6
+    pause 2
+    lacie "..."
+    lacie "It's no good... I can't do anything..."
+    hide ui
+    pause 2
+    lacie "..."
+    lacie "Am I going to die... inside this thing?"
+    lacie "Nobody will even find my body..."
+    lacie "Sigh... what a pointless way to go."
+    hide ui
+    pause 4
+    lacie "What is this smell... it's making me want to puke..."
+    hide ui
+    pause 2
+    lacie "My legs... are also itching..."
+    hide ui
+    pause 2
+    lacie "Wait, could it be...?"
+    lacie "Oh god... is this thing digesting me!?"
+    lacie "Nononono.... I don't want to die like that!!!"
+    hide ui
+    audio ambiance stop time 4
+    pause 6
+    lacie "I tried kicking around and fighitng it as much as I could." background none
+    lacie "But soon enough, my skin started burning, confirming my fears." background none
+    lacie "The more I squirmed, the more the digestive juices got all over me." background none
+    lacie "The more I screamed, the more the gas burned my nose and throat from inside." background none
+    lacie "It seems that the moment I stepped into that circle, my fate had been sealed." background none
+    event call ch1_ending_1_6

@@ -1,9 +1,9 @@
 label START
-	if repeat jump NOTHING_ELSE
-	"There's something in the drawer."
-	item add ch1.facility_fuse_5
-	end
+    if repeat jump NOTHING_ELSE
+    "There's something in the drawer."
+    item add ch1.facility_fuse_5
+    end
 
 label NOTHING_ELSE
-	"There's nothing else of use."
-	end
+    "There's nothing else of use."
+    end

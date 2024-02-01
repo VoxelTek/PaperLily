@@ -1,22 +1,22 @@
 label START
-	chara set lacie at left
-	chara set sai at right
-	if var ch1.temp_ending_1_13_demons_examined == 1
-		lacie "(It's dead...?)" mood blank7
-		sai "Good riddance." mood blank8
-		lacie "..." mood blank2
-		end
+    chara set lacie at left
+    chara set sai at right
+    if var ch1.temp_ending_1_13_demons_examined == 1
+        lacie "(It's dead...?)" mood blank7
+        sai "Good riddance." mood blank8
+        lacie "..." mood blank2
+        end
 
-	if var ch1.temp_ending_1_13_demons_examined == 2
-		lacie "..." mood blank4
-		lacie "Another one..?" mood blank5
-		sai "That makes two." mood thinking2
-		lacie "(What killed it...?)" mood concerned
-		end
+    if var ch1.temp_ending_1_13_demons_examined == 2
+        lacie "..." mood blank4
+        lacie "Another one..?" mood blank5
+        sai "That makes two." mood thinking2
+        lacie "(What killed it...?)" mood concerned
+        end
 
-	if var ch1.temp_ending_1_13_demons_examined == 3
-		sai "Are you sensing a pattern here or is it just me?" mood thinking11
-		lacie "(Really... what happened here?)" mood thinking4
-		sai "..." mood thinking
-		sai "Must be my imagination." mood smile3
-		end
+    if var ch1.temp_ending_1_13_demons_examined == 3
+        sai "Are you sensing a pattern here or is it just me?" mood thinking11
+        lacie "(Really... what happened here?)" mood thinking4
+        sai "..." mood thinking
+        sai "Must be my imagination." mood smile3
+        end

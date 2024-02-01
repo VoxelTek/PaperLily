@@ -1,6 +1,6 @@
 label START
-	set ch1.temp_facility_primals_b1f_hallway_spawn = false
-	set ch1.temp_facility_primals_b2f_east_spawn = false
-	set ch1.temp_facility_primals_b2f_west_spawn = false
-	move to Ch1_Facility_B1F_Elevator point from_mainhall
-	end
+    set ch1.temp_facility_primals_b1f_hallway_spawn = false
+    set ch1.temp_facility_primals_b2f_east_spawn = false
+    set ch1.temp_facility_primals_b2f_west_spawn = false
+    move to Ch1_Facility_B1F_Elevator point from_mainhall
+    end

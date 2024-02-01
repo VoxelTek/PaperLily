@@ -1,5 +1,5 @@
 label START
-	audio sfx play door
-	move to Ch1_Forest_Station_Platform point from_inside
-	end
+    audio sfx play door
+    move to Ch1_Forest_Station_Platform point from_inside
+    end
 

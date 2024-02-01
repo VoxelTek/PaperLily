@@ -1,25 +1,25 @@
 label START
-	fade out
-	chara rename unknown to "misc.characters.student_bully"
-	pause 0.8
-	audio sfx play hit
-	pause 0.1
-	fade flash color red
-	pause 0.5
-	unknown "Aargh!"
-	lacie "........"
-	chara rename unknown to "misc.characters.student"
-	unknown "What the hell!?"
-	unknown "Did she kill him?"
-	unknown "Is he dead?"
-	unknown "MURDERER!"
-	unknown "MURDERER! MURDERER! MURDERER!"
-	lacie "....."
-	set ch1.blackpass_classroom_cutscene_stage = 4
-	move to Ch1_BlackPass_Classroom point cutscene_stage_4a time 0
-	system running off
-	system call SetLacieShadow
-	chara rename unknown off
-	pause 1
-	fade in
-	end
+    fade out
+    chara rename unknown to "misc.characters.student_bully"
+    pause 0.8
+    audio sfx play hit
+    pause 0.1
+    fade flash color red
+    pause 0.5
+    unknown "Aargh!"
+    lacie "........"
+    chara rename unknown to "misc.characters.student"
+    unknown "What the hell!?"
+    unknown "Did she kill him?"
+    unknown "Is he dead?"
+    unknown "MURDERER!"
+    unknown "MURDERER! MURDERER! MURDERER!"
+    lacie "....."
+    set ch1.blackpass_classroom_cutscene_stage = 4
+    move to Ch1_BlackPass_Classroom point cutscene_stage_4a time 0
+    system running off
+    system call SetLacieShadow
+    chara rename unknown off
+    pause 1
+    fade in
+    end

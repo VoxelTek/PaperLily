@@ -1,44 +1,44 @@
 label START
-	chara set lacie at left
-	chara set aoi at right
-	if repeat 5 jump DIALOGUE_5
-	if repeat 4 jump DIALOGUE_4
-	if repeat 3 jump DIALOGUE_3
-	if repeat jump DIALOGUE_2
-	aoi "This is so fun, I haven't waited for the bus in ages!" mood excited
-	lacie "(There's nothing fun in waiting for the bus...)" mood blank7
-	end
+    chara set lacie at left
+    chara set aoi at right
+    if repeat 5 jump DIALOGUE_5
+    if repeat 4 jump DIALOGUE_4
+    if repeat 3 jump DIALOGUE_3
+    if repeat jump DIALOGUE_2
+    aoi "This is so fun, I haven't waited for the bus in ages!" mood excited
+    lacie "(There's nothing fun in waiting for the bus...)" mood blank7
+    end
 
 label DIALOGUE_2
-	aoi "Anyways, you know how fairy rings gradually expand and cover more area?" mood excited
-	aoi "I hear once they eat enough, they kinda open up and swallow the surface!" mood surprised
-	aoi "So when that happened, one of them swallowed the station and a whole bus." mood pout2
-	aoi "(Apparently Glen was really unhappy so they destroyed most of the fairy rings.)" font small mood sad5
-	lacie "(Glen?)" mood confused2
-	lacie "Wait... why don't they just destroy all of them?" mood confused
-	aoi "I dunno." mood surprised
-	aoi "They usually remove some of them, every few years..."
-	aoi "...Now that you mention it, I'm not sure why they don't just remove them all." mood default
-	set ch1.forest_fairyring_explanation = true
-	set general.aoi_love ++
-	end
+    aoi "Anyways, you know how fairy rings gradually expand and cover more area?" mood excited
+    aoi "I hear once they eat enough, they kinda open up and swallow the surface!" mood surprised
+    aoi "So when that happened, one of them swallowed the station and a whole bus." mood pout2
+    aoi "(Apparently Glen was really unhappy so they destroyed most of the fairy rings.)" font small mood sad5
+    lacie "(Glen?)" mood confused2
+    lacie "Wait... why don't they just destroy all of them?" mood confused
+    aoi "I dunno." mood surprised
+    aoi "They usually remove some of them, every few years..."
+    aoi "...Now that you mention it, I'm not sure why they don't just remove them all." mood default
+    set ch1.forest_fairyring_explanation = true
+    set general.aoi_love ++
+    end
 
 label DIALOGUE_3
-	aoi "Maybe it's too much work to remove the fairy rings..?" mood default
-	aoi "Hmm... I wonder..." mood pout
-	lacie "..." mood default
-	set general.aoi_love ++
-	end
+    aoi "Maybe it's too much work to remove the fairy rings..?" mood default
+    aoi "Hmm... I wonder..." mood pout
+    lacie "..." mood default
+    set general.aoi_love ++
+    end
 
 label DIALOGUE_4
-	aoi "Oh I know!" mood excited
-	aoi "Maybe there's something even more terrible underneath, so they're using the fairy rings to seal it away!" mood happy
-	lacie "..." mood default
-	aoi "..." mood default
-	aoi "No, that can't be it."
-	aoi "I'll keep thinking." mood upset
-	set general.aoi_love ++
-	end
+    aoi "Oh I know!" mood excited
+    aoi "Maybe there's something even more terrible underneath, so they're using the fairy rings to seal it away!" mood happy
+    lacie "..." mood default
+    aoi "..." mood default
+    aoi "No, that can't be it."
+    aoi "I'll keep thinking." mood upset
+    set general.aoi_love ++
+    end
 
 label DIALOGUE_5
-	"Aoi is thinking."
+    "Aoi is thinking."

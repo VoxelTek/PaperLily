@@ -1,6 +1,6 @@
 label START
-	if var ch1.forest_center_campfire_on
-		"The candle is already lit."
-		end
-	"A candle is not enough to light this campfire."
-	end
+    if var ch1.forest_center_campfire_on
+        "The candle is already lit."
+        end
+    "A candle is not enough to light this campfire."
+    end

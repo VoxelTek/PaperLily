@@ -1,17 +1,17 @@
 label START
-	"A wooden log."
-	lacie "I could use this to cross the river..." mood thinking
-	choice "Push it into the water?"
-		"Yes"
-			fade out
-			set ch1.forest_lakeside_pushed_log = true
-			pause 1
-			audio sfx play ch1_push_heavy
-			pause 1
-			audio sfx play water_splash_2
-			pause 2.5
-			move to Ch1_Forest_Lakeside_3 point cross_log_south direction up time 0
-			fade in
-		"No"
-			end
-	end
+    "A wooden log."
+    lacie "I could use this to cross the river..." mood thinking
+    choice "Push it into the water?"
+        "Yes"
+            fade out
+            set ch1.forest_lakeside_pushed_log = true
+            pause 1
+            audio sfx play ch1_push_heavy
+            pause 1
+            audio sfx play water_splash_2
+            pause 2.5
+            move to Ch1_Forest_Lakeside_3 point cross_log_south direction up time 0
+            fade in
+        "No"
+            end
+    end

@@ -1,4 +1,4 @@
 label START
-	chara set milion at right
-	milion "I don't need it." mood blank11
-	milion "You may give it to someone who does." mood contemplative2
+    chara set milion at right
+    milion "I don't need it." mood blank11
+    milion "You may give it to someone who does." mood contemplative2

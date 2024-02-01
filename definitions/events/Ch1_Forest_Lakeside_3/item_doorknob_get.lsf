@@ -1,10 +1,10 @@
 label START
-	if var ch1.forest_lakeside_took_grave_doorknob end
-	choice "Take ${item:ch1.doorknob_grave}?"
-		"Yes"
-			continue
-		"No"
-			end
-	set ch1.forest_lakeside_took_grave_doorknob = true
-	system refresh
-	item add ch1.doorknob_grave
+    if var ch1.forest_lakeside_took_grave_doorknob end
+    choice "Take ${item:ch1.doorknob_grave}?"
+        "Yes"
+            continue
+        "No"
+            end
+    set ch1.forest_lakeside_took_grave_doorknob = true
+    system refresh
+    item add ch1.doorknob_grave

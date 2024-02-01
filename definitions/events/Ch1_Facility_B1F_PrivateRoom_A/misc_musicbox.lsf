@@ -1,17 +1,17 @@
 label START
-	"A small golden music box."
-	choice "Play it?"
-		"Yes"
-			hide ui
-			action call interrupt_musicbox
-			audio bgm stop time 0
-			audio sfx play musicbox_windup
-			pause 1.5
-			audio bgm play ch1_musicbox_a
-			action call start_musicbox
-			pause 1
-			event call event_musicbox_react
-			end
-		"No"
-			end
-	end
+    "A small golden music box."
+    choice "Play it?"
+        "Yes"
+            hide ui
+            action call interrupt_musicbox
+            audio bgm stop time 0
+            audio sfx play musicbox_windup
+            pause 1.5
+            audio bgm play ch1_musicbox_a
+            action call start_musicbox
+            pause 1
+            event call event_musicbox_react
+            end
+        "No"
+            end
+    end

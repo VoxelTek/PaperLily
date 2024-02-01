@@ -1,5 +1,5 @@
 label START
-	if var ch1.forest_red_passage_gate_1_open end
-	if var ch1.forest_red_passage_gate_1_seen end
-	set ch1.forest_red_passage_gate_1_seen = true
-	system minigame ch1_battle_redgate_1
+    if var ch1.forest_red_passage_gate_1_open end
+    if var ch1.forest_red_passage_gate_1_seen end
+    set ch1.forest_red_passage_gate_1_seen = true
+    system minigame ch1_battle_redgate_1

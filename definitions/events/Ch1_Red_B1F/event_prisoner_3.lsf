@@ -1,11 +1,11 @@
 label START
-	lacie "I have a feeling you'll just try to kill me." mood hide3
-	unknown "Hahahaha!"
-	unknown "Fine then, I'll humor you this time."
-	unknown "I didn't curse you."
-	lacie "Then who did? You said you're the only one who can inflict curses." mood blank1
-	unknown "...and live."
-	lacie "...?" mood confused
-	unknown "Look girlie, I hate doing shit for free."
-	event call event_prisoner_request
-	end
+    lacie "I have a feeling you'll just try to kill me." mood hide3
+    unknown "Hahahaha!"
+    unknown "Fine then, I'll humor you this time."
+    unknown "I didn't curse you."
+    lacie "Then who did? You said you're the only one who can inflict curses." mood blank1
+    unknown "...and live."
+    lacie "...?" mood confused
+    unknown "Look girlie, I hate doing shit for free."
+    event call event_prisoner_request
+    end

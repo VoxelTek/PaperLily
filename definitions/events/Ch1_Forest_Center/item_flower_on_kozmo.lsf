@@ -1,10 +1,10 @@
 label START
-	if repeat end
-	if var ch1.forest_kozmo_gone end
-	if var ch1.forest_kozmo_changed_head end
-	if var ch1.forest_kozmo_leaking end
-	if var ch1.forest_kozmo_head end
-	chara set lacie at left
-	chara set kozmo at right
-	kozmo "T-thanks! Y-you're a good person!" mood sparkle
-	item remove ch1.kett_flower
+    if repeat end
+    if var ch1.forest_kozmo_gone end
+    if var ch1.forest_kozmo_changed_head end
+    if var ch1.forest_kozmo_leaking end
+    if var ch1.forest_kozmo_head end
+    chara set lacie at left
+    chara set kozmo at right
+    kozmo "T-thanks! Y-you're a good person!" mood sparkle
+    item remove ch1.kett_flower

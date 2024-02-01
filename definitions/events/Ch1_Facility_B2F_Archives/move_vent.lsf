@@ -1,16 +1,16 @@
 label START
-	if not var ch1.facility_archive_vent_open jump CLOSED
-	choice "Crawl inside?"
-		"Yes"
-			if var ch1.facility_dungeon_2_placed_plank
-				"It's not a good idea to go in there without a way out."
-				end
-			event call event_move_chartroom
-			end
-		"No"
-			end
+    if not var ch1.facility_archive_vent_open jump CLOSED
+    choice "Crawl inside?"
+        "Yes"
+            if var ch1.facility_dungeon_2_placed_plank
+                "It's not a good idea to go in there without a way out."
+                end
+            event call event_move_chartroom
+            end
+        "No"
+            end
 
 label CLOSED
-	"A ventilation shaft."
-	"The cover is screwed in."
-	end
+    "A ventilation shaft."
+    "The cover is screwed in."
+    end

@@ -1,14 +1,14 @@
 label START
 
-	chara set ch1_blackpass_mom at left
-	chara set ch1_bunny at left
-	chara set ch1_cashier at left
-	chara set ch1_lockedsite_primal at left
-	chara set ch1_mk_ghost at left
-	chara set ch1_mk_painting at left
-	chara set ch1_moth_boy at left
-	chara set ch1_moth_girl at left
-	chara set ch1_npc_a at left
-	chara set ch1_npc_b at left
-	chara set ch1_primal_1 at left
-	chara set ch1_primal_2 at left
+    chara set ch1_blackpass_mom at left
+    chara set ch1_bunny at left
+    chara set ch1_cashier at left
+    chara set ch1_lockedsite_primal at left
+    chara set ch1_mk_ghost at left
+    chara set ch1_mk_painting at left
+    chara set ch1_moth_boy at left
+    chara set ch1_moth_girl at left
+    chara set ch1_npc_a at left
+    chara set ch1_npc_b at left
+    chara set ch1_primal_1 at left
+    chara set ch1_primal_2 at left

@@ -1,38 +1,38 @@
 label START
-	audio sfx play paper
-	cg show prologue/letter mini
-	pause 1
-	"It's the bus ritual instructions."
-	"It details how to summon a bus which picks you up at night."
-	choice "Read the full ritual rules?"
-		"Yes"
-			continue
-		"No"
-			cg hide
-			end
-	hide ui
-	fade out
-	cg hide
-	audio bgm volume 0.3
-	pause 0.5
-	"You must play alone" background none
-	"Requirements:" background none
-	"- An indoor location\n- A landline phone\n- A red thread" background none
-	"- Red paint\n- A rune\n- A clock" background none
-	"Preparations:" background none
-	"Complete the preparations before the sun has set." background none
-	"Tie a red thread to the phone cord." background none
-	"Using the red paint, draw the following symbol on the exit door of your chosen location. The door must lead outside." background none
-	"Set the alarm clock to midnight." background none
-	"Instructions:" background none
-	"Go to sleep." background none
-	"When the alarm clock rings, get up and dial the following number on the phone: 999281#0" background none
-	"When the line connects, say the following words: \"My bus is late\"." background none
-	"Board the bus before it leaves." background none
-	"Place the rune inside the bus ticket machine." background none
-	"Remember:" background none
-	"Do NOT bring any weapons with you." background none
-	"The phone may no longer look the same at night. Remember the placement of the numbers." background none
-	pause 0.5
-	fade in
-	audio bgm volume 1.0
+    audio sfx play paper
+    cg show prologue/letter mini
+    pause 1
+    "It's the bus ritual instructions."
+    "It details how to summon a bus which picks you up at night."
+    choice "Read the full ritual rules?"
+        "Yes"
+            continue
+        "No"
+            cg hide
+            end
+    hide ui
+    fade out
+    cg hide
+    audio bgm volume 0.3
+    pause 0.5
+    "You must play alone" background none
+    "Requirements:" background none
+    "- An indoor location\n- A landline phone\n- A red thread" background none
+    "- Red paint\n- A rune\n- A clock" background none
+    "Preparations:" background none
+    "Complete the preparations before the sun has set." background none
+    "Tie a red thread to the phone cord." background none
+    "Using the red paint, draw the following symbol on the exit door of your chosen location. The door must lead outside." background none
+    "Set the alarm clock to midnight." background none
+    "Instructions:" background none
+    "Go to sleep." background none
+    "When the alarm clock rings, get up and dial the following number on the phone: 999281#0" background none
+    "When the line connects, say the following words: \"My bus is late\"." background none
+    "Board the bus before it leaves." background none
+    "Place the rune inside the bus ticket machine." background none
+    "Remember:" background none
+    "Do NOT bring any weapons with you." background none
+    "The phone may no longer look the same at night. Remember the placement of the numbers." background none
+    pause 0.5
+    fade in
+    audio bgm volume 1.0

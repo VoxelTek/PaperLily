@@ -1,6 +1,6 @@
 label START
-	audio sfx play door
-	if var general.serious
-		audio bgm override on silent
-	move to Ch1_MK_Library point wisteria
-	end
+    audio sfx play door
+    if var general.serious
+        audio bgm override on silent
+    move to Ch1_MK_Library point wisteria
+    end

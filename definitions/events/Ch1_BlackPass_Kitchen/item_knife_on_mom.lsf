@@ -1,20 +1,20 @@
 label START
-	chara set lacie at left
-	item remove ch1.blackpass_knife
-	pause 0.5
-	ch1_blackpass_mom "Well done. Off you go."
-	lacie "..." mood blank2
-	fade out
-	move to Ch1_BlackPass_Kitchen point ch1_cutscene_cutting cutscene time 0
-	chara spawn lacie point ch1_cutscene
-	action turn down node lacie
-	fade in
-	system call PlayCuttingCutscene
-	pause 2.5
-	action turn up node lacie
-	pause 1
-	set ch1.blackpass_retrieved_knife = true
-	set general.blackpass_red_item_2_spawned = true
-	objective complete ch1.blackpass_mom_quest
-	move to Ch1_BlackPass_Kitchen point ch1_cutscene
-	end
+    chara set lacie at left
+    item remove ch1.blackpass_knife
+    pause 0.5
+    ch1_blackpass_mom "Well done. Off you go."
+    lacie "..." mood blank2
+    fade out
+    move to Ch1_BlackPass_Kitchen point ch1_cutscene_cutting cutscene time 0
+    chara spawn lacie point ch1_cutscene
+    action turn down node lacie
+    fade in
+    system call PlayCuttingCutscene
+    pause 2.5
+    action turn up node lacie
+    pause 1
+    set ch1.blackpass_retrieved_knife = true
+    set general.blackpass_red_item_2_spawned = true
+    objective complete ch1.blackpass_mom_quest
+    move to Ch1_BlackPass_Kitchen point ch1_cutscene
+    end

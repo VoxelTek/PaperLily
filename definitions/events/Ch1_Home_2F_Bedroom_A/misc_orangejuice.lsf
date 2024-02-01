@@ -1,4 +1,4 @@
 label START
-	"Leftover orange juice."
-	if repeat end
-	"It's too warm to drink now."
+    "Leftover orange juice."
+    if repeat end
+    "It's too warm to drink now."

@@ -1,21 +1,21 @@
 label START
-	"A well."
-	set ch1.temp_facility_primals_b2f_east_spawn = false
-	if var ch1.facility_well_pulled
-		"There's probably nothing else of use in there."
-		end
-	choice "Rotate the lever?"
-		"Yes"
-			fade out
-			set ch1.facility_well_pulled = true
-			system refresh
-			pause 1
-			audio sfx play chain_crank
-			pause 3.5
-			item add ch1.rune_algiz
-			set ch1.runes_found ++
-			fade in
-			end
-		"No"
-			end
-	end
+    "A well."
+    set ch1.temp_facility_primals_b2f_east_spawn = false
+    if var ch1.facility_well_pulled
+        "There's probably nothing else of use in there."
+        end
+    choice "Rotate the lever?"
+        "Yes"
+            fade out
+            set ch1.facility_well_pulled = true
+            system refresh
+            pause 1
+            audio sfx play chain_crank
+            pause 3.5
+            item add ch1.rune_algiz
+            set ch1.runes_found ++
+            fade in
+            end
+        "No"
+            end
+    end

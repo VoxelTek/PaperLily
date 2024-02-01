@@ -1,5 +1,5 @@
 label START
-	"A fence blocks your path."
-	if repeat end
-	lacie "I could've probably climbed over it... if not for those spikes." mood blank3
-	end
+    "A fence blocks your path."
+    if repeat end
+    lacie "I could've probably climbed over it... if not for those spikes." mood blank3
+    end

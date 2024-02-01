@@ -1,26 +1,26 @@
 label START
-	if var ch1.forest_station_took_sign
-		"There's no need to go this way."
-		hide ui
-		action walk right 32
-		end
-	choice "Walk down the train tracks in this direction?"
-		"Yes"
-			audio bgm stop
-			audio ambiance stop
-			fade out
-			pause 4
-			chara lock
-			lacie "Is it just me or the path is getting narrower...?"
-			hide ui
-			pause 2
-			audio ambiance play ch1_train
-			pause 3
-			lacie "Wait... no!!!" time 1.5
-			hide ui
-			pause 3.5
-			event queue ch1_death_impact
-			end
-		"No"
-			hide ui
-			action walk right 32
+    if var ch1.forest_station_took_sign
+        "There's no need to go this way."
+        hide ui
+        action walk right 32
+        end
+    choice "Walk down the train tracks in this direction?"
+        "Yes"
+            audio bgm stop
+            audio ambiance stop
+            fade out
+            pause 4
+            chara lock
+            lacie "Is it just me or the path is getting narrower...?"
+            hide ui
+            pause 2
+            audio ambiance play ch1_train
+            pause 3
+            lacie "Wait... no!!!" time 1.5
+            hide ui
+            pause 3.5
+            event queue ch1_death_impact
+            end
+        "No"
+            hide ui
+            action walk right 32

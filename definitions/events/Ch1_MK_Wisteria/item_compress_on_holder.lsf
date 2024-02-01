@@ -1,61 +1,61 @@
 label START
-	pause 0.5
-	set ch1.mk_wisteria_item = 3
-	system refresh
-	pause 1
-	cg show black
-	audio bgm play ch1_heart
-	pause 2
-	chara rename mk to "misc.characters.lk"
-	chara rename chara1 to "misc.characters.mother"
+    pause 0.5
+    set ch1.mk_wisteria_item = 3
+    system refresh
+    pause 1
+    cg show black
+    audio bgm play ch1_heart
+    pause 2
+    chara rename mk to "misc.characters.lk"
+    chara rename chara1 to "misc.characters.mother"
 
-	"My mother got worse one day." format center position center background none
-	"Father thinks she might die." format center position center background none
-	"I don't want mom to die." format center position center background none
-	"I brought her a cold compress to lower the fever." format center position center background none
-	"Mother always said that water provides the best healing." format center position center background none
-	"That night, I said a prayer to try to help her." format center position center background none
-	"I wished for her to get better, and I wished for our family to go back to normal, at least." format center position center background none
-	hide ui
-	pause 1
-	"The [color=#90EE90]third blessing[/color] came as a surprise to everyone in the village." format center position center background none
-	"The morning after my prayer, my mother was out of bed, and cooking." format center position center background none
-	"She said she felt much better, she even had strength to go to the market." format center position center background none
-	hide ui
-	pause 1
-	cg show ch1/mk_backstory_compress
-	hide ui
-	pause 1
-	chara1 "You see? The cold compress did the job!"
-	chara1 "Clean water is the purest thing we have."
-	mk "Are you sure you should be out of bed?"
-	chara1 "This is the best I've felt in years."
-	mk "But... the doctor said..."
-	chara1 "I'm sure he was just wrong."
-	chara1 "You know, medicine isn't always entirely accurate."
-	mk "..."
-	cg show black
-	hide ui
-	pause 1
-	"No more than two days later, some adults knocked at the door." format center position center background none
-	"They took my mother. They called her a witch." format center position center background none
-	"They claimed she used her powers to get cured of a deadly illness." format center position center background none
-	"They said the village needs to be cleansed, and that witch hunts were important for this." format center position center background none
-	hide ui
-	pause 1
-	audio sfx play fire
-	fade flash color red
-	pause 1
-	"The next day, my mother was burned at the stake." format center position center background none
-	"Everyone watched, and everyone cheered, as she died slowly, for a sin she did not commit." format center position center background none
-	"This was the first time I wished that I couldn't see anymore." format center position center background none
-	hide ui
-	pause 2
-	chara rename mk off
-	chara rename chara1 off
-	cg hide
-	pause 1
-	set ch1.mk_wisteria_item = 0
-	system refresh
-	pause 0.5
-	end
+    "My mother got worse one day." format center position center background none
+    "Father thinks she might die." format center position center background none
+    "I don't want mom to die." format center position center background none
+    "I brought her a cold compress to lower the fever." format center position center background none
+    "Mother always said that water provides the best healing." format center position center background none
+    "That night, I said a prayer to try to help her." format center position center background none
+    "I wished for her to get better, and I wished for our family to go back to normal, at least." format center position center background none
+    hide ui
+    pause 1
+    "The [color=#90EE90]third blessing[/color] came as a surprise to everyone in the village." format center position center background none
+    "The morning after my prayer, my mother was out of bed, and cooking." format center position center background none
+    "She said she felt much better, she even had strength to go to the market." format center position center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_compress
+    hide ui
+    pause 1
+    chara1 "You see? The cold compress did the job!"
+    chara1 "Clean water is the purest thing we have."
+    mk "Are you sure you should be out of bed?"
+    chara1 "This is the best I've felt in years."
+    mk "But... the doctor said..."
+    chara1 "I'm sure he was just wrong."
+    chara1 "You know, medicine isn't always entirely accurate."
+    mk "..."
+    cg show black
+    hide ui
+    pause 1
+    "No more than two days later, some adults knocked at the door." format center position center background none
+    "They took my mother. They called her a witch." format center position center background none
+    "They claimed she used her powers to get cured of a deadly illness." format center position center background none
+    "They said the village needs to be cleansed, and that witch hunts were important for this." format center position center background none
+    hide ui
+    pause 1
+    audio sfx play fire
+    fade flash color red
+    pause 1
+    "The next day, my mother was burned at the stake." format center position center background none
+    "Everyone watched, and everyone cheered, as she died slowly, for a sin she did not commit." format center position center background none
+    "This was the first time I wished that I couldn't see anymore." format center position center background none
+    hide ui
+    pause 2
+    chara rename mk off
+    chara rename chara1 off
+    cg hide
+    pause 1
+    set ch1.mk_wisteria_item = 0
+    system refresh
+    pause 0.5
+    end

@@ -1,5 +1,5 @@
 label START
-	chara set lacie at left
-	chara set aoi at right
-	aoi "I also like bug-catching!" mood excited
-	aoi "The small ones, at least..." mood scared4
+    chara set lacie at left
+    chara set aoi at right
+    aoi "I also like bug-catching!" mood excited
+    aoi "The small ones, at least..." mood scared4

@@ -1,12 +1,12 @@
 label START
-	if repeat jump AGAIN
-	chara set lacie at left
-	chara set aoi at right
-	aoi "What's that?" mood surprised
-	lacie "Hmm... I'll show you someday." mood blank5
-	aoi "Aww... alright." mood content
-	set general.aoi_love ++
-	end
+    if repeat jump AGAIN
+    chara set lacie at left
+    chara set aoi at right
+    aoi "What's that?" mood surprised
+    lacie "Hmm... I'll show you someday." mood blank5
+    aoi "Aww... alright." mood content
+    set general.aoi_love ++
+    end
 
 label AGAIN
-	"You'll show Aoi someday. Maybe."
+    "You'll show Aoi someday. Maybe."

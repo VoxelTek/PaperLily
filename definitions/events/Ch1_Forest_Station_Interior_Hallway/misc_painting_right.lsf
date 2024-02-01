@@ -1,9 +1,9 @@
 label START
-	"An abstract painting."
-	if var general.serious end
-	if repeat jump FINALLY
-	set ch1.forest_station_seen_paintings ++
+    "An abstract painting."
+    if var general.serious end
+    if repeat jump FINALLY
+    set ch1.forest_station_seen_paintings ++
 label FINALLY
-	if var ch1.forest_station_seen_paintings == 2
-		event call event_react_paintings
-	end
+    if var ch1.forest_station_seen_paintings == 2
+        event call event_react_paintings
+    end

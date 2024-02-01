@@ -1,13 +1,13 @@
 label START
-	if var ch1.facility_sai_attempted_leave
-		event call ch1_event_facility_dungeon_sai_extra
-	if repeat jump DISBAND
-	chara set lacie at left
-	chara set sai at right
-	sai "Wait." mood blank5
-	sai "These two doors only open from the outside, so..." mood blank3
-	sai "I'll stay here and hold it open for you." mood blank2
-	lacie "Alright." mood blank2
+    if var ch1.facility_sai_attempted_leave
+        event call ch1_event_facility_dungeon_sai_extra
+    if repeat jump DISBAND
+    chara set lacie at left
+    chara set sai at right
+    sai "Wait." mood blank5
+    sai "These two doors only open from the outside, so..." mood blank3
+    sai "I'll stay here and hold it open for you." mood blank2
+    lacie "Alright." mood blank2
 label DISBAND
-	party switch lacie
-	end
+    party switch lacie
+    end

@@ -1,5 +1,5 @@
 label START
-	"A large blue butterfly on display."
-	"It's kind of mesmerizing..."
-	set ch1.forest_red_seen_large_butterfly = true
-	end
+    "A large blue butterfly on display."
+    "It's kind of mesmerizing..."
+    set ch1.forest_red_seen_large_butterfly = true
+    end

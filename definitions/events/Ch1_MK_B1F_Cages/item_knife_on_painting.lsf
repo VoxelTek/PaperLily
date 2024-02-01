@@ -1,20 +1,20 @@
 label START
-	if var ch1.mk_painting_chase_clear end
-	fade out
-	set ch1.mk_hurt_lady = true
-	pause 1
-	audio sfx play hit
-	pause 0.2
-	fade flash color red
-	pause 1
-	if item ch1.mk_knife
-		pause 0.5
-		audio sfx play swish
-		pause 0.2
-		fade flash color white
-		pause 1
-		item remove ch1.mk_knife
-		item add ch1.mk_knife_activated
-		event call ch1_event_mk_check_items
-	event call ch1_event_mk_painting_chase
-	end
+    if var ch1.mk_painting_chase_clear end
+    fade out
+    set ch1.mk_hurt_lady = true
+    pause 1
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 1
+    if item ch1.mk_knife
+        pause 0.5
+        audio sfx play swish
+        pause 0.2
+        fade flash color white
+        pause 1
+        item remove ch1.mk_knife
+        item add ch1.mk_knife_activated
+        event call ch1_event_mk_check_items
+    event call ch1_event_mk_painting_chase
+    end

@@ -1,159 +1,159 @@
 label START
-	chara set lacie at left
-	chara set hiro at right
-	if repeat 7 jump NO_MORE
-	if repeat 6 jump 6TH_TALK
-	if repeat 5 jump 5TH_TALK
-	if repeat 4 jump 4TH_TALK
-	if repeat 3 jump 3RD_TALK
-	if repeat 2 jump 2ND_TALK
-	fade out
-	move to Ch1_Cutscene_Home_Exterior_Back point lacie
-	cg show ch1/hiro_bench time 0
-	fade in
-	pause 0.5
-	lacie "(It's Hiro.)"
-	lacie "(I wonder what he's reading.)"
-	lacie "(I probably shouldn't bother him...)"
-	lacie "(He's always so nice to me, but I'm sure he needs a break sometimes...)"
-	cg show ch1/hiro_bench_2 time 0
-	hiro "..."
-	cg show ch1/hiro_bench_3 time 0
-	hiro "I have a stalker."
-	hide ui
-	pause 0.3
-	cg hide
-	lacie "Ah, no, I was just passing through." mood concerned9
-	hiro "Sit, sit!" mood smile
-	lacie "Um... okay." mood default
-	hide ui
-	action walk path walk_to_bench node Lacie speed slow continue
-	system call LacieSit
-	pause 2
-	hiro "Listen to this:" mood default
-	hide ui
-	chara lock
-	fade out
-	system call HiroRead
-	"One for sorrow,\nTwo for mirth" format center position center background none
-	"Three for a funeral,\nFour for birth" format center position center background none
-	"Five for heaven,\nSix for hell" format center position center background none
-	"Seven for the devil, his own self." format center position center background none
-	fade in
-	chara unlock
-	hiro "Spooky huh?" mood surprised3
-	system call HiroTurn
-	hiro "Do you know what it is?" mood default
-	system call LacieTurn
-	lacie "A poem...?" mood blank5
-	hiro "Yeah, about counting magpies." mood blank2
-	hiro "They're kind of like crows, but cuter." mood blank
-	lacie "Huh." mood blank1
-	system call HiroTurnBack
-	hiro "Supposedly the number of magpies that you see determines your fate." mood surprised3
-	hiro "But there's so many variations to the rhyme..." mood surprised
-	hiro "How can you properly predict your fate?" mood pout3
-	lacie "I'm not sure I believe in fate." mood blank8
-	system call HiroTurn
-	hiro "It can be nice to believe in something." mood other
-	lacie "Hmm... I believe in..." mood thinking3
-	lacie "..."
-	system call LacieTurnBack
-	if var ch1.favorite_dessert == "flan"
-		lacie "Flan." mood blank5
-	if var ch1.favorite_dessert == "macarons"
-		lacie "Macarons." mood blank5
-	if var ch1.favorite_dessert == "eclair"
-		lacie "Chocolate eclairs." mood blank5
-	system call HiroTurnBack
-	hiro "I thought you would say something like that." mood default
-	hiro "I believe in..." mood side
-	system call HiroSmile
-	hiro "...Lacie!" mood smile2
-	hiro "I believe you can achieve your dreams!" mood smile3
-	hide ui
-	bubble sweatdrop point lacie_bubble
-	pause 0.5
-	lacie "Then I'll try to believe, too." mood reflective8
-	hide ui
-	pause 0.8
-	system call LacieStand
-	system call HiroTurn
-	action turn down node lacie
-	pause 0.8
-	action walk down 16 node lacie speed slow
-	hiro "Don't hesitate to talk to me if you want." mood default
-	hiro "You never bother me, okay?" mood other
-	lacie "Okay." mood blank5
-	lacie "(Hiro... you're too cheesy.)" mood hide2
-	lacie "(...but thanks.)" mood hide3
-	move to Ch1_Home_Exterior_Back point bench_get_up
-	if objective ch1.talk_to_brother inprogress jump CH1_BEFORESLEEP_EVENT
-	end
+    chara set lacie at left
+    chara set hiro at right
+    if repeat 7 jump NO_MORE
+    if repeat 6 jump 6TH_TALK
+    if repeat 5 jump 5TH_TALK
+    if repeat 4 jump 4TH_TALK
+    if repeat 3 jump 3RD_TALK
+    if repeat 2 jump 2ND_TALK
+    fade out
+    move to Ch1_Cutscene_Home_Exterior_Back point lacie
+    cg show ch1/hiro_bench time 0
+    fade in
+    pause 0.5
+    lacie "(It's Hiro.)"
+    lacie "(I wonder what he's reading.)"
+    lacie "(I probably shouldn't bother him...)"
+    lacie "(He's always so nice to me, but I'm sure he needs a break sometimes...)"
+    cg show ch1/hiro_bench_2 time 0
+    hiro "..."
+    cg show ch1/hiro_bench_3 time 0
+    hiro "I have a stalker."
+    hide ui
+    pause 0.3
+    cg hide
+    lacie "Ah, no, I was just passing through." mood concerned9
+    hiro "Sit, sit!" mood smile
+    lacie "Um... okay." mood default
+    hide ui
+    action walk path walk_to_bench node Lacie speed slow continue
+    system call LacieSit
+    pause 2
+    hiro "Listen to this:" mood default
+    hide ui
+    chara lock
+    fade out
+    system call HiroRead
+    "One for sorrow,\nTwo for mirth" format center position center background none
+    "Three for a funeral,\nFour for birth" format center position center background none
+    "Five for heaven,\nSix for hell" format center position center background none
+    "Seven for the devil, his own self." format center position center background none
+    fade in
+    chara unlock
+    hiro "Spooky huh?" mood surprised3
+    system call HiroTurn
+    hiro "Do you know what it is?" mood default
+    system call LacieTurn
+    lacie "A poem...?" mood blank5
+    hiro "Yeah, about counting magpies." mood blank2
+    hiro "They're kind of like crows, but cuter." mood blank
+    lacie "Huh." mood blank1
+    system call HiroTurnBack
+    hiro "Supposedly the number of magpies that you see determines your fate." mood surprised3
+    hiro "But there's so many variations to the rhyme..." mood surprised
+    hiro "How can you properly predict your fate?" mood pout3
+    lacie "I'm not sure I believe in fate." mood blank8
+    system call HiroTurn
+    hiro "It can be nice to believe in something." mood other
+    lacie "Hmm... I believe in..." mood thinking3
+    lacie "..."
+    system call LacieTurnBack
+    if var ch1.favorite_dessert == "flan"
+        lacie "Flan." mood blank5
+    if var ch1.favorite_dessert == "macarons"
+        lacie "Macarons." mood blank5
+    if var ch1.favorite_dessert == "eclair"
+        lacie "Chocolate eclairs." mood blank5
+    system call HiroTurnBack
+    hiro "I thought you would say something like that." mood default
+    hiro "I believe in..." mood side
+    system call HiroSmile
+    hiro "...Lacie!" mood smile2
+    hiro "I believe you can achieve your dreams!" mood smile3
+    hide ui
+    bubble sweatdrop point lacie_bubble
+    pause 0.5
+    lacie "Then I'll try to believe, too." mood reflective8
+    hide ui
+    pause 0.8
+    system call LacieStand
+    system call HiroTurn
+    action turn down node lacie
+    pause 0.8
+    action walk down 16 node lacie speed slow
+    hiro "Don't hesitate to talk to me if you want." mood default
+    hiro "You never bother me, okay?" mood other
+    lacie "Okay." mood blank5
+    lacie "(Hiro... you're too cheesy.)" mood hide2
+    lacie "(...but thanks.)" mood hide3
+    move to Ch1_Home_Exterior_Back point bench_get_up
+    if objective ch1.talk_to_brother inprogress jump CH1_BEFORESLEEP_EVENT
+    end
 
 label 2ND_TALK
-	lacie "What is that book anyway?" mood blank5
-	hiro "Legends and nursery rhymes, that sort of thing." mood smile
-	hiro "I got it at the book store down the street." mood side
-	lacie "Is it any good?" mood blank6
-	hiro "Sure! You might enjoy them. They're not all creepy." mood surprised3
-	hiro "There's a legend that says the heart of a witch can grant any wish!" mood surprised
-	lacie "Hmm... Sounds like there must be a catch." mood concerned9
-	hiro "Maybe. I haven't finished it yet." mood pout
-	end
+    lacie "What is that book anyway?" mood blank5
+    hiro "Legends and nursery rhymes, that sort of thing." mood smile
+    hiro "I got it at the book store down the street." mood side
+    lacie "Is it any good?" mood blank6
+    hiro "Sure! You might enjoy them. They're not all creepy." mood surprised3
+    hiro "There's a legend that says the heart of a witch can grant any wish!" mood surprised
+    lacie "Hmm... Sounds like there must be a catch." mood concerned9
+    hiro "Maybe. I haven't finished it yet." mood pout
+    end
 
 label 3RD_TALK
-	lacie "You don't usually read fiction." mood blank1
-	hiro "Ahh guilty!" mood determined
-	hiro "I'm too impatient with long stories. I like skipping to the end to see what happens." mood smile3
-	lacie "Doesn't that spoil the fun?" mood concerned6
-	hiro "Well Lace, you might like solving puzzles and mysteries before they get revealed..." mood pout2
-	hiro "But I like it when the answers are served neatly on a platter." mood default
-	hiro "With extra cheese." mood smile2
-	lacie "Yes, I'm aware of the cheese." mood blank8
-	end
+    lacie "You don't usually read fiction." mood blank1
+    hiro "Ahh guilty!" mood determined
+    hiro "I'm too impatient with long stories. I like skipping to the end to see what happens." mood smile3
+    lacie "Doesn't that spoil the fun?" mood concerned6
+    hiro "Well Lace, you might like solving puzzles and mysteries before they get revealed..." mood pout2
+    hiro "But I like it when the answers are served neatly on a platter." mood default
+    hiro "With extra cheese." mood smile2
+    lacie "Yes, I'm aware of the cheese." mood blank8
+    end
 
 label 4TH_TALK
-	hiro "How's the ritual going?" mood surprised3
-	lacie "It's... going." mood reflective2
-	hiro "Are you nervous? Do you think it'll work?" mood blank
-	lacie "Kind of..." mood reflective6
-	lacie "If it worked... it wouldn't be the strangest thing that's happened to me." mood reflective8
-	bubble sweatdrop on hiro continue
-	hiro "You're right about that..." mood other
-	end
+    hiro "How's the ritual going?" mood surprised3
+    lacie "It's... going." mood reflective2
+    hiro "Are you nervous? Do you think it'll work?" mood blank
+    lacie "Kind of..." mood reflective6
+    lacie "If it worked... it wouldn't be the strangest thing that's happened to me." mood reflective8
+    bubble sweatdrop on hiro continue
+    hiro "You're right about that..." mood other
+    end
 
 label 5TH_TALK
-	hiro "Oh hey, remember mother left some food in the fridge." mood blank
-	hiro "Don't eat it cold though, you always eat things cold!" mood upset2
-	hiro "See, that's why you're so small. You don't get proper nutrition!" mood upset
-	if var ch1.todolist_task2_done
-		lacie "First, I already ate it." mood confused3
-		lacie "Second, I am not small." mood bothered
-	if not var ch1.todolist_task2_done
-		lacie "I am not small." mood bothered
-	hiro "You're TINY!" mood worried5
-	hide ui
-	bubble ellipsis
-	end
+    hiro "Oh hey, remember mother left some food in the fridge." mood blank
+    hiro "Don't eat it cold though, you always eat things cold!" mood upset2
+    hiro "See, that's why you're so small. You don't get proper nutrition!" mood upset
+    if var ch1.todolist_task2_done
+        lacie "First, I already ate it." mood confused3
+        lacie "Second, I am not small." mood bothered
+    if not var ch1.todolist_task2_done
+        lacie "I am not small." mood bothered
+    hiro "You're TINY!" mood worried5
+    hide ui
+    bubble ellipsis
+    end
 
 label 6TH_TALK
-	hiro "Be safe out there Lace." mood worried2
-	hiro "Always put your safety first before anything else." mood upset
-	lacie "Mhmm, you've said this 30 times already." mood concerned8
-	hiro "Only 30?" mood upset2
-	set ch1.home_hiro_alltalks = true
-	end
+    hiro "Be safe out there Lace." mood worried2
+    hiro "Always put your safety first before anything else." mood upset
+    lacie "Mhmm, you've said this 30 times already." mood concerned8
+    hiro "Only 30?" mood upset2
+    set ch1.home_hiro_alltalks = true
+    end
 
 label NO_MORE
-	"Hiro seems focused on his book."
-	"(You can't seem to say goodbye to him...)"
-	end
+    "Hiro seems focused on his book."
+    "(You can't seem to say goodbye to him...)"
+    end
 
 label CH1_BEFORESLEEP_EVENT
-	action turn left node Player
-	pause 0.2
-	lacie "By the way..." mood blank3
-	action turn right node hiro
-	event call ch1_event_brotherbeforesleep
-	end
+    action turn left node Player
+    pause 0.2
+    lacie "By the way..." mood blank3
+    action turn right node hiro
+    event call ch1_event_brotherbeforesleep
+    end

@@ -1,19 +1,19 @@
 label START
-	if var ch1.temp_ending_1_4_keypad
-		"It doesn't seem to be working."
-		end
-	choice "Touch some buttons?"
-		"Yes"
-			hide ui
-			pause 1
-			audio sfx play button
-			pause 0.8
-			audio sfx play button
-			pause 0.2
-			audio sfx play button
-			pause 1
-			"The keypad does not respond in any way."
-			set ch1.temp_ending_1_4_keypad = true
-		"No"
-			end
-	end
+    if var ch1.temp_ending_1_4_keypad
+        "It doesn't seem to be working."
+        end
+    choice "Touch some buttons?"
+        "Yes"
+            hide ui
+            pause 1
+            audio sfx play button
+            pause 0.8
+            audio sfx play button
+            pause 0.2
+            audio sfx play button
+            pause 1
+            "The keypad does not respond in any way."
+            set ch1.temp_ending_1_4_keypad = true
+        "No"
+            end
+    end

@@ -1,9 +1,9 @@
 label START
-	move to Void point (0,0)
-	fade in time 0
-	audio bgm play intermission
-	pause 1.7
-	cg show ch1/intermission
-	pause 5.3
-	cg hide
-	pause 0.5
+    move to Void point (0,0)
+    fade in time 0
+    audio bgm play intermission
+    pause 1.7
+    cg show ch1/intermission
+    pause 5.3
+    cg hide
+    pause 0.5

@@ -1,8 +1,8 @@
 label START
-	if repeat jump CONTENT
-	alba "Welcome~" mood happy
-	alba "We're out of stock for today, so come back again soon."
-	end
+    if repeat jump CONTENT
+    alba "Welcome~" mood happy
+    alba "We're out of stock for today, so come back again soon."
+    end
 
 label CONTENT
-	"Business is booming. Today was a good day."
+    "Business is booming. Today was a good day."

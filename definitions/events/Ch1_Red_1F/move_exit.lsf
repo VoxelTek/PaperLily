@@ -1,7 +1,7 @@
 label START
-	event call event_check_ingredients
-	audio sfx play door
-	move to Ch1_Forest_Red point main_door
-	if not var ch1.forest_seen_rune
-		event call event_rune_ignored
-	end
+    event call event_check_ingredients
+    audio sfx play door
+    move to Ch1_Forest_Red point main_door
+    if not var ch1.forest_seen_rune
+        event call event_rune_ignored
+    end

@@ -1,9 +1,9 @@
 label START
-	if var ch1.mk_rescued_sai end
-	if var general.serious end
-	if repeat end
-	chara set lacie at left
-	chara set sai at right
-	sai "Are you sure you're not a pyromaniac?" mood thinking9
-	sai "I won't judge, really." mood smile3
-	lacie "...I'm not." mood annoyed2
+    if var ch1.mk_rescued_sai end
+    if var general.serious end
+    if repeat end
+    chara set lacie at left
+    chara set sai at right
+    sai "Are you sure you're not a pyromaniac?" mood thinking9
+    sai "I won't judge, really." mood smile3
+    lacie "...I'm not." mood annoyed2

@@ -1,6 +1,6 @@
 label START
-	if var ch1.blackpass_classroom_cutscene_stage > 1 end
-	if not var general.blackpass_visits == 4 end
-	set ch1.blackpass_classroom_cutscene_stage = 1
-	system retry-save
-	end
+    if var ch1.blackpass_classroom_cutscene_stage > 1 end
+    if not var general.blackpass_visits == 4 end
+    set ch1.blackpass_classroom_cutscene_stage = 1
+    system retry-save
+    end

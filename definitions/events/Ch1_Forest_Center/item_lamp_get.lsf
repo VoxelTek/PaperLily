@@ -1,15 +1,15 @@
 label START
-	if var ch1.forest_center_took_lamp end
-	"An empty lamp that fell from that post."
-	if repeat jump TAKE_IT
-	lacie "Whatever was inside is gone."
-	lacie "Can I find a use for this?" mood thinking3
+    if var ch1.forest_center_took_lamp end
+    "An empty lamp that fell from that post."
+    if repeat jump TAKE_IT
+    lacie "Whatever was inside is gone."
+    lacie "Can I find a use for this?" mood thinking3
 
 label TAKE_IT
-	choice "Take ${item:ch1.forest_lamp_empty}?"
-		"Yes"
-			item add ch1.forest_lamp_empty
-			set ch1.forest_center_took_lamp = true
-		"No"
-			end
-	end
+    choice "Take ${item:ch1.forest_lamp_empty}?"
+        "Yes"
+            item add ch1.forest_lamp_empty
+            set ch1.forest_center_took_lamp = true
+        "No"
+            end
+    end

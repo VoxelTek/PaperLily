@@ -1,13 +1,13 @@
 label START
-	if var ch1.mk_seen_blessing_2 end
-	set ch1.mk_seen_blessing_2 = true
-	pause 1
-	fade out
-	audio bgm volume 0
-	pause 1
-	"The [color=#90EE90]second[/color] blessing..." format center position center background none
-	"\"You always said you wanted to try [color=#CD5C5C]watercolor![/color] I believe in you!\"" format center position center background none
-	pause 1
-	fade in
-	audio bgm volume 1
-	pause 0.5
+    if var ch1.mk_seen_blessing_2 end
+    set ch1.mk_seen_blessing_2 = true
+    pause 1
+    fade out
+    audio bgm volume 0
+    pause 1
+    "The [color=#90EE90]second[/color] blessing..." format center position center background none
+    "\"You always said you wanted to try [color=#CD5C5C]watercolor![/color] I believe in you!\"" format center position center background none
+    pause 1
+    fade in
+    audio bgm volume 1
+    pause 0.5

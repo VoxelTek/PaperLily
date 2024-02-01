@@ -1,9 +1,9 @@
 label START
-	if var ch1.mk_rescued_sai end
-	if var general.serious end
-	if repeat end
-	chara set lacie at left
-	chara set sai at right
-	sai "So you had time to manually craft paint, but not to get me out of here?" mood confused10
-	lacie "..." mood blank7
-	lacie "Correct." mood blank8
+    if var ch1.mk_rescued_sai end
+    if var general.serious end
+    if repeat end
+    chara set lacie at left
+    chara set sai at right
+    sai "So you had time to manually craft paint, but not to get me out of here?" mood confused10
+    lacie "..." mood blank7
+    lacie "Correct." mood blank8

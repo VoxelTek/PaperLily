@@ -1,5 +1,5 @@
 label START
-	chara set lacie at left
-	chara set aoi at right
-	aoi "It's good that you have a light, in case it gets dark in here." mood awkward3
-	aoi "I really hope it doesn't..." mood awkward2
+    chara set lacie at left
+    chara set aoi at right
+    aoi "It's good that you have a light, in case it gets dark in here." mood awkward3
+    aoi "I really hope it doesn't..." mood awkward2

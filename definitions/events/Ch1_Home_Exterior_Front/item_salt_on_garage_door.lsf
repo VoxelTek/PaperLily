@@ -1,4 +1,4 @@
 label START
-	if not objective ch1.revert_ritual_execution inprogress end
-	lacie "The salt goes on the inside only..." mood blank4
-	end
+    if not objective ch1.revert_ritual_execution inprogress end
+    lacie "The salt goes on the inside only..." mood blank4
+    end

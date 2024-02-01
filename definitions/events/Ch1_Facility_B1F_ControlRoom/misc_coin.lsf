@@ -1,4 +1,4 @@
 label START
-	if repeat end
-	event call ch1_item_coin_get
-	end
+    if repeat end
+    event call ch1_item_coin_get
+    end

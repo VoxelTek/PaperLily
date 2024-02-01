@@ -1,6 +1,6 @@
 label START
-	if not repeat
-		event call event_roll
-		end
-	"Nothing else of interest."
-	end
+    if not repeat
+        event call event_roll
+        end
+    "Nothing else of interest."
+    end

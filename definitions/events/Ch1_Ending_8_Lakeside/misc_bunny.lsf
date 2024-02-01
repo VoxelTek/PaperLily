@@ -1,4 +1,4 @@
 label START
-	"A red rabbit."
-	if repeat end
-	"It's not breathing."
+    "A red rabbit."
+    if repeat end
+    "It's not breathing."

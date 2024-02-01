@@ -1,8 +1,8 @@
 label START
-	if repeat end
-	chara set lacie at left
-	chara set milion at right
-	milion "Is this a gift?" mood blank9
-	lacie "..." mood blank7
-	lacie "No." mood blank8
-	milion "Pity." mood contemplative3
+    if repeat end
+    chara set lacie at left
+    chara set milion at right
+    milion "Is this a gift?" mood blank9
+    lacie "..." mood blank7
+    lacie "No." mood blank8
+    milion "Pity." mood contemplative3

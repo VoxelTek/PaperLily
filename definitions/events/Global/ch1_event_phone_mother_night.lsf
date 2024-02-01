@@ -1,6 +1,6 @@
 label START
-	event call ch1_phone_dialing_bad
-	event call ch1_phone_hangup
-	hide ui
-	bubble ellipsis on lacie
-	end
+    event call ch1_phone_dialing_bad
+    event call ch1_phone_hangup
+    hide ui
+    bubble ellipsis on lacie
+    end

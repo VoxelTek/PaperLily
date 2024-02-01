@@ -1,18 +1,18 @@
 label START
-	fade out
-	pause 1
-	audio sfx play hit
-	fade flash color darkgreen
-	set ch1.mk_frog_gone = true
-	system refresh
-	pause 1
-	if item ch1.mk_knife
-		pause 0.5
-		audio sfx play swish
-		pause 0.2
-		fade flash color white
-		pause 1
-		item remove ch1.mk_knife
-		item add ch1.mk_knife_activated
-	fade in
-	end
+    fade out
+    pause 1
+    audio sfx play hit
+    fade flash color darkgreen
+    set ch1.mk_frog_gone = true
+    system refresh
+    pause 1
+    if item ch1.mk_knife
+        pause 0.5
+        audio sfx play swish
+        pause 0.2
+        fade flash color white
+        pause 1
+        item remove ch1.mk_knife
+        item add ch1.mk_knife_activated
+    fade in
+    end

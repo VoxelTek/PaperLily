@@ -1,10 +1,10 @@
 label START
-	if repeat end
-	if not var ch1.forest_seen_kozmo_intro end
-	chara set lacie at left
-	kozmo "That is one stinky fish." mood sweat3
-	lacie "..." mood surprised3
-	kozmo "Hm?" mood tilt
-	lacie "You didn't stutter?" mood surprised
-	kozmo "...!" mood gasp
-	kozmo "Is it a magic fish?!" mood gasp
+    if repeat end
+    if not var ch1.forest_seen_kozmo_intro end
+    chara set lacie at left
+    kozmo "That is one stinky fish." mood sweat3
+    lacie "..." mood surprised3
+    kozmo "Hm?" mood tilt
+    lacie "You didn't stutter?" mood surprised
+    kozmo "...!" mood gasp
+    kozmo "Is it a magic fish?!" mood gasp

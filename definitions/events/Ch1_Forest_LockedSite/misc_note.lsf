@@ -1,8 +1,8 @@
 label START
-	if var ch1.forest_lockedsite_read_note end
-	"There's a note on the floor:"
-	set ch1.forest_lockedsite_read_note = true
-	system refresh
-	item add ch1.hunter_note_4
-	event call ch1_item_forest_lockedsite_note_4
-	end
+    if var ch1.forest_lockedsite_read_note end
+    "There's a note on the floor:"
+    set ch1.forest_lockedsite_read_note = true
+    system refresh
+    item add ch1.hunter_note_4
+    event call ch1_item_forest_lockedsite_note_4
+    end

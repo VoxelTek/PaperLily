@@ -1,14 +1,14 @@
 label START
-	if not var ch1.facility_took_valve_diamond jump TAKE_ITEM
-	"There's nothing else in the drawer."
-	end
+    if not var ch1.facility_took_valve_diamond jump TAKE_ITEM
+    "There's nothing else in the drawer."
+    end
 
 label TAKE_ITEM
-	"There's a valve handle in the drawer."
-	choice "Take ${item:ch1.facility_handle_diamond}?"
-		"Yes"
-			item add ch1.facility_handle_diamond
-			set ch1.facility_took_valve_diamond = true
-			end
-		"No"
-			end
+    "There's a valve handle in the drawer."
+    choice "Take ${item:ch1.facility_handle_diamond}?"
+        "Yes"
+            item add ch1.facility_handle_diamond
+            set ch1.facility_took_valve_diamond = true
+            end
+        "No"
+            end

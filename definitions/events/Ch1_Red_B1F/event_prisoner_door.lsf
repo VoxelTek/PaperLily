@@ -1,24 +1,24 @@
 label START
-	chara rename unknown to "misc.characters.prisoner"
-	unknown "Yep. It's a shortcut."
-	lacie "It needs a code." mood blank7
-	unknown "Correct."
-	unknown "I can give it to you, provided you do one more thing for me."
-	lacie "How do I know it's actually a shortcut?" mood concerned9
-	unknown "You don't. You'll just have to trust me."
-	lacie "Sounds like a bad choice." mood concerned12
-	unknown "Your call, girlie."
-	unknown "If you bring me a blue light, I'll give you the code."
-	lacie "A blue light?" mood blank4
-	unknown "Correct. A blue light. Not green, not red, certainly not white. A blue light."
-	if item ch1.candleman_candle_blue
-		lacie "I have this blue candle, does it count?" mood blank1
-		unknown "I'll be damned, you already have it?"
-		unknown "Then give it to me, unless you don't want the code."
-	if not item ch1.candleman_candle_blue
-		lacie "Where am I going to find that?" mood blank3
-		unknown "Don't know. I think I saw a candle-looking guy selling some a while back."
-		lacie "..." mood blank2
-	set ch1.forest_red_prisoner_stage = 5
-	chara rename unknown off
-	end
+    chara rename unknown to "misc.characters.prisoner"
+    unknown "Yep. It's a shortcut."
+    lacie "It needs a code." mood blank7
+    unknown "Correct."
+    unknown "I can give it to you, provided you do one more thing for me."
+    lacie "How do I know it's actually a shortcut?" mood concerned9
+    unknown "You don't. You'll just have to trust me."
+    lacie "Sounds like a bad choice." mood concerned12
+    unknown "Your call, girlie."
+    unknown "If you bring me a blue light, I'll give you the code."
+    lacie "A blue light?" mood blank4
+    unknown "Correct. A blue light. Not green, not red, certainly not white. A blue light."
+    if item ch1.candleman_candle_blue
+        lacie "I have this blue candle, does it count?" mood blank1
+        unknown "I'll be damned, you already have it?"
+        unknown "Then give it to me, unless you don't want the code."
+    if not item ch1.candleman_candle_blue
+        lacie "Where am I going to find that?" mood blank3
+        unknown "Don't know. I think I saw a candle-looking guy selling some a while back."
+        lacie "..." mood blank2
+    set ch1.forest_red_prisoner_stage = 5
+    chara rename unknown off
+    end

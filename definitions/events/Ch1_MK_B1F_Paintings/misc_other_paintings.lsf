@@ -1,5 +1,5 @@
 label START
-	if var ch1.mk_took_lighter
-		"The paintings have been destroyed..."
-	else
-		"Various paintings of a young girl are stored here."
+    if var ch1.mk_took_lighter
+        "The paintings have been destroyed..."
+    else
+        "Various paintings of a young girl are stored here."

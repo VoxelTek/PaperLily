@@ -1,17 +1,17 @@
 label START
-	if objective ch1.prepare_ritual.paint_front inprogress jump PAINT_DOOR_NEEDED
-	audio sfx play door
-	move to Ch1_Home_1F_Livingroom point front_door
-	if var ch1.seen_bus jump FAIL_BUS
-	if not var ch1.seen_tutorial_running
-		system tutorial running_lacie
-		set ch1.seen_tutorial_running = true
-	end
+    if objective ch1.prepare_ritual.paint_front inprogress jump PAINT_DOOR_NEEDED
+    audio sfx play door
+    move to Ch1_Home_1F_Livingroom point front_door
+    if var ch1.seen_bus jump FAIL_BUS
+    if not var ch1.seen_tutorial_running
+        system tutorial running_lacie
+        set ch1.seen_tutorial_running = true
+    end
 
 label PAINT_DOOR_NEEDED
-	event call event_paint_needed
-	end
+    event call event_paint_needed
+    end
 
 label FAIL_BUS
-	event call ch1_event_busignored
-	end
+    event call ch1_event_busignored
+    end

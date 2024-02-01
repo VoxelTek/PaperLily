@@ -1,13 +1,13 @@
 label START
-	fade out
-	pause 2
-	set ch1.set_phoneribbon = true
-	system refresh
-	fade in
-	lacie "Is a bunny rabbit knot fine...?" mood thinking3
-	item remove ch1.ribbon
-	item remove ch1.thread
-	item remove ch1.shoelaces
-	objective complete ch1.prepare_ritual.tie_ribbon
-	end
+    fade out
+    pause 2
+    set ch1.set_phoneribbon = true
+    system refresh
+    fade in
+    lacie "Is a bunny rabbit knot fine...?" mood thinking3
+    item remove ch1.ribbon
+    item remove ch1.thread
+    item remove ch1.shoelaces
+    objective complete ch1.prepare_ritual.tie_ribbon
+    end
 

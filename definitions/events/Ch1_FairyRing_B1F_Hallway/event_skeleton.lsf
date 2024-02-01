@@ -1,27 +1,27 @@
 label START
-	if repeat 3 jump AGAIN_2
-	if repeat jump AGAIN
-	"A large skeleton of an unknown creature."
-	lacie "Hm...?" mood default
-	lacie "What died here...?" mood blank2
-	aoi "Something big!" mood excited
-	aoi "Oh!" mood surprised2
-	aoi "A dragon!" mood confident2
-	lacie "(A dragon...!?)" mood confused2
-	aoi "Was I right?!" mood excited
-	lacie "Huh? How should I know?" mood confused
-	aoi "Aw..." mood pout4
-	set ch1.forest_fairyring_seen_skeleton_area = true
-	end
+    if repeat 3 jump AGAIN_2
+    if repeat jump AGAIN
+    "A large skeleton of an unknown creature."
+    lacie "Hm...?" mood default
+    lacie "What died here...?" mood blank2
+    aoi "Something big!" mood excited
+    aoi "Oh!" mood surprised2
+    aoi "A dragon!" mood confident2
+    lacie "(A dragon...!?)" mood confused2
+    aoi "Was I right?!" mood excited
+    lacie "Huh? How should I know?" mood confused
+    aoi "Aw..." mood pout4
+    set ch1.forest_fairyring_seen_skeleton_area = true
+    end
 
 label AGAIN
-	"A large skeleton of a dragon."
-	lacie "(Do dragons really exist in this place...?)" mood confused
-	aoi "Isn't it so cool that humans have dragons in their world?" mood happy
-	aoi "I'd like dragons here too." mood excited
-	lacie "(Nevermind.)" mood blank2
-	set general.aoi_love ++
-	end
+    "A large skeleton of a dragon."
+    lacie "(Do dragons really exist in this place...?)" mood confused
+    aoi "Isn't it so cool that humans have dragons in their world?" mood happy
+    aoi "I'd like dragons here too." mood excited
+    lacie "(Nevermind.)" mood blank2
+    set general.aoi_love ++
+    end
 
 label AGAIN_2
-	"A large skeleton of something other than a dragon."
+    "A large skeleton of something other than a dragon."

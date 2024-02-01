@@ -1,4 +1,4 @@
 label START
-	"The little girl is swaying slowly."
-	event call event_shadowgirl
-	end
+    "The little girl is swaying slowly."
+    event call event_shadowgirl
+    end

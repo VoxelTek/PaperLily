@@ -1,23 +1,23 @@
 label START
-	if var ch1.forest_moths_upset end
-	chara set lacie at left
-	chara set ch1_moth_girl at right
-	if var ch1.forest_moths_clear
-		ch1_moth_girl "Get that shit away from me." mood annoyed
-		ch1_moth_girl "Hate that crap." mood annoyed
-		end
-	ch1_moth_girl "Alright alright geez!" mood annoyed
-	ch1_moth_girl "Just take the stupid doorknob and leave!" mood default
-	ch1_moth_girl "That smells putrid..."
-	fade out
-	set ch1.forest_moths_upset = true
-	item remove ch1.forest_lavender
-	item add ch1.doorknob_facility
-	objective fail ch1.forest_lakeside_caterpillar
-	objective fail ch1.forest_lakeside_moths_reward
-	objective add ch1.forest_lakeside_doorknob
-	move to Ch1_Forest_Lakeside_Tent_Exterior point from_tent time 0
-	fade in
-	if item ch1.forest_caterpillar
-		lacie "I guess I get to keep him...?" mood blank6
-	end
+    if var ch1.forest_moths_upset end
+    chara set lacie at left
+    chara set ch1_moth_girl at right
+    if var ch1.forest_moths_clear
+        ch1_moth_girl "Get that shit away from me." mood annoyed
+        ch1_moth_girl "Hate that crap." mood annoyed
+        end
+    ch1_moth_girl "Alright alright geez!" mood annoyed
+    ch1_moth_girl "Just take the stupid doorknob and leave!" mood default
+    ch1_moth_girl "That smells putrid..."
+    fade out
+    set ch1.forest_moths_upset = true
+    item remove ch1.forest_lavender
+    item add ch1.doorknob_facility
+    objective fail ch1.forest_lakeside_caterpillar
+    objective fail ch1.forest_lakeside_moths_reward
+    objective add ch1.forest_lakeside_doorknob
+    move to Ch1_Forest_Lakeside_Tent_Exterior point from_tent time 0
+    fade in
+    if item ch1.forest_caterpillar
+        lacie "I guess I get to keep him...?" mood blank6
+    end

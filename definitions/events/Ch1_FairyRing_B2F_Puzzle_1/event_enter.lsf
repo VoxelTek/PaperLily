@@ -1,5 +1,5 @@
 label START
-	if repeat end
-	lacie "..." mood blank1
-	lacie "Aoi, stay close." mood blank3
-	aoi "Okay..." mood pout5
+    if repeat end
+    lacie "..." mood blank1
+    lacie "Aoi, stay close." mood blank3
+    aoi "Okay..." mood pout5

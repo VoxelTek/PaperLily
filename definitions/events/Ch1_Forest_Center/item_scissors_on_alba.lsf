@@ -1,9 +1,9 @@
 label START
-	if repeat
-		"Let's not provoke her."
-		end
-	chara set lacie at left
-	chara set alba at right
-	alba "Don't threaten me, kid." mood annoyed4
-	alba "I will shred you." mood pissed4
-	lacie "..." mood surprised2
+    if repeat
+        "Let's not provoke her."
+        end
+    chara set lacie at left
+    chara set alba at right
+    alba "Don't threaten me, kid." mood annoyed4
+    alba "I will shred you." mood pissed4
+    lacie "..." mood surprised2

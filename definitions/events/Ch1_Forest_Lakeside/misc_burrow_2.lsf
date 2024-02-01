@@ -1,13 +1,13 @@
 label START
-	"A small burrow."
-	if var ch1.forest_lakeside_took_rune end
-	choice "Reach inside?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	pause 1.5
-	set ch1.forest_lakeside_took_rune = true
-	item add ch1.rune_raidho
-	set ch1.runes_found ++
+    "A small burrow."
+    if var ch1.forest_lakeside_took_rune end
+    choice "Reach inside?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 1.5
+    set ch1.forest_lakeside_took_rune = true
+    item add ch1.rune_raidho
+    set ch1.runes_found ++

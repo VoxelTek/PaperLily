@@ -1,37 +1,37 @@
 label START
-	if repeat jump QUESTION
-	chara set lacie at left
-	chara set sai at right
-	sai "It might be gone." mood blank8
-	sai "It's up to you when you wanna go back out." mood blank5
+    if repeat jump QUESTION
+    chara set lacie at left
+    chara set sai at right
+    sai "It might be gone." mood blank8
+    sai "It's up to you when you wanna go back out." mood blank5
 label QUESTION
-	choice "Are you going outside?"
-		"Yes"
-			hide ui
-			pause 0.2
-			set ch1.facility_lab_locked = false
-			audio bgm override on silent
-			party add sai
-			audio sfx play door
-			move to Ch1_Facility_B2F_Hallway_East point from_lab
-			pause 0.5
-			action walk right 32 speed slow
-			action turn up
-			pause 0.8
-			action walk up 208
-			action turn left
-			pause 1
-			lacie "..." mood blank8
-			lacie "I guess the coast is clear." mood reflective8
-			hide ui
-			pause 1
-			lacie "(Will I find any clues in a place like this...?)" mood confused2
-			lacie "(Maybe I should focus on getting out of here.)" mood blank7
-			hide ui
-			audio bgm override off
-			audio play ch1_facility
-			pause 1
-			lacie "(Alright.)" mood frustrated2
-			objective add ch1.facility_investigate
-		"No"
-			end
+    choice "Are you going outside?"
+        "Yes"
+            hide ui
+            pause 0.2
+            set ch1.facility_lab_locked = false
+            audio bgm override on silent
+            party add sai
+            audio sfx play door
+            move to Ch1_Facility_B2F_Hallway_East point from_lab
+            pause 0.5
+            action walk right 32 speed slow
+            action turn up
+            pause 0.8
+            action walk up 208
+            action turn left
+            pause 1
+            lacie "..." mood blank8
+            lacie "I guess the coast is clear." mood reflective8
+            hide ui
+            pause 1
+            lacie "(Will I find any clues in a place like this...?)" mood confused2
+            lacie "(Maybe I should focus on getting out of here.)" mood blank7
+            hide ui
+            audio bgm override off
+            audio play ch1_facility
+            pause 1
+            lacie "(Alright.)" mood frustrated2
+            objective add ch1.facility_investigate
+        "No"
+            end

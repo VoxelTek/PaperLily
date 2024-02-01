@@ -1,26 +1,26 @@
 label START
-	if var ch1.temp_ending_1_4_fridge jump ALREADY_OPEN
-	"A large door with a metallic handle."
-	choice "Open it?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	audio sfx play fridge_open
-	pause 0.1
-	set ch1.temp_ending_1_4_fridge = true
-	system refresh
-	pause 0.2
-	action walk down 32 backwards
-	pause 1
-	"Frozen inside, you see..."
-	lacie "...Fingers!" mood surprised4
-	lacie "Wait... arms...? Are these... human arms...?" mood superscared4
-	"Neatly stacked inside the fridge, there's fifty or so arms of different sizes, cut off from their bodies."
-	"Both left and right arms can be seen."
-	lacie "....." mood superscared
-	end
+    if var ch1.temp_ending_1_4_fridge jump ALREADY_OPEN
+    "A large door with a metallic handle."
+    choice "Open it?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    audio sfx play fridge_open
+    pause 0.1
+    set ch1.temp_ending_1_4_fridge = true
+    system refresh
+    pause 0.2
+    action walk down 32 backwards
+    pause 1
+    "Frozen inside, you see..."
+    lacie "...Fingers!" mood surprised4
+    lacie "Wait... arms...? Are these... human arms...?" mood superscared4
+    "Neatly stacked inside the fridge, there's fifty or so arms of different sizes, cut off from their bodies."
+    "Both left and right arms can be seen."
+    lacie "....." mood superscared
+    end
 
 label ALREADY_OPEN
-	"The arms prevent you from closing the door."
+    "The arms prevent you from closing the door."

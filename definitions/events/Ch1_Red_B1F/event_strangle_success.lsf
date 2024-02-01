@@ -1,15 +1,15 @@
 label START
-	system call LacieEscape
-	pause 1.5
-	move to Ch1_Red_B1F point cutscene_2
-	lacie "...!" mood hurt
-	unknown "..."
-	lacie "You tricked me." mood bothered
-	unknown "Not exactly."
-	lacie "Just tell me. Did you curse me?" mood frustrated2
-	unknown "I did not."
-	lacie "Then who did? You said you're the only one who can inflict curses." mood frustrated
-	unknown "...and live."
-	lacie "...?" mood confused
-	unknown "Look girlie, you get the drift."
-	event call event_prisoner_request
+    system call LacieEscape
+    pause 1.5
+    move to Ch1_Red_B1F point cutscene_2
+    lacie "...!" mood hurt
+    unknown "..."
+    lacie "You tricked me." mood bothered
+    unknown "Not exactly."
+    lacie "Just tell me. Did you curse me?" mood frustrated2
+    unknown "I did not."
+    lacie "Then who did? You said you're the only one who can inflict curses." mood frustrated
+    unknown "...and live."
+    lacie "...?" mood confused
+    unknown "Look girlie, you get the drift."
+    event call event_prisoner_request

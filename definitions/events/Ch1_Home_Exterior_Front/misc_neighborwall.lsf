@@ -1,4 +1,4 @@
 label START
-	"The neighbor's front yard is on the other side."
-	if repeat end
-	lacie "I shouldn't stare... and give them another reason to dislike me." mood blank2
+    "The neighbor's front yard is on the other side."
+    if repeat end
+    lacie "I shouldn't stare... and give them another reason to dislike me." mood blank2

@@ -1,7 +1,7 @@
 label START
-	if objective ch1.blackpass_mom_quest inprogress
-		ch1_blackpass_mom "A knife, Lacie."
-		ch1_blackpass_mom "A knife."
-	if objective ch1.blackpass_mom_quest done
-		ch1_blackpass_mom "Off you go."
-	end
+    if objective ch1.blackpass_mom_quest inprogress
+        ch1_blackpass_mom "A knife, Lacie."
+        ch1_blackpass_mom "A knife."
+    if objective ch1.blackpass_mom_quest done
+        ch1_blackpass_mom "Off you go."
+    end

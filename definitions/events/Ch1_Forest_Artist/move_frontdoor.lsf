@@ -1,4 +1,4 @@
 label START
-	set ch1.forest_kett_seen_house = true
-	move to Ch1_Artist_3F point entrance
-	end
+    set ch1.forest_kett_seen_house = true
+    move to Ch1_Artist_3F point entrance
+    end

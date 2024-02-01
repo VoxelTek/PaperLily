@@ -1,26 +1,26 @@
 label START
-	"An old gramophone."
-	if var general.serious end
-	if objective ch1.mk_plant_music inprogress jump PLAY_STOP
-	if objective ch1.mk_plant_music done jump PLAY_STOP
-	end
+    "An old gramophone."
+    if var general.serious end
+    if objective ch1.mk_plant_music inprogress jump PLAY_STOP
+    if objective ch1.mk_plant_music done jump PLAY_STOP
+    end
 
 label PLAY_STOP
-	choice "What to do?"
-		"Play music" if not var ch1.mk_gramophone_playing
-			hide ui
-			set ch1.mk_gramophone_playing = true
-			pause 1
-			if objective ch1.mk_plant_music inprogress
-				objective complete ch1.mk_plant_music
-				event call ch1_event_mk_check_plant_objectives
-			end
-		"Stop the music" if var ch1.mk_gramophone_playing
-			hide ui
-			set ch1.mk_gramophone_playing = false
-			audio bgm play ch1_mk_d crossfade
-			pause 1
-			end
-		"Do nothing"
-			end
-	end
+    choice "What to do?"
+        "Play music" if not var ch1.mk_gramophone_playing
+            hide ui
+            set ch1.mk_gramophone_playing = true
+            pause 1
+            if objective ch1.mk_plant_music inprogress
+                objective complete ch1.mk_plant_music
+                event call ch1_event_mk_check_plant_objectives
+            end
+        "Stop the music" if var ch1.mk_gramophone_playing
+            hide ui
+            set ch1.mk_gramophone_playing = false
+            audio bgm play ch1_mk_d crossfade
+            pause 1
+            end
+        "Do nothing"
+            end
+    end

@@ -1,32 +1,32 @@
 label START
-	if not var ch1.forest_lockedsite_revealed_key_3
-		lacie "...?"
-		lacie "The floor here is unusual..." mood blank1
-		fade out
-		set ch1.forest_lockedsite_revealed_key_3 = true
-		system refresh
-		pause 1
-		fade in
-		end
+    if not var ch1.forest_lockedsite_revealed_key_3
+        lacie "...?"
+        lacie "The floor here is unusual..." mood blank1
+        fade out
+        set ch1.forest_lockedsite_revealed_key_3 = true
+        system refresh
+        pause 1
+        fade in
+        end
 
-	if not var ch1.forest_lockedsite_took_key_3
-		"There's a key hidden here."
-		choice "Take ${item:ch1.forest_lockedsite_key}?"
-			"Yes"
-				set ch1.forest_lockedsite_took_key_3 = true
-				system refresh
-				if var ch1.forest_lockedsite_unlocked
-					"(You don't need that key, so it was discarded.)"
-				if not var ch1.forest_lockedsite_unlocked
-					item add ch1.forest_lockedsite_key
-				"There's a note as well."
-				item add ch1.hunter_note_3
-				event call ch1_item_forest_lockedsite_note_3
-				objective complete ch1.locked_site_keys.key_3
-				end
-			"No"
-				end
-		end
+    if not var ch1.forest_lockedsite_took_key_3
+        "There's a key hidden here."
+        choice "Take ${item:ch1.forest_lockedsite_key}?"
+            "Yes"
+                set ch1.forest_lockedsite_took_key_3 = true
+                system refresh
+                if var ch1.forest_lockedsite_unlocked
+                    "(You don't need that key, so it was discarded.)"
+                if not var ch1.forest_lockedsite_unlocked
+                    item add ch1.forest_lockedsite_key
+                "There's a note as well."
+                item add ch1.hunter_note_3
+                event call ch1_item_forest_lockedsite_note_3
+                objective complete ch1.locked_site_keys.key_3
+                end
+            "No"
+                end
+        end
 
-	"There's nothing else here."
+    "There's nothing else here."
 

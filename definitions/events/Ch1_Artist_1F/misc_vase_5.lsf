@@ -1,10 +1,10 @@
 label START
-	if repeat jump DINOSAUR
-	"A small art piece."
-	lacie "It looks like a dinosaur." mood blank5
-	set ch1.forest_kett_seen_dinosaur = true
-	end
+    if repeat jump DINOSAUR
+    "A small art piece."
+    lacie "It looks like a dinosaur." mood blank5
+    set ch1.forest_kett_seen_dinosaur = true
+    end
 
 label DINOSAUR
-	"A small dinosaur."
-	end
+    "A small dinosaur."
+    end

@@ -1,8 +1,8 @@
 label START
-	if not var ch1.forest_seen_rune end
-	chara set lacie at left
-	chara set rune at right
-	rune "Miss Lacie, that's a dangerous item!" mood gasp
-	lacie "..." mood default
-	rune "I never thought you'd try to poison me this fast." mood sad
-	lacie "Sorry." mood blank5
+    if not var ch1.forest_seen_rune end
+    chara set lacie at left
+    chara set rune at right
+    rune "Miss Lacie, that's a dangerous item!" mood gasp
+    lacie "..." mood default
+    rune "I never thought you'd try to poison me this fast." mood sad
+    lacie "Sorry." mood blank5

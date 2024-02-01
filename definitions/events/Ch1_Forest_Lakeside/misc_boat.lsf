@@ -1,47 +1,47 @@
 label START
-	objective add ch1.forest_lakeside_take_boat
-	objective add ch1.forest_lakeside_remove_mermaid
-	objective add ch1.forest_lakeside_paddles
-	"A boat that has seen better days."
-	if not repeat
-		"It could probably take you north."
-	if not item ch1.forest_paddles amount 2
-		if not repeat
-			jump NO_PADDLES
-		else
-			jump NOT_ENOUGH_PADDLES
-	if not var ch1.forest_lakeside_removed_mermaid jump MERMAID_GUARDING
-	jump TAKE_IT
+    objective add ch1.forest_lakeside_take_boat
+    objective add ch1.forest_lakeside_remove_mermaid
+    objective add ch1.forest_lakeside_paddles
+    "A boat that has seen better days."
+    if not repeat
+        "It could probably take you north."
+    if not item ch1.forest_paddles amount 2
+        if not repeat
+            jump NO_PADDLES
+        else
+            jump NOT_ENOUGH_PADDLES
+    if not var ch1.forest_lakeside_removed_mermaid jump MERMAID_GUARDING
+    jump TAKE_IT
 
 label NOT_ENOUGH_PADDLES
-	if not item ch1.forest_paddles jump NO_PADDLES
-	lacie "Ideally, I'd like to have two paddles." mood blank8
-	jump ALSO
+    if not item ch1.forest_paddles jump NO_PADDLES
+    lacie "Ideally, I'd like to have two paddles." mood blank8
+    jump ALSO
 
 label NO_PADDLES
-	lacie "I can't take it anywhere without paddles." mood blank7
-	jump ALSO
+    lacie "I can't take it anywhere without paddles." mood blank7
+    jump ALSO
 
 label ALSO
-	if not var ch1.forest_lakeside_removed_mermaid
-		lacie "Also..." mood blank5
-		jump MERMAID_GUARDING
-	end
+    if not var ch1.forest_lakeside_removed_mermaid
+        lacie "Also..." mood blank5
+        jump MERMAID_GUARDING
+    end
 
 label TAKE_IT
-	choice "(What should I do?)"
-		"Get on the boat"
-			jump GET_ON_BOAT
-		"Do not"
-			end
+    choice "(What should I do?)"
+        "Get on the boat"
+            jump GET_ON_BOAT
+        "Do not"
+            end
 
 label GET_ON_BOAT
-	item remove ch1.forest_paddles amount 2
-	objective complete ch1.forest_lakeside_take_boat
-	event call event_take_boat
-	end
+    item remove ch1.forest_paddles amount 2
+    objective complete ch1.forest_lakeside_take_boat
+    event call event_take_boat
+    end
 
 label MERMAID_GUARDING
-	lacie "What the heck is that thing...?" mood shadow2
-	lacie "(Maybe I shouldn't get on while it's there...)" mood shadow4
-	end
+    lacie "What the heck is that thing...?" mood shadow2
+    lacie "(Maybe I shouldn't get on while it's there...)" mood shadow4
+    end

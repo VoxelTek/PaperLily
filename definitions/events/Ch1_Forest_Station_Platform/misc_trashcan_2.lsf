@@ -1,6 +1,6 @@
 label START
-	"A trash can."
-	if var general.serious end
-	if repeat end
-	"It seems to be filled with non-burnable trash."
-	"None of it is useful to you."
+    "A trash can."
+    if var general.serious end
+    if repeat end
+    "It seems to be filled with non-burnable trash."
+    "None of it is useful to you."

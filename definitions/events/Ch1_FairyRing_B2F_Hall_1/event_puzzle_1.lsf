@@ -1,14 +1,14 @@
 label START
-	if repeat end
-	action turn right
-	lacie "Hm? What's that?" mood blank3
-	hide ui
-	camera move (100,0) time 2
-	pause 1
-	aoi "Oh that? It's a fairy head." mood melt7
-	lacie "A... head? Is the rest of the fairy just buried?" mood blank5
-	aoi "No, it's probably roaming around somewhere." mood melt5
-	aoi "But the heads are dangerous too, be careful."
-	hide ui
-	camera move (-100,0) time 0.5
-	camera reset
+    if repeat end
+    action turn right
+    lacie "Hm? What's that?" mood blank3
+    hide ui
+    camera move (100,0) time 2
+    pause 1
+    aoi "Oh that? It's a fairy head." mood melt7
+    lacie "A... head? Is the rest of the fairy just buried?" mood blank5
+    aoi "No, it's probably roaming around somewhere." mood melt5
+    aoi "But the heads are dangerous too, be careful."
+    hide ui
+    camera move (-100,0) time 0.5
+    camera reset

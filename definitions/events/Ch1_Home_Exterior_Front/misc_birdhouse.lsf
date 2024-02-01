@@ -1,8 +1,8 @@
 label START
-	"A birdhouse."
-	if repeat end
-	if var general.serious end
-	lacie "We don't get many birds, but I leave food here for them in case."
-	if item ch1.bird_food end
-	if var ch1.todolist_task3_done end
-	lacie "Where did I put that bag..?" mood blank2
+    "A birdhouse."
+    if repeat end
+    if var general.serious end
+    lacie "We don't get many birds, but I leave food here for them in case."
+    if item ch1.bird_food end
+    if var ch1.todolist_task3_done end
+    lacie "Where did I put that bag..?" mood blank2

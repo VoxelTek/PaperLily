@@ -1,12 +1,12 @@
 label START
-	if not var ch1.mk_tool_visible end
-	set ch1.mk_tool_visible = false
-	system refresh
-	item add ch1.mk_lighter
-	objective complete ch1.mk_find_lighter
-	pause 1
-	set ch1.mk_took_lighter = true
-	system refresh
-	pause 0.2
-	action turn up
-	pause 0.5
+    if not var ch1.mk_tool_visible end
+    set ch1.mk_tool_visible = false
+    system refresh
+    item add ch1.mk_lighter
+    objective complete ch1.mk_find_lighter
+    pause 1
+    set ch1.mk_took_lighter = true
+    system refresh
+    pause 0.2
+    action turn up
+    pause 0.5

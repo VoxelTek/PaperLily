@@ -1,91 +1,91 @@
 label START
-	if var ch1.facility_deep_seen_spider_talk_1 jump TALK_2
-	set ch1.facility_deep_seen_spider_talk_1 = true
-	camera move (0,-150) time 2
-	pause 1
-	lacie "..." mood blank4
-	lacie "You're... Spider?" mood blank5
-	ch1_spider "Good work back there. Didn't think you'd actually do it."
-	ch1_spider "It feels good to see this place again."
-	lacie "..." mood confused
-	sai "How's this good? You're locked up." mood confused
-	ch1_spider "I don't need much to be content."
-	ch1_spider "My cell neighbor keeps me entertained."
-	if not var ch1.facility_deep_seen_mk
-		lacie "...?"
-		ch1_spider "Go take a look."
-		hide ui
-		camera move (0,150) time 0.5
-		camera reset
-		end
-	else
-		lacie "You mean Miss Knives...?" mood blank1
-		jump TALK_2_NOINTRO
+    if var ch1.facility_deep_seen_spider_talk_1 jump TALK_2
+    set ch1.facility_deep_seen_spider_talk_1 = true
+    camera move (0,-150) time 2
+    pause 1
+    lacie "..." mood blank4
+    lacie "You're... Spider?" mood blank5
+    ch1_spider "Good work back there. Didn't think you'd actually do it."
+    ch1_spider "It feels good to see this place again."
+    lacie "..." mood confused
+    sai "How's this good? You're locked up." mood confused
+    ch1_spider "I don't need much to be content."
+    ch1_spider "My cell neighbor keeps me entertained."
+    if not var ch1.facility_deep_seen_mk
+        lacie "...?"
+        ch1_spider "Go take a look."
+        hide ui
+        camera move (0,150) time 0.5
+        camera reset
+        end
+    else
+        lacie "You mean Miss Knives...?" mood blank1
+        jump TALK_2_NOINTRO
 
 label TALK_2
-	if not var ch1.facility_deep_seen_mk
-		ch1_spider "Go take a look."
-		end
-	if var ch1.facility_deep_seen_spider_talk_2 jump TALK_3
-	camera move (0,-150) time 2
-	pause 1
-	lacie "..." mood default
-	lacie "About Miss Knives..." mood blank1
+    if not var ch1.facility_deep_seen_mk
+        ch1_spider "Go take a look."
+        end
+    if var ch1.facility_deep_seen_spider_talk_2 jump TALK_3
+    camera move (0,-150) time 2
+    pause 1
+    lacie "..." mood default
+    lacie "About Miss Knives..." mood blank1
 label TALK_2_NOINTRO
-	set ch1.facility_deep_seen_spider_talk_2 = true
-	ch1_spider "Are you surprised?"
-	lacie "Well... kind of." mood blank7
-	ch1_spider "She's seen better days."
-	ch1_spider "But she'll be fine. She's just like a spider."
-	ch1_spider "After a little while, she'll make a new web and entangle everyone in it again."
-	ch1_spider "I'm curious to see what it will look like next time."
-	sai "Huh." mood thinking4
-	lacie "I see..." mood reflective2
-	ch1_spider "Besides. She does get a visitor every so often."
-	lacie "Really?" mood blank1
-	ch1_spider "Yes. An intriguing one by the name of Red."
-	lacie "...!" mood surprised3
-	ch1_spider "Don't look so excited."
-	ch1_spider "Red won't be back here anytime soon."
-	lacie "I see." mood sigh
-	sai "Is Red the lighthouse person?" mood blank11
-	lacie "Yes..." mood reflective4
-	sai "Ah, damn." mood confused7
-	ch1_spider "Interesting."
-	ch1_spider "If the lighthouse is what you're searching for, perhaps this is of use to you."
-	hide ui
-	pause 1
-	audio sfx play drop
-	pause 0.5
-	audio sfx play drop
-	pause 0.2
-	audio sfx play drop
-	pause 1
-	item add ch1.doorknob_lighthouse_fragment amount 3
-	lacie "Is this... a doorknob to the lighthouse?" mood surprised
-	ch1_spider "What remains of it."
-	if var ch1.shop_traded_fragments
-		lacie "That's fine, I... I think I know how to fix it." mood thinking3
-		lacie "This is a big help, Spider." mood blank5
-	else
-		lacie "I see..." mood blank5
-		lacie "Thank you. I appreciate it, even if it's broken." mood blank1
-	ch1_spider "Then consider our debts settled."
-	hide ui
-	camera move (0,150) time 0.5
-	camera reset
-	end
+    set ch1.facility_deep_seen_spider_talk_2 = true
+    ch1_spider "Are you surprised?"
+    lacie "Well... kind of." mood blank7
+    ch1_spider "She's seen better days."
+    ch1_spider "But she'll be fine. She's just like a spider."
+    ch1_spider "After a little while, she'll make a new web and entangle everyone in it again."
+    ch1_spider "I'm curious to see what it will look like next time."
+    sai "Huh." mood thinking4
+    lacie "I see..." mood reflective2
+    ch1_spider "Besides. She does get a visitor every so often."
+    lacie "Really?" mood blank1
+    ch1_spider "Yes. An intriguing one by the name of Red."
+    lacie "...!" mood surprised3
+    ch1_spider "Don't look so excited."
+    ch1_spider "Red won't be back here anytime soon."
+    lacie "I see." mood sigh
+    sai "Is Red the lighthouse person?" mood blank11
+    lacie "Yes..." mood reflective4
+    sai "Ah, damn." mood confused7
+    ch1_spider "Interesting."
+    ch1_spider "If the lighthouse is what you're searching for, perhaps this is of use to you."
+    hide ui
+    pause 1
+    audio sfx play drop
+    pause 0.5
+    audio sfx play drop
+    pause 0.2
+    audio sfx play drop
+    pause 1
+    item add ch1.doorknob_lighthouse_fragment amount 3
+    lacie "Is this... a doorknob to the lighthouse?" mood surprised
+    ch1_spider "What remains of it."
+    if var ch1.shop_traded_fragments
+        lacie "That's fine, I... I think I know how to fix it." mood thinking3
+        lacie "This is a big help, Spider." mood blank5
+    else
+        lacie "I see..." mood blank5
+        lacie "Thank you. I appreciate it, even if it's broken." mood blank1
+    ch1_spider "Then consider our debts settled."
+    hide ui
+    camera move (0,150) time 0.5
+    camera reset
+    end
 
 label TALK_3
-	"Spider seems at peace in its cell."
-	choice "It looks like this gate could be opened. Open it?"
-		"Yes"
-			fade out
-			set ch1.facility_deep_opened_spider = true
-			system refresh
-			pause 1
-			audio sfx play gate
-			pause 1
-			fade in
-		"No"
-			end
+    "Spider seems at peace in its cell."
+    choice "It looks like this gate could be opened. Open it?"
+        "Yes"
+            fade out
+            set ch1.facility_deep_opened_spider = true
+            system refresh
+            pause 1
+            audio sfx play gate
+            pause 1
+            fade in
+        "No"
+            end

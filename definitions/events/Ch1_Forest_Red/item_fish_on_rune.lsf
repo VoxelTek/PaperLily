@@ -1,12 +1,12 @@
 label START
-	if repeat end
-	if not var ch1.forest_seen_rune end
-	chara set lacie at left
-	rune "Alba sells nice fish!" mood happy
-	rune "She also gives me runes sometimes, in exchange for coins." mood sparkle2
-	rune "She's a very nice person!" mood happy
-	lacie "How many coins does she charge you?" mood default
-	rune "Usually about 40 coins." mood tilt
-	lacie "..." mood concerned4
-	lacie "Rune, I think she might be ripping you off." mood concerned7
-	rune "Not a chance! I really love runes!" mood sparkle
+    if repeat end
+    if not var ch1.forest_seen_rune end
+    chara set lacie at left
+    rune "Alba sells nice fish!" mood happy
+    rune "She also gives me runes sometimes, in exchange for coins." mood sparkle2
+    rune "She's a very nice person!" mood happy
+    lacie "How many coins does she charge you?" mood default
+    rune "Usually about 40 coins." mood tilt
+    lacie "..." mood concerned4
+    lacie "Rune, I think she might be ripping you off." mood concerned7
+    rune "Not a chance! I really love runes!" mood sparkle

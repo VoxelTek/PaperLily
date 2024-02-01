@@ -1,7 +1,7 @@
 label START
-	audio bgm override on prologue_nightmare
-	move to Ch1_Ending_4_ParkingLot point entrance
-	if repeat end
-	pause 0.5
-	lacie "Uhm... where am I?" mood concerned4
-	objective add ch1.explore_parkinglot
+    audio bgm override on prologue_nightmare
+    move to Ch1_Ending_4_ParkingLot point entrance
+    if repeat end
+    pause 0.5
+    lacie "Uhm... where am I?" mood concerned4
+    objective add ch1.explore_parkinglot

@@ -1,59 +1,59 @@
 label START
-	if var ch1.forest_lakeside_cage_in_water end
-	"A cage attached to a tree."
-	if repeat jump SEE_CONTENT
-	if not var ch1.forest_lakeside_removed_mermaid
-		if not var ch1.forest_lakeside_cage_content
-			lacie "It looks like I could put something inside." mood blank5
+    if var ch1.forest_lakeside_cage_in_water end
+    "A cage attached to a tree."
+    if repeat jump SEE_CONTENT
+    if not var ch1.forest_lakeside_removed_mermaid
+        if not var ch1.forest_lakeside_cage_content
+            lacie "It looks like I could put something inside." mood blank5
 label SEE_CONTENT
-	if var ch1.forest_lakeside_cage_content == "bunny"
-		"A bunny stares at you from inside."
-	if var ch1.forest_lakeside_cage_content == "fish"
-		"The 5-coin fish rests inside. It's not even grilled."
-	if var ch1.forest_lakeside_cage_content == "snack1"
-		"A pack of chips is inside."
-	if var ch1.forest_lakeside_cage_content == "snack2"
-		"A chocolate bar is inside."
+    if var ch1.forest_lakeside_cage_content == "bunny"
+        "A bunny stares at you from inside."
+    if var ch1.forest_lakeside_cage_content == "fish"
+        "The 5-coin fish rests inside. It's not even grilled."
+    if var ch1.forest_lakeside_cage_content == "snack1"
+        "A pack of chips is inside."
+    if var ch1.forest_lakeside_cage_content == "snack2"
+        "A chocolate bar is inside."
 label TAKE_CONTENT
-	if not var ch1.forest_lakeside_cage_content jump PUSH
-	choice "(Take it back?)"
-		"Yes"
-			if var ch1.forest_lakeside_cage_content == "bunny"
-				item add ch1.forest_bunny
-			if var ch1.forest_lakeside_cage_content == "fish"
-				item add ch1.forest_fish
-			if var ch1.forest_lakeside_cage_content == "snack1"
-				item add ch1.forest_harmless_snack
-			if var ch1.forest_lakeside_cage_content == "snack2"
-				item add ch1.forest_harmless_snack_2
-			set ch1.forest_lakeside_cage_content = null
-			end
-		"No"
-			continue
+    if not var ch1.forest_lakeside_cage_content jump PUSH
+    choice "(Take it back?)"
+        "Yes"
+            if var ch1.forest_lakeside_cage_content == "bunny"
+                item add ch1.forest_bunny
+            if var ch1.forest_lakeside_cage_content == "fish"
+                item add ch1.forest_fish
+            if var ch1.forest_lakeside_cage_content == "snack1"
+                item add ch1.forest_harmless_snack
+            if var ch1.forest_lakeside_cage_content == "snack2"
+                item add ch1.forest_harmless_snack_2
+            set ch1.forest_lakeside_cage_content = null
+            end
+        "No"
+            continue
 label PUSH
-	if var ch1.forest_lakeside_removed_mermaid
-		"There's no need to push the cage into the water anymore."
-		end
-	choice "(Push the cage into the water?)"
-		"Yes"
-			continue
-		"No"
-			end
-	fade out
-	pause 0.5
-	audio sfx play water_splash_2
-	set ch1.forest_lakeside_cage_in_water = true
-	system refresh
-	pause 3
-	if var ch1.forest_lakeside_cage_content == "bunny" jump ADDED_MEAT
-	if var ch1.forest_lakeside_cage_content == "fish" jump ADDED_MEAT
-	fade in
-	end
+    if var ch1.forest_lakeside_removed_mermaid
+        "There's no need to push the cage into the water anymore."
+        end
+    choice "(Push the cage into the water?)"
+        "Yes"
+            continue
+        "No"
+            end
+    fade out
+    pause 0.5
+    audio sfx play water_splash_2
+    set ch1.forest_lakeside_cage_in_water = true
+    system refresh
+    pause 3
+    if var ch1.forest_lakeside_cage_content == "bunny" jump ADDED_MEAT
+    if var ch1.forest_lakeside_cage_content == "fish" jump ADDED_MEAT
+    fade in
+    end
 
 label ADDED_MEAT
-	set ch1.forest_lakeside_removed_mermaid = true
-	set ch1.forest_lakeside_feeding_mermaid = true
-	pause 1
-	"(The monster seems to like what you put inside the cage.)"
-	fade in
-	end
+    set ch1.forest_lakeside_removed_mermaid = true
+    set ch1.forest_lakeside_feeding_mermaid = true
+    pause 1
+    "(The monster seems to like what you put inside the cage.)"
+    fade in
+    end

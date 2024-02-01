@@ -1,4 +1,4 @@
 label START
-	chara set rune at right
-	rune "Do you collect doorknobs, Miss Lacie?" mood tilt
-	rune "Personally I prefer runes, but to each their own!" mood sparkle
+    chara set rune at right
+    rune "Do you collect doorknobs, Miss Lacie?" mood tilt
+    rune "Personally I prefer runes, but to each their own!" mood sparkle

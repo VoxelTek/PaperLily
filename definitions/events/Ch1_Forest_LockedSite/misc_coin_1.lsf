@@ -1,5 +1,5 @@
 label START
-	if var ch1.forest_lockedsite_took_coin_1 end
-	set ch1.forest_lockedsite_took_coin_1 = true
-	event call ch1_item_coin_get
-	end
+    if var ch1.forest_lockedsite_took_coin_1 end
+    set ch1.forest_lockedsite_took_coin_1 = true
+    event call ch1_item_coin_get
+    end

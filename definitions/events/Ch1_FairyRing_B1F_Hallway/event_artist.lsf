@@ -1,24 +1,24 @@
 label START
-	if repeat end
-	if var ch1.forest_kett_seen_house
-		lacie "(Oh... I know where this is)." mood default
-		aoi "This must be under that weird fella's house." mood surprised
-		aoi "You know, the sculptor?" mood surprised
-		lacie "Yeah." mood blank3
-		aoi "I think artists are really impressive!" mood happy
-	else
-		lacie "(What's this..?)" mood default
-		aoi "This must be under that weird fella's house." mood surprised
-		aoi "You know, the sculptor?" mood surprised
-		lacie "..." mood blank2
-		lacie "Not really." mood blank3
-		aoi "Oh, it's a cranky old artist." mood confident2
-		aoi "I've never spoken to him because he's in a bad mood when he's tired." mood default
-		aoi "...And he's almost always tired." mood coy
-		aoi "But I think artists are really impressive!" mood happy
-	aoi "Sculpting is really hard..." mood awkward4
-	aoi "Especially hands..."
-	aoi "I can't seem to get my hands right..." mood annoyed2
-	lacie "(Oh, that explains...)" mood blank7
-	set ch1.forest_fairyring_seen_artist_area = true
-	end
+    if repeat end
+    if var ch1.forest_kett_seen_house
+        lacie "(Oh... I know where this is)." mood default
+        aoi "This must be under that weird fella's house." mood surprised
+        aoi "You know, the sculptor?" mood surprised
+        lacie "Yeah." mood blank3
+        aoi "I think artists are really impressive!" mood happy
+    else
+        lacie "(What's this..?)" mood default
+        aoi "This must be under that weird fella's house." mood surprised
+        aoi "You know, the sculptor?" mood surprised
+        lacie "..." mood blank2
+        lacie "Not really." mood blank3
+        aoi "Oh, it's a cranky old artist." mood confident2
+        aoi "I've never spoken to him because he's in a bad mood when he's tired." mood default
+        aoi "...And he's almost always tired." mood coy
+        aoi "But I think artists are really impressive!" mood happy
+    aoi "Sculpting is really hard..." mood awkward4
+    aoi "Especially hands..."
+    aoi "I can't seem to get my hands right..." mood annoyed2
+    lacie "(Oh, that explains...)" mood blank7
+    set ch1.forest_fairyring_seen_artist_area = true
+    end

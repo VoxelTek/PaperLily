@@ -1,36 +1,36 @@
 label START
-	if var ch1.forest_canvas_painting jump ALREADY_DREW
-	choice "A blank canvas. Paint something?"
-		"Yes"
-			continue
-		"No"
-			end
-	choice "What should I paint?"
-		"A blue butterfly" if var ch1.forest_red_entrance_stage == 4
-			set ch1.forest_canvas_painting = "butterfly"
-			jump DRAWING
-		"A self-portrait"
-			set ch1.forest_canvas_painting = "lacie"
-			jump DRAWING
-		"Hiro"
-			set ch1.forest_canvas_painting = "hiro"
-			jump DRAWING
-		"A portrait of Kett" if var ch1.forest_kett_introduced
-			set ch1.forest_canvas_painting = "kett"
-			jump DRAWING
-		"A ghost"
-			set ch1.forest_canvas_painting = "ghost"
-			jump DRAWING
-		"A dinosaur" if var ch1.forest_kett_seen_dinosaur
-			set ch1.forest_canvas_painting = "dinosaur"
-			jump DRAWING
-		"Never mind"
-			end
+    if var ch1.forest_canvas_painting jump ALREADY_DREW
+    choice "A blank canvas. Paint something?"
+        "Yes"
+            continue
+        "No"
+            end
+    choice "What should I paint?"
+        "A blue butterfly" if var ch1.forest_red_entrance_stage == 4
+            set ch1.forest_canvas_painting = "butterfly"
+            jump DRAWING
+        "A self-portrait"
+            set ch1.forest_canvas_painting = "lacie"
+            jump DRAWING
+        "Hiro"
+            set ch1.forest_canvas_painting = "hiro"
+            jump DRAWING
+        "A portrait of Kett" if var ch1.forest_kett_introduced
+            set ch1.forest_canvas_painting = "kett"
+            jump DRAWING
+        "A ghost"
+            set ch1.forest_canvas_painting = "ghost"
+            jump DRAWING
+        "A dinosaur" if var ch1.forest_kett_seen_dinosaur
+            set ch1.forest_canvas_painting = "dinosaur"
+            jump DRAWING
+        "Never mind"
+            end
 
 label DRAWING
-	"Show drawing here"
-	end
+    "Show drawing here"
+    end
 
 label ALREADY_DREW
-	lacie "It's the painting I made. Kett will probably trash it soon enough."
-	end
+    lacie "It's the painting I made. Kett will probably trash it soon enough."
+    end

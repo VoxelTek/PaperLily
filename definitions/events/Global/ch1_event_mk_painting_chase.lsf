@@ -1,17 +1,17 @@
 label START
-	audio bgm stop time 2
-	move to Ch1_Cutscene_PaintingLady_2 point cutscene_center time 0
-	chara spawn lacie point lacie
-	fade in time 1
-	pause 1.5
-	bubble exclamation on lacie continue
-	action walk down 16 speed slow node lacie backwards continue
-	pause 1.5
-	audio sfx play thud5
-	pause 0.2
-	camera shake
-	action walk down 64 speed fast node lacie
-	action walk left 256 speed fast node lacie continue
-	pause 1
-	audio bgm play ch1_danger
-	move to Ch1_MK_Chase_Painting point entrance
+    audio bgm stop time 2
+    move to Ch1_Cutscene_PaintingLady_2 point cutscene_center time 0
+    chara spawn lacie point lacie
+    fade in time 1
+    pause 1.5
+    bubble exclamation on lacie continue
+    action walk down 16 speed slow node lacie backwards continue
+    pause 1.5
+    audio sfx play thud5
+    pause 0.2
+    camera shake
+    action walk down 64 speed fast node lacie
+    action walk left 256 speed fast node lacie continue
+    pause 1
+    audio bgm play ch1_danger
+    move to Ch1_MK_Chase_Painting point entrance

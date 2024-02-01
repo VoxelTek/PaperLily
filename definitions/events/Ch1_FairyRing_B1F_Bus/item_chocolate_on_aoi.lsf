@@ -1,6 +1,6 @@
 label START
-	chara set lacie at left
-	chara set aoi at right
-	aoi "Oh, I also have one of those!" mood confident2
-	aoi "I heard they taste great, but I'm afraid to try them since they're poisonous and all..." mood awkward4
-	aoi "Or... are you suggesting something???" mood melt
+    chara set lacie at left
+    chara set aoi at right
+    aoi "Oh, I also have one of those!" mood confident2
+    aoi "I heard they taste great, but I'm afraid to try them since they're poisonous and all..." mood awkward4
+    aoi "Or... are you suggesting something???" mood melt

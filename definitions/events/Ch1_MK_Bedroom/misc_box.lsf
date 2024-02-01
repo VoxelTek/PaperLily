@@ -1,13 +1,13 @@
 label START
-	if var general.serious end
-	if var ch1.mk_unlocked_box_bedroom
-		"There's nothing else in the box."
-		end
-	"There's a box on top of the vanity table. It uses a combination lock."
-	lacie "(There's a drawing of a key on the box...)" mood thinking
-	choice "Try to unlock the box?"
-		"Yes"
-			system minigame ch1_input_mkbox
-		"No"
-			end
-	end
+    if var general.serious end
+    if var ch1.mk_unlocked_box_bedroom
+        "There's nothing else in the box."
+        end
+    "There's a box on top of the vanity table. It uses a combination lock."
+    lacie "(There's a drawing of a key on the box...)" mood thinking
+    choice "Try to unlock the box?"
+        "Yes"
+            system minigame ch1_input_mkbox
+        "No"
+            end
+    end

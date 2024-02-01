@@ -1,5 +1,5 @@
 label START
-	set ch1.forest_candleman_took_unlit_candle = true
-	system refresh
-	item add ch1.candleman_candle_unlit
-	end
+    set ch1.forest_candleman_took_unlit_candle = true
+    system refresh
+    item add ch1.candleman_candle_unlit
+    end

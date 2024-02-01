@@ -1,11 +1,11 @@
 label START
-	if var persistent.station_tracks_locked jump NO_LEAVE
-	audio bgm override on silent
-	move to Ch1_Forest_Station_Platform_On_Tracks point from_tracks_right
-	end
+    if var persistent.station_tracks_locked jump NO_LEAVE
+    audio bgm override on silent
+    move to Ch1_Forest_Station_Platform_On_Tracks point from_tracks_right
+    end
 
 label NO_LEAVE
-	lacie "I'm not giving up just yet... I know I can solve this." mood reflective8
-	lacie "The tickets from the dispenser probably contain a hint." mood reflective6
-	hide ui
-	action walk right 16
+    lacie "I'm not giving up just yet... I know I can solve this." mood reflective8
+    lacie "The tickets from the dispenser probably contain a hint." mood reflective6
+    hide ui
+    action walk right 16

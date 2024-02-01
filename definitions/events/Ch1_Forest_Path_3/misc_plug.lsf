@@ -1,17 +1,17 @@
 label START
-	if var ch1.forest_center_campfire_on jump ALREADY_PLUGGED
-	"There's an electrical socket hiding behind the bush."
-	"The plug and the socket don't match, so you can't plug it in."
-	if item ch1.forest_adapter
-		lacie "I suppose I could try this adapter I found." mood thinking
-	if repeat end
-	if not item ch1.forest_adapter
-		lacie "Do I need an adapter? That's so weird." mood thinking4
-	end
+    if var ch1.forest_center_campfire_on jump ALREADY_PLUGGED
+    "There's an electrical socket hiding behind the bush."
+    "The plug and the socket don't match, so you can't plug it in."
+    if item ch1.forest_adapter
+        lacie "I suppose I could try this adapter I found." mood thinking
+    if repeat end
+    if not item ch1.forest_adapter
+        lacie "Do I need an adapter? That's so weird." mood thinking4
+    end
 
 label ALREADY_PLUGGED
-	if var ch1.forest_center_campfire_seen
-		"The campfire is plugged here."
-		end
-	"The cable is plugged in."
-	end
+    if var ch1.forest_center_campfire_seen
+        "The campfire is plugged here."
+        end
+    "The cable is plugged in."
+    end

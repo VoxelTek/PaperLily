@@ -1,29 +1,29 @@
 label START
-	if var ch1.forest_station_took_sign
-		"There's no need to go this way."
-		hide ui
-		action walk left 32
-		end
-	choice "Walk down the train tracks in this direction?"
-		"Yes"
-			if not var ch1.forest_station_tracks_stage
-				set ch1.forest_station_tracks_stage = 1
-			else
-				set ch1.forest_station_seen_top = false
-				set ch1.forest_station_seen_mid = false
-				set ch1.forest_station_seen_bottom = false
-				set ch1.forest_station_heard_top = false
-				set ch1.forest_station_heard_mid = false
-				set ch1.forest_station_heard_bottom = false
-				set ch1.forest_station_cut_top = false
-				set ch1.forest_station_cut_mid = false
-				set ch1.forest_station_cut_bottom = false
-			audio bgm override off
-			fade out
-			pause 1
-			move to Ch1_Forest_Station_Tracks point entrance time 0
-			pause 2
-			fade in
-		"No"
-			hide ui
-			action walk left 32
+    if var ch1.forest_station_took_sign
+        "There's no need to go this way."
+        hide ui
+        action walk left 32
+        end
+    choice "Walk down the train tracks in this direction?"
+        "Yes"
+            if not var ch1.forest_station_tracks_stage
+                set ch1.forest_station_tracks_stage = 1
+            else
+                set ch1.forest_station_seen_top = false
+                set ch1.forest_station_seen_mid = false
+                set ch1.forest_station_seen_bottom = false
+                set ch1.forest_station_heard_top = false
+                set ch1.forest_station_heard_mid = false
+                set ch1.forest_station_heard_bottom = false
+                set ch1.forest_station_cut_top = false
+                set ch1.forest_station_cut_mid = false
+                set ch1.forest_station_cut_bottom = false
+            audio bgm override off
+            fade out
+            pause 1
+            move to Ch1_Forest_Station_Tracks point entrance time 0
+            pause 2
+            fade in
+        "No"
+            hide ui
+            action walk left 32

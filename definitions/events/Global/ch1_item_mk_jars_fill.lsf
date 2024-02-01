@@ -1,16 +1,16 @@
 label START
-	if item ch1.mk_jar amount 3 jump THREE
-	if item ch1.mk_jar amount 2 jump THREE
-	item remove ch1.mk_jar
-	item add ch1.mk_jar_water
-	end
+    if item ch1.mk_jar amount 3 jump THREE
+    if item ch1.mk_jar amount 2 jump THREE
+    item remove ch1.mk_jar
+    item add ch1.mk_jar_water
+    end
 
 label THREE
-	item remove ch1.mk_jar amount 3
-	item add ch1.mk_jar_water amount 3
-	end
+    item remove ch1.mk_jar amount 3
+    item add ch1.mk_jar_water amount 3
+    end
 
 label TWO
-	item remove ch1.mk_jar amount 2
-	item add ch1.mk_jar_water amount 2
-	end
+    item remove ch1.mk_jar amount 2
+    item add ch1.mk_jar_water amount 2
+    end

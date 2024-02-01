@@ -1,55 +1,55 @@
 label START
-	"A big mirror is embedded in the tree trunk."
-	if var ch1.forest_center_tree_interior_unlocked
-		"A door handle can be seen."
-	if repeat jump AGAIN
-	"Your reflection stares anxiously back at you."
-	end
+    "A big mirror is embedded in the tree trunk."
+    if var ch1.forest_center_tree_interior_unlocked
+        "A door handle can be seen."
+    if repeat jump AGAIN
+    "Your reflection stares anxiously back at you."
+    end
 
 label AGAIN
-	if var ch1.forest_center_tree_interior_unlocked jump CHECK_INTERIOR
-	if not var ch1.forest_center_hiro_called end
-	"On a closer inspection, there's a door handle on the mirror."
-	"It doesn't seem to be locked."
-	set ch1.forest_center_tree_interior_unlocked = true
+    if var ch1.forest_center_tree_interior_unlocked jump CHECK_INTERIOR
+    if not var ch1.forest_center_hiro_called end
+    "On a closer inspection, there's a door handle on the mirror."
+    "It doesn't seem to be locked."
+    set ch1.forest_center_tree_interior_unlocked = true
 
 label CHECK_INTERIOR
-	choice "Check behind the mirror?"
-		"Yes"
-			continue
-		"No"
-			end
-	fade out
-	audio bgm volume 0
-	move to Ch1_FairyRing_Pit point cutscene_camera_top cutscene
-	fade in time 4
-	pause 0.5
-	if not var ch1.forest_center_tree_interior_seen
-		chara lock
-		lacie "..."
-		lacie "The tree... is hollow...?"
-		hide ui
-	if var ch1.forest_center_tree_fed
-		chara lock
-		lacie "Has anything changed now that I threw all those fish in?"
-		hide ui
-	action call lacie_crouch
-	pause 0.5
-	camera move (0,350) time 4
-	pause 1
-	camera move (0,-350) time 0.5
-	if not var ch1.forest_center_tree_interior_seen
-		pause 0.5
-		lacie "I can't see the bottom, but it's really deep."
-		lacie "Why is the inside of the tree like this?"
-		hide ui
-		chara unlock
-	if var ch1.forest_center_tree_fed
-		pause 0.5
-		lacie "Doesn't seem like it."
-		hide ui
-		chara unlock
-	pause 0.5
-	set ch1.forest_center_tree_interior_seen = true
-	move to Ch1_Forest_Center point from_mirror
-	audio bgm volume 1
+    choice "Check behind the mirror?"
+        "Yes"
+            continue
+        "No"
+            end
+    fade out
+    audio bgm volume 0
+    move to Ch1_FairyRing_Pit point cutscene_camera_top cutscene
+    fade in time 4
+    pause 0.5
+    if not var ch1.forest_center_tree_interior_seen
+        chara lock
+        lacie "..."
+        lacie "The tree... is hollow...?"
+        hide ui
+    if var ch1.forest_center_tree_fed
+        chara lock
+        lacie "Has anything changed now that I threw all those fish in?"
+        hide ui
+    action call lacie_crouch
+    pause 0.5
+    camera move (0,350) time 4
+    pause 1
+    camera move (0,-350) time 0.5
+    if not var ch1.forest_center_tree_interior_seen
+        pause 0.5
+        lacie "I can't see the bottom, but it's really deep."
+        lacie "Why is the inside of the tree like this?"
+        hide ui
+        chara unlock
+    if var ch1.forest_center_tree_fed
+        pause 0.5
+        lacie "Doesn't seem like it."
+        hide ui
+        chara unlock
+    pause 0.5
+    set ch1.forest_center_tree_interior_seen = true
+    move to Ch1_Forest_Center point from_mirror
+    audio bgm volume 1

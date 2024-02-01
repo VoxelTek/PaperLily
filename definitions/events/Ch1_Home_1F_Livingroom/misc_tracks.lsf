@@ -1,5 +1,5 @@
 label START
-	if not var general.chapter == 1 end
-	if not var general.inbetween end
-	"Footprints leading outside. They don't look like normal feet..."
-	end
+    if not var general.chapter == 1 end
+    if not var general.inbetween end
+    "Footprints leading outside. They don't look like normal feet..."
+    end

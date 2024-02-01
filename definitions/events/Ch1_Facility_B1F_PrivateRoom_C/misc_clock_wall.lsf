@@ -1,11 +1,11 @@
 label START
-	if not repeat
-		camera move (0,-64) time 2
-		pause 0.5
-		"A large window shaped like a clock towers above you."
-	"The time is set to 12:00."
-	if not repeat
-		wait
-		hide ui
-		camera move (0,64) time 0.5
-		camera reset
+    if not repeat
+        camera move (0,-64) time 2
+        pause 0.5
+        "A large window shaped like a clock towers above you."
+    "The time is set to 12:00."
+    if not repeat
+        wait
+        hide ui
+        camera move (0,64) time 0.5
+        camera reset

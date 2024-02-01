@@ -1,20 +1,20 @@
 label START
-	if repeat end
-	chara set lacie at left
-	chara set rune at right
-	action turn up
-	chara lock
-	action idle stop node rune
-	rune "Ooh! An interesting character appears!"
-	hide ui
-	camera move (0,-120) time 1.0
-	pause 0.5
-	chara unlock
-	lacie "(Someone's there?)" mood blank4
-	rune "Nobody has come in a long time!"
-	rune "I hope you can make it over here!"
-	action idle start node rune
-	hide ui
-	camera move (0,120) time 0.5
-	camera reset
-	system retry-save
+    if repeat end
+    chara set lacie at left
+    chara set rune at right
+    action turn up
+    chara lock
+    action idle stop node rune
+    rune "Ooh! An interesting character appears!"
+    hide ui
+    camera move (0,-120) time 1.0
+    pause 0.5
+    chara unlock
+    lacie "(Someone's there?)" mood blank4
+    rune "Nobody has come in a long time!"
+    rune "I hope you can make it over here!"
+    action idle start node rune
+    hide ui
+    camera move (0,120) time 0.5
+    camera reset
+    system retry-save

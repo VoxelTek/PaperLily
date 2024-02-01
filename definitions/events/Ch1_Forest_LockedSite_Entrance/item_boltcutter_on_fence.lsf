@@ -1,6 +1,6 @@
 label START
-	if var ch1.forest_lockedsite_unlocked
-		"There's no reason to do that."
-		end
-	lacie "(Why damage the fence when I can just cut the chain that locks the gate...?)" mood blank2
-	end
+    if var ch1.forest_lockedsite_unlocked
+        "There's no reason to do that."
+        end
+    lacie "(Why damage the fence when I can just cut the chain that locks the gate...?)" mood blank2
+    end

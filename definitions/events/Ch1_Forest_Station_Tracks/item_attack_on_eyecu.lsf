@@ -1,9 +1,9 @@
 label START
-	audio ambiance stop time 0
-	audio bgm stop time 0
-	audio sfx play squash
-	action call eyecu_atk_top
-	action call eyecu_atk_mid
-	action call eyecu_atk_bottom
-	pause 0.4
-	event call ch1_death_impact
+    audio ambiance stop time 0
+    audio bgm stop time 0
+    audio sfx play squash
+    action call eyecu_atk_top
+    action call eyecu_atk_mid
+    action call eyecu_atk_bottom
+    pause 0.4
+    event call ch1_death_impact

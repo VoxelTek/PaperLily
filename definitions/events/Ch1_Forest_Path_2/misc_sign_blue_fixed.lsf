@@ -1,4 +1,4 @@
 label START
-	"This sign says [color=#8080FF]\"Daylight Gate\"[/color]."
-	"It's fixed in place, so it cannot be rotated."
-	end
+    "This sign says [color=#8080FF]\"Daylight Gate\"[/color]."
+    "It's fixed in place, so it cannot be rotated."
+    end

@@ -1,24 +1,24 @@
 label START
-	fade out
-	pause 2
-	move to Ch1_Facility_B2F_Dungeon_1 point ch1_wake_up cutscene time 0
-	system call LacieRise
-	fade in time 4
-	pause 3.5
-	chara spawn lacie point ch1_wake_up
-	system call LacieRiseHide
-	lacie "(...Where am I?)" mood blank1
-	lacie "(Is this a prison cell?)" mood concerned2
-	hide ui
-	pause 0.8
-	action walk down 48 node lacie speed slow
-	pause 0.5
-	lacie "(I need to find a way out.)" mood frustrated2
-	hide ui
-	pause 0.5
-	audio bgm override on silent
-	objective clear
-	objective add ch1.facility_escape_cell
-	move to Ch1_Facility_B2F_Dungeon_1 point ch1_story_start
-	system achievement CH1_FACILITY
-	end
+    fade out
+    pause 2
+    move to Ch1_Facility_B2F_Dungeon_1 point ch1_wake_up cutscene time 0
+    system call LacieRise
+    fade in time 4
+    pause 3.5
+    chara spawn lacie point ch1_wake_up
+    system call LacieRiseHide
+    lacie "(...Where am I?)" mood blank1
+    lacie "(Is this a prison cell?)" mood concerned2
+    hide ui
+    pause 0.8
+    action walk down 48 node lacie speed slow
+    pause 0.5
+    lacie "(I need to find a way out.)" mood frustrated2
+    hide ui
+    pause 0.5
+    audio bgm override on silent
+    objective clear
+    objective add ch1.facility_escape_cell
+    move to Ch1_Facility_B2F_Dungeon_1 point ch1_story_start
+    system achievement CH1_FACILITY
+    end

@@ -1,57 +1,57 @@
 label START
-	if var ch1.forest_center_tree_fed
-		"This tree has had enough fish for today."
-		end
-	if not var ch1.forest_center_tree_interior_seen
-		if repeat
-			"You're not doing that again."
-			end
-		"You hold out the fish in front of the mirror, like you just caught it."
-		"You feel silly, so you stop."
-		end
-	if item ch1.forest_fish amount 90 jump THROW_MULTI
+    if var ch1.forest_center_tree_fed
+        "This tree has had enough fish for today."
+        end
+    if not var ch1.forest_center_tree_interior_seen
+        if repeat
+            "You're not doing that again."
+            end
+        "You hold out the fish in front of the mirror, like you just caught it."
+        "You feel silly, so you stop."
+        end
+    if item ch1.forest_fish amount 90 jump THROW_MULTI
 
-	choice "Throw it down the hole?"
-		"Yes"
-			continue
-		"No"
-			end
+    choice "Throw it down the hole?"
+        "Yes"
+            continue
+        "No"
+            end
 label THROW_SINGLE
-	fade out
-	pause 2
-	item remove ch1.forest_fish
-	if var ch1.forest_fairyring_show_single_fish
-		"You listen for a while, but no impact sound can be heard this time."
-	else
-		"After six or so seconds, you hear the faint impact of the fish against something."
-		set ch1.forest_fairyring_show_single_fish = true
-	hide ui
-	pause 0.5
-	fade in
-	end
+    fade out
+    pause 2
+    item remove ch1.forest_fish
+    if var ch1.forest_fairyring_show_single_fish
+        "You listen for a while, but no impact sound can be heard this time."
+    else
+        "After six or so seconds, you hear the faint impact of the fish against something."
+        set ch1.forest_fairyring_show_single_fish = true
+    hide ui
+    pause 0.5
+    fade in
+    end
 
 label THROW_MULTI
-	choice "Throw all your fish into the hole?"
-		"Throw all of them"
-			continue
-		"Just throw one" if item ch1.forest_fish amount 91
-			jump THROW_SINGLE
-		"Don't"
-			end
-	fade out
-	pause 2
-	item remove ch1.forest_fish amount 99
-	set ch1.forest_center_tree_fed = true
-	set ch1.forest_fairyring_show_many_fish = true
-	set ch1.forest_fairyring_show_single_fish = false
-	"You throw each and every fish into the hole."
-	"Some of them make sounds when they hit the bottom, but many don't."
-	hide ui
-	pause 2
-	"After a while, you run out of fish."
-	"Your hands smell terrible, and you feel like you accomplished nothing."
-	hide ui
-	pause 0.5
-	fade in
-	end
+    choice "Throw all your fish into the hole?"
+        "Throw all of them"
+            continue
+        "Just throw one" if item ch1.forest_fish amount 91
+            jump THROW_SINGLE
+        "Don't"
+            end
+    fade out
+    pause 2
+    item remove ch1.forest_fish amount 99
+    set ch1.forest_center_tree_fed = true
+    set ch1.forest_fairyring_show_many_fish = true
+    set ch1.forest_fairyring_show_single_fish = false
+    "You throw each and every fish into the hole."
+    "Some of them make sounds when they hit the bottom, but many don't."
+    hide ui
+    pause 2
+    "After a while, you run out of fish."
+    "Your hands smell terrible, and you feel like you accomplished nothing."
+    hide ui
+    pause 0.5
+    fade in
+    end
 

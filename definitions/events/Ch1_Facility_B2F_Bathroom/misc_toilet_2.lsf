@@ -1,3 +1,3 @@
 label START
-	audio sfx play toilet_seat
-	set ch1.facility_bathroom_toilet_2_down = !ch1.facility_bathroom_toilet_2_down
+    audio sfx play toilet_seat
+    set ch1.facility_bathroom_toilet_2_down = !ch1.facility_bathroom_toilet_2_down

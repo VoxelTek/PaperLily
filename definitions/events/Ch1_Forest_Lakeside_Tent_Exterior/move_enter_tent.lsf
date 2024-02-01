@@ -1,12 +1,12 @@
 label START
-	if var ch1.forest_moths_upset
-		chara set ch1_moth_girl at right
-		ch1_moth_girl "Stay away!!!" mood annoyed
-		hide ui
-		action walk down 16
-		end
-	if not var ch1.forest_moths_seen
-		event call ch1_event_moths
-		end
-	move to Ch1_Forest_Lakeside_Tent_Interior point entrance
-	end
+    if var ch1.forest_moths_upset
+        chara set ch1_moth_girl at right
+        ch1_moth_girl "Stay away!!!" mood annoyed
+        hide ui
+        action walk down 16
+        end
+    if not var ch1.forest_moths_seen
+        event call ch1_event_moths
+        end
+    move to Ch1_Forest_Lakeside_Tent_Interior point entrance
+    end

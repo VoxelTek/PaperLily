@@ -1,17 +1,17 @@
 label START
-	"\"Welcome back, Lacie."
-	"We've missed you at school."
-	if var general.blackpass_visits >= 2 jump 2ND_VISIT
-	"You'll have a lot to catch up on, so your classmates organized the reading material for you."
-	"You can find it in your locker."
-	"Please be sure to look over everything carefully."
-	"You wouldn't want to fail the year.\""
-	if repeat end
-	lacie "...sigh." mood reflective2
-	end
+    "\"Welcome back, Lacie."
+    "We've missed you at school."
+    if var general.blackpass_visits >= 2 jump 2ND_VISIT
+    "You'll have a lot to catch up on, so your classmates organized the reading material for you."
+    "You can find it in your locker."
+    "Please be sure to look over everything carefully."
+    "You wouldn't want to fail the year.\""
+    if repeat end
+    lacie "...sigh." mood reflective2
+    end
 
 label 2ND_VISIT
-	lacie "...Blah blah blah." mood annoyed3
-	lacie "It's always the same text." mood annoyed
-	lacie "The note will be back in this spot next time, even if I crumple it."
-	end
+    lacie "...Blah blah blah." mood annoyed3
+    lacie "It's always the same text." mood annoyed
+    lacie "The note will be back in this spot next time, even if I crumple it."
+    end

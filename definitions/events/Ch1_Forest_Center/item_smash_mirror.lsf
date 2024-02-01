@@ -1,16 +1,16 @@
 label START
-	if var ch1.forest_center_tree_interior_unlocked
-		"There's no need to break it."
-		end
-	"You could probably smash the mirror with this."
-	choice "Break the mirror?"
-		"Yes"
-			continue
-		"No"
-			end
-	hide ui
-	pause 1
-	"You prepare to break the mirror..."
-	"But you notice there's a door handle on it."
-	"It doesn't seem to be locked."
-	set ch1.forest_center_tree_interior_unlocked = true
+    if var ch1.forest_center_tree_interior_unlocked
+        "There's no need to break it."
+        end
+    "You could probably smash the mirror with this."
+    choice "Break the mirror?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 1
+    "You prepare to break the mirror..."
+    "But you notice there's a door handle on it."
+    "It doesn't seem to be locked."
+    set ch1.forest_center_tree_interior_unlocked = true

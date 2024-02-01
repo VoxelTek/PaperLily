@@ -1,23 +1,23 @@
 label START
-	chara set lacie at left
-	chara set rune at right
-	set general.rune_runes_given ++
-	if repeat jump SECOND_RUNE
-	rune "Wow! Thank you! You can have something in return!" mood sparkle
-	item add ch1.forest_bugnet
-	lacie "What am I supposed to do with this?" mood blank6
-	rune "Dunno! Maybe it will come in handy." mood default
-	end
+    chara set lacie at left
+    chara set rune at right
+    set general.rune_runes_given ++
+    if repeat jump SECOND_RUNE
+    rune "Wow! Thank you! You can have something in return!" mood sparkle
+    item add ch1.forest_bugnet
+    lacie "What am I supposed to do with this?" mood blank6
+    rune "Dunno! Maybe it will come in handy." mood default
+    end
 
 label SECOND_RUNE
-	if repeat 3 jump THIRD_RUNE
-	rune "Yay! Another one!" mood sparkle
-	item add ch1.forest_bolt_cutter
-	rune "Here's another trinket." mood default
-	lacie "Wow... this actually looks useful." mood blank1
-	end
+    if repeat 3 jump THIRD_RUNE
+    rune "Yay! Another one!" mood sparkle
+    item add ch1.forest_bolt_cutter
+    rune "Here's another trinket." mood default
+    lacie "Wow... this actually looks useful." mood blank1
+    end
 
 label THIRD_RUNE
-	rune "Wow! You're amazing! Thank you!" mood sparkle
-	event call ch1_item_coin_get
-	end
+    rune "Wow! You're amazing! Thank you!" mood sparkle
+    event call ch1_item_coin_get
+    end

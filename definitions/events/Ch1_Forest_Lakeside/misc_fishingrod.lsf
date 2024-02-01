@@ -1,7 +1,7 @@
 label START
-	"A fishing rod."
-	choice "Try it?"
-		"Yes"
-			system minigame ch1_lakeside_fishing
-		"No"
-			end
+    "A fishing rod."
+    choice "Try it?"
+        "Yes"
+            system minigame ch1_lakeside_fishing
+        "No"
+            end

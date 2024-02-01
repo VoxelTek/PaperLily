@@ -1,51 +1,51 @@
 label START
-	if repeat 6 jump NO_MORE
-	if repeat 5 jump EXTRA_5
-	if repeat 4 jump EXTRA_4
-	if repeat 3 jump EXTRA_3
-	if repeat 2 jump EXTRA_2
-	jump EXTRA_1
+    if repeat 6 jump NO_MORE
+    if repeat 5 jump EXTRA_5
+    if repeat 4 jump EXTRA_4
+    if repeat 3 jump EXTRA_3
+    if repeat 2 jump EXTRA_2
+    jump EXTRA_1
 
 label EXTRA_1
-	lacie "What is that commission about?" mood blank6
-	kett "I keep my business matters private." mood default
-	end
+    lacie "What is that commission about?" mood blank6
+    kett "I keep my business matters private." mood default
+    end
 
 label EXTRA_2
-	set ch1.forest_kett_asked_about_commissioning = true
-	lacie "Can I commission you for a piece?" mood blank5
-	kett "Of course. You may add your name to my waiting list." mood default
-	if var ch1.forest_kett_seen_waitlist
-		lacie "...Never mind then." mood blank8
-	if not var ch1.forest_kett_seen_waitlist
-		lacie "Where is it?" mood blank5
-		kett "On the wall."
-	end
+    set ch1.forest_kett_asked_about_commissioning = true
+    lacie "Can I commission you for a piece?" mood blank5
+    kett "Of course. You may add your name to my waiting list." mood default
+    if var ch1.forest_kett_seen_waitlist
+        lacie "...Never mind then." mood blank8
+    if not var ch1.forest_kett_seen_waitlist
+        lacie "Where is it?" mood blank5
+        kett "On the wall."
+    end
 
 label EXTRA_3
-	lacie "Why don't you make anything colorful?" mood blank2
-	kett "Color....ful..?" mood tired
-	kett "..."
-	kett "What ever do you mean?" mood default
-	lacie "Well...all of your...art...is blue or grey." mood blank3
-	kett "Blue...? Grey...?" mood thinking
-	kett "..."
-	lacie "(He seems really perplexed.)" mood concerned12
-	end
+    lacie "Why don't you make anything colorful?" mood blank2
+    kett "Color....ful..?" mood tired
+    kett "..."
+    kett "What ever do you mean?" mood default
+    lacie "Well...all of your...art...is blue or grey." mood blank3
+    kett "Blue...? Grey...?" mood thinking
+    kett "..."
+    lacie "(He seems really perplexed.)" mood concerned12
+    end
 
 label EXTRA_4
-	lacie "What did you smell on me earlier?" mood concerned9
-	kett "I don't recall the event you're referring to." mood default
-	lacie "Because you don't keep meaningless information in your mind?" mood disappointed2
-	kett "Yes, how did you know?"
-	lacie "Just a feeling." mood disappointed
-	end
+    lacie "What did you smell on me earlier?" mood concerned9
+    kett "I don't recall the event you're referring to." mood default
+    lacie "Because you don't keep meaningless information in your mind?" mood disappointed2
+    kett "Yes, how did you know?"
+    lacie "Just a feeling." mood disappointed
+    end
 
 label EXTRA_5
-	kett "Of course.. the patterns must match on each limb." mood default
-	kett "But how shall I go about it...?" mood thinking
-	end
+    kett "Of course.. the patterns must match on each limb." mood default
+    kett "But how shall I go about it...?" mood thinking
+    end
 
 label NO_MORE
-	"Kett seems to be concentrated."
-	end
+    "Kett seems to be concentrated."
+    end

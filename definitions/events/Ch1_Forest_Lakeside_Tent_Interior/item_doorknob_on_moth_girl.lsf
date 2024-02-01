@@ -1,3 +1,3 @@
 label START
-	lacie "Do you know where this leads?" mood blank1
-	ch1_moth_girl "No idea." mood blank2
+    lacie "Do you know where this leads?" mood blank1
+    ch1_moth_girl "No idea." mood blank2

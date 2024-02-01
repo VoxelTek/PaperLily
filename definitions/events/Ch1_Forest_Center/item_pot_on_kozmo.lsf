@@ -1,22 +1,22 @@
 label START
-	system call StopTimer
-	objective complete ch1.kozmo_find_head
-	objective complete ch1.kozmo_give_head
-	item remove ch1.forest_pot
-	lacie "Is this OK?" mood concerned2
-	hide ui
-	fade out
-	set ch1.forest_kozmo_leaking = false
-	set ch1.forest_kozmo_changed_head = true
-	set ch1.forest_kozmo_head = "pot"
-	chara remood kozmo off
-	chara remood kozmo all to head1
-	system refresh
-	pause 2
-	fade in
-	pause 0.5
-	kozmo "I-I-I guess it could be worse..."
-	kozmo "Thank you! I didn't think you would come back!"
-	lacie "...It was my fault after all..." mood concerned4
-	lacie "You're welcome, I suppose."
-	end
+    system call StopTimer
+    objective complete ch1.kozmo_find_head
+    objective complete ch1.kozmo_give_head
+    item remove ch1.forest_pot
+    lacie "Is this OK?" mood concerned2
+    hide ui
+    fade out
+    set ch1.forest_kozmo_leaking = false
+    set ch1.forest_kozmo_changed_head = true
+    set ch1.forest_kozmo_head = "pot"
+    chara remood kozmo off
+    chara remood kozmo all to head1
+    system refresh
+    pause 2
+    fade in
+    pause 0.5
+    kozmo "I-I-I guess it could be worse..."
+    kozmo "Thank you! I didn't think you would come back!"
+    lacie "...It was my fault after all..." mood concerned4
+    lacie "You're welcome, I suppose."
+    end

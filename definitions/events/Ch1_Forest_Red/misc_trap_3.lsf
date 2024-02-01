@@ -1,6 +1,6 @@
 label START
-	if repeat end
-	bubble exclamation continue
-	pause 0.3
-	system minigame ch1_battle_redbridge_3
-	end
+    if repeat end
+    bubble exclamation continue
+    pause 0.3
+    system minigame ch1_battle_redbridge_3
+    end

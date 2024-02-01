@@ -1,19 +1,19 @@
 label START
-	"The sign says [color=#8080FF]\"Daylight Gate\"[/color]."
-	if var ch1.forest_path_1_sign_direction == "up" jump ALREADY_DONE
-	if var ch1.forest_path_1_seen_dead_end jump ACT
-	"It's pointing towards the trees."
-	end
+    "The sign says [color=#8080FF]\"Daylight Gate\"[/color]."
+    if var ch1.forest_path_1_sign_direction == "up" jump ALREADY_DONE
+    if var ch1.forest_path_1_seen_dead_end jump ACT
+    "It's pointing towards the trees."
+    end
 
 label ACT
-	choice "It seems to be a bit loose. You could rotate it to match the other one..."
-		"Let's do it"
-			continue
-		"Not my job"
-			end
-	system call RotateSign
-	end
+    choice "It seems to be a bit loose. You could rotate it to match the other one..."
+        "Let's do it"
+            continue
+        "Not my job"
+            end
+    system call RotateSign
+    end
 
 label ALREADY_DONE
-	"It seems to be pointing in the correct direction now."
-	end
+    "It seems to be pointing in the correct direction now."
+    end

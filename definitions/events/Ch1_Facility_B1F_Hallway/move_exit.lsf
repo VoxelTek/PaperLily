@@ -1,7 +1,7 @@
 label START
-	if character sai
-		event call move_exit_sai
-		end
-	audio sfx play door_locked
-	pause 0.5
-	"There's a door here, but it won't open."
+    if character sai
+        event call move_exit_sai
+        end
+    audio sfx play door_locked
+    pause 0.5
+    "There's a door here, but it won't open."
