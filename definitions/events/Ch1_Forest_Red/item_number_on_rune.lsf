@@ -1,0 +1,8 @@
+label START
+    if not var ch1.forest_seen_rune end
+    chara set lacie at left
+    chara set rune at right
+    rune "Oh, don't worry about the train station."
+    rune "It hasn't been in use for a while."
+    lacie "How come?" mood blank6
+    rune "Not sure!" mood tilt

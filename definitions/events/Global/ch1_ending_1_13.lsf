@@ -1,0 +1,77 @@
+label START
+    bubble question
+    pause 0.5
+    fade out
+    move to Ch1_Cutscene_Ending_13 point cutscene_camera time 0
+    chara spawn lacie point cutscene_lacie
+    chara spawn sai point cutscene_sai
+    chara set lacie at left
+    chara set sai at right
+    pause 0.5
+    fade in
+    pause 1
+    sai "Was that toy always there?" mood blank
+    sai "What is it, a bear or something?" mood blank5
+    lacie "It's a rabbit." mood blank5
+    lacie "...Or that's what I think it's trying to be." mood blank6
+    sai "It's an abomination." mood thinking3
+    hide ui
+    action walk up 48 node sai
+    sai "It's got no legs!" mood thinking7
+    lacie "Hey...um..." mood concerned5
+    sai "...And it's all mismatched!" mood smile2
+    lacie "I don't think you should touch-" mood concerned2 time 1
+    hide ui
+    audio sfx play ch1_expand
+    action call plush_atk
+    pause 0.5
+    action walk down 16 node sai backwards continue
+    pause 1
+    audio sfx play gore7
+    cg show ch1/death_blood_3 time 0
+    audio bgm stop time 0
+    hide ui
+    pause 1.5
+    fade out time 0
+    cg hide time 0
+    audio sfx play ch1_breaking
+    fade flash color red
+    set persistent.lacie_deaths ++
+    pause 7
+    unknown "There you are! Finish cleanin' yet?"
+    hide ui
+    pause 2
+    unknown "The hell you got in your mouth?"
+    unknown "Spit it out!"
+    hide ui
+    pause 1
+    unknown "Don't make me say it twice."
+    hide ui
+    pause 1
+    audio sfx play gore6
+    pause 5
+    unknown "Good girl!"
+    chara despawn lacie
+    chara despawn sai
+    camera move (0,-32) time 0
+    action call after_eat
+    fade in time 2
+    pause 1.5
+    action call hide_shadow_1
+    action call show_shadow_2
+    unknown "Ugh... the hell is this thing?"
+    unknown "Can't even tell anymore, you always make such a mess out of your food."
+    action call hide_shadow_2
+    action call show_shadow_3
+    unknown "I can't eat this crap, you can have it back."
+    unknown "But hurry up, or I'm leaving without you!"
+    fade out
+    hide ui
+    pause 1.5
+    unknown "Hell, this place still gives me the creeps." font small
+    hide ui
+    pause 4
+    "Dead End 1-13 - Stuffed Animal" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.13 = true
+    system title-screen

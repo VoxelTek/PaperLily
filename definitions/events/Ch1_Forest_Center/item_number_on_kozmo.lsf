@@ -1,0 +1,15 @@
+label START
+    if repeat end
+    if var ch1.forest_kozmo_gone end
+    if var ch1.forest_kozmo_changed_head end
+    if var ch1.forest_kozmo_leaking end
+    if var ch1.forest_kozmo_head end
+    chara set lacie at left
+    chara set kozmo at right
+    kozmo "Ooh, I-I-I have a number too!" mood gasp
+    lacie "What's your number?" mood blank5
+    kozmo "1054!" mood default
+    lacie "..." mood blank2
+    kozmo "Ha! M-m-mine is higher than yours!" mood sparkle
+    lacie "...yeah." mood blank3
+    end

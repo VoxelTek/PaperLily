@@ -1,0 +1,3 @@
+label START
+    move to Ch1_MK_Stairway point coming_down direction down
+    end

@@ -1,0 +1,6 @@
+label START
+    chara set lacie at left
+    chara set milion at right
+    milion "Fascinating creatures." mood blank
+    milion "Naturally emitting light can be a great asset to one's value." mood reflective2
+    lacie "...?" mood default

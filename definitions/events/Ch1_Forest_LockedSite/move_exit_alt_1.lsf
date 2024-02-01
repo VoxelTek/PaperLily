@@ -1,0 +1,4 @@
+label START
+    set ch1.forest_lockedsite_clear = true
+    move to Ch1_Forest_Lakeside_3 point from_lockedsite_1
+    end

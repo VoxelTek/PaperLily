@@ -1,0 +1,3 @@
+label START
+    event call ch1_phone_busy
+    end

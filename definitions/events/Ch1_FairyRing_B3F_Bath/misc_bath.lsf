@@ -1,0 +1,6 @@
+label START
+    "A bath tub."
+    if repeat end
+    lacie "Why is there a bathtub in a place like this?" mood confused
+    aoi "Maybe the faeries take baths here?" mood embarassed
+    lacie "At least it's not full of blood or something." mood confused3

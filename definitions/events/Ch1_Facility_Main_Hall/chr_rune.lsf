@@ -1,0 +1,36 @@
+label START
+    if var ch1.facility_sai_attempting_leave
+        event queue chr_rune_nosai
+        end
+    choice "So..."
+        "What is this place?" if not var ch1.facility_rune_asked_about_facility
+            set ch1.facility_rune_asked_about_facility = true
+            lacie "What exactly is this place?" mood blank3
+            rune "Dunno!" mood default
+            rune "Nobody's been here for hundreds of years though." mood tilt
+            lacie "Interesting." mood blank7
+            end
+        "What do I do about the primals?" if not var ch1.facility_rune_asked_about_primals
+            set ch1.facility_rune_asked_about_primals = true
+            lacie "There's... shadowy-looking demons roaming around this place." mood concerned5
+            rune "Indeed!" mood sparkle
+            rune "They are called primals." mood default
+            rune "Best not to approach them."
+            sai "Told you so." mood blank10
+            end
+        "How do you know Sai?" if not var ch1.facility_rune_asked_about_sai
+            set ch1.facility_rune_asked_about_sai = true
+            lacie "You two said you've had several encounters with each other?" mood blank4
+            sai "I do a lot of rituals." mood blank10
+            lacie "A lot of rituals?" mood confused2
+            lacie "And... you've survived?" mood disappointed3
+            sai "You almost look dissapointed." mood smile10
+            end
+        "Never mind"
+            jump EXTRA
+
+label EXTRA
+    if not var ch1.facility_rune_asked_about_facility end
+    if not var ch1.facility_rune_asked_about_primals end
+    if not var ch1.facility_rune_asked_about_sai end
+    event call chr_rune_extra

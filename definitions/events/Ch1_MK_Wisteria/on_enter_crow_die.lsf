@@ -1,0 +1,3 @@
+label START
+    if var ch1.mk_crow_dead end
+    set ch1.mk_crow_dead = true

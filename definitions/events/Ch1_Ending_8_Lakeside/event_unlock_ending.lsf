@@ -1,0 +1,3 @@
+label START
+    if var ch1.temp_ending_1_8_seen_vista end
+    set ch1.temp_ending_1_8_seen_vista = true

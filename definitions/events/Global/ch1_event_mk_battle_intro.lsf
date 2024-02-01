@@ -1,0 +1,10 @@
+label START
+    hide ui
+    chara set lacie at left
+    chara set mk at right
+    pause 1.5
+    mk "You took everything from me..." mood default time 3
+    mk "...I never wanted your blessings...." mood upset time 3
+    mk "For all the horrors you caused me, and for daring to set foot into MY WORLD-" time 3
+    mk "I WILL END YOU!" time 2 mood upset
+    end

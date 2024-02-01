@@ -1,0 +1,13 @@
+label START
+    if var ch1.mk_seen_blessing_4 end
+    set ch1.mk_seen_blessing_4 = true
+    pause 1
+    fade out
+    audio bgm volume 0
+    pause 1
+    "The [color=#90EE90]fourth[/color] blessing..." format center position center background none
+    "\"Y-you... what did you do to his [color=#CD5C5C]leg[/color]?!?\"" format center position center background none
+    pause 1
+    fade in
+    audio bgm volume 1
+    pause 0.5

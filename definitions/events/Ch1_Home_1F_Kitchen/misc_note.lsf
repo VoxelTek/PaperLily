@@ -1,0 +1,46 @@
+label START
+    if not var general.chapter == 1 end
+    if var general.chapter == 1
+        if var general.inbetween
+            jump CURSED
+    "A note from your mother."
+    choice "Read it?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 0.5
+    "\"Your dad and I will be back on Monday."
+    "There's food in the fridge, make sure to heat it up."
+    "Call us at (195)-224#1 if there's any problem."
+    "- Mom\""
+    end
+
+label CURSED
+    if var ch1.home_read_cursed_letter
+        "The letter is gone."
+        end
+    if var ch1.home_missed_bus jump CURSED_RED
+    "A note from your mother."
+    choice "Read it?"
+        "Yes"
+            continue
+        "No"
+            end
+    "Didyousee?Didyouseeit?Yousawit.Youpretendedyoudidnt.Yousawit.Didyoupretend?Whydidyoupretend?Yousawallofit." speed fast time 2
+    "Butyouforgotsomething.Doyouknowwhatyouforgot?Youforgotsomethingthere.Backthen.Don'tworry.Itookcareofit.Shetookcareofit.Shetakescareofiteverytime." speed fast time 2
+    set ch1.home_read_cursed_letter = true
+    end
+
+label CURSED_RED
+    "A note from someone."
+    choice "Read it?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 1
+    "\"_____ Ritual. What you'll need: Candles, a knife, a chunk of meat, a hiding place, an accomplice, a victim..."
+    "Wait... was that really how it went?\""

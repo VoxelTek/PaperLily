@@ -1,0 +1,3 @@
+label START
+    move to Ch1_Forest_LockedSite point exit
+    end

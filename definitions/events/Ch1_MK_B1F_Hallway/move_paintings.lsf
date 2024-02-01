@@ -1,0 +1,7 @@
+label START
+    if var general.serious
+        audio sfx play door
+        move to Ch1_MK_B1F_Paintings point entrance
+    else
+        event queue ch1_locked
+        "You can hear someone singing on the other side."

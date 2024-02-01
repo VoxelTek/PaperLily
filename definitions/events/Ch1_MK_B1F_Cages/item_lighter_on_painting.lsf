@@ -1,0 +1,7 @@
+label START
+    if var ch1.mk_painting_chase_clear end
+    fade out
+    pause 1
+    set ch1.mk_hurt_lady = true
+    event call ch1_event_mk_painting_chase
+    end

@@ -1,0 +1,13 @@
+label START
+    if var ch1.mk_took_compress end
+    event call ch1_event_mk_blessing_3
+    "There's some kind of black rag here."
+    choice "Take ${item:ch1.mk_compress}?"
+        "Yes"
+            set ch1.mk_took_compress = true
+            system refresh
+            item add ch1.mk_compress
+            end
+        "No"
+            end
+    end

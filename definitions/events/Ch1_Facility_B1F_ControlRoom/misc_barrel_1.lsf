@@ -1,0 +1,15 @@
+label START
+    if not var ch1.facility_took_valve_square jump TAKE_ITEM
+    event call misc_barrel
+    end
+
+label TAKE_ITEM
+    "There's a valve handle and a key on the barrel."
+    choice "Take ${item:ch1.facility_handle_square} and ${item:ch1.facility_key_archives}?"
+        "Yes"
+            item add ch1.facility_handle_square
+            item add ch1.facility_key_archives
+            set ch1.facility_took_valve_square = true
+            end
+        "No"
+            end

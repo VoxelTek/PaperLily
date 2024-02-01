@@ -1,0 +1,3 @@
+label START
+    move to Ch1_Facility_Elevator point entrance
+    end

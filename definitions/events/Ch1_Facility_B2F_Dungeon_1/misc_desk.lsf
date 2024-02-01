@@ -1,0 +1,15 @@
+label START
+    if repeat jump NOTHING_ELSE
+    lacie "These are my things... most of it anyway." mood blank1
+    lacie "I hadn't even noticed I had lost them." mood blank8
+    lacie "Why are they here...?" mood thinking2
+    system call RestoreInventory
+    set ch1.facility_took_back_items = true
+    system refresh
+    audio sfx play ui_item
+    "(You got your items back.)"
+    end
+
+label NOTHING_ELSE
+    "There's nothing else on the desk."
+    end

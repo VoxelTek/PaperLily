@@ -1,0 +1,53 @@
+label START
+    fade out
+    move to Ch1_Cutscene_MK_BeforeFight point cutscene_lacie
+    chara set lacie at left
+    chara set sai at right
+    chara set mk at right
+    chara spawn lacie point cutscene_lacie
+    if var ch1.mk_rescued_sai
+        chara spawn sai point cutscene_sai
+    fade in time 4
+    pause 0.5
+    lacie "This illusion should break apart now, shouldn't it?" mood blank1
+    if var ch1.mk_rescued_sai
+        sai "Too bad, I was starting to like this place." mood blank6
+    hide ui
+    pause 1
+    set ch1.mk_gramophone_playing = false
+    audio ambiance stop
+    audio bgm stop
+    audio sfx play footstep1
+    pause 0.6
+    audio sfx play footstep2
+    pause 0.6
+    audio sfx play footstep3
+    pause 0.6
+    audio sfx play footstep4
+    pause 0.6
+    chara spawn mk point entrance_right
+    pause 0.3
+    action turn right node lacie
+    if var ch1.mk_rescued_sai
+        action turn right node sai
+    pause 0.3
+    camera move (112,0) time 1
+    pause 1
+    mk "Fire..."
+    hide ui
+    pause 0.5
+    action turn left node mk
+    pause 0.5
+    bubble exclamation on mk
+    pause 0.5
+    audio ambiance stop time 2
+    mk "Lilith... again..." mood default
+    mk "How? But how? How?"
+    mk "....No no no no......." mood distressed
+    mk "No more."
+    mk "DIE." mood upset
+    system call PlayBattleMusic
+    hide ui
+    pause 0.7
+    set general.hp.lacie = general.maxhp.lacie
+    system minigame ch1_battle_missknives_pt0

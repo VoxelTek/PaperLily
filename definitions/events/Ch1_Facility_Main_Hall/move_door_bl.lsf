@@ -1,0 +1,12 @@
+label START
+    if var ch1.facility_sai_attempting_leave
+        set ch1.temp_ending_1_9 = true
+    if character sai
+        event queue move_door_bl_with_sai
+        end
+    party switch lacie
+    audio sfx play door
+    set ch1.temp_facility_primals_b1f_elevator_spawn = false
+    set ch1.temp_facility_primals_b2f_east_spawn = false
+    set ch1.temp_facility_primals_b2f_west_spawn = false
+    move to Ch1_Facility_B1F_PrivateRoom_C point entrance

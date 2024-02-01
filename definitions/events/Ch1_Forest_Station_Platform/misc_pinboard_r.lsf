@@ -1,0 +1,5 @@
+label START
+    "A map of the train stops is posted here."
+    if var general.serious end
+    if repeat end
+    lacie "The clock up there... makes no sense." mood blank1

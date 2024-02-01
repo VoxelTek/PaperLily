@@ -1,0 +1,12 @@
+label START
+    "A large couch."
+    if repeat end
+    if var general.serious end
+    if not character sai end
+    chara set lacie at left
+    chara set sai at right
+    sai "Maybe we should take a rest." mood smile3
+    lacie "You just rested." mood blank3
+    lacie "In the cage." mood blank1
+    sai "That wasn't rest, it was uncomfortable!" mood thinking10
+    lacie "..." mood blank2

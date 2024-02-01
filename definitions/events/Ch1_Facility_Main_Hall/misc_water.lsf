@@ -1,0 +1,22 @@
+label START
+    "The path forward is flooded."
+    if repeat end
+    if not character sai
+        set ch1.temp_ending_1_9 = true
+        end
+    lacie "(Deeper down... do we have to go this way?)" mood thinking2
+    lacie "(That's impossible... does Rune expect us to swim?)" mood thinking4
+    set ch1.facility_seen_flood = true
+    objective add ch1.facility_remove_flood
+    sai "Hear me out." mood thinking7
+    sai "What if we took all this water..."
+    sai "And put it somewhere else?" mood thinking5
+    lacie "..." mood confused3
+    lacie "Do you have a screw loose?"
+    sai "Look, I know it sounds crazy!" mood thinking13
+    sai "And we'd need a bucket..." mood thinking11
+    lacie "It's impossible." mood bothered
+    sai "And it would take a lot of trips..." mood thinking12
+    lacie "I can't believe I'm hearing this." mood annoyed2
+    lacie "(But maybe... we can lower the water level somehow?)" mood thinking3
+    end

@@ -1,0 +1,5 @@
+label START
+    if repeat
+        "A cursed artifact from the depths, best left forgotten."
+        end
+    lacie "Please, I don't want to see this thing ever again." mood annoyed2

@@ -1,0 +1,24 @@
+label START
+    if repeat jump ARRANGE
+    pause 0.5
+    lacie "Hmm..." mood thinking3
+    hide ui
+    camera move (0,-200) time 1.5
+    pause 0.5
+    lacie "Ah. I spot a shiny over there." mood blank1
+    camera move (0,200) time 1.5 continue
+    if character sai
+        sai "A... \"shiny\"?" mood surprised2
+        lacie "You know... a useful item." mood blank3
+        sai "How do you know it will be useful..." mood confused7
+    lacie "Might need to push some boxes around to get it though." mood blank1
+label ARRANGE
+    if not var ch1.facility_boxpuzzle_solved
+        choice "Arrange the boxes?"
+            "Yes"
+                system minigame ch1_facility_boxpuzzle
+                end
+            "No"
+                move to Ch1_Facility_B2F_Hallway_West point from_archive
+                event call event_react_fail_puzzle
+    end

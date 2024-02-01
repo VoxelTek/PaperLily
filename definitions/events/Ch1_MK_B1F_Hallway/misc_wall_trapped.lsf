@@ -1,0 +1,5 @@
+label START
+    "There's nothing here."
+    if repeat end
+    if var general.serious end
+    lacie "It's no use... It's just a wall now." mood bothered

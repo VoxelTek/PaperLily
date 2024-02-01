@@ -1,0 +1,5 @@
+label START
+    "A happy little green plant."
+    if repeat end
+    if var general.serious end
+    lacie "It doesn't need a lot of watering, thankfully..."

@@ -1,0 +1,13 @@
+label START
+    if repeat end
+    chara set lacie at left
+    chara set milion at right
+    milion "This is..." mood blank10
+    milion "I know this craftsmanship." mood blank9
+    milion "I could recognize it anywhere." mood satisfied3
+    lacie "..." mood blank1
+    lacie "What do you mean?" mood confused
+    milion "It's nothing." mood reflective5
+    lacie "That didn't sound like nothing." mood confused2
+    milion "..." mood reflective4
+    lacie "..." mood disappointed2

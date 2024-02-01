@@ -1,0 +1,16 @@
+label START
+    if not var general.chapter == 1 end
+    if not objective ch1.prepare_ritual inprogress end
+    if not objective ch1.prepare_ritual.paint_front inprogress end
+    if var ch1.took_lipstick end
+    "There's some red lipstick."
+    lacie "I wonder if I can use something like this to draw the symbol..." mood thinking3
+    choice "Take ${item:ch1.lipstick}?"
+        "Yes"
+            continue
+        "No"
+            end
+    objective complete ch1.ritual_items.paint
+    item add ch1.lipstick
+    set ch1.took_lipstick = true
+    end

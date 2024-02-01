@@ -1,0 +1,14 @@
+label START
+    "An artistic pot."
+    if objective ch1.kozmo_find_head inprogress
+        lacie "This could work for Kozmo."
+        choice "Take ${item:ch1.forest_pot}?"
+            "Yes"
+                set ch1.forest_took_pot = true
+                system refresh
+                item add ch1.forest_pot
+                objective complete ch1.kozmo_find_head
+                end
+            "No"
+                end
+    end

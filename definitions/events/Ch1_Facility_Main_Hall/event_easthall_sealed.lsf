@@ -1,0 +1,5 @@
+label START
+    "The way forward is blocked by some sort of door."
+    if repeat end
+    lacie "This wasn't here before..."
+    end

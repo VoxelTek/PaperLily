@@ -1,0 +1,17 @@
+label START
+    if var ch1.forest_moths_upset
+        event call ch1_event_no_kill_caterpillar
+        end
+    fade out
+    pause 1
+    audio sfx play water
+    pause 1
+    audio sfx play water2
+    pause 6
+    item remove ch1.forest_caterpillar
+    objective complete ch1.forest_lakeside_caterpillar
+    set ch1.forest_moths_clear = true
+    set ch1.forest_moths_killed_caterpillar = true
+    "(Looks like it couldn't swim after all.)"
+    fade in
+    end

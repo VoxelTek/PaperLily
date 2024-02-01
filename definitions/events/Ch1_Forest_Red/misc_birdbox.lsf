@@ -1,0 +1,28 @@
+label START
+    if var ch1.forest_red_birdbox_open jump SAVE
+    "A box with some birds trapped inside."
+    choice "Open the box?"
+        "Yes"
+            hide ui
+            set ch1.forest_red_birdbox_open = true
+            audio sfx play ch1_crows
+            action turn up
+            pause 0.1
+            system call OpenBirdBox
+            pause 0.3
+            audio sfx play thud2
+            pause 2.5
+            lacie "..." mood surprised3
+            move to Ch1_Forest_Red point after_fall
+        "No"
+            end
+    end
+
+label SAVE
+    if objective ch1.kozmo_find_head inprogress jump KOZMO_NOPE
+    if objective ch1.kozmo_give_head inprogress jump KOZMO_NOPE
+    event call event_birdbox_save
+    end
+
+label KOZMO_NOPE
+    "This isn't the time for that."

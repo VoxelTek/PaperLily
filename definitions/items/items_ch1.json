@@ -237,7 +237,7 @@
 		{
 			"id": "ch1.forest_stone_cure",
 			"name": "Stone Curse Cure",
-			"description": "A sort of potion I made. It should cure a simple stone curses.",
+			"description": "A sort of potion I made. It should cure a simple stone curse.",
 			"icon": "ch1_forest_stone_cure"
 		},
 		{
@@ -777,7 +777,7 @@
 		{
 			"id": "ch1.rainbow_potion_tmp",
 			"name": "Temp.Rainbow Potion",
-			"description": "A strange potion. It has a shorter duration than the original one.",
+			"description": "A strange potion that Spider directed me to. It has a shorter duration than the original one.",
 			"icon": "rainbow_potion",
 			"event": "ch1_rainbow_potion_tmp"
 		},

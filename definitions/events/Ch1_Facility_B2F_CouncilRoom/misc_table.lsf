@@ -1,0 +1,13 @@
+label START
+    "A round table."
+    if not repeat
+        lacie "(It almost looks like... an eye?)" mood thinking
+    if var ch1.facility_took_valve_pentagon end
+    "There's a valve handle on the desk."
+    choice "Take ${item:ch1.facility_handle_pentagon}?"
+        "Yes"
+            set ch1.facility_took_valve_pentagon = true
+            system refresh
+            item add ch1.facility_handle_pentagon
+        "No"
+            end

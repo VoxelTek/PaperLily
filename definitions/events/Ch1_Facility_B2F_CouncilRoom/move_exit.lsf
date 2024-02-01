@@ -1,0 +1,3 @@
+label START
+    move to Ch1_Facility_Main_Hall point from_council_room
+    end

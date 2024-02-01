@@ -1,0 +1,6 @@
+label START
+    audio sfx play ch1_cell_close
+    pause 0.2
+    system call CloseDoor4
+    pause 0.8
+    set ch1.facility_dungeon_1_door_4_open = false

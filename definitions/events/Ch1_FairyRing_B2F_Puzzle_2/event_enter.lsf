@@ -1,0 +1,8 @@
+label START
+    if repeat end
+    chara set lacie at left
+    chara set aoi at right
+    aoi "Can we do this?" mood worried6
+    lacie "Yes, I think so." mood blank3
+    aoi "At least we haven't seen the bodies of the fairies around..." mood sweat2
+    bubble ellipsis

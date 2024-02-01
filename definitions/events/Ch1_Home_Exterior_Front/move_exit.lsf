@@ -1,0 +1,30 @@
+label START
+    "The front gate."
+    if not var general.chapter == 1 jump CHOOSE_DESTINATION
+    if var ch1.bus_not_there jump BUS_GONE
+    if var ch1.home_ritualbuswaiting jump GET_ON_BUS
+    if var general.inbetween jump BUS_NOT_HERE_YET
+    if repeat end
+    lacie "I don't want to go back outside..." mood reflective2
+    end
+
+label GET_ON_BUS
+    choice "Get on the bus?"
+        "Yes"
+            continue
+        "No"
+            end
+    event call ch1_event_busride
+    end
+
+label BUS_NOT_HERE_YET
+    lacie "The bus isn't here yet." mood blank3
+    end
+
+label BUS_GONE
+    lacie "The bus isn't here so... Let's just clean up." mood sigh
+    end
+
+label CHOOSE_DESTINATION
+    "Where to?"
+    end

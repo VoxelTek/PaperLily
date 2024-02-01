@@ -1,0 +1,41 @@
+label START
+    fade out
+    move to Ch1_Ending_12 point mk time 0 cutscene
+    chara spawn lacie point lacie
+    fade in
+    pause 1
+    chara lock
+    mk "She's back..... She's back."
+    mk "She's singing in my ears....."
+    mk "Singing all the time....."
+    mk "Humming..."
+    mk "Burning..."
+    mk "Oh no... burning...."
+    mk "Hahahahaha....."
+    hide ui
+    pause 0.5
+    pause 1
+    action call mk_stop_crazy
+    pause 1
+    action call mk_turn
+    pause 1
+    chara unlock
+    chara set mk at right
+    mk "Burning." mood default time 1.5
+    hide ui
+    pause 0.3
+    action call mk_attack
+    pause 0.5
+    audio sfx play ch1_throw
+    pause 0.1
+    action call play_knife
+    pause 0.5
+    audio sfx play gore7
+    audio bgm stop time 0
+    audio ambiance stop time 0
+    cg show ch1/death_blood_3 time 0
+    fade in time 0
+    pause 2
+    fade out time 4
+    cg hide time 0
+    event queue ch1_ending_1_12

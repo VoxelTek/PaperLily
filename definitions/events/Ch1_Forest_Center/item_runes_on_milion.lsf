@@ -1,0 +1,8 @@
+label START
+    if repeat end
+    chara set lacie at left
+    chara set milion at right
+    milion "Do you have nothing better to do than collecting rocks?" mood reflective
+    lacie "..." mood annoyed
+    lacie "Do you have nothing better to do than staring at a fire?" mood annoyed2
+    milion "..." mood blank6

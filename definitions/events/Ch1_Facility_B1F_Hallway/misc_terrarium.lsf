@@ -1,0 +1,5 @@
+label START
+    "A broken terrarium."
+    if repeat end
+    lacie "This looks like the box I was carrying the caterpillar in..." mood concerned5
+    end

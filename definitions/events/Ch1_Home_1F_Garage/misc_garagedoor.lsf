@@ -1,0 +1,5 @@
+label START
+    "The garage door. It leads outside."
+    if repeat end
+    if var general.serious end
+    lacie "It opens with a remote control. My parents probably took it in the car with them." mood blank2

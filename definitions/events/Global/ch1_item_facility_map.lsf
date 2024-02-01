@@ -1,0 +1,8 @@
+label START
+    audio sfx play paper
+    cg show ch1/facility_map_1
+    wait
+    audio sfx play paper
+    cg show ch1/facility_map_2
+    wait
+    cg hide

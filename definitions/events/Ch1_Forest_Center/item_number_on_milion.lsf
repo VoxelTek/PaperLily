@@ -1,0 +1,3 @@
+label START
+    chara set milion at right
+    milion "375? You'll be waiting a long time to buy a train ticket."

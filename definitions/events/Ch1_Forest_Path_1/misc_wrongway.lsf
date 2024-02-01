@@ -1,0 +1,6 @@
+label START
+    "There's nothing here."
+    if repeat end
+    if var ch1.forest_path_1_opened_exit end
+    lacie "(Hmm... Could it be that the sign is pointing in the wrong direction?)" mood thinking3
+    end

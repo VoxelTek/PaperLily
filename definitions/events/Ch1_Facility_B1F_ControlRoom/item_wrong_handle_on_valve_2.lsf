@@ -1,0 +1,5 @@
+label START
+    if var ch1.facility_valve_2_set
+        event queue event_handle_already_full
+        end
+    event queue event_handle_on_wrong_valve

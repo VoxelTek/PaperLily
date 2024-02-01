@@ -1,0 +1,4 @@
+label START
+    action walk to point ending
+    action turn up
+    event call ch1_ending_1_4

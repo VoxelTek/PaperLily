@@ -1,0 +1,15 @@
+label START
+    "A bookshelf with complicated books."
+    if objective ch1.prepare_ritual inprogress jump CHECK_MARKER
+    end
+
+label CHECK_MARKER
+    if not objective ch1.prepare_ritual.paint_front inprogress end
+    if item ch1.marker end
+    set ch1.home_checked_bedroom_c_marker = true
+    lacie "Black... Black... No red markers here." mood blank2
+    if not var ch1.home_checked_bedroom_a_marker
+        lacie "Maybe in my room?" mood thinking
+        end
+    lacie "Maybe downstairs?" mood thinking
+    end

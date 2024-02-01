@@ -1,0 +1,5 @@
+label START
+    if var ch1.mk_plants_dead
+        "The pot has been destroyed."
+        end
+    "An empty pot."

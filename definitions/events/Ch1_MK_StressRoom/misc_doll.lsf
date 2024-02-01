@@ -1,0 +1,4 @@
+label START
+    "The burnt doll blocks your path."
+    if not var ch1.mk_seen_doll
+        set ch1.mk_seen_doll = true

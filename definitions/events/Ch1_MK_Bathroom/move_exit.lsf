@@ -1,0 +1,4 @@
+label START
+    audio sfx play door
+    move to Ch1_MK_B1F_Hallway point bathroom
+    end

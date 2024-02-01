@@ -1,0 +1,5 @@
+label START
+    "Four small blue butterflies on display."
+    if var ch1.forest_red_seen_large_butterfly
+        "They're somewhat mesmerizing."
+    end

@@ -1,0 +1,3 @@
+label START
+    item remove ch1.lakeside_deadfish
+    audio sfx play water_splash_3

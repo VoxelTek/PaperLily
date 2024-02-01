@@ -1,0 +1,17 @@
+label START
+    if not var general.chapter == 1 end
+    if not objective ch1.prepare_ritual inprogress end
+    if not objective ch1.prepare_ritual.paint_front inprogress end
+    if item ch1.paint end
+
+    "There's a can of red paint here."
+    choice "Take ${item:ch1.paint}?"
+        "Yes"
+            continue
+        "No"
+            end
+    set ch1.took_redpaint = true
+    objective complete ch1.ritual_items.paint
+    item add ch1.paint
+    end
+

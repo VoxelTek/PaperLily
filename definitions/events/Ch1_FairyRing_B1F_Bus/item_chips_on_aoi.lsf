@@ -1,0 +1,6 @@
+label START
+    chara set lacie at left
+    chara set aoi at right
+    aoi "Are you tired?" mood content
+    aoi "There's a bench right there, I guess." mood content2
+    aoi "I give it at least 10 more years before it will be fully swallowed!" mood confident2

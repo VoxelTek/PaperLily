@@ -1,0 +1,5 @@
+label START
+    "A street lamp."
+    if repeat continue
+    system call CheckEvents
+    end

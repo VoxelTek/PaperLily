@@ -1,0 +1,6 @@
+label START
+    system call LacieStrangle
+    pause 1
+    audio sfx play ch1_strangle
+    system minigame ch1_red_strangle
+

@@ -1,0 +1,6 @@
+label START
+    if var general.chapter == 1
+        if not var general.part_of_day == "evening"
+            "Hiro isn't here."
+            end
+    "A nice bench, isolated from the public gaze."

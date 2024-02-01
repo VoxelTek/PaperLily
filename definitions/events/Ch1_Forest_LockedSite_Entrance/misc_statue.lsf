@@ -1,0 +1,11 @@
+label START
+    "A statue that looks out of place."
+    if var ch1.forest_lockedsite_took_letter end
+    choice "A torn piece of paper seems to be stuck underneath. Take it?"
+        "Yes"
+            item add ch1.forest_lockedsite_letter
+            set ch1.forest_lockedsite_took_letter = true
+            event call ch1_item_forest_lockedsite_letter
+            objective add ch1.locked_site_keys
+        "No"
+            end

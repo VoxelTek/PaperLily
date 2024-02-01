@@ -1,0 +1,21 @@
+label START
+    if var ch1.mk_rescued_sai end
+    if var general.serious end
+    chara set lacie at left
+    chara set sai at right
+    lacie "I found this, but I don't know how to use it." mood blank3
+    lacie "Can you pick your own lock or something?" mood blank5
+    sai "Sure can!" mood smile6
+    fade out
+    pause 0.8
+    audio sfx play unlock
+    pause 0.5
+    party add sai
+    set ch1.mk_rescued_sai = true
+    objective complete ch1.mk_rescue_sai
+    move to Ch1_MK_B2F_Cages point sai_escape
+    pause 0.5
+    fade in
+    pause 0.5
+    system achievement CH1_FREE_SAI
+    "(Sai joined your party.)\" color \"#90EE90"

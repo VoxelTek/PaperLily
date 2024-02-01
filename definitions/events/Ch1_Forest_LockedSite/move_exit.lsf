@@ -1,0 +1,5 @@
+label START
+    set ch1.forest_lockedsite_clear = true
+    audio bgm override off
+    move to Ch1_Forest_Lakeside point entrance_south
+    end

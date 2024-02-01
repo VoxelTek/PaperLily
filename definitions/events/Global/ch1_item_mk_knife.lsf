@@ -1,0 +1,30 @@
+label START
+    choice "(What to do with the knife?)"
+        "Cut myself"
+            chara set lacie at left
+            fade out
+            pause 2
+            audio sfx play slice
+            fade flash color red
+        "Ask Sai to cut himself" if character sai
+            chara set lacie at left
+            chara set sai at right
+            lacie "Do you mind...?" mood hide2
+            sai "Oh." mood confused11
+            sai "Sure!" mood smile9
+            lacie "(Why did he not hesitate at all?!)" mood confused2
+            fade out
+            pause 2
+            audio sfx play slice
+        "Do nothing"
+            end
+    pause 2
+    audio sfx play swish
+    pause 0.2
+    fade flash color white
+    pause 1
+    item remove ch1.mk_knife
+    item add ch1.mk_knife_activated
+    event call ch1_event_mk_check_items
+    fade in
+    end

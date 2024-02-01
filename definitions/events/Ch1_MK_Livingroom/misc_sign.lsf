@@ -1,0 +1,4 @@
+label START
+    "A warning sign."
+    if var general.serious end
+    "It doesn't say what the warning is for."

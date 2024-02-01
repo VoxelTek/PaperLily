@@ -1,0 +1,56 @@
+label START
+    audio bgm stop time 0
+    audio ambiance stop time 0
+    cg show ch1/death_blood_3 time 0
+    pause 2
+    fade out time 2
+    system call RandomizeDeathReaction
+    if var ch1.temp_rune_death_reaction == 0 jump REACT_1
+    if var ch1.temp_rune_death_reaction == 1 jump REACT_2
+    if var ch1.temp_rune_death_reaction == 2 jump REACT_3
+    if var ch1.temp_rune_death_reaction == 3 jump REACT_4
+    if var ch1.temp_rune_death_reaction == 4 jump REACT_5
+    end
+
+label REACT_1
+    rune "That was a close one."
+    rune "You almost had it!"
+    jump FINALLY
+
+label REACT_2
+    rune "Will you be okay?"
+    rune "Maybe not."
+    jump FINALLY
+
+label REACT_3
+    rune "Ouch."
+    jump FINALLY
+
+label REACT_4
+    rune "The trick is to not touch the spikes!"
+    jump FINALLY
+
+label REACT_5
+    rune "Everyone dies there."
+    rune "Oh well."
+    jump FINALLY
+
+label FINALLY
+    hide ui
+    set persistent.lacie_deaths ++
+    set persistent.lacie_redbridge_deaths ++
+    pause 2
+    choice "Try Again?"
+        "Retry"
+            system retry-load
+            end
+        "Skip" if var persistent.lacie_redbridge_deaths >= 3
+            system minigame end
+            cg hide time 0
+            fade in time 1
+            pause 0.5
+            audio bgm play ch1_forest_s
+            event call event_react_spikes
+            end
+        "Give Up"
+            system title-screen

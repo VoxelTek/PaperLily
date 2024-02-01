@@ -1,0 +1,7 @@
+label START
+    if not var ch1.forest_kozmo_gone end
+    if var ch1.forest_kozmo_dead
+        "Kozmo's clothes remain here."
+        event call event_milion_react_kozmo_dead
+    else
+        "Kozmo isn't here anymore."

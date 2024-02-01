@@ -1,0 +1,30 @@
+label START
+    fade out
+    audio bgm override off
+    audio bgm stop time 4
+    move to Ch1_Cutscene_FairyRing_Walk_1 point cutscene_camera time 0
+    pause 1
+    fade in time 1
+    pause 3
+    chara set lacie at left
+    chara set aoi at right
+    aoi "We sure are walking a lot." mood default
+    lacie "..." mood default
+    hide ui
+    pause 3
+    aoi "My feet don't hurt, or anything. Don't worry!" mood happy2
+    lacie "..." mood confused
+    hide ui
+    pause 3
+    aoi "I bet there's no way out..." mood worried7
+    lacie "Hmm..." mood reflective
+    lacie "There's always a way." mood blank1
+    lacie "(Right...?)" mood concerned7
+    aoi "Whoa." mood surprised
+    aoi "I like that!" mood happy2
+    aoi "..." mood happy2
+    hide ui
+    pause 2
+    set ch1.forest_fairyring_seen_walk_1 = true
+    audio bgm override on prologue_nightmare
+    move to Ch1_FairyRing_B1F_Bus point entrance

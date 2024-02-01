@@ -1,0 +1,346 @@
+label START
+    set ch1.mk_seen_event_first_enter = true
+    fade out
+    move to Ch1_Cutscene_MK_B1F_Hallway point event_first_enter_sai time 0
+    chara spawn lacie point event_first_enter_sai
+    chara spawn sai point event_first_enter_lacie
+    chara set lacie at left
+    chara set sai at right
+    chara set mk at right
+    camera track node lacie
+    action walk right 156 node sai speed veryslow continue
+    action walk right 156 node lacie speed veryslow continue
+    fade in
+    pause 3.2
+    action turn down node sai
+    pause 0.2
+    sai "..." mood blank8
+    action turn left node lacie
+    sai "Hang on a sec." mood blank9
+    hide ui
+    action walk down 100 node sai speed slow
+    chara despawn sai
+    action turn down node lacie
+    pause 1
+    lacie "..."
+    hide ui
+    pause 1
+    sai "Over here." mood blank7
+    lacie "...?" mood blank4
+    hide ui
+    action walk left 16 node lacie
+    action walk down 100 node lacie continue
+    fade out
+    move to Ch1_Cutscene_MK_Livingroom point cutscene_camera
+    chara spawn lacie point entrance_left
+    chara spawn sai point sai
+    action walk down 32 node lacie speed veryslow
+    fade in
+    pause 0.5
+    action turn right node lacie
+    pause 0.5
+    lacie "This place is strange." mood blank8
+    action turn left node sai
+    sai "What tipped you off? The hallway filled with creepy faces?" mood blank10
+    lacie "No..." mood blank7
+    sai "No?!" mood confused10
+    lacie "I mean... yes, but..." mood confused3
+    lacie "Don't you feel like this place is strangely cozy?" mood reflective6
+    action walk path sai_walk node sai speed slow continue
+    lacie "It's almost like it's decorated with care." mood reflective4
+    hide ui
+    pause 1
+    audio sfx play fire
+    audio ambiance play fireplace_loop
+    pause 0.1
+    set ch1.mk_fireplace_on = true
+    system refresh
+    pause 1
+    sai "NOW it's cozy." mood happy2
+    lacie "What are you doing?" mood surprised3
+    action turn left node sai
+    sai "We can probably relax here for a while." mood blank10
+    lacie "It feels like a bad idea to relax in someone else's home." mood concerned8
+    action walk path sai_walk_2 node sai speed slow continue
+    sai "If we're quiet enough, they'll never know." mood happy
+    sai "Besides, aren't you tired?" mood blank5
+    lacie "Yes..." mood reflective8
+    sai "We deserve a break anyway." mood blank9
+    hide ui
+    pause 0.5
+    action turn up node sai
+    pause 0.2
+    system call SaiSitDown
+    pause 0.5
+    action walk path lacie_walk node lacie speed slow
+    pause 0.5
+    system call LacieSitDown
+    pause 1
+    sai "You're right that this place has a \"creepy but cute\" vibe to it." mood blank5
+    sai "The fireplace is... cute." mood blank6
+    lacie "The fire is nice." mood reflective2
+    sai "That's a weird thing to say." mood confused5
+    sai "Are you into burning things?" mood confused11
+    lacie "What? No!" mood surprised
+    lacie "I just meant that it feels peaceful here." mood concerned9
+    sai "Yeah." mood blank9
+    lacie "..." mood sigh
+    lacie "I'm not very good at conversations." mood reflective3
+    sai "You're fine." mood smile
+    lacie "..." mood blank4
+    hide ui
+    pause 1.5
+    sai "So, what's got you doing deadly rituals?" mood thinking9
+    lacie "Huh?" mood blank5
+    sai "Well, normally people who come here either have nothing to lose in their life anymore..."
+    sai "..or they're just plain dumb and reckless." mood thinking6
+    lacie "Which one are you?"
+    sai "Dumb, probably." mood smile5
+    lacie "Hmm." mood blank7
+    sai "So? What's your deal?" mood thinking3
+    lacie "..." mood default
+    sai "You don't have to tell me if you don't wanna." mood blank5
+    sai "...but I'll just annoy you until you do." mood thinking4
+    sai "Or until you ditch me." mood blank10
+    lacie "It doesn't make sense to \"ditch\" you yet." mood blank8
+    sai "\"Yet.\"" mood confused9
+    lacie "..." mood blank2
+    sai "..." mood blank10
+    lacie "Alright." mood blank3
+    sai "Alright?" mood blank5
+    audio bgm stop time 4
+    audio ambiance stop
+    lacie "I suppose I can tell you.... but it's going to get long." mood concerned5
+    sai "I have nothing better to do." mood happy
+    lacie "How should I put this..." mood concerned8
+    hide ui
+    pause 1
+    lacie "...There's something very wrong with me." mood concerned12
+    lacie "But... it sounds ridiculous when I say it out loud." mood reflective2
+    sai "I'm all ears." mood surprised2
+    hide ui
+    pause 1
+    audio bgm play ch1_lacie
+    pause 0.5
+    lacie "It's possible I may be... possessed." mood reflective4
+    lacie "No... I'm definitely either possessed or cursed."
+    lacie "It's been like this since I was little." mood reflective7
+    hide ui
+    pause 1
+    chara lock
+    cg show ch1/lacie_backstory_5 scene
+    pause 0.5
+    lacie "Back then, I used to think I have a black cloud that just follows me everywhere." background blur
+    lacie "It makes people run away from me, it makes them hate me." background blur
+    cg show ch1/lacie_backstory_8 scene
+    lacie "They always have this terrifying look when they look at me..." background blur
+    lacie "Sometimes it turns into hatred, or anger." background blur
+    hide ui
+    pause 1
+    cg show ch1/lacie_backstory_9 scene
+    lacie "With animals it's even worse." background blur
+    lacie "Dogs will bark at me, and I can't even get close enough to pet a cat..." background blur
+    lacie "Or, today, I tried buying something at the store - and failed horribly." mood concerned5 background blur
+    cg show ch1/lacie_backstory_10 scene
+    lacie "I hate that I can't even do something as simple as that." background blur
+    lacie "It's like... just being around me makes people tense and aggressive." mood concerned8 background blur
+    cg show black
+    lacie "But.. I know for a fact that it wasn't always like this." background blur
+    cg show ch1/lacie_backstory_15 scene
+    lacie "I have memories of my childhood where things were fine." background blur
+    lacie "Something must have changed at some point." background blur
+    cg show black
+    lacie "And then, everyone suddenly started acting differently with me." background blur
+    hide ui
+    pause 2
+    cg show ch1/lacie_backstory_16 scene
+    lacie "For a really long time, I thought it was my fault." background blur
+    lacie "I thought that maybe I'm just broken, and different." background blur
+    lacie "I thought I did something wrong... I thought people had a reason to hate me so much." background blur
+    cg show ch1/lacie_backstory_11 scene
+    lacie "I know better now... but that doesn't change how it feels." background blur
+    lacie "This... thing inside me... whatever it is..." background blur
+    hide ui
+    pause 1
+    cg show ch1/lacie_backstory_12 scene
+    lacie "It's isolating me from everyone." background blur
+    hide ui
+    pause 2
+    cg show ch1/lacie_backstory_13 scene
+    lacie "Even my parents hate being around me." background blur
+    lacie "They leave the house for weeks at a time, and make excuses if I ask to come along." background blur
+    cg show ch1/lacie_backstory_14 scene
+    lacie "My brother is the only one who's there for me every time." background blur
+    lacie "And I know how hard it is for him." background blur
+    lacie "But somehow he never falters." background blur
+    cg show black
+    lacie "Without him I..." background blur
+    lacie "..." background blur
+    hide ui
+    pause 1
+    cg hide
+    chara unlock
+    hide ui
+    pause 2
+    lacie "I've been trying to get better for so long..."
+    lacie "So this ritual is... well... it's my last hope." mood blank3
+    lacie "If I fail to find answers, then I'll probably give up..." mood hide3
+    lacie "...on everything." mood sad8
+    lacie "I can't bear to live like this anymore." mood sad8
+    hide ui
+    pause 2
+    lacie "Still... you should know about this." mood concerned
+    lacie "You've been around me, don't you feel it?" mood concerned2
+    sai "Huh." mood thinking2
+    sai "Let me see..." mood thinking
+    hide ui
+    chara lock
+    pause 0.5
+    cg show ch1/mk_talk2
+    pause 1
+    wait
+    cg show ch1/mk_talk3
+    pause 1
+    wait
+    cg show ch1/mk_talk4
+    pause 2
+    lacie "...!"
+    hide ui
+    cg hide
+    chara unlock
+    sai "Hmmm..." mood annoyed5
+    sai "Yeah, you're right. You've got this weird ominous aura. Feels dangerous." mood blank2
+    lacie "..." mood concerned
+    sai "Doesn't bother me." mood blank
+    lacie "Really?" mood surprised
+    sai "Nah. I guess I've felt worse." mood confused11
+    lacie "..." mood surprised3
+    lacie "That doesn't make any sense. There must be something wrong with you." mood thinking2
+    lacie "(Is this person... not human?)" mood thinking3
+    sai "Hah! Says the possessed girl!" mood lazy2
+    lacie "Rune said possessions aren't a thing, so it might be a curse." mood blank8
+    sai "But you don't buy it? So, what, you came here to get exorcised?" mood thinking3
+    lacie "I've tried that already..." mood concerned4
+    sai "..." mood confused10
+    lacie "I wouldn't have come here unless I exhausted my possibilities beforehand." mood blank2
+    sai "Smart." mood blank10
+    sai "No dice then?" mood annoyed5
+    lacie "Nothing." mood concerned12
+    hide ui
+    audio bgm stop time 10
+    pause 1
+    sai "That sucks. Have you tried throwing table salt at yourself?" mood worried2
+    sai "I hear it wards off demons. It might get rid of your curse too." mood worried
+    lacie "Very funny." mood annoyed3
+    sai "..." mood happy
+    audio ambiance play fireplace_loop
+    hide ui
+    pause 1
+    lacie "You seem to know quite a lot about this place and the rituals." mood default
+    sai "Ah, yeah. I did a lot of these rituals to kill time." mood blank3
+    lacie "..."
+    sai "What?" mood surprised3
+    lacie "I'm surprised you're not dead yet." mood blank3
+    sai "You know what they say, idiots don't die!" mood smile6
+    lacie "I don't think anybody says that." mood default
+    sai "Hahaha, maybe you could start saying it then." mood happy5
+    sai "So, is your curse the reason you're trying to find the lighthouse?" mood blank5
+    lacie "Yes... I was told there's someone there who can help guide me." mood blank8
+    hide ui
+    audio bgm stop
+    audio ambiance stop
+    pause 1
+    audio sfx play footstep1
+    pause 0.6
+    audio sfx play footstep2
+    pause 0.6
+    audio sfx play footstep3
+    pause 0.6
+    audio sfx play footstep4
+    pause 0.6
+    lacie "..." mood blank5
+    hide ui
+    system call BothStandUp
+    action turn right node lacie
+    action turn right node sai
+    pause 0.2
+    sai "Do you hear that?" mood blank8
+    lacie "Yes." mood blank8
+    hide ui
+
+    audio bgm play ch1_mk_intro
+    chara set sai at left
+    pause 0.3
+    camera move (112,0) time 1.5
+    pause 0.3
+    chara spawn mk point entrance_right
+    pause 1
+    system call MkConfused
+    bubble question point bubble_mk
+    mk "Guests..?"
+    mk "But... Not invited..."
+    lacie "....." mood surprised2
+    system call HideMkConfused
+    mk "I'm.....confused....."
+    sai "Uh-oh." mood surprised
+    hide ui
+    pause 0.3
+    bubble exclamation point bubble_mk
+    mk "Fire?!" mood upset
+    mk "FIRE!" mood upset
+    hide ui
+    action walk path mk_walk node mk continue
+    camera move (-112,0) time 1 continue
+    pause 0.6
+    action turn up node lacie
+    pause 0.1
+    action turn up node sai
+    pause 0.3
+    mk "MAKE IT STOP!" mood upset
+    hide ui
+    pause 0.3
+    system call MkFireoff
+    pause 0.3
+    audio sfx play burn
+    set ch1.mk_fireplace_on = false
+    system refresh
+    pause 1.5
+    system call HideMkFireoff
+    action turn down node mk
+    pause 0.5
+    mk "Hm..?.... A smell......" mood default
+    hide ui
+    action walk path mk_walk_2 node mk speed slow continue
+    pause 0.2
+    action walk left 32 node sai speed veryslow backwards continue
+    pause 0.2
+    action turn left node lacie
+    action walk right 32 node lacie speed veryslow backwards continue
+    pause 0.5
+    system call ShowLessChillSai
+    mk "...Lilith?...No...."
+    mk "....No...No..." mood distressed
+    system call MkAnxious
+    mk "Nonononononono"
+    mk "...Not you again..."
+    lacie "....?" mood surprised3
+    mk "GET OUT"
+    mk "GET OUT GET OUT GET OUT GET OUT GET OUT GET OUT GET OUT"
+    lacie "Wh-..." mood spooked
+    audio bgm stop time 0
+    system call MkStopAnim
+    mk "GET OUT." time 0.8
+    hide ui
+    audio sfx play chainlink
+    pause 0.7
+    system call CagesFall
+    pause 0.3
+    camera shake
+    audio sfx play thud
+    pause 0.3
+    fade out time 0
+    party switch lacie
+    move to Void point (0,0)
+    fade in time 0
+    pause 4
+    event call ch1_event_blackpass_4

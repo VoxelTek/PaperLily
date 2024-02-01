@@ -1,0 +1,4 @@
+label START
+    "A garage door."
+    if repeat end
+    lacie "Can I get this open somehow?" mood blank5

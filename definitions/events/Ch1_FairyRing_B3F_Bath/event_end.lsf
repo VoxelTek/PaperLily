@@ -1,0 +1,185 @@
+label START
+    chara set lacie at left
+    chara set aoi at right
+    audio bgm override off
+    audio bgm stop time 4
+    camera move (-64,0) time 3
+    pause 1
+    aoi "It's... a dead end?" mood sad
+    lacie "..." mood bothered
+    fade out time 4
+    move to Ch1_FairyRing_B3F_Bath point cutscene_camera_bath cutscene time 0
+    action call show_aoi_tub
+    action call show_lacie_tub
+    pause 2
+    fade in time 4
+    pause 0.5
+    aoi "What now?" mood sad7
+    aoi "We're gonna die here, aren't we?" mood scared10
+    lacie "I don't know." mood concerned4
+    action call aoi_open_eyes
+    aoi "Oh god... I really hoped I wouldn't be right." mood scared8
+    aoi "I should have known. Of course it's a dead end." mood scared7
+    aoi "But I felt more confident walking around with you... so I thought..." mood scared9
+    action call lacie_open_eyes
+    lacie "..." mood sad6
+    lacie "Please, let me think." mood sigh
+    hide ui
+    pause 1
+    cg show black background
+    pause 1
+    lacie "(Think Lacie...)" mood thinking2
+    lacie "(Is there really no way out..?)" mood thinking4
+    hide ui
+    pause 2
+    cg hide
+    aoi "Can't we break the ground above us and just climb out?" mood scared11
+    lacie "How?" mood reflective6
+    aoi "Well...." mood scared10
+    aoi "...I don't know." mood scared11
+    lacie "..." mood reflective5
+    aoi "Sorry, that was stupid." mood scared11
+    lacie "(Can I call someone?)" mood sad4
+    lacie "(There's no signal though...)" mood reflective3
+    if var ch1.forest_center_hiro_called
+        lacie "(But... it worked before...)" mood sigh2
+    hide ui
+    pause 1
+    event call ch1_phone_hangup
+    pause 0.5
+    lacie "(It doesn't work...)" mood sad8
+    if var ch1.forest_seen_rune
+        aoi "Say..." mood sad5
+        lacie "...?" mood blank7
+        aoi "Will you tell me your name? Since we might be dying anyway..." mood sad3
+        lacie "..." mood reflective3
+        lacie "It's Lacie." mood reflective4
+        aoi "Oh... that's such a nice name." mood content2
+        lacie "...Thanks." mood reflective7
+        aoi "..." mood sad2
+        lacie "..." mood sad
+    hide ui
+    pause 1
+    fade out
+    pause 1
+    lacie "After that, we stayed in silence for a few minutes." background none
+    lacie "I tried thinking of options at first, but quickly ran out of alternatives." background none
+    lacie "Maybe there really was no way out this time." background none
+    lacie "Through all of this, Aoi was awfully quiet." background none
+    hide ui
+    pause 2
+    fade in
+    pause 0.5
+    lacie "Um... hey." mood blank7
+    aoi "Mhm..?" mood melt2
+    lacie "Don't panic. It won't solve anything." mood reflective
+    aoi "What makes you think I'm panicking?" mood melt
+    lacie "You're melting." mood confused
+    aoi "O-Oh right..." mood melt4
+    aoi "No panic... no panic..." mood melt5
+    lacie "Wait... you're melting." mood blank5
+    aoi "YES, I KNOW!" mood melt12
+    aoi "I can't stop!!!" mood melt10
+    lacie "No, Aoi!" mood surprised
+    lacie "I have an idea." mood surprised3
+    aoi "Huh!?" mood melt12
+    action call lacie_turn
+    lacie "There's a drain." mood thinking3
+    aoi "..." mood melt5
+    action call aoi_turn
+    aoi "...AND!?" mood melt3
+    lacie "Where do you think it leads?" mood thinking
+    aoi "..." mood melt
+    aoi "You want me..." mood melt5
+    aoi "You want me to go through the drain!?" mood melt4
+    lacie "..." mood blank7
+    aoi "Even if I do... you can't come with me." mood melt2
+    lacie "...Yeah." mood concerned12
+    aoi "..." mood melt2
+    lacie "..." mood reflective3
+    aoi "I-I got it, don't worry! If this leads anywhere, I'll find a way to get you out!" mood melt4
+    aoi "Just stay put!" mood melt3
+    lacie "..." mood default
+    lacie "Really?" mood blank5
+    aoi "YEAH!" mood confident
+    lacie "Well, let's hope there's a way." mood blank8
+    aoi "There's gotta be a way!" mood content
+    hide ui
+    fade out
+    move to Ch1_FairyRing_B3F_Bath point cutscene_camera_bath cutscene time 0
+    action call show_melt
+    chara spawn lacie point cutscene_lacie_bath
+    pause 2
+    fade in time 4
+    pause 0.5
+    aoi "Okay... well... Here goes." mood worried7
+    hide ui
+    pause 1
+    action call play_melt
+    pause 1.5
+    audio sfx play ch1_drain
+    action call fade_melt
+    pause 2.5
+    lacie "..." mood blank4
+    lacie "(Was that a good idea...?)" mood blank2
+    fade out time 4
+
+    if var ch1.forest_center_tree_fed
+        event queue ch1_event_fairyring_escape
+        end
+
+    move to Ch1_FairyRing_B3F_Bath point cutscene_camera_bath cutscene time 0
+    action call show_lacie_tub
+    action call lacie_open_eyes
+    pause 2
+    fade in time 4
+    lacie "How long has it been..." mood shadow3
+    if var ch1.forest_seen_rune
+        lacie "Did I seriously just trust a demon with my life?" mood shadow4
+    else
+        lacie "Did I seriously just trust a spirit with my life?" mood shadow4
+    lacie "Aoi might not even come back." mood shadow3
+    lacie "..." mood shadow4
+    lacie "Wait, Aoi could have died for all I know..."
+    lacie "What did I do..." mood sad8
+    lacie "Did I seriously just send Aoi down the drain to die..." mood sad8
+    fade out time 4
+    pause 1
+    lacie "I should have said goodbye to Hiro when I had the chance..." mood hide
+    hide ui
+    pause 4
+    lacie "It felt like days have gone by." background none
+    lacie "I don't know exactly how long it's been." background none
+    lacie "But my phone battery died a long time ago..." background none
+    lacie "...And I fell asleep for a while too." background none
+    lacie "Despite this... I don't feel hungry or thirsty..." background none
+    lacie "..." background none
+    lacie "I don't have hope that Aoi will come back anymore." background none
+    lacie "I don't think anyone will come." background none
+    hide ui
+
+    if var general.aoi_love < 5
+        event queue ch1_ending_1_6
+        end
+
+    fade out time 2
+    set ch1.forest_fairyring_show_single_fish = false
+    move to Ch1_FairyRing_Pit point cutscene_camera_bottom cutscene
+    chara spawn aoi point aoi_2
+    action call fairyring_lighting
+    fade in time 2
+    pause 0.5
+    aoi "I can't believe it... I threw in everything I had..." mood scared8
+    action turn left node aoi
+    aoi "I even threw in the fish that was here, I have nothing else I can use..." mood scared5
+    action turn down node aoi
+    aoi "Is there really nothing I can feed this thing...? Is there nothing I can do to save Lacie?" mood scared8
+    hide ui
+    pause 2
+    aoi "There's always a way..." mood melt2
+    aoi "There's always a way..."
+    aoi "Think... think..." mood melt4
+    hide ui
+    pause 2
+    aoi "Oh... oh god..." mood melt2
+    event call ch1_ending_1_6

@@ -1,0 +1,4 @@
+label START
+    lacie "I need help with this." mood default
+    ch1_spider "Have you tried the painting with the hands?"
+    ch1_spider "Maybe it'll give you a hint."

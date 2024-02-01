@@ -1,0 +1,8 @@
+label START
+    if repeat jump REPEAT
+    lacie "This is unsettling... Let's turn it off." mood concerned5
+    set general.tv_home1f = false
+    end
+
+label REPEAT
+    lacie "..." mood concerned6

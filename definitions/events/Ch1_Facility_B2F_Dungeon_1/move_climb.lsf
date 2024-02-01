@@ -1,0 +1,81 @@
+label START
+    if not var ch1.facility_took_back_items
+        lacie "Wait, there's something on the desk." mood blank3
+        end
+    if var ch1.facility_sai_met
+        jump LEAVE_SAI
+    if not var ch1.facility_dungeon_1_took_vent_cover
+        choice "Climb the box and remove the vent cover?"
+            "Yes"
+                hide ui
+                fade out
+                set ch1.facility_dungeon_1_took_vent_cover = true
+                system refresh
+                pause 1
+                audio sfx play ch1_metal_kick
+                pause 2
+                fade in
+                end
+            "No"
+                end
+        end
+    choice "Crawl into the vents?"
+        "Yes"
+            event call ch1_event_sai_meet
+            end
+        "No"
+            end
+    end
+
+label LEAVE_SAI
+    if var ch1.facility_sai_attempted_leave
+        lacie "No... at that point, it would just be silly." mood annoyed4
+        end
+
+    lacie "That guy is waiting for me outside..." mood blank7
+    lacie "If I go through here right now, it would take him a while to realize I left." mood thinking
+    lacie "I could get rid of him that way, I think."
+    choice "Go through the vent and leave Sai behind?"
+        "Yes"
+            continue
+        "No"
+            lacie "No... that would probably be pretty rude." mood blank8
+            end
+    set ch1.facility_sai_attempting_leave = true
+    set ch1.facility_sai_attempted_leave = true
+    audio bgm stop
+    audio bgm override on silent
+    fade out
+    pause 2
+    audio sfx play ch1_ventwalk
+    pause 4
+    audio sfx play thud2
+    pause 1
+    move to Ch1_Facility_B2F_Hallway_East point from_vent
+    if var ch1.facility_b2f_hallway_e_gate_unlocked
+        chara spawn sai point sai_waiting
+    fade in
+    pause 1
+    action turn right
+    if var ch1.facility_b2f_hallway_e_gate_unlocked
+        camera move (100,0) time 2
+        pause 2
+        chara set sai at right
+        lacie "..." mood disappointed2
+        sai "Having fun?" mood lollipop2
+        lacie "...Yep, plenty." mood annoyed2
+        sai "Let's go then?" mood smile6
+        lacie "..." mood annoyed
+        hide ui
+        party add sai
+        set ch1.facility_sai_attempting_leave = false
+        audio bgm override off
+        move to Ch1_Facility_B2F_Hallway_East point from_vent
+        end
+    pause 0.4
+    action turn left
+    pause 1
+    action turn down
+    lacie "Safe!" mood content2
+    audio bgm override off
+    audio bgm play ch1_facility

@@ -1,0 +1,9 @@
+label START
+    if var general.serious jump SERIOUS
+    "Even in the bathroom, there are plants."
+    if repeat end
+    "This one is fake, though."
+    end
+
+label SERIOUS
+    "A plant."

@@ -1,0 +1,19 @@
+label START
+    "A red tree."
+    if var ch1.forest_lockedsite_took_key_1 end
+    lacie "Hmm? There's a paper with something stuck to it." mood blank6
+    choice "Take ${item:ch1.forest_lockedsite_key}?"
+        "Yes"
+            continue
+        "No"
+            end
+    if var ch1.forest_lockedsite_unlocked
+        "(You don't need that key, so it was discarded.)"
+    if not var ch1.forest_lockedsite_unlocked
+        item add ch1.forest_lockedsite_key
+    set ch1.forest_lockedsite_took_key_1 = true
+    "There's also a note taped to the tree."
+    item add ch1.hunter_note_1
+    event call ch1_item_forest_lockedsite_note_1
+    objective complete ch1.locked_site_keys.key_1
+    end

@@ -1,0 +1,9 @@
+label START
+    if repeat end
+    hide ui
+    pause 1
+    lacie "Do you think the elevator works now?" mood blank3
+    hide ui
+    objective complete ch1.facility_fix_elevator
+    objective fail ch1.facility_remove_flood
+    end

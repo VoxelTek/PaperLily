@@ -1,0 +1,7 @@
+label START
+    if repeat jump AGAIN
+    rune "Oh, you can keep it!" mood sparkle
+    end
+
+label AGAIN
+    "Rune doesn't need it back."

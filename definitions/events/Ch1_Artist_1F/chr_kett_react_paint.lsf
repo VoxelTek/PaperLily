@@ -1,0 +1,62 @@
+label START
+    if repeat end
+    if var ch1.forest_canvas_painting == "butterfly" jump REACT_BUTTERFLY
+    if var ch1.forest_canvas_painting == "lacie" jump REACT_LACIE
+    if var ch1.forest_canvas_painting == "hiro" jump REACT_HIRO
+    if var ch1.forest_canvas_painting == "kett" jump REACT_KETT
+    if var ch1.forest_canvas_painting == "ghost" jump REACT_GHOST
+    if var ch1.forest_canvas_painting == "dinosaur" jump REACT_DINO
+    end
+
+label REACT_BUTTERFLY
+    kett "Has Red painted this?"
+    kett "No no no Red's art skills are..."
+    kett "...GARBAGE."
+    kett "These skills are... subpar, at worst."
+    choice "(Rude...)"
+        "I'm not impressed with your skills either."
+            kett "But ALAS, not everybody can be me."
+            lacie "...Are you even listening?"
+        "That's not nice."
+            kett "Since when is art critique about being nice?"
+            lacie "..."
+    jump MARK_SEEN
+
+label REACT_LACIE
+    kett "Sublime."
+    kett "A fine piece."
+    kett "The hidden meanings of agony and regret, of a fabrication of self... wonderfully depicted."
+    lacie "Thank you, but all I did was scribble on top of it."
+    jump MARK_SEEN
+
+label REACT_HIRO
+    kett "What a strange looking demon. Almost looks like... a human."
+    kett "Delicious..."
+    lacie "He's not food."
+    jump MARK_SEEN
+
+label REACT_KETT
+    kett "..."
+    lacie "What do you think of it?"
+    kett "..."
+    jump MARK_SEEN
+
+label REACT_GHOST
+    kett "How interesting... someone has painted something here, and yet the canvas remains white?"
+    lacie "What...? It's not white... There's a ghost..."
+    kett "To think that an invisible painting could evoke these feelings..."
+    lacie "...It's perfectly visible!!!"
+    jump MARK_SEEN
+
+label REACT_DINO
+    kett "THIS IS PLAGIARISM!"
+    kett "THIS IS GARBAGE."
+    kett "TO TAKE MY ART, AND SO BLATANTLY COPY IT."
+    kett "Whoever made this.... I will rip out your arms..."
+    kett "...and make new paint from your blood."
+    lacie "I don't think it looks that similar..."
+    jump MARK_SEEN
+
+label MARK_SEEN
+    set ch1.forest_kett_reacted_paint = true
+    end

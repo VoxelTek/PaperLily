@@ -1,0 +1,3 @@
+label START
+    audio bgm override on silent
+    move to Ch1_Forest_Station_Platform_On_Tracks point from_tracks_right

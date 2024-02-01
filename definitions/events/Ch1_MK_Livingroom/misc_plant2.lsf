@@ -1,0 +1,20 @@
+label START
+    if var ch1.mk_plants_dead
+        "It's dead."
+        end
+    "A plant with a tag attached. It says:"
+    if objective ch1.mk_plant_music done
+        if var ch1.mk_gramophone_playing
+            "\"Thank you.\""
+            end
+        "\"It was good while it lasted.\""
+        end
+    if objective ch1.mk_plant_music inprogress
+        if var ch1.mk_gramophone_playing
+            "\"Thank you.\""
+            objective complete ch1.mk_plant_music
+            event call ch1_event_mk_check_plant_objectives
+            end
+    "\"Requires medium light."
+    "For enrichment, provide music.\""
+    objective add ch1.mk_plant_music

@@ -1,0 +1,4 @@
+label START
+    set ch1.facility_dungeon_placed_box = true
+    move to Ch1_Facility_B2F_Dungeon_1 point cell_box_5
+    end

@@ -1,0 +1,6 @@
+label START
+    "Looks like ticket prices."
+    if var general.serious end
+    "A regular ticket is 20 coins."
+    if repeat end
+    lacie "...That's a lot of coins... for me at least." mood blank3

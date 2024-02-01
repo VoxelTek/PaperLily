@@ -1,0 +1,3 @@
+label START
+    system call ActivateBush10
+    end

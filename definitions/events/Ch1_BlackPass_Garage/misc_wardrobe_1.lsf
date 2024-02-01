@@ -1,0 +1,6 @@
+label START
+    if not repeat
+        event call event_roll
+        end
+    "There's nothing else to do here."
+    end

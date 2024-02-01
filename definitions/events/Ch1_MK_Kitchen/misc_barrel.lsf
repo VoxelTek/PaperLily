@@ -1,0 +1,8 @@
+label START
+    "A storage compartment filled with various types of food."
+    if var ch1.mk_took_key_kitchen end
+    if var general.serious end
+    "There's a key in there as well."
+    item add ch1.mk_key_cage
+    set ch1.mk_took_key_kitchen = true
+    end

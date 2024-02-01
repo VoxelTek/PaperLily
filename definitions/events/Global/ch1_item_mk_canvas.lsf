@@ -1,0 +1,8 @@
+label START
+    if repeat
+        "The sketchbook is full of unsettling sketches."
+        end
+    "You take a look at the sketchbook."
+    lacie "It's full of unsettling sketches." mood confused
+    if character sai
+        sai "She's still pretty talented though." mood confused11

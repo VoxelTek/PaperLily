@@ -1,0 +1,8 @@
+label START
+    if not var ch1.mk_unlocked_bedroom jump LOCKED
+    audio sfx play door
+    move to Ch1_MK_Bedroom point entrance
+    end
+
+label LOCKED
+    event queue ch1_locked

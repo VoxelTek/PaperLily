@@ -1,0 +1,61 @@
+label START
+    if not var ch1.forest_seen_rune
+        lacie "This path looks really dark and dangerous..." mood concerned2
+        lacie "I went through the trouble of opening that gate but..." mood concerned4
+        lacie "I don't think there's a reason to go in there." mood concerned7
+        jump DONT_GO_IN
+    if not item ch1.candleman_candle
+        if not item ch1.candleman_candle_blue
+            if not item ch1.forest_lamp_full
+                if not item ch1.forest_jar_full
+                    jump NO_LIGHT
+    jump CHECK_KOZMO
+
+label NO_LIGHT
+    lacie "I don't have any other sources of light..." mood blank2
+    choice "Should I just use my phone's flashlight? It may be too bright..."
+        "Yes"
+            objective fail ch1.locked_site_light
+            set ch1.forest_lockedsite_cellphone = true
+            jump CHECK_KOZMO
+        "No"
+            jump DONT_GO_IN
+    end
+
+label CHECK_KOZMO
+    if objective ch1.kozmo_find_head inprogress jump KILL_KOZMO
+    if objective ch1.kozmo_give_head inprogress jump KILL_KOZMO
+
+label CHECK_AREYOUSURE
+    if objective ch1.locked_site_enter inprogress
+        lacie "I might not be able to come back after I go through here..." mood blank2
+        choice "Continue down this path?"
+            "Yes"
+                jump GO_INSIDE
+            "No"
+                jump DONT_GO_IN
+
+label GO_INSIDE
+    objective complete ch1.locked_site_enter
+    audio bgm stop time 2
+    fade out time 2
+    pause 0.5
+    move to Ch1_Forest_LockedSite point entrance time 0
+    pause 1
+    fade in
+    end
+
+label DONT_GO_IN
+    hide ui
+    action walk down 16
+    end
+
+label KILL_KOZMO
+    lacie "I don't think I can help Kozmo by going this way..." mood blank2
+    choice "Go in anyway?"
+        "Yes"
+            system call StopTimer
+            event call ch1_event_kozmotimeout
+            jump GO_INSIDE
+        "No"
+            jump DONT_GO_IN

@@ -1,0 +1,79 @@
+label START
+    if var ch1.forest_lakeside_placed_return_doorknob
+        lacie "I placed my return doorknob. I shouldn't go anywhere else." mood reflective2
+        end
+    system minigame end
+    audio sfx play door
+    fade out
+    move to Void point (0,0) time 0
+    audio bgm stop
+    pause 2
+    cg show ch1/facility_entrance time 0
+    fade in time 4
+    pause 0.5
+    lacie "A stairway?"
+    lacie "It's so dark... I can't see anything..."
+    hide ui
+    pause 1
+    fade out
+    cg hide
+    pause 1
+    audio sfx play footstep1
+    pause 0.8
+    audio sfx play footstep2
+    pause 0.8
+    audio sfx play footstep3
+    pause 0.8
+    audio sfx play footstep4
+    pause 0.8
+    audio sfx play footstep2
+    pause 0.8
+    audio sfx play heartbeat_3
+    fade flash color red
+    pause 0.5
+    audio sfx play ear_ringing
+    lacie "Agh... my head..."
+    lacie "What's going on...?"
+    hide ui
+    pause 1.5
+    audio sfx play ch1_fall_stairs
+    pause 8
+    if item ch1.bucket
+        set ch1.facility_had_bucket_on_entry = true
+    if item ch1.bucket_full
+        set ch1.facility_had_bucket_on_entry = true
+    if item ch1.bucket_full_holy
+        set ch1.facility_had_bucket_on_entry = true
+    if item ch1.forest_caterpillar
+        set ch1.facility_had_caterpillar_on_entry = true
+    item remove ch1.forest_harmless_snack
+    item remove ch1.forest_harmless_snack_2
+    item remove ch1.forest_station_number
+    item remove ch1.scissors
+    item remove ch1.forest_adapter
+    item remove ch1.forest_fish
+    item remove ch1.bucket
+    item remove ch1.bucket_full
+    item remove ch1.bucket_full_holy
+    item remove ch1.forest_caterpillar
+    item remove ch1.forest_flower_pink
+    item remove ch1.forest_lavender
+    item remove ch1.forest_white_branch
+    item remove ch1.forest_bolt_cutter
+    item remove ch1.candleman_candle
+    item remove ch1.candleman_candle_unlit
+    item remove ch1.candleman_candle_blue
+    item remove ch1.forest_lamp_empty
+    item remove ch1.forest_lamp_full
+    item remove ch1.forest_bugnet
+    item remove ch1.kett_flower amount 99
+    item remove ch1.forest_stone_cure
+    item remove ch1.forest_jar_empty
+    item remove ch1.forest_jar_full
+    item remove ch1.forest_bunny
+    item remove ch1.doorknob_grave
+    item remove ch1.doorknob_library
+    item remove ch1.doorknob_library_fragment amount 99
+    objective complete ch1.forest_lakeside_doorknob
+    event call ch1_event_blackpass_3
+    end

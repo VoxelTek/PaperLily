@@ -841,7 +841,7 @@ AnimationFrames = "0,1,2,3,4,5,6,7,8,9,10,12"
 FrameDurations = "150,150,120,120,120,100,100,80,80,80,100,100,500"
 
 [node name="MiscPrimal2" type="Sprite" parent="Background"]
-position = Vector2( 397, 933 )
+position = Vector2( 384, 933 )
 texture = ExtResource( 77 )
 offset = Vector2( 0.5, 0 )
 
@@ -1694,7 +1694,7 @@ script = ExtResource( 42 )
 Area = Vector2( 32, 16 )
 
 [node name="misc_primal_1" type="Node2D" parent="Other/EventsF1"]
-position = Vector2( 390, 936 )
+position = Vector2( 377, 936 )
 script = ExtResource( 42 )
 Area = Vector2( 48, 32 )
 

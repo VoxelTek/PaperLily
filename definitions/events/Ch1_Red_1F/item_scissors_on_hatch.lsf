@@ -1,0 +1,4 @@
+label START
+    if not var ch1.forest_red_hatch_exposed end
+    if var ch1.forest_red_hatch_open end
+    "You can't cut through that with scissors."

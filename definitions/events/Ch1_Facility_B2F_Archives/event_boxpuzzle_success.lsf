@@ -1,0 +1,22 @@
+label START
+    fade out
+    set ch1.facility_boxpuzzle_solved = true
+    set ch1.temp_facility_primals_b2f_west_spawn = false
+    if not var ch1.facility_took_valve_star
+        pause 0.5
+        item add ch1.facility_handle_star
+        set ch1.facility_took_valve_star = true
+    move to Ch1_Facility_B2F_Archives point from_vent time 0
+    chara set lacie at left
+    chara set sai at right
+    cg show black background
+    pause 0.5
+    fade in time 0
+    if var ch1.facility_asked_sai_for_puzzle
+        pause 1
+        sai "Wait... you made me climb over all those boxes for nothing?" mood annoyed2
+        lacie "It wasn't for nothing. Exercise is good for you." mood reflective2
+        sai "Huuuh?! I can't believe this..." mood annoyed4
+        hide ui
+        pause 0.5
+    cg hide

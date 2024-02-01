@@ -1,0 +1,30 @@
+label START
+    "An empty slot."
+    choice "Place a doorknob?"
+        "Gray Doorknob" if item ch1.doorknob_library
+            item remove ch1.doorknob_library
+            set ch1.temp_doorknob_to_place = "library"
+        "Doorknob With Eye" if item ch1.doorknob_facility
+            item remove ch1.doorknob_facility
+            set ch1.temp_doorknob_to_place = "facility"
+        "White Doorknob" if item ch1.doorknob_garden
+            item remove ch1.doorknob_garden
+            set ch1.temp_doorknob_to_place = "garden"
+        "Doorknob With Flower" if item ch1.doorknob_grave
+            item remove ch1.doorknob_grave
+            set ch1.temp_doorknob_to_place = "grave"
+        "Return Doorknob" if item ch1.doorknob_return
+            lacie "Is it really time to go home...?" mood thinking2
+            choice "Are you sure that you want to place this doorknob?"
+                "Yes"
+                    item remove ch1.doorknob_return
+                    set ch1.forest_lakeside_placed_return_doorknob = true
+                    set ch1.temp_doorknob_to_place = "exit"
+                    objective clear
+                "No"
+                    end
+        "Do not"
+            end
+label PLACE_DOORKNOB
+    system call PlaceDoorknob
+    end

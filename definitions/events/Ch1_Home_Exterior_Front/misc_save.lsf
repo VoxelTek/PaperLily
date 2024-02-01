@@ -1,0 +1,25 @@
+label START
+    if var ch1.checked_save jump SAVE
+    system refresh
+    "A crow keeps watch in front of your house."
+    system tutorial save_lacie
+label SAVE
+    system save
+    if var ch1.checked_save end
+    set ch1.checked_save = true
+    pause 0.5
+    if not var ch1.todolist_task3_done
+        lacie "Maybe it's waiting for some food?" mood blank2
+        hide ui
+        pause 1
+        camera unlock
+        action walk up 24
+        action turn left
+        pause 0.5
+        camera move (-32,0) time 1
+        pause 0.5
+        lacie "I brought the bird food with me, I just have to fill up the feeder." mood blank3
+        system tutorial menu_lacie
+        camera reset
+    if var ch1.todolist_task3_done
+        lacie "The feeder is full, but it doesn't seem to care..." mood blank3

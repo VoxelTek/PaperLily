@@ -1,0 +1,83 @@
+label START
+    if var ch1.mk_rescued_sai jump SAI_RESCUED
+    if var general.serious jump SAI_GONE
+    chara set lacie at left
+    chara set sai at right
+    if var ch1.mk_talked_to_sai_cage jump 2ND
+    sai "Good job getting out of that." mood smile6
+    sai "I didn't get to see what you did, but you must be really good at passing through solid steel bars." mood smile7
+    lacie "Thanks." mood blank5
+    lacie "Looks like you're in a bind yourself." mood blank1
+    lacie "(If he was a demon, he could've just used his powers to escape... right?)" mood thinking3
+    lacie "(Or maybe he just doesn't care...?)" mood thinking4
+    sai "Listen, you probably shouldn't stay here." mood blank
+    sai "If that monster lady heard the noise you made and comes to check, you'll be in trouble, you know?" mood blank3
+    lacie "Hmm... you're right." mood concerned9
+    hide ui
+    pause 1
+    lacie "Well, see you." mood reflective2
+    sai "Where are you going?" mood blank5
+    lacie "I'm going to look around a bit." mood blank1
+    sai "...and...?" mood blank3
+    lacie "I should try to find an exit too." mood blank3
+    sai "...And nothing else...?" mood blank4
+    lacie "...?" mood blank6
+    sai "Are you serious? Get me out of here!" mood annoyed2
+    lacie "Ah, of course." mood blank8
+    lacie "Sure, I'll try." mood blank1
+    sai "...Alright." mood blank5
+    objective add ch1.mk_rescue_sai
+    set ch1.mk_talked_to_sai_cage = true
+    end
+
+label 2ND
+    if var ch1.mk_sai_talks_2 jump 3RD
+    if not objective ch1.mk_find_own_items inprogress jump 3RD
+    lacie "I lost all my items..." mood reflective4
+    lacie "Do you still have your belongings?" mood concerned
+    sai "My stuff? It's all gone." mood blank9
+    sai "I guess the demon lady took it." mood blank10
+    lacie "I see..." mood sigh
+    lacie "(That's really bad. I can't go back home without my things.)" mood hide3
+    set ch1.mk_sai_talks_2 = true
+    end
+
+label 3RD
+    if var ch1.mk_sai_talks_3 jump 4TH
+    if not var ch1.mk_spidey_talks jump 4TH
+    sai "You're back." mood blank5
+    sai "Any clues?" mood blank6
+    lacie "Yeah, I spoke to a spider." mood blank2
+    sai "You spoke to a spider...?" mood annoyed5
+    sai "And did the spider speak back?" mood smile2
+    lacie "Yes." mood blank4
+    sai "Ok, that's kinda intriguing." mood confused10
+    lacie "He told me what to do to get out of here." mood reflective2
+    sai "Really?" mood blank5
+    lacie "Yes. I'll take care of it." mood blank3
+    sai "Aaaalright." mood blank7
+    sai "I'll just... be here." mood blank4
+    set ch1.mk_sai_talks_3 = true
+    end
+
+label 4TH
+    if var ch1.mk_sai_talks_4 jump ETC
+    sai "..." mood lollipop
+    lacie "..." mood default
+    lacie "Well, see you later." mood blank3
+    sai "Got it." mood lollipop2
+    sai "If you want a lollipop I have more." mood confused11
+    lacie "No thank you." mood reflective8
+    set ch1.mk_sai_talks_4 = true
+    end
+
+label ETC
+    sai "Be careful out there." mood blank
+    end
+
+label SAI_RESCUED
+    "The cage Sai was in."
+    end
+
+label SAI_GONE
+    "Sai isn't here anymore"

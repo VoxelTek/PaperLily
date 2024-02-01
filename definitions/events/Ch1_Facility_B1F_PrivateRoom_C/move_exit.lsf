@@ -1,0 +1,43 @@
+label START
+    party switch lacie
+    if not var ch1.facility_sai_attempting_leave
+        party add sai
+    audio sfx play door
+    fade out time 0.5
+    move to Ch1_Facility_Main_Hall point from_door_bl time 0
+    if repeat jump GO
+    if var ch1.facility_sai_attempting_leave jump GO
+    chara set lacie at left
+    chara set sai at right
+    chara spawn sai point from_door_bl_sai
+    fade in time 0.5
+    pause 0.5
+    action turn left node sai
+    bubble exclamation on sai
+    sai "There you are!" mood surprised2
+    sai "How'd you get in there?" mood thinking3
+    sai "I got zapped, like there's something keeping me out." mood thinking8
+    action turn right
+    bubble question
+    lacie "Really?" mood blank1
+    sai "You didn't even notice me gone!?" mood annoyed2
+    lacie "...." mood blank2
+    lacie "No." mood blank3
+    sai "Cold..." mood worried4
+    sai "So what was in there anyway?" mood blank5
+    sai "Anything fun?" mood blank6
+    lacie "Yes, very fun." mood blank1
+    sai "What? Really??" mood confused11
+    sai "What was it?"
+    lacie "I can't tell you." mood blank2
+    sai "Huh?!" mood thinking13
+    sai "Why not??" mood worried
+    lacie "Because it's more fun that way." mood reflective2
+    sai "No way, don't do me dirty like this!" mood thinking11
+    lacie "..." mood blank2
+    lacie "(It's strange though. Why wasn't he able to enter?)" mood thinking3
+    move to Ch1_Facility_Main_Hall point from_door_bl direction right
+    end
+
+label GO
+    fade in time 0.5

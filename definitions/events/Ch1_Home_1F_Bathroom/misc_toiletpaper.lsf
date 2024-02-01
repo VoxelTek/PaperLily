@@ -1,0 +1,7 @@
+label START
+    if var general.serious jump SERIOUS
+    "Properly stocked toilet paper."
+    end
+
+label SERIOUS
+    "Toilet paper."

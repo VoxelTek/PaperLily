@@ -1,0 +1,5 @@
+label START
+    item add ch1.coin
+    item remove ch1.coin
+    set general.currency_demon ++
+    end

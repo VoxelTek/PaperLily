@@ -1,0 +1,12 @@
+label START
+    if var ch1.facility_deep_seen_spider_talk_2 end
+    if var ch1.facility_deep_seen_spider_talk_1
+        if var ch1.facility_deep_seen_mk
+            ch1_spider "What are your thoughts?"
+        else
+            ch1_spider "Go take a look."
+    else
+        ch1_spider "Psst..."
+        ch1_spider "Over here."
+    hide ui
+    action walk left 16

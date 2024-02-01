@@ -1,0 +1,6 @@
+label START
+    if var general.blackpass_visits <= 4
+        "The passageway has closed behind you."
+        end
+    move to Ch1_BlackPass_Hub point from_door_3
+    end

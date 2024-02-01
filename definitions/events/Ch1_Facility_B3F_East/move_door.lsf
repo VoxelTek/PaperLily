@@ -1,0 +1,3 @@
+label START
+    move to Ch1_Facility_B3F_Exit point entrance
+    end

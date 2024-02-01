@@ -1,0 +1,9 @@
+label START
+    hide ui
+    audio bgm stop time 4
+    fade out time 4
+    pause 1
+    "Dead End 1-6 - Ground Swallow Me Up" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.6 = true
+    system title-screen

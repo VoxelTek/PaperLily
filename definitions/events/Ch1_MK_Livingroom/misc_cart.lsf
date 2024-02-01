@@ -1,0 +1,22 @@
+label START
+    "A teapot, full of some liquid. Seems to be water."
+    if objective ch1.mk_plant_drink inprogress jump GIVE_PLANT_DRINK
+    end
+
+label GIVE_PLANT_DRINK
+    lacie "I could use this..."
+    choice "Bring water to the plant?"
+        "Yes"
+            fade out
+            pause 0.5
+            audio sfx play water_splash_3
+            pause 1
+            move to Ch1_MK_Livingroom point water_plant time 0
+            fade in
+            "\"Thank you.\""
+            objective complete ch1.mk_plant_drink
+            event call ch1_event_mk_check_plant_objectives
+            end
+        "No"
+            end
+    end

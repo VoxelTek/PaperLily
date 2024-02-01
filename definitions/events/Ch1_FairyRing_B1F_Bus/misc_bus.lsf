@@ -1,0 +1,11 @@
+label START
+    "A bus. It has seen better days."
+    if repeat end
+    chara set lacie at left
+    chara set aoi at right
+    aoi "Isn't that cool?!" mood excited
+    aoi "Do you think they ever got the passengers out?" mood embarassed
+    lacie "I can't see inside, so... I guess we'll never know." mood blank8
+    aoi "Maybe it's best that way." mood awkward4
+    aoi "I think it would ruin my day if we found corpses in there." mood scared2
+    lacie "(Is your day not already ruined by being trapped in this place?)" mood confused2

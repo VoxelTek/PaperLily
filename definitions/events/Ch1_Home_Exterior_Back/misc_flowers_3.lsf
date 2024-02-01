@@ -1,0 +1,5 @@
+label START
+    "A pond surrounded by flowers."
+    if repeat end
+    if var general.serious end
+    lacie "I wish we had frogs here." mood blank3

@@ -1,0 +1,4 @@
+label START
+    chara set sai at right
+    sai "Cool, you've got one of those doorknobs." mood smile3
+    sai "It's pretty fun to see where they take you." mood smile12

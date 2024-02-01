@@ -1,0 +1,8 @@
+label START
+    if var ch1.home_missed_bus
+        "Something is written on the door:"
+        "\"What is this room? You spent a lot of time in there."
+        "Always finding new places to hide away from the world."
+        "Did you ever stop hiding?\""
+        end
+    "It's locked."

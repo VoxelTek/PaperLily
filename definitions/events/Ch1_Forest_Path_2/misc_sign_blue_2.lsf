@@ -1,0 +1,14 @@
+label START
+    event call event_sign_explanation
+    system call RotateBlue2
+    choice "This sign says [color=#8080FF]\"Daylight Gate\"[/color]. Rotate it?"
+        "North"
+            system call RotateUp
+        "South"
+            system call RotateDown
+        "West"
+            system call RotateLeft
+        "East"
+            system call RotateRight
+        "Don't Rotate"
+            end

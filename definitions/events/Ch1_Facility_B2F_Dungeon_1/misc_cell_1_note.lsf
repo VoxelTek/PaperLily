@@ -1,0 +1,5 @@
+label START
+    "\"Subject 66. Age: 38. Sex: Female. Status: Incapacitated. Extraction scheduled. Priority: Medium.\""
+    if repeat end
+    lacie "That's not me. Someone else must've been kept in here." mood thinking3
+    end

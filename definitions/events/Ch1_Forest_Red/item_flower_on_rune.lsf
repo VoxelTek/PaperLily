@@ -1,0 +1,8 @@
+label START
+    if not var ch1.forest_seen_rune end
+    chara set lacie at left
+    chara set rune at right
+    rune "An artist's inspiration!" mood sparkle
+    lacie "..." mood blank4
+    rune "I heard it can be quite valuable." mood tilt
+    item rename ch1.kett_flower name "Artist's Inspiration\" description \"Apparently, that's the flower's name."

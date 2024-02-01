@@ -1,0 +1,263 @@
+label START
+    chara set lacie at left
+    chara set aoi at right
+    chara set milion at right
+    chara set alba at right
+
+    fade out
+    move to Ch1_FairyRing_Pit point cutscene_camera_bottom cutscene
+    chara spawn aoi point aoi
+    action call fairyring_lighting
+    pause 2
+    fade in time 4 continue
+    pause 1
+    action walk left 320 node aoi speed slow continue
+    pause 1.5
+    aoi "Uuu... I was really hoping this pipe would lead me outside..." mood scared10
+    hide ui
+    pause 1
+    bubble question on aoi
+    aoi "...?" mood worried4
+    hide ui
+    action walk up 48 node aoi
+    action walk left 48 node aoi
+    pause 0.5
+    aoi "What's with all these fish...?" mood worried5
+    hide ui
+    pause 0.5
+    aoi "And... where is this?" mood worried7
+    hide ui
+    action turn up node aoi
+    camera move (0,-650) time 4
+    pause 2
+    camera move (0,650) time 0.5
+    pause 1
+    aoi "..." mood worried7
+    action turn down node aoi
+    aoi "And also... what is this? It's not like the other holes we jumped into..." mood scared5
+    aoi "Is this... another fairy ring? Inside the fairy ring?" mood scared6
+    aoi "Something's not right... Why does it look like a mouth?" mood scared11
+    hide ui
+    pause 2
+    aoi "A mouth...? Wait a second..." mood annoyed3
+    aoi "Do I know something about this?"
+    hide ui
+    pause 1
+    if var ch1.forest_fairyring_explanation
+        fade out time 1
+        move to Ch1_FairyRing_B1F_Bus point cutscene_aoi time 0 cutscene
+        chara spawn aoi point cutscene_aoi
+        chara spawn lacie point cutscene_lacie
+        fade in time 1
+        pause 1
+        aoi "Anyways, you know how fairy rings gradually expand and cover more area?" mood excited
+        aoi "I hear once they eat enough, they kinda open up and swallow the surface!" mood surprised
+        hide ui
+        fade out time 2
+        move to Ch1_FairyRing_Pit point cutscene_camera_bottom time 0 cutscene
+        chara spawn aoi point aoi_2
+        action call fairyring_lighting
+        fade in time 2
+        pause 0.5
+        aoi "Once they eat enough... they open up..." mood default
+    else
+        aoi "I think I heard that if they eat too much, they kinda open up to swallow whatever's above..." mood default
+    aoi "So what if I just... feed it more...?" mood upset
+    aoi "..." mood awkward
+    aoi "Okay, it's decided!" mood excited
+    aoi "Let's go Aoi, Lacie's counting on you!"
+    action turn left node aoi
+    aoi "I should start with those, probably." mood embarassed
+    hide ui
+    pause 0.5
+    fade out
+    pause 1
+    audio sfx play falling volume 0.5
+    pause 0.8
+    audio sfx play falling volume 0.5
+    pause 0.3
+    audio sfx play falling volume 0.4
+    pause 0.5
+    audio sfx play falling volume 0.5
+    pause 1
+    set ch1.forest_fairyring_show_many_fish = false
+    move to Ch1_FairyRing_Pit point cutscene_camera_bottom time 0 cutscene
+    chara spawn aoi point aoi_3
+    action call fairyring_lighting
+    fade in
+    aoi "That's all the fish..." mood worried5
+    aoi "What else... am I carrying anything that I can feed to it?" mood worried4
+    hide ui
+    pause 0.5
+    cg show black background
+    pause 1.5
+    aoi "My ${item:ch1.forest_harmless_snack_2}..." mood worried6
+    aoi "It's okay, it was poisonous anyway." mood coy
+    hide ui
+    pause 0.5
+    audio sfx play falling volume 0.5
+    pause 1.5
+    aoi "The ${item:ch1.aoi_sewingkit}..." mood worried4
+    aoi "I stole it from work..." mood sweat
+    aoi "Wendy will kill me."
+    aoi "...."
+    aoi "Wendy will kill me... or I'll die here... being digested." mood scared2
+    aoi "...."
+    aoi "Okay." mood scared4
+    hide ui
+    pause 0.5
+    audio sfx play falling volume 0.5
+    pause 1.5
+    aoi "A ${item:ch1.aoi_cabbage}." mood default
+    aoi "I have no way of chopping it open anyway." mood embarassed
+    hide ui
+    pause 0.5
+    audio sfx play falling volume 0.5
+    pause 1.5
+
+
+
+
+
+
+
+    aoi "A ${item:ch1.forest_fish}." mood default
+    aoi "It cost me my whole allowance..." mood sad7
+    aoi "Goodbye, stinky fish." mood sad3
+    aoi "I bet you tasted nice."
+    hide ui
+    pause 0.5
+    audio sfx play falling volume 0.5
+    pause 3
+
+    fade in
+    pause 0.5
+    cg hide
+    pause 0.5
+    aoi "...That's all I have..." mood sad2
+    hide ui
+
+    audio ambiance play earthquake_loop
+    pause 1
+    camera shake time 1000 continue
+    aoi "...!!" mood surprised3
+    aoi "Did... did I do it!?" mood surprised2
+    aoi "Wait, this is really dangerous!!" mood panic5
+
+    fade out
+    move to Ch1_FairyRing_B3F_Bath point cutscene_camera_bath time 0
+    pause 2
+    camera shake time 1000 continue
+    fade in
+    pause 0.5
+    lacie "...?" mood spooked
+    lacie "What's happening..?" mood spooked2
+
+    fade out
+    pause 4
+    chara lock
+    lacie "Everything started falling apart." background none
+    lacie "I managed to take cover in the bathtub for a while until the earthquake stopped." background none
+    hide ui
+    audio ambiance stop
+    pause 0.5
+    lacie "When I opened my eyes, the walls and ceiling had all fallen apart." background none
+    lacie "I could only see rubble and tree roots above me, and... a light." background none
+    hide ui
+    chara unlock
+    pause 4
+
+
+    set ch1.forest_center_tree_destroyed = true
+    set ch1.forest_kozmo_gone = true
+    move to Ch1_Forest_Center point cutscene_post_tree cutscene
+    action call crater_cutscene
+    chara spawn lacie point from_fairyring_lacie
+    camera move (0,240) time 6 continue
+    pause 0.5
+    action walk path after_tree_lacie_walk node lacie speed slow continue
+    fade in time 4
+    pause 2
+    milion "What in god's name..." mood worried5
+    alba "WHAT THE HELL!?" mood shocked2
+    hide ui
+    pause 2
+    chara spawn aoi point from_fairyring_aoi
+    action state pant node aoi
+    aoi "GAH!" mood panic
+    bubble exclamation on lacie
+    lacie "Aoi!" mood surprised
+    chara despawn aoi
+    chara spawn aoi point from_fairyring_aoi
+    aoi "LACIE!" mood surprised2
+    hide ui
+    action walk path after_tree_aoi_walk node aoi continue
+    pause 0.5
+    action walk left 90 node lacie continue
+    pause 1
+    alba "THE TREE..!!" mood shocked
+    action turn down node aoi
+    aoi "...!" mood scared
+    action turn down node lacie
+    alba "What the hell did you do?!" mood angry
+    aoi "...Uhh..!" mood scared6
+    aoi "...Um...!"
+    lacie "We were trapped..." mood hurt
+    aoi "We were trapped inside the fairy ring!" mood awkward3
+    aoi "It was the only way to get out!"
+    alba "THE FAIRY RING HAS A SIGNPOST." mood angry3
+    alba "IT LITERALLY SAYS \"DO NOT STEP INSIDE\" or something." mood angry3
+    milion "Alba." mood contemplative
+    chara rename alba off
+    aoi "I know.. I..." mood melt4
+    aoi "But..!"
+    aoi "Your fish is what saved us!!" mood melt3
+    alba "My... fish?" mood shocked2
+    aoi "Yeah! There was another ring..." mood melt5
+    aoi "So I threw the fish inside, and...!" mood melt4
+    alba "You trashed... my fish?" mood shocked2
+    aoi "...I'm sorry! It was only one!" mood melt7
+    aoi "And like... a bunch more... that I found on the floor down there." font small mood melt5
+    aoi "...But those were probably someone else's fish..." mood melt
+    lacie "...Actually..." mood hide2
+    aoi "...?" mood awkward
+    lacie "Nothing, never mind." mood hide3
+    alba "..." mood angry2
+    milion "Alba." mood blank
+    alba "Milion, I know." mood angry4
+    chara rename milion off
+    alba "I'm fine." mood annoyed3
+    alba "And who the hell are you anyway?" mood pissed4
+    lacie "...?" mood surprised2
+    alba "You smell like a human." mood annoyed3
+    alba "I'm surprised I didn't notice it before." mood default
+    milion "Hmm... it's faint... but it's there." mood blank
+    lacie "....." mood concerned2
+    aoi "No, she's my coworker!" mood surprised
+    lacie "...!?"
+    alba "Coworker?" mood pissed
+    aoi "Yeah yeah." mood confident
+    aoi "With... um..." mood confident2
+    aoi "Wendy." font small mood melt2
+    alba "If you're hiding a human, I'll kill the both of you." mood shocked2
+    aoi "W-we deal with humans sometimes... that's probably the smell you feel." mood melt4
+    milion "Hm..." mood blank11
+    alba "You're lying. You think I'm stupid?" mood pissed
+    hide ui
+    pause 0.5
+    cg show black background
+    audio bgm volume 0.3
+    pause 0.8
+    alba "(But... if they're telling the truth and I kill them...)" mood pissed3
+    alba "(Wendy will literally cook me alive.)" mood sweat
+    hide ui
+    pause 0.5
+    cg hide
+    audio bgm volume 1.0
+    alba "Look, I'll close my eyes to this." mood annoyed3
+    alba "But get out of the forest. Both of you!" mood angry
+    alba "Seriously." mood angry4
+    alba "Look at this shit." mood angry4
+    party switch lacie
+    objective complete ch1.fairyring_escape
+    move to Ch1_Forest_Center point after_tree_cutscene

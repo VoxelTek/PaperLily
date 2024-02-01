@@ -1,0 +1,7 @@
+label START
+    "A waiting list. It has over a hundred names on it."
+    if var ch1.forest_kett_asked_about_commissioning
+        if not var ch1.forest_kett_seen_waitlist
+            lacie "...Never mind." mood disappointed2
+    set ch1.forest_kett_seen_waitlist = true
+    end

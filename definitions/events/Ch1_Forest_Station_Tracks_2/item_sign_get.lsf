@@ -1,0 +1,10 @@
+label START
+    if var ch1.forest_station_took_sign end
+    "There's a sign lying on the floor. It says [color=#8080FF]\"Daylight Gate\"[/color]."
+    choice "Pick up ${item:ch1.forest_station_sign}?"
+        "Yes"
+            set ch1.forest_station_took_sign = true
+            system refresh
+            item add ch1.forest_station_sign
+        "No"
+            end

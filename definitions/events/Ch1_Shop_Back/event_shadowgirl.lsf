@@ -1,0 +1,19 @@
+label START
+    if repeat end
+    lacie "Hello." mood blank1
+    shadowgirl "..." mood default
+    lacie "Um.... What do you do here?" mood blank5
+    shadowgirl "..." mood default
+    shadowgirl "...!" mood gasp
+    lacie "Is she... giving me something?" mood blank6
+    hide ui
+    set ch1.shop_got_rainbow_liquid = true
+    system refresh
+    item add ch1.rainbow_potion
+    shadowgirl "..." mood sparkle
+    lacie "Oh... Thank you." mood blank1
+    lacie "I guess." mood blank3
+    shadowgirl "...!" mood sparkle
+    hide ui
+    pause 0.5
+    event call ch1_event_rainbowpotion

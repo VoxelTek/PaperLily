@@ -195,7 +195,7 @@
 		{
 			"id": "ch1.forest_lakeside_caterpillar",
 			"name": "Get Rid of the Caterpillar",
-			"description": "The moths will reward me with a doorknob if I get rid of the it...",
+			"description": "The moths will reward me with a doorknob if I get rid of it...",
 			"onComplete": ["ch1.forest_lakeside_moths_reward"]
 		},
 		{

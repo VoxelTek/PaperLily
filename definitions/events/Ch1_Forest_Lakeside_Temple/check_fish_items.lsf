@@ -1,0 +1,4 @@
+label START
+    if var ch1.forest_lakeside_placed_petals
+        if var ch1.forest_lakeside_placed_algae
+            set ch1.forest_lakeside_unclogging_done = true

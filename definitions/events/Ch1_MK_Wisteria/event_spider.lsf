@@ -1,0 +1,92 @@
+label START
+    if var ch1.mk_spidey_talks >= 2 end
+    set ch1.mk_spidey_talks = 2
+    chara set lacie at left
+    ch1_spider "Psst..."
+    ch1_spider "Over here."
+    hide ui
+    bubble question
+    action turn left
+    pause 0.3
+    action turn right
+    pause 0.3
+    action turn up
+    pause 0.5
+    ch1_spider "Here. On the wall."
+    hide ui
+    pause 0.5
+    camera move (0,-100) time 1
+    pause 0.5
+    lacie "..." mood default
+    lacie "Spider...?" mood blank1
+    ch1_spider "Yes."
+    move to Ch1_MK_Wisteria point in_front_spider
+    pause 0.5
+    lacie "Is that really you?" mood surprised3
+    if character sai
+        if var ch1.mk_sai_talks_3
+            sai "Huh... you really meant it when you said you talked to a spider." mood blank2
+            lacie "He looked different last time, but it's still basically a spider." mood blank3
+            ch1_spider "Oh. There's two of you now."
+            ch1_spider "Well, no matter."
+            jump CONT
+    lacie "You look... different" mood smile2
+    lacie "...But I can't quite put my finger on it."
+    ch1_spider "I don't appreciate your humor."
+    lacie "..." mood hide2
+label CONT
+    ch1_spider "Miss Knives discovered my hiding spot."
+    ch1_spider "She's not fond of my presence."
+    ch1_spider "So she turned me into... this."
+    ch1_spider "It's pathetic."
+    if character sai
+        sai "Damn, she must be have crazy powers" mood blank5
+    else
+        lacie "Is she really that powerful?" mood blank8
+    ch1_spider "Not quite."
+    if character sai
+        ch1_spider "You both must have had some time to look around this place by now."
+    else
+        ch1_spider "You must have had some time to look around this place by now."
+    ch1_spider "Did you figure out anything strange?"
+    if character sai
+        lacie "..." mood thinking3
+        sai "You mean aside from... everything?" mood confused13
+        sai "Kind of a tall order, pal." mood confused2
+    choice "...Well..."
+        "The location of this house is strange."
+            continue
+        "The walls are filled with creepy paintings."
+            continue
+        "It's all very purple, I guess."
+            continue
+    ch1_spider "..."
+    ch1_spider "...Maybe humans are just slow."
+    lacie "..." mood disappointed3
+    if character sai
+        sai "..." mood annoyed5
+    ch1_spider "None of what you're seeing is real."
+    if character sai
+        sai "Huh?" mood surprised2
+        lacie "..." mood blank1
+    else
+        lacie "What?" mood blank1
+    ch1_spider "Miss Knives is a strange case."
+    ch1_spider "She created this place out of her own desires."
+    ch1_spider "But the house doesn't actually exist."
+    if character sai
+        sai "Convenient." mood thinking3
+    lacie "So then... it's an illusion?" mood thinking
+    ch1_spider "To an extent, yes."
+    ch1_spider "That's also why I look like this."
+    ch1_spider "Miss Knives only sees what she wants to see."
+    lacie "So she sees you as... a little spider on the wall?" mood blank5
+    ch1_spider "It would seem so."
+    lacie "I see." mood blank7
+    lacie "Then... to escape..." mood blank8
+    ch1_spider "You have to break the illusion."
+    ch1_spider "Remind her who she is."
+    ch1_spider "Or rather... who she isn't."
+    ch1_spider "That's where those objects you need to collect come into play."
+    ch1_spider "They seem to have some sort of connection to her memories."
+    ch1_spider "Once you find and unseal them all, come back and see me."

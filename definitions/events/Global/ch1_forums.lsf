@@ -1,0 +1,87 @@
+label START
+    if not repeat
+        lacie "I left the browser open on some forums..." mood blank2
+    choice "Check out the forums?"
+        "Yes"
+            cg show darken background
+            jump POST_CHOICE
+        "No"
+            end
+    end
+
+label POST_CHOICE
+    choice "\"Devil's Eye Forums\""
+        "\"how 2 get letter??\" - 2 months ago"
+            jump POST_1
+        "\"Breaking the Rules?\" - 7 months ago"
+            jump POST_2
+        "\"Whats with the weird ads\" - 11 months ago"
+            jump POST_5
+        "\"Tips on bus ritual\" - 11 months ago"
+            jump POST_3
+        "\"Where does the bus go\" - 2 years ago"
+            jump POST_4
+        "Exit"
+            cg hide
+            end
+
+label POST_1
+    "[color=green]letterpls1, 2 months ago[/color]\ni wanna try a ritual but idk how to get the letter. help?"
+    "[color=green]helpfulM0D, 2 months ago[/color]\nRead the sticky, you need to send a letter with just your name in it. If you're chosen you'll get a golden envelope at some point."
+    "[color=green]letterpls1, 2 months ago[/color]\ni dont get it, is it like my full name? nothing else?? whats the address i mail it to"
+    "[color=green]letterpls1, 2 months ago[/color]\nalso does it need a stamp"
+    "[color=green]letterpls1, 29 days ago[/color]\nnobody's helping me, you all suck"
+    "[color=green]helpfulM0D, 29 days ago[/color]\nAgain, the information you need is in the sticky. Read the rules next time, there's a search button for a reason."
+    "[color=red]***POST HAS BEEN LOCKED***[/color]"
+    hide ui
+    pause 0.5
+    jump POST_CHOICE
+
+label POST_2
+    "[color=green]xXOccultfanXx, 7 months ago[/color]\nyour wrong. If smt is in the ritual rules, you gotta respect it or else your toast."
+    "[color=green]Kasaju_86, 7 months ago[/color]\nHave you ever even DONE a ritual?? I'm offering legitimate advice from people who actually survived them."
+    "Please stop spreading misinformation, you're risking people's lives. Also it's \"you're\", are you five?"
+    "[color=green]xXOccultfanXx, 7 months ago[/color]\n[u][color=teal]@Kasaju_86[/color][/u] just bc you've been on this website for longer, doesn't mean you gotta be an entitled a**. Some of us are just trying to have fun here."
+    "[color=green]Kasaju_86, 7 months ago[/color]\nYou're right. I don't know why I bothered. Have fun with your ritual~~~!"
+    hide ui
+    pause 0.5
+    lacie "People are always bickering on forums." mood annoyed
+    jump POST_CHOICE
+
+label POST_3
+    "[color=green]pklurkerx, 11 months ago[/color]\nAny tips for the bus ritual? I started it the other day but I couldn't go through with it. After I finished the preps it felt too real. Still wanna try at some point tho!"
+    "[color=green]Tomas_B, 11 months ago[/color]\n[u][color=teal]@Kasaju_86[/color][/u] might have some ideas."
+    "[color=green]pklurkerx, 11 months ago[/color]\nThx!"
+    "[color=green]Kasaju_86, 10 months ago[/color]\n@pklurkerx if you're unsure about going through with a ritual, it might be best to pass on it."
+    "However curiosity is a powerful enemy, so I'll say this: Get off the bus before the end of the line, no matter what."
+    "[color=green]Tomas_B, 10 months ago[/color]\n[u][color=teal]@Kasaju_86[/color][/u] whats at the end of the line? O,O"
+    "[color=green]Kasaju_86, 10 months ago[/color]\nWho can say."
+    "[color=green]pklurkerx, 10 months ago[/color]\nThx [u][color=teal]@Kasaju_86[/color][/u]! Actually someone dared me to try a ritual so I wanted to show them I can, but I'll think about it. Better safe than sorry."
+    hide ui
+    pause 0.5
+    jump POST_CHOICE
+
+label POST_4
+    "[color=green]ShibaShiba, 2 years ago[/color]\nHas anyone ever tried the bus ritual? Where does it take you? Is it safe?"
+    "[color=green]heartshapedfish3, 2 years ago[/color]\nto your deathbed"
+    "[color=green]_Headphoneboy69, 2 years ago[/color]\nIf you're looking for safe rituals, you're in the wrong place."
+    "[color=green]ShibaShiba, 2 years ago[/color]\nOkay I think I'll just try it, yolo lol"
+    "[color=green]catsuwu, 2 years ago[/color]\nGood luck! Let us know how it goes!"
+    "[color=green]catsuwu, 1 year ago[/color]\n[u][color=teal]@ShibaShiba[/color][/u] Any update?"
+    "[color=green]heartshapedfish3, 1 year ago[/color]\nded prolly lol"
+    "[color=green]catsuwu, 1 year ago[/color]\n[u][color=teal]@heartshapedfish3[/color][/u] don't be so insensitive, probably just an inactive account."
+    "[color=green]heartshapedfish3, 1 year ago[/color]\ninactive cuz ded lol"
+    hide ui
+    pause 0.5
+    jump POST_CHOICE
+
+label POST_5
+    "[color=green]Tomas_B, 1 year ago[/color]\ndoes anyone know whats the deal with the ads at the top of the forum o,o? there's doorknobs for sale? what's next? washing machines!?"
+    "[color=green]Shaaaaawn, 1 year ago[/color]\nI also wanna know tbh. That ad has been up for a while, someone must be making the big bucks off broken doors lmao"
+    "[color=green]helpfulM0D, 11 months ago[/color]\nWhile the admins have not shared with us the sources of the ads, please remember that the site is free - ads are a necessary evil for it stay afloat."
+    "[color=green]Shaaaaawn, 11 months ago[/color]\nFair bro you make a good point... I think i'll buy a new doorknob for my bedroom to support the site"
+    "[color=green]Tomas_B, 11 months ago[/color]\nok sorry if my question was out of place. im happy to have this site even if its funded by Big Doorknob haha >_>"
+    hide ui
+    pause 0.5
+    event call ch1_forums_doorknob_react
+    jump POST_CHOICE

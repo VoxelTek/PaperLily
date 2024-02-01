@@ -1,0 +1,5 @@
+label START
+    if objective ch1.kozmo_find_head inprogress end
+    if objective ch1.kozmo_give_head inprogress end
+    system retry-save
+    end

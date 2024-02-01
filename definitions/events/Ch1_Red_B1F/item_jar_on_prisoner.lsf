@@ -1,0 +1,56 @@
+label START
+    pause 0.5
+    item remove ch1.red_jar
+    chara rename unknown to "misc.characters.prisoner"
+    lacie "There's your jar."
+    unknown "Good..."
+    unknown "What would you like to know?"
+    lacie "You said you're the only demon who can inflict curses, correct?" mood blank8
+    lacie "Did you place this curse on me?" mood blank1
+    unknown "I'm the only demon who can inflict curses and LIVE."
+    unknown "Any demon can place a curse on someone on their dying breath."
+    unknown "But I can place a thousand, with no repercussions."
+    set ch1.forest_red_prisoner_learned_power = true
+    lacie "(Isn't that a bit OP?)" mood blank7
+    lacie "That sounds too powerful." mood confused2
+    unknown "Why do you think I'm locked up?"
+    unknown "Red's being a little bitch about it."
+    lacie "..." mood default
+    unknown "You're obviously a human with a weird aura."
+    unknown "You lookin' to remove your curse?"
+    lacie "Yes." mood blank8
+    unknown "Then you'd probably need Red's help."
+    lacie "Yes, that's the idea." mood reflective2
+    unknown "How do you plan to do that?"
+    if var ch1.forest_rune_asked_about_red
+        lacie "Someone told me to go to the lighthouse, so I have to go North." mood blank8
+        unknown "Ooh~ North."
+        unknown "You're gonna die if you go through the locked site, y'know?"
+        lacie "What other choice do I have?" mood reflective6
+        unknown "There's always another choice."
+        if var ch1.forest_red_found_passage
+            lacie "Do you mean that door to the right?" mood blank8
+            event call event_prisoner_door
+        if not var ch1.forest_red_found_passage
+            lacie "Is that so..." mood blank2
+            unknown "You just haven't looked around this room well enough."
+            lacie "..." mood blank2
+            set ch1.forest_red_prisoner_stage = 4
+
+    if not var ch1.forest_rune_asked_about_red
+        lacie "...Actually, I have no idea." mood blank3
+        unknown "Ahahahaha, you crack me up!"
+        lacie "Any suggestions?" mood default
+        unknown "Why not follow Red? That little shit left through here last time."
+        unknown "But that was long ago."
+        if var ch1.forest_red_found_passage
+            lacie "Do you mean through that door to the right?" mood blank7
+            event call event_prisoner_door
+        if not var ch1.forest_red_found_passage
+            lacie "Through... here? What do you mean?" mood concerned5
+            unknown "You haven't looked at this room much much, have you?"
+            lacie "..." mood concerned6
+            set ch1.forest_red_prisoner_stage = 4
+
+    chara rename unknown off
+    end

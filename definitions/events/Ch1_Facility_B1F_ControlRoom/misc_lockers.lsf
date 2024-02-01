@@ -1,0 +1,10 @@
+label START
+    if repeat jump NOTHING_ELSE
+    "Some large lockers. You could probably fit inside."
+    "There's something in here..."
+    item add ch1.facility_fuse_10
+    end
+
+label NOTHING_ELSE
+    "There's nothing else of use."
+    end

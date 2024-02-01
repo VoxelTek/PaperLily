@@ -1,0 +1,22 @@
+label START
+    if not var ch1.temp_ending_1_8_seen_vista end
+    audio sfx play water_splash
+    audio bgm stop time 0
+    pause 0.2
+    action call hand_anim
+    pause 0.8
+    audio sfx play thud2
+    camera shake time 0.2 continue
+    action call hide_player_and_bun
+    pause 3
+    fade out time 4
+    pause 2
+    set ch1.forest_lakeside_goldfish_gone = false
+    set ch1.forest_lakeside_goldfish_dead = false
+    move to Ch1_Forest_Lakeside_Temple point cutscene_camera time 0 cutscene
+    audio bgm play ch1_lakeside_2
+    fade in time 4
+    pause 2.5
+    bubble ellipsis point bubble_fish
+    pause 2
+    event queue ch1_ending_1_8

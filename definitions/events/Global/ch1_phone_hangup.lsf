@@ -1,0 +1,8 @@
+label START
+    hide ui
+    audio sfx play phone_busy
+    pause 1
+    audio sfx play phone_busy
+    pause 1
+    audio sfx play phone_busy
+    pause 0.5

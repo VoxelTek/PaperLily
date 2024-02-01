@@ -1,0 +1,60 @@
+label START
+    if var ch1.facility_valve_2_set jump VALVE_SET
+    "A slot to place a valve wheel. The indentation has a pentagon shape."
+    end
+
+label VALVE_SET
+    choice "Turn it?"
+        "Turn the wheel"
+            jump TURN_WHEEL
+        "Remove the wheel"
+            jump REMOVE_WHEEL
+        "Do nothing"
+            end
+    end
+
+label TURN_WHEEL
+    if not var ch1.facility_power_flood jump WONT_TURN
+    if var ch1.facility_flood_engaged jump TURN_USELESS
+    hide ui
+    pause 0.2
+    audio sfx play ch1_handle_turn
+    pause 0.8
+    set ch1.facility_valve_2_turned = !ch1.facility_valve_2_turned
+    system call CheckFloodEngaged
+    end
+
+label REMOVE_WHEEL
+    if var ch1.facility_valve_2_set == "square" jump GET_SQUARE
+    if var ch1.facility_valve_2_set == "pentagon" jump GET_PENTAGON
+    if var ch1.facility_valve_2_set == "star" jump GET_STAR
+    if var ch1.facility_valve_2_set == "diamond" jump GET_DIAMOND
+    end
+
+label GET_SQUARE
+    item add ch1.facility_handle_square
+    jump FINALLY
+
+label GET_PENTAGON
+    item add ch1.facility_handle_pentagon
+    jump FINALLY
+
+label GET_STAR
+    item add ch1.facility_handle_star
+    jump FINALLY
+
+label GET_DIAMOND
+    item add ch1.facility_handle_diamond
+    jump FINALLY
+
+label FINALLY
+    set ch1.facility_valve_2_set = null
+    end
+
+label WONT_TURN
+    "The wheel won't turn."
+    end
+
+label TURN_USELESS
+    "It won't turn anymore."
+    end

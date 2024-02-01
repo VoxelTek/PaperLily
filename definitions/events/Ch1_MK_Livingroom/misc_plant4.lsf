@@ -1,0 +1,11 @@
+label START
+    if var ch1.mk_plants_dead
+        "It's dead."
+        end
+    "A plant with a tag attached. It says:"
+    if objective ch1.mk_plant_drink done
+        "\"Thank you.\""
+        end
+    "\"Requires medium light. Provide alcohol twice daily to keep its leaves moist."
+    "Water is a valid substitute, as it can't tell the difference.\""
+    objective add ch1.mk_plant_drink

@@ -1,0 +1,3 @@
+label START
+    if repeat end
+    lacie "It's a program about cars... Or is it a trailer for a videogame?"

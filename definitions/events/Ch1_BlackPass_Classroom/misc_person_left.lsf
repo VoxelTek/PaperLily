@@ -1,0 +1,5 @@
+label START
+    chara rename unknown to "misc.characters.student_bully"
+    unknown "Eat it, witch."
+    chara rename unknown off
+    end

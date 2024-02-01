@@ -1,0 +1,57 @@
+label START
+    if item ch1.lakeside_algae_black jump CLEANUP
+    if item ch1.lakeside_algae_blue jump CLEANUP
+    if item ch1.lakeside_algae_green jump CLEANUP
+    if item ch1.lakeside_petals_pink jump CLEANUP
+    if item ch1.lakeside_petals_purple jump CLEANUP
+    if item ch1.lakeside_petals_white jump CLEANUP
+    jump FINALLY
+
+label CLEANUP
+    lacie "Let's get rid of some items..." mood blank2
+    "(You got rid of some items.)"
+    hide ui
+    item remove ch1.lakeside_algae_black amount 99
+    item remove ch1.lakeside_algae_blue amount 99
+    item remove ch1.lakeside_algae_green amount 99
+    item remove ch1.lakeside_petals_pink amount 99
+    item remove ch1.lakeside_petals_purple amount 99
+    item remove ch1.lakeside_petals_white amount 99
+
+label FINALLY
+    fade out
+    pause 2
+    audio bgm stop time 6
+    move to Ch1_Cutscene_Rowing_1 point cutscene_center time 0
+    audio sfx play ch1_paddle_1 volume 0.3
+    fade in time 1
+    pause 1.5
+    audio sfx play ch1_paddle_2 volume 0.3
+    pause 2.5
+    audio sfx play ch1_paddle_3 volume 0.3
+    pause 1
+    fade out
+    pause 2
+    move to Ch1_Forest_Lakeside_Lake point cutscene_center time 0
+    audio ambiance play wind_loop
+    fade in time 4
+    pause 6
+    fade out time 4
+    audio ambiance stop
+    move to Ch1_Cutscene_Rowing_2 point cutscene_start time 0
+    audio ambiance play rain
+    fade in continue
+    camera move (0,-560) time 6 continue
+    audio sfx play ch1_paddle_4 volume 0.3
+    pause 2.5
+    audio sfx play ch1_paddle_3 volume 0.3
+    pause 5.5
+    fade out time 0.5
+    audio bgm override on silent
+    objective clear
+    objective add ch1.forest_find_lighthouse
+    move to Ch1_Forest_Lakeside_North point landing
+    pause 2
+    fade in
+    audio bgm override off
+    end

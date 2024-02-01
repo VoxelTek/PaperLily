@@ -1,0 +1,8 @@
+label START
+    "A fallen book."
+    choice "Read a passage?"
+        "Yes"
+            "\"The soul does not reside in a specific physical location."
+            "The torso must be dissected in its entirety in order for extraction to be successful.\""
+        "No"
+            end

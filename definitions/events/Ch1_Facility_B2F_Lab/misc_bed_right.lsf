@@ -1,0 +1,5 @@
+label START
+    "An operating table."
+    if repeat end
+    lacie "(What's with the strange shape of this bed...?)" mood blank2
+    end

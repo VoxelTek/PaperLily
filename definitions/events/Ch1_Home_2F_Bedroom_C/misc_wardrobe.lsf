@@ -1,0 +1,24 @@
+label START
+    "The wardrobe. It doesn't close well anymore."
+    if var ch1.home_missed_bus
+        "Something is written on the door:"
+        "\"The wardrobe is stuffy, isn't it? You almost can't breathe in there."
+        "You almost stopped breathing. Take a deep breath, Lacie.\""
+    choice "Open it?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    audio sfx play wardrobe_open
+    pause 0.2
+    system call OpenWardrobe
+    pause 0.8
+    if var ch1.home_missed_bus
+        "A cold breeze blows from inside."
+    if not var ch1.home_missed_bus
+        "There's a few clothes inside."
+    hide ui
+    audio sfx play wardrobe_close
+    system call CloseWardrobe
+    pause 0.5

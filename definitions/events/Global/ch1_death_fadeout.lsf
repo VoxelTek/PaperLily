@@ -1,0 +1,4 @@
+label START
+    fade out time 4
+    pause 2
+    event queue ch1_death_finally

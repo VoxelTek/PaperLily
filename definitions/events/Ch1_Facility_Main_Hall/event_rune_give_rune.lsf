@@ -1,0 +1,29 @@
+label START
+    chara set lacie at left
+    chara set rune at right
+    set general.rune_runes_given ++
+
+label FIRST_RUNE
+    if repeat jump SECOND_RUNE
+    rune "Ooh!" mood sparkle
+    rune "I have just the thing for you!" mood default
+    rune "It's a map!" mood happy
+    item add ch1.facility_map
+    lacie "A map...?" mood blank5
+    jump CHECK_ACHIEVEMENT
+
+label SECOND_RUNE
+    if repeat 3 jump THIRD_RUNE
+    rune "Let's see, here you go!" mood default
+    item add ch1.screwdriver
+    rune "I love runes!" mood sparkle2
+    jump CHECK_ACHIEVEMENT
+
+label THIRD_RUNE
+    rune "Yay! Today is my lucky day!" mood sparkle
+    event call ch1_item_coin_get
+    jump CHECK_ACHIEVEMENT
+
+label CHECK_ACHIEVEMENT
+    if var general.rune_runes_given >= 4
+        system achievement CH1_RUNE_MASTER

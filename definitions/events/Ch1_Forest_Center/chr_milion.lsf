@@ -1,0 +1,78 @@
+label START
+    chara set lacie at left
+    chara set milion at right
+    chara set kozmo at right
+    if repeat jump OPTIONS
+    milion "A pleasure."
+    lacie "Huh?" mood blank1
+    milion "You're not from around here." mood reflective
+    lacie "How do you know?" mood blank5
+    milion "You wander around anxiously." mood blank2
+    lacie "Oh..." mood blank7
+    milion "Sit if you wish... The fire is captivating." mood satisfied2
+    lacie "No... thank you." mood hide3
+    jump OPTIONS
+
+label OPTIONS
+    choice "What should I say?"
+        "\"Are you a bug?\"" if not var ch1.forest_seen_milion_dialogue_1
+            jump DIALOGUE_1
+        "\"Can you help me?\"" if not var ch1.forest_seen_milion_dialogue_2
+            jump DIALOGUE_2
+        "About the reward" if var ch1.forest_heard_about_moth_reward
+            jump DIALOGUE_3
+    jump NO_DIALOGUE
+
+label DIALOGUE_1
+    set ch1.forest_seen_milion_dialogue_1 = true
+    lacie "You have wings." mood blank4
+    milion "What of it?" mood blank10
+    lacie "Are you a butterfly?" mood blank6
+    milion "...Disgusting." mood blank7
+    lacie "Oh." mood concerned6
+    if var ch1.forest_kozmo_gone jump DIALOGUE_1_SHORT
+    kozmo "A-a-a moth is the correct term. It-it-it must be your first encounter with one."
+    kozmo "Th-Th-Th-They say if you meet all 9 moths you'll get a reward." mood tilt
+    milion "Folklore is all it is. Why would anyone give you a reward?" mood blank3
+    kozmo "So-so-sometimes, you get rewarded for hard work. I-I-I've already met f-f-four." mood gasp
+    milion "What a fool. Nobody will reward you for a scavenger hunt. The world is not a playground." mood reflective4
+    kozmo "... Y-y-you're too grim, Milion." mood sweat3
+    chara rename milion off
+    kozmo "Wh-what do you think, lady?" mood tilt
+    choice "(What do I think...?)"
+        "The world is really unfair"
+            kozmo "S-s-s-such pessimistic views..." mood sweat2
+            milion "It's wise to be realistic." mood reflective
+        "Hard work pays off"
+            kozmo "W-w-w-well said!" mood sparkle
+            milion "I envy your naivety." mood satisfied2
+            milion "Just like this warm flame, your innocence too will soon be extinguished." mood worried5
+    set ch1.forest_heard_about_moth_reward = true
+    end
+
+label DIALOGUE_1_SHORT
+    milion "A moth, if you really care for such simplifications." mood blank10
+    lacie "I see..." mood blank4
+    end
+
+label DIALOGUE_2
+    set ch1.forest_seen_milion_dialogue_2 = true
+    lacie "I have a question." mood blank1
+    lacie "Do you happen to know where I could lift a curse?" mood blank3
+    milion "You must seek Red." mood default
+    lacie "Yeah... This isn't the first time I've heard that name." mood sigh
+    milion "Everyone has heard that name." mood reflective2
+    milion "Red cures all sorts of ailments... For a hefty price." mood blank11
+    lacie "..?" mood default
+    milion "That one doesn't do anything for free." mood blank6
+    end
+
+label DIALOGUE_3
+    if var ch1.forest_heard_about_moth_reward
+        event call chr_milion_2
+        end
+    jump NO_DIALOGUE
+
+label NO_DIALOGUE
+    "The moth is entranced by the fire pit."
+    end

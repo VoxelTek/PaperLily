@@ -1,0 +1,54 @@
+label START
+    if var ch1.home_phone_call_ringing jump RINGING
+    "A landline phone."
+    if objective ch1.prepare_ritual.tie_ribbon inprogress jump RIBBON_NEEDED
+    if objective ch1.revert_ritual_execution inprogress
+        event call event_remove_ribbon
+        end
+    if var ch1.home_ritualbuswaiting end
+    if var ch1.set_phoneribbon jump HAS_STRING
+    jump DIAL
+
+label DIAL
+    choice "Dial a number?"
+        "Yes"
+            continue
+        "No"
+            end
+    if var general.part_of_day == "night" jump NIGHT else jump DAY
+
+label DAY
+    system minigame ch1_pnc_phone_day
+    end
+
+label NIGHT
+    system minigame ch1_pnc_phone_night
+    end
+
+
+label HAS_STRING
+    "A red string can be seen hanging from its cord."
+    jump DIAL
+
+label RIBBON_NEEDED
+    event call event_ribbon_needed
+    jump DIAL
+    end
+
+label RINGING
+    choice "The phone is ringing. Pick up?"
+        "Pick up the phone"
+            hide ui
+            pause 0.5
+            if not var ch1.home_phone_call_ringing jump STOPPED_RINGING
+            set ch1.home_phone_call_ringing = false
+            pause 0.5
+            event call ch1_event_phone_neighbor
+        "Ignore it"
+            end
+    end
+
+label STOPPED_RINGING
+    lacie "Looks like I just missed it..." mood concerned7
+    set ch1.home_phone_call_done = true
+    end

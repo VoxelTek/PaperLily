@@ -1,0 +1,17 @@
+label START
+    audio sfx play switch
+    if var general.inbetween jump INBETWEEN
+    if var general.lights_home_1f_bathroom jump TURN_ON
+
+label TURN_OFF
+    set general.lights_home_1f_bathroom = true
+    end
+
+
+label TURN_ON
+    set general.lights_home_1f_bathroom = false
+    end
+
+label INBETWEEN
+    event call ch1_misc_lightswitch_inbetween
+    end

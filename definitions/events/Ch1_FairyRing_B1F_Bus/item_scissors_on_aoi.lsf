@@ -1,0 +1,10 @@
+label START
+    if repeat jump AGAIN
+    chara set lacie at left
+    chara set aoi at right
+    aoi "Y-yes... I'll cut it off..." mood scared10
+    aoi "I'm sorry..." mood scared11
+    end
+
+label AGAIN
+    "Let's not traumatize Aoi any further."

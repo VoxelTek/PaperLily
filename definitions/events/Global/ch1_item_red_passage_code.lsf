@@ -1,0 +1,3 @@
+label START
+    "The code for the keypad behind the mirror in Red's house."
+    "It reads: \"${var:persistent.ch1_red_passage_code}\""

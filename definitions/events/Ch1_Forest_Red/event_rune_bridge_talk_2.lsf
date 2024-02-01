@@ -1,0 +1,13 @@
+label START
+    if repeat end
+    if var ch1.forest_red_entrance_stage > 3 end
+    chara set lacie at left
+    chara set rune at right
+    action idle stop node rune
+    action turn right node rune
+    rune "Be careful with the traps!" mood tilt
+    lacie "There's more!?" mood surprised
+    rune "Good luck!" mood default
+    lacie "..." mood disappointed
+    action turn down node rune
+    action idle start node rune

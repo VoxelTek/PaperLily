@@ -1,0 +1,6 @@
+label START
+    hide ui
+    audio sfx play phone_dialing
+    pause 3
+    audio sfx play phone_dialing
+    pause 2

@@ -1,0 +1,3 @@
+label START
+    move to Ch1_MK_B2F_Hallway point coming_down direction up
+    end

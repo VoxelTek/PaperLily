@@ -1,0 +1,11 @@
+label START
+    if repeat jump AGAIN
+    lacie "(It doesn't make sense to go back this way.)" mood thinking
+    lacie "(Let's go find that door instead.)" mood thinking3
+    hide ui
+    end
+
+label AGAIN
+    "Not this way."
+    hide ui
+    end

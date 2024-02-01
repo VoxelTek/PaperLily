@@ -1,0 +1,9 @@
+label START
+    if not var ch1.forest_center_campfire_on end
+    item remove ch1.forest_station_number
+    hide ui
+    pause 1
+    audio sfx play fire
+    pause 2
+    lacie "This is the best use I can find for that number." mood reflective2
+    end

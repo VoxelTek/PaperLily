@@ -1,0 +1,14 @@
+label START
+    hide ui
+    audio bgm stop time 4
+    fade out time 4
+    pause 1
+    move to Void point (0,0) time 0
+    fade in time 0
+    pause 1
+    choice "You've made a terrible mistake. Please try again."
+        "Continue"
+            system retry-load
+            end
+        "End Game"
+            system title-screen

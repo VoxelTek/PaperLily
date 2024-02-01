@@ -1,0 +1,4 @@
+label START
+    if var ch1.blackpass_hallway_curtains_closed end
+    "Blindingly white light is all you can see."
+    end

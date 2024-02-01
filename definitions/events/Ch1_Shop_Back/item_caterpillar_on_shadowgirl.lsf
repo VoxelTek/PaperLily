@@ -1,0 +1,10 @@
+label START
+    item remove ch1.forest_caterpillar
+    objective complete ch1.forest_lakeside_caterpillar
+    set ch1.shop_gave_caterpillar = true
+    set ch1.forest_moths_clear = true
+    chara set shadowgirl at right
+    shadowgirl "...!" mood sparkle
+    "(The shadow girl lovingly takes the caterpillar from you.)"
+    system achievement CH1_GIFT_GIVER
+    end

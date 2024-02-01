@@ -1,0 +1,7 @@
+label START
+    if var general.serious
+        event call misc_painting_generic
+        end
+    "A portrait of a scary lady. There's a grinning person above it."
+    if repeat end
+    lacie "Both look unsettling..." mood concerned4

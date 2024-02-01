@@ -1,0 +1,54 @@
+label START
+    if var ch1.forest_candleman_dead jump DEAD
+    if var ch1.forest_candleman_saved jump GONE
+    "A realistic sculpture of a man with a candle for a head."
+    choice "(What should I do?)"
+        "Touch it"
+            "The statue feels like stone, just as you would expect."
+        "Take the candle"
+            jump TAKE_CANDLE
+        "Blow out the candle"
+            choice "Are you sure?"
+                "Yes"
+                    jump BLOW
+                "No"
+                    end
+        "Do nothing"
+            end
+    end
+
+label BLOW
+    fade out
+    pause 0.5
+    audio sfx play blow
+    pause 1
+    audio sfx play ch1_crumble
+    pause 2
+    set ch1.forest_candleman_blew_candle = true
+    set ch1.forest_candleman_dead = true
+    system refresh
+    pause 0.5
+    fade in
+    end
+
+label TAKE_CANDLE
+    fade out
+    pause 0.5
+    item add ch1.candleman_candle
+    objective complete ch1.locked_site_light
+    pause 1
+    audio sfx play ch1_crumble
+    pause 2
+    set ch1.forest_candleman_took_candle = true
+    set ch1.forest_candleman_dead = true
+    system refresh
+    fade in
+    end
+
+label DEAD
+    "Leftovers of what was once a sculpture."
+    end
+
+label GONE
+    "The candle man is gone."
+    end

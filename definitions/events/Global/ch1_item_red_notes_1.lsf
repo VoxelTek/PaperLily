@@ -1,0 +1,6 @@
+label START
+    "\"Stone Curse - Lifting ritual\""
+    "Gather cursed tree bark, ink mushrooms, and an artist's inspiration."
+    "Create solvent (chemistry set needed)."
+    "Pour solvent on cursed object."
+    set persistent.ch1_read_curse_notes_stone = true

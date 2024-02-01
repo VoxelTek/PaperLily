@@ -1,0 +1,12 @@
+label START
+    if not var ch1.forest_kett_introduced end
+    if repeat end
+    chara set lacie at left
+    chara set kett at right
+    kett "This is from the lighthouse." mood default
+    kett "Garbage." mood tired
+    lacie "Huh? Really?" mood confused
+    kett "It sickens me." mood tired
+    lacie "Do you know where the lighthouse is?" mood blank5
+    kett "Begone, child." mood default
+    lacie "...Guess not." mood confused3

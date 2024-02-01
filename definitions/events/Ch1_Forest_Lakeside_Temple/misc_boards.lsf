@@ -1,0 +1,7 @@
+label START
+    "Some pieces of old wood."
+    if not repeat
+        lacie "They're too old to be useful."
+    if repeat
+        "The floor in the shrine is unstable."
+    end

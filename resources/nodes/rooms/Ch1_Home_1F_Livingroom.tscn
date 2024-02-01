@@ -1111,7 +1111,7 @@ script = ExtResource( 8 )
 Area = Vector2( 80, 16 )
 Wide = true
 WideMargin = 10
-RelatedNode = NodePath("../../Background/furniture_bench")
+RelatedNode = NodePath("../../Main/furniture_couch")
 PlayerOffset = Vector2( 0, -14 )
 Direction = 2
 

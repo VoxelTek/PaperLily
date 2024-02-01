@@ -1,0 +1,29 @@
+label START
+    "My bed."
+    if not var general.chapter == 1 end
+    if objective ch1.talk_to_brother inprogress jump NEED_BROTHER_TALK
+    if objective ch1.revert_ritual_execution inprogress jump NEED_UNDO_RITUAL
+    if objective ch1.revert_ritual_sleep inprogress
+        event call event_busfail_sleep
+        end
+    if not var ch1.home_took_wardrobe_items jump NEED_RITUAL_ITEMS
+    if not objective ch1.go_to_sleep inprogress end
+    choice "Go to sleep?"
+        "Yes"
+            continue
+        "No"
+            end
+    event call ch1_event_ritualsleep
+    end
+
+label NEED_BROTHER_TALK
+    lacie "There's something I need to tell Hiro first."
+    end
+
+label NEED_RITUAL_ITEMS
+    lacie "I should take the stuff I left by the window, or I'm going to forget it here."
+    end
+
+label NEED_UNDO_RITUAL
+    lacie "I need to finish cleaning up the ritual first..."
+    end

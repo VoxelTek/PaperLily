@@ -1,0 +1,168 @@
+label START
+    chara set lacie at left
+    chara set kozmo at right
+    chara set milion at right
+    if repeat jump OPTIONS
+    kozmo "Mee-mee-mee-" mood sweat
+    lacie "...?" mood blank4
+    kozmo "Mee-meet!" mood gasp
+    lacie "..."
+    kozmo "Uh...N-N-Nice to... meet..." mood sweat
+    lacie "..." mood blank5
+    kozmo "..." mood sweat2
+    kozmo "A-a-apologies. I-I-I'm not very good at speaking under pressure." mood sweat2
+    lacie "(He's worse than me...)" mood surprised2
+    kozmo "Kozmo." mood default
+    lacie "...What?" mood blank1
+    chara rename kozmo off
+    kozmo "Oh... Y-y-you didn't ask for my name." mood sweat2
+    lacie "Yeah... I didn't." mood blank7
+    kozmo "..."
+    lacie "..." mood blank6
+    kozmo "Th-This interaction is not enjoyable." font small
+    lacie "It's nice to meet you, Kozmo." mood blank3
+    kozmo "...!" mood gasp
+    kozmo "L-l-likewise, ...erm...?" mood sparkle
+    lacie "..." mood default
+    kozmo "Your-your..your-" mood sweat
+    kozmo "Your name is...?" mood sweat2
+    lacie "Oh." mood blank8
+    lacie "It's um... It's not important." mood blank1
+    kozmo "O-oh... okay..." mood sweat3
+    set ch1.forest_seen_kozmo_intro = true
+    jump OPTIONS
+
+label OPTIONS
+    if var ch1.forest_kozmo_leaking jump LEAKING
+    if var ch1.forest_kozmo_changed_head jump NEW_HEAD
+    if var ch1.forest_kozmo_upset_stutter jump UPSET_DIALOGUE
+    choice "So..."
+        "Why are you so bad at speaking?" if not var ch1.forest_seen_kozmo_dialogue_1
+            jump DIALOGUE_1
+        "What are you doing here?" if not var ch1.forest_seen_kozmo_dialogue_2
+            jump DIALOGUE_2
+        "(Knock on his head)" if not var ch1.forest_seen_kozmo_dialogue_3
+            jump DIALOGUE_3
+        "Never mind"
+            end
+    jump NO_DIALOGUE
+
+label UPSET_DIALOGUE
+    event call chr_kozmo_2
+    end
+
+label DIALOGUE_1
+    set ch1.forest_seen_kozmo_dialogue_1 = true
+    kozmo "Y-y-y-you think I'm bad at speaking...?" mood sweat2
+    lacie "Well... you said it yourself, did you not?" mood blank8
+    kozmo "Oh... w-well..." mood sweat3
+    kozmo "Th-Th-The truth is..." mood sweat
+    kozmo "I-I-I've been told I sometimes....."
+    kozmo "S-s-stutter...!" mood sweat2
+    lacie "Oh. I'm sorry to hear that." mood default
+    kozmo "D-d-d-do you think I stutter?!?" mood tilt
+    choice "(Do I think Kozmo stutters...?)"
+        "It's not my place to say."
+            kozmo "O-oh... That's okay." mood default
+            kozmo "M-m-maybe I've improved, and it's not so noticeable!" mood gasp
+            lacie "Maybe." mood blank1
+        "Yes, it's very obvious."
+            kozmo "O-oh dear......" mood sweat2
+            hide ui
+            pause 0.8
+            audio sfx play thud
+            set ch1.forest_kozmo_upset_stutter = true
+            system refresh
+            pause 0.5
+    end
+
+label DIALOGUE_2
+    set ch1.forest_seen_kozmo_dialogue_2 = true
+    lacie "Do you live here?" mood blank8
+    kozmo "N-no.. Not many of us live in the forest." mood default
+    kozmo "I-it's too distant, you see..." mood tilt
+    lacie "Too distant to... what, exactly?" mood blank6
+    kozmo "T-t-the city, mainly." mood sweat3
+    lacie "How do you get to the city from here?" mood blank5
+    kozmo "Is-is-is-is this a quiz?" mood sweat
+    lacie "No, I..." mood concerned5
+    kozmo "We-well... It's... um... y-y-you can... you can take the bus... o-o-or the train..." mood sweat2
+    kozmo "Don't you know this though?"
+    hide ui
+    pause 0.5
+    action turn up node chr_milion
+    pause 0.3
+    milion "Come to think of it, where are you from?" mood blank4
+    lacie "..." mood concerned7
+    hide ui
+    pause 0.5
+    lacie "I should be going." mood hide3
+    action turn right node chr_milion
+    end
+
+label DIALOGUE_3
+    jump KNOCK
+
+label KNOCK
+    hide ui
+    pause 0.5
+    audio sfx play ch1_hit_ceramic
+    pause 0.25
+    audio sfx play ch1_hit_ceramic
+    pause 0.3
+    audio sfx play ch1_hit_ceramic
+    pause 0.2
+    set ch1.forest_kozmo_knocks ++
+    system refresh
+    pause 0.3
+    if var ch1.forest_kozmo_knocks == 1
+        chara remood kozmo all to cracked
+        chara remood kozmo sweat to cracked_sweat
+        kozmo "A-a-a-a don't do that! It's fragile!" mood gasp
+        jump KNOCK_AGAIN
+    if var ch1.forest_kozmo_knocks == 2
+        chara remood kozmo all to cracked2
+        chara remood kozmo sweat to cracked2_sweat
+        kozmo "S-s-s-s-stop...!!" mood gasp
+        jump KNOCK_AGAIN
+    if var ch1.forest_kozmo_knocks == 3
+        hide ui
+        pause 0.5
+        system call KozmoExplode
+        audio sfx play glass_crack_2
+        pause 2
+        chara remood kozmo off
+        chara remood kozmo all to transparent
+        lacie "Um... this isn't what I expected..." mood surprised2
+        kozmo "Wh-wh-what have you done..!? Oh no, oh no, oh no."
+        kozmo "Please help me!"
+        kozmo "P-p-please find me a new head!"
+        lacie "A new head..?" mood surprised
+        kozmo "A-a-anything hollow can serve as one, please!"
+        kozmo "H-h-h-hurry!"
+        kozmo "If it all escapes I'll...I'll-"
+        objective add ch1.kozmo_find_head
+        set ch1.forest_kozmo_leaking = true
+        set ch1.forest_seen_kozmo_dialogue_3 = true
+        system call StartKozmoTimer
+    end
+
+label KNOCK_AGAIN
+    choice "Knock again?"
+        "Yes"
+            jump KNOCK
+        "No"
+            end
+
+label LEAKING
+    "A large amount of something leaks from Kozmo."
+    lacie "I should hurry." mood concerned12
+    end
+
+label NO_DIALOGUE
+    "Kozmo sways left and right."
+    end
+
+label NEW_HEAD
+    "Kozmo is sporting a new head."
+    end

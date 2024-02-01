@@ -1,0 +1,5 @@
+label START
+    audio sfx play paper
+    cg show ch1/ch1_todolist scene
+    wait
+    cg hide

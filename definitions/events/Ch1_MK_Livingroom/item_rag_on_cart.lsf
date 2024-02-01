@@ -1,0 +1,16 @@
+label START
+    if item ch1.mk_compress_activated jump ALREADY_DONE
+    item remove ch1.mk_compress
+    fade out
+    pause 1
+    "You pour some liquid onto the rag..." background none
+    hide ui
+    pause 0.5
+    item add ch1.mk_compress_activated
+    event call ch1_event_mk_check_items
+    fade in
+    end
+
+label ALREADY_DONE
+    "It's already wet enough."
+    end

@@ -1,0 +1,5 @@
+label START
+    "A wooden log."
+    if not var ch1.forest_lakeside_pushed_log
+        lacie "It's too short to use as a bridge."
+    end

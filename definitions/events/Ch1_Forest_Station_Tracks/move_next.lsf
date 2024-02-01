@@ -1,0 +1,9 @@
+label START
+    set ch1.forest_station_tracks_stage ++
+    if var ch1.forest_station_tracks_stage < 4
+        set ch1.forest_station_took_number = false
+        move to Ch1_Forest_Station_Tracks point entrance
+    else
+        audio bgm override on silent
+        audio bgm stop time 4
+        move to Ch1_Forest_Station_Tracks_2 point entrance

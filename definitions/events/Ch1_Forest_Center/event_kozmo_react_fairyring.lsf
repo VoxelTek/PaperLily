@@ -1,0 +1,8 @@
+label START
+    if repeat end
+    if objective ch1.kozmo_find_head inprogress end
+    if objective ch1.kozmo_give_head inprogress end
+    if var ch1.forest_kozmo_gone end
+    chara set kozmo at right
+    kozmo "I-I-I wouldn't do that if I were you. Fairy demons are vile, the worst." mood sweat
+    end

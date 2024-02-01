@@ -1,0 +1,5 @@
+label START
+    "(You plugged in the cable using the adapter.)"
+    set ch1.forest_center_campfire_on = true
+    item remove ch1.forest_adapter
+    end

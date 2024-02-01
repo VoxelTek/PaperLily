@@ -1,0 +1,77 @@
+label START
+    fade out
+    move to Ch1_Cutscene_Ending_10 point cutscene_camera time 0
+    chara spawn sai point sai
+    chara lock
+    pause 1
+    audio sfx play shuffling
+    pause 3
+    fade in time 4
+    pause 1
+    bubble laugh on sai continue
+    sai "Ha! That's way too big on you."
+    hide ui
+    bubble ellipsis_silent point lacie_bubble
+    lacie "It's... cozy, I suppose."
+    lacie "(I wonder who wore this.)"
+    audio bgm stop time 0
+    audio sfx play heartbeat_3
+    action call lacie_shadow_face
+    fade flash color red
+    pause 0.5
+    lacie "..."
+    hide ui
+    pause 0.5
+    audio sfx play thud4
+    fade out time 0
+    pause 3
+    sai "H-Hey! What's wrong!?"
+    hide ui
+    pause 1
+    audio sfx play heartbeat_3
+    fade in time 0
+    cg show ch1/ending_10_1 time 0
+    fade flash color white
+    pause 0.5
+    audio sfx play heartbeat_3
+    cg show ch1/ending_10_2 time 0
+    fade flash color white
+    pause 0.5
+    audio sfx play heartbeat_3
+    cg show ch1/ending_10_3 time 0
+    fade flash color white
+    pause 0.5
+    audio sfx play heartbeat_3
+    cg show ch1/ending_10_4 time 0
+    fade flash color white
+    pause 0.5
+    audio sfx play heartbeat_3
+    cg show ch1/ending_10_5 time 0
+    fade flash color white
+    pause 0.5
+    audio sfx play heartbeat_3
+    cg show ch1/ending_10_6 time 0
+    fade flash color white
+    pause 1
+    fade out time 1
+    cg hide time 0
+    pause 2
+    chara despawn sai
+    action call hide_lacie
+    action call show_sai
+    action call show_dead_lacie
+    fade in time 4
+    sai "Wake up!"
+    sai "What the hell!?"
+    sai "Hey, wake up! Hey!"
+    sai ".........."
+    hide ui
+    fade out
+    pause 1
+    sai "Damn it."
+    hide ui
+    pause 4
+    "Dead End 1-10 - Sensory Overload" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.10 = true
+    system title-screen

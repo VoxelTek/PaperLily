@@ -1,0 +1,5 @@
+label START
+    if not var ch1.mk_clear end
+    event call ch1_event_facility_block_after_mk
+    action walk right 32
+    end

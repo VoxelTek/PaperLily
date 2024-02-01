@@ -1,0 +1,4 @@
+label START
+    "This doorknob won't even turn."
+    set ch1.forest_lakeside_tried_golden_doorknob = true
+    end

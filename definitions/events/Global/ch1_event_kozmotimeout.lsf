@@ -1,0 +1,7 @@
+label START
+    objective fail ch1.kozmo_find_head
+    objective fail ch1.kozmo_give_head
+    set ch1.forest_kozmo_leaking = false
+    set ch1.forest_kozmo_gone = true
+    set ch1.forest_kozmo_dead = true
+    system refresh

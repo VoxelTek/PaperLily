@@ -1,0 +1,19 @@
+label START
+    if var ch1.forest_kett_checked_sculpture jump AGAIN
+    "There must be a huge sculpture hidden under this drape."
+    choice "Check under the drape?"
+        "Yes"
+            set ch1.forest_kett_checked_sculpture = true
+            fade out
+            pause 1
+            "It looks like an unfinished sculpture of a lady. She looks like she's made of porcelain."
+            hide ui
+            pause 0.5
+            fade in
+        "No"
+            end
+    end
+
+label AGAIN
+    "There's a sculpture of a lady under this drape."
+    end

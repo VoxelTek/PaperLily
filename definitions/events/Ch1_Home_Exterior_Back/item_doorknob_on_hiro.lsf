@@ -1,0 +1,23 @@
+label START
+    chara set lacie at left
+    chara set hiro at right
+    if repeat jump AGAIN
+    lacie "Look." mood blank1
+    hiro "What's this?" mood blank
+    lacie "Apparently, it's my ticket back home." mood blank8
+    hiro "Really?" mood surprised
+    lacie "If this ritual ends up working..." mood reflective8
+    lacie "(...And this doorknob isn't just some online scam...)" mood blank7
+    lacie "Then supposedly I can use this on a special door and it'll take me back home." mood blank1
+    hiro "Really?!" mood shocked2
+    lacie "Yeah, well, I wasn't going to do this ritual without a plan." mood reflective8
+    hiro "Thank goodness." mood worried5
+    hiro "All of my pestering worked." mood side
+    hiro "Don't lose it!!" mood upset2
+    lacie "Of course." mood blank1
+    lacie "(This should reassure him a bit.)" mood default
+    end
+
+label AGAIN
+    lacie "(Reassurance complete. No need to bring this back up.)" mood blank2
+    end

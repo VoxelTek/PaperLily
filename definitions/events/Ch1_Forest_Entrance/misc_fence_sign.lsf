@@ -1,0 +1,8 @@
+label START
+    "\"Daylight Gate\"\n\"(At daytime, the gate opens and the lamps turn off.)\""
+    if repeat end
+    if var ch1.forest_entrance_gate_open end
+    lacie "Day...? I don't even know what time it is..." mood blank8
+    lacie "Is there any way I can get this open without waiting?" mood thinking2
+    objective add ch1.open_daylight_gate
+    end

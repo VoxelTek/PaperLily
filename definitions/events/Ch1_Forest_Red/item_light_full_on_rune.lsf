@@ -1,0 +1,5 @@
+label START
+    if not var ch1.forest_seen_rune end
+    chara set rune at right
+    rune "Did you put fireflies inside?" mood tilt
+    rune "Genius!" mood happy

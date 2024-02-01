@@ -1,0 +1,30 @@
+label START
+    if var ch1.temp_facility_primals_b1f_elevator_spawn jump NOT_SMART
+label PRESS
+    audio sfx play button
+    if var ch1.facility_elevator_location == 1 end
+    pause 0.5
+    if not var ch1.facility_elevator_on jump NOT_WORKING
+    fade out
+    set ch1.facility_elevator_location = 1
+    pause 1
+    audio sfx play ch1_elevator
+    pause 0.5
+    fade in
+    pause 0.5
+    system call OpenElevatorDoors
+    pause 1.5
+    end
+
+label NOT_WORKING
+    pause 0.5
+    "Nothing happens."
+    objective add ch1.facility_fix_elevator
+    end
+
+label NOT_SMART
+    if var ch1.facility_elevator_location == 1
+        "The elevator is already here."
+        end
+    lacie "It's not smart to call it when there's creatures so close..." mood concerned9
+    objective add ch1.facility_fix_elevator

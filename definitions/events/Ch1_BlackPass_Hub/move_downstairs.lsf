@@ -1,0 +1,4 @@
+label START
+    if not var general.blackpass_red_items end
+    move to Ch1_BlackPass_Stairs point entrance
+    end

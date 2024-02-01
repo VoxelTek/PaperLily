@@ -1,0 +1,131 @@
+label START
+    if var ch1.facility_seen_event_rune end
+    set ch1.facility_seen_event_rune = true
+    fade out
+    move to Ch1_Facility_Main_Hall point event_rune_lacie cutscene time 0
+    chara spawn lacie point event_rune_lacie
+    chara spawn sai point event_rune_sai
+    chara set lacie at left
+    chara set sai at right
+    chara set rune at right
+    camera track node lacie
+    action walk left 96 node sai speed slow continue
+    action walk left 96 node lacie speed slow continue
+    audio bgm stop time 4
+    fade in
+    pause 0.8
+    action turn down node rune
+    rune "Ooh!"
+    hide ui
+    pause 0.5
+    action turn up node lacie
+    action turn up node sai
+    camera move (0,-64) time 1
+    camera unlock
+    audio bgm play ch1_rune
+    rune "Miss L-" mood tilt
+    lacie "Shh!" mood frustrated
+    rune "...?"
+    hide ui
+    action walk up 128 node lacie continue
+    camera move (0,-48) time 1 continue
+    pause 0.2
+    action walk up 128 node sai
+    lacie "I don't give my name to just anyone, Rune." mood blank7
+    bubble laugh on rune continue
+    rune "Very wise!" mood sparkle
+    action turn left node sai
+    sai "What?!" mood confused5
+    sai "You told this goblin your name but not me?" mood thinking11
+    lacie "You're still suspicious." mood frustrated
+    sai "Suspicious?" mood worried
+    sai "What can I even do with your name? This is ridiculous." mood thinking3
+    lacie "I read of a curse that can kill someone just by writing their name in a notebook." mood concerned9
+    sai "Is that the same place you read about the salt?" mood smile2
+    lacie "..." mood embarassed2
+    rune "Hello Mr. Sai!" mood default
+    action turn up node sai
+    sai "Yo." mood blank2
+    lacie "Rune, you know him?" mood surprised3
+    rune "Yes! Though my encounters with Mr. Sai are often brief, as he does not provide me with runes." mood tilt
+    lacie "Oh." mood blank7
+    hide ui
+    pause 0.5
+    action walk right 128 node sai speed slow continue
+    pause 0.5
+    sai "Give me a break man, it's not like those things are just lying around." mood blank8
+    action turn right node lacie
+    bubble sweatdrop on lacie continue
+    if var ch1.runes_found == 0
+        lacie "(I guess that's true...)" mood blank2
+    if var ch1.runes_found == 1
+        lacie "(Well, I did find one...)" mood blank2
+    if var ch1.runes_found > 1
+        lacie "(They kind of are, though...)" mood blank2
+    hide ui
+    pause 1
+    action turn up node lacie
+    pause 0.5
+    lacie "How did you get here?" mood blank5
+    rune "I walked." mood default
+    lacie "..." mood concerned
+    lacie "I see." mood concerned4
+    lacie "Unfortunately, I'm still looking for the lighthouse." mood concerned5
+    rune "Ooh." mood tilt
+    rune "The lighthouse isn't here! You must have taken a wrong turn somewhere."
+    rune "And there's no way to go back outside from here." mood sad
+    action turn left node sai
+    sai "What?" mood confused4
+    action turn right node lacie
+    action walk left 32 node sai continue
+    sai "We're stuck here?" mood blank7
+    action turn right node rune
+    rune "Possibly. Some doorknobs are one-way only." mood default
+    action turn up node lacie
+    lacie "Rune, do you have any idea where I could go from here to reach the lighthouse?" mood blank4
+    action turn down node rune
+    rune "The only way forward is by going deeper down."
+    rune "The stairs are right there, in fact!"
+    hide ui
+    action turn down node lacie
+    camera move (0,164) time 1
+    pause 2
+    camera move (0,-164) time 0.5
+    pause 0.5
+    action turn right node lacie
+    sai "That looks like a dead end." mood default
+    action turn up node lacie
+    rune "Yes, death is highly probable at all times!" mood tilt
+    rune "But, I heard there's a cursed door down there somewhere." mood default
+    rune "If you're lucky, it might lead you somewhere!" mood sparkle
+    rune "Or if you're unlucky, it might not!" mood default
+    lacie "(Another cursed door huh...)" mood reflective7
+    lacie "(If there's a cursed door, then maybe there's a way out of here.)" mood thinking4
+    lacie "(Or at the very least, I could still go home if I'm stuck.)" mood thinking
+    lacie "(I have the doorknob, after all.)"
+
+    hide ui
+    pause 0.5
+    cg show black background
+    audio bgm volume 0.3
+    lacie "(That doorknob... When I got it in the mail, it came with instructions. Almost like a ritual.)" mood thinking
+    lacie "(It involved folding my ritual letter into an origami lily, and placing it in some vase.)" mood thinking3
+    lacie "(I thought it was a joke, but...)" mood thinking3
+    "\"It's imperative that you learn how to fold it, if you don't, you'll regret it.\"" format center position center background none
+    action walk left 96 node sai continue
+    hide ui
+    pause 1
+    lacie "(Anyways, I brought the folding instructions with me, just in case.)" mood reflective7
+    item add ch1.paper_lily_instructions
+    hide ui
+    pause 0.5
+    cg hide
+    audio bgm volume 1.0
+    pause 1
+    sai "Yo, you there? You're spacing out." mood surprised2
+    lacie "Ah... yeah." mood blank8
+    rune "Good luck on your quest!" mood sparkle
+    audio bgm play ch1_facility
+    objective complete ch1.facility_investigate
+    move to Ch1_Facility_Main_Hall point event_rune_after
+    end

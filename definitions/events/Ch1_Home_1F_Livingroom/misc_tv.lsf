@@ -1,0 +1,27 @@
+label START
+    "A TV."
+    if not var general.tv_home1f end
+    if var general.inbetween jump STATIC
+    if var general.part_of_day == "day" jump DAY
+    if var general.part_of_day == "evening" jump EVENING
+    if var general.part_of_day == "night" jump NIGHT else end
+
+label DAY
+    event call misc_tv_day
+    end
+
+
+label EVENING
+    event call misc_tv_evening
+    end
+
+
+label NIGHT
+    event call misc_tv_night
+    end
+
+
+label STATIC
+    event call misc_tv_static
+    end
+

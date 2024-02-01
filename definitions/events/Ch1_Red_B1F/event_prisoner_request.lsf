@@ -1,0 +1,16 @@
+label START
+    unknown "You do something I ask, and I'll answer one of your questions. Yeah?"
+    lacie "You want me to open your cage?" mood blank8
+    unknown "Hahahaha as if you could! You severely overestimate yourself, kid."
+    unknown "No, this is something you can actually do."
+    unknown "I can't see it from here, but somewhere in this room there should be a jar of slugs."
+    lacie "Slugs?" mood confused2
+    unknown "Yeah. Large, slimy, gross? You know."
+    unknown "Bring it to me and we can continue this conversation."
+    lacie "I won't be coming anywhere close to you." mood blank5
+    unknown "Fair."
+    unknown "Throw it to me from where you're standing right now then, if you're such a scaredy cat."
+    lacie "..." mood blank7
+    set ch1.forest_red_prisoner_stage = 3
+    chara rename unknown off
+    end

@@ -1,0 +1,6 @@
+label START
+    if var ch1.mk_tool_clear
+        event call event_already_done
+        end
+    audio sfx play button
+    system call RotatePainting2

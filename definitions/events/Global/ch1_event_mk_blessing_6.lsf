@@ -1,0 +1,219 @@
+label START
+    pause 1
+    cg show black
+    audio bgm play ch1_heart
+    pause 2
+    chara rename mk to "misc.characters.lk"
+
+    "I was tied up in front of the whole village, where Iris' father gave a speech." format center position center background none
+    "It was about bringing forth a new era, about cleansing impurities." format center position center background none
+    "About living in peace." format center position center background none
+    "Peace..." format center position center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_flower_1 time 2
+    hide ui
+    pause 1
+    "I thought I already lived in peace." format center background none
+    "I thought I could keep living in piece next to..." format center background none
+    "...Iris." format center background none
+    "Was she in that crowd too?" format center background none
+    "Was she watching?" format center background none
+    "Would she cry for me?" format center background none
+    "It didn't matter anymore." format center background none
+    "I was only a sacrificial pawn in this bigger story." format center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_flower_2 time 2
+    hide ui
+    pause 1
+    "How did mother feel, standing here?" format center background none
+    "Was she relieved to finally be rid of all of this injustice?" format center background none
+    "To finally start being at peace?" format center background none
+    hide ui
+    pause 1
+    "It didn't matter." format center background none
+    "Mother and father were dead." format center background none
+    "And now, this will be over for me too." format center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_flower_3 time 2
+    hide ui
+    pause 1
+    "The monster standing before me finished his speech." format center background none
+    "The crowd was cheering. They seemed to agree with his preach." format center background none
+    hide ui
+    pause 1
+    audio sfx play fire
+    pause 0.1
+    fade flash color red
+    audio ambiance play fireplace_loop
+    pause 2
+    "He lit the firewood, and the heat was slowly embracing me." format center background none
+    "For a moment, it almost felt comforting." format center background none
+    "But that moment was brief." format center background none
+    "When the fire reached my legs, the pain became unbearable." format center background none
+    "The crowd's cheers were slowly drowned out by my own screams." format center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_flower_4 time 2
+    hide ui
+    pause 1
+    "Curse this." format center background none
+    "Curse this!" format center background none
+    "It hurts!" format center background none
+    "Why must I suffer?!" format center background none
+    "This isn't fair!" format center background none
+    "Why won't anyone help me?!" format center background none
+    "It hurts so much..." format center background none
+    "I hate them..." format center background none
+    "I hate them." format center background none
+    "How could they cheer for this?!" format center background none
+    "How could they be so cruel?!" format center background none
+    "I wish they were all dead." format center background none
+    "I wish they would all suffer." format center background none
+    hide ui
+    pause 1
+    cg show black
+    hide ui
+    pause 2
+    "I heard it once in a dream before." format center position center background none
+    "[color=#90EE90]\"Six blessings form a curse.\"[/color]" format center position center background none
+    "Was I cursed?" format center position center background none
+    "Because... at that moment..." format center position center background none
+    pause 1
+    "I received my [color=#CD5C5C]sixth blessing[/color]." format center position center background none
+    hide ui
+    pause 1
+    audio sfx play fire
+    pause 0.1
+    fade flash color red
+    cg show ch1/mk_backstory_flower_5 time 0
+    pause 2
+    "The fire spread incredibly fast, in all directions." format center background none
+    "And the flames that had reached my thighs died out." format center background none
+    "Instead, the fire spread all around me." format center background none
+    "Everyone was screaming, terrified." format center background none
+    "Everyone was burning." format center background none
+    "What happened? Where's Iris!?" format center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_flower_6 time 2
+    hide ui
+    pause 1
+    "I used the knife she gave me to untie myself. It cut easily." format center background none
+    "I tried walking but I couldn't even stand." format center background none
+    "My legs hurt... They hurt so bad..." format center background none
+    hide ui
+    pause 1
+    "I looked around but only saw fire." format center background none
+    "People were trying to run but there was no escape." format center background none
+    "The floor, the houses... Everything was on fire." format center background none
+    "The whole village was covered in a thick smoke." format center background none
+    "The only place the fire didn't reach was the ground I stood on." format center background none
+    "I can't move... But I need to make sure Iris is okay." format center background none
+    hide ui
+    pause 1
+    cg show black
+    hide ui
+    pause 1
+    mk "Huh?"
+    hide ui
+    pause 1
+    mk "Make sure Iris is okay..?"
+    mk "Why should I..."
+    hide ui
+    pause 1
+    mk "It's all going to hell anyway."
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_flower_7 time 2
+    hide ui
+    pause 1
+    "I sat on the floor holding the knife." format center background none
+    "My miracle..." format center background none
+    "Is this what came of my miracle?" format center background none
+    "I never asked for this." format center background none
+    "All of this misfortune... It all started after I got my eyesight back." format center background none
+    "What are these eyes?" format center background none
+    "I don't recognize them." format center background none
+    "I don't want them." format center background none
+    "I never wanted them. Not like this." format center background none
+    hide ui
+    pause 1
+    mk "YOU CAN HAVE THEM BACK!!"
+    mk "DO YOU HEAR ME?!"
+    mk "These are not... my eyes!"
+    hide ui
+    pause 1
+    audio sfx play hit
+    pause 0.2
+    audio ambiance stop time 0
+    cg show ch1/death_pain_3a time 0
+    fade flash color red
+    pause 2
+    "I stabbed and stabbed. I was determined to remove them." format center background blur
+    "After all, if I removed them, things could go back to normal." format center background blur
+    "I could do my chores as usual." format center background blur
+    hide ui
+    pause 0.5
+    audio sfx play hit
+    pause 0.2
+    cg show ch1/death_pain_3b time 0
+    fade flash color red
+    pause 2
+    "I could care for mother." format center background blur
+    hide ui
+    pause 0.5
+    audio sfx play hit
+    pause 0.2
+    cg show ch1/death_pain_3c time 0
+    fade flash color red
+    pause 2
+    "I could spend my days with Iris..." format center background blur
+    hide ui
+    pause 0.5
+    audio sfx play hit
+    pause 0.2
+    cg show ch1/death_pain_3d time 0
+    fade flash color red
+    pause 2
+    "It felt so good. It felt so relieving." format center background blur
+    "I stabbed until I stopped seeing." format center background blur
+    "Until I stopped worrying." format center background blur
+    "Until I stopped feeling." format center background blur
+    hide ui
+    pause 0.5
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 0.8
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 0.7
+    audio sfx play hit
+    pause 0.2
+    cg show ch1/death_pain_3e time 0
+    fade flash color red
+    pause 2
+    hide ui
+    pause 1
+    cg show black
+    hide ui
+    pause 2
+    "Until I stopped moving." format center background none
+    hide ui
+    pause 1
+    "I think in my final moments, I laughed." format center position center background none
+    "I laughed at how my life turned out." format center position center background none
+    "Six blessings form a curse." format center position center background none
+    "Six blessings form a curse." format center position center background none
+    "Yes..." format center position center background none
+    "Because \"cursed\" is the only way I can describe this pathetic life." format center position center background none
+    hide ui
+    cg hide time 4
+    pause 2
+    audio bgm stop time 4
+    pause 4
+    chara rename mk off

@@ -1,0 +1,11 @@
+label START
+    "A book filled with extensive research on all sorts of materials."
+    if var ch1.forest_red_took_adapter end
+    "There's also an AC adapter in the drawers."
+    choice "Take ${item:ch1.forest_adapter}?"
+        "Yes"
+            item add ch1.forest_adapter
+            set ch1.forest_red_took_adapter = true
+        "No"
+            end
+    end

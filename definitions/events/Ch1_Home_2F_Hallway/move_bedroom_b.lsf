@@ -1,0 +1,11 @@
+label START
+    if var general.chapter == 1 jump CHAPTER_1
+    audio sfx play door
+    move to Ch4_Home_2F_Bedroom_B point hallway_door
+    end
+
+
+label CHAPTER_1
+    event call misc_bedroom_b_door_ch1
+    end
+

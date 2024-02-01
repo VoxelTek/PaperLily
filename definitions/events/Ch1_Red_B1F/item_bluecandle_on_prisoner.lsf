@@ -1,0 +1,54 @@
+label START
+    item remove ch1.candleman_candle_blue
+    chara rename unknown to "misc.characters.prisoner"
+    chara set lacie at left
+    if var ch1.forest_red_prisoner_stage < 5 jump AHEAD_OF_TIME
+    pause 1
+    set ch1.forest_red_prisoner_stage = 6
+    system refresh
+    pause 1
+    unknown "Amazing..."
+    unknown "I haven't seen a light in years..."
+    unknown "So bright..."
+    unknown "So warm..."
+    lacie "*Ahem*" mood bothered
+    unknown "Yeah yeah, thanks girlie."
+    unknown "You really did me a solid here."
+    unknown "I'll remember this."
+    lacie "..." mood default
+    unknown "Here you go."
+    item add ch1.red_passage_code
+    lacie "Thanks." mood blank1
+    lacie "..." mood blank4
+    lacie "What's your name?" mood blank5
+    unknown "There's no need to get buddy-buddy. You won't be alive for long enough for us to meet again."
+    unknown "...But if we do, I'll make sure to introduce myself properly."
+    chara rename unknown off
+    end
+
+label AHEAD_OF_TIME
+    pause 0.5
+    unknown "Why... why are you giving this to me?"
+    lacie "I don't know... just a feeling?" mood blank8
+    if var ch1.forest_red_prisoner_stage == 2
+        unknown "Hahahahahaha incredible... were you just screwing with me before?"
+        unknown "I guess I'm not gonna make you suffer after all."
+    if var ch1.forest_red_prisoner_stage == 3
+        if item ch1.red_jar
+            lacie "Here, take the slugs as well." mood blank1
+            item remove ch1.red_jar
+            unknown "Huh..."
+    unknown "I don't know who you are but..."
+    unknown "I'll remember this."
+    if var ch1.forest_red_prisoner_stage == 4
+        lacie "So... about this room..." mood blank3
+        unknown "Oh man you're slow. Check the mirror."
+        lacie "..." mood default
+    hide ui
+    pause 1
+    set ch1.forest_red_prisoner_awaiting_code = true
+    set ch1.forest_red_prisoner_stage = 6
+    system refresh
+    pause 1
+    unknown "Hahahahahaha oh god... so good..."
+    end

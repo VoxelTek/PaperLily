@@ -1,0 +1,424 @@
+label START
+    event call ch1_init
+    move to Void point (0,0)
+    pause 1
+    cg show ch1/introwarning scene
+    pause 4
+    cg hide
+    pause 3
+    chara lock
+    "The first item in a to-do list is always the hardest one to cross off." background none
+    "If we could just get one item done, the rest would surely follow. We just need to start." background none
+    "That's why some people find the easiest item first, and start from there." background none
+    "It gives them a better chance at getting something done." background none
+    hide ui
+    pause 1.5
+    "This is because setting things in motion is difficult." background none
+    "Choosing to do homework is difficult. Choosing to clean your room is difficult. Choosing to get out of bed is difficult." background none
+    "Change is uncomfortable. It's always easier to leave things the way they are. To let the flow carry you." background none
+    hide ui
+    pause 0.5
+    "Until you reach a point where doing nothing does more damage than doing anything." background none
+    "When this happens, change is no longer a choice. It's a consequence." background none
+    "Is that also a choice? The choice to do nothing?" background none
+    hide ui
+    pause 1
+    lacie "...For now, I'll focus on getting the first item on the list done."
+    choice "All I need to do is choose..."
+        "Coffee"
+            set ch1.favorite_drink = "coffee"
+        "Green Tea"
+            set ch1.favorite_drink = "tea"
+        "Strawberry Milkshake"
+            set ch1.favorite_drink = "milkshake"
+    hide ui
+    pause 2
+    choice "...and also..."
+        "Flan"
+            set ch1.favorite_dessert = "flan"
+        "Macarons"
+            set ch1.favorite_dessert = "macarons"
+        "Chocolate Eclair"
+            set ch1.favorite_dessert = "eclair"
+    hide ui
+    system achievement CH1_FIRST_CHOICE
+    pause 2
+
+    if var ch1.favorite_drink == "coffee"
+        if var ch1.favorite_dessert == "flan"
+            set ch1.temp_cafe_order_string = "misc.strings.order_1A"
+        if var ch1.favorite_dessert == "macarons"
+            set ch1.temp_cafe_order_string = "misc.strings.order_1B"
+        if var ch1.favorite_dessert == "eclair"
+            set ch1.temp_cafe_order_string = "misc.strings.order_1C"
+    if var ch1.favorite_drink == "tea"
+        if var ch1.favorite_dessert == "flan"
+            set ch1.temp_cafe_order_string = "misc.strings.order_2A"
+        if var ch1.favorite_dessert == "macarons"
+            set ch1.temp_cafe_order_string = "misc.strings.order_2B"
+        if var ch1.favorite_dessert == "eclair"
+            set ch1.temp_cafe_order_string = "misc.strings.order_2C"
+    if var ch1.favorite_drink == "milkshake"
+        if var ch1.favorite_dessert == "flan"
+            set ch1.temp_cafe_order_string = "misc.strings.order_3A"
+        if var ch1.favorite_dessert == "macarons"
+            set ch1.temp_cafe_order_string = "misc.strings.order_3B"
+        if var ch1.favorite_dessert == "eclair"
+            set ch1.temp_cafe_order_string = "misc.strings.order_3C"
+
+    lacie "${var:ch1.temp_cafe_order_string}..."
+    lacie "${var:ch1.temp_cafe_order_string}..."
+    lacie "${var:ch1.temp_cafe_order_string}....."
+    hide ui
+    pause 1
+    lacie "Okay."
+    lacie "I got this."
+    hide ui
+    pause 1
+    lacie "${var:ch1.temp_cafe_order_string}."
+
+    fade out time 0
+    pause 1
+    audio sfx play door
+    pause 0.2
+    audio sfx play door_chime
+    pause 0.5
+    move to Ch1_Cutscene_Cafe point center
+    chara spawn lacie point entrance
+    chara spawn ch1_cashier point cashier
+    pause 0.5
+    action walk left 160 node Ch1_Cashier speed veryslow continue
+    fade in
+    audio bgm play ch1_lacie_2
+    pause 1
+    action walk up 128 node Lacie speed slow
+    pause 0.5
+    chara unlock
+    lacie "Could I get-" time 0.5 mood blank5
+    bubble exclamation on bubble_cashier continue
+    audio sfx play glass_crack
+    system call CashierDrop
+    system call NpcATurnUp
+    system call NpcBTurnUp
+    system call NpcGTurnRight
+    pause 2.5
+    chara lock
+    ch1_cashier "Oh, h-hello."
+    hide ui
+    action walk down 32 node Ch1_Cashier speed slow
+    pause 0.3
+    cg show ch1/lacie_cafe position bottom
+    cg pan up time 4
+    ch1_cashier "(What the... this girl startled the soul out of me...)"
+    ch1_cashier "(Her whole vibe is... really unsettling.)"
+    ch1_cashier "(Let's get this over with quickly.)"
+    cg show ch1/lacie_cafe position top time 0
+    lacie "Um... hello?"
+    lacie "Could I-"
+    ch1_cashier "What can I get you?"
+    lacie "${var:ch1.temp_cafe_order_string}?"
+    if var ch1.favorite_dessert == "flan"
+        ch1_cashier "A flan, with anything on top?"
+        cg show ch1/lacie_cafe_2 time 0
+        lacie "Um... just one of those on display."
+        ch1_cashier "Those are just for display. Not for sale."
+        cg show ch1/lacie_cafe_5 time 0
+        lacie "Then... just a flan."
+        ch1_cashier "You need to tell me if you want it with anything..."
+        lacie "Just the flan. Regular."
+        ch1_cashier "...One \"regular\" flan then..."
+        lacie "...Yes, regular."
+    if var ch1.favorite_dessert == "macarons"
+        ch1_cashier "Macarons? What kind? How many?"
+        lacie "Uh... the pink ones?"
+        ch1_cashier "That can be strawberry, or raspberry, or cotton candy."
+        cg show ch1/lacie_cafe_5 time 0
+        lacie "...Maybe one of each?"
+        ch1_cashier "The minimum is 6."
+        lacie "...Okay."
+        ch1_cashier "So two of each."
+        cg show ch1/lacie_cafe_2 time 0
+        lacie "...Two of each, yes."
+    if var ch1.favorite_dessert == "eclair"
+        ch1_cashier "An eclair? What kind?"
+        lacie "Chocolate, please."
+        ch1_cashier "There are no chocolate eclairs left."
+        cg show ch1/lacie_cafe_3 time 0
+        lacie "..."
+        ch1_cashier "Hazelnut is pretty much the same thing."
+        cg show ch1/lacie_cafe_5 time 0
+        lacie "...That one, then."
+        ch1_cashier "Just one?"
+        lacie "...Yeah. One hazelnut eclair."
+        ch1_cashier "Alright."
+
+    if var ch1.favorite_drink == "coffee"
+        cg show ch1/lacie_cafe_3 time 0
+        lacie "...And a coffee."
+        ch1_cashier "What kind of coffee?"
+        cg show ch1/lacie_cafe_4 time 0
+        lacie "Just coffee?"
+        ch1_cashier "Black, latte, with milk...?"
+        ch1_cashier "With whipped cream?"
+        ch1_cashier "Also what size?"
+    if var ch1.favorite_drink == "tea"
+        cg show ch1/lacie_cafe_3 time 0
+        lacie "...And a tea, please."
+        ch1_cashier "Tea, or bubble tea?"
+        cg show ch1/lacie_cafe_4 time 0
+        lacie "(What's bubble tea...?)"
+        cg show ch1/lacie_cafe_6 time 0
+        lacie "Tea, I think."
+        ch1_cashier "What kind? Black, purple, oolong...?"
+        lacie "..."
+        cg show ch1/lacie_cafe_4 time 0
+        lacie "(Which was it...? It was none of those...!)"
+        cg show ch1/lacie_cafe_6 time 0
+        lacie "...Maybe bubble tea then?"
+        ch1_cashier "You still need to choose a flavor."
+        ch1_cashier "...Have you even looked at the menu?"
+    if var ch1.favorite_drink == "milkshake"
+        cg show ch1/lacie_cafe_3 time 0
+        lacie "...And the milkshake."
+        ch1_cashier "What flavor?"
+        cg show ch1/lacie_cafe_5 time 0
+        lacie "Um... strawberry please."
+        ch1_cashier "We're out of strawberries. We'll go with concentrate, okay?"
+        cg show ch1/lacie_cafe_6 time 0
+        lacie "...W-wait... concentrate?"
+        ch1_cashier "Unless you wanna choose something else."
+        cg show ch1/lacie_cafe_4 time 0
+        lacie "Another fruit...?"
+        lacie "(What fruits are there...? I should have thought of this in advance...!)"
+        ch1_cashier "I don't have all day, you know."
+
+    hide ui
+    pause 1
+    cg show ch1/lacie_cafe_6 time 0
+    lacie "...Um... Actually, just a bottle of water... please."
+    if var ch1.favorite_dessert == "flan"
+        ch1_cashier "...A bottle of water and a flan...?"
+    if var ch1.favorite_dessert == "macarons"
+        ch1_cashier "...A water and six macarons?"
+    if var ch1.favorite_dessert == "eclair"
+        ch1_cashier "...A bottle of water and a single eclair?"
+    lacie "Yes."
+    ch1_cashier "Alright."
+    fade out
+    pause 0.5
+    cg hide
+    audio sfx play cash_register
+    pause 1.5
+    ch1_cashier "Have a seat, I'll bring it for you."
+
+    hide ui
+    pause 1
+    system call LacieSit
+    system call NpcARestore
+    system call NpcBRestore
+    system call NpcGRestore
+    camera move (0,48) time 0
+    chara despawn ch1_cashier
+    chara spawn ch1_cashier point cashier_2
+    system call CashierIdle
+    fade in
+    pause 1
+
+    chara unlock
+    bubble ellipsis_silent point bubble_lacie
+    lacie "(...that was embarassing.)" mood sad
+    lacie "(I scared the cashier and couldn't even get what I wanted...)" mood sad4
+    lacie "(I can't even do this much?)" mood sigh
+    hide ui
+    chara lock
+    audio bgm stop time 8
+    pause 1
+
+    system call NpcBTurnBack
+    pause 0.6
+    system call NpcBRestore
+    pause 0.5
+    system call NpcBTurnBack
+    pause 0.4
+    system call NpcBRestore
+    pause 0.5
+
+    bubble talk on NpcA offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_a"
+    unknown "What is it? Did you notice that girl too?"
+    bubble talk on NpcB offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_b"
+    unknown "Is it just me or does she seem strange to you?"
+    bubble talk on NpcA offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_a"
+    unknown "I was just about to say the same thing."
+    unknown "She gives off creepy vibes..."
+    hide ui
+    chara unlock
+    bubble ellipsis point bubble_lacie
+    lacie "(This again...? Just ignore them...)" mood bothered
+    hide ui
+    pause 0.5
+    chara lock
+    audio bgm play ch1_anxiety
+    bubble talk on NpcA offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_a"
+    unknown "Do you wanna move?"
+    bubble talk on NpcB offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_b"
+    unknown "I'd feel impolite switching tables now, but..."
+    unknown "Yeah, let's go."
+    bubble talk on NpcA offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_a"
+    unknown "Go go, before she curses us or something!"
+    hide ui
+    bubble laugh on NpcA offset (0,-32) continue
+    bubble laugh on NpcB offset (0,-32) continue
+    pause 0.8
+    fade out
+    pause 0.5
+    lacie "..."
+    lacie "(Lacie... relax.)"
+    lacie "(It's just two girls. You can put up with it.)"
+    system call GirlsABStandUp
+    chara spawn ch1_npc_a point npc_a
+    chara spawn ch1_npc_b point npc_b
+    action walk up 64 node Ch1_Npc_A speed veryslow continue
+    action walk up 64 node Ch1_Npc_B speed veryslow continue
+    fade in
+    camera move (0,-32) time 1
+    pause 0.5
+    system call GirlsABSit
+    pause 1.5
+    system call NpcCTurnDown
+    bubble talk on NpcC offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_c"
+    unknown "That girl.. isn't she the daughter of the family who lives on the next block?"
+    system call NpcDTurnDown
+    bubble talk on NpcD offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_d"
+    unknown "Oh my goodness. You're right."
+    system call NpcCRestore
+    system call NpcDRestore
+    bubble talk on NpcC offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_c"
+    unknown "Man... Just being around her gives me the chills."
+    bubble talk on NpcD offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_d"
+    unknown "What is it about her, I wonder?"
+    bubble talk on NpcC offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_c"
+    unknown "Whatever! She's a freak."
+    hide ui
+    pause 1.5
+    system call NpcETurnDown
+    bubble talk on bubble_npc_e offset (0,0) continue
+    chara rename unknown to "misc.characters.npc_e"
+    unknown "Mommy can we leave? That lady..."
+    bubble talk on bubble_npc_f offset (0,0) continue
+    chara rename unknown to "misc.characters.npc_f"
+    unknown "Shh! Don't look in her direction. Finish your food and we'll go."
+    bubble talk on bubble_npc_e offset (0,0) continue
+    chara rename unknown to "misc.characters.npc_e"
+    unknown "I don't want it anymore, I wanna go..."
+    system call NpcERestore
+    hide ui
+    pause 1.5
+    bubble talk on NpcD offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_d"
+    unknown "I've met her brother though, he was in one of my classes."
+    unknown "She's nothing like him."
+    bubble talk on bubble_npc_e offset (0,0) continue
+    chara rename unknown to "misc.characters.npc_e"
+    unknown "Mommy she's scary..."
+    bubble talk on NpcC offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_c"
+    unknown "I pity the poor people who have to share a classroom with her."
+    bubble talk on NpcD offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_d"
+    unknown "Imagine what her family must feel having a daughter with such a reputation."
+    bubble talk on NpcC offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_c"
+    unknown "Oh man... and after what happened..."
+    bubble talk on NpcD offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_d"
+    unknown "Sucks to have a broken family. They don't deserve that."
+    bubble talk on NpcC offset (0,-48) continue
+    chara rename unknown to "misc.characters.npc_c"
+    unknown "It's probably her fault, don't you think?"
+    hide ui
+
+    audio bgm stop time 0
+    audio sfx play cafe_stand_up
+    system call LacieGetUp
+    system call NpcA2TurnDown
+    system call NpcB2TurnDown
+    system call NpcCTurnDown
+    system call NpcDTurnDown
+    system call NpcETurnDown
+    system call NpcGTurnRight
+    system call CashierTurn
+    pause 1.2
+    action walk up 48 node Lacie speed veryslow
+    pause 0.5
+    action walk left 272 node Lacie
+    action walk down 120 node Lacie
+    chara despawn lacie
+    audio sfx play door
+    pause 0.2
+    audio sfx play door_chime
+    pause 1
+
+    fade out
+    pause 2
+
+    chara rename unknown off
+    lacie "(Ah... I couldn't even get what I paid for...)"
+
+    event call ch1_intermission_1
+    fade out time 0
+
+    hide ui
+    pause 0.5
+    audio bgm override on silent
+    audio sfx play gate
+    pause 0.5
+    set ch1.checked_save = true
+    move to Ch1_Home_Exterior_Front point front_gate
+    pause 0.5
+    objective add ch1.go_to_room
+    objective silence
+    item add ch1.cellphone silent
+    item add ch1.todolist silent
+    fade in
+    chara unlock
+    lacie "Sigh... that was terrible." mood reflective4
+    action walk up 40 speed veryslow continue
+    lacie "I knew it was a bad idea to go out."
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    cg show ch1/ch1_todolist scene
+    pause 1
+    set ch1.todolist_task1_done = true
+    cg show ch1/ch1_todolist scene
+    chara lock
+    pause 0.5
+    lacie "At least that's out of the way."
+    cg hide
+    chara unlock
+    lacie "I need to lie down for a minute..." mood reflective6
+    hide ui
+    pause 1
+    action turn left
+    pause 0.5
+    camera move (-64,0) time 1
+    pause 0.5
+    lacie "...Looks like we got a visitor, though." mood blank1
+    item add ch1.bird_food silent
+    set ch1.took_birdfood = true
+    audio bgm override off
+    audio bgm play ch1_home
+    system tutorial movement_lacie
+    camera reset
+    set ch1.checked_save = false

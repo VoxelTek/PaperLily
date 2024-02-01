@@ -1,0 +1,23 @@
+label START
+    if var general.chapter == 1 jump CH1 else jump MOVE
+
+label CH1
+    if var ch1.seen_bus jump FAIL_BUS
+    if var ch1.home_ritualstarted
+        if var general.part_of_day == "evening"
+            audio bgm stop time 3
+            audio bgm override on ch1_home_investigation_q
+            audio bgm play ch1_home_investigation_q
+        jump MOVE
+    lacie "I'd rather go inside right now." mood reflective8
+    end
+
+
+label MOVE
+    move to Ch1_Home_Exterior_Back point backyard_gate
+    end
+
+label FAIL_BUS
+    move to Ch1_Home_Exterior_Back point backyard_gate
+    event call ch1_event_busignored
+    end

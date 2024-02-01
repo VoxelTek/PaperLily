@@ -1,0 +1,5 @@
+label START
+    audio ambiance stop
+    move to Ch1_Forest_LockedSite_Entrance point north_entrance
+    system menu on
+    end

@@ -1,0 +1,193 @@
+label START
+    if var ch1.facility_seen_hiro_call end
+    if var ch1.facility_dungeon_2_released end
+    if var ch1.facility_lights_off end
+    move to Ch1_Facility_B2F_Bathroom point entrance time 0 cutscene
+    chara spawn lacie point entrance
+    camera track node lacie
+    fade in
+    pause 0.5
+    action walk up 48 node lacie continue
+    if character sai
+        pause 0.2
+        chara spawn sai point entrance
+        pause 1
+        lacie "(Huh... A bathroom?)" mood blank4
+        hide ui
+        action turn down node lacie
+        camera unlock
+        camera move (0,48) time 1
+        lacie "Um... excuse me." mood blank5
+        bubble question on sai
+        lacie "Could you wait outside?"
+        sai "Wha-? Oh. Of course." mood blank11
+        sai "I- ...I guess I'll stay out there." mood confused11
+        sai "Scream if you need me." mood confused11
+        lacie "...I won't." mood blank3
+        hide ui
+        pause 0.5
+        action turn down node sai
+        pause 0.2
+        audio bgm stop time 4
+        audio sfx play door
+        pause 0.3
+        chara despawn sai
+        pause 2
+        camera move (0,-64) time 2
+        action walk up 48 node lacie
+        lacie "(Now I get to have some time away from that guy.)" mood blank2
+        action turn down node lacie
+        lacie "(Is it really safe to have him around?)" mood blank4
+        action turn up node lacie
+    else
+        audio bgm stop time 4
+        pause 1
+        lacie "(A bathroom?)" mood blank2
+        action turn down node lacie
+        lacie "(I hope that guy won't find me here.)" mood default
+        hide ui
+        action walk up 48 node lacie
+        lacie "(I don't really trust him... Hopefully he's not searching for me...)" mood blank7
+    hide ui
+    pause 0.5
+
+
+    lacie "(Hiro would tell me to have a bit of faith in others, but...)" mood concerned6
+    hide ui
+    pause 0.5
+    action walk to point cutscene_door_3 node lacie
+    action turn up node lacie
+    pause 0.5
+    event call misc_stall_3
+    system refresh
+    pause 1
+    lacie "..." mood blank2
+    action turn down node lacie
+    lacie "(I wonder if I could ask Hiro.)" mood default
+    lacie "(Is it even possible to call from here?)" mood thinking3
+    if not var ch1.forest_lockedsite_cellphone
+        lacie "(I still have no signal... but... that didn't matter last time.)" mood thinking3
+    hide ui
+    pause 1
+    if var ch1.forest_lockedsite_cellphone
+        lacie "Oh... I'm out of battery." mood concerned12
+        lacie "That's not good... I suppose using it as a flashlight killed it." mood concerned8
+        lacie "...Oh well." mood sigh
+        set ch1.facility_seen_hiro_call = true
+        party switch lacie
+        move to Ch1_Facility_B2F_Bathroom point cutscene_door_3
+        end
+    lacie "I'll give it a try." mood blank1
+    hide ui
+    pause 2
+    event call ch1_phone_dialing_good
+    hiro "Lace!" mood phone
+    audio bgm play ch1_hiro
+    lacie "Oh good..." mood sigh
+    lacie "Thank goodness I can reach you, Hiro..." mood sigh2
+    hiro "Are you alright!?"
+    hiro "What happened!?"
+    hiro "Are you safe!?"
+    lacie "Yes, I'm okay." mood blank1
+    lacie "(Though I did fall down the stairs and wake up in some sort of dungeon...)" mood blank2
+    if character sai
+        lacie "(and there's a strange guy following me everywhere...)" mood hide2
+    else
+        lacie "(...and there was a strange guy following me everywhere...)" mood hide2
+    action turn right node lacie
+    lacie "(...and Rune said there's no way out.)" mood hide3
+    hide ui
+    pause 0.5
+    action walk to point cutscene_door_4 node lacie
+    action turn up node lacie
+    pause 0.5
+    event call misc_stall_4
+    system refresh
+    pause 1
+    lacie "..." mood concerned7
+    action turn down node lacie
+    lacie "Everything is okay, don't worry." mood bothered
+    hiro "Thank god."
+    hiro "Is everything alright? Why are you whispering?"
+    if character sai
+        lacie "Because there's someone right outside, and..." mood blank3
+    else
+        lacie "Because someone might be looking for me." mood blank3
+    hiro "An enemy!?"
+    if character sai
+        lacie "No, well... he says he's not." mood default
+
+        lacie "And now he's following me around." mood blank3
+        hiro "You made a friend!?"
+        lacie "No." mood reflective2
+        lacie "I don't really trust him." mood reflective7
+        hiro "But maybe it's better to have company! He might be willing to tag along and help!"
+        lacie "But... that's why it's strange." mood blank8
+        lacie "Why is he willing to tag along?" mood concerned9
+        lacie "...You know how people act around me, Hiro..." mood sad8
+        lacie "And he's just acting...like nothing is wrong with me." mood thinking2
+        hiro "Hmmm..."
+        hiro "You sound conflicted."
+        action turn right node lacie
+        lacie "Well... I don't really care, I just..." mood default
+        lacie "He's just shady." mood blank1
+        hide ui
+        pause 0.5
+        action walk to point cutscene_door_5 node lacie
+        action turn up node lacie
+        pause 0.5
+        event call misc_stall_5
+        system refresh
+        pause 1
+
+
+
+
+        lacie "..." mood concerned4
+        audio bgm volume 0 time 4
+        hiro "Well, tell you what. It's your choice."
+        hiro "You can have him tag along and see how it plays out..."
+        hiro "...or you can ditch him."
+    else
+        lacie "No, well... he said he's not." mood default
+        lacie "But... it doesn't matter. I already got rid of him." mood blank3
+        hiro "Hmmm..."
+        hiro "Well, I can't condone murder but..."
+        lacie "No! Not like that! Hiro!" mood concerned2
+        lacie "He's still somewhere around... I just slipped away for a bit." mood concerned7
+        hide ui
+        audio bgm volume 0
+        pause 2
+
+        lacie "..." mood blank7
+        hiro "Well, tell you what."
+        hiro "Next time he finds you, you could try locking him up somewhere."
+    action turn down node lacie
+    lacie "Huh... it's not like you to suggest something like that." mood blank5
+    hide ui
+    pause 1
+    audio bgm volume 1
+    if character sai
+        hiro "Well, I personally think you should have a bit of faith in him! But it's up to you."
+    else
+        hiro "Well, I personally think you could go back and apologize."
+        hiro "Nothing wrong with making a friend, right? Still, it's up to you."
+    lacie "(Yeah... that's more like it.)" mood sigh2
+    hide ui
+    pause 1
+
+    lacie "I should go." mood blank7
+    hiro "Be careful, Lace."
+    audio bgm stop time 4
+    hiro "Get back home safely."
+    lacie "Yeah." mood blank8
+    event call ch1_phone_hangup
+    bubble ellipsis on lacie
+    set ch1.facility_hiro_called = true
+    set ch1.facility_seen_hiro_call = true
+    if character sai
+        party switch lacie
+        move to Ch1_Facility_B2F_Bathroom point cutscene_door_5
+    else
+        move to Ch1_Facility_B2F_Bathroom point cutscene_door_4
+

@@ -1,0 +1,33 @@
+label START
+    if repeat end
+    if not var general.chapter == 1 end
+    if not objective ch1.take_bus inprogress end
+    if var ch1.bus_not_there jump ALREADY_LEFT
+    if not var general.chapter == 1 end
+    if not var ch1.home_ritualbuswaiting end
+    action turn down node Player
+    pause 0.5
+    camera move (0,240) time 2.2
+    pause 3
+    lacie "How did it get here so fast?" mood concerned6
+    hide ui
+    camera move (0,-240) time 0.5
+    camera reset
+    system menu on
+    end
+
+label ALREADY_LEFT
+    action turn down node Player
+    pause 0.5
+    camera move (0,240) time 2.2
+    pause 1
+    lacie "The bus is not there... Did it already leave?" mood thinking2
+    lacie "Or did it never come?" mood thinking4
+    hide ui
+    camera move (0,-240) time 0.5
+    pause 0.5
+    lacie "Does this mean this ritual is no good either?" mood concerned10
+    lacie "...This is bad..." mood concerned11
+    hide ui
+    pause 1
+    event call ch1_event_busfail

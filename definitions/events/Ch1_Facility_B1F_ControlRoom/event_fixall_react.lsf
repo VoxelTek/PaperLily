@@ -1,0 +1,11 @@
+label START
+    system achievement CH1_ELECTRICIAN
+    if repeat end
+    hide ui
+    pause 1
+    lacie "Ah, that's satisfying." mood content
+    sai "Good job!" mood smile6
+    hide ui
+    objective complete ch1.facility_fix_elevator
+    objective complete ch1.facility_remove_flood
+    end

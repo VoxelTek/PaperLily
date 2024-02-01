@@ -1,0 +1,8 @@
+label START
+    if not var ch1.forest_station_tracks_stage == 2 end
+    if var ch1.forest_station_heard_mid end
+    set ch1.forest_station_heard_mid = true
+    if var ch1.forest_station_correct_path == 2
+        audio sfx play ch1_bugs
+    else
+        audio sfx play ch1_strangle

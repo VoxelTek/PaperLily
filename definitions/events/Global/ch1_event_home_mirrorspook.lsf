@@ -1,0 +1,21 @@
+label START
+    if not var ch1.home_missed_bus end
+    if repeat end
+    action walk to point spook_mirror
+    action turn up
+    pause 1.5
+    action call spook_mirror_start
+    pause 1
+    action walk down 16 backwards continue
+    action call spook_mirror_end
+    pause 1
+    lacie "What...?" mood surprised4
+    hide ui
+    pause 0.8
+    action turn left
+    pause 0.4
+    action turn right
+    pause 0.4
+    action turn down
+    pause 1.2
+    lacie "I really shouldn't look into the mirror at night, should I..." mood scared3
