@@ -1,0 +1,4 @@
+label START
+    ch1_spider "That's the key to this room."
+    ch1_spider "I shall get rid of it, given that you already made it in."
+    item remove ch1.mk_key_wisteria

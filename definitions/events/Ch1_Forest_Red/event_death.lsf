@@ -44,7 +44,7 @@ label FINALLY
         "Retry"
             system retry-load
             end
-        "Skip" if var persistent.lacie_redbridge_deaths >= 3
+        "Skip" if system show_skip_option
             system minigame end
             cg hide time 0
             fade in time 1
@@ -53,4 +53,5 @@ label FINALLY
             event call event_react_spikes
             end
         "Give Up"
+            system retry-clear
             system title-screen

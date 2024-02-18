@@ -158,9 +158,8 @@ label START
     lacie "I don't think anyone will come." background none
     hide ui
 
-    if var general.aoi_love < 5
-        event queue ch1_ending_1_6
-        end
+    if not var general.aoi_love jump ENDING
+    if var general.aoi_love < 5 jump ENDING
 
     fade out time 2
     set ch1.forest_fairyring_show_single_fish = false
@@ -182,4 +181,5 @@ label START
     hide ui
     pause 2
     aoi "Oh... oh god..." mood melt2
+label ENDING
     event call ch1_ending_1_6

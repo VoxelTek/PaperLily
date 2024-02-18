@@ -1,6 +1,6 @@
 label START
     if var ch1.forest_entrance_south_took_fragment jump STILL
-    "A swingset moves eerily, though there's no wind."
+    "A swing set moves eerily, though there's no wind."
     "There's something underneath..."
     choice "Take ${item:ch1.doorknob_library_fragment}?"
         "Yes"

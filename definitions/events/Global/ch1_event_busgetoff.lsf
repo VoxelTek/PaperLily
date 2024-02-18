@@ -31,3 +31,4 @@ label START
     objective clear
     objective add ch1.explore_forest
     system achievement CH1_FOREST
+    system retry-save

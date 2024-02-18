@@ -1,4 +1,5 @@
 label START
+    if var ch1.forest_entrance_south_seen_station_stairs_present end
     if not var ch1.forest_entrance_south_seen_station_stairs_missing end
     if not var ch1.forest_entrance_south_opened_station end
     if repeat end

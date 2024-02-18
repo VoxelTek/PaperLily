@@ -24,7 +24,7 @@ label START
             sai "I do a lot of rituals." mood blank10
             lacie "A lot of rituals?" mood confused2
             lacie "And... you've survived?" mood disappointed3
-            sai "You almost look dissapointed." mood smile10
+            sai "You almost look disappointed." mood smile10
             end
         "Never mind"
             jump EXTRA

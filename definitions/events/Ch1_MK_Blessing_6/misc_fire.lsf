@@ -1,5 +1,0 @@
-label START
-    if repeat
-        "There's no escape."
-        end
-    "There's flames all around."

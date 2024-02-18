@@ -69,7 +69,7 @@ label INTRO
     rune "You however..." mood tilt
     lacie "...What about me?" mood concerned
     rune "Even though you're a human, you smell a bit like..."
-    rune "I can't speak of them, but... it's someone veeeery bad." font small
+    rune "I can't speak of them, but... it's someone veeeery bad." font dialogue_small
     lacie "Who is it?" mood surprised
     rune "It's 1000 years of bad luck to talk about it." mood sad
     lacie "Please, I really need help." mood sad2

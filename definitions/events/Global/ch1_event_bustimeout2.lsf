@@ -52,5 +52,6 @@ label START
     pause 1
     fade out
     move to Ch1_Bus_C point start time 0
+    system menu on
     objective clear
     fade in

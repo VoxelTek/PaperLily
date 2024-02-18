@@ -40,7 +40,7 @@ label CONT
     ch1_spider "So she turned me into... this."
     ch1_spider "It's pathetic."
     if character sai
-        sai "Damn, she must be have crazy powers" mood blank5
+        sai "Damn, she must have crazy powers." mood blank5
     else
         lacie "Is she really that powerful?" mood blank8
     ch1_spider "Not quite."

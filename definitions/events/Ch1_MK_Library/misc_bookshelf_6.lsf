@@ -11,9 +11,9 @@ label START
     pause 0.5
     audio sfx play paper
     pause 0.5
-    "The 36th experiment has failed as well.\" color \"#80DEEA"
-    "I'm TELLING YOU, she's practically just a used tissue.\" color \"#FFAB91"
-    "Useless, USELESS demon. WE'RE WASTING OUR TIME!\" color \"#FFAB91"
-    "Calm down. I can't work when you're so noisy.\" color \"#80DEEA"
-    "Go play with your other dolls.\" color \"#80DEEA"
-    "Maybe I WILL.\" color \"#FFAB91"
+    "The 36th experiment has failed as well." color "#80DEEA"
+    "I'm TELLING YOU, she's practically just a used tissue." color "#FFAB91"
+    "Useless, USELESS demon. WE'RE WASTING OUR TIME!" color "#FFAB91"
+    "Calm down. I can't work when you're so noisy." color "#80DEEA"
+    "Go play with your other dolls." color "#80DEEA"
+    "Maybe I WILL." color "#FFAB91"

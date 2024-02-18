@@ -55,6 +55,7 @@ label START
         "One Eternity Later..." format center position center background none
         set ch1.facility_flood_engaged = true
         set ch1.facility_bucket_solution_complete = true
+        set ch1.facility_b2f_hallway_e_gate_unlocked = true
         item remove ch1.bucket
         move to Ch1_Facility_Main_Hall point bucket_cutscene_camera cutscene
         action call show_lacie_liedown

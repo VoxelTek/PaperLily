@@ -64,7 +64,7 @@ label START
     system call SaiDontSmile
     sai "That's ridiculous. Salt has no effect." mood happy6
     lacie "..." mood embarassed
-    lacie "I read it somewhere..." font small
+    lacie "I read it somewhere..." font dialogue_small
     sai "This is the funniest shit that happened all week." mood happy6
     lacie "..." mood embarassed3
     sai "Sorry, sorry!" mood happy8

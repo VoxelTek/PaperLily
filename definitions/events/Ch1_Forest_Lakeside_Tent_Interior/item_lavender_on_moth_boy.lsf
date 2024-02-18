@@ -1,7 +1,7 @@
 label START
     if var ch1.forest_moths_upset end
     chara set ch1_moth_boy at right
-    if var ch1.forest_moths_clear
+    if var ch1.forest_moths_got_doorknob
         ch1_moth_boy "Please, we already gave you the doorknob." mood annoyed6
         ch1_moth_boy "What more do you want?" mood annoyed4
         end

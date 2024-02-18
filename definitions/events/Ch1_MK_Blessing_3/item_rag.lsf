@@ -1,5 +1,0 @@
-label START
-    if var ch1.temp_ending_1_12_took_compress end
-    set ch1.temp_ending_1_12_took_compress = true
-    system refresh
-    item add ch1.mk_compress_activated

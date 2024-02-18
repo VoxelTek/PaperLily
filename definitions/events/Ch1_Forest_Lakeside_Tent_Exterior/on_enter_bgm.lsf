@@ -1,5 +1,6 @@
 label START
     if not var ch1.forest_moths_seen
+        system retry-save
         audio bgm stop
         end
     if var ch1.forest_moths_killed_caterpillar

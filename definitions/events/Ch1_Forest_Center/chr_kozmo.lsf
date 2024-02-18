@@ -19,7 +19,7 @@ label START
     lacie "Yeah... I didn't." mood blank7
     kozmo "..."
     lacie "..." mood blank6
-    kozmo "Th-This interaction is not enjoyable." font small
+    kozmo "Th-This interaction is not enjoyable." font dialogue_small
     lacie "It's nice to meet you, Kozmo." mood blank3
     kozmo "...!" mood gasp
     kozmo "L-l-likewise, ...erm...?" mood sparkle

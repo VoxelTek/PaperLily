@@ -30,7 +30,7 @@ label START
     aoi "Let's see... I only know the things everyone talks about." mood worried5
     aoi "For one, fairies live in fairy rings, and they're really nasty." mood worried6
     lacie "(Fairies...)" mood thinking3
-    aoi "They look nasty too, they have this egg-shaped head that's seperated from their body, and they're white, and they have big teeth! And some don't have eyes!" mood sad9
+    aoi "They look nasty too, they have this egg-shaped head that's separated from their body, and they're white, and they have big teeth! And some don't have eyes!" mood sad9
     lacie "..." mood thinking4
     aoi "But even without the fairies, winding up inside of a fairy ring is..." mood scared4
     aoi "Well, they say you get stuck here for 7 years." mood scared6
@@ -69,7 +69,7 @@ label START
                 aoi "That's so nice, Lacie!" mood awkward2
             aoi "But no, I'll be alright. I'll just remake my feet if they start being unusable."
             aoi "It just burns but that's okay, I'm used to burns." mood awkward3
-            aoi "...I'm used to burns..." font small mood scared7
+            aoi "...I'm used to burns..." font dialogue_small mood scared7
             lacie "Um... okay." mood confused2
         "No"
             lacie "(Best not...)" mood concerned5

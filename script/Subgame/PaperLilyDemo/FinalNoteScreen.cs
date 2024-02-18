@@ -11,24 +11,25 @@ using LacieEngine.UI;
 #nullable disable
 namespace LacieEngine.Subgame.ProjectKat
 {
-  public class FinalNoteScreen : SimpleScreen
-  {
-    [Export(PropertyHint.None, "")]
-    public AudioStream Bgm;
-    private AnimationPlayer nAnimation;
-
-    public override void _Ready()
+    public class FinalNoteScreen : SimpleScreen
     {
-      base._Ready();
-      this.SetProcessInput(false);
-      Game.Audio.PlayBgm(this.Bgm);
-      this.nAnimation = this.GetNode<AnimationPlayer>((NodePath) "CenterContainer/VBoxContainer/CenterContainer/Arrow/Animation");
-    }
+        [Export(PropertyHint.None, "")]
+        public AudioStream Bgm;
+        private AnimationPlayer nAnimation;
 
-    public void EnableContinue()
-    {
-      this.nAnimation.PlayFirstAnimation();
-      this.SetProcessInput(true);
+        public override void _Ready()
+        {
+            base._Ready();
+            this.SetProcessInput(false);
+            Game.Audio.PlayBgm(this.Bgm);
+            this.nAnimation = this.GetNode<AnimationPlayer>((NodePath)"CenterContainer/VBoxContainer/CenterContainer/Arrow/Animation");
+        }
+
+        public void EnableContinue()
+        {
+            this.nAnimation.PlayFirstAnimation();
+            GameState.Delete("retrysave");
+            this.SetProcessInput(true);
+        }
     }
-  }
 }

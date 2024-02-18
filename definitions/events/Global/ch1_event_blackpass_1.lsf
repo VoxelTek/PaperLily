@@ -22,3 +22,4 @@ label START
     lacie "(...But it seems I can't leave until I see it through to the end.)" mood default
     objective clear
     objective add ch1.blackpass_1_leave
+    system retry-save

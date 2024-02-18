@@ -4,6 +4,7 @@ label START
         lacie "I went through the trouble of opening that gate but..." mood concerned4
         lacie "I don't think there's a reason to go in there." mood concerned7
         jump DONT_GO_IN
+    set ch1.forest_lockedsite_cellphone = false
     if not item ch1.candleman_candle
         if not item ch1.candleman_candle_blue
             if not item ch1.forest_lamp_full

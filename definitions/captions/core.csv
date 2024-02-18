@@ -114,7 +114,8 @@ system.settings.revertall,Revert Settings to Default
 system.settings.notrecommended,Not recommended
 system.settings.restartrequired,Restart required
 system.settings.current,Current: {0}
-system.settings.game.skipenabled,Skip Dialogue
+system.settings.game.skipenabled,Hold to Fast Forward
+system.settings.game.showskipoption,Show Skip Option
 system.settings.game.language,Language Settings
 system.settings.game.language.select,Select Language
 system.settings.game.language.select.extra,Unofficial Translations

@@ -54,4 +54,4 @@ label FINALLY
     pause 2
     fade in
     audio bgm override off
-    end
+    system retry-save

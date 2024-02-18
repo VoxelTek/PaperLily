@@ -94,7 +94,7 @@ label START
     action walk up 128 node Lacie speed slow
     pause 0.5
     chara unlock
-    lacie "Could I get-" time 0.5 mood blank5
+    lacie "Could I get-" mood blank5 time 0.5
     bubble exclamation on bubble_cashier continue
     audio sfx play glass_crack
     system call CashierDrop
@@ -226,7 +226,7 @@ label START
 
     chara unlock
     bubble ellipsis_silent point bubble_lacie
-    lacie "(...that was embarassing.)" mood sad
+    lacie "(...that was embarrassing.)" mood sad
     lacie "(I scared the cashier and couldn't even get what I wanted...)" mood sad4
     lacie "(I can't even do this much?)" mood sigh
     hide ui

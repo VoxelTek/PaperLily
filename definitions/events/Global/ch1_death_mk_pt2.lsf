@@ -15,9 +15,10 @@ label START
             set ch1.mk_boss_blessings_stage = 0
             move to Ch1_MK_Blessings point entrance
             end
-        "Skip" if var persistent.lacie_mk_deaths >= 3
+        "Skip" if system show_skip_option
             set general.hp.lacie = general.maxhp.lacie
             system minigame ch1_battle_missknives_pt2
             end
         "Give Up"
+            system retry-clear
             system title-screen

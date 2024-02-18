@@ -27,6 +27,7 @@ label START
         "B4F" if not var ch1.facility_elevator_location == 4
             audio sfx play button
             if not var ch1.facility_elevator_on jump NO_POWER
+            system retry-save
             event call ch1_ending_1_11
             end
         "Never mind"

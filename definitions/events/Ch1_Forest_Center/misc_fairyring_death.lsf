@@ -85,6 +85,7 @@ label START
     pause 0.5
     action call lacie_wiping_2
     pause 3
+    system save-copy retrysave retrybak
     lacie "Now... where am I?" mood blank8
     objective add ch1.fairyring_escape
     action call lacie_wiping_done
@@ -114,7 +115,7 @@ label FAILURE
     hide ui
     audio ambiance stop time 4
     pause 6
-    lacie "I tried kicking around and fighitng it as much as I could." background none
+    lacie "I tried kicking around and fighting it as much as I could." background none
     lacie "But soon enough, my skin started burning, confirming my fears." background none
     lacie "The more I squirmed, the more the digestive juices got all over me." background none
     lacie "The more I screamed, the more the gas burned my nose and throat from inside." background none

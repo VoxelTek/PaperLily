@@ -775,11 +775,6 @@ Items = "ch1.doorknob_return
 ch1.doorknob_graveyard"
 Nodes = "chr_rune"
 
-[node name="item_number_on_rune" type="Node" parent="Other/Events/items_rune"]
-script = ExtResource( 33 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_rune"
-
 [node name="item_candle_on_rune" type="Node" parent="Other/Events/items_rune"]
 script = ExtResource( 33 )
 Items = "ch1.candleman_candle

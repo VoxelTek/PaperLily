@@ -11,84 +11,89 @@ using System;
 #nullable disable
 namespace LacieEngine.StoryPlayer
 {
-  [Serializable]
-  public class StoryPlayerIfCommand : StoryPlayerCommand
-  {
-    [Inject]
-    [NonSerialized]
-    private IVariableManager Variables;
-    [Inject]
-    [NonSerialized]
-    private IItemManager Items;
-    [Inject]
-    [NonSerialized]
-    private IObjectiveManager Objectives;
-
-    public LogicStatement.EType Type { get; set; }
-
-    public LogicStatement.EOperator Operator { get; set; }
-
-    public bool Negate { get; set; }
-
-    public string Variable { get; set; }
-
-    public string Value { get; set; }
-
-    public string Item { get; set; }
-
-    public int Amount { get; set; }
-
-    public StoryPlayerFlowCommand Jump { get; set; }
-
-    public StoryPlayerFlowCommand Else { get; set; }
-
-    public override void Execute(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
+    [Serializable]
+    public class StoryPlayerIfCommand : StoryPlayerCommand
     {
-      if (this.MakeLogicStatement().Evaluate())
-        this.Jump.Execute(storyPlayer);
-      else
-        this.Else.Execute(storyPlayer);
-    }
+        [Inject]
+        [NonSerialized]
+        private IVariableManager Variables;
+        [Inject]
+        [NonSerialized]
+        private IItemManager Items;
+        [Inject]
+        [NonSerialized]
+        private IObjectiveManager Objectives;
 
-    public LogicStatement MakeLogicStatement()
-    {
-      LogicStatement logicStatement = new LogicStatement();
-      if (this.Type == LogicStatement.EType.Variable)
-      {
-        logicStatement.Type = LogicStatement.EType.Variable;
-        logicStatement.Variable = this.Variable;
-        logicStatement.Value = this.Value;
-        logicStatement.Operator = this.Operator;
-      }
-      else if (this.Type == LogicStatement.EType.Item)
-      {
-        logicStatement.Type = LogicStatement.EType.Item;
-        logicStatement.Item = this.Item;
-        logicStatement.Amount = this.Amount > 0 ? this.Amount : 1;
-      }
-      else if (this.Type == LogicStatement.EType.Character)
-      {
-        logicStatement.Type = LogicStatement.EType.Character;
-        logicStatement.Value = this.Value;
-      }
-      else if (this.Type == LogicStatement.EType.HasObjective)
-      {
-        logicStatement.Type = LogicStatement.EType.HasObjective;
-        logicStatement.Value = this.Value;
-      }
-      else if (this.Type == LogicStatement.EType.ObjectiveDone)
-      {
-        logicStatement.Type = LogicStatement.EType.ObjectiveDone;
-        logicStatement.Value = this.Value;
-      }
-      else if (this.Type == LogicStatement.EType.Repeat)
-      {
-        logicStatement.Type = LogicStatement.EType.Repeat;
-        logicStatement.Value = this.Event.Id;
-        logicStatement.Amount = this.Amount > 0 ? this.Amount : 2;
-      }
-      logicStatement.Not = this.Negate;
-      return logicStatement;
+        public LogicStatement.EType Type { get; set; }
+
+        public LogicStatement.EOperator Operator { get; set; }
+
+        public bool Negate { get; set; }
+
+        public string Variable { get; set; }
+
+        public string Value { get; set; }
+
+        public string Item { get; set; }
+
+        public int Amount { get; set; }
+
+        public StoryPlayerFlowCommand Jump { get; set; }
+
+        public StoryPlayerFlowCommand Else { get; set; }
+
+        public override void Execute(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
+        {
+            if (this.MakeLogicStatement().Evaluate())
+                this.Jump.Execute(storyPlayer);
+            else
+                this.Else.Execute(storyPlayer);
+        }
+
+        public LogicStatement MakeLogicStatement()
+        {
+            LogicStatement logicStatement = new LogicStatement();
+            if (this.Type == LogicStatement.EType.Variable)
+            {
+                logicStatement.Type = LogicStatement.EType.Variable;
+                logicStatement.Variable = this.Variable;
+                logicStatement.Value = this.Value;
+                logicStatement.Operator = this.Operator;
+            }
+            else if (this.Type == LogicStatement.EType.Item)
+            {
+                logicStatement.Type = LogicStatement.EType.Item;
+                logicStatement.Item = this.Item;
+                logicStatement.Amount = this.Amount > 0 ? this.Amount : 1;
+            }
+            else if (this.Type == LogicStatement.EType.Character)
+            {
+                logicStatement.Type = LogicStatement.EType.Character;
+                logicStatement.Value = this.Value;
+            }
+            else if (this.Type == LogicStatement.EType.HasObjective)
+            {
+                logicStatement.Type = LogicStatement.EType.HasObjective;
+                logicStatement.Value = this.Value;
+            }
+            else if (this.Type == LogicStatement.EType.ObjectiveDone)
+            {
+                logicStatement.Type = LogicStatement.EType.ObjectiveDone;
+                logicStatement.Value = this.Value;
+            }
+            else if (this.Type == LogicStatement.EType.Repeat)
+            {
+                logicStatement.Type = LogicStatement.EType.Repeat;
+                logicStatement.Value = this.Event.Id;
+                logicStatement.Amount = this.Amount > 0 ? this.Amount : 2;
+            }
+            else if (this.Type == LogicStatement.EType.System)
+            {
+                logicStatement.Type = LogicStatement.EType.System;
+                logicStatement.Value = this.Value;
+            }
+            logicStatement.Not = this.Negate;
+            return logicStatement;
+        }
     }
-  }
 }

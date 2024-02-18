@@ -1,5 +1,4 @@
 label START
-    if item ch1.forest_station_number jump CLEANUP
     if item ch1.scissors jump CLEANUP
     if item ch1.forest_adapter jump CLEANUP
     if item ch1.forest_bolt_cutter jump CLEANUP
@@ -20,7 +19,6 @@ label CLEANUP
     lacie "I'm carrying too many things around..." mood blank2
     "(You got rid of some items.)"
     hide ui
-    item remove ch1.forest_station_number
     item remove ch1.scissors
     item remove ch1.forest_adapter
     item remove ch1.forest_bolt_cutter
@@ -35,3 +33,4 @@ label CLEANUP
     item remove ch1.red_pot
     item remove ch1.forest_pot
     item remove ch1.forest_lockedsite_key amount 3
+    item remove ch1.forest_stone_cure

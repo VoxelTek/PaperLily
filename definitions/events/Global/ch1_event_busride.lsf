@@ -3,7 +3,7 @@ label START
     pause 0.5
     action turn up
     pause 1
-    lacie "I'll be back soon... I hope." mood concerned5
+    lacie "I'll be back soon... maybe." mood concerned5
     hide ui
     pause 0.5
     action turn down

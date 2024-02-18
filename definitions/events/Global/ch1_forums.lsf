@@ -52,7 +52,7 @@ label POST_3
     "[color=green]pklurkerx, 11 months ago[/color]\nAny tips for the bus ritual? I started it the other day but I couldn't go through with it. After I finished the preps it felt too real. Still wanna try at some point tho!"
     "[color=green]Tomas_B, 11 months ago[/color]\n[u][color=teal]@Kasaju_86[/color][/u] might have some ideas."
     "[color=green]pklurkerx, 11 months ago[/color]\nThx!"
-    "[color=green]Kasaju_86, 10 months ago[/color]\n@pklurkerx if you're unsure about going through with a ritual, it might be best to pass on it."
+    "[color=green]Kasaju_86, 10 months ago[/color]\n[u][color=teal]@pklurkerx[/color][/u] if you're unsure about going through with a ritual, it might be best to pass on it."
     "However curiosity is a powerful enemy, so I'll say this: Get off the bus before the end of the line, no matter what."
     "[color=green]Tomas_B, 10 months ago[/color]\n[u][color=teal]@Kasaju_86[/color][/u] whats at the end of the line? O,O"
     "[color=green]Kasaju_86, 10 months ago[/color]\nWho can say."
@@ -80,7 +80,7 @@ label POST_5
     "[color=green]Shaaaaawn, 1 year ago[/color]\nI also wanna know tbh. That ad has been up for a while, someone must be making the big bucks off broken doors lmao"
     "[color=green]helpfulM0D, 11 months ago[/color]\nWhile the admins have not shared with us the sources of the ads, please remember that the site is free - ads are a necessary evil for it stay afloat."
     "[color=green]Shaaaaawn, 11 months ago[/color]\nFair bro you make a good point... I think i'll buy a new doorknob for my bedroom to support the site"
-    "[color=green]Tomas_B, 11 months ago[/color]\nok sorry if my question was out of place. im happy to have this site even if its funded by Big Doorknob haha >_>"
+    "[color=green]Tomas_B, 11 months ago[/color]\n[u][color=teal]@helpfulM0D[/color][/u] ok sorry if my question was out of place. im happy to have this site even if its funded by Big Doorknob haha >_>"
     hide ui
     pause 0.5
     event call ch1_forums_doorknob_react

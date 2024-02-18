@@ -2,10 +2,6 @@ label START
     system call PauseChaser
     if var ch1.forest_kett_chase jump KETT_CHASE_END
     move to Ch1_Forest_Artist point front_door
-    if not var ch1.forest_kett_awake
-        if var ch1.forest_kett_calm_down
-            if var ch1.forest_seen_rune
-                set ch1.forest_kett_awake = true
     end
 
 label KETT_CHASE_END

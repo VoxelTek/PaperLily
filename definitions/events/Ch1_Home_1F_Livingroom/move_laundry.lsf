@@ -1,6 +1,6 @@
 label START
     if repeat jump AGAIN
-    "It's locked."
+    event call ch1_locked
     if var general.serious end
     lacie "This is the laundry room." mood blank1
     lacie "I'll never understand why doors around the house need to be locked." mood annoyed
@@ -9,5 +9,6 @@ label START
     end
 
 label AGAIN
+    event call ch1_locked_notext
     "The laundry room. It's locked."
     end

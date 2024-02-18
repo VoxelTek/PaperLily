@@ -5,4 +5,4 @@ label START
     rune "An artist's inspiration!" mood sparkle
     lacie "..." mood blank4
     rune "I heard it can be quite valuable." mood tilt
-    item rename ch1.kett_flower name "Artist's Inspiration\" description \"Apparently, that's the flower's name."
+    item rename ch1.kett_flower name "Artist's Inspiration" description "Apparently, that's the flower's name."

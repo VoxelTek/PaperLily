@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=26]
 [ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=27]
 [ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/floor_papers.png" type="Texture" id=28]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=29]
 
 [node name="Ch1_Forest_Lakeside_Temple" type="Node2D"]
 script = ExtResource( 1 )
@@ -188,6 +189,9 @@ script = ExtResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="on_enter_save" type="Node" parent="Other/Events"]
+script = ExtResource( 29 )
 
 [node name="item_fish_on_bowl" type="Node" parent="Other/Events"]
 script = ExtResource( 27 )

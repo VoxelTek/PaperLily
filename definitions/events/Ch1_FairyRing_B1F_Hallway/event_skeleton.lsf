@@ -19,7 +19,7 @@ label AGAIN
     lacie "(Do dragons really exist in this place...?)" mood confused
     aoi "Isn't it so cool that humans have dragons in their world?" mood happy
     aoi "I'd like dragons here too." mood excited
-    lacie "(Nevermind.)" mood blank2
+    lacie "(Never mind.)" mood blank2
     set general.aoi_love ++
     end
 

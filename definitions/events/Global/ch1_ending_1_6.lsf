@@ -6,4 +6,5 @@ label START
     "Dead End 1-6 - Ground Swallow Me Up" background none
     system achievement CH1_BAD_END
     set persistent.ending.1.6 = true
+    system save-copy retrybak retrysave
     system title-screen

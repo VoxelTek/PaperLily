@@ -15,7 +15,7 @@ label START
     pause 1
     audio sfx play thud3
     pause 1
-    move to Ch1_B2F_Facility_ChartRoom point from_vent cutscene time 0
+    move to Ch1_Facility_B2F_ChartRoom point from_vent cutscene time 0
     chara spawn lacie point from_vent
     if character sai
         chara spawn sai point cutscene_vent_sai
@@ -43,5 +43,5 @@ label START
 
 
 label GO
-    move to Ch1_B2F_Facility_ChartRoom point from_vent
+    move to Ch1_Facility_B2F_ChartRoom point from_vent
     end

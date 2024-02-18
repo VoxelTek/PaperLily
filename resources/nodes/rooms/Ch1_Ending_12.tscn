@@ -13,11 +13,11 @@
 [ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=11]
 [ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_knives.png" type="Texture" id=12]
 [ext_resource path="res://assets/sprite/ch1/cutscene/mk_crazy.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_4.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/bg.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_3.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_4.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/bg.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_3.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_1.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_carpet_middle.png" type="Texture" id=19]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/bg.png" type="Texture" id=20]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/light_blessings.png" type="Texture" id=21]
@@ -445,7 +445,7 @@ position = Vector2( 384, 924 )
 script = ExtResource( 31 )
 Solid = false
 Trigger = 1
-Area = Vector2( 128, 8 )
+Area = Vector2( 448, 8 )
 
 [node name="chr_sai" type="Node2D" parent="Other/Events"]
 position = Vector2( 487, 1384 )

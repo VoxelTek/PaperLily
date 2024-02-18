@@ -25,10 +25,6 @@ label START
     pause 0.8
     action state shadow_stand node lacie
     action walk left 16 node kett speed veryslow
-
-
-
-
     pause 6
 
     set ch1.forest_kett_chase = false

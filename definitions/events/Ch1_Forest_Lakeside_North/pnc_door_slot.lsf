@@ -17,6 +17,7 @@ label START
             lacie "Is it really time to go home...?" mood thinking2
             choice "Are you sure that you want to place this doorknob?"
                 "Yes"
+                    system retry-save
                     item remove ch1.doorknob_return
                     set ch1.forest_lakeside_placed_return_doorknob = true
                     set ch1.temp_doorknob_to_place = "exit"

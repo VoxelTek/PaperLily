@@ -3563,6 +3563,7 @@ __meta__ = {
 [node name="entrance" type="Node2D" parent="Other/Points"]
 position = Vector2( 16, 944 )
 script = ExtResource( 3 )
+Direction = 2
 
 [node name="exit_north" type="Node2D" parent="Other/Points"]
 position = Vector2( 960, -2000 )

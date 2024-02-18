@@ -1616,16 +1616,6 @@ script = ExtResource( 73 )
 Items = "ch1.rune_algiz"
 Nodes = "chr_rune"
 
-[node name="item_rune_tiwaz_on_rune" type="Node" parent="Other/EventsF1"]
-script = ExtResource( 73 )
-Items = "ch1.rune_tiwaz"
-Nodes = "chr_rune"
-
-[node name="item_rune_othala_on_rune" type="Node" parent="Other/EventsF1"]
-script = ExtResource( 73 )
-Items = "ch1.rune_othala"
-Nodes = "chr_rune"
-
 [node name="item_screwdriver_on_rune" type="Node" parent="Other/EventsF1"]
 script = ExtResource( 73 )
 Items = "ch1.screwdriver"

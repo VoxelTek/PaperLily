@@ -14,11 +14,12 @@ label START
             set general.hp.lacie = general.maxhp.lacie
             system minigame ch1_battle_missknives_qs
             end
-        "Skip" if var persistent.lacie_mk_deaths >= 3
+        "Skip" if system show_skip_option
             set general.hp.lacie = general.maxhp.lacie
             fade out color white
             system minigame end
             event call ch1_event_mk_phase2
             end
         "Give Up"
+            system retry-clear
             system title-screen

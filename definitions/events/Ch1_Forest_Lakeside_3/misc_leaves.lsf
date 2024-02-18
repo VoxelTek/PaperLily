@@ -1,5 +1,5 @@
 label START
-    "Fallen white leaves suround the tree."
+    "Fallen white leaves surround the tree."
     if not var persistent.ch1_read_lakeside_temple_note end
     if var ch1.forest_lakeside_placed_petals end
     if item ch1.lakeside_petals_white end

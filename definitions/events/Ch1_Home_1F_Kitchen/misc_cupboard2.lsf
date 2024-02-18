@@ -22,6 +22,8 @@ label DAY
     end
 
 label NIGHT
+    if objective ch1.dial_number inprogress
+        system retry-save
     system minigame ch1_pnc_phone_night
     end
 

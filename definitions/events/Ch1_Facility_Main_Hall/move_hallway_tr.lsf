@@ -1,5 +1,6 @@
 label START
-    if var ch1.facility_flood_engaged jump SEALED
+    if not var ch1.facility_bucket_solution_complete
+        if var ch1.facility_flood_engaged jump SEALED
     set ch1.temp_facility_primals_b1f_elevator_spawn = false
     set ch1.temp_facility_primals_b2f_west_spawn = false
     move to Ch1_Facility_B2F_Hallway_East point from_mainhall_side
@@ -7,5 +8,6 @@ label START
 
 label SEALED
     event call event_easthall_sealed
+    hide ui
     action walk left 32
     end

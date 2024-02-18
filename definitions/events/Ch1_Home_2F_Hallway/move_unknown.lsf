@@ -5,4 +5,4 @@ label START
         "Always finding new places to hide away from the world."
         "Did you ever stop hiding?\""
         end
-    "It's locked."
+    event call ch1_locked

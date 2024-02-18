@@ -4,6 +4,7 @@ label START
     chara set lacie at left
     unknown "That's the spirit."
     unknown "Welcome back, what is it you wanted to know again?"
+    action turn up
     lacie "Why are you locked up?"
     unknown "Red locked me in here because I can be a bit of a nuisance."
     unknown "I'm the only one who can cast curses."

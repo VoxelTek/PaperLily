@@ -18,4 +18,4 @@ label START
     fade in
     pause 0.5
     system achievement CH1_FREE_SAI
-    "(Sai joined your party.)\" color \"#90EE90"
+    "(Sai joined your party.)" color "#90EE90"

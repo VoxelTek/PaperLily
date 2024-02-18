@@ -53,4 +53,5 @@ label START
     "Dead End 1-9 - Doubt" background none
     system achievement CH1_BAD_END
     set persistent.ending.1.9 = true
+    system save-copy retrybak retrysave
     system title-screen

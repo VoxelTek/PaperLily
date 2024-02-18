@@ -1,0 +1,9 @@
+label START
+    fade out
+    pause 1
+    item remove ch1.kett_flower
+    set ch1.forest_grave_left_flower = true
+    move to Ch1_Forest_Grave point after_flower time 0
+    fade in
+    pause 0.5
+    "(You left a flower.)"

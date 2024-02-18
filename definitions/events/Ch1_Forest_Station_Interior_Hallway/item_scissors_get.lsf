@@ -5,6 +5,7 @@ label START
         "Yes"
             choice "You have a bad feeling about this. Are you sure?"
                 "Yes"
+                    system retry-save
                     set ch1.forest_station_took_scissors = true
                     set ch1.forest_station_sign_gone = true
                     set ch1.forest_station_show_eyecu = true
@@ -24,7 +25,6 @@ label START
                     set general.serious = true
                     system refresh
                     pause 0.5
-                    system retry-save
                     end
                 "No"
                     end

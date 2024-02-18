@@ -217,7 +217,7 @@ label START
     aoi "So I threw the fish inside, and...!" mood melt4
     alba "You trashed... my fish?" mood shocked2
     aoi "...I'm sorry! It was only one!" mood melt7
-    aoi "And like... a bunch more... that I found on the floor down there." font small mood melt5
+    aoi "And like... a bunch more... that I found on the floor down there." font dialogue_small mood melt5
     aoi "...But those were probably someone else's fish..." mood melt
     lacie "...Actually..." mood hide2
     aoi "...?" mood awkward
@@ -238,7 +238,7 @@ label START
     alba "Coworker?" mood pissed
     aoi "Yeah yeah." mood confident
     aoi "With... um..." mood confident2
-    aoi "Wendy." font small mood melt2
+    aoi "Wendy." font dialogue_small mood melt2
     alba "If you're hiding a human, I'll kill the both of you." mood shocked2
     aoi "W-we deal with humans sometimes... that's probably the smell you feel." mood melt4
     milion "Hm..." mood blank11

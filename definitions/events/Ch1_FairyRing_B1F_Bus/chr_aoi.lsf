@@ -13,7 +13,7 @@ label DIALOGUE_2
     aoi "Anyways, you know how fairy rings gradually expand and cover more area?" mood excited
     aoi "I hear once they eat enough, they kinda open up and swallow the surface!" mood surprised
     aoi "So when that happened, one of them swallowed the station and a whole bus." mood pout2
-    aoi "(Apparently Glen was really unhappy so they destroyed most of the fairy rings.)" font small mood sad5
+    aoi "(Apparently Glen was really unhappy so they destroyed most of the fairy rings.)" font dialogue_small mood sad5
     lacie "(Glen?)" mood confused2
     lacie "Wait... why don't they just destroy all of them?" mood confused
     aoi "I dunno." mood surprised

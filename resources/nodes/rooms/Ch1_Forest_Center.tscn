@@ -1923,11 +1923,6 @@ script = ExtResource( 110 )
 
 [node name="alba_items" type="Node" parent="Other/Events"]
 
-[node name="item_number_on_alba" type="Node" parent="Other/Events/alba_items"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_alba"
-
 [node name="item_fish_on_alba" type="Node" parent="Other/Events/alba_items"]
 script = ExtResource( 89 )
 Items = "ch1.forest_fish"
@@ -1960,9 +1955,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_alba"
 
 [node name="item_snack_on_alba" type="Node" parent="Other/Events/alba_items"]
@@ -1971,11 +1964,6 @@ Items = "ch1.forest_harmless_snack"
 Nodes = "chr_alba"
 
 [node name="milion_items" type="Node" parent="Other/Events"]
-
-[node name="item_number_on_milion" type="Node" parent="Other/Events/milion_items"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_milion"
 
 [node name="item_fish_on_milion" type="Node" parent="Other/Events/milion_items"]
 script = ExtResource( 89 )
@@ -1998,9 +1986,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_milion"
 
 [node name="item_light_full_on_milion" type="Node" parent="Other/Events/milion_items"]
@@ -2025,11 +2011,6 @@ Items = "ch1.forest_harmless_snack"
 Nodes = "chr_milion"
 
 [node name="kozmo_items" type="Node" parent="Other/Events"]
-
-[node name="item_number_on_kozmo" type="Node" parent="Other/Events/kozmo_items"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_kozmo"
 
 [node name="item_fish_on_kozmo" type="Node" parent="Other/Events/kozmo_items"]
 script = ExtResource( 89 )
@@ -2072,9 +2053,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_kozmo"
 
 [node name="item_snack_on_kozmo" type="Node" parent="Other/Events/kozmo_items"]
@@ -2127,9 +2106,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_aoi"
 
 [node name="event_tree_firsttime" type="Node2D" parent="Other/Events"]
@@ -2152,11 +2129,6 @@ script = ExtResource( 7 )
 Solid = false
 Trigger = 1
 Area = Vector2( 64, 8 )
-
-[node name="item_number_on_fire" type="Node" parent="Other/Events"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "misc_campfire"
 
 [node name="item_lamp_on_lamppost" type="Node" parent="Other/Events"]
 script = ExtResource( 89 )

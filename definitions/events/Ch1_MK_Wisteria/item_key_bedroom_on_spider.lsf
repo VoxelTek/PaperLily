@@ -1,0 +1,6 @@
+label START
+    chara set lacie at left
+    ch1_spider "That's the key to the bedroom."
+    if var ch1.mk_unlocked_bedroom
+        lacie "Oh... I don't need this anymore." mood blank1
+        item remove ch1.mk_bedroom_key

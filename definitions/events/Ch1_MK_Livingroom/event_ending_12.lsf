@@ -138,7 +138,6 @@ label START
     lacie "....."
     fade out
     move to Ch1_Ending_12 point entrance time 0
-    chara spawn mk point mk
     pause 1
     action call lacie_limp
     system running off

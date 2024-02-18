@@ -3,10 +3,11 @@ label START
     audio bgm stop
     audio sfx play door
     set ch1.mk_painting_chase_clear = true
-    move to Ch1_MK_B1F_Hallway point cage_room
+    fade out time 0.5
+    move to Ch1_MK_B1F_Hallway point cage_room time 0
+    fade in time 0.5
     pause 0.5
     lacie "*huff* *puff*" mood hurt
-    action turn right
     if character sai
         lacie "We barely got away..." mood concerned9
         sai "Remind me not to mess with creepy paintings in the future." mood thinking11

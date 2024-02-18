@@ -1,5 +1,4 @@
 label START
     lacie "I need help with this." mood blank7
     ch1_spider "Hmmm..."
-    ch1_spider "That might be a mirror."
-    ch1_spider "Maybe the answer has to do with your reflection."
+    ch1_spider "Have you tried simply looking at it?"

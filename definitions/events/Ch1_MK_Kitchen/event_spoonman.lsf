@@ -1,6 +1,5 @@
 label START
     if not var general.serious end
     if var ch1.mk_seen_spoonman end
-    audio sfx play thud
     action call play_spoon_man
     set ch1.mk_seen_spoonman = true

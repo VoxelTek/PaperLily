@@ -1,0 +1,23 @@
+label START
+    audio sfx play gore7
+    audio bgm stop time 0
+    audio ambiance stop time 0
+    cg show ch1/death_blood_3 time 0
+    fade in time 0
+    pause 2
+    fade out time 4
+    set persistent.lacie_deaths ++
+    pause 2
+    choice "Try Again?"
+        "Retry"
+            system retry-load
+            end
+        "Skip" if system show_skip_option
+            hide ui
+            pause 0.5
+            cg hide time 0
+            event call move_exit
+            end
+        "Give Up"
+            system retry-clear
+            system title-screen

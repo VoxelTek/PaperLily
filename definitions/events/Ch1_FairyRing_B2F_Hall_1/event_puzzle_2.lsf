@@ -6,7 +6,7 @@ label START
     camera move (50,0) time 1.5
     pause 1
     lacie "But... this one definitely has eyes, doesn't it?" mood concerned5
-    aoi "Maybe they're nostrils." font small mood pout5
+    aoi "Maybe they're nostrils." font dialogue_small mood pout5
     lacie "Wha- nostrils?" mood concerned9
     choice "Could that be?"
         "They're eyes"

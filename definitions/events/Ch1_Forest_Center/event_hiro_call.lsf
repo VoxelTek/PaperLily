@@ -83,7 +83,7 @@ label JOKE
     lacie "Alright, I'll go now." mood blank8
     hiro "You've got this!"
     event call ch1_phone_hangup
-    item rename ch1.cellphone name "Cellphone\" description \"My personal phone. Hiro bought it for me. It may be used as a flashlight."
+    item rename ch1.cellphone name "Cellphone" description "My personal phone. Hiro bought it for me. It may be used as a flashlight."
     set ch1.forest_center_hiro_called = true
     move to Ch1_Forest_Center point from_mirror
     audio bgm play ch1_forest_d

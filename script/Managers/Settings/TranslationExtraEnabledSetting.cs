@@ -9,27 +9,26 @@ using System;
 #nullable disable
 namespace LacieEngine.Settings
 {
-  internal class TranslationExtraEnabledSetting : Setting<bool>
-  {
-    private static readonly Lazy<TranslationExtraEnabledSetting> _lazyInstance = new Lazy<TranslationExtraEnabledSetting>((Func<TranslationExtraEnabledSetting>) (() => new TranslationExtraEnabledSetting()));
-
-    public static TranslationExtraEnabledSetting Instance
+    internal class TranslationExtraEnabledSetting : Setting<bool>
     {
-      get => TranslationExtraEnabledSetting._lazyInstance.Value;
+        private static readonly Lazy<TranslationExtraEnabledSetting> _lazyInstance = new Lazy<TranslationExtraEnabledSetting>((Func<TranslationExtraEnabledSetting>)(() => new TranslationExtraEnabledSetting()));
+
+        public static TranslationExtraEnabledSetting Instance {
+            get => TranslationExtraEnabledSetting._lazyInstance.Value;
+        }
+
+        private TranslationExtraEnabledSetting()
+        {
+            this.Path = "lacie_engine/core/translation_extra_enabled";
+            this.Value = this.ReadValue();
+        }
+
+        public override void Decrement() => this.Value = !this.Value;
+
+        public override void Increment() => this.Value = !this.Value;
+
+        public override void Apply()
+        {
+        }
     }
-
-    public TranslationExtraEnabledSetting()
-    {
-      this.Path = "lacie_engine/core/translation_extra_enabled";
-      this.Value = this.ReadValue();
-    }
-
-    public override void Decrement() => this.Value = !this.Value;
-
-    public override void Increment() => this.Value = !this.Value;
-
-    public override void Apply()
-    {
-    }
-  }
 }

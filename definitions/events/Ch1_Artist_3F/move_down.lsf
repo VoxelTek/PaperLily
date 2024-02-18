@@ -1,3 +1,7 @@
 label START
+    if var ch1.forest_kett_chase end
     move to Ch1_Artist_2F point from_upstairs
-    end
+    if not var ch1.forest_kett_awake
+        if var ch1.forest_kett_calm_down
+            if var ch1.forest_seen_rune
+                set ch1.forest_kett_awake = true

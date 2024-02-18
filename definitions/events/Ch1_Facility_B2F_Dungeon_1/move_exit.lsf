@@ -13,4 +13,4 @@ label EXIT
     fade in time 0.5
     action walk left 32 node sai speed slow
     chara despawn sai
-    "(Sai joined your party.)\" color \"#90EE90"
+    "(Sai joined your party.)" color "#90EE90"

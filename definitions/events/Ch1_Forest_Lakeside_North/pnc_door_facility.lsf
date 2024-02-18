@@ -48,7 +48,6 @@ label START
         set ch1.facility_had_caterpillar_on_entry = true
     item remove ch1.forest_harmless_snack
     item remove ch1.forest_harmless_snack_2
-    item remove ch1.forest_station_number
     item remove ch1.scissors
     item remove ch1.forest_adapter
     item remove ch1.forest_fish
@@ -56,9 +55,7 @@ label START
     item remove ch1.bucket_full
     item remove ch1.bucket_full_holy
     item remove ch1.forest_caterpillar
-    item remove ch1.forest_flower_pink
     item remove ch1.forest_lavender
-    item remove ch1.forest_white_branch
     item remove ch1.forest_bolt_cutter
     item remove ch1.candleman_candle
     item remove ch1.candleman_candle_unlit
@@ -67,7 +64,6 @@ label START
     item remove ch1.forest_lamp_full
     item remove ch1.forest_bugnet
     item remove ch1.kett_flower amount 99
-    item remove ch1.forest_stone_cure
     item remove ch1.forest_jar_empty
     item remove ch1.forest_jar_full
     item remove ch1.forest_bunny

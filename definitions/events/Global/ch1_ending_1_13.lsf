@@ -68,7 +68,7 @@ label START
     fade out
     hide ui
     pause 1.5
-    unknown "Hell, this place still gives me the creeps." font small
+    unknown "Hell, this place still gives me the creeps." font dialogue_small
     hide ui
     pause 4
     "Dead End 1-13 - Stuffed Animal" background none

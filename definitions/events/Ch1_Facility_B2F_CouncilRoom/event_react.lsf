@@ -19,3 +19,4 @@ label START
     hide ui
     camera move (0,200) time 0.5
     camera reset
+    system retry-save
