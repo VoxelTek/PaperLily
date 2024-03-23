@@ -93,8 +93,8 @@ label START
     lacie "Even if I pinch myself... I can't feel pain either..." mood shadow2
     cg show black
     lacie "I'm going"
-    lacie "\n\t\tto go"
-    lacie "\n\n\t\t\t\tinsane anyways"
+    lacie "${br:1}${sp:8}to go"
+    lacie "${br:2}${sp:16}insane anyways"
     lacie "...so I kept walking."
     hide ui
     chara lock

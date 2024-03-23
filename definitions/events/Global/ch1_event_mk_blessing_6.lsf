@@ -15,7 +15,7 @@ label START
     hide ui
     pause 1
     "I thought I already lived in peace." format center background none
-    "I thought I could keep living in piece next to..." format center background none
+    "I thought I could keep living in peace next to..." format center background none
     "...Iris." format center background none
     "Was she in that crowd too?" format center background none
     "Was she watching?" format center background none

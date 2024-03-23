@@ -37,10 +37,10 @@ namespace LacieEngine.Rooms
         // (set) Token: 0x060007E1 RID: 2017 RVA: 0x0001D406 File Offset: 0x0001B606
         public bool Visible {
             get {
-                return this.nRoomContainer.IsValid() && this.nRoomContainer.Visible;
+                return nRoomContainer.IsValid() && nRoomContainer.Visible;
             }
             set {
-                this.nRoomContainer.Visible = value;
+                nRoomContainer.Visible = value;
             }
         }
 
@@ -70,69 +70,69 @@ namespace LacieEngine.Rooms
         // (set) Token: 0x060007E9 RID: 2025 RVA: 0x0001D452 File Offset: 0x0001B652
         public Color Modulate {
             get {
-                return this.nModulate.Color;
+                return nModulate.Color;
             }
             set {
-                this.nModulate.Color = value;
-                this.nBgModulate.Color = value;
+                nModulate.Color = value;
+                nBgModulate.Color = value;
             }
         }
 
         // Token: 0x060007EA RID: 2026 RVA: 0x0001D46C File Offset: 0x0001B66C
         public async Task ChangeRoom(string room, string point, Vector2 pos, string dir, float? time, bool cutscene)
         {
-            Log.Info(new object[] { "Changing room -> ", room });
+            Log.Info("Changing room -> ", room);
             Game.InputProcessor = Inputs.Processor.None;
-            float fadeInOutTime = (time ?? 1f) / 2f;
-            this.EnsureRoomMgrNodes();
-            if (this.CurrentRoom.IsValid())
+            var fadeInOutTime = (time ?? 1f) / 2f;
+            EnsureRoomMgrNodes();
+            if (CurrentRoom.IsValid())
             {
-                this.CurrentRoom._BeforeFadeOut();
+                CurrentRoom._BeforeFadeOut();
                 if (fadeInOutTime > 0f)
                 {
                     await Game.Screen.ShowLoadingScreen(fadeInOutTime);
                 }
-                this.CurrentRoom._AfterFadeOut();
-                this.nRoomContainer.Clear();
-                this.Camera.Current = false;
+                CurrentRoom._AfterFadeOut();
+                nRoomContainer.Clear();
+                Camera.Current = false;
             }
-            this.Player = null;
-            this.Camera = null;
-            this.Cutscene = cutscene;
-            this.nRoomContainer.Visible = true;
-            this.MirrorReflections.Clear();
-            this.RegisteredNPCs.Clear();
-            this.RegisteredPoints.Clear();
-            this.RegisteredRoomUpdates.Clear();
-            this.RegisteredRoomActions.Clear();
-            await this.LoadRoom(room, point, pos, Direction.FromString(dir));
+            Player = null;
+            Camera = null;
+            Cutscene = cutscene;
+            nRoomContainer.Visible = true;
+            MirrorReflections.Clear();
+            RegisteredNPCs.Clear();
+            RegisteredPoints.Clear();
+            RegisteredRoomUpdates.Clear();
+            RegisteredRoomActions.Clear();
+            await LoadRoom(room, point, pos, Direction.FromString(dir));
             await GDUtil.DelayOneFrame();
-            await this.FinishChangingRoom(fadeInOutTime);
+            await FinishChangingRoom(fadeInOutTime);
         }
 
         // Token: 0x060007EB RID: 2027 RVA: 0x0001D4E4 File Offset: 0x0001B6E4
         public async Task ChangeRoom(string room, string point, Vector2 pos, string dir, float? time)
         {
-            await this.ChangeRoom(room, point, pos, dir, time, false);
+            await ChangeRoom(room, point, pos, dir, time, false);
         }
 
         // Token: 0x060007EC RID: 2028 RVA: 0x0001D554 File Offset: 0x0001B754
         public async Task ChangeRoom(string room, string point, Vector2 pos, string dir)
         {
-            await this.ChangeRoom(room, point, pos, dir, new float?(1f));
+            await ChangeRoom(room, point, pos, dir, new float?(1f));
         }
 
         // Token: 0x060007ED RID: 2029 RVA: 0x0001D5B8 File Offset: 0x0001B7B8
         public void ApplyLighting(Resource lightingRes)
         {
-            Lighting lighting = lightingRes as Lighting;
+            var lighting = lightingRes as Lighting;
             if (lighting == null)
             {
                 return;
             }
-            this.Modulate = lighting.Modulate;
-            lighting.ApplyToWorldEnvironment(this.nEnvironment);
-            this.ApplyRoomShader(lighting.Material);
+            Modulate = lighting.Modulate;
+            lighting.ApplyToWorldEnvironment(nEnvironment);
+            ApplyRoomShader(lighting.Material);
             if (Game.Player == null)
             {
                 return;
@@ -147,13 +147,13 @@ namespace LacieEngine.Rooms
             {
                 Game.Player.SetLight(null);
             }
-            this.SetPlayerLight(lighting.PlayerLightState);
+            SetPlayerLight(lighting.PlayerLightState);
         }
 
         // Token: 0x060007EE RID: 2030 RVA: 0x0001D662 File Offset: 0x0001B862
         public void ResetLighting()
         {
-            this.ApplyLighting(GD.Load<Lighting>("res://resources/lighting/basic.tres"));
+            ApplyLighting(GD.Load<Lighting>("res://resources/lighting/basic.tres"));
         }
 
         // Token: 0x060007EF RID: 2031 RVA: 0x0001D674 File Offset: 0x0001B874
@@ -169,21 +169,21 @@ namespace LacieEngine.Rooms
         // Token: 0x060007F0 RID: 2032 RVA: 0x0001D69C File Offset: 0x0001B89C
         public void ApplyRoomShader(Material material)
         {
-            this.nShader.DeleteIfValid();
+            nShader.DeleteIfValid();
             if (material == null)
             {
                 return;
             }
-            this.nShader = GDUtil.MakeNode<GameRoomManager.CameraTrackingShader>("Shader");
-            this.nRoomContainer.AddChild(this.nShader, false);
-            this.nShader.Visible = true;
-            this.nShader.Material = material;
+            nShader = GDUtil.MakeNode<GameRoomManager.CameraTrackingShader>("Shader");
+            nRoomContainer.AddChild(nShader, false);
+            nShader.Visible = true;
+            nShader.Material = material;
         }
 
         // Token: 0x060007F1 RID: 2033 RVA: 0x0001D6F2 File Offset: 0x0001B8F2
         public void RegisterMirrorReflection(IReflectable reflectable)
         {
-            this.MirrorReflections.Add(reflectable);
+            MirrorReflections.Add(reflectable);
         }
 
         // Token: 0x060007F2 RID: 2034 RVA: 0x0001D700 File Offset: 0x0001B900
@@ -195,45 +195,39 @@ namespace LacieEngine.Rooms
                 Game.Memory.Cache("res://resources/nodes/rooms/" + room + ".tscn");
                 Game.Events.LoadMappings(room);
                 await Game.Memory.WaitForCompletion();
-                this.CurrentRoom = GDUtil.Instance<GameRoom>("res://resources/nodes/rooms/" + room + ".tscn");
-                if (this.CurrentRoom.Cutscene)
+                CurrentRoom = GDUtil.Instance<GameRoom>("res://resources/nodes/rooms/" + room + ".tscn");
+                if (CurrentRoom.Cutscene)
                 {
-                    this.Cutscene = true;
+                    Cutscene = true;
                 }
-                this.ResolveRoomInjections(this.CurrentRoom);
-                this.nRoomContainer.AddChild(this.CurrentRoom, false);
+                ResolveRoomInjections(CurrentRoom);
+                nRoomContainer.AddChild(CurrentRoom, false);
                 await GDUtil.DelayOneFrame();
                 Game.State.Room = room;
-                int layer = 1;
-                this.CurrentRoom._Initialize();
+                var layer = 1;
+                CurrentRoom._Initialize();
                 if (!point.IsNullOrEmpty())
                 {
-                    SpawnPoint spawnPoint = this.CurrentRoom.GetSpawnPoint(point);
+                    var spawnPoint = CurrentRoom.GetSpawnPoint(point);
                     pos = spawnPoint.Position;
                     layer = spawnPoint.Layer;
                     if (dir == Direction.None)
                     {
                         dir = spawnPoint.Direction;
                     }
-                    Log.Debug(new object[]
-                    {
-                        "Using spawn point ",
-                        point,
-                        " at ",
-                        pos.ToString()
-                    });
+                    Log.Debug("Using spawn point ", point, " at ", pos.ToString());
                 }
-                GameCamera camera = new GameCamera();
-                this.Camera = camera;
-                if (this.Cutscene)
+                var camera = new GameCamera();
+                Camera = camera;
+                if (Cutscene)
                 {
                     camera.Position = pos;
                 }
-                this.CurrentRoom.AddChild(camera, false);
+                CurrentRoom.AddChild(camera, false);
                 camera.ApplyRoomSettings();
                 camera.Current = true;
-                this.CurrentRoom.ChangeLayer(layer);
-                if (!this.Cutscene)
+                CurrentRoom.ChangeLayer(layer);
+                if (!Cutscene)
                 {
                     if (Game.State.Party.IsEmpty<string>())
                     {
@@ -243,35 +237,32 @@ namespace LacieEngine.Rooms
                     {
                         dir = Direction.Down;
                     }
-                    IPlayer player = this.PreparePlayerCharacter(pos, dir, this.CurrentRoom);
-                    this.CurrentRoom.GetMainLayer().AddChild(player.Node, false);
-                    if (this.CurrentRoom.DisableRunning)
+                    var player = PreparePlayerCharacter(pos, dir, CurrentRoom);
+                    CurrentRoom.GetMainLayer().AddChild(player.Node, false);
+                    if (CurrentRoom.DisableRunning)
                     {
                         player.DisableRunning();
                     }
-                    player.SneakingEnabled = this.CurrentRoom.EnableSneaking;
-                    if (Game.State.Party.Count > 1 && !this.CurrentRoom.HideFollowers)
+                    player.SneakingEnabled = CurrentRoom.EnableSneaking;
+                    if (Game.State.Party.Count > 1 && !CurrentRoom.HideFollowers)
                     {
-                        for (int i = 1; i < Game.State.Party.Count; i++)
+                        for (var i = 1; i < Game.State.Party.Count; i++)
                         {
                             if (dir != Direction.Up)
                             {
                                 pos += new Vector2(0f, -1f);
                             }
-                            NPCFollower follower = this.PrepareFollower(Game.State.Party[i], pos, dir, (float)(32 * i));
-                            this.CurrentRoom.GetMainLayer().AddChild(follower, false);
+                            var follower = PrepareFollower(Game.State.Party[i], pos, dir, 32 * i);
+                            CurrentRoom.GetMainLayer().AddChild(follower, false);
                         }
                     }
-                    camera.TrackNode(this.Player.Node);
+                    camera.TrackNode(Player.Node);
                 }
-                GameRoom currentRoom = this.CurrentRoom;
-                if (currentRoom.Lighting == null)
-                {
-                    currentRoom.Lighting = GD.Load<Lighting>("res://resources/lighting/basic.tres");
-                }
-                this.nBgColor.Modulate = this.CurrentRoom.Lighting.BackgroundColor;
-                this.ApplyLighting(this.CurrentRoom.Lighting);
-                if (!this.Cutscene)
+                var currentRoom = CurrentRoom;
+                currentRoom.Lighting ??= GD.Load<Lighting>("res://resources/lighting/basic.tres");
+                nBgColor.Modulate = CurrentRoom.Lighting.BackgroundColor;
+                ApplyLighting(CurrentRoom.Lighting);
+                if (!Cutscene)
                 {
                     if (Game.State.OverrideBgm != null)
                     {
@@ -281,51 +272,51 @@ namespace LacieEngine.Rooms
                         }
                         else
                         {
-                            Game.Audio.PlayBgm(GD.Load<AudioStream>(Game.State.OverrideBgm), this.CurrentRoom.BgmVolume);
+                            Game.Audio.PlayBgm(GD.Load<AudioStream>(Game.State.OverrideBgm), CurrentRoom.BgmVolume);
                         }
                     }
-                    else if (this.CurrentRoom.Bgm != null)
+                    else if (CurrentRoom.Bgm != null)
                     {
-                        Game.Audio.PlayBgm(this.CurrentRoom.Bgm, this.CurrentRoom.BgmVolume, this.CurrentRoom.BgmCrossfade);
+                        Game.Audio.PlayBgm(CurrentRoom.Bgm, CurrentRoom.BgmVolume, CurrentRoom.BgmCrossfade);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Log.Exception(ex, new object[] { "An error occurred while loading the room." });
+                Log.Exception(ex, "An error occurred while loading the room.");
             }
         }
 
         // Token: 0x060007F3 RID: 2035 RVA: 0x0001D764 File Offset: 0x0001B964
         private void EnsureRoomMgrNodes()
         {
-            if (!this.nBgLayer.IsValid())
+            if (!nBgLayer.IsValid())
             {
-                this.nBgColor = GDUtil.MakeNode<Sprite>("BgSprite");
-                this.nBgColor.Texture = GD.Load<Texture>("res://assets/sprite/common/white.png");
-                this.nBgColor.Scale = Game.Settings.BaseResolution * (float)Game.Settings.ResolutionScalePixel;
-                this.nBgColor.Centered = false;
-                this.nBgModulate = GDUtil.MakeNode<CanvasModulate>("Modulate");
-                this.nBgLayer = GDUtil.MakeNode<CanvasLayer>("Background");
-                this.nBgLayer.Layer = -10;
-                this.nBgLayer.AddChild(this.nBgColor, false);
-                this.nBgLayer.AddChild(this.nBgModulate, false);
-                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, this.nBgLayer);
+                nBgColor = GDUtil.MakeNode<Sprite>("BgSprite");
+                nBgColor.Texture = GD.Load<Texture>("res://assets/sprite/common/white.png");
+                nBgColor.Scale = Game.Settings.BaseResolution * Game.Settings.ResolutionScalePixel;
+                nBgColor.Centered = false;
+                nBgModulate = GDUtil.MakeNode<CanvasModulate>("Modulate");
+                nBgLayer = GDUtil.MakeNode<CanvasLayer>("Background");
+                nBgLayer.Layer = -10;
+                nBgLayer.AddChild(nBgColor, false);
+                nBgLayer.AddChild(nBgModulate, false);
+                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, nBgLayer);
             }
-            if (!this.nRoomContainer.IsValid())
+            if (!nRoomContainer.IsValid())
             {
-                this.nRoomContainer = GDUtil.MakeNode<Node2D>("Room");
-                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, this.nRoomContainer);
+                nRoomContainer = GDUtil.MakeNode<Node2D>("Room");
+                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, nRoomContainer);
             }
-            if (!this.nEnvironment.IsValid())
+            if (!nEnvironment.IsValid())
             {
-                this.nEnvironment = GDUtil.MakeWorldEnvironment();
-                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, this.nEnvironment);
+                nEnvironment = GDUtil.MakeWorldEnvironment();
+                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, nEnvironment);
             }
-            if (!this.nModulate.IsValid())
+            if (!nModulate.IsValid())
             {
-                this.nModulate = GDUtil.MakeNode<CanvasModulate>("Modulate");
-                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, this.nModulate);
+                nModulate = GDUtil.MakeNode<CanvasModulate>("Modulate");
+                Game.Screen.AddToLayer(IScreenManager.Layer.Pixel, nModulate);
             }
         }
 
@@ -334,18 +325,18 @@ namespace LacieEngine.Rooms
         {
             try
             {
-                this.CurrentRoom._BeforeFadeIn();
-                this.UpdateRoomState();
+                CurrentRoom._BeforeFadeIn();
+                UpdateRoomState();
                 await Game.Screen.HideLoadingScreen(time);
-                this.CurrentRoom._AfterFadeIn();
-                this.CurrentRoom.Ready = true;
-                if (!this.Cutscene)
+                CurrentRoom._AfterFadeIn();
+                CurrentRoom.Ready = true;
+                if (!Cutscene)
                 {
                     Game.Events.PlayOnEnterEvents();
                 }
                 if (Game.StoryPlayer.Running)
                 {
-                    this.ReturnToStoryPlayer();
+                    ReturnToStoryPlayer();
                 }
                 else
                 {
@@ -354,7 +345,7 @@ namespace LacieEngine.Rooms
             }
             catch (Exception ex)
             {
-                Log.Exception(ex, new object[] { "An error occurred while entering the room." });
+                Log.Exception(ex, "An error occurred while entering the room.");
             }
         }
 
@@ -378,7 +369,7 @@ namespace LacieEngine.Rooms
             {
                 player = GDUtil.Instance<Player>("res://resources/nodes/common/Player.tscn");
             }
-            this.Player = player;
+            Player = player;
             player.Node.Position = pos;
             player.SetDirection(dir);
             return player;
@@ -395,27 +386,21 @@ namespace LacieEngine.Rooms
         // Token: 0x060007F8 RID: 2040 RVA: 0x0001D98C File Offset: 0x0001BB8C
         public void RoomFunction(string function)
         {
-            if (this.CurrentRoom.HasMethod(function))
+            if (CurrentRoom.HasMethod(function))
             {
-                this.CurrentRoom.Call(function, Array.Empty<object>());
+                CurrentRoom.Call(function, Array.Empty<object>());
                 return;
             }
-            Log.Warn(new object[]
-            {
-                "Method ",
-                function,
-                "() not found in room: ",
-                this.CurrentRoom.Name
-            });
+            Log.Warn("Method ", function, "() not found in room: ", CurrentRoom.Name);
         }
 
         // Token: 0x060007F9 RID: 2041 RVA: 0x0001D9E8 File Offset: 0x0001BBE8
         public void UpdateRoomState()
         {
-            this.RegisteredRoomUpdates.ForEach(delegate (IAction u) {
+            RegisteredRoomUpdates.ForEach(delegate (IAction u) {
                 u.Execute();
             });
-            this.CurrentRoom._UpdateRoom();
+            CurrentRoom._UpdateRoom();
             if (!Game.StoryPlayer.Running)
             {
                 Game.Events.UpdateBannedEvents();
@@ -425,14 +410,14 @@ namespace LacieEngine.Rooms
         // Token: 0x060007FA RID: 2042 RVA: 0x0001DA40 File Offset: 0x0001BC40
         public Node FindNodeInRoom(string nodeName)
         {
-            return this.CurrentRoom.FindNodeInRoom(nodeName);
+            return CurrentRoom.FindNodeInRoom(nodeName);
         }
 
         // Token: 0x060007FB RID: 2043 RVA: 0x0001DA4E File Offset: 0x0001BC4E
         public Path2D GetPath(string pathName)
         {
-            Node node = this.CurrentRoom.GetNode("Points");
-            return ((node != null) ? node.GetNode(pathName) : null) as Path2D;
+            var node = CurrentRoom.GetNode("Points");
+            return (node?.GetNode(pathName)) as Path2D;
         }
 
         // Token: 0x060007FC RID: 2044 RVA: 0x0001DA7C File Offset: 0x0001BC7C
@@ -449,16 +434,16 @@ namespace LacieEngine.Rooms
         // Token: 0x060007FD RID: 2045 RVA: 0x0001DA8E File Offset: 0x0001BC8E
         public void Clean()
         {
-            this.Player = null;
-            this.Camera = null;
+            Player = null;
+            Camera = null;
         }
 
         // Token: 0x060007FE RID: 2046 RVA: 0x0001DA9E File Offset: 0x0001BC9E
         public void RefreshPixelScaling()
         {
-            if (this.nBgLayer.IsValid())
+            if (nBgLayer.IsValid())
             {
-                this.nBgColor.Scale = Game.Settings.BaseResolution * (float)Game.Settings.ResolutionScalePixel;
+                nBgColor.Scale = Game.Settings.BaseResolution * Game.Settings.ResolutionScalePixel;
             }
         }
 
@@ -484,7 +469,7 @@ namespace LacieEngine.Rooms
         private CanvasModulate nBgModulate;
 
         // Token: 0x040005E0 RID: 1504
-        private GameRoomManager.CameraTrackingShader nShader;
+        private CameraTrackingShader nShader;
 
         // Token: 0x02000256 RID: 598
         private class CameraTrackingShader : Sprite
@@ -492,17 +477,17 @@ namespace LacieEngine.Rooms
             // Token: 0x06001247 RID: 4679 RVA: 0x0003EDEF File Offset: 0x0003CFEF
             public override void _Ready()
             {
-                base.Scale = Game.Settings.BaseResolution;
-                base.Texture = GD.Load<Texture>("res://assets/sprite/common/white.png");
-                base.Centered = false;
+                Scale = Game.Settings.BaseResolution;
+                Texture = GD.Load<Texture>("res://assets/sprite/common/white.png");
+                Centered = false;
             }
 
             // Token: 0x06001248 RID: 4680 RVA: 0x0003EE18 File Offset: 0x0003D018
             public override void _Process(float delta)
             {
-                if (base.Visible && Game.Camera.Node.IsValid())
+                if (Visible && Game.Camera.Node.IsValid())
                 {
-                    base.Position = Game.Camera.Node.GetCameraScreenCenter() - Game.Settings.BaseResolution / 2f;
+                    Position = Game.Camera.Node.GetCameraScreenCenter() - Game.Settings.BaseResolution / 2f;
                 }
             }
         }

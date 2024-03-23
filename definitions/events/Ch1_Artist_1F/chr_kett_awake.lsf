@@ -1,7 +1,6 @@
 label START
     chara set lacie at left
     chara set kett at right
-    if not var ch1.forest_kett_reacted_paint jump REACT_PAINTING
 
 label TALK
     if not repeat jump FIRST_TALK
@@ -38,12 +37,6 @@ label FIRST_TALK
     pause 5.5
     lacie "(Did he figure out I'm human...?)" mood surprised3
     jump TALK_MORE
-
-label REACT_PAINTING
-    if var ch1.forest_canvas_painting
-        if var ch1.temp_kett_can_react_to_painting
-            event call chr_kett_react_paint
-    jump TALK
 
 label TALK_MORE
     choice "So..."

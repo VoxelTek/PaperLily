@@ -20,9 +20,9 @@ namespace LacieEngine.StoryPlayer
         public const string MINIGAME_END = "end";
         [Inject]
         [NonSerialized]
-        private IAchievementManager Achievements;
+        private readonly IAchievementManager Achievements;
 
-        public StoryPlayerSystemCommand.SpecialOperation Operation { get; set; }
+        public SpecialOperation Operation { get; set; }
 
         public string Value { get; set; }
 
@@ -34,75 +34,76 @@ namespace LacieEngine.StoryPlayer
 
         public string SaveImage { get; set; }
 
-        public override void Execute(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
+        public override void Execute(StoryPlayer storyPlayer)
         {
-            if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.RefreshRoom)
+            if (Operation == SpecialOperation.RefreshRoom)
                 Game.Room.UpdateRoomState();
-            else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.CallRoomFunction)
+            else if (Operation == SpecialOperation.CallRoomFunction)
             {
-                bool flag = false;
+                var flag = false;
                 if (Game.Minigames.Running)
-                    flag = Game.Minigames.Function(this.Value);
+                    flag = Game.Minigames.Function(Value);
                 if (!flag)
-                    Game.Room.RoomFunction(this.Value);
+                    Game.Room.RoomFunction(Value);
             }
-            else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.MiniGame)
+            else if (Operation == SpecialOperation.MiniGame)
             {
-                if (this.Value != "end")
-                    Game.Minigames.Start(this.Value);
+                if (Value != "end")
+                    Game.Minigames.Start(Value);
                 else
                     Game.Minigames.End();
             }
-            else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.Screen)
-                Game.Core.OpenScreen(GD.Load<ScreenProxyResource>("res://resources/screen/" + this.Value + ".tres").Scene);
-            else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.EndGame)
+            else if (Operation == SpecialOperation.Screen)
+                Game.Core.OpenScreen(GD.Load<ScreenProxyResource>("res://resources/screen/" + Value + ".tres").Scene);
+            else if (Operation == SpecialOperation.EndGame)
             {
                 Game.Core.SwitchToScreen(Game.Settings.SceneProvider.CreditsScreen, true);
                 GameState.Delete("retrysave");
             }
-            else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.Death)
+            else if (Operation == SpecialOperation.Death)
             {
                 Game.Core.SwitchToScreen(Game.Settings.SceneProvider.DeathScreen);
             }
             else
             {
-                if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.TitleScreen)
+                if (Operation == SpecialOperation.TitleScreen)
                 {
                     storyPlayer.ForceEndDialogue();
                     Game.Core.SwitchToScreen(Game.Settings.SceneProvider.TitleScreen);
                     return;
                 }
-                if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.ClearInventory)
+                if (Operation == SpecialOperation.ClearInventory)
                     Game.Items.ClearInventory();
-                else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.AutoSave)
+                else if (Operation == SpecialOperation.AutoSave)
                     GameState.Save("autosave");
-                else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.RetrySave)
+                else if (Operation == SpecialOperation.RetrySave)
                     GameState.Save("retrysave", true);
-                else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.RetryLoad)
+                else if (Operation == SpecialOperation.RetryLoad)
                 {
-                    Game.Core.StartGameFromSave("retrysave");
+                    if (!SaveFileInformation.CanLoadRetrySave())
+                        Game.Core.SwitchToScreen(Game.Settings.SceneProvider.CreditsScreen, true);
+                    else
+                        Game.Core.StartGameFromSave("retrysave");
                 }
-                else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.RetryClear)
-                {
+                else if (Operation == SpecialOperation.RetryClear)
                     GameState.Delete("retrysave");
-                }
-                else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.SaveCopy)
+                else if (Operation == SpecialOperation.SaveCopy)
                 {
-                    if (!this.Value.IsNullOrEmpty() && !this.Value2.IsNullOrEmpty() && GameState.SaveExists(this.Value))
+                    if (!Value.IsNullOrEmpty() && !Value2.IsNullOrEmpty() && GameState.SaveExists(Value))
                     {
-                        new Directory().Copy("user://save/" + this.Value + ".sav", "user://save/" + this.Value2 + ".sav");
+                        new Directory().Copy("user://save/" + Value + ".sav", "user://save/" + Value2 + ".sav");
                     }
                 }
                 else
                 {
-                    if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.Save)
+                    if (Operation == SpecialOperation.Save)
                     {
-                        if (!this.Value.IsNullOrEmpty())
+                        if (!Value.IsNullOrEmpty())
                         {
-                            Game.State.Event = this.Value;
-                            Game.State.EventLabel = this.SaveEventLabel;
-                            Game.State.LocationStr = this.SaveLocation;
-                            Game.State.LocationImg = this.SaveImage;
+                            Game.State.Event = Value;
+                            Game.State.EventLabel = SaveEventLabel;
+                            Game.State.LocationStr = SaveLocation;
+                            Game.State.LocationImg = SaveImage;
                         }
                         else
                         {
@@ -111,22 +112,22 @@ namespace LacieEngine.StoryPlayer
                         }
                         storyPlayer.HideAllUI();
                         Game.InputProcessor = Inputs.Processor.Menu;
-                        SaveScreenMenuContainer saveContainer = GDUtil.MakeNode<SaveScreenMenuContainer>("SaveContainer");
-                        saveContainer.OnClose = (Action)(() => this.ResumeAfterSave((Control)saveContainer));
-                        Game.Screen.AddToLayer(IScreenManager.Layer.UI, (Node)saveContainer);
+                        var saveContainer = GDUtil.MakeNode<SaveScreenMenuContainer>("SaveContainer");
+                        saveContainer.OnClose = () => ResumeAfterSave(saveContainer);
+                        Game.Screen.AddToLayer(IScreenManager.Layer.UI, saveContainer);
                         saveContainer.Menu.ResetSelection();
                         storyPlayer.SetNextBlockContinue();
                         return;
                     }
-                    if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.Achievement)
-                        this.Achievements.Unlock(this.Value);
-                    else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.DisableMenu)
+                    if (Operation == SpecialOperation.Achievement)
+                        Achievements.Unlock(Value);
+                    else if (Operation == SpecialOperation.DisableMenu)
                         Game.State.MenuDisabled = true;
-                    else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.EnableMenu)
+                    else if (Operation == SpecialOperation.EnableMenu)
                         Game.State.MenuDisabled = false;
-                    else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.DisableRunning)
+                    else if (Operation == SpecialOperation.DisableRunning)
                         Game.Player.DisableRunning();
-                    else if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.EnableRunning)
+                    else if (Operation == SpecialOperation.EnableRunning)
                         Game.Player.EnableRunning();
                 }
             }
@@ -136,38 +137,32 @@ namespace LacieEngine.StoryPlayer
 
         public override void Load()
         {
-            if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.MiniGame && this.Value != "end")
+            if (Operation == SpecialOperation.MiniGame && Value != "end")
             {
-                Game.Memory.Cache("res://resources/minigame/" + this.Value + ".tres");
+                Game.Memory.Cache("res://resources/minigame/" + Value + ".tres");
             }
             else
             {
-                if (this.Operation != StoryPlayerSystemCommand.SpecialOperation.Screen)
+                if (Operation != SpecialOperation.Screen)
                     return;
-                Game.Memory.Cache("res://resources/screen/" + this.Value + ".tres");
+                Game.Memory.Cache("res://resources/screen/" + Value + ".tres");
             }
         }
 
         public override IList<string> GetDependencies()
         {
-            if (this.Operation == StoryPlayerSystemCommand.SpecialOperation.MiniGame && this.Value != "end")
-                return (IList<string>)new List<string>(1)
-                {
-          "res://resources/minigame/" + this.Value + ".tres"
-        };
-            if (this.Operation != StoryPlayerSystemCommand.SpecialOperation.Screen)
-                return (IList<string>)Array.Empty<string>();
-            return (IList<string>)new List<string>(1)
-            {
-        "res://resources/screen/" + this.Value + ".tres"
-      };
+            if (Operation == SpecialOperation.MiniGame && Value != "end")
+                return new List<string> { "res://resources/minigame/" + Value + ".tres" };
+            if (Operation != SpecialOperation.Screen)
+                return Array.Empty<string>();
+            return new List<string> { "res://resources/screen/" + Value + ".tres" };
         }
 
         private void ResumeAfterSave(Control saveMenu)
         {
             Game.InputProcessor = Inputs.Processor.StoryPlayer;
-            Game.State.Event = (string)null;
-            Game.State.EventLabel = (string)null;
+            Game.State.Event = null;
+            Game.State.EventLabel = null;
             saveMenu.Delete();
             Game.StoryPlayer.Next();
         }

@@ -18,41 +18,24 @@ namespace LacieEngine.UI
         private TitleSettingsMenuContainer nSettingsContainer;
         private TitleLoadMenuContainer nLoadContainer;
 
-        public TitleMenu(IMenuEntryContainer container) => this.Container = container;
+        public TitleMenu(IMenuEntryContainer container) => Container = container;
 
         public void Continue()
         {
             Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-            if (this.TryRetrySave())
+            if (TryRetrySave())
                 return;
-            this.Container.Control.Visible = false;
-            this.nLoadContainer = GDUtil.MakeNode<TitleLoadMenuContainer>("LoadMenuContainer");
-            this.nLoadContainer.OnClose = (Action)(() => this.CloseLoad());
-            Game.Screen.AddToLayer(IScreenManager.Layer.Screen, (Node)this.nLoadContainer);
-            this.nLoadContainer.Menu.ResetSelection();
+            Container.Control.Visible = false;
+            nLoadContainer = GDUtil.MakeNode<TitleLoadMenuContainer>("LoadMenuContainer");
+            nLoadContainer.OnClose = () => CloseLoad();
+            Game.Screen.AddToLayer(IScreenManager.Layer.Screen, nLoadContainer);
+            nLoadContainer.Menu.ResetSelection();
         }
 
         private bool TryRetrySave()
         {
-            if (!GameState.SaveExists("retrysave"))
-            {
+            if (!SaveFileInformation.CanLoadRetrySave())
                 return false;
-            }
-            SaveFileInformation saveFileInformation = SaveFileInformation.GetSaveFileInformation("retrysave");
-            if (!saveFileInformation.CanPlay())
-            {
-                return false;
-            }
-            using (List<string>.Enumerator enumerator = GDUtil.ListFilesInPath("user://save/", "slot", ".sav", true, false).GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    if (SaveFileInformation.GetSaveFileInformation(GDUtil.GetFileNameFromPath(enumerator.Current, true)).Date > saveFileInformation.Date)
-                    {
-                        return false;
-                    }
-                }
-            }
             Game.Core.StartGameFromSave("retrysave");
             return true;
         }
@@ -66,47 +49,47 @@ namespace LacieEngine.UI
         public void DebugRoom()
         {
             Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-            Game.Core.StartGameFromRoom(Game.Settings.DebugRoom, (string)null, Vector2.Zero, "down");
+            Game.Core.StartGameFromRoom(Game.Settings.DebugRoom, null, Vector2.Zero, "down");
         }
 
         public void Settings()
         {
             Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-            this.Container.Control.Visible = false;
-            this.nSettingsContainer = GDUtil.MakeNode<TitleSettingsMenuContainer>("SettingsContainer");
-            this.nSettingsContainer.OnClose = (Action)(() => this.CloseSettings());
-            Game.Screen.AddToLayer(IScreenManager.Layer.Screen, (Node)this.nSettingsContainer);
+            Container.Control.Visible = false;
+            nSettingsContainer = GDUtil.MakeNode<TitleSettingsMenuContainer>("SettingsContainer");
+            nSettingsContainer.OnClose = () => CloseSettings();
+            Game.Screen.AddToLayer(IScreenManager.Layer.Screen, nSettingsContainer);
         }
 
         public void CloseSettings()
         {
-            this.nSettingsContainer.Delete();
-            this.nSettingsContainer = (TitleSettingsMenuContainer)null;
-            this.Container.Control.Visible = true;
-            this.Root();
-            if (!(this.Container is TitleScreen container))
+            nSettingsContainer.Delete();
+            nSettingsContainer = null;
+            Container.Control.Visible = true;
+            Root();
+            if (!(Container is TitleScreen container))
                 return;
             container.UpdateExtraInfo();
         }
 
         public void CloseLoad()
         {
-            this.nLoadContainer.Delete();
-            this.nLoadContainer = (TitleLoadMenuContainer)null;
-            this.Container.Control.Visible = true;
-            this.Root();
+            nLoadContainer.Delete();
+            nLoadContainer = null;
+            Container.Control.Visible = true;
+            Root();
         }
 
         public void HomePage()
         {
             Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-            int num = (int)OS.ShellOpen(Game.Settings.WebsiteLink);
+            OS.ShellOpen(Game.Settings.WebsiteLink);
         }
 
         public void TranslatorPage()
         {
             Game.Audio.PlaySystemSound("res://assets/sfx/ui_start.ogg");
-            int num = (int)OS.ShellOpen(Game.Language.GetTranslatorWebsite());
+            OS.ShellOpen(Game.Language.GetTranslatorWebsite());
         }
 
         public void Quit()
@@ -118,19 +101,19 @@ namespace LacieEngine.UI
 
         public override Control DrawContent()
         {
-            this.Entries = new List<IMenuEntry>();
+            Entries = new List<IMenuEntry>();
             if (GameState.AnySaveExists())
-                this.Entries.Add((IMenuEntry)new SimpleMenuEntry("system.menu.continue", (Action)(() => this.Continue()), (IMenuEntryList)this));
-            this.Entries.Add((IMenuEntry)new SimpleMenuEntry("system.menu.newgame", (Action)(() => this.NewGame()), (IMenuEntryList)this));
+                Entries.Add(new SimpleMenuEntry("system.menu.continue", () => Continue(), this));
+            Entries.Add(new SimpleMenuEntry("system.menu.newgame", () => NewGame(), this));
             if (OS.IsDebugBuild())
-                this.Entries.Add((IMenuEntry)new SimpleMenuEntry("system.menu.debugroom", (Action)(() => this.DebugRoom()), (IMenuEntryList)this));
-            this.Entries.Add((IMenuEntry)new SimpleMenuEntry("system.menu.settings", (Action)(() => this.Settings()), (IMenuEntryList)this));
+                Entries.Add(new SimpleMenuEntry("system.menu.debugroom", () => DebugRoom(), this));
+            Entries.Add(new SimpleMenuEntry("system.menu.settings", () => Settings(), this));
             if (Game.Settings.WebsiteEnabled)
-                this.Entries.Add((IMenuEntry)new SimpleMenuEntry(Game.Settings.WebsiteCaption, (Action)(() => this.HomePage()), (IMenuEntryList)this));
+                Entries.Add(new SimpleMenuEntry(Game.Settings.WebsiteCaption, () => HomePage(), this));
             if (!Game.Language.GetTranslatorWebsite().IsNullOrEmpty())
-                this.Entries.Add((IMenuEntry)new SimpleMenuEntry("system.menu.website.translator", (Action)(() => this.TranslatorPage()), (IMenuEntryList)this));
-            this.Entries.Add((IMenuEntry)new SimpleMenuEntry("system.menu.quit", (Action)(() => this.Quit()), (IMenuEntryList)this));
-            return UIUtil.CreateVerticalEntryList(this.Entries, out this._selectBgs, 2);
+                Entries.Add(new SimpleMenuEntry("system.menu.website.translator", () => TranslatorPage(), this));
+            Entries.Add(new SimpleMenuEntry("system.menu.quit", () => Quit(), this));
+            return UIUtil.CreateVerticalEntryList(Entries, out _selectBgs, 2);
         }
     }
 }

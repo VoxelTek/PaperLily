@@ -3,7 +3,7 @@ label START
     if not objective ch1.take_bus inprogress end
     if var ch1.bus_not_there
         lacie "I think... I messed up. The bus wasn't there..." mood hide3
-        lacie "Did I take too long? Or was my it the phone call?"
+        lacie "Did I take too long? Or was it the phone call?"
         hide ui
         pause 1
         lacie "I guess I'll try again, some other day." mood sigh

@@ -18,7 +18,8 @@ label START
             set general.hp.lacie = general.maxhp.lacie
             fade out color white
             system minigame end
-            event call ch1_event_mk_victory
+            pause 2
+            event call ch1_event_mk_after_fight
             end
         "Give Up"
             system retry-clear

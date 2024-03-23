@@ -46,8 +46,8 @@ label START
         set ch1.facility_had_bucket_on_entry = true
     if item ch1.forest_caterpillar
         set ch1.facility_had_caterpillar_on_entry = true
-    item remove ch1.forest_harmless_snack
-    item remove ch1.forest_harmless_snack_2
+    item remove ch1.forest_harmless_snack amount 99
+    item remove ch1.forest_harmless_snack_2 amount 99
     item remove ch1.scissors
     item remove ch1.forest_adapter
     item remove ch1.forest_fish

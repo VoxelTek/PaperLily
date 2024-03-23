@@ -46,9 +46,9 @@ label AFTER_READ
     camera move (0,-48) time 2
     pause 2
     action call crossfade_chars
-    pause 6
+    pause 5.6
     action call mk_stand
-    pause 3.2
+    pause 3.6
     action call hide_mk
     chara spawn mk point mk
     pause 0.5
@@ -56,16 +56,14 @@ label AFTER_READ
     pause 1
     chara despawn mk
     action call show_mk_fire
-    pause 0.7
+    pause 0.3
     action call play_mk_fire
     pause 0.3
     audio sfx play burn
     action call hide_fire
-    pause 1.5
+    pause 2
     action call fade_out_bg
     pause 5
-    camera move (0,118) time 2
-    pause 2
     fade out time 2
     audio bgm stop
     pause 2

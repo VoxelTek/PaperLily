@@ -134,9 +134,9 @@ ui_end={
 [lacie_engine]
 
 core/game_name="Paper Lily Chapter 1"
-core/game_version="1.1.3-STEAM"
+core/game_version="1.1.4-STEAM"
 core/game_copyright="Leef 6010 2024"
-core/engine_version="1.5.3"
+core/engine_version="1.5.4"
 core/translation_base_locale="en"
 core/translation_base_name="English"
 core/translation_selected=""

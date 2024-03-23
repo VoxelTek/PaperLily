@@ -30,7 +30,7 @@ label START
             ch1_spider "Oh. There's two of you now."
             ch1_spider "Well, no matter."
             jump CONT
-    lacie "You look... different" mood smile2
+    lacie "You look... different." mood smile2
     lacie "...But I can't quite put my finger on it."
     ch1_spider "I don't appreciate your humor."
     lacie "..." mood hide2

@@ -80,4 +80,4 @@ label SAI_RESCUED
     end
 
 label SAI_GONE
-    "Sai isn't here anymore"
+    "Sai isn't here anymore."

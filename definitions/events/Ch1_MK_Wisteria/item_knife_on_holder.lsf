@@ -22,7 +22,7 @@ label START
     chara2 "T-That's nonsense! What are you talking about??"
     unknown "The whole family needs to be cleansed."
     unknown "Your daughter will be tried for witchcraft, and due to your ties to her, you will be as well."
-    chara2 "H-Hold on... Wait... You've got it all wrong. She's not my daughter"
+    chara2 "H-Hold on... Wait... You've got it all wrong. She's not my daughter."
     mk "..."
     chara2 "I merely found her on the streets, she does not share my blood."
     mk "(...Father...)"

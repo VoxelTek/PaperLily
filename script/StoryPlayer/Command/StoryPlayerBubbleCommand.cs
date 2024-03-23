@@ -37,33 +37,23 @@ namespace LacieEngine.StoryPlayer
         // Token: 0x06000491 RID: 1169 RVA: 0x00013244 File Offset: 0x00011444
         public override void Execute(StoryPlayer storyPlayer)
         {
-            if (this.TargetNode == null)
+            TargetNode ??= "Player";
+            Offset ??= DEFAULT_OFFSET_NPC;
+            if (Game.Room.FindNodeInRoom(TargetNode) == null)
             {
-                this.TargetNode = "Player";
-            }
-            Vector2? offset = this.Offset;
-            Vector2 vector = offset.GetValueOrDefault();
-            if (offset == null)
-            {
-                vector = StoryPlayerBubbleCommand.DEFAULT_OFFSET_NPC;
-                Vector2? vector2 = new Vector2?(vector);
-                this.Offset = vector2;
-            }
-            if (Game.Room.FindNodeInRoom(this.TargetNode) == null)
-            {
-                Log.Error(new object[] { "Invalid parent node for bubble: ", this.TargetNode });
+                Log.Error("Invalid parent node for bubble: ", TargetNode);
                 storyPlayer.SetNextBlockContinue();
                 storyPlayer.Next();
                 return;
             }
-            Node2D root = Game.Room.FindNodeInRoom(this.TargetNode) as Node2D;
-            Node2D bubble = GDUtil.Instance<Node2D>("res://resources/nodes/common/bubble/" + this.Bubble + ".tscn");
+            var root = Game.Room.FindNodeInRoom(TargetNode) as Node2D;
+            var bubble = GDUtil.Instance<Node2D>("res://resources/nodes/common/bubble/" + Bubble + ".tscn");
             storyPlayer.HideAllUI();
-            bubble.Position = root.GlobalPosition + this.Offset.Value;
+            bubble.Position = root.GlobalPosition + Offset.Value;
             Game.CurrentRoom.AddChild(bubble, false);
-            float time = this.Time ?? 1.5f;
+            float time = Time ?? DefaultWaitTime;
             storyPlayer.SetNextBlockContinue();
-            if (this.ContinueImmediately || time <= 0f)
+            if (ContinueImmediately || time <= 0f)
             {
                 storyPlayer.Next();
                 return;
@@ -74,7 +64,7 @@ namespace LacieEngine.StoryPlayer
         // Token: 0x06000492 RID: 1170 RVA: 0x0001337A File Offset: 0x0001157A
         public override IList<string> GetDependencies()
         {
-            return new List<string>(1) { "res://resources/nodes/common/bubble/" + this.Bubble + ".tscn" };
+            return new List<string> { "res://resources/nodes/common/bubble/" + Bubble + ".tscn" };
         }
 
         // Token: 0x04000433 RID: 1075

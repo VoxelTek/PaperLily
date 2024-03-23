@@ -5,6 +5,7 @@
 // Assembly location: D:\GodotPCKExplorer\Paper Lily\exe\.mono\assemblies\Release\Lacie Engine.dll
 
 using System;
+using System.Collections.Generic;
 
 #nullable disable
 namespace LacieEngine.Core
@@ -40,16 +41,33 @@ namespace LacieEngine.Core
         {
         }
 
+        public static bool CanLoadRetrySave()
+        {
+            if (!GameState.SaveExists("retrysave"))
+                return false;
+
+            var saveFileInformation = GetSaveFileInformation("retrysave");
+            if (!saveFileInformation.CanPlay())
+                return false;
+
+            foreach (var saveFileName in GDUtil.ListFilesInPath("user://save/", "slot", ".sav", true, false))
+                if (GetSaveFileInformation(GDUtil.GetFileNameFromPath(saveFileName, true)).Date > saveFileInformation.Date)
+                    return false;
+
+            return true;
+        }
+
         public bool CanPlay()
         {
-            return !this.Empty && !this.Corrupted && ((!this.Event.IsNullOrEmpty() && Game.Events.Exists(this.Event)) || (this.Event.IsNullOrEmpty() && GDUtil.FileExists("res://resources/nodes/rooms/" + this.Room + ".tscn")));
+            return !Empty && !Corrupted && ((!Event.IsNullOrEmpty() && Game.Events.Exists(Event)) || (Event.IsNullOrEmpty() && GDUtil.FileExists("res://resources/nodes/rooms/" + Room + ".tscn")));
         }
 
         public static SaveFileInformation GetSaveFileInformation(string saveName)
         {
-            SaveFileInformation info = new SaveFileInformation();
-            info.Id = saveName;
-            info.SlotNum = SaveFileInformation.GetSlotNumFromSaveName(saveName);
+            var info = new SaveFileInformation {
+                Id = saveName,
+                SlotNum = GetSlotNumFromSaveName(saveName)
+            };
             if (!GameState.SaveExists(saveName))
             {
                 info.Empty = true;
@@ -57,28 +75,28 @@ namespace LacieEngine.Core
             }
             try
             {
-                return SaveFileInformation.FillAsCurrentSave(info);
+                return FillAsCurrentSave(info);
             }
             catch (Exception ex)
             {
-                Log.Error((object)"Save file ", (object)saveName, (object)" is corrupt: ", (object)ex.Message);
-                return SaveFileInformation.FillAsCorrupted(info);
+                Log.Error("Save file ", saveName, " is corrupt: ", ex.Message);
+                return FillAsCorrupted(info);
             }
         }
 
         private static SaveFileInformation FillAsCurrentSave(SaveFileInformation info)
         {
-            GameState gameState = GDUtil.ReadJsonFile<GameState>("user://save/" + info.Id + ".sav", Game.Settings.SaveKey);
+            var gameState = GDUtil.ReadJsonFile<GameState>("user://save/" + info.Id + ".sav", Game.Settings.SaveKey);
             if (gameState.Version.IsNullOrEmpty())
-                gameState.Version = "1.4.0";
+                gameState.Version = VER_LEGACY_DEFAULT;
             info.Party = gameState.Party.ToArray();
             info.Location = gameState.LocationStr.IsNullOrEmpty() ? "system.menu.save.location.unknown" : gameState.LocationStr;
             info.Image = gameState.LocationImg.IsNullOrEmpty() ? "res://assets/img/ui/save/unknown.png" : "res://assets/img/ui/save/" + gameState.LocationImg + ".png";
             info.Room = gameState.Room;
             info.Event = gameState.Event;
             info.Date = gameState.Date;
-            info.Playtime = TimeSpan.FromMilliseconds((double)long.Parse(gameState.Playtime)).ToString("hh\\:mm\\:ss");
-            return Version.Parse(gameState.Version) < Version.Parse("1.5.0") ? SaveFileInformation.FillAsLegacySave(info) : info;
+            info.Playtime = TimeSpan.FromMilliseconds(long.Parse(gameState.Playtime)).ToString("hh\\:mm\\:ss");
+            return Version.Parse(gameState.Version) < Version.Parse(VER_LEGACY_CUTOFF) ? FillAsLegacySave(info) : info;
         }
 
         private static SaveFileInformation FillAsLegacySave(SaveFileInformation info)

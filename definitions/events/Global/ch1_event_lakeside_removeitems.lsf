@@ -7,12 +7,12 @@ label START
     if item ch1.candleman_candle_blue jump CLEANUP
     if item ch1.forest_lamp_empty jump CLEANUP
     if item ch1.forest_bugnet jump CLEANUP
-    if item ch1.kett_flower jump CLEANUP
     if item ch1.forest_jar_empty jump CLEANUP
     if item ch1.tpot_head jump CLEANUP
     if item ch1.red_pot jump CLEANUP
     if item ch1.forest_pot jump CLEANUP
     if item ch1.forest_lockedsite_key jump CLEANUP
+    if item ch1.forest_stone_cure jump CLEANUP
     end
 
 label CLEANUP
@@ -27,7 +27,6 @@ label CLEANUP
     item remove ch1.candleman_candle_blue
     item remove ch1.forest_lamp_empty
     item remove ch1.forest_bugnet
-    item remove ch1.kett_flower amount 99
     item remove ch1.forest_jar_empty
     item remove ch1.tpot_head
     item remove ch1.red_pot

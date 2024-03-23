@@ -48,7 +48,7 @@ label START
             event call event_prisoner_door
         if not var ch1.forest_red_found_passage
             lacie "Through... here? What do you mean?" mood concerned5
-            unknown "You haven't looked at this room much much, have you?"
+            unknown "You haven't looked at this room much, have you?"
             lacie "..." mood concerned6
             set ch1.forest_red_prisoner_stage = 4
 

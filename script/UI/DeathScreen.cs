@@ -15,26 +15,25 @@ namespace LacieEngine.UI
     public class DeathScreen : Control
     {
         [LacieEngine.API.GetNode("MenuContainer")]
-        private Control nMenuContainer;
+        private readonly Control nMenuContainer;
 
-        public override void _Ready() => this.ShowMenu();
+        public override void _Ready() => ShowMenu();
 
         public async void ShowMenu()
         {
             DeathScreen deathScreen = this;
             await DrkieUtil.DelaySeconds(1.0);
-            SimpleChoicesMenuContainer choicesMenuContainer = new SimpleChoicesMenuContainer(new List<IMenuEntry>()
-            {
-                (IMenuEntry) new SimpleMenuEntry(Game.Language.GetCaption("system.screen.death.retry"), new Action(deathScreen.Retry), (IMenuEntryList) null),
-                (IMenuEntry) new SimpleMenuEntry(Game.Language.GetCaption("system.screen.death.giveup"), new Action(deathScreen.GiveUp), (IMenuEntryList) null)
+            SimpleChoicesMenuContainer choicesMenuContainer = new SimpleChoicesMenuContainer(new List<IMenuEntry> {
+                 new SimpleMenuEntry(Game.Language.GetCaption("system.screen.death.retry"), new Action(deathScreen.Retry),  null),
+                 new SimpleMenuEntry(Game.Language.GetCaption("system.screen.death.giveup"), new Action(deathScreen.GiveUp),  null)
             });
-            deathScreen.nMenuContainer.AddChild((Node)choicesMenuContainer);
+            deathScreen.nMenuContainer.AddChild(choicesMenuContainer);
             Game.InputProcessor = Inputs.Processor.Menu;
         }
 
         public void Retry()
         {
-            if (GameState.SaveExists("retrysave"))
+            if (!SaveFileInformation.CanLoadRetrySave())
             {
                 Game.InputProcessor = Inputs.Processor.None;
                 Game.Core.StartGameFromSave("retrysave");

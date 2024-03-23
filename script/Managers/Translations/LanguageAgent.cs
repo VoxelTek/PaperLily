@@ -11,29 +11,31 @@ using System.Collections.Generic;
 #nullable disable
 namespace LacieEngine.Translations
 {
-  public class LanguageAgent : Node
-  {
-    private Dictionary<string, Resource> overrideCache;
-
-    public LanguageAgent()
+    public class LanguageAgent : Node
     {
-      this.Name = nameof (LanguageAgent);
-      this.overrideCache = new Dictionary<string, Resource>();
-    }
+        private readonly Dictionary<string, Resource> overrideCache;
 
-    public void OverrideResource(string path, string takeOverPath)
-    {
-      Log.Debug((object) "Overriding resource: ", (object) path, (object) " will take over ", (object) takeOverPath);
-      GDUtil.ClearCache(takeOverPath);
-      this.overrideCache[takeOverPath] = ResourceLoader.Load(path, (string) null, true);
-      this.overrideCache[takeOverPath].TakeOverPath(takeOverPath);
-    }
+        public LanguageAgent()
+        {
+            Name = nameof(LanguageAgent);
+            overrideCache = new Dictionary<string, Resource>();
+        }
 
-    public void ClearOverrides()
-    {
-      foreach (string key in this.overrideCache.Keys)
-        GDUtil.ClearCache(key);
-      this.overrideCache.Clear();
+        public void OverrideResource(string path, string takeOverPath)
+        {
+            if (!GDUtil.FileExists(takeOverPath))
+                return;
+            Log.Debug("Overriding resource: ", path, " will take over ", takeOverPath);
+            GDUtil.ClearCache(takeOverPath);
+            overrideCache[takeOverPath] = ResourceLoader.Load(path, null, true);
+            overrideCache[takeOverPath].TakeOverPath(takeOverPath);
+        }
+
+        public void ClearOverrides()
+        {
+            foreach (string key in overrideCache.Keys)
+                GDUtil.ClearCache(key);
+            overrideCache.Clear();
+        }
     }
-  }
 }

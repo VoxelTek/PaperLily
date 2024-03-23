@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://script/Subgame/Chapter1/Ch1FacilityB3fMk.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_facility.tres" type="TileSet" id=2]
@@ -64,6 +64,7 @@
 [ext_resource path="res://assets/sprite/ch1/facility/deep/misc_spiderweb.png" type="Texture" id=62]
 [ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=63]
 [ext_resource path="res://script/Core/Nodes/VariableEnabler.cs" type="Script" id=64]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=65]
 
 [node name="Ch1_Facility_B3F_East" type="Node2D"]
 script = ExtResource( 1 )
@@ -74,8 +75,6 @@ Lighting = ExtResource( 14 )
 CameraLimitLeft = -32
 Bgm = ExtResource( 18 )
 HideFollowers = true
-lightOn = ExtResource( 14 )
-lightOff = ExtResource( 14 )
 
 [node name="TilesBg" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -612,6 +611,9 @@ __meta__ = {
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="on_enter_save" type="Node" parent="Other/Events"]
+script = ExtResource( 65 )
 
 [node name="chr_mk" type="Node2D" parent="Other/Events"]
 position = Vector2( 753, -286 )

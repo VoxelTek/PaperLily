@@ -13,77 +13,83 @@ using System.Collections.Generic;
 #nullable disable
 namespace LacieEngine.Modules.Tutorials
 {
-  [Injectable]
-  public class TutorialManager : ITutorialManager, IModule, ITranslatable
-  {
-    private TutorialScreen currentTutorial;
-
-    public event Action TutorialStarted;
-
-    public event Action TutorialEnded;
-
-    public void ShowTutorial(string tutorialId, bool animate)
+    [Injectable]
+    public class TutorialManager : ITutorialManager, IModule, ITranslatable
     {
-      Game.InputProcessor = Inputs.Processor.None;
-      if (!Game.State.SeenTutorials.Contains(tutorialId))
-        Game.State.SeenTutorials.Add(tutorialId);
-      this.currentTutorial = new TutorialScreen();
-      this.currentTutorial.Tutorial = this.LoadTutorial(tutorialId);
-      Game.Screen.AddToLayer(IScreenManager.Layer.UI, (Node) this.currentTutorial);
-      this.currentTutorial.Start(animate);
-      Action tutorialStarted = this.TutorialStarted;
-      if (tutorialStarted == null)
-        return;
-      tutorialStarted();
+        private TutorialScreen currentTutorial;
+
+        public event Action TutorialStarted;
+
+        public event Action TutorialEnded;
+
+        public void ApplyCaptions(Tutorial tutorial)
+        {
+            tutorial.Name = Game.Language.GetCaption(tutorial.Name, TutorialNameContext(tutorial));
+            tutorial.Text = Game.Language.GetCaption(tutorial.Text, TutorialTextContext(tutorial));
+        }
+
+        public void ShowTutorial(string tutorialId, bool animate)
+        {
+            Game.InputProcessor = Inputs.Processor.None;
+            if (!Game.State.SeenTutorials.Contains(tutorialId))
+                Game.State.SeenTutorials.Add(tutorialId);
+            currentTutorial = new TutorialScreen {
+                Tutorial = LoadTutorial(tutorialId)
+            };
+            Game.Screen.AddToLayer(IScreenManager.Layer.UI, currentTutorial);
+            currentTutorial.Start(animate);
+            var tutorialStarted = TutorialStarted;
+            if (tutorialStarted == null)
+                return;
+            tutorialStarted();
+        }
+
+        public void ShowTutorial(string tutorialId) => ShowTutorial(tutorialId, true);
+
+        public void HideTutorial()
+        {
+            if (currentTutorial == null)
+                return;
+            currentTutorial.Delete();
+            currentTutorial = null;
+            Game.Core.AssignInputProcessor();
+            var tutorialEnded = TutorialEnded;
+            if (tutorialEnded == null)
+                return;
+            tutorialEnded();
+        }
+
+        public bool Exists(string id) => GDUtil.FileExists(IdToPath(id));
+
+        public string IdToPath(string id) => "res://resources/tutorials/" + id + ".tres";
+
+        public Tutorial LoadTutorial(string id)
+        {
+            var tutorial = GD.Load<Tutorial>(IdToPath(id));
+            tutorial.Id = id;
+            tutorial.Name = Game.Language.GetCaption(tutorial.Name);
+            tutorial.Text = Game.Language.GetCaption(tutorial.Text);
+            return tutorial;
+        }
+
+        public void LoadResourcesForTutorial(string tutorialId)
+        {
+            Game.Memory.Cache(IdToPath(tutorialId));
+        }
+
+        public IList<string> GetDependencies(string tutorialId)
+        {
+            return new List<string> {
+                IdToPath(tutorialId)
+            };
+        }
+
+        public void ApplyTranslationOverrides()
+        {
+        }
+
+        private string TutorialNameContext(Tutorial tutorial) => "tutorials.name." + tutorial.Id;
+
+        private string TutorialTextContext(Tutorial tutorial) => "tutorials.text." + tutorial.Id;
     }
-
-    public void ShowTutorial(string tutorialId) => this.ShowTutorial(tutorialId, true);
-
-    public void HideTutorial()
-    {
-      if (this.currentTutorial == null)
-        return;
-      this.currentTutorial.Delete();
-      this.currentTutorial = (TutorialScreen) null;
-      Game.Core.AssignInputProcessor();
-      Action tutorialEnded = this.TutorialEnded;
-      if (tutorialEnded == null)
-        return;
-      tutorialEnded();
-    }
-
-    public bool Exists(string id) => GDUtil.FileExists(this.IdToPath(id));
-
-    public string IdToPath(string id) => "res://resources/tutorials/" + id + ".tres";
-
-    public Tutorial LoadTutorial(string id)
-    {
-      Tutorial tutorial = GD.Load<Tutorial>(this.IdToPath(id));
-      tutorial.Id = id;
-      tutorial.Name = Game.Language.GetCaption(tutorial.Name);
-      tutorial.Text = Game.Language.GetCaption(tutorial.Text);
-      return tutorial;
-    }
-
-    public void LoadResourcesForTutorial(string tutorialId)
-    {
-      Game.Memory.Cache(this.IdToPath(tutorialId));
-    }
-
-    public IList<string> GetDependencies(string tutorialId)
-    {
-      return (IList<string>) new List<string>()
-      {
-        this.IdToPath(tutorialId)
-      };
-    }
-
-    public void ApplyTranslationOverrides()
-    {
-    }
-
-    private string TutorialNameContext(Tutorial tutorial) => "tutorials.name." + tutorial.Id;
-
-    private string TutorialTextContext(Tutorial tutorial) => "tutorials.text." + tutorial.Id;
-  }
 }
