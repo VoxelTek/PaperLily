@@ -1,0 +1,11 @@
+label START
+    if repeat end
+    if var ch1.forest_center_tree_destroyed end
+    lacie "..." mood surprised
+    lacie "(I was too late.)" mood concerned2
+    action turn left
+    lacie "Um..." mood concerned9
+    lacie "Is he..." mood concerned7
+    milion "Hm?" mood default
+    milion "Shouldn't you know? You're the sole cause of that." mood blank4
+    lacie "....." mood shadow2

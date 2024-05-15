@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
@@ -27,7 +27,8 @@
 [ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=25]
 [ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=26]
 [ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=27]
-[ext_resource path="res://assets/sprite/ch1/forest/lakeside/misc_pinned_note.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/forest/lakeside/temple/floor_papers.png" type="Texture" id=28]
+[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=29]
 
 [node name="Ch1_Forest_Lakeside_Temple" type="Node2D"]
 script = ExtResource( 1 )
@@ -130,9 +131,10 @@ texture = ExtResource( 10 )
 position = Vector2( 80, 14 )
 texture = ExtResource( 13 )
 
-[node name="MiscPinnedNote" type="Sprite" parent="Background"]
-position = Vector2( 121, 40 )
+[node name="FloorPapers" type="Sprite" parent="Background"]
+position = Vector2( 114, 77 )
 texture = ExtResource( 28 )
+offset = Vector2( 0.5, 0 )
 
 [node name="Main" type="YSort" parent="."]
 __meta__ = {
@@ -188,6 +190,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="on_enter_save" type="Node" parent="Other/Events"]
+script = ExtResource( 29 )
+
 [node name="item_fish_on_bowl" type="Node" parent="Other/Events"]
 script = ExtResource( 27 )
 Items = "ch1.forest_fish"
@@ -239,9 +244,10 @@ script = ExtResource( 20 )
 Area = Vector2( 96, 32 )
 
 [node name="misc_note" type="Node2D" parent="Other/Events"]
-position = Vector2( 116, 59 )
+position = Vector2( 116, 75 )
 script = ExtResource( 20 )
-Area = Vector2( 24, 8 )
+Solid = false
+Area = Vector2( 24, 24 )
 
 [node name="move_exit" type="Node2D" parent="Other/Events"]
 position = Vector2( 80, 208 )

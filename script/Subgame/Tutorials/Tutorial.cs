@@ -11,6 +11,7 @@ using LacieEngine.API;
 namespace LacieEngine.Modules.Tutorials
 {
   [ExportType]
+  [Tool]
   public class Tutorial : Resource
   {
     public string Id { get; internal set; }

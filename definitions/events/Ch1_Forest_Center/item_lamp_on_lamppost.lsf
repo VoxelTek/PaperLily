@@ -1,0 +1,15 @@
+label START
+    if repeat 3 jump AGAIN_AGAIN
+    if repeat jump AGAIN
+    lacie "I can't reach up there."
+    lacie "And even if I could, I can't see the point in fixing the lamp." mood reflective
+    end
+
+label AGAIN
+    lacie "I still can't reach..." mood reflective
+    lacie "Besides, it's not like a secret door will open just because I fixed this particular lamp." mood blank2
+    end
+
+label AGAIN_AGAIN
+    "There's seriously no point in that."
+    end

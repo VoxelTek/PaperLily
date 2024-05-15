@@ -1,0 +1,17 @@
+label START
+    system call PauseChaser
+    audio bgm stop
+    audio sfx play door
+    set ch1.mk_painting_chase_clear = true
+    fade out time 0.5
+    move to Ch1_MK_B1F_Hallway point cage_room time 0
+    fade in time 0.5
+    pause 0.5
+    lacie "*huff* *puff*" mood hurt
+    if character sai
+        lacie "We barely got away..." mood concerned9
+        sai "Remind me not to mess with creepy paintings in the future." mood thinking11
+    else
+        lacie "I barely got away..." mood concerned9
+        action turn down
+        lacie "I need to be more careful with the things I touch..." mood concerned11

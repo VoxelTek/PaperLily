@@ -1,0 +1,120 @@
+label START
+    if var ch1.mk_spidey_talks end
+    set ch1.mk_spidey_talks = 1
+    fade out
+    move to Ch1_Cutscene_MK_Spidey_1 point ch1_spider_talk time 0
+    chara spawn lacie point lacie
+    chara set lacie at left
+    fade in
+    ch1_spider "Psst..."
+    hide ui
+    bubble question on lacie
+    pause 0.5
+    ch1_spider "Over here."
+    hide ui
+    action walk up 32 speed slow node lacie
+    pause 1
+    system call SpiderPopup
+    pause 0.6
+    action walk down 16 backwards node lacie
+    pause 0.5
+    ch1_spider "Oh. A human."
+    ch1_spider "I see."
+    ch1_spider "Strange."
+    ch1_spider "How did you make it all the way here?"
+    lacie "Um..."
+    ch1_spider "Well, no matter."
+    ch1_spider "This isn't ideal but..."
+    ch1_spider "...It'll do, I suppose."
+    lacie "Who are you?"
+    ch1_spider "I do not have a name."
+    hide ui
+    pause 1
+    audio sfx play footstep1
+    pause 0.6
+    audio sfx play footstep2
+    pause 0.6
+    audio sfx play footstep3
+    pause 0.6
+    audio sfx play footstep4
+    pause 0.6
+    action turn left node lacie
+    lacie "(What was that..?)"
+    action turn up node lacie
+    ch1_spider "Miss Knives is roaming around."
+    chara rename mk off
+    lacie "Miss Knives..." mood blank8
+    lacie "I think I met her."
+    ch1_spider "Yes, I saw that."
+    ch1_spider "You really brought out the \"crazy\" in her."
+    lacie "..."
+    lacie "(I didn't exactly do anything...)"
+    lacie "I need to find a way out of this place."
+    lacie "I'm looking for a cursed door."
+    ch1_spider "Of course."
+    ch1_spider "We have a common goal."
+    ch1_spider "To avoid you wandering aimlessly until you get killed..."
+    ch1_spider "...I'll help you."
+    lacie "Alright." mood reflective2
+label CHOICE_LOOP
+    choice "So..."
+        "Why don't you have a name?" if not var ch1.mk_spidey_asked_about_name
+            set ch1.mk_spidey_asked_about_name = true
+            lacie "You don't have a name?" mood blank1
+            ch1_spider "I wasn't given one."
+            ch1_spider "But when you live a solitary life, you don't need a name."
+            lacie "..." mood default
+            ch1_spider "You're free to call me what you wish."
+            ch1_spider "You humans seem to want to name everything."
+            lacie "I'll call you Spider." mood blank1
+            chara rename ch1_spider off
+            ch1_spider "That's a terrible name."
+            ch1_spider "Do you call other humans \"Human\"?"
+            lacie "..." mood disappointed2
+            jump CHOICE_LOOP
+        "How do I get out of here?" if not var ch1.mk_spidey_asked_about_escape
+            set ch1.mk_spidey_asked_about_escape = true
+            lacie "How do I get out of here?" mood blank1
+            ch1_spider "There are several strange objects scattered around this place."
+            ch1_spider "After you find them, you'll need to figure out how to unseal them."
+            lacie "How will I know what I'm looking for?"
+            ch1_spider "You'll know it when you see it."
+            lacie "...Okay." mood blank3
+            jump CHOICE_LOOP
+        "My items are gone" if not var ch1.mk_spidey_asked_about_items
+            set ch1.mk_spidey_asked_about_items = true
+            lacie "By the way..." mood concerned5
+            lacie "I came in here with a lot of things but... they're all gone."
+            lacie "If I don't get them back..."
+            ch1_spider "Don't worry. You'll have them if you get out of here."
+            lacie "..."
+            objective complete ch1.mk_find_own_items
+            jump CHOICE_LOOP
+    hide ui
+    pause 1
+    audio sfx play footstep1
+    pause 0.6
+    audio sfx play footstep2
+    pause 0.6
+    audio sfx play footstep3
+    pause 0.6
+    audio sfx play footstep4
+    pause 0.6
+    action turn left node lacie
+    ch1_spider "I hear her coming."
+    ch1_spider "You need to hide."
+    lacie "Huh?"
+    ch1_spider "Go, now!"
+
+    hide ui
+    objective complete ch1.mk_find_exit
+    camera unlock
+    action walk down 128 speed fast node lacie continue
+    pause 0.5
+    move to Ch1_MK_Stairway point coming_down
+    pause 0.5
+    audio sfx play ch1_smash
+    pause 0.2
+    camera shake continue
+    pause 1.5
+    end

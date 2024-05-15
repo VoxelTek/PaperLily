@@ -1,0 +1,6 @@
+label START
+    "A confinement door. It's locked."
+    if repeat end
+    if var ch1.facility_dungeon_2_released end
+    lacie "There's something inside..." mood hide2
+    end

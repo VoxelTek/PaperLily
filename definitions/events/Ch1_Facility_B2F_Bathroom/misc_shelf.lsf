@@ -1,0 +1,9 @@
+label START
+    if repeat jump NOTHING_ELSE
+    "There's something on this shelf."
+    item add ch1.facility_fuse_40
+    end
+
+label NOTHING_ELSE
+    "There's nothing else of use."
+    end

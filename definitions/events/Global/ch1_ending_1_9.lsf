@@ -1,0 +1,57 @@
+label START
+    audio bgm stop time 4
+    move to Ch1_Cutscene_Ending_9 point ch1_cutscene_return_camera cutscene time 0
+    chara spawn lacie point ch1_cutscene_return_lacie
+    action walk down 200 node lacie continue
+    fade in time 2
+    action turn left node lacie
+    pause 0.5
+    bubble exclamation on lacie
+    lacie "W-what?" mood scared4
+    hide ui
+    pause 0.5
+    action walk left 80 speed slow node lacie
+    pause 1
+    lacie "...How could this happen? It wasn't that long..." mood superscared
+    hide ui
+    pause 1
+    lacie "Is this... is this really him?" mood superscared4
+    hide ui
+    bubble ellipsis_silent on lacie
+    action walk right 48 node lacie
+    lacie "Maybe I should get out of here, it's probably dangerous." mood superscared3
+    hide ui
+    audio ambiance play heartbeat_1 volume 0.5
+    pause 1
+    action turn down node lacie
+    camera move (0,100) time 2
+    pause 0.5
+    lacie "What's that?" mood superscared
+    hide ui
+    pause 1
+    action walk down 160 node lacie speed slow
+    action walk right 32 node lacie speed slow
+    action turn down node lacie
+    pause 2
+    lacie "Th-this is...!" mood superscared2
+    hide ui
+    audio ambiance stop time 0.5
+    pause 1
+    audio sfx play footstep1
+    action call primal_attack
+    pause 0.1
+    audio sfx play footstep2
+    pause 0.1
+    audio sfx play footstep1
+    pause 0.1
+    audio sfx play footstep2
+    pause 0.1
+    audio sfx play footstep3
+    pause 0.15
+    fade out time 0
+    pause 4
+    "Dead End 1-9 - Doubt" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.9 = true
+    system save-copy retrybak retrysave
+    system title-screen

@@ -1,0 +1,6 @@
+label START
+    if var ch1.facility_seen_ventman end
+    if not var ch1.facility_seen_event_rune end
+    action call ventman
+    set ch1.facility_seen_ventman = true
+    end

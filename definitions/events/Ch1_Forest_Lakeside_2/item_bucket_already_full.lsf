@@ -1,0 +1,20 @@
+label START
+    if item ch1.bucket_full
+        choice "Empty the ${item:ch1.bucket_full}?"
+            "Yes"
+                jump EMPTY
+            "No"
+                end
+    if item ch1.bucket_full_holy
+        choice "Empty the ${item:ch1.bucket_full_holy}?"
+            "Yes"
+                continue
+            "No"
+                end
+label EMPTY
+    hide ui
+    audio sfx play water_splash_4
+    pause 1
+    item remove ch1.bucket_full
+    item remove ch1.bucket_full_holy
+    item add ch1.bucket

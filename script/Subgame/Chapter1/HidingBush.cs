@@ -92,10 +92,8 @@ namespace LacieEngine.Subgame.Chapter1
       Game.Player.Turn((Direction) this.nPoint.Direction);
       Game.InputProcessor = Inputs.Processor.Player;
       IGameCamera camera = Game.Camera;
-      camera.ZoomLevel = 1f;
       camera.TrackPlayer();
       camera.ApplyRoomSettings();
-      camera.Node.GlobalPosition = Game.Player.Node.GlobalPosition;
       this.nParticles.Emitting = false;
       this.nParticles.Restart();
       this.nParticles.Emitting = true;

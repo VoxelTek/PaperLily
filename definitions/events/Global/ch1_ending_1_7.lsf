@@ -1,0 +1,57 @@
+label START
+    hide ui
+    audio bgm stop time 6
+    fade out
+    move to Ch1_Forest_Artist point after_chase_bad_camera cutscene
+    chara spawn lacie point after_chase_bad
+    chara spawn kett point after_chase_bad
+    system call KettMad
+    action walk left 128 node lacie speed fast continue
+    fade in continue
+    pause 1.5
+    action turn up node lacie
+    action walk left 64 node kett speed slow continue
+    pause 0.5
+    action turn down node lacie
+    pause 0.5
+    action turn right node lacie
+    pause 0.5
+    action walk left 16 node lacie speed veryslow backwards
+    pause 0.3
+    action walk left 16 node kett speed veryslow
+    pause 0.3
+    action walk left 16 node lacie speed veryslow backwards continue
+    fade out time 2 continue
+    pause 0.8
+    action state shadow_stand node lacie
+    action walk left 16 node kett speed veryslow
+    pause 6
+
+    set ch1.forest_kett_chase = false
+    move to Ch1_Artist_2F point kett_ending_7_camera cutscene
+    action call show_lacie_sculpt
+    chara spawn kett point kett_ending_7
+    chara set kett at right
+    fade in
+    pause 1
+    action walk down 32 node kett speed veryslow backwards
+    pause 0.3
+    action walk down 16 node kett speed veryslow backwards
+    pause 2
+    kett "It's..."
+    kett "...perfection." mood cute
+    kett "So avant-garde."
+    kett "Truly timeless."
+    hide ui
+    pause 1
+    action turn down node kett
+    pause 0.5
+    action state bloom_red node kett
+    pause 1.5
+    kett "...Should I reopen the gallery after all?" mood flower5
+    hide ui
+    fade out time 4
+    "Dead End 1-7 - Mortal Immortalized" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.7 = true
+    system title-screen

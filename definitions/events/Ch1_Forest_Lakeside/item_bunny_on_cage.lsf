@@ -1,0 +1,8 @@
+label START
+    fade out
+    item remove ch1.forest_bunny
+    set ch1.forest_lakeside_cage_content = "bunny"
+    system refresh
+    pause 1
+    fade in
+    end

@@ -1,0 +1,8 @@
+label START
+    "A shoe rack, full of shoes of various colors."
+    if var general.chapter == 1 jump CH1
+    end
+
+label CH1
+    event call ch1_item_shoelaces_get
+    end

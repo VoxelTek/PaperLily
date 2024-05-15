@@ -1,0 +1,8 @@
+label START
+    if repeat jump AGAIN
+    lacie "I came from this direction. There's no reason to go back now." mood blank7
+    end
+
+label AGAIN
+    "You can't see the other side of the lake from here."
+    end

@@ -1,0 +1,10 @@
+label START
+    "A list of rules for the bus."
+    if repeat end
+    if var ch1.temp_ending_1_4 jump SERIOUS
+    lacie "\"No eating on the bus.\"" mood blank4
+    lacie "Seems pretty reasonable." mood blank1
+    end
+
+label SERIOUS
+    "\"No eating on the bus.\""

@@ -1,0 +1,16 @@
+label START
+    if not var ch1.mk_crow_dead end
+    if var ch1.mk_sai_talks_crow end
+    if var ch1.mk_rescued_sai end
+    if var general.serious end
+    set ch1.mk_sai_talks_crow = true
+    chara set lacie at left
+    chara set sai at right
+    pause 0.5
+    sai "Um, so..." mood surprised2
+    sai "The knives lady was here." mood thinking2
+    sai "She pulverized that bird." mood worried2
+    lacie "..." mood surprised3
+    sai "It was crazy, I thought I was toast." mood thinking7
+    lacie "Where did she go after?" mood concerned2
+    sai "No clue." mood lazy2

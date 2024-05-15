@@ -1,0 +1,32 @@
+label START
+    if repeat
+        event queue event_elevator_ride
+        end
+    hide ui
+    audio sfx play ch1_elevator
+    pause 1.5
+    fade out
+    set ch1.facility_elevator_location = -1
+    move to Ch1_Cutscene_Facility_Elevator point center time 0
+    chara spawn lacie point lacie
+    chara spawn sai point sai
+    chara set lacie at left
+    chara set sai at right
+    pause 1.5
+    fade in
+    pause 1
+    sai "This thing is pretty slow, huh?" mood blank2
+    lacie "..." mood reflective
+    sai "What do you think we'll find down there?" mood thinking5
+    lacie "I don't know..." mood reflective2
+    hide ui
+    pause 1
+    sai "I'd say it's not smart to go even deeper..." mood blank3
+    sai "But what do I know." mood blank10
+    sai "It's not like we have a choice." mood confused11
+    sai "And coming here in the first place wasn't smart already so..." mood confused12
+    hide ui
+    pause 1
+    fade out
+    pause 1
+    move to Ch1_Facility_Elevator point center time 0

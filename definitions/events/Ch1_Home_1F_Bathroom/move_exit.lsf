@@ -1,0 +1,3 @@
+label START
+    audio sfx play door
+    move to Ch1_Home_1F_Livingroom point bathroom_door

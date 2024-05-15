@@ -1,0 +1,4 @@
+label START
+    system call MoveBoxOutOfDoor5
+    event call move_exit_cell_5
+    end

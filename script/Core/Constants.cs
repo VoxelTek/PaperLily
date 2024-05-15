@@ -249,6 +249,7 @@ namespace LacieEngine.Core
       public const string DefaultInputProfileController = "lacie_engine/input/default_profile_pad";
       public const string InputAutoSwitch = "lacie_engine/input/auto_switch";
       public const string SkipEnabled = "lacie_engine/game/skip_enabled";
+      public const string ShowSkipOnDeath = "lacie_engine/game/show_skip_option";
       public const string JoystickDeadzone = "lacie_engine/input/joystick_deadzone";
       public const string DebugRoom = "lacie_engine/debug/debug_room";
       public const string DebugQuickstartOn = "lacie_engine/debug/quickstart/enabled";
@@ -323,6 +324,7 @@ namespace LacieEngine.Core
         public const string RestartRequired = "system.settings.restartrequired";
         public const string Current = "system.settings.current";
         public const string SkipEnabled = "system.settings.game.skipenabled";
+        public const string ShowSkipOnDeath = "system.settings.game.showskipoption";
         public const string SelectLanguage = "system.settings.game.language.select";
         public const string ExtraLanguages = "system.settings.game.language.extra";
         public const string SelectExtraLanguage = "system.settings.game.language.select.extra";

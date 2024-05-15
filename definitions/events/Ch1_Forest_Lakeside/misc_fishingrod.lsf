@@ -1,0 +1,10 @@
+label START
+    if var ch1.forest_lakeside_tried_fishing jump GO_FISH
+    "A fishing rod."
+    choice "Try it?"
+        "Yes"
+            set ch1.forest_lakeside_tried_fishing = true
+        "No"
+            end
+label GO_FISH
+    system minigame ch1_lakeside_fishing

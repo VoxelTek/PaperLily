@@ -1,0 +1,13 @@
+label START
+    chara set lacie at left
+    chara set hiro at right
+    if repeat jump AGAIN
+    hiro "Oh...? Lacie is learning to cook?" mood surprised3
+    lacie "No, not yet." mood bothered
+    hiro "Aww... It could've been fun!" mood pout3
+    lacie "Maybe some other time." mood blank3
+    end
+
+label AGAIN
+    "Hiro needs no further seasoning."
+    end

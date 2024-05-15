@@ -1,0 +1,6 @@
+label START
+    choice "Climb back up?"
+        "Yes"
+            move to Ch1_Forest_Station_Platform point tracks_ascend
+        "No"
+            end

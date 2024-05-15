@@ -1,0 +1,13 @@
+label START
+    "My seat. I didn't forget anything."
+    choice "Should I sit back down?"
+        "Yes"
+            continue
+        "No"
+            end
+    system call StopGetOffTimer
+    hide ui
+    audio bgm stop time 2
+    fade out time 2
+    pause 1
+    event call ch1_event_bustimeout2

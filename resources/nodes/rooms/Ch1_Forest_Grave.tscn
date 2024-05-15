@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
 [ext_resource path="res://resources/lighting/ch1_forest.tres" type="Resource" id=2]
@@ -30,6 +30,9 @@
 [ext_resource path="res://script/Nodes/SpawnPoint.cs" type="Script" id=28]
 [ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=29]
 [ext_resource path="res://resources/material/unshaded.tres" type="Material" id=30]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=31]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=32]
+[ext_resource path="res://assets/sprite/ch1/forest/artist/floor_flower_red.png" type="Texture" id=33]
 
 [node name="Ch1_Forest_Grave" type="Node2D"]
 script = ExtResource( 1 )
@@ -319,6 +322,10 @@ position = Vector2( 444, 384 )
 texture = ExtResource( 19 )
 offset = Vector2( 0, -8 )
 
+[node name="Flower" type="Sprite" parent="Main/StructGrave"]
+position = Vector2( 3, 7 )
+texture = ExtResource( 33 )
+
 [node name="MiscBlocks" type="Sprite" parent="Main"]
 position = Vector2( 352, 401 )
 texture = ExtResource( 25 )
@@ -390,6 +397,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="item_flower_on_grave" type="Node" parent="Other/Events"]
+script = ExtResource( 32 )
+Items = "ch1.kett_flower"
+Nodes = "misc_grave"
+
 [node name="misc_grave" type="Node2D" parent="Other/Events"]
 position = Vector2( 445, 381 )
 script = ExtResource( 20 )
@@ -440,4 +452,14 @@ position = Vector2( 448, 848 )
 script = ExtResource( 28 )
 Direction = 2
 
+[node name="after_flower" type="Node2D" parent="Other/Points"]
+position = Vector2( 445, 405 )
+script = ExtResource( 28 )
+Direction = 2
+
 [node name="Updates" type="Node" parent="Other"]
+
+[node name="left_flower" type="Node" parent="Other/Updates"]
+script = ExtResource( 31 )
+Variable = "ch1.forest_grave_left_flower"
+Node = NodePath("../../../Main/StructGrave/Flower")

@@ -1,0 +1,5 @@
+label START
+    if not var general.serious end
+    if var ch1.mk_stairway_seen_lamp_fall end
+    set ch1.mk_stairway_seen_lamp_fall = true
+    audio sfx play glass_crack_2

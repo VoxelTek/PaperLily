@@ -1,0 +1,90 @@
+label START
+    if repeat end
+    if not var ch1.forest_seen_rune end
+    fade out
+    move to Ch1_Forest_Center point ch1_event_lacie_call_1 cutscene
+    chara spawn lacie point ch1_event_lacie_call_1
+    camera track node lacie
+    action walk right 345 node lacie speed veryslow continue
+    fade in
+    pause 0.5
+    lacie "(I've only been here for a little while and I already have a lead.)" mood reflective time 4
+    lacie "(I really didn't think this would be where I might find my answers...)" mood reflective3 time 4
+    hide ui
+    pause 0.5
+    action turn up node lacie
+    pause 1
+    fade out
+    move to Ch1_Forest_Center point from_mirror cutscene
+    system call LacieSitTree
+    fade in
+    pause 1.2
+    cg show ch1/lacie_mirror
+    lacie "Finally..."
+    lacie "A curse, huh?"
+    lacie "It sounds probable, but how did it happen?"
+    lacie "And who... or what, cursed me?"
+    lacie "And why?"
+    lacie "There's too many questions."
+    hide ui
+    cg hide
+    pause 0.8
+    lacie "(I wonder if I can call Hiro from here.)" mood thinking3
+    lacie "(Looks like I have no reception... Should I try anyways?)" mood thinking4
+    hide ui
+    audio bgm stop time 2
+    pause 2
+    event call ch1_phone_dialing_good
+    lacie "(It works?!)" mood surprised3
+    audio bgm play ch1_hiro
+    hiro "LACIE?!" mood phone
+    lacie "Hiro!" mood surprised
+    hiro "Are you okay? How are you calling me? Are you back? Did you find out-"
+    lacie "Wait-" mood blank1
+    hiro "ARE YOU HURT?! DO YOU NEED ME TO COME THERE? ARE YOU IN DANGER?"
+    hiro "I swear I'll get one of those letters and meet you in a jiffy! A jiffy!!-"
+    lacie "Hiro!" mood surprised
+    lacie "I'm fine." mood sigh2
+    hiro "Oh, thank goodness."
+    lacie "It seems to be safe where I am right now, so I just.. tried calling you." mood blank8
+    lacie "...and it worked." mood blank7
+    hiro "Huh... that doesn't make much sense."
+    lacie "It doesn't, does it..." mood thinking4
+    hide ui
+    pause 1.5
+    hiro "Tell me everything, where are you?!"
+    lacie "I'm... in a forest." mood blank8
+    hiro "A forest?! You didn't pack bug spray!"
+    lacie "There's more dangerous things here than bugs." mood concerned2
+    lacie "But don't worry, I've got it handled." mood concerned5
+    if not item ch1.candleman_candle
+        if not item ch1.candleman_candle_blue
+            if not item ch1.forest_lamp_full
+                if not item ch1.forest_jar_full
+                    lacie "I just need to find a light..." mood blank3
+                    jump JOKE
+    lacie "I just needed to find a light and..." mood blank3
+label JOKE
+    hiro "Lacie no! Lights ATTRACT bugs!"
+    system call LacieSitTreeSmile
+    bubble laugh point ch1_event_lacie_bubble
+    system call LacieSitTree
+    lacie "Hiro, I don't care about tiny bugs." mood smile2
+    hiro "Just trying to lighten the mood~"
+    hiro "That's my job."
+    lacie "Mhm." mood smile
+    hide ui
+    pause 1
+    hiro "Don't use up all your battery now."
+    hiro "Remember you can use the flashlight from your phone if you need a light."
+    lacie "That's true. How could I forget?" mood blank5
+    lacie "But it will use up my battery... I might not be able to call you again if that's the case." mood thinking4
+    hiro "It's up to you to decide if you need it."
+    lacie "Alright, I'll go now." mood blank8
+    hiro "You've got this!"
+    event call ch1_phone_hangup
+    item rename ch1.cellphone name "Cellphone" description "My personal phone. Hiro bought it for me. It may be used as a flashlight."
+    set ch1.forest_center_hiro_called = true
+    move to Ch1_Forest_Center point from_mirror
+    audio bgm play ch1_forest_d
+    end

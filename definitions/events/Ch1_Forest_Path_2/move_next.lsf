@@ -1,0 +1,3 @@
+label START
+    move to Ch1_Forest_Entrance point entrance
+    objective complete ch1.rotate_signs

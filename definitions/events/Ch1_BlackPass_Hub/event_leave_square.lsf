@@ -1,0 +1,12 @@
+label START
+    if repeat end
+    lacie "Huh... these stairs weren't here before."
+    if not var general.blackpass_red_items
+        lacie "But I don't think there's anywhere to go out there." mood blank3
+        lacie "It's all blackness as far as I can see." mood blank4
+    if var general.blackpass_red_items
+        lacie "Huh...? Red... stairs?" mood thinking2
+    if var general.blackpass_visits == 2
+        lacie "I don't have time for this anyways." mood reflective
+        lacie "I need to wake up or the bus will take me away!" mood concerned2
+    end

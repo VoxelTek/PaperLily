@@ -1,0 +1,13 @@
+label START
+    if repeat
+        "A fairy head, or something."
+        if var ch1.forest_fairyring_nostrils
+            "It has both nostrils and a mouth..."
+        else
+            "It has both eyes and a mouth..."
+        end
+    if var ch1.forest_fairyring_nostrils
+        lacie "This one has nostrils AND a mouth." mood thinking
+    else
+        lacie "This one has both eyes AND a mouth." mood thinking
+    lacie "Does it mean it can see both in front and to the sides?" mood thinking2

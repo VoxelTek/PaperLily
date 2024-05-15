@@ -1,0 +1,18 @@
+label START
+    if not var ch1.garden_placed_flower jump CLOSED
+    "The door is open. A white light is coming through."
+    choice "Go through the door?"
+        "Yes"
+            if var ch1.forest_lakeside_placed_return_doorknob jump FAKE_END
+            event call ch1_ending_1_1
+            end
+        "No"
+            end
+    end
+
+label CLOSED
+    "The door is locked."
+    end
+
+label FAKE_END
+    event queue ch1_ending_fake_exit

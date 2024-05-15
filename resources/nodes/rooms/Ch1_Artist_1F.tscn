@@ -397,9 +397,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_kett_awake"
 
 [node name="chr_kett_sleep" type="Node2D" parent="Other/Events"]

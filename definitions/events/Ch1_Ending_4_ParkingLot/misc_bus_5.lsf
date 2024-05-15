@@ -1,0 +1,3 @@
+label START
+    event call misc_bus
+    "A broken bus is stacked on top of it."

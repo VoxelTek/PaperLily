@@ -9,44 +9,44 @@ using System;
 #nullable disable
 namespace LacieEngine.Settings
 {
-  internal class DeadzoneSetting : Setting<float>
-  {
-    private static readonly Lazy<DeadzoneSetting> _lazyInstance = new Lazy<DeadzoneSetting>((Func<DeadzoneSetting>) (() => new DeadzoneSetting()));
-    private const Decimal Max = 0.95M;
-    private const Decimal Min = 0M;
-    private const Decimal Step = 0.05M;
-    private Decimal _value;
-
-    public static DeadzoneSetting Instance => DeadzoneSetting._lazyInstance.Value;
-
-    public DeadzoneSetting()
+    internal class DeadzoneSetting : Setting<float>
     {
-      this.Name = "system.settings.input.deadzone";
-      this.Path = "lacie_engine/input/joystick_deadzone";
-      this.Value = this.ReadValue();
-      this._value = (Decimal) this.Value;
-    }
+        private static readonly Lazy<DeadzoneSetting> _lazyInstance = new Lazy<DeadzoneSetting>((Func<DeadzoneSetting>)(() => new DeadzoneSetting()));
+        private const Decimal Max = 0.95M;
+        private const Decimal Min = 0M;
+        private const Decimal Step = 0.05M;
+        private Decimal _value;
 
-    public override string ValueLabel() => ((int) ((double) this.Value * 100.0)).ToString() + "%";
+        public static DeadzoneSetting Instance => DeadzoneSetting._lazyInstance.Value;
 
-    public override void Decrement()
-    {
-      this._value -= 0.05M;
-      if (this._value < 0M)
-        this._value = 0M;
-      this.Value = (float) this._value;
-    }
+        private DeadzoneSetting()
+        {
+            this.Name = "system.settings.input.deadzone";
+            this.Path = "lacie_engine/input/joystick_deadzone";
+            this.Value = this.ReadValue();
+            this._value = (Decimal)this.Value;
+        }
 
-    public override void Increment()
-    {
-      this._value += 0.05M;
-      if (this._value > 0.95M)
-        this._value = 0.95M;
-      this.Value = (float) this._value;
-    }
+        public override string ValueLabel() => ((int)((double)this.Value * 100.0)).ToString() + "%";
 
-    public override void Apply()
-    {
+        public override void Decrement()
+        {
+            this._value -= 0.05M;
+            if (this._value < 0M)
+                this._value = 0M;
+            this.Value = (float)this._value;
+        }
+
+        public override void Increment()
+        {
+            this._value += 0.05M;
+            if (this._value > 0.95M)
+                this._value = 0.95M;
+            this.Value = (float)this._value;
+        }
+
+        public override void Apply()
+        {
+        }
     }
-  }
 }

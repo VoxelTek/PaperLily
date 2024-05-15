@@ -1,0 +1,5 @@
+label START
+    if not objective ch1.revert_ritual_execution inprogress end
+    lacie "The salt goes on the inside only..." mood blank4
+    lacie "Also, I'll clean up the drawing tomorrow, since it's not in the instructions." mood blank2
+    end

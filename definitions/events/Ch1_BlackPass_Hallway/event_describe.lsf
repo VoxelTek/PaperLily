@@ -1,0 +1,14 @@
+label START
+    if repeat end
+    if var general.blackpass_visits >= 2 end
+    lacie "I just need to open my locker, and then the closet to end this."
+    lacie "My locker is..." mood blank7
+    hide ui
+    pause 0.5
+    camera move (0,-200) time 2
+    pause 1.5
+    camera move (0,200) time 0.5
+    camera reset
+    pause 0.3
+    lacie "It's pretty obvious, isn't it?" mood concerned4
+    end

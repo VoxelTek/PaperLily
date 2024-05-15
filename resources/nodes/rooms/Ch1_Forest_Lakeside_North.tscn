@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://script/Subgame/Chapter1/Ch1ForestLakesideNorth.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
@@ -45,15 +45,14 @@
 [ext_resource path="res://script/Core/Nodes/EditorOnlyVisibility.cs" type="Script" id=43]
 [ext_resource path="res://script/Nodes/Light.cs" type="Script" id=44]
 [ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprite/common/tiles_white.png" type="Texture" id=46]
-[ext_resource path="res://script/Core/Nodes/EventTriggerCustom.cs" type="Script" id=47]
-[ext_resource path="res://resources/nodes/ch1/save_crow.tscn" type="PackedScene" id=48]
-[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=49]
-[ext_resource path="res://script/Core/Nodes/EventTriggerItemRoom.cs" type="Script" id=50]
-[ext_resource path="res://resources/material/ch1_lakeside_water_seamfix.tres" type="Material" id=51]
-[ext_resource path="res://resources/tileset/ch1_forest_lakeside_ripples.tres" type="TileSet" id=52]
-[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=53]
-[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=54]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCustom.cs" type="Script" id=46]
+[ext_resource path="res://resources/nodes/ch1/save_crow.tscn" type="PackedScene" id=47]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItem.cs" type="Script" id=48]
+[ext_resource path="res://script/Core/Nodes/EventTriggerItemRoom.cs" type="Script" id=49]
+[ext_resource path="res://resources/material/ch1_lakeside_water_seamfix.tres" type="Material" id=50]
+[ext_resource path="res://resources/tileset/ch1_forest_lakeside_ripples.tres" type="TileSet" id=51]
+[ext_resource path="res://script/Core/Nodes/EventTriggerCircular.cs" type="Script" id=52]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=53]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 37 )
@@ -100,14 +99,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SeafloorBase" type="Sprite" parent="Water"]
+[node name="SeafloorBase" type="Polygon2D" parent="Water"]
 modulate = Color( 0.223529, 0.258824, 0.352941, 1 )
-position = Vector2( 144, -287 )
-scale = Vector2( 31, 49.9375 )
-texture = ExtResource( 46 )
-__meta__ = {
-"_edit_lock_": true
-}
+polygon = PoolVector2Array( -352, 512, 320, 512, 320, -640, 640, -640, 640, -1065, -352, -1065 )
 
 [node name="TilesUnderwater" type="TileMap" parent="Water"]
 tile_set = ExtResource( 2 )
@@ -143,7 +137,7 @@ __meta__ = {
 }
 
 [node name="TilesWater" type="TileMap" parent="Water"]
-material = ExtResource( 51 )
+material = ExtResource( 50 )
 tile_set = ExtResource( 24 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 30
@@ -181,7 +175,7 @@ __meta__ = {
 }
 
 [node name="TilesRipples" type="TileMap" parent="."]
-tile_set = ExtResource( 52 )
+tile_set = ExtResource( 51 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 0
 collision_mask = 0
@@ -789,7 +783,7 @@ FPS = 1.0
 position = Vector2( -215, -457 )
 texture = ExtResource( 5 )
 
-[node name="Crow" parent="Background/MiscLog2" instance=ExtResource( 48 )]
+[node name="Crow" parent="Background/MiscLog2" instance=ExtResource( 47 )]
 position = Vector2( 0, -13 )
 
 [node name="Main" type="YSort" parent="."]
@@ -1106,7 +1100,7 @@ __meta__ = {
 }
 
 [node name="item_doorknobs_on_door" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Event = "move_door"
 Items = "ch1.doorknob_library
 ch1.doorknob_garden
@@ -1116,36 +1110,36 @@ ch1.doorknob_return"
 Nodes = "move_door"
 
 [node name="item_doorknob_fragment_on_door" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Items = "ch1.doorknob_library_fragment"
 Nodes = "move_door"
 
 [node name="item_bucket_on_water" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Items = "ch1.bucket"
 Nodes = "misc_water_1
 misc_water_2"
 
 [node name="item_bucket_already_full" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Items = "ch1.bucket_full
 ch1.bucket_full_holy"
 Nodes = "misc_water_1
 misc_water_2"
 
 [node name="item_caterpillar_on_water" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Items = "ch1.forest_caterpillar"
 Nodes = "misc_water_1
 misc_water_2"
 
 [node name="item_caterpillar_on_crow" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Items = "ch1.forest_caterpillar"
 Nodes = "misc_log_1"
 
 [node name="item_caterpillar_on_lavender" type="Node" parent="Other/Events"]
-script = ExtResource( 49 )
+script = ExtResource( 48 )
 Items = "ch1.forest_caterpillar"
 Nodes = "misc_lavender_1
 misc_lavender_2
@@ -1163,13 +1157,13 @@ misc_lavender_13
 misc_lavender_14"
 
 [node name="item_caterpillar" type="Node" parent="Other/Events"]
-script = ExtResource( 50 )
+script = ExtResource( 49 )
 Items = "ch1.forest_caterpillar"
 
 [node name="misc_water_1" type="Node2D" parent="Other/Events"]
 modulate = Color( 0, 0, 1, 1 )
 position = Vector2( -101, -416 )
-script = ExtResource( 47 )
+script = ExtResource( 46 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Events/misc_water_1"]
 polygon = PoolVector2Array( -91, 0, 7, 0, 18, 32, 165, 32, 165, 64, -155, 64, -155, 32, -136, 32 )
@@ -1177,7 +1171,7 @@ polygon = PoolVector2Array( -91, 0, 7, 0, 18, 32, 165, 32, 165, 64, -155, 64, -1
 [node name="misc_water_2" type="Node2D" parent="Other/Events"]
 modulate = Color( 0, 0, 1, 1 )
 position = Vector2( 318.447, -1012.92 )
-script = ExtResource( 47 )
+script = ExtResource( 46 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Other/Events/misc_water_2"]
 polygon = PoolVector2Array( 63.553, -11.08, 193.553, -11.0765, 193.553, 52.9235, -158.447, 52.9235, -158.447, 20.9235, 49.553, 20.92 )
@@ -1297,7 +1291,7 @@ Area = Vector2( 56, 8 )
 
 [node name="misc_coin" type="Node2D" parent="Other/Events"]
 position = Vector2( 139, -1237 )
-script = ExtResource( 53 )
+script = ExtResource( 52 )
 Solid = false
 
 [node name="mist_caterpillar_exit" type="Node2D" parent="Other/Events"]
@@ -1335,7 +1329,7 @@ Area = Vector2( 40, 20 )
 [node name="Updates" type="Node" parent="Other"]
 
 [node name="hide_crow" type="Node" parent="Other/Updates"]
-script = ExtResource( 54 )
+script = ExtResource( 53 )
 Variable = "ch1.forest_lakeside_placed_return_doorknob"
 Node = NodePath("../../../Background/MiscLog2/Crow")
 Invert = true

@@ -1,0 +1,15 @@
+label START
+    chara set lacie at left
+    chara set hiro at right
+    if repeat jump AGAIN
+    hiro "Okay, turn around." mood smile
+    lacie "...Huh?" mood blank5
+    hiro "You don't want me to tie your hair with the ribbon?" mood surprised
+    lacie "Oh! I forgot we used to do that." mood blank8
+    lacie "But I need it for something else, so no." mood blank7
+    hiro "Bummer!" mood pout2
+    end
+
+label AGAIN
+    "Tying your hair will have to wait."
+    end

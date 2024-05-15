@@ -1,0 +1,4 @@
+label START
+    "A shelf containing mainly glassware."
+    if repeat end
+    lacie "It would definitely hurt if this fell on top of somebody." mood concerned6

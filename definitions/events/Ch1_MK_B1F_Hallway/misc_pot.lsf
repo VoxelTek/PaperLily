@@ -1,0 +1,9 @@
+label START
+    "A broken pot where Spider was."
+    if var ch1.mk_potion_temp_heard
+        if var ch1.mk_potion_temp_found end
+        "There's something here..."
+        choice "Take ${item:ch1.rainbow_potion_tmp}?"
+            "Yes"
+                set ch1.mk_potion_temp_found = true
+                item add ch1.rainbow_potion_tmp

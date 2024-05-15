@@ -1,0 +1,12 @@
+label START
+    fade out
+    audio sfx play footstep_ladder_1
+    pause 0.6
+    audio sfx play footstep_ladder_2
+    pause 0.6
+    audio sfx play footstep_ladder_1
+    pause 0.6
+    audio sfx play footstep_ladder_2
+    pause 1
+    action call show_lacie_ladder
+    fade in

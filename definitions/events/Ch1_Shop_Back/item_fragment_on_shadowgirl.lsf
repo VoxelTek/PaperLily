@@ -1,0 +1,36 @@
+label START
+    chara set lacie at left
+    chara set shadowgirl at right
+    shadowgirl "...!" mood gasp
+    if item ch1.doorknob_library_fragment amount 3 jump ALL_THREE
+    if item ch1.doorknob_library_fragment amount 2 jump ONLY_TWO
+
+label ONLY_ONE
+    "(The shadow girl takes the fragment and looks up at you.)"
+    shadowgirl "...? ...?" mood default
+    lacie "Oh... I don't have any more pieces than that one..." mood concerned5
+    shadowgirl "... ..." mood default
+    "(The shadow girl returns the fragment to you with a sad expression.)"
+    end
+
+label ONLY_TWO
+    "(The shadow girl takes the fragments from you.)"
+    hide ui
+    pause 1
+    "(After a few seconds, she returns them to you.)"
+    shadowgirl "... ..." mood default
+    lacie "Oh... I'm still missing a piece, am I not...?" mood concerned5
+    lacie "Sorry for bothering you." mood concerned2
+    end
+
+label ALL_THREE
+    "(The shadow girl takes the fragments from you.)"
+    hide ui
+    pause 1
+    "(With some effort, she fits them together and returns them to you.)"
+    item remove ch1.doorknob_library_fragment amount 3
+    item add ch1.doorknob_library
+    set ch1.shop_traded_fragments = true
+    lacie "Thank you, I appreciate it." mood blank5
+    shadowgirl "...!" mood sparkle
+    end

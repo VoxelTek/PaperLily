@@ -1,0 +1,22 @@
+label START
+    if repeat end
+    chara set lacie at left
+    chara set sai at right
+    camera move (0,-64) time 0
+    camera move (0,-136) time 3
+    pause 1
+    sai "Wow." mood blank6
+    sai "Is this a meeting room or something...?"
+    sai "What do you think they held meetings about?" mood blank2
+    sai "Wait..." mood thinking2
+    sai "Who do you think held meetings?" mood thinking5
+    sai "Looks like a room where you plot world domination." mood thinking12
+    sai "Think those windows lead anywhere?" mood thinking13
+    lacie "..." mood disappointed2
+    sai "You okay?" mood blank5
+    lacie "Yes. I just have this persistent headache following me around." mood sigh2
+    sai "Oh. That sucks." mood blank6
+    hide ui
+    camera move (0,200) time 0.5
+    camera reset
+    system retry-save

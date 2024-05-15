@@ -1,0 +1,7 @@
+label START
+    if not var general.chapter == 1 end
+    if var general.inbetween end
+    if var ch1.home_phone_call_done end
+    if var ch1.home_phone_call_ringing end
+    system call AttemptTriggerPhoneCall
+    end

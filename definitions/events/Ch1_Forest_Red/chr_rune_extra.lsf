@@ -1,0 +1,25 @@
+label START
+    if repeat 3 jump NO_MORE
+    if repeat 2 jump EXTRA_2
+    jump EXTRA_1
+
+label EXTRA_1
+    lacie "How did you cross the bridge to get all the way here?" mood blank1
+    rune "I walked." mood default
+    lacie "But... You didn't set off any traps?" mood confused2
+    rune "I must have missed them." mood tilt
+    end
+
+label EXTRA_2
+    lacie "Do you live here?" mood blank2
+    rune "Nope!" mood default
+    rune "I move around a lot."
+    lacie "Why did you come here to Red's treehouse?" mood blank5
+    rune "I'm looking for more runes!" mood sparkle
+    set ch1.forest_rune_alltalks = true
+    end
+
+label NO_MORE
+    "Rune is humming a tune."
+    "It sounds very off-key."
+    end

@@ -1,0 +1,11 @@
+label START
+    if repeat end
+    chara set lacie at left
+    chara set sai at right
+    sai "Ooh, it's one of those cool rocks." mood blank7
+    sai "Did you know they glow in the dark?" mood confused11
+    lacie "Really?" mood blank5
+    sai "No." mood smile2
+    lacie "..." mood embarassed2
+    sai "But you totally fell for that!" mood happy2
+    lacie "..." mood embarassed3

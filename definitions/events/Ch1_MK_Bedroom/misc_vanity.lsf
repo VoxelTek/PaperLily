@@ -1,0 +1,14 @@
+label START
+    "A vanity table. The drawers are filled with several cosmetics."
+    if repeat end
+    if var general.serious end
+    if character sai jump SAI_IN_PARTY
+    end
+
+label SAI_IN_PARTY
+    chara set lacie at left
+    chara set sai at right
+    sai "Why bother with makeup if you look like a monster?" mood blank9
+    lacie "That's not nice." mood blank7
+    sai "She locked me in a cage." mood lazy
+    sai "I'd say she's not nice." mood lazy

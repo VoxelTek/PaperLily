@@ -38,7 +38,7 @@
 		{
 			"id": "ch1.shoelaces",
 			"name": "Red Shoelaces",
-			"description": "From the shoerack. Does something like this count?",
+			"description": "From the shoe rack. Does something like this count?",
 			"icon": "ch1_shoelaces"
 		},
 		{
@@ -131,26 +131,6 @@
 			"tags": ["rune"]
 		},
 		{
-			"id": "ch1.rune_tiwaz",
-			"name": "Rune",
-			"description": "A rune stone I found.",
-			"icon": "rune_tiwaz",
-			"tags": ["rune"]
-		},
-		{
-			"id": "ch1.rune_othala",
-			"name": "Rune",
-			"description": "A rune stone I found.",
-			"icon": "rune_othala",
-			"tags": ["rune"]
-		},
-		{
-			"id": "ch1.forest_station_number",
-			"name": "Number 375",
-			"description": "A waiting number for the train station in the forest. Unusually high.",
-			"icon": "ch1_forest_station_number"
-		},
-		{
 			"id": "ch1.forest_station_sign",
 			"name": "Blue Sign",
 			"description": "It says \"Daylight Gate\".",
@@ -237,7 +217,7 @@
 		{
 			"id": "ch1.forest_stone_cure",
 			"name": "Stone Curse Cure",
-			"description": "A sort of potion I made. It should cure a simple stone curses.",
+			"description": "A sort of potion I made. It should cure a simple stone curse.",
 			"icon": "ch1_forest_stone_cure"
 		},
 		{
@@ -385,22 +365,10 @@
 			"icon": "rabbit"
 		},
 		{
-			"id": "ch1.forest_flower_pink",
-			"name": "Pink Flower",
-			"description": "Pretty!",
-			"icon": "ch1_forest_flower_pink"
-		},
-		{
 			"id": "ch1.forest_lavender",
 			"name": "Lavender Flower",
 			"description": "Smells like laundry.",
 			"icon": "lavender"
-		},
-		{
-			"id": "ch1.forest_white_branch",
-			"name": "White Tree Branch",
-			"description": "Pretty!",
-			"icon": "ch1_forest_white_branch"
 		},
 		{
 			"id": "ch1.lakeside_goldfish",
@@ -453,25 +421,25 @@
 		{
 			"id": "ch1.facility_handle_square",
 			"name": "Handle (Square)",
-			"description": "A purple handle for a valve mechanism. The protusion is square-shaped.",
+			"description": "A purple handle for a valve mechanism. The protrusion is square-shaped.",
 			"icon": "valve_purple"
 		},
 		{
 			"id": "ch1.facility_handle_pentagon",
 			"name": "Handle (Pentagon)",
-			"description": "A red handle for a valve mechanism. The protusion is pentagon-shaped.",
+			"description": "A red handle for a valve mechanism. The protrusion is pentagon-shaped.",
 			"icon": "valve_red"
 		},
 		{
 			"id": "ch1.facility_handle_star",
 			"name": "Handle (Star)",
-			"description": "A yellow handle for a valve mechanism. The protusion is shaped like a 5-point star.",
+			"description": "A yellow handle for a valve mechanism. The protrusion is shaped like a 5-point star.",
 			"icon": "valve_yellow"
 		},
 		{
 			"id": "ch1.facility_handle_diamond",
 			"name": "Handle (Diamond)",
-			"description": "A white handle for a valve mechanism. The protusion is diamond-shaped.",
+			"description": "A white handle for a valve mechanism. The protrusion is diamond-shaped.",
 			"icon": "valve_white"
 		},
 		{
@@ -750,12 +718,6 @@
 			"icon": "jar_paint_blue"
 		},
 		{
-			"id": "ch1.mk_tool",
-			"name": "Grabber",
-			"description": "A long tool that can be used to grab distant objects.",
-			"icon": "lighter3"
-		},
-		{
 			"id": "ch1.mk_lighter",
 			"name": "Lighter",
 			"description": "A lighter.",
@@ -776,8 +738,8 @@
 		},
 		{
 			"id": "ch1.rainbow_potion_tmp",
-			"name": "Temp.Rainbow Potion",
-			"description": "A strange potion. It has a shorter duration than the original one.",
+			"name": "Temp. Rainbow Potion",
+			"description": "A strange potion that Spider directed me to. It has a shorter duration than the original one.",
 			"icon": "rainbow_potion",
 			"event": "ch1_rainbow_potion_tmp"
 		},

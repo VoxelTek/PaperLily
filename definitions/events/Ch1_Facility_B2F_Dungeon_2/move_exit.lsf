@@ -1,0 +1,12 @@
+label START
+    party switch lacie
+    party add sai
+    audio sfx play door
+    fade out time 0.5
+    move to Ch1_Facility_B2F_Hallway_East point from_dungeon_2 time 0
+    chara spawn sai point from_dungeon_2_sai
+    fade in time 0.5
+    action turn right node sai
+    action walk right 32 node sai speed slow
+    chara despawn sai
+    "(Sai joined your party.)" color "#90EE90"

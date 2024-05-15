@@ -1,0 +1,27 @@
+label START
+    hide ui
+    fade out
+    chara rename unknown to "misc.characters.student"
+    pause 0.5
+    unknown "Wait... what are you doing!?"
+    lacie "I'm doing something, unlike you." mood shadow3
+    hide ui
+    pause 0.8
+    audio sfx play hit
+    pause 0.1
+    fade flash color red
+    pause 1
+    unknown "AAAAH!"
+    unknown "She killed him!"
+    unknown "Oh my god! She's crazy!"
+    unknown "MURDERER!"
+    unknown "MURDERER! MURDERER! MURDERER!"
+    lacie "....."
+    set ch1.blackpass_classroom_cutscene_stage = 4
+    move to Ch1_BlackPass_Classroom point cutscene_stage_4b time 0
+    system running off
+    system call SetLacieShadow
+    pause 1
+    chara rename unknown off
+    fade in
+    end

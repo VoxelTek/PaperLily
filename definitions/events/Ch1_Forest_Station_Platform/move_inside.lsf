@@ -1,0 +1,5 @@
+label START
+    audio sfx play door
+    move to Ch1_Forest_Station_Interior_Main point entrance
+    end
+

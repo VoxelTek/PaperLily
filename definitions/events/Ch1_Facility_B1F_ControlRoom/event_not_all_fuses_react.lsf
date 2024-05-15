@@ -1,0 +1,11 @@
+label START
+    if repeat end
+    hide ui
+    pause 1
+    chara set lacie at left
+    chara set sai at right
+    sai "Why doesn't this work?" mood confused11
+    lacie "We probably need to fill all four slots." mood blank1
+    lacie "Otherwise the thing inside won't make contact." mood blank3
+    sai "Right, contact." mood happy5
+    end

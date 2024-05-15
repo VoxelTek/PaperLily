@@ -1,0 +1,27 @@
+label START
+    if objective ch1.revert_ritual_instructions inprogress
+        event call event_busfail_ritualundocheck
+        end
+    if var general.serious
+        "My computer chair."
+        if objective ch1.revert_ritual_instructions done
+            lacie "The instructions are simple enough. No need to check again." mood default
+        end
+    choice "Sit at the computer?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 0.5
+    system call ComputerSit
+    pause 1
+    set ch1.home_lacie_pc_on = true
+    system refresh
+    pause 1
+    event call ch1_forums
+    hide ui
+    set ch1.home_lacie_pc_on = false
+    system refresh
+    pause 0.5
+    system call ComputerGetUp

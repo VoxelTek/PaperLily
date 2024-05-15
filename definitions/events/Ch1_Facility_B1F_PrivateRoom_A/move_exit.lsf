@@ -1,0 +1,6 @@
+label START
+    action call interrupt_musicbox
+    audio bgm stop
+    audio sfx play door
+    move to Ch1_Facility_Main_Hall point from_door_br
+    end

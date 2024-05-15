@@ -15,18 +15,18 @@
 [ext_resource path="res://script/Nodes/Light.cs" type="Script" id=13]
 [ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprite/common/light_fadeout.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_8.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_7.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_3.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_4.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_1.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_6.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_2.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_painting_5.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_8.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_7.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_3.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_4.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_6.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_2.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/misc_painting_5.png" type="Texture" id=23]
 [ext_resource path="res://script/Nodes/LightFlickering.cs" type="Script" id=24]
 [ext_resource path="res://resources/nodes/ch1/fireplace_fire.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/wall_paintings_burnt.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprite/ch1/mk/wisteria/wall_numbers.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/wall_paintings_burnt.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/ch1/mk/paintings/wall_numbers.png" type="Texture" id=27]
 
 [node name="Ch1_MK_B1F_Paintings" type="Node2D"]
 script = ExtResource( 1 )
@@ -111,6 +111,7 @@ position = Vector2( -5, 24 )
 texture = ExtResource( 14 )
 texture_scale = 4.0
 color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.5
 range_item_cull_mask = 3
 script = ExtResource( 24 )
 

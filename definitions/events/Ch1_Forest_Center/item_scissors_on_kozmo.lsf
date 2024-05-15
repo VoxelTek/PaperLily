@@ -1,0 +1,7 @@
+label START
+    if var ch1.forest_kozmo_gone end
+    if var ch1.forest_kozmo_changed_head end
+    if var ch1.forest_kozmo_leaking end
+    if var ch1.forest_kozmo_head end
+    chara set kozmo at right
+    kozmo "P-p-please don't...! I'm fragile..." mood sweat

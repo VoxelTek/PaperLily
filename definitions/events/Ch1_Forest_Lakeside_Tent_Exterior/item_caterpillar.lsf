@@ -1,0 +1,35 @@
+label START
+    choice "What to do?"
+        "Kill it here"
+            if var ch1.forest_moths_upset
+                event call ch1_event_no_kill_caterpillar
+                end
+            fade out
+            pause 1
+            audio sfx play squash
+            fade flash color "#9b09d6"
+            item remove ch1.forest_caterpillar
+            objective complete ch1.forest_lakeside_caterpillar
+            set ch1.forest_moths_clear = true
+            set ch1.forest_moths_killed_caterpillar = true
+            system refresh
+            pause 1
+            fade in
+        "Release it around this area"
+            if var ch1.forest_moths_tried_release_close_by
+                "It's not wise to do that here."
+                end
+            if var ch1.forest_moths_upset
+                lacie "I don't think I should release it so close to them..." mood blank2
+                end
+            hide ui
+            chara set lacie at left
+            pause 0.5
+            ch1_moth_girl "HEY! I'M WATCHING YOU!" mood annoyed
+            ch1_moth_girl "IF YOU LET THAT SHIT FREE I'LL COME OUT AND KILL YOU BOTH MYSELF!!!" mood annoyed4
+            lacie "(...Sorry...)" mood hide3
+            set ch1.forest_moths_tried_release_close_by = true
+            end
+        "Do nothing"
+            end
+    end

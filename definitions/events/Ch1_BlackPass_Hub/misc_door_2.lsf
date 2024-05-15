@@ -1,0 +1,5 @@
+label START
+    if not repeat
+        lacie "A second door?" mood thinking2
+    move to Ch1_BlackPass_Kitchen point entrance
+    end

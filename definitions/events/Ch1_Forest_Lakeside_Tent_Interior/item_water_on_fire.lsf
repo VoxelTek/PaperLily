@@ -1,0 +1,25 @@
+label START
+    cg show black background
+    pause 1
+    chara set lacie at left
+    chara set ch1_moth_girl at right
+    chara set ch1_moth_boy at right
+    audio sfx play water_splash_4
+    pause 0.2
+    audio ambiance stop time 0
+    audio bgm stop time 0
+    audio sfx play burn
+    pause 3
+    ch1_moth_girl "What. The. FUCK." mood annoyed5
+    ch1_moth_boy "...Oh man..." mood annoyed5
+    hide ui
+    fade out
+    cg hide
+    pause 1
+    move to Ch1_Forest_Lakeside_Tent_Exterior point cutscene_camera cutscene time 0
+    fade in
+    pause 0.5
+    audio sfx play gore7
+    action call blood_splatter
+    pause 4
+    event queue ch1_death_fadeout

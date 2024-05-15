@@ -1,0 +1,35 @@
+label START
+    if item ch1.scissors jump CLEANUP
+    if item ch1.forest_adapter jump CLEANUP
+    if item ch1.forest_bolt_cutter jump CLEANUP
+    if item ch1.candleman_candle jump CLEANUP
+    if item ch1.candleman_candle_unlit jump CLEANUP
+    if item ch1.candleman_candle_blue jump CLEANUP
+    if item ch1.forest_lamp_empty jump CLEANUP
+    if item ch1.forest_bugnet jump CLEANUP
+    if item ch1.forest_jar_empty jump CLEANUP
+    if item ch1.tpot_head jump CLEANUP
+    if item ch1.red_pot jump CLEANUP
+    if item ch1.forest_pot jump CLEANUP
+    if item ch1.forest_lockedsite_key jump CLEANUP
+    if item ch1.forest_stone_cure jump CLEANUP
+    end
+
+label CLEANUP
+    lacie "I'm carrying too many things around..." mood blank2
+    "(You got rid of some items.)"
+    hide ui
+    item remove ch1.scissors
+    item remove ch1.forest_adapter
+    item remove ch1.forest_bolt_cutter
+    item remove ch1.candleman_candle
+    item remove ch1.candleman_candle_unlit
+    item remove ch1.candleman_candle_blue
+    item remove ch1.forest_lamp_empty
+    item remove ch1.forest_bugnet
+    item remove ch1.forest_jar_empty
+    item remove ch1.tpot_head
+    item remove ch1.red_pot
+    item remove ch1.forest_pot
+    item remove ch1.forest_lockedsite_key amount 3
+    item remove ch1.forest_stone_cure

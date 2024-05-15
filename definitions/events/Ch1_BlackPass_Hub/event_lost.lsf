@@ -1,0 +1,6 @@
+label START
+    if repeat end
+    audio bgm stop time 10
+    system menu off
+    system call EventLost
+    end

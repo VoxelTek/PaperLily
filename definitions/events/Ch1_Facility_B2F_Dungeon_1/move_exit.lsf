@@ -1,0 +1,16 @@
+label START
+    if var ch1.facility_sai_met jump EXIT
+    event call event_try_open_door_alone
+    end
+
+label EXIT
+    party switch lacie
+    party add sai
+    audio sfx play door
+    fade out time 0.5
+    move to Ch1_Facility_B2F_Hallway_East point from_dungeon_1 time 0
+    chara spawn sai point from_dungeon_1_sai
+    fade in time 0.5
+    action walk left 32 node sai speed slow
+    chara despawn sai
+    "(Sai joined your party.)" color "#90EE90"

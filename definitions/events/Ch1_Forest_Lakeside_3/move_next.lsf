@@ -1,0 +1,4 @@
+label START
+    audio bgm override off
+    move to Ch1_Forest_Lakeside point entrance_secret
+    end

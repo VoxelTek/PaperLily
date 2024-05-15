@@ -9,35 +9,36 @@ using System;
 #nullable disable
 namespace LacieEngine.Core
 {
-  [Serializable]
-  public class LogicStatement
-  {
-    public LogicStatement.EType Type;
-    public bool Not;
-    public LogicStatement.EOperator Operator;
-    public string Variable;
-    public string Value;
-    public string Item;
-    public int Amount;
-
-    public enum EType
+    [Serializable]
+    public class LogicStatement
     {
-      Variable,
-      Item,
-      Character,
-      HasObjective,
-      ObjectiveDone,
-      Repeat,
-      Random,
-    }
+        public LogicStatement.EType Type;
+        public bool Not;
+        public LogicStatement.EOperator Operator;
+        public string Variable;
+        public string Value;
+        public string Item;
+        public int Amount;
 
-    public enum EOperator
-    {
-      Eq,
-      Lt,
-      Gt,
-      Le,
-      Ge,
+        public enum EType
+        {
+            Variable,
+            Item,
+            Character,
+            HasObjective,
+            ObjectiveDone,
+            Repeat,
+            Random,
+            System
+        }
+
+        public enum EOperator
+        {
+            Eq,
+            Lt,
+            Gt,
+            Le,
+            Ge,
+        }
     }
-  }
 }

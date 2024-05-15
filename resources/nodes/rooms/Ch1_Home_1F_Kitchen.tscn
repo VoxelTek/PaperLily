@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://assets/sprite/ch1/home/kitchen/misc_sink.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprite/ch1/home/kitchen/misc_telephone.png" type="Texture" id=2]
@@ -52,9 +52,8 @@
 [ext_resource path="res://resources/lighting/ch1_home_evening_interior_lightoff.tres" type="Resource" id=50]
 [ext_resource path="res://resources/lighting/ch1_home_evening_interior_lighton.tres" type="Resource" id=51]
 [ext_resource path="res://assets/sprite/ch1/home/common/item_birdfood.png" type="Texture" id=52]
-[ext_resource path="res://script/Core/Nodes/EventTriggerOnEnter.cs" type="Script" id=53]
-[ext_resource path="res://assets/sprite/ch1/cutscene/misc_bloodtext_4.png" type="Texture" id=54]
-[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=55]
+[ext_resource path="res://assets/sprite/ch1/cutscene/misc_bloodtext_4.png" type="Texture" id=53]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=54]
 
 [sub_resource type="Animation" id=1]
 resource_name = "animation"
@@ -253,7 +252,7 @@ texture = ExtResource( 41 )
 
 [node name="Bloodtext" type="Sprite" parent="Main/furniture_table/misc_note"]
 position = Vector2( -4, 14 )
-texture = ExtResource( 54 )
+texture = ExtResource( 53 )
 
 [node name="TilesFg" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -311,9 +310,6 @@ __meta__ = {
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="on_enter_save" type="Node" parent="Other/Events"]
-script = ExtResource( 53 )
 
 [node name="item_ribbon_on_phone" type="Node" parent="Other/Events"]
 script = ExtResource( 46 )
@@ -451,6 +447,6 @@ script = ExtResource( 44 )
 [node name="Updates" type="Node" parent="Other"]
 
 [node name="busfail_bloodtext" type="Node" parent="Other/Updates"]
-script = ExtResource( 55 )
+script = ExtResource( 54 )
 Variable = "ch1.home_missed_bus"
 Node = NodePath("../../../Main/furniture_table/misc_note/Bloodtext")

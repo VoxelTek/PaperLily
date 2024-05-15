@@ -1,0 +1,15 @@
+label START
+    if var ch1.facility_valve_4_set
+        event queue event_handle_already_full
+        end
+    if repeat jump AGAIN
+    "You try to fit the handle in the slot..."
+    "The handle fits!"
+    chara set lacie at left
+    chara set sai at right
+    sai "Of course, a diamond is just a rotated square." mood thinking12
+    lacie "Yep." mood blank1
+label AGAIN
+    item remove ch1.facility_handle_square
+    set ch1.facility_valve_4_set = "square"
+    event queue misc_valve_4

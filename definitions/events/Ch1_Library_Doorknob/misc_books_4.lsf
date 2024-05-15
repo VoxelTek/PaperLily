@@ -1,0 +1,13 @@
+label START
+    choice "An untitled book stands out. Read a passage?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 0.5
+    audio sfx play paper
+    pause 0.5
+    "Demons won't hesitate to kill and consume ______"
+    "_____'s regulations don't allow free consumption of souls ________ must be reported."
+    "Any demand ________ through the appropriate channels."

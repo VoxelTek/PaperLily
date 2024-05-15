@@ -1,0 +1,5 @@
+label START
+    if repeat jump SAVE
+    "A crow stands at the edge of the pool."
+label SAVE
+    system save

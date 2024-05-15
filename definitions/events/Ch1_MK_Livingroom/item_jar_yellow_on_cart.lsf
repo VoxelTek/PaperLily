@@ -1,0 +1,4 @@
+label START
+    item remove ch1.mk_jar_pigment_yellow
+    item add ch1.mk_jar_paint_yellow
+    end

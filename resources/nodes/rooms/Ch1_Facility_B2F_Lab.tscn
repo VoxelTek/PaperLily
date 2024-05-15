@@ -554,9 +554,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_sai"
 
 [node name="chr_sai" type="Node2D" parent="Other/Events"]

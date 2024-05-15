@@ -1,0 +1,4 @@
+label START
+    lacie "I need help with this." mood blank7
+    ch1_spider "Hmmm..."
+    ch1_spider "Have you tried simply looking at it?"

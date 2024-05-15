@@ -1,0 +1,19 @@
+label START
+    if var ch1.temp_ending_1_4_curtains jump ALREADY_CHECKED
+    "There's curtains where the driver should be."
+    choice "Take a look behind the curtains?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    action call open_curtains
+    pause 1
+    "There's no one there, just an empty driver's seat."
+    set ch1.temp_ending_1_4_curtains = true
+    hide ui
+    action call close_curtains
+    end
+
+label ALREADY_CHECKED
+    "There's nobody behind the curtains."

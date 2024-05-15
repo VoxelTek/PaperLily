@@ -1,0 +1,21 @@
+label START
+    audio bgm stop time 3
+    pause 2
+    camera shake time 10 continue
+    audio ambiance play earthquake_loop
+    pause 0.5
+    bubble exclamation_silent
+    action turn down
+    lacie "What's happening?" mood spooked2 time 2
+    hide ui
+    set ch1.temp_ending_1_8 = true
+    set ch1.forest_lakeside_seen_mermaid_note = true
+    set ch1.forest_lakeside_seen_temple_note = true
+    fade out
+    move to Ch1_Ending_8_Lakeside_2 point from_shrine time 0
+    audio ambiance stop
+    pause 4
+    audio bgm override on silent
+    audio ambiance play wind_loop time 4
+    fade in time 4
+    lacie "What in the world happened here...?" mood surprised6

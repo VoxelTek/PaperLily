@@ -1,0 +1,12 @@
+label START
+    if not var ch1.temp_forest_trigger_event_try_reset end
+    if var ch1.forest_entrance_tried_reset end
+    set ch1.forest_entrance_tried_reset = true
+    camera move (0,-200) time 1
+    pause 0.5
+    lacie "Ah... I kind of expected them to reset..." mood disappointed2
+    lacie "Geez... what was I thinking?" mood sigh
+    hide ui
+    camera move (0,200) time 0.5
+    camera reset
+    end

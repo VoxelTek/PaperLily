@@ -1,0 +1,24 @@
+label START
+    event call misc_chair
+    if var ch1.facility_lights_off
+        "There's some sort of clothing hanging from the chair. You can't see very well."
+        end
+    choice "There's a coat hanging from the chair."
+        "Put it on"
+            jump WEAR
+        "Check the pockets"
+            jump POCKETS
+        "Don't touch it"
+            end
+
+label POCKETS
+    "There's a note in one of the pockets:"
+    "${img:stamp_council} MEETING 221 NOTES"
+    "\"...members are growing increasingly restless....\""
+    "\"...expressing disapproval for Lilith...\""
+    "\"...might be planning to oust her...\""
+    "\"...could get ugly really fast...\""
+    end
+
+label WEAR
+    event queue ch1_ending_1_10

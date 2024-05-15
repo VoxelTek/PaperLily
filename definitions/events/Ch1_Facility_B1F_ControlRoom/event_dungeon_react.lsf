@@ -1,0 +1,11 @@
+label START
+    if repeat end
+    set ch1.facility_dungeon_2_released = true
+    hide ui
+    pause 1.5
+    audio sfx play ch1_roar
+    camera shake time 1
+    pause 2
+    lacie "What in the world was that?" mood concerned7
+    sai "Can't say I didn't warn you." mood blank8
+    end

@@ -1,0 +1,9 @@
+label START
+    "A trash can."
+    if var general.serious end
+    if repeat jump NOT_TODAY
+    "It's missing the pedal thingy, so you can't open it to check the contents."
+    end
+
+label NOT_TODAY
+    "Touching the lid with your bare hands is out of the question."

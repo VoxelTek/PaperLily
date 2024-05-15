@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Godot;
 using LacieEngine.API;
 using LacieEngine.Core;
+using static LacieEngine.Core.Direction;
 
 namespace LacieEngine.Minigames
 {
@@ -63,7 +64,7 @@ namespace LacieEngine.Minigames
             {
                 this.evtNotAllFusesReact.Play();
             }
-            if (slot + slot2 + (slot3 - slot4) == 44)
+            if (slot + slot2 + (slot3 - slot4) == 44 && slot == -101 && slot4 == -100)
             {
                 this.evtBlownReact.Play();
             }

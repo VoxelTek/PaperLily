@@ -1,0 +1,9 @@
+label START
+    if var general.serious jump SERIOUS
+    "An overflowing trash can."
+    if repeat end
+    "Since you're the one who filled it up, there's no point in emptying it."
+    end
+
+label SERIOUS
+    "My trash can."

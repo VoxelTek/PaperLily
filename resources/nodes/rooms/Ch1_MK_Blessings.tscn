@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://script/Subgame/Chapter1/Ch1MkBlessings.cs" type="Script" id=1]
 [ext_resource path="res://resources/shader/sfx_autoscroll.gdshader" type="Shader" id=2]
@@ -11,100 +11,115 @@
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_path_2.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_path_3.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_carpets.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/bg.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/bg.png" type="Texture" id=12]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/light_blessings.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/floor_4.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/floor_5.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/floor_3.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/floor_2.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/floor_1.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/misc_cage_3.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/floor_4.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/floor_5.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/floor_3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/floor_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/floor_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/misc_cage_3.png" type="Texture" id=19]
 [ext_resource path="res://assets/bgm/ch1_mk_boss_a.ogg" type="AudioStream" id=20]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/floor_3.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/floor_5.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/floor_3.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/floor_5.png" type="Texture" id=22]
 [ext_resource path="res://resources/material/sfx_invincibility_blink.tres" type="Material" id=23]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/floor_6.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/misc_cage_2.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/floor_6.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/misc_cage_2.png" type="Texture" id=25]
 [ext_resource path="res://assets/bgm/ch1_mk_boss_0.ogg" type="AudioStream" id=26]
 [ext_resource path="res://assets/sprite/ch1/mk/cages/floor_hole.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/floor_1.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/floor_1.png" type="Texture" id=28]
 [ext_resource path="res://resources/material/ch1_mk_ghost_shake.tres" type="Material" id=29]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/floor_4.png" type="Texture" id=30]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/bg.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_1/floor_6.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/floor_5.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/floor_1.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/bg_decor.png" type="Texture" id=35]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/misc_foot_1.png" type="Texture" id=36]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/misc_foot_3.png" type="Texture" id=37]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/misc_float_2.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/floor_4.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/bg.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_1/floor_6.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/floor_5.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/floor_1.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/bg_decor.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/misc_foot_1.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/misc_foot_3.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/misc_float_2.png" type="Texture" id=38]
 [ext_resource path="res://assets/bgm/ch1_mk_boss_b.ogg" type="AudioStream" id=39]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/floor_3.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/floor_3.png" type="Texture" id=40]
 [ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_storage1.png" type="Texture" id=41]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/misc_foot_2.png" type="Texture" id=42]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/misc_foot_4.png" type="Texture" id=43]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/misc_float_1.png" type="Texture" id=44]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/bg.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/floor_4.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/floor_2.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_4/floor_6.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/misc_foot_2.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/misc_foot_4.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/misc_float_1.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/bg.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/floor_4.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/floor_2.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_4/floor_6.png" type="Texture" id=48]
 [ext_resource path="res://assets/sfx/minigame_death.ogg" type="AudioStream" id=49]
 [ext_resource path="res://assets/sprite/ch1/mk/livingroom/misc_plant_1.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_6/floor_carpet.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_6/floor_carpet.png" type="Texture" id=51]
 [ext_resource path="res://assets/sfx/minigame_damage.ogg" type="AudioStream" id=52]
 [ext_resource path="res://assets/sprite/ch1/mk/livingroom/wall_fireplace.png" type="Texture" id=53]
 [ext_resource path="res://assets/sprite/ch1/mk/livingroom/wall_lights.png" type="Texture" id=54]
 [ext_resource path="res://assets/sprite/ch1/mk/livingroom/furniture_cart.png" type="Texture" id=55]
 [ext_resource path="res://assets/sprite/ch1/mk/livingroom/misc_gramophone.png" type="Texture" id=56]
 [ext_resource path="res://assets/sprite/ch1/mk/blessings/floor_path_4.png" type="Texture" id=57]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_wetcloth.png" type="Texture" id=58]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_3.png" type="Texture" id=59]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/furniture_table.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/misc_wetcloth.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_3.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/furniture_table.png" type="Texture" id=60]
 [ext_resource path="res://assets/bgm/ch1_mk_boss_c.ogg" type="AudioStream" id=61]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_1.png" type="Texture" id=62]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/furniture_bed_corpse.png" type="Texture" id=63]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/bg.png" type="Texture" id=64]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_book_2.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_1.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/furniture_bed_corpse.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/bg.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_book_2.png" type="Texture" id=65]
 [ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_wood.png" type="Texture" id=66]
 [ext_resource path="res://script/Core/Nodes/ActionVisibility2D.cs" type="Script" id=67]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_pillar_1.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/misc_pillar_1.png" type="Texture" id=68]
 [ext_resource path="res://assets/sprite/ch1/cutscene/chr_mk_scream.png" type="Texture" id=69]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_2.png" type="Texture" id=70]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_book_1.png" type="Texture" id=71]
-[ext_resource path="res://assets/sprite/ch1/mk/stressroom/chr_guesswho.png" type="Texture" id=72]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_5/floor_4.png" type="Texture" id=73]
-[ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_knives.png" type="Texture" id=74]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/bg_wisteria.png" type="Texture" id=75]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/bg.png" type="Texture" id=76]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_4.png" type="Texture" id=77]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/misc_books.png" type="Texture" id=78]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_2.png" type="Texture" id=79]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_4.png" type="Texture" id=80]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/floor_5.png" type="Texture" id=81]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_3/misc_pillar_2.png" type="Texture" id=82]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_7.png" type="Texture" id=83]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_3.png" type="Texture" id=84]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/bg.png" type="Texture" id=85]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_2.png" type="Texture" id=86]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_1.png" type="Texture" id=87]
-[ext_resource path="res://assets/sprite/ch1/mk/blessing_2/floor_6.png" type="Texture" id=88]
-[ext_resource path="res://assets/sprite/ch1/mk/blessings/misc_candle.png" type="Texture" id=89]
-[ext_resource path="res://assets/sprite/ch1/mk/blessings/misc_candle2.png" type="Texture" id=90]
-[ext_resource path="res://script/Nodes/RoomNavigation.cs" type="Script" id=91]
-[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=92]
-[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=93]
-[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=94]
-[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=95]
-[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=96]
-[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=97]
-[ext_resource path="res://assets/sprite/ch1/mk/wisteria/wall_painting.png" type="Texture" id=98]
+[ext_resource path="res://script/Managers/Rooms/Lighting.cs" type="Script" id=70]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_2.png" type="Texture" id=71]
+[ext_resource path="res://script/Nodes/LightFlickering.cs" type="Script" id=72]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_book_1.png" type="Texture" id=73]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/chr_guesswho.png" type="Texture" id=74]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_5/floor_4.png" type="Texture" id=75]
+[ext_resource path="res://assets/sprite/ch1/mk/stressroom/misc_knives.png" type="Texture" id=76]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/bg_wisteria.png" type="Texture" id=77]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/bg.png" type="Texture" id=78]
+[ext_resource path="res://assets/sprite/common/light01.png" type="Texture" id=79]
+[ext_resource path="res://resources/nodes/ch1/fireplace_fire.tscn" type="PackedScene" id=80]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/floor_4.png" type="Texture" id=81]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/misc_books.png" type="Texture" id=82]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/floor_2.png" type="Texture" id=83]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_4.png" type="Texture" id=84]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/floor_5.png" type="Texture" id=85]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_3/misc_pillar_2.png" type="Texture" id=86]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_7.png" type="Texture" id=87]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_3.png" type="Texture" id=88]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/bg.png" type="Texture" id=89]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_2.png" type="Texture" id=90]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_1.png" type="Texture" id=91]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/blessing_2/floor_6.png" type="Texture" id=92]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/misc_candle.png" type="Texture" id=93]
+[ext_resource path="res://assets/sprite/ch1/mk/blessings/misc_candle2.png" type="Texture" id=94]
+[ext_resource path="res://script/Nodes/RoomNavigation.cs" type="Script" id=95]
+[ext_resource path="res://script/Core/Nodes/EventTriggerRect.cs" type="Script" id=96]
+[ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=97]
+[ext_resource path="res://script/Core/Nodes/ActionSpriteFrame.cs" type="Script" id=98]
+[ext_resource path="res://script/Core/Nodes/ActionGroup.cs" type="Script" id=99]
+[ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=100]
+[ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=101]
+[ext_resource path="res://assets/sprite/ch1/mk/wisteria/wall_painting.png" type="Texture" id=102]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="Resource" id=1]
+script = ExtResource( 70 )
+Modulate = Color( 0.701961, 0.701961, 0.701961, 1 )
+UseNormals = true
+PlayerLightState = false
+PlayerLightEnergy = 1.0
+PlayerLightMode = 0
+EnvironmentLightMode = 0
+GlowLevel = 0
+BackgroundColor = Color( 0, 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
 shader_param/speed_x = 0.01
 shader_param/speed_y = 0.005
 
-[sub_resource type="NavigationPolygon" id=2]
+[sub_resource type="NavigationPolygon" id=3]
 vertices = PoolVector2Array( -152, -148, 3449, -171, 3434, 3046, -278, 2948 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( -152, -148, 3449, -171, 3434, 3046, -278, 2948 ) ]
@@ -114,6 +129,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+Lighting = SubResource( 1 )
 CameraLimitLeft = 0
 CameraLimitTop = 0
 CameraLimitRight = 3104
@@ -130,8 +146,8 @@ sfxDeath = ExtResource( 49 )
 scnHpMeter = ExtResource( 4 )
 
 [node name="Bg" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.3 )
-material = SubResource( 1 )
+modulate = Color( 1, 1, 1, 0.301961 )
+material = SubResource( 2 )
 texture = ExtResource( 8 )
 centered = false
 offset = Vector2( 0.5, 0 )
@@ -239,69 +255,69 @@ texture = ExtResource( 16 )
 
 [node name="Floor2" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2541, 1198 )
-texture = ExtResource( 86 )
+texture = ExtResource( 90 )
 
 [node name="Floor4" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2713, 1265 )
-texture = ExtResource( 87 )
+texture = ExtResource( 91 )
 
 [node name="Floor8" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2721, 1180 )
-texture = ExtResource( 87 )
+texture = ExtResource( 91 )
 
 [node name="Floor9" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2752, 1203 )
-texture = ExtResource( 80 )
+texture = ExtResource( 84 )
 
 [node name="Floor1" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2493, 1108 )
-texture = ExtResource( 87 )
+texture = ExtResource( 91 )
 
 [node name="Floor7" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2754, 1120 )
-texture = ExtResource( 83 )
+texture = ExtResource( 87 )
 
 [node name="Floor6" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2535, 1142 )
-texture = ExtResource( 88 )
+texture = ExtResource( 92 )
 
 [node name="Floor10" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2442, 1030 )
-texture = ExtResource( 84 )
+texture = ExtResource( 88 )
 
 [node name="Floor11" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2792, 1080 )
-texture = ExtResource( 86 )
+texture = ExtResource( 90 )
 
 [node name="Floor12" type="Sprite" parent="Background/Blessing2"]
 position = Vector2( 2844, 1036 )
-texture = ExtResource( 87 )
+texture = ExtResource( 91 )
 
 [node name="Blessing3" type="Node2D" parent="Background"]
 
 [node name="Floor5" type="Sprite" parent="Background/Blessing3"]
 position = Vector2( 599, 1961 )
-texture = ExtResource( 81 )
+texture = ExtResource( 85 )
 
 [node name="Floor4" type="Sprite" parent="Background/Blessing3"]
 position = Vector2( 790, 1982 )
-texture = ExtResource( 77 )
+texture = ExtResource( 81 )
 
 [node name="Floor7" type="Sprite" parent="Background/Blessing3"]
 position = Vector2( 825, 1926 )
-texture = ExtResource( 77 )
+texture = ExtResource( 81 )
 
 [node name="Floor8" type="Sprite" parent="Background/Blessing3"]
 position = Vector2( 532, 1883 )
-texture = ExtResource( 79 )
+texture = ExtResource( 83 )
 
 [node name="Floor9" type="Sprite" parent="Background/Blessing3"]
 position = Vector2( 535, 2013 )
-texture = ExtResource( 79 )
+texture = ExtResource( 83 )
 
 [node name="Floor10" type="Sprite" parent="Background/Blessing3"]
 position = Vector2( 775, 2056 )
-texture = ExtResource( 79 )
+texture = ExtResource( 83 )
 
 [node name="Blessing4" type="Node2D" parent="Background"]
 
@@ -349,7 +365,7 @@ texture = ExtResource( 44 )
 
 [node name="Floor4" type="Sprite" parent="Background/Blessing5"]
 position = Vector2( 2447, 2000 )
-texture = ExtResource( 73 )
+texture = ExtResource( 75 )
 
 [node name="Floor3" type="Sprite" parent="Background/Blessing5"]
 position = Vector2( 2298, 2011 )
@@ -361,11 +377,11 @@ texture = ExtResource( 62 )
 
 [node name="Floor2" type="Sprite" parent="Background/Blessing5"]
 position = Vector2( 2488, 2039 )
-texture = ExtResource( 70 )
+texture = ExtResource( 71 )
 
 [node name="Floor6" type="Sprite" parent="Background/Blessing5"]
 position = Vector2( 2225, 1990 )
-texture = ExtResource( 70 )
+texture = ExtResource( 71 )
 
 [node name="Floor8" type="Sprite" parent="Background/Blessing5"]
 position = Vector2( 2262, 2094 )
@@ -373,7 +389,7 @@ texture = ExtResource( 62 )
 
 [node name="Floor11" type="Sprite" parent="Background/Blessing5"]
 position = Vector2( 2538, 1911 )
-texture = ExtResource( 70 )
+texture = ExtResource( 71 )
 
 [node name="Blessing6" type="Node2D" parent="Background"]
 
@@ -451,7 +467,7 @@ __meta__ = {
 [node name="Painting" type="Sprite" parent="Main"]
 modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 1416, 1244 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 offset = Vector2( 0, -28 )
 hframes = 7
 frame = 1
@@ -459,7 +475,7 @@ frame = 1
 [node name="Painting5" type="Sprite" parent="Main"]
 modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 1251, 1363 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 offset = Vector2( 0, -28 )
 hframes = 7
 frame = 4
@@ -467,7 +483,7 @@ frame = 4
 [node name="Painting6" type="Sprite" parent="Main"]
 modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 1851, 1363 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 offset = Vector2( 0, -28 )
 hframes = 7
 frame = 2
@@ -475,7 +491,7 @@ frame = 2
 [node name="Painting2" type="Sprite" parent="Main"]
 modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 1416, 1579 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 offset = Vector2( 0, -28 )
 hframes = 7
 frame = 3
@@ -483,7 +499,7 @@ frame = 3
 [node name="Painting3" type="Sprite" parent="Main"]
 modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 1676, 1579 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 offset = Vector2( 0, -28 )
 hframes = 7
 frame = 5
@@ -491,10 +507,26 @@ frame = 5
 [node name="Painting4" type="Sprite" parent="Main"]
 modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 1676, 1244 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 offset = Vector2( 0, -28 )
 hframes = 7
 frame = 6
+
+[node name="Fire" parent="Main/Painting4" instance=ExtResource( 80 )]
+visible = false
+modulate = Color( 2, 1, 1, 1 )
+position = Vector2( 3, -31 )
+region_enabled = true
+region_rect = Rect2( 0, 10, 240, 44 )
+
+[node name="Light" type="Light2D" parent="Main/Painting4/Fire"]
+position = Vector2( -5, 24 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.8
+range_item_cull_mask = 3
+script = ExtResource( 72 )
 
 [node name="Blessing1" type="Sprite" parent="Main"]
 position = Vector2( 1084, 316 )
@@ -515,44 +547,62 @@ texture = ExtResource( 27 )
 
 [node name="Candle1" type="Sprite" parent="Main/Blessing1"]
 position = Vector2( -4, 3 )
-texture = ExtResource( 89 )
+texture = ExtResource( 93 )
 hframes = 4
-script = ExtResource( 93 )
+script = ExtResource( 97 )
 FPS = 6.0
 AnimationFrames = "0,1,2"
 
+[node name="CandleLight" type="Light2D" parent="Main/Blessing1/Candle1"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 72 )
+
 [node name="WallPainting" type="Sprite" parent="Main/Blessing1"]
 position = Vector2( -4, -39 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 hframes = 7
 frame = 1
 
 [node name="Blessing2" type="Sprite" parent="Main"]
 position = Vector2( 2649, 957 )
-texture = ExtResource( 85 )
+texture = ExtResource( 89 )
 offset = Vector2( 0, 10 )
 
 [node name="BgWisteria" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( -12, -93 )
-texture = ExtResource( 75 )
+texture = ExtResource( 77 )
 
 [node name="Candle2" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( -9, -14 )
-texture = ExtResource( 90 )
+texture = ExtResource( 94 )
 hframes = 4
-script = ExtResource( 93 )
+script = ExtResource( 97 )
 FPS = 6.0
 AnimationFrames = "0,1,2"
 
+[node name="CandleLight" type="Light2D" parent="Main/Blessing2/Candle2"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 72 )
+
 [node name="WallPainting5" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( -9, -63 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 hframes = 7
 frame = 2
 
 [node name="FloorBook1" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( 40, 47 )
-texture = ExtResource( 71 )
+texture = ExtResource( 73 )
 
 [node name="FloorBook2" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( 70, 61 )
@@ -560,21 +610,21 @@ texture = ExtResource( 65 )
 
 [node name="MiscBooks2" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( 88, 4 )
-texture = ExtResource( 78 )
+texture = ExtResource( 82 )
 flip_h = true
 
 [node name="MiscBooks" type="Sprite" parent="Main/Blessing2"]
 position = Vector2( -72, 4 )
-texture = ExtResource( 78 )
+texture = ExtResource( 82 )
 
 [node name="Blessing3" type="Sprite" parent="Main"]
 position = Vector2( 685, 1791 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 offset = Vector2( 0, 40 )
 
 [node name="WallPainting3" type="Sprite" parent="Main/Blessing3"]
 position = Vector2( -5, -41 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 hframes = 7
 frame = 3
 
@@ -598,7 +648,7 @@ texture = ExtResource( 68 )
 
 [node name="MiscPillar2" type="Sprite" parent="Main/Blessing3"]
 position = Vector2( 84, -73 )
-texture = ExtResource( 82 )
+texture = ExtResource( 86 )
 
 [node name="MiscWetcloth" type="Sprite" parent="Main/Blessing3"]
 position = Vector2( 51, 76 )
@@ -611,11 +661,20 @@ flip_h = true
 
 [node name="Candle3" type="Sprite" parent="Main/Blessing3"]
 position = Vector2( 38, -17 )
-texture = ExtResource( 89 )
+texture = ExtResource( 93 )
 hframes = 4
-script = ExtResource( 93 )
+script = ExtResource( 97 )
 FPS = 6.0
 AnimationFrames = "0,1,2"
+
+[node name="CandleLight" type="Light2D" parent="Main/Blessing3/Candle3"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 72 )
 
 [node name="Blessing4" type="Sprite" parent="Main"]
 position = Vector2( 455, 958 )
@@ -636,7 +695,7 @@ texture = ExtResource( 41 )
 
 [node name="WallPainting2" type="Sprite" parent="Main/Blessing4"]
 position = Vector2( 11, -40 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 hframes = 7
 frame = 4
 
@@ -726,11 +785,20 @@ texture = ExtResource( 38 )
 
 [node name="Candle4" type="Sprite" parent="Main/Blessing4"]
 position = Vector2( 10, 18 )
-texture = ExtResource( 89 )
+texture = ExtResource( 93 )
 hframes = 4
-script = ExtResource( 93 )
+script = ExtResource( 97 )
 FPS = 6.0
 AnimationFrames = "0,1,2"
+
+[node name="CandleLight" type="Light2D" parent="Main/Blessing4/Candle4"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.5
+range_item_cull_mask = 3
+script = ExtResource( 72 )
 
 [node name="Blessing5" type="Sprite" parent="Main"]
 position = Vector2( 2375, 1787 )
@@ -739,15 +807,24 @@ offset = Vector2( 0, 36 )
 
 [node name="Candle5" type="Sprite" parent="Main/Blessing5"]
 position = Vector2( -68, 13 )
-texture = ExtResource( 90 )
+texture = ExtResource( 94 )
 hframes = 4
-script = ExtResource( 93 )
+script = ExtResource( 97 )
 FPS = 6.0
 AnimationFrames = "0,1,2"
 
+[node name="CandleLight" type="Light2D" parent="Main/Blessing5/Candle5"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.7
+range_item_cull_mask = 3
+script = ExtResource( 72 )
+
 [node name="WallPainting4" type="Sprite" parent="Main/Blessing5"]
 position = Vector2( 7, -32 )
-texture = ExtResource( 98 )
+texture = ExtResource( 102 )
 hframes = 7
 frame = 5
 
@@ -761,8 +838,24 @@ position = Vector2( -6, 79 )
 texture = ExtResource( 51 )
 
 [node name="WallFireplace" type="Sprite" parent="Main/Blessing6"]
-position = Vector2( -5, -49 )
+position = Vector2( -324, 43 )
 texture = ExtResource( 53 )
+offset = Vector2( 319, -92 )
+
+[node name="Fire" parent="Main/Blessing6/WallFireplace" instance=ExtResource( 80 )]
+modulate = Color( 2, 1, 1, 1 )
+position = Vector2( 321, -38 )
+region_enabled = true
+region_rect = Rect2( 0, 10, 240, 44 )
+
+[node name="Light" type="Light2D" parent="Main/Blessing6/WallFireplace/Fire"]
+position = Vector2( -5, 24 )
+texture = ExtResource( 79 )
+texture_scale = 4.0
+color = Color( 1, 0.694118, 0.341176, 1 )
+energy = 0.6
+range_item_cull_mask = 3
+script = ExtResource( 72 )
 
 [node name="MiscPlant1" type="Sprite" parent="Main/Blessing6"]
 position = Vector2( -71, -26 )
@@ -786,14 +879,14 @@ texture = ExtResource( 54 )
 
 [node name="ChrGuesswho" type="Sprite" parent="Main"]
 position = Vector2( 2380, 1866 )
-texture = ExtResource( 72 )
+texture = ExtResource( 74 )
 offset = Vector2( 0, -50 )
 hframes = 5
 frame = 1
 
 [node name="MiscKnives" type="Sprite" parent="Main/ChrGuesswho"]
 position = Vector2( 2, -50 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="MiscWood" type="Sprite" parent="Main"]
 position = Vector2( 2381, 1870 )
@@ -831,39 +924,39 @@ __meta__ = {
 
 [node name="misc_candle_1" type="Node2D" parent="Other/Events"]
 position = Vector2( 1080, 329 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 
 [node name="misc_candle_2" type="Node2D" parent="Other/Events"]
 position = Vector2( 2640, 944 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 
 [node name="misc_candle_3" type="Node2D" parent="Other/Events"]
 position = Vector2( 721, 1795 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 
 [node name="misc_candle_4" type="Node2D" parent="Other/Events"]
 position = Vector2( 467, 974 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 
 [node name="misc_candle_5" type="Node2D" parent="Other/Events"]
 position = Vector2( 2306, 1808 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 
 [node name="misc_candle_6" type="Node2D" parent="Other/Events"]
 position = Vector2( 2018, 384 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 Solid = false
 Trigger = 1
 Area = Vector2( 192, 128 )
 
 [node name="misc_table" type="Node2D" parent="Other/Events"]
 position = Vector2( 639, 1795 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 Event = "ch1_null"
 
 [node name="misc_book" type="Node2D" parent="Other/Events"]
 position = Vector2( 2719, 1020 )
-script = ExtResource( 92 )
+script = ExtResource( 96 )
 Event = "ch1_null"
 Area = Vector2( 20, 14 )
 
@@ -883,102 +976,122 @@ script = ExtResource( 6 )
 [node name="Updates" type="Node" parent="Other"]
 
 [node name="candle_1" type="Node" parent="Other/Updates"]
-script = ExtResource( 97 )
+script = ExtResource( 101 )
 Variable = "ch1.mk_boss_blessings_stage"
 Operator = 3
 Value = "1"
 ActionTrue = NodePath("turn_off")
 
 [node name="turn_off" type="Node" parent="Other/Updates/candle_1"]
-script = ExtResource( 95 )
+script = ExtResource( 99 )
 
 [node name="stop_anim" type="Node" parent="Other/Updates/candle_1/turn_off"]
-script = ExtResource( 96 )
+script = ExtResource( 100 )
 Node = NodePath("../../../../../Main/Blessing1/Candle1")
 Start = false
 
 [node name="set_frame" type="Node" parent="Other/Updates/candle_1/turn_off"]
-script = ExtResource( 94 )
+script = ExtResource( 98 )
 Node = NodePath("../../../../../Main/Blessing1/Candle1")
 Frame = 3
 
+[node name="hide_light" type="Node" parent="Other/Updates/candle_1/turn_off"]
+script = ExtResource( 67 )
+Node = NodePath("../../../../../Main/Blessing1/Candle1/CandleLight")
+Visible = false
+
 [node name="candle_2" type="Node" parent="Other/Updates"]
-script = ExtResource( 97 )
+script = ExtResource( 101 )
 Variable = "ch1.mk_boss_blessings_stage"
 Operator = 3
 Value = "2"
 ActionTrue = NodePath("turn_off")
 
 [node name="turn_off" type="Node" parent="Other/Updates/candle_2"]
-script = ExtResource( 95 )
+script = ExtResource( 99 )
 
 [node name="stop_anim" type="Node" parent="Other/Updates/candle_2/turn_off"]
-script = ExtResource( 96 )
+script = ExtResource( 100 )
 Node = NodePath("../../../../../Main/Blessing2/Candle2")
 Start = false
 
 [node name="set_frame" type="Node" parent="Other/Updates/candle_2/turn_off"]
-script = ExtResource( 94 )
+script = ExtResource( 98 )
 Node = NodePath("../../../../../Main/Blessing2/Candle2")
 Frame = 3
 
+[node name="hide_light" type="Node" parent="Other/Updates/candle_2/turn_off"]
+script = ExtResource( 67 )
+Node = NodePath("../../../../../Main/Blessing2/Candle2/CandleLight")
+Visible = false
+
 [node name="candle_3" type="Node" parent="Other/Updates"]
-script = ExtResource( 97 )
+script = ExtResource( 101 )
 Variable = "ch1.mk_boss_blessings_stage"
 Operator = 3
 Value = "3"
 ActionTrue = NodePath("turn_off")
 
 [node name="turn_off" type="Node" parent="Other/Updates/candle_3"]
-script = ExtResource( 95 )
+script = ExtResource( 99 )
 
 [node name="stop_anim" type="Node" parent="Other/Updates/candle_3/turn_off"]
-script = ExtResource( 96 )
+script = ExtResource( 100 )
 Node = NodePath("../../../../../Main/Blessing3/Candle3")
 Start = false
 
 [node name="set_frame" type="Node" parent="Other/Updates/candle_3/turn_off"]
-script = ExtResource( 94 )
+script = ExtResource( 98 )
 Node = NodePath("../../../../../Main/Blessing3/Candle3")
 Frame = 3
 
+[node name="hide_light" type="Node" parent="Other/Updates/candle_3/turn_off"]
+script = ExtResource( 67 )
+Node = NodePath("../../../../../Main/Blessing3/Candle3/CandleLight")
+Visible = false
+
 [node name="candle_4" type="Node" parent="Other/Updates"]
-script = ExtResource( 97 )
+script = ExtResource( 101 )
 Variable = "ch1.mk_boss_blessings_stage"
 Operator = 3
 Value = "4"
 ActionTrue = NodePath("turn_off")
 
 [node name="turn_off" type="Node" parent="Other/Updates/candle_4"]
-script = ExtResource( 95 )
+script = ExtResource( 99 )
 
 [node name="stop_anim" type="Node" parent="Other/Updates/candle_4/turn_off"]
-script = ExtResource( 96 )
+script = ExtResource( 100 )
 Node = NodePath("../../../../../Main/Blessing4/Candle4")
 Start = false
 
 [node name="set_frame" type="Node" parent="Other/Updates/candle_4/turn_off"]
-script = ExtResource( 94 )
+script = ExtResource( 98 )
 Node = NodePath("../../../../../Main/Blessing4/Candle4")
 Frame = 3
 
+[node name="hide_light" type="Node" parent="Other/Updates/candle_4/turn_off"]
+script = ExtResource( 67 )
+Node = NodePath("../../../../../Main/Blessing4/Candle4/CandleLight")
+Visible = false
+
 [node name="candle_5" type="Node" parent="Other/Updates"]
-script = ExtResource( 97 )
+script = ExtResource( 101 )
 Variable = "ch1.mk_boss_blessings_stage"
 Operator = 3
 Value = "5"
 ActionTrue = NodePath("turn_off")
 
 [node name="turn_off" type="Node" parent="Other/Updates/candle_5"]
-script = ExtResource( 95 )
+script = ExtResource( 99 )
 
 [node name="stop_anim" type="Node" parent="Other/Updates/candle_5/turn_off"]
-script = ExtResource( 96 )
+script = ExtResource( 100 )
 Node = NodePath("../../../../../Main/Blessing5/Candle5")
 Start = false
 
 [node name="set_frame" type="Node" parent="Other/Updates/candle_5/turn_off"]
-script = ExtResource( 94 )
+script = ExtResource( 98 )
 Node = NodePath("../../../../../Main/Blessing5/Candle5")
 Frame = 3
 
@@ -986,16 +1099,25 @@ Frame = 3
 script = ExtResource( 67 )
 Node = NodePath("../../../../../Main/ChrMk")
 
+[node name="hide_light" type="Node" parent="Other/Updates/candle_5/turn_off"]
+script = ExtResource( 67 )
+Node = NodePath("../../../../../Main/Blessing5/Candle5/CandleLight")
+Visible = false
+
+[node name="show_fire" type="Node" parent="Other/Updates/candle_5/turn_off"]
+script = ExtResource( 67 )
+Node = NodePath("../../../../../Main/Painting4/Fire")
+
 [node name="Actions" type="Node" parent="Other"]
 
 [node name="mk_scream" type="Node" parent="Other/Actions"]
-script = ExtResource( 94 )
+script = ExtResource( 98 )
 Node = NodePath("../../../Main/ChrMk")
 Frame = 1
 
 [node name="Navigation" type="Navigation2D" parent="Other"]
 visible = false
-script = ExtResource( 91 )
+script = ExtResource( 95 )
 
 [node name="Polygon" type="NavigationPolygonInstance" parent="Other/Navigation"]
-navpoly = SubResource( 2 )
+navpoly = SubResource( 3 )

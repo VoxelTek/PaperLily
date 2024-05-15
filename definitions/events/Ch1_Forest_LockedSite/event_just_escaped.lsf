@@ -1,0 +1,10 @@
+label START
+    pause 1
+    audio bgm override on silent
+    audio bgm stop time 6
+    pause 4
+    fade in
+    if var ch1.forest_lockedsite_took_coin_1
+        if var ch1.forest_lockedsite_took_coin_2
+            if var ch1.forest_lockedsite_took_coin_3
+                system achievement CH1_DAREDEVIL

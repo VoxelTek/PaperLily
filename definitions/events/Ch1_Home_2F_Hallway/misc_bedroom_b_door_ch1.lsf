@@ -1,0 +1,18 @@
+label START
+    if repeat 5 jump REPEAT_5
+    if repeat jump REPEAT
+    "Hiro's room."
+    lacie "..."
+    lacie "I'd rather not go in without permission..." mood blank8
+    end
+
+
+label REPEAT
+    "You shouldn't go in."
+    end
+
+
+label REPEAT_5
+    "You won't go in."
+    end
+

@@ -1,0 +1,7 @@
+label START
+    if var ch1.mk_boss_blessings_stage >= 5 end
+    if not var ch1.mk_boss_blessings_stage == 4
+        audio sfx play ui_bad
+        end
+    set ch1.mk_boss_blessings_stage = 5
+    audio sfx play ui_objective

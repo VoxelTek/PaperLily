@@ -25,16 +25,25 @@ visible = false
 [node name="item_bucket_on_faucet" parent="Ch1_Forest_Lakeside_2/Other/Events" index="0"]
 Event = "misc_faucet"
 
-[node name="item_paddles_get" parent="Ch1_Forest_Lakeside_2/Other/Events" index="4"]
+[node name="item_ritualitems_on_faucet" parent="Ch1_Forest_Lakeside_2/Other/Events" index="1"]
 Event = "Global.ch1_null"
 
-[node name="misc_lamp_1" parent="Ch1_Forest_Lakeside_2/Other/Events" index="5"]
+[node name="item_bucket_already_full" parent="Ch1_Forest_Lakeside_2/Other/Events" index="2"]
+Event = "Global.ch1_null"
+
+[node name="item_bucket_on_water" parent="Ch1_Forest_Lakeside_2/Other/Events" index="3"]
+Event = "Global.ch1_null"
+
+[node name="item_paddles_get" parent="Ch1_Forest_Lakeside_2/Other/Events" index="5"]
+Event = "Global.ch1_null"
+
+[node name="misc_lamp_1" parent="Ch1_Forest_Lakeside_2/Other/Events" index="6"]
 Event = "Ch1_Forest_Lakeside_2.misc_lamp"
 
-[node name="misc_lamp_2" parent="Ch1_Forest_Lakeside_2/Other/Events" index="6"]
+[node name="misc_lamp_2" parent="Ch1_Forest_Lakeside_2/Other/Events" index="7"]
 Event = "Ch1_Forest_Lakeside_2.misc_lamp"
 
-[node name="misc_flowers" parent="Ch1_Forest_Lakeside_2/Other/Events" index="9"]
+[node name="misc_flowers" parent="Ch1_Forest_Lakeside_2/Other/Events" index="10"]
 Event = "misc_water"
 
 [editable path="Ch1_Forest_Lakeside_2"]

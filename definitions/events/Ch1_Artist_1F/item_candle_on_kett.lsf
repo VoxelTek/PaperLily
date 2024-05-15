@@ -1,0 +1,4 @@
+label START
+    if not var ch1.forest_kett_introduced end
+    chara set kett at right
+    kett "This candle looks familiar to me. How curious." mood default

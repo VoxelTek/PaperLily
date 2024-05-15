@@ -1,0 +1,4 @@
+label START
+    set ch1.bus_not_there = true
+    system refresh
+    system menu on

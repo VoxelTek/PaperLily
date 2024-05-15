@@ -1,0 +1,17 @@
+label START
+    if var ch1.forest_station_correct_path == 3 end
+    if var ch1.forest_station_tracks_stage == 3 jump CHECK_3RD
+label DEATH
+    audio ambiance stop time 0
+    audio bgm stop time 0
+    audio sfx play squash
+    action call eyecu_atk_bottom
+    pause 0.2
+    action turn up
+    pause 0.4
+    event call ch1_death_impact
+    end
+
+label CHECK_3RD
+    if var ch1.forest_station_cut_bottom end
+    jump DEATH

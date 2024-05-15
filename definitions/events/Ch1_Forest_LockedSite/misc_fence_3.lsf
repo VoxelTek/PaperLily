@@ -1,0 +1,6 @@
+label START
+    if not var ch1.forest_lockedsite_clear
+        "A fence blocks your path."
+        end
+    "A long fence."
+    end

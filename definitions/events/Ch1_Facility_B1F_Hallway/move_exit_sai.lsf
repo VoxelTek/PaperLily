@@ -1,0 +1,22 @@
+label START
+    if repeat jump AGAIN
+    if not character sai jump AGAIN
+    chara set lacie at left
+    chara set sai at right
+    sai "This is the door to the surface." mood blank5
+    hide ui
+    pause 0.5
+    audio sfx play door_locked
+    pause 1
+    sai "...Huh? It's locked?" mood thinking10
+    lacie "Are we trapped after all?" mood blank7
+    sai "It can't be, I just came through here... Do we need a key?" mood blank7
+    lacie "There's no keyhole." mood reflective
+    sai "Huh... good eye." mood thinking
+    lacie "We'll just have to do as Rune said and go deeper down." mood blank8
+    end
+
+label AGAIN
+    audio sfx play door_locked
+    pause 0.5
+    "There's a door here, but it won't open."

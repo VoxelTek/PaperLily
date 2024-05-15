@@ -1,0 +1,11 @@
+label START
+    if not var ch1.mk_trapped end
+    if repeat end
+    if var general.serious end
+    camera move (0,64) time 1.5
+    pause 0.5
+    lacie "Oh..." mood confused
+    lacie "The door is gone.." mood concerned12
+    hide ui
+    camera move (0,-64) time 0.5
+    camera reset

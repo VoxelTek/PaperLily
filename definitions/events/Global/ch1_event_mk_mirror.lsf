@@ -1,0 +1,13 @@
+label START
+    "You inspect the object closely..."
+    hide ui
+    pause 1
+    audio sfx play swish
+    pause 0.2
+    fade flash color white
+    pause 1
+    "As you look into it, the mirror regains its colors."
+    item remove ch1.mk_hand_mirror
+    item add ch1.mk_hand_mirror_activated
+    event call ch1_event_mk_check_items
+    end

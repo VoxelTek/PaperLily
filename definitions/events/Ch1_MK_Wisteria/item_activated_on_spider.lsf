@@ -1,0 +1,7 @@
+label START
+    if var ch1.mk_spidey_talks >= 3
+        ch1_spider "If you need help with the burning order..."
+        ch1_spider "The painting with the hands might provide you with a hint."
+    else
+        ch1_spider "That seems to be already unsealed."
+        ch1_spider "You don't need to do anything else with it."

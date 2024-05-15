@@ -1,0 +1,11 @@
+label START
+    if repeat end
+    if var ch1.forest_red_entrance_stage > 3 end
+    chara set lacie at left
+    chara set rune at right
+    action idle stop node rune
+    rune "Don't jump!"
+    rune "You have so much to live for..." mood sad
+    lacie "...Eh?" mood surprised
+    lacie "Oh! I wasn't..." mood concerned2
+    action idle start node rune

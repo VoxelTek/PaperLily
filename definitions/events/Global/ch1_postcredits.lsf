@@ -1,0 +1,59 @@
+label START
+    fade out time 0
+    move to Ch1_Shop_Back point entrance cutscene time 0
+    if var ch1.shop_gave_bunny
+        action call show_bunny
+        set ch1.temp_shadowgirl_pets = true
+    if var ch1.shop_gave_caterpillar
+        action call show_caterpillar
+        set ch1.temp_shadowgirl_pets = true
+    action idle stop node shadowgirl
+    hoodie "I'm back~" time 2.5
+    fade in time 2
+    pause 1
+    chara spawn hoodie point from_shop_front
+    pause 0.5
+    action turn right node shadowgirl
+    action walk down 32 node hoodie speed slow
+    action turn left node hoodie
+    pause 0.5
+    if var ch1.temp_shadowgirl_pets
+        hoodie "Hope you haven't been giving away products for free again!" time 2.5
+    if not var ch1.temp_shadowgirl_pets
+        hoodie "How's things back here little Kat? Any sales?" time 2.5
+    hide ui
+    action turn down node shadowgirl
+    action idle start node shadowgirl
+    bubble laugh point bubble_shadowgirl continue
+    pause 0.5
+    action walk down 32 node hoodie speed slow
+    action walk left 64 node hoodie speed slow
+    action turn up node hoodie
+    action idle stop node shadowgirl
+    pause 1
+    bubble ellipsis_silent on hoodie
+    if var ch1.temp_shadowgirl_pets
+        hoodie "...What's going on in here?! This isn't a daycare!" time 3
+    if not var ch1.temp_shadowgirl_pets
+        hoodie "...You've been giving our merchandise away for free again, haven't you?" time 3
+    hide ui
+    pause 0.2
+    action idle start node shadowgirl
+    bubble laugh point bubble_shadowgirl continue
+    pause 1
+    action walk down 16 node hoodie speed slow
+    pause 0.5
+    if var ch1.temp_shadowgirl_pets
+        cg show ch1/ending_extra time 0.5
+        jump AFTER_CG
+    cg show black time 0.5
+label AFTER_CG
+    pause 1
+    hoodie "Man... what the hell am I gonna do with you?" time 3
+    hide ui
+    cg hide
+    move to Void point (0,0) time 0
+    fade out time 1
+    system screen ch1_credits_2
+    fade in time 0.5
+    end

@@ -1,0 +1,21 @@
+label START
+    set ch1.bus_got_off = true
+    system call GetOffBus
+    audio bgm stop time 3
+    pause 2
+    chara lock
+    camera unlock
+    hide ui
+    bubble ellipsis point sai_bubble
+    pause 0.5
+    system call SaiGlance
+    pause 1
+    sai "...She actually got off?"
+    hide ui
+    fade out
+    pause 0.5
+    sai "...Huh."
+    hide ui
+    chara unlock
+    system menu on
+    event call ch1_event_busgetoff

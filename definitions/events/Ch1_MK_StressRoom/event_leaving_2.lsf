@@ -1,0 +1,5 @@
+label START
+    if not var ch1.mk_seen_doll end
+    if repeat end
+    audio sfx play gore1
+    set ch1.mk_head_tilt = true

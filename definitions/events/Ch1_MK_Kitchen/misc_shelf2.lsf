@@ -1,0 +1,33 @@
+label START
+    "A cookie jar."
+    if var general.serious end
+    if not var ch1.mk_took_eye_kitchen
+        if not var ch1.mk_stressroom_eyes == 2
+            jump TAKE_EYE
+    if objective ch1.mk_plant_eat inprogress jump FEED_PLANT
+label REACT
+    if character sai
+        event call misc_shelf2_sai_react
+    end
+
+label TAKE_EYE
+    "There's something inside that doesn't belong."
+    choice "Take it?"
+        "Yes"
+            set ch1.mk_took_eye_kitchen = true
+            system refresh
+            item add ch1.mk_eyeball
+        "No"
+            end
+    end
+
+label FEED_PLANT
+    lacie "Maybe I could feed this to the plant..."
+    choice "Bring the cookies to the plant?"
+        "Yes"
+            move to Ch1_MK_Livingroom point feed_plant
+            pause 0.5
+            bubble ellipsis
+            "The plant rejects the cookies..."
+        "No"
+            end

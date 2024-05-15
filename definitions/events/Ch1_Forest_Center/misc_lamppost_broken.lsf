@@ -1,0 +1,9 @@
+label START
+    if repeat jump POST
+    "A lamppost that's missing its lamp."
+    lacie "Now it's just a post." mood blank2
+    end
+
+label POST
+    "A post."
+    end

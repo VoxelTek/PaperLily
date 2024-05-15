@@ -1,0 +1,16 @@
+label START
+    if var ch1.blackpass_opened_locker jump ALREADY_OPEN
+    audio sfx play locker_open
+    system call OpenLocker
+    action walk down 26 backwards
+    set ch1.blackpass_opened_locker = true
+    system refresh
+    if var general.blackpass_visits == 2
+        set general.blackpass_red_item_1_spawned = true
+        system refresh
+        pause 1.5
+        lacie "Huh? What's that red thing? It's the first time I see it." mood surprised3
+    end
+
+label ALREADY_OPEN
+    "There's nothing else to see here."

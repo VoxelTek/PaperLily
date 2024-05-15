@@ -1,0 +1,14 @@
+label START
+    chara set lacie at left
+    chara set hiro at right
+    if repeat jump AGAIN
+    hiro "Lace, I don't know what you're planning with that," mood pout3
+    hiro "but it's gonna be really hard to wash off." mood worried5
+    lacie "Yeah... I'm aware." mood concerned6
+    end
+
+label AGAIN
+    hiro "Um... do you need me to get up?" mood surprised
+    hiro "Are you painting this bench?" mood surprised2
+    lacie "N-no... sorry." mood hide3
+    end

@@ -1,0 +1,3 @@
+label START
+    system minigame ch1_pnc_facility_door
+    end

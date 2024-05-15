@@ -1,0 +1,13 @@
+label START
+    if var ch1.facility_chart_screen_on jump CAMERAS
+    "A large screen composed of smaller screens."
+    end
+
+label CAMERAS
+    "The screens seem to display the feed from security cameras somewhere."
+    if repeat end
+    lacie "Are those... sticky notes taped to the cameras?" mood blank4
+    if not character sai end
+    sai "Someone didn't want to be spied on." mood smile2
+    lacie "Understandable." mood blank7
+    end

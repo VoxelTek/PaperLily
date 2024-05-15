@@ -1,0 +1,8 @@
+label START
+    if repeat end
+    hide ui
+    pause 1
+    lacie "You hear something unlocking in the distance." mood blank7
+    sai "What? I didn't hear anything." mood thinking3
+    lacie "...You're breaking my immersion." mood disappointed
+    end

@@ -1,0 +1,4 @@
+label START
+    "It refuses to leave the terrarium."
+    lacie "He must not like lavender very much..." mood blank4
+    end

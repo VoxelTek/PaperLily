@@ -1,0 +1,34 @@
+label START
+    chara set lacie at left
+    set ch1.bus_got_off_cutscene_end = true
+    audio ambiance stop
+    move to Ch1_Forest_Bus_Stop point get_off_event_end direction down
+    fade in continue
+    action walk right 200
+    action walk right 150 speed slow
+    pause 0.5
+    action turn left
+    pause 0.5
+    lacie "This should be far enough... It doesn't look like they will chase me." mood concerned2
+    hide ui
+    pause 0.5
+    action turn up
+    pause 0.5
+    lacie "This... isn't the kind of place I expected." mood concerned4
+    hide ui
+    pause 0.5
+    action turn right
+    pause 0.5
+    camera move (350,0) time 1.5
+    pause 0.5
+    lacie "Another stop?" mood concerned9
+    hide ui
+    camera move (-350,0) time 0.5 continue
+    pause 0.6
+    camera reset
+    lacie "..." mood blank7
+    lacie "I made it to a forest... now what...?" mood blank8
+    objective clear
+    objective add ch1.explore_forest
+    system achievement CH1_FOREST
+    system retry-save

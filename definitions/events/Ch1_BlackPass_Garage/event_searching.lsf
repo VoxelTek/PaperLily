@@ -1,0 +1,5 @@
+label START
+    if repeat end
+    set ch1.temp_blackpass_closetsearch_inprogress = true
+    system call StartSwirl
+    end

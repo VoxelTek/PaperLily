@@ -1,0 +1,15 @@
+label START
+    if not var ch1.forest_fairyring_seen_bus_area jump CANT_LEAVE
+    if not var ch1.forest_fairyring_seen_walk_2
+        party switch lacie
+        party add aoi
+        event queue event_walk_2
+        set ch1.forest_fairyring_aoi_sitting = false
+    else
+        move to Ch1_FairyRing_B1F_Hallway point from_south
+    end
+
+label CANT_LEAVE
+    lacie "We just walked quite a bit to get here, let's at least look around."
+    hide ui
+    action walk down 48

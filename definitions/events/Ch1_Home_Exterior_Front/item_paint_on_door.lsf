@@ -1,0 +1,16 @@
+label START
+    if var ch1.home_drew_markings jump ALREADY_DONE
+    lacie "Time to draw..." mood blank5
+    fade out
+    pause 2
+    set ch1.home_drew_markings = true
+    system refresh
+    fade in
+    lacie "What a strange symbol..." mood blank1
+    lacie "Now the house will be even more cursed than it already was." mood blank2
+    objective complete ch1.prepare_ritual.paint_front
+    end
+
+
+label ALREADY_DONE
+    "It's already done."

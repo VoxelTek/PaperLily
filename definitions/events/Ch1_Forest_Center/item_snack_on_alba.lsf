@@ -1,0 +1,3 @@
+label START
+    chara set alba at right
+    alba "I don't do barter." mood pissed4

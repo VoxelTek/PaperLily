@@ -11,23 +11,25 @@ using System.Collections.Generic;
 #nullable disable
 namespace LacieEngine.Modules.Tutorials
 {
-  [InjectableInterface(unique = true)]
-  public interface ITutorialManager : IModule
-  {
-    event Action TutorialStarted;
+    [InjectableInterface(unique = true)]
+    public interface ITutorialManager : IModule
+    {
+        event Action TutorialStarted;
 
-    event Action TutorialEnded;
+        event Action TutorialEnded;
 
-    void ShowTutorial(string tutorialId, bool animate);
+        void ApplyCaptions(Tutorial tutorial);
 
-    void ShowTutorial(string tutorialId);
+        void ShowTutorial(string tutorialId, bool animate);
 
-    void HideTutorial();
+        void ShowTutorial(string tutorialId);
 
-    bool Exists(string id);
+        void HideTutorial();
 
-    void LoadResourcesForTutorial(string tutorialId);
+        bool Exists(string id);
 
-    IList<string> GetDependencies(string tutorialId);
-  }
+        void LoadResourcesForTutorial(string tutorialId);
+
+        IList<string> GetDependencies(string tutorialId);
+    }
 }

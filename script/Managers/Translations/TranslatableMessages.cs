@@ -33,7 +33,7 @@ namespace LacieEngine.Translations
 
     public string Get(string msgid, string msgctxt = null)
     {
-      if (msgctxt.IsNullOrEmpty())
+      if (!msgctxt.IsNullOrEmpty())
       {
         foreach (LanguageCaption entry in this._entries)
         {

@@ -1,0 +1,5 @@
+label START
+    fade out color white time 0
+    pause 1
+    move to Ch1_MK_Blessings point entrance time 0
+    fade in color white time 1

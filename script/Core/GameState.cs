@@ -99,10 +99,7 @@ namespace LacieEngine.Core
       }
       string folder = "user://save/";
       GDUtil.EnsureFolderExists(folder);
-      if (GameState.SaveExists(saveName))
-      {
-        int num = (int) new Directory().Copy(folder + saveName + ".sav", folder + saveName + ".bak");
-      }
+      GameState.Delete(saveName);
       GDUtil.SaveJsonFile((object) Game.State, folder + saveName + ".sav", Game.Settings.SaveKey);
       Game.PlaytimeStopwatch.Restart();
       Log.Info((object) "Game Saved!");
@@ -149,6 +146,14 @@ namespace LacieEngine.Core
       {
         Log.Error((object) "Failed to load save ", (object) saveName, (object) " : ", (object) ex.Message);
         OS.Alert("Failed to load save data (" + saveName + ".sav) - It may be corrupted! The game will now probably crash.");
+      }
+    }
+
+    public static void Delete(string saveName)
+    {
+      if (GameState.SaveExists(saveName))
+      {
+        new Directory().Rename("user://save/" + saveName + ".sav", "user://save/" + saveName + ".bak");
       }
     }
 

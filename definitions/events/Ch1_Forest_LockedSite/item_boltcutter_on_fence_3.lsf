@@ -1,0 +1,9 @@
+label START
+    if var ch1.forest_red_took_passage
+        "That doesn't seem like a good idea."
+        end
+    if var ch1.forest_lockedsite_clear
+        "There's no reason to do that."
+        end
+    "There's a gate nearby!"
+    end

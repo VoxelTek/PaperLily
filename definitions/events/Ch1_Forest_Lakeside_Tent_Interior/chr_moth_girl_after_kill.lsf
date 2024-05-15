@@ -1,0 +1,16 @@
+label START
+    chara set lacie at left
+    chara set ch1_moth_girl at right
+    if repeat jump AGAIN
+    ch1_moth_girl "Oh my god. The silence. It's so damn good." mood happy2
+    ch1_moth_girl "Here you go, you earned it." mood happy
+    item add ch1.doorknob_facility
+    set ch1.forest_moths_got_doorknob = true
+    ch1_moth_girl "Not sure why you'd want this though." mood confused
+    lacie "Thanks." mood blank2
+    objective complete ch1.forest_lakeside_moths_reward
+    end
+
+label AGAIN
+    ch1_moth_girl "Thank the cursed heavens it's gone." mood blank4
+    end

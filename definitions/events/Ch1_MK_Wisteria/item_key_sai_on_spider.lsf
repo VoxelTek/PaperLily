@@ -1,0 +1,9 @@
+label START
+    chara set lacie at left
+    ch1_spider "That's a key to the cages."
+    if character sai
+        ch1_spider "I see you don't need it anymore."
+        ch1_spider "I can take that off your hands."
+        item remove ch1.mk_key_cage
+    else
+        lacie "Oh... I see." mood blank1

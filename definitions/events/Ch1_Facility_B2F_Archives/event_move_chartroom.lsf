@@ -1,0 +1,47 @@
+label START
+    set ch1.temp_facility_primals_b2f_west_spawn = false
+    if repeat jump GO
+    chara set lacie at left
+    chara set sai at right
+    fade out
+    pause 2
+    audio sfx play ch1_ventwalk
+    pause 3
+    audio sfx play ch1_metal_kick
+    pause 0.8
+    audio sfx play ch1_metal_clank
+    pause 2
+    audio sfx play thud3
+    pause 1
+    audio sfx play thud3
+    pause 1
+    move to Ch1_Facility_B2F_ChartRoom point from_vent cutscene time 0
+    chara spawn lacie point from_vent
+    if character sai
+        chara spawn sai point cutscene_vent_sai
+    pause 2
+    fade in
+    pause 0.5
+    if character sai
+        sai "Man... it's really stuffy in there. I don't wanna do that again." mood confused2
+        hide ui
+        pause 0.5
+        action turn up node lacie
+        pause 1
+        lacie "It doesn't look like we can reach it to go back anyway." mood blank7
+        action turn right node sai
+        sai "What?!" mood surprised2
+        sai "We're stuck?!" mood surprised2
+        lacie "There's a door right there." mood blank5
+    else
+        lacie "Sheesh... why are all the vents exits so high up..." mood disappointed2
+        lacie "If you're going to make them traversable, at least put them at a reasonable height." mood reflective2
+        hide ui
+
+
+
+
+
+label GO
+    move to Ch1_Facility_B2F_ChartRoom point from_vent
+    end

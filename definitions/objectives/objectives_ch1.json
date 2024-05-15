@@ -125,6 +125,21 @@
 			"description": "There's a gate impeding my progress. I need to find a way to open it."
 		},
 		{
+			"id": "ch1.forest_station_sign",
+			"name": "Restore the Sign",
+			"description": "A sign is missing from the front of the station. If I find it, I should put it back in place."
+		},
+		{
+			"id": "ch1.forest_station_sign_2",
+			"name": "Restore the Sign",
+			"description": "I found a blue sign. I should put it back in its spot in front of the station."
+		},
+		{
+			"id": "ch1.forest_station_paths",
+			"name": "Pick the Right Path",
+			"description": "There are three paths in front of me, and a ticket as a hint for which one to pick.."
+		},
+		{
 			"id": "ch1.locked_site_enter",
 			"name": "Enter the Locked Site",
 			"description": "Seems like the only way north might be through the Locked Site."
@@ -195,7 +210,7 @@
 		{
 			"id": "ch1.forest_lakeside_caterpillar",
 			"name": "Get Rid of the Caterpillar",
-			"description": "The moths will reward me with a doorknob if I get rid of the it...",
+			"description": "The moths will reward me with a doorknob if I get rid of it...",
 			"onComplete": ["ch1.forest_lakeside_moths_reward"]
 		},
 		{

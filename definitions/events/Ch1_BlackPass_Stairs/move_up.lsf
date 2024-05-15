@@ -1,0 +1,3 @@
+label START
+    move to Ch1_BlackPass_Hub point from_downstairs
+    end

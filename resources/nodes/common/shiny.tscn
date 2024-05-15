@@ -6,7 +6,7 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
-[node name="shiny" type="Sprite"]
+[node name="Shiny" type="Sprite"]
 material = SubResource( 1 )
 texture = ExtResource( 1 )
 hframes = 2

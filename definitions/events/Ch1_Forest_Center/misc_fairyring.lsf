@@ -1,0 +1,5 @@
+label START
+    "Small mushrooms surround a patch of dead grass."
+    if var ch1.forest_center_campfire_on
+        event call event_kozmo_react_fairyring
+    end

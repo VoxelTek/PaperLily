@@ -1,0 +1,5 @@
+label START
+    if repeat
+        "A small plant. It seems to block the fairy's view."
+        end
+    lacie "This thing... does it block the head's view?"

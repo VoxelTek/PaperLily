@@ -1,0 +1,107 @@
+label START
+    chara set lacie at left
+    chara set kett at right
+
+label TALK
+    if not repeat jump FIRST_TALK
+    jump TALK_MORE
+
+label FIRST_TALK
+    move to Ch1_Artist_1F point kett_talk
+    set ch1.forest_kett_introduced = true
+    action idle stop node kett
+    kett "OH." mood default
+    kett "A child."
+    kett "A child is in my gallery. But my gallery is closed. So how can a child be in my gallery?" mood thinking
+    hide ui
+    pause 0.5
+    system call KettSniff
+    pause 1
+    kett "Atrocious." mood tired
+    kett "Smells like..." mood thinking
+    kett "..."
+    hide ui
+    pause 0.5
+    system call KettBloomRed
+    pause 5.5
+    kett "GARBAGE." mood default
+    lacie "What? That's not true..." mood concerned2
+    kett "Who is this child?" mood thinking
+    lacie "My name is Lacie." mood blank1
+    lacie "(Wait... I shouldn't give out my name like that to demons!)" mood concerned2
+    kett "Lacie..." mood default
+    kett "..."
+    hide ui
+    pause 0.5
+    system call KettBloomGreen
+    pause 5.5
+    lacie "(Did he figure out I'm human...?)" mood surprised3
+    jump TALK_MORE
+
+label TALK_MORE
+    choice "So..."
+        "What is your name?" if not var ch1.forest_kett_asked_name
+            set ch1.forest_kett_asked_name = true
+            chara rename kett off
+            kett "Kett is what I am called." mood default
+            lacie "Oh." mood default
+            kett "And who are you?"
+            lacie "I... already told you my name." mood disappointed2
+            lacie "(He forgot it...? Maybe that's a good thing.)" mood thinking3
+            kett "Please excuse me. I have no use for meaningless information in my mind." mood default
+            lacie "No... that's okay." mood blank8
+            jump FINALLY
+        "What's under that drape?" if not var ch1.forest_kett_asked_about_covered_piece
+            set ch1.forest_kett_asked_about_covered_piece = true
+            kett "A commission."
+            kett "I have been stuck, blocked, uninspired, you could say."
+            kett "FOR AGES." mood tired
+            kett "Everything I made..."
+            kett "GARBAGE."
+            kett "But now suddenly I feel..." mood thinking
+            kett "..." mood thinking
+            kett "Awaken." mood cute
+            hide ui
+            pause 0.5
+            system call KettBloomYellow
+            pause 5.5
+            jump FINALLY
+        "You seem better now." if not var ch1.forest_kett_asked_about_sleep
+            set ch1.forest_kett_asked_about_sleep = true
+            lacie "You seemed very um...crazy...a while ago." mood surprised3
+            kett "Ah, sleep deprivation." mood default
+            lacie "Oh." mood blank5
+            lacie "I feel that." mood blank7
+            kett "HOWEVER, AN ANGEL delivered salvation to me." mood cute
+            hide ui
+            pause 0.5
+            system call KettSnack
+            pause 1.5
+            lacie "I brought you that." mood blank5
+            kett "IF I COULD FIND THIS ANGEL, well, they would be humbly welcomed into my gallery, for no fee." mood cute
+            lacie "It was me." mood concerned4
+            kett "BUT ALAS." mood default
+            lacie "..." mood annoyed4
+            action turn down node kett
+            jump FINALLY
+        "You're dropping a lot of flowers." if not var ch1.forest_kett_asked_about_flowers
+            set ch1.forest_kett_asked_about_flowers = true
+            kett "They are the fruit of my inspiration." mood cute
+            if item ch1.kett_flower
+                lacie "I picked up some of your inspiration, I hope you don't mind." mood blank1
+            if not item ch1.kett_flower
+                lacie "Your inspiration is all over the floor." mood blank8
+            jump FINALLY
+        "Never mind"
+            jump EXTRA
+
+label EXTRA
+    if not var ch1.forest_kett_asked_name jump FINALLY
+    if not var ch1.forest_kett_asked_about_covered_piece jump FINALLY
+    if not var ch1.forest_kett_asked_about_sleep jump FINALLY
+    if not var ch1.forest_kett_asked_about_flowers jump FINALLY
+    event call chr_kett_extra
+    end
+
+label FINALLY
+    action idle start node kett

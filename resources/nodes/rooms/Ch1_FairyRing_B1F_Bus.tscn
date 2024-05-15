@@ -411,9 +411,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_aoi"
 
 [node name="event_bus_enter" type="Node2D" parent="Other/Events"]
@@ -432,7 +430,6 @@ Area = Vector2( 32, 16 )
 [node name="misc_signpost" type="Node2D" parent="Other/Events"]
 position = Vector2( 664, 708 )
 script = ExtResource( 6 )
-RelatedNode = NodePath("../../../Main/chr_aoi")
 Area = Vector2( 24, 16 )
 
 [node name="misc_tire" type="Node2D" parent="Other/Events"]
@@ -458,7 +455,6 @@ polygon = PoolVector2Array( 841, 802, 862, 802, 861, 746, 758, 749, 759, 795, 76
 position = Vector2( 838, 759 )
 script = ExtResource( 6 )
 Directions = 2
-RelatedNode = NodePath("../../../Main/chr_aoi")
 Area = Vector2( 28, 16 )
 
 [node name="misc_plants_1" type="Node2D" parent="Other/Events"]

@@ -1,0 +1,9 @@
+label START
+    if not var ch1.forest_kett_introduced end
+    if repeat end
+    chara set lacie at left
+    chara set kett at right
+    kett "A rock. It's carving is skillful." mood default
+    kett "Could there be another artist out there...?" mood cute
+    lacie "..." mood default
+    kett "No. Impossible." mood default

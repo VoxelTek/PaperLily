@@ -1,0 +1,106 @@
+label START
+    hide ui
+    pause 0.5
+    audio sfx play water_splash_4
+    pause 1
+    item remove ch1.bucket_full
+    item remove ch1.bucket_full_holy
+    item add ch1.bucket silent
+    if not character sai end
+    if var ch1.facility_lights_off end
+    if var ch1.facility_flood_engaged end
+    set ch1.facility_bucket_solution_stage ++
+    chara set lacie at left
+    chara set sai at right
+
+    if var ch1.facility_bucket_solution_stage == 1
+        sai "..." mood smile4
+        lacie "I can't believe I'm entertaining this idea." mood blank7
+        lacie "This is the stupidest thing I've ever done." mood bothered
+        sai "Just a few more trips!" mood smile6
+        end
+
+    if var ch1.facility_bucket_solution_stage == 2
+        sai "This'll work, you'll see." mood smile7
+        lacie "There's no way." mood annoyed4
+        end
+
+    if var ch1.facility_bucket_solution_stage == 3
+        sai "At least this is a good workout." mood happy5
+        lacie "(I'm not fit enough for this...)" mood concerned2
+        end
+
+    if var ch1.facility_bucket_solution_stage == 6
+        lacie "Sigh... What makes you think the drain isn't connected to the water we're removing..." mood sigh2
+        sai "Hm... I don't know." mood thinking12
+        sai "..." mood thinking10
+        sai "Well, too late to consider that now." mood confused11
+        lacie "..." mood disappointed2
+        end
+
+    if var ch1.facility_bucket_solution_stage == 7
+        lacie "(What possessed me to agree to this?)" mood disappointed3
+        end
+
+    if var ch1.facility_bucket_solution_stage == 10
+        sai "We're really bonding over this, don't you think?" mood happy
+        lacie "....." mood hide
+        end
+
+    if var ch1.facility_bucket_solution_stage == 11
+        fade out time 4
+        audio bgm stop time 4
+        audio bgm override on silent
+        pause 2
+        "One Eternity Later..." format center position center background none
+        set ch1.facility_flood_engaged = true
+        set ch1.facility_bucket_solution_complete = true
+        set ch1.facility_b2f_hallway_e_gate_unlocked = true
+        item remove ch1.bucket
+        move to Ch1_Facility_Main_Hall point bucket_cutscene_camera cutscene
+        action call show_lacie_liedown
+        chara spawn sai point bucket_cutscene_sai
+        if not var ch1.facility_rune_gone
+            chara spawn rune point bucket_cutscene_rune
+        fade in time 4
+        pause 2
+        if not var ch1.facility_rune_gone
+            rune "You actually did it." mood gasp
+            rune "Congratulations!" mood sparkle
+            sai "This is nothing. Just wait until you hear my other ideas." mood smile11
+            rune "I very much look forward to it!" mood sparkle2
+            hide ui
+            pause 2
+            rune "Will she be okay?" mood tilt
+            sai "She'll be fine." mood blank12
+            hide ui
+            bubble ellipsis point bucket_cutscene_lacie_bubble
+            pause 0.5
+            bubble laugh on sai continue
+            sai "See? She's still breathing." mood smile6
+        else
+            sai "Um... will you be okay?" mood thinking5
+            hide ui
+            bubble ellipsis point bucket_cutscene_lacie_bubble
+            pause 0.5
+            bubble laugh on sai continue
+            sai "Nice! You're sturdy, aren't you?" mood smile6
+        hide ui
+        pause 1
+        fade out
+        move to Ch1_Facility_Main_Hall point bucket_cutscene_after
+        chara spawn sai point bucket_cutscene_after_sai
+        fade in
+        pause 1
+        sai "You ready to go?" mood smile7
+        lacie "..." mood sigh
+        lacie "Yeah."
+        hide ui
+        action walk right 32 node sai
+        chara despawn sai
+        objective complete ch1.facility_remove_flood
+        objective fail ch1.facility_fix_elevator
+        set ch1.facility_rune_gone = true
+        audio bgm override off
+        audio bgm play ch1_facility
+        system achievement CH1_BUCKET

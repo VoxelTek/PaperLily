@@ -1,0 +1,7 @@
+label START
+    if not repeat
+        "A wooden post."
+        lacie "Hm...? Wasn't there a sign here before...?" mood thinking2
+        objective add ch1.forest_station_sign
+    else
+        "A wooden post. The sign is missing."

@@ -1,0 +1,9 @@
+label START
+    hide ui
+    audio bgm stop time 4
+    fade out time 4
+    pause 1
+    "Dead End 1-8 - Part of Your World" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.8 = true
+    system title-screen

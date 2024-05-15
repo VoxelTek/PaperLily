@@ -1,0 +1,59 @@
+label START
+    if not var ch1.facility_seen_flood
+        event queue misc_water
+        end
+    hide ui
+    pause 0.5
+    audio sfx play water_splash_3
+    pause 1
+    item remove ch1.bucket
+    item add ch1.bucket_full
+    if not character sai end
+    if var ch1.facility_lights_off end
+    chara set lacie at left
+    chara set sai at right
+
+    if not var ch1.facility_bucket_solution_stage
+        if not var ch1.facility_bucket_solution_started
+            sai "Oh." mood surprised2
+            sai "Are we doing my idea?!" mood smile6
+            lacie "..." mood disappointed
+            lacie "No." mood disappointed3
+            sai "But it might work!" mood thinking12
+            sai "We just have to pick up water from here and empty it somewhere." mood thinking13
+            sai "And just repeat that a couple of times." mood thinking7
+            sai "Or, a lot of times." mood thinking9
+            sai "Right?" mood thinking2
+            sai "We just need, like..." mood thinking
+            sai "A bathtub or a sink or something." mood thinking2
+            sai "Eventually, the water level will be lower." mood thinking9
+            lacie "This is ridiculous." mood disappointed3
+            set ch1.facility_bucket_solution_started = true
+        end
+
+    if var ch1.facility_bucket_solution_stage == 1
+        sai "Here, I can carry that for you." mood smile7
+        lacie "No." mood frustrated
+        lacie "I can do it." mood frustrated
+        sai "Alriiight." mood blank11
+        end
+
+    if var ch1.facility_bucket_solution_stage == 4
+        if var ch1.facility_rune_gone end
+        rune "What are you doing?" mood tilt
+        lacie "Nothing." mood embarassed3
+        sai "We're lowering the water level." mood smile5
+        rune "Oooh..." mood default
+        rune "This looks highly inefficient!" mood tilt
+        lacie "..." mood embarassed2
+        sai "Yeah, well, why don't you help then?" mood annoyed3
+        sai "It'll go faster." mood annoyed3
+        rune "That's okay!" mood default
+        rune "I'm satisfied over here." mood default
+        end
+
+    if var ch1.facility_bucket_solution_stage == 7
+        sai "Hey!" mood smile12
+        sai "I think the water level already went down a bit!" mood smile6
+        lacie "(It hasn't moved at all...)" mood shadow4
+        end

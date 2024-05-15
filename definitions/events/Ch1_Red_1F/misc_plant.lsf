@@ -1,0 +1,9 @@
+label START
+    if repeat jump AGAIN
+    "A small plant."
+    lacie "The leaves look like they're tied in a bow." mood blank6
+    end
+
+label AGAIN
+    "A plant that looks like a bow."
+    end

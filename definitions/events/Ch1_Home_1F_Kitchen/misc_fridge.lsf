@@ -1,0 +1,45 @@
+label START
+    if var general.serious jump SERIOUS
+    audio sfx play fridge_open
+    system call OpenFridge
+    pause 1
+    if not repeat
+        "Checking the contents of the fridge calms you down."
+    if not var ch1.todolist_task2_done
+        choice "Do you want to have the leftovers mother left for you?"
+            "Yes"
+                audio bgm volume 0.5
+                move to Ch1_Cutscene_LastMeal point cutscene_center
+                pause 2
+                bubble ellipsis point bubble
+                pause 1
+                move to Ch1_Home_1F_Kitchen point after_meal
+                audio bgm volume 1.0
+                pause 0.5
+                lacie "...for a last meal, it kind of sucked." mood reflective6
+                hide ui
+                pause 0.5
+                audio sfx play paper
+                cg show ch1/ch1_todolist scene
+                pause 1
+                set ch1.todolist_task2_done = true
+                cg show ch1/ch1_todolist scene
+                pause 1
+                cg hide
+                end
+            "No"
+                jump CLOSE
+    if repeat jump REPEAT
+    jump CLOSE
+
+label REPEAT
+    "Nothing new has materialized since the last time you checked."
+
+label CLOSE
+    audio sfx play fridge_close
+    system call CloseFridge
+    end
+
+label SERIOUS
+    "There's no time for snacks right now."
+    end

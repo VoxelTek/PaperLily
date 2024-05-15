@@ -1,0 +1,13 @@
+label START
+    if repeat jump GO
+    audio bgm override on ch1_mk_q
+    audio sfx play door
+    fade out time 1
+    move to Ch1_MK_B1F_Hallway point entrance
+    pause 1
+    fade in time 0.5
+    end
+
+label GO
+    audio sfx play door
+    move to Ch1_MK_B1F_Hallway point entrance

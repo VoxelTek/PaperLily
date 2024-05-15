@@ -1,0 +1,3 @@
+label START
+    set general.tv_home1f = false
+    set general.home1f_kitchen_tap = false

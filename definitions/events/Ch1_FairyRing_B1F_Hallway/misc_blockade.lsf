@@ -1,0 +1,5 @@
+label START
+    "The path ends here."
+    if var ch1.forest_fairyring_seen_blockade end
+    lacie "Huh...? Is there really nowhere to go from here...?" mood concerned2
+    set ch1.forest_fairyring_seen_blockade = true

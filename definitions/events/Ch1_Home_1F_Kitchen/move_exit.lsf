@@ -1,0 +1,2 @@
+label START
+    move to Ch1_Home_1F_Livingroom point kitchen_door direction left

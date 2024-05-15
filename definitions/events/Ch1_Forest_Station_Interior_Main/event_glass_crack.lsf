@@ -1,0 +1,5 @@
+label START
+    if var ch1.forest_station_seen_glass_crack end
+    if not var general.serious end
+    audio sfx play glass_crack
+    set ch1.forest_station_seen_glass_crack = true

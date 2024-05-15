@@ -1,0 +1,6 @@
+label START
+    if repeat end
+    if not var ch1.forest_bus_loop_a end
+    if not var ch1.forest_bus_loop_b end
+    lacie "(The street is clearly looping. There's little point in running around like this.)" mood thinking4
+    end

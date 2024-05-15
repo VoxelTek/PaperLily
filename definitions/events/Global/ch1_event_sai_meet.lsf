@@ -1,0 +1,184 @@
+label START
+    audio bgm stop
+    fade out
+    pause 2
+    audio sfx play ch1_ventwalk
+    pause 3
+    audio sfx play ch1_metal_kick
+    pause 0.8
+    audio sfx play ch1_metal_clank
+    pause 2
+    audio sfx play thud3
+    pause 1
+    move to Ch1_Cutscene_Meet_Sai point lacie
+    chara spawn sai point sai
+    chara spawn lacie point lacie
+    camera track node lacie
+    system call CharactersInit
+    fade in time 3
+    action walk right 100 node sai speed veryslow continue
+    chara set lacie at left
+    chara set sai at right
+    pause 3
+    lacie "Oww..." mood hurt
+    hide ui
+    system call LacieStopRubbingButt
+    pause 0.5
+    system call LacieLookLeft
+    bubble exclamation point lacie_bubble
+    system call LacieLookLeftShade
+    lacie "(There's someone there!)" mood concerned2
+    lacie "(Wait... I have something for this situation!)" mood surprised
+    hide ui
+    pause 0.1
+    action walk right 144 node sai speed slow continue
+    system call SaiIlluminate
+    pause 1
+    system call LacieThrowSalt
+    pause 2
+    system call LacieRealizeItWasDumb
+    pause 1.5
+    chara lock
+    cg show ch1/sai_intro_2
+    pause 1
+    sai "....."
+    hide ui
+    cg show ch1/sai_intro_3
+    pause 1
+    lacie "....."
+    hide ui
+    cg hide
+    chara unlock
+    pause 1
+    audio bgm play ch1_sai
+    pause 0.5
+    sai "Did you just throw salt in my face?" mood confused7
+    lacie "Y-yes." mood surprised2
+    sai "Uh... why?" mood confused12
+    lacie "I thought you were a demon." mood hide3
+    sai "And, if I was a demon, you think table salt would have stopped me?" mood confused11
+    lacie "..." mood concerned
+    lacie "I- ...I didn't have any holy salt." mood concerned2
+    system call SaiSmile
+    bubble laugh on sai
+    system call SaiDontSmile
+    sai "That's ridiculous. Salt has no effect." mood happy6
+    lacie "..." mood embarassed
+    lacie "I read it somewhere..." font dialogue_small
+    sai "This is the funniest shit that happened all week." mood happy6
+    lacie "..." mood embarassed3
+    sai "Sorry, sorry!" mood happy8
+    hide ui
+    chara rename sai off
+    pause 1
+    system call SaiReachOut
+    pause 0.5
+    sai "I'm Sai." mood smile5
+    hide ui
+    pause 1.5
+    system call LacieStandUpByHerself
+    pause 0.8
+    system call LacieAndSaiReset
+    pause 0.2
+    sai "..." mood confused11
+    lacie "..." mood embarassed
+    sai "What brings you to a place like this?" mood confused4
+    lacie "..." mood concerned6
+    sai "Oh! I see I see." mood thinking7
+    hide ui
+    action turn left node lacie
+    bubble question on lacie
+    sai "Wow, really?" mood thinking12
+    lacie "Who are you talking to... I didn't say anything." mood disappointed
+    sai "I know, it's a joke." mood smile4
+    bubble sweatdrop on lacie
+    pause 0.5
+    sai "Just... filling the silence." mood blank6
+    sai "You're not really talkative huh?" mood confused11
+    lacie "No... not really." mood sigh
+    hide ui
+    action walk right 32 node lacie speed slow
+    sai "W-wha-" mood surprised2
+    sai "Wait! You're just leaving?" mood worried
+    lacie "Yes." mood reflective6
+    sai "That's not where the exit is." mood blank10
+    lacie "..." mood disappointed
+    sai "Why don't we-" mood blank5
+    hide ui
+    audio bgm stop time 0
+    audio bgm override on silent
+    audio sfx play glass_explode
+    action turn left node lacie
+    action turn left node sai
+    pause 1.5
+    audio sfx play ch1_roar
+    camera shake time 1
+    bubble exclamation_silent on lacie continue
+    bubble exclamation_silent on sai continue
+    pause 4
+    action turn right node sai
+    sai "On second thought, that direction's good, go go go!" mood chillplz
+    hide ui
+    action walk path sai_walk node sai speed fast continue
+    action walk path lacie_walk node lacie speed fast continue
+    pause 3
+    action turn left node lacie
+    pause 0.5
+    bubble ellipsis on lacie
+    pause 0.5
+    action turn up node sai
+    pause 0.5
+    sai "You don't want to run into that thing." mood smile4
+    action turn down node sai
+    sai "Better hide here." mood blank6
+    hide ui
+    action walk path sai_walk_2 node sai continue
+    action turn down node lacie
+    pause 1.5
+    audio sfx play door
+    pause 0.3
+    chara despawn sai
+    pause 1
+    action turn left node lacie
+    pause 0.8
+    action turn down node lacie
+    pause 0.4
+    action walk path lacie_walk_2 node lacie
+    audio sfx play door
+    fade out
+    move to Ch1_Facility_B2F_Lab point entrance cutscene
+    chara spawn lacie point entrance
+    chara spawn sai point ch1_cutscene_sai
+    fade in time 1.5
+    audio bgm override on prologue_nightmare
+    audio bgm play prologue_nightmare
+    action walk left 32 node lacie speed slow
+    pause 0.5
+    camera move (-150,0) time 1
+    pause 0.5
+    lacie "..." mood shadow2
+    lacie "(This place looks worse than just staying out there ...!)" mood shadow
+    hide ui
+    action walk down 16 node sai
+    action turn right node sai
+    pause 0.5
+    audio sfx play unlock
+    pause 0.1
+    action turn right node lacie
+    action walk left 16 backwards node lacie
+    bubble exclamation_silent on lacie
+    pause 0.6
+    action turn left node sai
+    pause 1
+    sai "Holy crap, this room is worse than just staying in the hallway." mood thinking12
+    hide ui
+    pause 0.6
+    pause 0.3
+    bubble ellipsis on lacie
+    pause 1
+    action turn left node lacie
+    set ch1.facility_sai_met = true
+    set ch1.facility_lab_locked = true
+    item remove ch1.salt
+    objective complete ch1.facility_escape_cell
+    move to Ch1_Facility_B2F_Lab point ch1_cutscene_lacie

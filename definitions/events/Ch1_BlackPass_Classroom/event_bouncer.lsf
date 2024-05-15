@@ -1,0 +1,11 @@
+label START
+    audio sfx play thud2
+    action walk up 32 backwards
+    pause 0.5
+    if repeat jump AGAIN
+    unknown "Hey, where do you think you're going?"
+    end
+
+label AGAIN
+    lacie "..." mood sad
+    end

@@ -1,0 +1,180 @@
+label START
+    fade out
+    move to Ch1_Cutscene_MK_Breaking point cutscene_lacie
+    chara set lacie at left
+    chara set sai at right
+    chara set mk at right
+    chara spawn lacie point cutscene_lacie
+    camera track node lacie
+    if var ch1.mk_rescued_sai
+        chara spawn sai point cutscene_sai
+    fade in time 4
+    pause 0.5
+    lacie "This illusion should break apart now, shouldn't it?" mood blank1
+    if var ch1.mk_rescued_sai
+        sai "Too bad, I was starting to like this place." mood blank6
+    hide ui
+    audio bgm stop
+    audio ambiance stop
+    pause 2
+    audio ambiance play earthquake_loop
+    camera shake time 1.5 continue
+    pause 2
+    action turn up node lacie
+    if var ch1.mk_rescued_sai
+        action turn up node sai
+    audio ambiance stop time 2
+    audio sfx play squash
+    action call open_eyes
+    pause 2
+    action walk down 32 node lacie backwards
+    pause 1
+    audio sfx play magic
+    action call remove_doors
+    pause 0.5
+    action turn left node lacie
+    pause 0.5
+    action turn right node lacie
+    pause 0.5
+    action turn up node lacie
+    pause 0.5
+    if var ch1.mk_rescued_sai
+        lacie "..." mood blank4
+    lacie "That's probably not good..." mood blank5
+    if var ch1.mk_rescued_sai
+        sai "Did you see that? The painting opened its eyes!" mood blank7
+    hide ui
+    audio ambiance play earthquake_loop
+    camera shake time 2
+
+    audio sfx play wood_break
+    action call stage_1
+    fade flash color white
+    audio ambiance stop
+    action turn down node lacie
+    if var ch1.mk_rescued_sai
+        action turn down node sai
+
+    pause 1.5
+    if var ch1.mk_rescued_sai
+        sai "Um... did you burn the things in the right order?" mood thinking2
+        lacie "I... think... so?" mood concerned5
+    else
+        lacie "Did I do something wrong...?" mood concerned5
+    hide ui
+    audio ambiance play earthquake_loop
+    camera shake time 2
+    audio sfx play glass_crack
+    audio sfx play wood_break
+    action call stage_2
+    fade flash color white
+    action turn right node lacie
+    if var ch1.mk_rescued_sai
+        action turn right node sai
+    pause 1
+    if var ch1.mk_rescued_sai
+        action walk down 16 node sai
+        action turn right node sai
+        sai "Was the illusion supposed to LITERALLY break apart?" mood confused7
+        action turn left node lacie
+        lacie "I don't know...!"
+        hide ui
+        pause 0.5
+        sai "Maybe we should leave..." mood blank9
+        action turn left node sai
+        sai "Oh crap, the doors are gone!" mood blank7
+    else
+        lacie "What do I do...? I need to get out of here!" mood surprised
+    hide ui
+    action walk down 104 node lacie continue
+    audio ambiance play earthquake_loop
+    camera shake time 2 continue
+    pause 0.8
+    audio sfx play ch1_smash
+    audio sfx play glass_explode
+    audio sfx play wood_break
+    action walk up 16 node lacie backwards continue
+    action call stage_3
+    fade flash color white
+    if var ch1.mk_rescued_sai
+        action walk down 85 node sai continue
+        sai "Hey, be careful." mood surprised2
+        hide ui
+    camera shake time 2
+    audio sfx play wood_break
+    action walk up 16 node lacie backwards continue
+    action call stage_4
+    fade flash color white
+    action turn right node lacie
+    if var ch1.mk_rescued_sai
+        action turn right node sai
+    camera shake time 2
+    audio sfx play wood_break
+    action call stage_5
+    fade flash color white
+    action turn left node lacie
+    if var ch1.mk_rescued_sai
+        action turn left node sai
+        action walk right 16 node sai backwards continue
+    camera shake time 2
+    audio sfx play wood_break
+    action call stage_6
+    camera track off
+    chara despawn lacie
+    if var ch1.mk_rescued_sai
+        chara despawn sai
+    fade flash color white
+    audio ambiance stop
+    pause 1
+
+    fade out time 4
+    system clear-inventory
+    party switch lacie
+    set ch1.temp_ending_1_12 = true
+    move to Ch1_Ending_12 point entrance time 0
+    action state collapsed
+    chara lock
+    fade in time 4
+    lacie "....."
+    fade out
+    move to Ch1_Ending_12 point entrance time 0
+    pause 1
+    action call lacie_limp
+    system running off
+    fade in
+    chara unlock
+    pause 0.5
+    if var ch1.mk_rescued_sai
+        lacie "(My foot... it hurts...!)" mood hurt
+        lacie "(Where are we...?)" mood concerned4
+        lacie "We need to find a way out..." mood concerned
+        sai "Yeahh.... WELL..." mood hidden
+        sai "About that..." mood hurt7
+        hide ui
+        action turn right
+        camera move (64,0) time 2 continue
+        pause 0.5
+        action call sai_more_hurt
+        pause 1.5
+        sai "I..." mood hurt3
+        lacie "..." mood surprised
+        sai "...might have landed on something hard." mood hurt3
+        sai "Doesn't look great." mood hurt6
+        lacie "...W-what do we do...?"
+        sai "If you can still move, go on ahead." mood hurt4
+        sai "I need a moment." mood hurt5
+        lacie "O-okay..." mood sad5
+        hide ui
+        camera move (-64,0) time 0.5
+        camera reset
+        action walk up 32 speed slow
+        sai "Uh... hey..." mood hurt5
+        sai "You'll uh.... You'll come back, right?" mood hurt6
+        action turn down
+        lacie "Yes." mood blank5
+        sai "Thanks." mood hurt2
+    else
+        lacie "(My foot... it hurts...!)" mood hurt
+        lacie "(Where am I...?)" mood hurt
+        lacie "I need to find a way out..."
+    system menu off

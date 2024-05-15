@@ -27,6 +27,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 Lighting = ExtResource( 6 )
+CameraLimitTop = -288
 HideFollowers = true
 
 [node name="Background" type="Node2D" parent="."]

@@ -11,25 +11,30 @@ using LacieEngine.Core;
 #nullable disable
 namespace LacieEngine.Rooms
 {
-  [Tool]
-  public class Ch1FacilityB1fHallway : Ch1FacilityRoom
-  {
-    [LacieEngine.API.GetNode("Other/Events/misc_bucket")]
-    private IToggleable nBucketEvt;
-    [LacieEngine.API.GetNode("Background/Bucket")]
-    private Node2D nBucket;
-    [LacieEngine.API.GetNode("Other/Navigation")]
-    private Navigation2D nNavigation;
-    private PVar varBucketSpawned = (PVar) "ch1.facility_had_bucket_on_entry";
-    private PVar varBucketTook = (PVar) "ch1.facility_took_bucket";
-    private const int PRIMAL_SPAWNS = 3;
-
-    public override void _BeforeFadeIn() => this.TrySpawnPrimal(this.nNavigation, 3);
-
-    public override void _UpdateRoom()
+    [Tool]
+    public class Ch1FacilityB1fHallway : Ch1FacilityRoom
     {
-      base._UpdateRoom();
-      this.nBucket.Visible = this.nBucketEvt.Enabled = (bool) this.varBucketSpawned.Value && !(bool) this.varBucketTook.Value;
+        [LacieEngine.API.GetNode("Other/Events/misc_bucket")]
+        private IToggleable nBucketEvt;
+        [LacieEngine.API.GetNode("Background/Bucket")]
+        private Node2D nBucket;
+        [LacieEngine.API.GetNode("Other/Navigation")]
+        private Navigation2D nNavigation;
+        private PVar varBucketSpawned = (PVar)"ch1.facility_had_bucket_on_entry";
+        private PVar varBucketTook = (PVar)"ch1.facility_took_bucket";
+        private const int PRIMAL_SPAWNS = 3;
+
+        public override void _BeforeFadeIn() => this.TrySpawnPrimal(this.nNavigation, 3);
+
+        public override void _UpdateRoom()
+        {
+            base._UpdateRoom();
+            this.nBucket.Visible = this.nBucketEvt.Enabled = (bool)this.varBucketSpawned.Value && !(bool)this.varBucketTook.Value;
+        }
+
+        public override int DecideEnemy()
+        {
+            return 1;
+        }
     }
-  }
 }

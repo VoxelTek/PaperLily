@@ -1,0 +1,5 @@
+label START
+    if repeat end
+    if not objective ch1.revert_ritual_sleep inprogress end
+    action call busfail_bloodtracks_anim_vis
+    action call busfail_bloodtracks_anim

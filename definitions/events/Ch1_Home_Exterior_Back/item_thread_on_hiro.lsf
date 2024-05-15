@@ -1,0 +1,15 @@
+label START
+    chara set lacie at left
+    chara set hiro at right
+    if repeat jump AGAIN
+    hiro "Are you learning how to sew?" mood surprised
+    lacie "Not this year." mood default
+    hiro "I have a hole on this sweater you can practice on, you know." mood smile
+    lacie "And risk damaging the kitty pattern even further?" mood blank3
+    hiro "I believe in you!" mood smile3
+    end
+
+label AGAIN
+    hiro "Make me a new sweater or something." mood smile2
+    lacie "This isn't yarn..." mood concerned6
+    end

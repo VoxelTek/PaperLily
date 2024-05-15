@@ -1,0 +1,5 @@
+label START
+    if not var ch1.forest_lakeside_seen_temple_note end
+    if var ch1.forest_lakeside_unclogging_done end
+    lacie "I don't think this is where I'm supposed to put them..." mood thinking4
+    lacie "The note said something about a \"little keeper\"...?" mood thinking3

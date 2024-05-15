@@ -1,0 +1,21 @@
+label START
+    audio sfx play button
+    if var ch1.facility_elevator_location == 2 end
+    pause 0.5
+    if not var ch1.facility_elevator_on jump NOT_WORKING
+    fade out
+    set ch1.facility_elevator_location = 2
+    pause 1
+    audio sfx play ch1_elevator
+    pause 0.5
+    fade in
+    pause 0.5
+    system call OpenElevatorDoors
+    pause 1.5
+    end
+
+label NOT_WORKING
+    pause 0.5
+    "Nothing happens."
+    objective add ch1.facility_fix_elevator
+    end

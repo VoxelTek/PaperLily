@@ -1,0 +1,12 @@
+label START
+    if repeat jump SAVE
+    "An empty box with a crow on top."
+    lacie "This one decided to stay." mood blank1
+label SAVE
+    if objective ch1.kozmo_find_head inprogress jump KOZMO_NOPE
+    if objective ch1.kozmo_give_head inprogress jump KOZMO_NOPE
+    system save
+    end
+
+label KOZMO_NOPE
+    "This isn't the time for that."

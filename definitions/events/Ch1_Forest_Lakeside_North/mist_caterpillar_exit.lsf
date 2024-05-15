@@ -1,0 +1,4 @@
+label START
+    if not var ch1.forest_moths_released_caterpillar end
+    "The caterpillar has moved on. You should too."
+    end

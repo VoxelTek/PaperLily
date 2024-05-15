@@ -1,0 +1,32 @@
+label START
+    if var ch1.forest_station_took_scissors end
+    "There's a pair of scissors here."
+    choice "Take ${item:ch1.scissors}?"
+        "Yes"
+            choice "You have a bad feeling about this. Are you sure?"
+                "Yes"
+                    system retry-save
+                    set ch1.forest_station_took_scissors = true
+                    set ch1.forest_station_sign_gone = true
+                    set ch1.forest_station_show_eyecu = true
+                    system refresh
+                    item add ch1.scissors
+                    audio bgm override on silent
+                    audio bgm stop time 4
+                    pause 1
+                    audio sfx play dying_light
+                    pause 0.1
+                    set general.serious = true
+                    system refresh
+                    pause 0.1
+                    set general.serious = false
+                    system refresh
+                    pause 0.3
+                    set general.serious = true
+                    system refresh
+                    pause 0.5
+                    end
+                "No"
+                    end
+        "No"
+            end

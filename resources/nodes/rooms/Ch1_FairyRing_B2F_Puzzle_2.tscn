@@ -790,7 +790,7 @@ Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_a"
 [node name="misc_head_7" type="Node2D" parent="Other/Events"]
 position = Vector2( 656, 336 )
 script = ExtResource( 18 )
-Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_b"
+Event = "Ch1_FairyRing_B2F_Puzzle_1.misc_head_a"
 
 [node name="misc_head_8" type="Node2D" parent="Other/Events"]
 position = Vector2( 592, 688 )

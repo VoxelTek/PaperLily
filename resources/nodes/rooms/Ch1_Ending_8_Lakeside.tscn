@@ -43,7 +43,7 @@ material = ExtResource( 7 )
 
 [node name="Face" type="Sprite" parent="Ch1_Forest_Lakeside/Water" index="5"]
 visible = false
-self_modulate = Color( 1, 1, 1, 0.5 )
+self_modulate = Color( 1, 1, 1, 0.8 )
 position = Vector2( 177, -368 )
 texture = ExtResource( 19 )
 offset = Vector2( 0.5, 0.5 )
@@ -162,6 +162,24 @@ Solid = false
 Trigger = 1
 Area = Vector2( 8, 128 )
 
+[node name="event_merm_peek" parent="Ch1_Forest_Lakeside/Other/Events" index="6"]
+Event = "Global.ch1_null"
+
+[node name="event_merm_grab" parent="Ch1_Forest_Lakeside/Other/Events" index="7"]
+Event = "Global.ch1_null"
+
+[node name="event_merm_hide_1" parent="Ch1_Forest_Lakeside/Other/Events" index="8"]
+Event = "Global.ch1_null"
+
+[node name="event_merm_hide_2" parent="Ch1_Forest_Lakeside/Other/Events" index="9"]
+Event = "Global.ch1_null"
+
+[node name="event_merm_hide_3" parent="Ch1_Forest_Lakeside/Other/Events" index="10"]
+Event = "Global.ch1_null"
+
+[node name="event_merm_peek_down" parent="Ch1_Forest_Lakeside/Other/Events" index="11"]
+Event = "Global.ch1_null"
+
 [node name="item_goldfish_on_water" type="Node" parent="Ch1_Forest_Lakeside/Other/Events" index="12"]
 script = ExtResource( 23 )
 Items = "ch1.lakeside_deadfish"
@@ -174,6 +192,9 @@ Event = "Global.ch1_null"
 Event = "Global.ch1_null"
 
 [node name="item_fish_on_cage" parent="Ch1_Forest_Lakeside/Other/Events" index="15"]
+Event = "Global.ch1_null"
+
+[node name="item_fish_on_water" parent="Ch1_Forest_Lakeside/Other/Events" index="16"]
 Event = "Global.ch1_null"
 
 [node name="misc_bunny_1" type="Node2D" parent="Ch1_Forest_Lakeside/Other/Events" index="17"]
@@ -209,7 +230,13 @@ Event = "Global.ch1_null"
 [node name="item_bucket_on_cage" parent="Ch1_Forest_Lakeside/Other/Events" index="23"]
 Event = "Global.ch1_null"
 
+[node name="item_water_on_hole" parent="Ch1_Forest_Lakeside/Other/Events" index="24"]
+Event = "Global.ch1_null"
+
 [node name="item_water_on_boat" parent="Ch1_Forest_Lakeside/Other/Events" index="25"]
+Event = "Global.ch1_null"
+
+[node name="item_holy_water_on_boat" parent="Ch1_Forest_Lakeside/Other/Events" index="26"]
 Event = "Global.ch1_null"
 
 [node name="item_bucket_get" parent="Ch1_Forest_Lakeside/Other/Events" index="28"]

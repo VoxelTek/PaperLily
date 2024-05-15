@@ -1,0 +1,16 @@
+label START
+    move to Ch1_Facility_B2F_Dungeon_1 point from_cell_2 cutscene
+    pause 0.2
+    audio sfx play ch1_cell_open
+    pause 0.2
+    system call OpenDoor2
+    pause 0.8
+    set ch1.facility_dungeon_1_door_2_open = true
+    pause 0.7
+    chara spawn lacie point from_cell_2
+    pause 0.6
+    bubble ellipsis on lacie
+    pause 0.3
+    lacie "It was just... open?" mood blank1
+    move to Ch1_Facility_B2F_Dungeon_1 point from_cell_2
+    end

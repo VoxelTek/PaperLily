@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://script/Nodes/Stairs.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
@@ -120,6 +120,7 @@
 [ext_resource path="res://script/Core/Nodes/ActionPosition2D.cs" type="Script" id=118]
 [ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=119]
 [ext_resource path="res://assets/sprite/ch1/forest/center/chr_kozmo_clothes.png" type="Texture" id=120]
+[ext_resource path="res://script/Nodes/ChairV2.cs" type="Script" id=121]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 85 )
@@ -1358,6 +1359,16 @@ position = Vector2( -66, 638 )
 [node name="misc_stump" parent="Main" instance=ExtResource( 44 )]
 position = Vector2( -118, 744 )
 
+[node name="Chair" type="Node2D" parent="Main/misc_stump"]
+position = Vector2( 0, -3 )
+script = ExtResource( 121 )
+Area = Vector2( 40, 16 )
+Directions = 15
+PlayerOffsetLeft = Vector2( 15, -13 )
+PlayerOffsetUp = Vector2( 1, -9 )
+PlayerOffsetRight = Vector2( -13, -13 )
+PlayerOffsetDown = Vector2( 1, -18 )
+
 [node name="MiscStump2" type="Sprite" parent="Main"]
 position = Vector2( 208, 689 )
 texture = ExtResource( 105 )
@@ -1422,6 +1433,16 @@ position = Vector2( 497, 150 )
 
 [node name="misc_stump3" parent="Main" instance=ExtResource( 44 )]
 position = Vector2( -402, -222 )
+
+[node name="Chair" type="Node2D" parent="Main/misc_stump3"]
+position = Vector2( 0, -3 )
+script = ExtResource( 121 )
+Area = Vector2( 40, 16 )
+Directions = 11
+PlayerOffsetLeft = Vector2( 15, -13 )
+PlayerOffsetUp = Vector2( 1, -9 )
+PlayerOffsetRight = Vector2( -13, -13 )
+PlayerOffsetDown = Vector2( 1, -18 )
 
 [node name="MiscTreeRoot1" type="Sprite" parent="Main"]
 position = Vector2( -244, -33 )
@@ -1902,11 +1923,6 @@ script = ExtResource( 110 )
 
 [node name="alba_items" type="Node" parent="Other/Events"]
 
-[node name="item_number_on_alba" type="Node" parent="Other/Events/alba_items"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_alba"
-
 [node name="item_fish_on_alba" type="Node" parent="Other/Events/alba_items"]
 script = ExtResource( 89 )
 Items = "ch1.forest_fish"
@@ -1939,9 +1955,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_alba"
 
 [node name="item_snack_on_alba" type="Node" parent="Other/Events/alba_items"]
@@ -1950,11 +1964,6 @@ Items = "ch1.forest_harmless_snack"
 Nodes = "chr_alba"
 
 [node name="milion_items" type="Node" parent="Other/Events"]
-
-[node name="item_number_on_milion" type="Node" parent="Other/Events/milion_items"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_milion"
 
 [node name="item_fish_on_milion" type="Node" parent="Other/Events/milion_items"]
 script = ExtResource( 89 )
@@ -1977,9 +1986,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_milion"
 
 [node name="item_light_full_on_milion" type="Node" parent="Other/Events/milion_items"]
@@ -2004,11 +2011,6 @@ Items = "ch1.forest_harmless_snack"
 Nodes = "chr_milion"
 
 [node name="kozmo_items" type="Node" parent="Other/Events"]
-
-[node name="item_number_on_kozmo" type="Node" parent="Other/Events/kozmo_items"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "chr_kozmo"
 
 [node name="item_fish_on_kozmo" type="Node" parent="Other/Events/kozmo_items"]
 script = ExtResource( 89 )
@@ -2051,9 +2053,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_kozmo"
 
 [node name="item_snack_on_kozmo" type="Node" parent="Other/Events/kozmo_items"]
@@ -2106,9 +2106,7 @@ Items = "ch1.rune_jara
 ch1.rune_uruz
 ch1.rune_ansuz
 ch1.rune_raidho
-ch1.rune_algiz
-ch1.rune_tiwaz
-ch1.rune_othala"
+ch1.rune_algiz"
 Nodes = "chr_aoi"
 
 [node name="event_tree_firsttime" type="Node2D" parent="Other/Events"]
@@ -2131,11 +2129,6 @@ script = ExtResource( 7 )
 Solid = false
 Trigger = 1
 Area = Vector2( 64, 8 )
-
-[node name="item_number_on_fire" type="Node" parent="Other/Events"]
-script = ExtResource( 89 )
-Items = "ch1.forest_station_number"
-Nodes = "misc_campfire"
 
 [node name="item_lamp_on_lamppost" type="Node" parent="Other/Events"]
 script = ExtResource( 89 )
@@ -2385,6 +2378,20 @@ Solid = false
 position = Vector2( -190, 632 )
 script = ExtResource( 7 )
 Area = Vector2( 32, 16 )
+
+[node name="misc_log_nosit_1" type="Node2D" parent="Other/Events"]
+position = Vector2( -118, 741 )
+script = ExtResource( 7 )
+Event = "misc_log_nosit"
+Enabled = false
+Area = Vector2( 40, 16 )
+
+[node name="misc_log_nosit_2" type="Node2D" parent="Other/Events"]
+position = Vector2( -402, -225 )
+script = ExtResource( 7 )
+Event = "misc_log_nosit"
+Enabled = false
+Area = Vector2( 40, 16 )
 
 [node name="misc_crow" type="Node2D" parent="Other/Events"]
 position = Vector2( 208, 686 )

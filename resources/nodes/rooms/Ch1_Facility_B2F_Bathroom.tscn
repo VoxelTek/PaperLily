@@ -336,7 +336,8 @@ __meta__ = {
 
 [node name="item_bucket_on_drain" type="Node" parent="Other/Events"]
 script = ExtResource( 32 )
-Items = "ch1.bucket_full"
+Items = "ch1.bucket_full
+ch1.bucket_full_holy"
 Nodes = "misc_sink_1
 misc_sink_2
 misc_sink_3

@@ -1,0 +1,9 @@
+label START
+    if repeat
+        "(Best not to spoil Aoi too much.)"
+        end
+    chara set lacie at left
+    chara set aoi at right
+    aoi "Aww! Thanks!" mood excited
+    item remove ch1.kett_flower
+    set general.aoi_love ++

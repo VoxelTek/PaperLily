@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://script/Subgame/Chapter1/Ch1MkKitchen.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_mk.tres" type="TileSet" id=2]
@@ -45,6 +45,10 @@
 [ext_resource path="res://script/Core/Nodes/SimpleAnimatedSpriteV3.cs" type="Script" id=43]
 [ext_resource path="res://assets/sprite/ch1/mk/kitchen/wall_storage1_spook.png" type="Texture" id=44]
 [ext_resource path="res://script/Core/Nodes/ActionAnimation2D.cs" type="Script" id=45]
+[ext_resource path="res://assets/sfx/thud.ogg" type="AudioStream" id=46]
+[ext_resource path="res://script/Core/Nodes/ActionCallTimer.cs" type="Script" id=47]
+[ext_resource path="res://script/Core/Nodes/ActionSfx.cs" type="Script" id=48]
+[ext_resource path="res://script/Core/Nodes/ActionTimer.cs" type="Script" id=49]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.5, 12 )
@@ -406,5 +410,22 @@ Node = NodePath("../../../../Main/cauldron/Cauldron/lacie_ladder")
 Visible = false
 
 [node name="play_spoon_man" type="Node" parent="Other/Actions"]
+script = ExtResource( 35 )
+
+[node name="play_anim" type="Node" parent="Other/Actions/play_spoon_man"]
 script = ExtResource( 45 )
-Node = NodePath("../../../Background/WallStorage1/Spook")
+Node = NodePath("../../../../Background/WallStorage1/Spook")
+
+[node name="thud_timer_call" type="Node" parent="Other/Actions/play_spoon_man"]
+script = ExtResource( 49 )
+Node = NodePath("delay_thud")
+
+[node name="delay_thud" type="Node" parent="Other/Actions/play_spoon_man/thud_timer_call"]
+script = ExtResource( 47 )
+WaitTime = 0.25
+OneShot = true
+Node = NodePath("thud")
+
+[node name="thud" type="Node" parent="Other/Actions/play_spoon_man/thud_timer_call/delay_thud"]
+script = ExtResource( 48 )
+Sfx = ExtResource( 46 )

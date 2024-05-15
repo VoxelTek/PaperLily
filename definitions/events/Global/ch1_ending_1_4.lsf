@@ -1,0 +1,103 @@
+label START
+    camera move (0,-64) time 2
+    audio bgm stop time 4
+    pause 1
+    lacie "...An exit?" mood surprised6
+    hide ui
+    pause 1
+    action walk up 32 speed slow
+    action call show_demon_1
+    action call show_demon_2
+    action walk down 32 backwards
+    pause 1
+    chara rename chara1 to "misc.characters.demon_1"
+    chara rename chara2 to "misc.characters.demon_2"
+    chara2 "Crap, it woke up."
+    chara1 "..."
+    chara2 "Hurry, knock it out or something!"
+    hide ui
+    pause 0.3
+    action call demon_attack
+    pause 0.8
+    cg show white time 0
+    audio sfx play thud4
+    audio sfx play ear_ringing
+    pause 4
+
+    chara lock
+    chara rename chara1 to "misc.characters.voice_2"
+    chara rename chara2 to "misc.characters.voice_1"
+    chara rename chara3 to "misc.characters.voice_3"
+    lacie "(!!... Wh-what happened...)"
+    lacie "(My chest...)"
+    chara2 "You idiot, you hit it too hard."
+    chara1 "....."
+    chara2 "I know it's alive, but there's a hole in it now!"
+    lacie "(Hole...? What...?)"
+    choice "(I need to...)"
+        "Scream"
+            hide ui
+            pause 1
+            lacie "H-he... *cough*"
+            "You try to scream, but your voice isn't coming out. Your lungs might be damaged."
+        "Do not"
+            hide ui
+            pause 1
+            lacie "(It hurts...)"
+    chara2 "If it dies before extraction, the boss will get mad at us."
+    chara1 ".........."
+    chara2 "You're right, he might just kill us off. Shit, crap."
+    chara2 "Lets just bring it quickly."
+    chara1 "....."
+    chara2 "Fine, I'll do it."
+    hide ui
+    transition out blink time 4
+    pause 1
+    chara2 "Ugh... it's dripping all over. This is so annoying."
+    hide ui
+    pause 4
+
+    chara3 "Why is it bleeding? I thought we were clear on this."
+    chara2 "I'm really sorry, it was awake. The driver must have messed up, and..."
+    chara3 "The driver didn't make this hole."
+    chara2 "Sorry, we didn't want it to run, so..."
+    chara3 "Enough. With so few subjects as of late, you can't be snacking on them. I'll be reporting this to Glen."
+    chara2 "Gaah... what luck..."
+    chara1 "....."
+    chara3 "Really now? \"It's young so it's probably fine?\""
+    chara3 "That's especially why you can't mess with it."
+    lacie "(Voices...)"
+    lacie "..."
+    chara3 "Turn it over."
+    chara1 "....."
+    hide ui
+    pause 1
+    audio sfx play shuffling
+    pause 3
+    chara rename chara1 to "misc.characters.demon_1"
+    chara rename chara2 to "misc.characters.demon_2"
+    chara rename chara3 to "misc.characters.demon_3"
+    cg show ch1/ending_4 time 0
+    fade in time 0
+    transition in blink time 4
+    pause 0.5
+    chara2 "At least the hands are fine."
+    chara3 "Hand me the tools."
+    chara2 "Right away."
+    chara3 "Good... It's still breathing."
+    lacie "(Is that... a doctor...?)"
+    lacie "(What's... going on...?)"
+    chara3 "Let's get this over with."
+    hide ui
+    pause 2
+    fade out time 0
+    audio sfx play slice
+    fade flash color red
+    pause 4
+    chara rename chara1 off
+    chara rename chara2 off
+    chara rename chara3 off
+    "Dead End 1-4 - Carried Away" background none
+    system achievement CH1_BAD_END
+    set persistent.ending.1.4 = true
+    system title-screen

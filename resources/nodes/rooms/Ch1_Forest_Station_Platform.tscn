@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://script/Managers/Rooms/GameRoom.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
@@ -54,6 +54,7 @@
 [ext_resource path="res://resources/material/ch1_lakeside_rowing_fog.tres" type="Material" id=52]
 [ext_resource path="res://script/Core/Nodes/VariableActionCall.cs" type="Script" id=53]
 [ext_resource path="res://assets/sprite/ch1/forest/station_stop/tracks/chr_eyecu_up.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprite/ch1/forest/station_stop/floor_blood.png" type="Texture" id=55]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 37 )
@@ -497,6 +498,10 @@ texture = ExtResource( 29 )
 [node name="StructStationShelterB" type="Sprite" parent="Ground"]
 position = Vector2( 270, 298 )
 texture = ExtResource( 36 )
+
+[node name="FloorBlood" type="Sprite" parent="Ground"]
+position = Vector2( 456, 417 )
+texture = ExtResource( 55 )
 
 [node name="TilesTrees" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -1245,3 +1250,8 @@ ActionFalse = NodePath("../../../Lighting/normal")
 script = ExtResource( 46 )
 Variable = "ch1.forest_station_show_eyecu"
 Node = NodePath("../../../Main/Eyecu")
+
+[node name="show_blood" type="Node" parent="Other/Updates"]
+script = ExtResource( 46 )
+Variable = "general.serious"
+Node = NodePath("../../../Ground/FloorBlood")

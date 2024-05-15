@@ -1,0 +1,8 @@
+label START
+    if repeat jump AGAIN
+    chara set lacie at left
+    chara set milion at right
+    milion "...?" mood blank11
+    lacie "U-um... It's nothing..." mood hide3
+label AGAIN
+    "(The bug net is not large enough.)"

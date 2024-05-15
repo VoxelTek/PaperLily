@@ -1,0 +1,3 @@
+label START
+    audio sfx play door_locked
+    pause 0.5

@@ -1,0 +1,15 @@
+label START
+    "A heavy-looking door."
+    if repeat jump SHORT
+    if var ch1.facility_lights_off jump SHORT
+    hide ui
+    camera move (0,-160) time 3
+    pause 0.5
+    lacie "Are we underwater...?" mood blank8
+    sai "Looks like it." mood confused4
+    hide ui
+    camera move (0,128) time 0.5
+    end
+
+label SHORT
+    "The other side seems flooded."

@@ -1,0 +1,36 @@
+label START
+    choice "What to do?"
+        "Kill it here"
+            if var ch1.forest_moths_upset
+                event call ch1_event_no_kill_caterpillar
+                end
+            fade out
+            pause 1
+            audio sfx play squash
+            fade flash color "#9b09d6"
+            item remove ch1.forest_caterpillar
+            objective complete ch1.forest_lakeside_caterpillar
+            set ch1.forest_moths_clear = true
+            set ch1.forest_moths_killed_caterpillar = true
+            system refresh
+            pause 1
+            fade in
+        "Release it around this area"
+            audio bgm stop time 1
+            fade out
+            move to Ch1_Cutscene_Release_Caterpillar point release_caterpillar time 0
+            audio ambiance play rain
+            fade in time 4
+            pause 1
+            system call PlayAnimation
+            pause 6
+            item remove ch1.forest_caterpillar
+            objective complete ch1.forest_lakeside_caterpillar
+            set ch1.forest_moths_clear = true
+            set ch1.forest_moths_released_caterpillar = true
+            move to Ch1_Forest_Lakeside_North point release_caterpillar
+            audio bgm play ch1_lakeside_2
+            end
+        "Do nothing"
+            end
+    end

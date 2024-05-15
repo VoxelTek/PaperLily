@@ -1,0 +1,8 @@
+label START
+    system call PauseChaser
+    if var ch1.forest_kett_chase jump KETT_CHASE_BAD_END
+    move to Ch1_Forest_Artist point side_door
+    end
+
+label KETT_CHASE_BAD_END
+    event call ch1_ending_1_7

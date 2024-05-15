@@ -1,0 +1,25 @@
+label START
+    fade out time 0
+    set general.blackpass_visits = 1
+    audio bgm override on silent
+    move to Ch1_BlackPass_Hub point cutscene_camera cutscene
+    event call ch1_blackpass_init
+    action call lacie_bed_show
+    fade in time 4
+    audio bgm override off
+    audio bgm play ch1_blackpass
+    pause 1
+    action call lacie_bed_eyes
+    pause 3
+    lacie "This place... again." mood blank2
+    lacie "I guess I really did fall asleep...?" mood blank8
+    hide ui
+    pause 0.5
+    move to Ch1_BlackPass_Hub point wake_up
+    pause 0.5
+    lacie "(Sometimes I wake up here after falling asleep.)" mood reflective5
+    lacie "(I have this dream a lot...)" mood reflective7
+    lacie "(...But it seems I can't leave until I see it through to the end.)" mood default
+    objective clear
+    objective add ch1.blackpass_1_leave
+    system retry-save

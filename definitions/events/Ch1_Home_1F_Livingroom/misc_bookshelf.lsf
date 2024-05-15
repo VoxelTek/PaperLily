@@ -1,0 +1,18 @@
+label START
+    "A bookshelf with random decorative books."
+    if var general.serious end
+    "There's also a few neatly-aligned office supplies."
+    if objective ch1.prepare_ritual inprogress jump CHECK_MARKER
+    end
+
+label CHECK_MARKER
+    if not objective ch1.prepare_ritual.paint_front inprogress end
+    if item ch1.marker end
+    lacie "Red marker. Perfect." mood blank1
+    choice "Take ${item:ch1.marker}?"
+        "Yes"
+            continue
+        "No"
+            end
+    item add ch1.marker
+    objective complete ch1.ritual_items.paint

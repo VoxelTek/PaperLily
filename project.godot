@@ -8,6 +8,8 @@
 
 config_version=4
 
+_custom_features="paperlilydemo,steam"
+
 _global_script_classes=[  ]
 _global_script_class_icons={
 }
@@ -35,8 +37,9 @@ shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 window/size/width=640
 window/size/height=360
-window/size/test_width=1920
-window/size/test_height=1005
+window/size/fullscreen=false
+window/size/test_width=1280
+window/size/test_height=720
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -131,9 +134,9 @@ ui_end={
 [lacie_engine]
 
 core/game_name="Paper Lily Chapter 1"
-core/game_version="1.1.0"
+core/game_version="1.1.4-STEAM"
 core/game_copyright="Leef 6010 2024"
-core/engine_version="1.5.0"
+core/engine_version="1.5.4"
 core/translation_base_locale="en"
 core/translation_base_name="English"
 core/translation_selected=""
@@ -163,6 +166,7 @@ core/default_character="lacie"
 core/default_character.projectkat="kat"
 game/skip_enabled=false
 game/objective_notifications=true
+game/show_skip_option=true
 audio/volume_master=0.8
 audio/volume_bgm=0.8
 audio/volume_sfx=0.8
@@ -193,7 +197,6 @@ debug/debug_room="Debug_Room"
 debug/quickstart/enabled=false
 debug/quickstart/room=""
 debug/quickstart/point=""
-core/translation_locale="en"
 
 [layer_names]
 
@@ -210,6 +213,7 @@ core/translation_locale="en"
 [locale]
 
 translation_remaps={
+
 }
 
 [logging]
@@ -220,7 +224,7 @@ file_logging/log_path="user://logs/game.log"
 [mono]
 
 runtime/unhandled_exception_policy=1
-project/assembly_name="Lacie Packer"
+project/assembly_name="Lacie Engine"
 unhandled_exception_policy=1
 
 [physics]

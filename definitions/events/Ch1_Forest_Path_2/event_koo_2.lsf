@@ -1,0 +1,3 @@
+label START
+    if repeat end
+    action call spook_koo

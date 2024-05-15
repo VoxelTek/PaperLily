@@ -1,0 +1,4 @@
+label START
+    item remove ch1.rune_raidho
+    event call event_rune_give_rune
+    end

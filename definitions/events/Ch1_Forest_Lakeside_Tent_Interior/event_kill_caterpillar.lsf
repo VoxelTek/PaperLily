@@ -1,0 +1,20 @@
+label START
+    lacie "Alright, I guess I'll just..." mood concerned2
+    ch1_moth_girl "Yes, kill it. Do it." mood blank3
+    ch1_moth_boy "Quickly." mood annoyed5
+    fade out
+    pause 1
+    audio sfx play squash
+    fade flash color "#9b09d6"
+    item remove ch1.forest_caterpillar
+    objective complete ch1.forest_lakeside_caterpillar
+    set ch1.forest_moths_took_caterpillar = true
+    set ch1.forest_moths_clear = true
+    set ch1.forest_moths_killed_caterpillar = true
+    system refresh
+    pause 2
+    fade in
+    ch1_moth_girl "HUZZAH!!!!!" mood happy
+    ch1_moth_boy "Finally." mood default
+    ch1_moth_girl "Dead dead dead!" mood happy2
+    end

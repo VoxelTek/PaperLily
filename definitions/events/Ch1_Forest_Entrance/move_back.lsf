@@ -1,0 +1,4 @@
+label START
+    set ch1.forest_entrance_south_opened_exit = true
+    move to Ch1_Forest_Path_2 point exit_north
+    end

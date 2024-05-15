@@ -1,0 +1,6 @@
+label START
+    "A rotary phone."
+    if repeat end
+    if var general.serious end
+    lacie "It's old... but there's a certain charm to it." mood blank5
+    "There's no dial tone."

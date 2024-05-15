@@ -1,0 +1,10 @@
+label START
+    "A small burrow."
+    choice "Reach inside?"
+        "Yes"
+            continue
+        "No"
+            end
+    hide ui
+    pause 1.5
+    "You can't feel anything special."

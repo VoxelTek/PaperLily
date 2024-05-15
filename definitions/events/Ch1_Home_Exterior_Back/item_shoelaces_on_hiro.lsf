@@ -1,0 +1,25 @@
+label START
+    chara set lacie at left
+    chara set hiro at right
+    if repeat 3 jump AGAIN_2
+    if repeat jump AGAIN
+    hiro "My shoelaces! It's going to take ages to lace those back!" mood worried5
+    lacie "I'm sorry, it's necessary." mood blank6
+    hiro "Those are my favorite, please don't lose them." mood pout3
+    lacie "Lucky shoes? Or lucky shoelaces?" mood blank5
+    hiro "Lucky nothing if you lose them!!" mood upset2
+    lacie "I'll be careful!" mood concerned2
+    end
+
+label AGAIN
+    lacie "Here, take a look at them one last time." mood blank1
+    hiro "Whaaat?" mood worried7
+    lacie "I have to burn them for the ritual." mood hide2
+    hiro "Can't you use different ones?" mood worried6
+    lacie "They have to be red, and worn by a dummy." mood blank6
+    hiro "There's no way it says that..." mood pout3
+    end
+
+label AGAIN_2
+    "Let's not tease him anymore."
+    end

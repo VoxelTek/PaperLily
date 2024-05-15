@@ -1,0 +1,14 @@
+label START
+    if not var general.chapter == 1 end
+    if var ch1.took_birdfood end
+    "Some bird food."
+    if var ch1.home_ritualcomplete end
+    choice "Take ${item:ch1.bird_food}?"
+        "Yes"
+            continue
+        "No"
+            end
+    set ch1.took_birdfood = true
+    item add ch1.bird_food
+    end
+

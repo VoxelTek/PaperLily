@@ -1,0 +1,11 @@
+label START
+    if repeat jump AGAIN
+    chara set lacie at left
+    chara set milion at right
+    milion "This is quite amusing." mood satisfied
+    lacie "..." mood surprised2
+    milion "It's been a while since anything interesting happened around here." mood satisfied2
+    end
+
+label AGAIN
+    "Milion is smiling."

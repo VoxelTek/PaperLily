@@ -1,0 +1,15 @@
+label START
+    if var ch1.mk_plants_dead end
+    item remove ch1.mk_jar_water
+    item add ch1.mk_jar silent
+    audio sfx play water_splash_3
+    pause 1
+    if not objective ch1.mk_plant_drink inprogress jump IRRIGATE
+    "\"Alcohol tastes just like water.\""
+    "\"Thank you.\""
+    objective complete ch1.mk_plant_drink
+    event call ch1_event_mk_check_plant_objectives
+    end
+
+label IRRIGATE
+    "(You watered the plant.)"

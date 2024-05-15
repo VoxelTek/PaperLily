@@ -1,0 +1,210 @@
+label START
+    chara set lacie at left
+    chara set rune at right
+    if not repeat jump FIRST_TALK
+    if var ch1.forest_red_entrance_stage == 4
+        if var ch1.forest_rune_asked_about_red
+            jump TALK_MORE
+        if not var ch1.forest_rune_asked_about_red
+            jump RED_WASNT_THERE
+    jump DIDNT_CHECK_TREEHOUSE
+
+label FIRST_TALK
+    audio bgm stop time 2
+    audio bgm override off
+    audio bgm play ch1_rune
+    if var ch1.forest_red_entrance_stage == 4 jump INTRO
+    rune "You made it!"
+    rune "You must be really good at dodging spikes." mood tilt
+    lacie "Thank you." mood blank5
+    lacie "(He seems friendly...)" mood default
+    lacie "I'm surprised you're talking to me... this much." mood blank7
+    rune "Talking is an important means of communication, no?" mood tilt
+    lacie "Well yes... but-" mood hide3
+    rune "You talk as well!" mood default
+    lacie "I do." mood blank5
+    lacie "But you're... What exactly are you?" mood blank4
+    jump INTRO
+
+label INTRO
+    set ch1.forest_seen_rune = true
+    chara rename rune off
+    rune "My name is Rune and I like runes!" mood sparkle
+    rune "Do you have any runes?" mood tilt
+    system call UpdateRunesVar
+    choice "(Do I have any runes?)"
+        "Yes" if var ch1.temp_player_has_runes
+            lacie "Yes, I do." mood blank4
+            rune "Amazing! Please give them to me!" mood sparkle
+        "No"
+            lacie "I don't." mood default
+            if var ch1.temp_player_has_runes
+                rune "Is that so."
+                rune "Are you lying?" mood creepy
+                lacie "N-no... I don't have any runes." mood concerned9
+                rune "Interesting." mood default
+                rune "Humans are quite peculiar." mood tilt
+                lacie "..." mood concerned7
+                rune "..." mood default
+                rune "Well...!"
+            if not var ch1.temp_player_has_runes
+                rune "That's terrible!" mood sad
+            rune "In the future, if you have any runes, please bring them to me!" mood default
+    rune "I will give you trinkets in exchange!" mood sparkle
+    lacie "Okay." mood blank4
+    lacie "So... are you some kind of spirit?" mood blank5
+    rune "Not exactly!" mood default
+    rune "We've gone by many names in the past."
+    rune "But humans often refer to us as \"demons\"."
+    rune "What is your name?" mood tilt
+    lacie "Lacie." mood blank1
+    rune "Miss Lacie!" mood default
+    lacie "..." mood default
+    rune "Rare to see a human around here! How exciting!" mood sparkle
+    rune "You ARE human, aren't you?" mood tilt
+    lacie "Yes. You can tell?" mood hide3
+    rune "A little bit." mood default
+    lacie "A little bit?" mood blank5
+    rune "Some of us may have the appearance of a human, but it's easy to tell the difference with a real one!" mood happy
+    rune "You however..." mood tilt
+    lacie "...What about me?" mood concerned
+    rune "Even though you're a human, you smell a bit like..."
+    rune "I can't speak of them, but... it's someone veeeery bad." font dialogue_small
+    lacie "Who is it?" mood surprised
+    rune "It's 1000 years of bad luck to talk about it." mood sad
+    lacie "Please, I really need help." mood sad2
+    lacie "Um..." mood reflective5
+    lacie "I know... that there's something off about me." mood reflective6
+    lacie "I did this ritual to find out what it is... and how to fix it." mood concerned12
+    rune "I see." mood tilt
+    lacie "For a moment I thought I might be possessed but..." mood sigh
+    rune "Ooh." mood default
+    rune "Nonsense, possessions are an outdated concept."
+    lacie "Then do you know what it could be?" mood hide2
+    rune "A curse!" mood sparkle
+    lacie "What?" mood surprised
+    rune "99 percent of illnesses here are curses!" mood default
+    lacie "What's the other 1 percent?" mood concerned2
+    rune "What a silly question, there is no 1 percent!" mood tilt
+    lacie "...Oh..." mood concerned4
+    lacie "(So it's just 100 percent...?)" mood concerned12
+    lacie "Do you know how I can lift this curse?" mood concerned5
+    rune "You should seek Red! Red lifts curses!" mood default
+    lacie "How can I find Red?" mood blank5
+    rune "Incidentally, this is Red's treehouse." mood default
+    if var ch1.forest_red_entrance_stage == 4
+        lacie "This? But there's nobody in there." mood concerned9
+        rune "Indeed, Red hasn't been in there for a long time." mood sad
+        lacie "I see..." mood concerned12
+        jump REDS_WHEREABOUTS
+    if var ch1.forest_red_entrance_stage < 4
+        if var ch1.forest_red_seen_sign
+            lacie "Yeah, I saw the sign earlier." mood blank1
+            lacie "I guess I should check it out." mood blank8
+        if not var ch1.forest_red_seen_sign
+            lacie "I see..." mood blank8
+        lacie "Thank you, Rune." mood blank4
+        rune "You're welcome, Miss Lacie!" mood sparkle
+    end
+
+label DIDNT_CHECK_TREEHOUSE
+    rune "Good luck, Miss Lacie!" mood sparkle
+    end
+
+label RED_WASNT_THERE
+    rune "Hello again Miss Lacie!" mood sparkle
+    lacie "Red wasn't there." mood blank2
+    rune "Indeed, Red hasn't been in there for a long time." mood sad
+    lacie "..." mood disappointed2
+    lacie "Why didn't you tell me?"
+    rune "You didn't ask." mood tilt
+    lacie "..." mood bothered
+    lacie "That's true, I suppose." mood sigh
+label REDS_WHEREABOUTS
+    set ch1.forest_rune_asked_about_red = true
+    objective complete ch1.explore_forest
+    objective add ch1.locked_site_light
+    objective add ch1.locked_site_enter
+    lacie "Do you know of another way I could find Red?" mood default
+    rune "I do." mood default
+    lacie "..."
+    rune "...?"
+    lacie "Would you like to share it with me?" mood concerned7
+    rune "Sure!" mood sparkle
+    rune "There's a lighthouse to the north of the big tree. Red goes there a lot!" mood default
+    rune "Have you seen the big tree? It's very large, you can't miss it." mood tilt
+    lacie "Yes, I have." mood blank1
+    rune "Well, you have to head north to reach the lighthouse, but it's quite a long walk." mood default
+    rune "It's right past the lake."
+    rune "But... the only way to go north from here is to go through the locked site." mood tilt
+    lacie "Locked site?" mood concerned
+    rune "Near the big tree there's a locked gate. If you go through there you'll be at the lake in no time." mood default
+    rune "But it's quite dangerous in there." mood sad
+    rune "And you'll need a light. Since it's also very dark." mood tilt
+    lacie "I see. Thank you for all of this information." mood blank1
+    lacie "I expected...\"demons\" such as yourself to be more hostile." mood blank3
+    rune "That is a fair expectation!" mood sparkle
+    rune "One that you should keep." mood default
+    rune "If anyone finds out you're human, they will kill you instantly." mood tilt
+    lacie "..." mood concerned
+    rune "Take care!" mood sparkle
+    end
+
+label TALK_MORE
+    choice "So..."
+        "Why aren't you hostile?" if not var ch1.forest_rune_asked_about_hostility
+            set ch1.forest_rune_asked_about_hostility = true
+            lacie "How come you aren't hostile like other demons?" mood blank6
+            rune "I am simply well-fed." mood default
+            lacie "..." mood confused2
+            end
+        "Why do you collect runes?" if not var ch1.forest_rune_asked_about_runes
+            set ch1.forest_rune_asked_about_runes = true
+            lacie "As for runes, why do you collect them?" mood blank1
+            rune "I like runes!" mood sparkle
+            lacie "What are you doing with them?" mood default
+            rune "Liking them." mood default
+            lacie "..." mood blank5
+            lacie "Is that why your name is Rune?" mood blank8
+            rune "I might have had another name once, but I don't recall." mood tilt
+            end
+        "Red's treehouse?" if not var ch1.forest_rune_asked_about_treehouse
+            set ch1.forest_rune_asked_about_treehouse = true
+            lacie "Why do you call this place \"Red's treehouse\"? This house is not in a tree." mood thinking3
+            rune "But the house is MADE of tree." mood default
+            lacie "..." mood thinking4
+            lacie "Do you mean wood?" mood thinking2
+            rune "No...?" mood tilt
+            rune "You are so odd, Miss Lacie!" mood sparkle
+            end
+        "What will I find at the lighthouse?" if not var ch1.forest_rune_asked_about_lighthouse
+            set ch1.forest_rune_asked_about_lighthouse = true
+            lacie "Will I find Red at the lighthouse?" mood blank5
+            rune "Maybe. Red often goes there." mood default
+            lacie "What if Red isn't there?" mood blank7
+            rune "The lighthouse owner is a friend of Red's, he'll know how to guide you!"
+            rune "He will not eat you, don't worry!" mood sparkle
+            lacie "..." mood concerned7
+            lacie "That's good." mood concerned4
+            end
+        "What is inside the locked site?" if not var ch1.forest_rune_asked_about_lockedsite
+            set ch1.forest_rune_asked_about_lockedsite = true
+            lacie "What's behind that fence? In the locked site?" mood blank7
+            rune "Mainly just forest and...a monster." mood default
+            lacie "A monster???" mood surprised
+            rune "It's okay, he won't kill you unless he sees you or hears you!" mood sparkle
+            lacie "..." mood concerned7
+            rune "It's very dark in there so you'll need a bit of light. If you hear him approaching, you should hide!" mood default
+            lacie "That doesn't sound safe. Is it really the only way to the lighthouse?" mood concerned8
+            rune "It's the only way I know of." mood tilt
+            end
+        "Never mind"
+            jump EXTRA
+
+label EXTRA
+    if not var ch1.forest_rune_asked_about_hostility end
+    if not var ch1.forest_rune_asked_about_runes end
+    if not var ch1.forest_rune_asked_about_treehouse end
+    if not var ch1.forest_rune_asked_about_lighthouse end
+    if not var ch1.forest_rune_asked_about_lockedsite end
+    event call chr_rune_extra

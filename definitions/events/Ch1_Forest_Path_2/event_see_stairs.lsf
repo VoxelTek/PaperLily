@@ -1,0 +1,7 @@
+label START
+    if var ch1.forest_entrance_south_seen_station_stairs_present end
+    if var ch1.forest_entrance_south_seen_station_stairs_missing end
+    if var ch1.forest_entrance_south_opened_station
+        set ch1.forest_entrance_south_seen_station_stairs_present = true
+    else
+        set ch1.forest_entrance_south_seen_station_stairs_missing = true

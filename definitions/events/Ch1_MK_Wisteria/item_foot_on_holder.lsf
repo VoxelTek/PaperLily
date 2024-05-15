@@ -1,0 +1,149 @@
+label START
+    pause 0.5
+    set ch1.mk_wisteria_item = 4
+    system refresh
+    pause 1
+    cg show black
+    audio bgm play ch1_heart
+    pause 2
+    chara rename mk to "misc.characters.lk"
+    chara rename chara1 to "misc.characters.iris"
+    chara rename chara2 to "misc.characters.boy1"
+    chara rename chara3 to "misc.characters.boy2"
+    chara rename chara4 to "misc.characters.boy3"
+
+    "The [color=#90EE90]fourth blessing[/color] was something I would never wish for." format center position center background none
+    hide ui
+    pause 1
+    mk "Give it back!"
+    chara2 "How'd you get your hands on such an expensive-looking sketchbook, huh?"
+    chara2 "Let's see..."
+    mk "Stop! Just give it to me!"
+    chara2 "What the heck is this?"
+    hide ui
+    pause 1
+    "They flipped through the pages of my sketchbook, and their faces got an awful ghostly white." format center position center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_sketchbook
+    hide ui
+    pause 1
+    chara3 "Is she a witch?"
+    chara4 "What are those?"
+    mk "I didn't draw that!"
+    chara2 "Hey, I didn't know you were a witch."
+    mk "I'm not!!!"
+    chara2 "Pages and pages of creepy drawings."
+    chara2 "What is this? Some kind of curse casting shit?"
+    mk "I didn't make them! I don't know where they came from!"
+    hide ui
+    pause 1
+    cg show black
+    hide ui
+    pause 1
+    "It's the truth. Why didn't they believe me?" format center position center background none
+    hide ui
+    pause 1
+    audio sfx play ch1_breaking
+    pause 2
+    cg show ch1/mk_backstory_broken
+    hide ui
+    pause 1
+    mk "STOP! WHAT ARE YOU DOING?!?"
+    chara2 "You're just a filthy witch!"
+    chara2 "I'm reporting you, you won't be needing this!"
+    mk "PLEASE DON'T BREAK IT!"
+    chara2 "You don't even need all of these colors."
+    chara2 "Nothing but black."
+    chara2 "You were never supposed to see anything but darkness anyway."
+    chara2 "Blind freak."
+    mk "Please stop... Give them back..."
+    chara2 "Aww.. poor little crybaby."
+    chara2 "I'm gonna report you."
+    chara2 "Father will be so proud, I caught my own witch."
+    cg show black
+    hide ui
+    pause 1
+    mk "I'm not a witch..."
+    mk "I swear I'm not..."
+    hide ui
+    pause 1
+    audio sfx play tape_rip
+    pause 2
+    cg show ch1/mk_backstory_bully
+    hide ui
+    pause 1
+    mk "No! Don't!!!! Please!!!"
+    mk "(Stop, please stop...)"
+    mk "(Please stop...)"
+    mk "(What did I do to you...?)"
+    mk "(Please stop.......)"
+    cg show black
+    hide ui
+    pause 1
+    "I hate them. I hate my life. Why is this happening to me?" format center position center background none
+    "Soon enough, the boy dropped the sketchbook." format center position center background none
+    "My eyes were focused on the crumpled pages of my sketchbook hitting the ground, so I didn't see it until someone screamed." format center position center background none
+    hide ui
+    pause 1
+    audio sfx play gore3
+    pause 2
+    mk "...!?"
+    chara2 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH!!!!"
+    hide ui
+    pause 1
+    "The boy's right leg twisted almost 360 degrees, as if it was some form of nightmarish witchcraft." format center position center background none
+    "Then it twisted again." format center position center background none
+    "Something broke in his leg, and he fell down, writhing in pain." format center position center background none
+    "I couldn't understand what I was seeing." format center position center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_leg
+    hide ui
+    pause 1
+    chara3 "Y-you... what did you do to his leg?!?"
+    mk "N-Nothing I didn't even touch him..."
+    chara2 "AAAAAAAAGGGHHHH! IT HURTS!!!!"
+    chara4 "Call someone! We need help! HELP!!!"
+    chara2 "YOU'RE A WITCH!! YOU'RE A WITCH!!!"
+    chara2 "I WILL DESTROY YOU!!!! YOU'LL BE BURNED!!!!"
+    mk "................."
+    cg show black
+    hide ui
+    pause 1
+    chara2 "BURN IN HELL!!!"
+    hide ui
+    pause 1
+    "The adults came and took him away." format center position center background none
+    "When I finally lifted my gaze from the dirt below my fingers, Iris was standing in front of me." format center position center background none
+    "My heart sank... Did she see what happened?" format center position center background none
+    hide ui
+    pause 1
+    cg show ch1/mk_backstory_iris2
+    hide ui
+    pause 1
+    chara1 "...A-Are you alright...?"
+    mk "............"
+    chara1 "I-I... You didn't do that to his leg, right?"
+    mk "No! Of course I didn't!"
+    chara1 "..."
+    chara1 "O-Okay."
+    cg show black
+    hide ui
+    pause 1
+    mk "...I... Why are you here?"
+    chara1 "Um... I came because... my parents said..."
+    chara1 "...That I'm not allowed to see you anymore."
+    hide ui
+    pause 2
+    chara rename mk off
+    chara rename chara1 off
+    chara rename chara2 off
+    chara rename chara3 off
+    chara rename chara4 off
+    cg hide
+    pause 1
+    set ch1.mk_wisteria_item = 0
+    system refresh
+    pause 0.5
+    end

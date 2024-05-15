@@ -1,0 +1,5 @@
+label START
+    if repeat end
+    pause 1
+    "It doesn't seem to be working."
+    end

@@ -1,0 +1,15 @@
+label START
+    if var ch1.facility_sai_attempting_leave jump CROW_GONE
+    if repeat jump SAVE
+    if var ch1.mk_clear jump SAVE
+    "A crow standing on a white tree stump."
+    lacie "I can't tell if it's the same one... but I'm glad to see it." mood blank4
+    sai "Are you friends with the crows?" mood surprised2
+    lacie "Sorta. They appear here and there like save points." mood blank8
+    sai "?????" mood confused10
+label SAVE
+    system save
+    end
+
+label CROW_GONE
+    "The crow isn't here right now."

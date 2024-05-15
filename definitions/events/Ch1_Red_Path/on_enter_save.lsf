@@ -1,0 +1,4 @@
+label START
+    if var ch1.forest_red_passage_gate_3_open end
+    system retry-save
+    end

@@ -1,0 +1,3 @@
+label START
+    set persistent.lacie_deaths ++
+    system death

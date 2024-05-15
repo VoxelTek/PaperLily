@@ -1,0 +1,200 @@
+label START
+    if var ch1.forest_fairyring_rescued_aoi jump ALREADY_DONE
+    lacie "(Is this plant eating something... or someone?)" mood surprised3
+    choice "(Should I really risk opening it?)"
+        "Yes"
+            continue
+        "No"
+            lacie "(Probably best not to...)" mood sigh
+            end
+    audio bgm override off
+    audio bgm stop time 4
+    hide ui
+    fade out
+    move to Ch1_FairyRing_B1F_Entrance point cutscene_lacie time 0
+    pause 2
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 1.1
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 1.1
+    audio sfx play hit
+    pause 0.2
+    fade flash color red
+    pause 2
+    set ch1.forest_fairyring_rescued_aoi = true
+    system refresh
+    action call show_aoi_wake
+    chara lock
+    audio sfx play gore8
+    pause 2
+    fade in time 1
+    pause 1
+    chara unlock
+    lacie "(It's a person.)" mood surprised3
+    lacie "(Are they... alright? They seem asleep.)" mood blank5
+    if var ch1.forest_seen_rune
+        lacie "(Wait... that might be a demon. Maybe I'd better leave them alone.)" mood blank2
+    else
+        lacie "(Well... I'll look around while they wake up.)" mood blank2
+    hide ui
+    action walk down 32 speed slow
+    action call play_aoi_wake
+    pause 0.15
+    audio bgm play ch1_moths
+    aoi "AH!" mood panic5
+    action turn up
+    lacie "...!?" mood surprised4
+    aoi "Ahh... AHH!" mood panic6
+    aoi "Get it off get it off get it off!!!" mood panic6
+    fade out
+    move to Ch1_FairyRing_B1F_Entrance point after_aoi time 0
+    action turn up
+    action call aoi_wiping_0
+    fade in
+    aoi "Oh god... oh god... gaaaah!" mood panic6
+    hide ui
+    action call aoi_wiping_1
+    pause 3.5
+    lacie "..." mood surprised2
+    aoi "..." mood panic7
+    aoi "...!" mood scared9
+    aoi "Did you just save me?!?" mood scared6
+    aoi "Everything was so dark and so gross, I thought I was gonna die for real this time!" mood scared7
+    aoi "That gooey stuff was eating away at my skin, it's so itchy, uuugh I still feel it!!!" mood panic4
+    aoi "I don't want it to eat me!!!" mood panic8
+    action call aoi_wiping_2
+    aoi "Oh god, I didn't plan to get digested today, this is NOT how I pictured my death!" mood panic9
+    hide ui
+    action call aoi_hide_wiping_all
+    chara spawn aoi point cutscene_aoi
+    action state pant node aoi
+    pause 2
+    aoi "WHAT IS THIS PLACE?!?" mood scared6
+    hide ui
+    pause 0.5
+    action state dark node aoi
+    pause 0.5
+    aoi "Oh." mood crazy2
+    aoi "Hahaha no..." mood crazy3
+    aoi "We're in the fairy ring aren't we?!" mood panic9
+    action state shock node aoi
+    aoi "Noooo! There's no way to get out of here!!" mood panic6
+    aoi "This is it. WE'RE DEAD!" mood melt12
+    aoi "I might as well go back in the plant, at least it will be faster." mood melt10
+    aoi "Nooo I don't want it to end this way!!!" mood melt10
+    lacie "Hey." mood disappointed2
+    aoi "...?" mood melt5
+    hide ui
+    cg show ch1/aoi_scissors
+    pause 1
+    lacie "Cut it off."
+    aoi "..."
+    aoi "...W-what...?"
+    lacie "I said: cut it off."
+    aoi "Ah, s-sorry..."
+    aoi "(Is that supposed to be... a joke?)"
+    hide ui
+    pause 0.5
+    cg hide
+    pause 1
+    chara despawn aoi
+    action call aoi_wiping_2
+    pause 2
+    action call aoi_hide_wiping_all
+    chara spawn aoi point cutscene_aoi
+    aoi "You know, I'm actually okay with dying." mood awkward4
+    aoi "But I feel like being eaten alive isn't really the way to go, you know?" mood awkward3
+    lacie "..." mood blank7
+    lacie "I see... I guess so." mood blank8
+    aoi "..." mood awkward2
+    chara rename aoi off
+    aoi "My name's Aoi." mood content2
+    if var ch1.forest_seen_rune
+        lacie "...I see." mood default
+    else
+        lacie "Lacie." mood default
+    aoi "Hehe... Were you trapped in one of those things too?" mood awkward3
+    lacie "Yeah." mood blank2
+    aoi "How'd you get out?" mood surprised
+    lacie "${item:ch1.scissors}." mood blank5
+    aoi "Whoa." mood surprised2
+    aoi "If I get out of here I'll always carry scissors on me!" mood confident
+    aoi "I promise you-" mood confident2
+    aoi "No!" mood upset
+    aoi "I SWEAR to you." mood confident2
+    lacie "O-okay..." mood confused2
+    lacie "(What am I supposed to say to that...?)" mood confused2
+    aoi "So um..." mood worried2
+    aoi "H-how do we get out..." mood worried3
+    lacie "I don't know." mood reflective4
+    aoi "..." mood worried
+    action state shock node aoi
+    aoi "..." mood scared4
+    action state pant node aoi
+    aoi "WE'RE ABSOLUTELY NEVER GETTING OUT WHAT ARE WE GOING TO DO!?!" mood panic6
+    aoi "Should I go back and get eaten by that plant instead?" mood panic7
+    aoi "That might actually be better than losing my mind as I walk endlessly through this hellish place..." mood panic9
+    aoi "Can you imagine it???" mood panic8
+    aoi "We would go insane!" mood melt11
+    action state shock node aoi
+    aoi "I hear the fairy ring slowly digests you, even if you're not caught in a plant." mood melt11
+    aoi "Eventually the skin on our feet will start chipping away from walking through this visceral floor." mood melt10
+    aoi "Then we'll start crawling, when our feet no longer work, hoping for the sweet release of death." mood melt10
+    action state dark node aoi
+    aoi "We might even wind up eating each other..." mood melt10
+    lacie "Aoi." mood default
+    aoi "...?" mood melt5
+    hide ui
+    cg show ch1/aoi_scissors
+    pause 0.5
+    lacie "Cut it off."
+    aoi "..."
+    aoi "R-right..."
+    aoi "Sorry."
+    hide ui
+    pause 0.5
+    action state stand node aoi
+    cg hide
+    pause 1
+    lacie "I'll look around first." mood blank3
+    if var ch1.forest_fairyring_seen_blockade
+        lacie "I want to take another look at the next room." mood blank3
+    else
+        lacie "I haven't even left this room yet."
+    aoi "OKAY!" mood awkward2
+    aoi "Can I follow you?" mood awkward3
+    lacie "..." mood blank7
+    if var ch1.forest_seen_rune
+        lacie "No thank you." mood blank8
+        aoi "...!" mood worried3
+        action walk down 32 node aoi continue
+        aoi "Y-you'll leave me alone?!" mood panic
+        lacie "..." mood confused2
+        aoi "Please let me come with you, I promise I'll be useful!" mood panic
+        lacie "...uh..." mood concerned2
+        action state shock node aoi
+        aoi "PLEASE!!!" mood panic5
+        lacie "Okay... okay." mood sigh2
+        lacie "(It's probably a bad idea, but...)" mood disappointed
+        lacie "(This... boy... or girl? They don't seem dangerous.)" mood blank2
+        lacie "(Maybe it's best not to be alone in this place.)" mood blank7
+    else
+        lacie "...Yes, I don't see why not." mood reflective2
+        aoi "Yay!" mood excited
+        aoi "I promise I'll be useful!"
+        lacie "Sure. Pleased to make your acquaintance." mood reflective8
+        lacie "(I wonder if this girl... or boy... can help me with my problem.)" mood thinking3
+        lacie "(Were they... melting? They might be a spirit or something...)" mood thinking4
+        lacie "(For now, let's focus on getting out of this place.)" mood blank7
+    audio bgm stop time 2
+    party add aoi
+    audio bgm override on prologue_nightmare
+    move to Ch1_FairyRing_B1F_Entrance point after_aoi
+    end
+
+label ALREADY_DONE
+    "There's no one else to rescue in there."

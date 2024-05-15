@@ -257,10 +257,102 @@ ch1.mk_jar_water
 "
 Nodes = "chr_spider"
 
+[node name="item_jar_done_on_spider" type="Node" parent="Other/Events/items_spider"]
+script = ExtResource( 20 )
+Items = "ch1.mk_jar_paint_red
+ch1.mk_jar_paint_yellow
+ch1.mk_jar_paint_blue"
+Nodes = "chr_spider"
+
 [node name="item_key_sai_on_spider" type="Node" parent="Other/Events/items_spider"]
 script = ExtResource( 20 )
 Items = "ch1.mk_key_cage"
 Nodes = "chr_spider"
+
+[node name="item_key_bedroom_on_spider" type="Node" parent="Other/Events/items_spider"]
+script = ExtResource( 20 )
+Items = "ch1.mk_bedroom_key"
+Nodes = "chr_spider"
+
+[node name="item_key_wisteria_on_spider" type="Node" parent="Other/Events/items_spider"]
+script = ExtResource( 20 )
+Items = "ch1.mk_key_wisteria"
+Nodes = "chr_spider"
+
+[node name="item_lighter_on_spider" type="Node" parent="Other/Events/items_spider"]
+script = ExtResource( 20 )
+Items = "ch1.mk_lighter"
+Nodes = "chr_spider"
+
+[node name="item_eye_on_spider" type="Node" parent="Other/Events/items_spider"]
+script = ExtResource( 20 )
+Items = "ch1.mk_eyeball"
+Nodes = "chr_spider"
+
+[node name="item_activated_on_spider" type="Node" parent="Other/Events/items_spider"]
+script = ExtResource( 20 )
+Items = "ch1.mk_hand_mirror_activated
+ch1.mk_canvas_activated
+ch1.mk_compress_activated
+ch1.mk_foot_activated
+ch1.mk_knife_activated"
+Nodes = "chr_spider"
+
+[node name="items_holder" type="Node" parent="Other/Events"]
+
+[node name="item_mirror_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_hand_mirror_activated"
+Nodes = "misc_itemholder"
+
+[node name="item_sketchbook_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_canvas_activated"
+Nodes = "misc_itemholder"
+
+[node name="item_compress_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_compress_activated"
+Nodes = "misc_itemholder"
+
+[node name="item_foot_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_foot_activated"
+Nodes = "misc_itemholder"
+
+[node name="item_knife_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_knife_activated"
+Nodes = "misc_itemholder"
+
+[node name="item_black_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_hand_mirror
+ch1.mk_knife
+ch1.mk_compress"
+Nodes = "misc_itemholder"
+
+[node name="item_lighter_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_lighter"
+Nodes = "misc_itemholder"
+
+[node name="item_other_on_holder" type="Node" parent="Other/Events/items_holder"]
+script = ExtResource( 20 )
+Items = "ch1.mk_eyeball
+ch1.mk_key_cage
+ch1.mk_bedroom_key
+ch1.mk_key_wisteria
+ch1.mk_jar
+ch1.mk_jar_water
+ch1.mk_jar_pigment_red
+ch1.mk_jar_pigment_yellow
+ch1.mk_jar_pigment_blue
+ch1.mk_jar_paint_red
+ch1.mk_jar_paint_yellow
+ch1.mk_jar_paint_blue
+ch1.lockpick"
+Nodes = "misc_itemholder"
 
 [node name="item_rag_on_pool" type="Node" parent="Other/Events"]
 script = ExtResource( 20 )
@@ -302,59 +394,6 @@ Items = "ch1.mk_jar_pigment_red
 ch1.mk_jar_pigment_yellow
 ch1.mk_jar_pigment_blue"
 Nodes = "misc_canvas"
-
-[node name="item_mirror_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_hand_mirror_activated"
-Nodes = "misc_itemholder"
-
-[node name="item_sketchbook_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_canvas_activated"
-Nodes = "misc_itemholder"
-
-[node name="item_compress_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_compress_activated"
-Nodes = "misc_itemholder"
-
-[node name="item_foot_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_foot_activated"
-Nodes = "misc_itemholder"
-
-[node name="item_knife_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_knife_activated"
-Nodes = "misc_itemholder"
-
-[node name="item_black_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_hand_mirror
-ch1.mk_knife
-ch1.mk_compress"
-Nodes = "misc_itemholder"
-
-[node name="item_lighter_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_lighter"
-Nodes = "misc_itemholder"
-
-[node name="item_other_on_holder" type="Node" parent="Other/Events"]
-script = ExtResource( 20 )
-Items = "ch1.mk_eyeball
-ch1.mk_key_cage
-ch1.mk_bedroom_key
-ch1.mk_jar
-ch1.mk_jar_water
-ch1.mk_jar_pigment_red
-ch1.mk_jar_pigment_yellow
-ch1.mk_jar_pigment_blue
-ch1.mk_jar_paint_red
-ch1.mk_jar_paint_yellow
-ch1.mk_jar_paint_blue
-ch1.lockpick"
-Nodes = "misc_itemholder"
 
 [node name="item_jars_get" type="Node2D" parent="Other/Events"]
 position = Vector2( 148, 148 )

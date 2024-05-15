@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://script/Subgame/Chapter1/Ch1ForestLakeside.cs" type="Script" id=1]
 [ext_resource path="res://resources/tileset/ch1_forest.tres" type="TileSet" id=2]
@@ -91,6 +91,8 @@
 [ext_resource path="res://assets/sprite/ch1/forest/lakeside/chr_merm_peek_up.png" type="Texture" id=89]
 [ext_resource path="res://assets/sprite/ch1/forest/lakeside/chr_merm_peek_down.png" type="Texture" id=90]
 [ext_resource path="res://script/Core/Nodes/GameOnlyVisibility.cs" type="Script" id=91]
+[ext_resource path="res://script/Core/Nodes/VariableVisibility2D.cs" type="Script" id=92]
+[ext_resource path="res://resources/nodes/common/shiny.tscn" type="PackedScene" id=93]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 10 )
@@ -1355,6 +1357,9 @@ collision_layer = 10
 position = Vector2( -2, -26 )
 texture = ExtResource( 42 )
 
+[node name="Shiny" parent="Main/foliage_tree2/MiscPinnedNote" instance=ExtResource( 93 )]
+position = Vector2( 0, -1 )
+
 [node name="foliage_tree3" parent="Main" instance=ExtResource( 41 )]
 position = Vector2( 441, -36 )
 
@@ -2129,3 +2134,11 @@ Start = false
 script = ExtResource( 88 )
 Node = NodePath("../../../../Background/MermPeek")
 Start = false
+
+[node name="Updates" type="Node" parent="Other"]
+
+[node name="hide_shiny" type="Node" parent="Other/Updates"]
+script = ExtResource( 92 )
+Variable = "ch1.forest_lakeside_seen_mermaid_note"
+Node = NodePath("../../../Main/foliage_tree2/MiscPinnedNote/Shiny")
+Invert = true

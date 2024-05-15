@@ -1,0 +1,3 @@
+label START
+    if var ch1.forest_station_cut_top end
+    event call misc_plant

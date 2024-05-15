@@ -1,0 +1,4 @@
+label START
+    if not var ch1.forest_kett_introduced end
+    chara set kett at right
+    kett "This tool is not well suited for carving." mood default
