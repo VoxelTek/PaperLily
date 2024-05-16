@@ -1,16 +1,3 @@
 [remap]
 
-importer="csv_translation"
-type="Translation"
-
-[deps]
-
-files=[ "res://definitions/captions/save.en.translation" ]
-
-source_file="res://definitions/captions/save.csv"
-dest_files=[ "res://definitions/captions/save.en.translation" ]
-
-[params]
-
-compress=true
-delimiter=0
+importer="keep"

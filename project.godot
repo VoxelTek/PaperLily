@@ -8,8 +8,6 @@
 
 config_version=4
 
-_custom_features="paperlilydemo,steam"
-
 _global_script_classes=[  ]
 _global_script_class_icons={
 }
@@ -37,7 +35,6 @@ shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 window/size/width=640
 window/size/height=360
-window/size/fullscreen=false
 window/size/test_width=1280
 window/size/test_height=720
 window/dpi/allow_hidpi=true
@@ -139,7 +136,7 @@ core/game_copyright="Leef 6010 2024"
 core/engine_version="1.5.4"
 core/translation_base_locale="en"
 core/translation_base_name="English"
-core/translation_selected=""
+core/translation_selected="en"
 core/translation_selected.tamajump="en"
 core/translation_extra_enabled=false
 core/website_enabled=true
@@ -164,7 +161,7 @@ core/ui_provider="res://resources/resourceprovider/paperlily_ui.tres"
 core/ui_provider.tamajump="res://resources/resourceprovider/tamajump_ui.tres"
 core/default_character="lacie"
 core/default_character.projectkat="kat"
-game/skip_enabled=false
+game/skip_enabled=true
 game/objective_notifications=true
 game/show_skip_option=true
 audio/volume_master=0.8
@@ -177,7 +174,7 @@ video/brightness=1.0
 video/contrast=1.0
 video/saturation=1.0
 video/gamma=0.0
-video/resolution_scale_pixel=2
+video/resolution_scale_pixel=1
 video/base_resolution=Vector2( 640, 360 )
 video/fps_limit="vsync"
 input/hide_cursor=true
@@ -189,7 +186,7 @@ input/profile_custom=false
 input/auto_switch=true
 input/joystick_deadzone=0.2
 platform/steam=false
-platform/steam.steam=true
+platform/steam.steam=false
 platform/steam_app_id=1698960
 platform/steam_app_id.projectkat=1698960
 platform/steam_app_id.paperlilydemo=2220360
@@ -197,6 +194,7 @@ debug/debug_room="Debug_Room"
 debug/quickstart/enabled=false
 debug/quickstart/room=""
 debug/quickstart/point=""
+core/translation_locale="en"
 
 [layer_names]
 
@@ -213,7 +211,6 @@ debug/quickstart/point=""
 [locale]
 
 translation_remaps={
-
 }
 
 [logging]
