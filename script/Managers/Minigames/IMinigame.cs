@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: LacieEngine.Minigames.IMinigame
 // Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
@@ -12,22 +12,22 @@ namespace LacieEngine.Minigames
 {
   public interface IMinigame
   {
-    Node Node => (Node) this;
+	Node Node => (Node) this;
 
-    bool CustomTransition => false;
+	bool CustomTransition => false;
 
-    void Init();
+	void Init();
 
-    void Start()
-    {
-    }
+	void Start()
+	{
+	}
 
-    void AddUiElements(Control parent)
-    {
-    }
+	void AddUiElements(Control parent)
+	{
+	}
 
-    Task TransitionIn() => (Task) null;
+	Task TransitionIn() => (Task) null;
 
-    Task TransitionOut() => (Task) null;
+	Task TransitionOut() => (Task) null;
   }
 }

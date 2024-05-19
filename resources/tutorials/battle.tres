@@ -8,4 +8,4 @@ script = ExtResource( 1 )
 Name = "Battle"
 Text = "Move around to avoid the spikes!"
 Image = ExtResource( 2 )
-Inputs = null
+Inputs = PoolStringArray(  )

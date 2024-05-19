@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: LacieEngine.API.IActionObject
 // Assembly: Lacie Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: 6B8AC25B-99FD-45E1-8F51-579BC4CB3E3A
@@ -11,10 +11,10 @@ namespace LacieEngine.API
 {
   public interface IActionObject
   {
-    void Activate();
+	void Activate();
 
-    void Deactivate();
+	void Deactivate();
 
-    bool IsValidForDirection(Direction direction) => true;
+	bool IsValidForDirection(Direction direction) => true;
   }
 }

@@ -41,6 +41,7 @@ namespace LacieEngine.StoryPlayer
 
     public override void Execute(LacieEngine.StoryPlayer.StoryPlayer storyPlayer)
     {
+      Log.Info("Hide dialog box, hide all characters, change room");
       storyPlayer.UI.HideDialogueBox();
       storyPlayer.Characters.HideAllCharacters();
       this.ChangeRoom(storyPlayer);
